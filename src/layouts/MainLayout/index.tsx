@@ -23,7 +23,10 @@ const HomepageLayout = ({
         justifyContent: "space-between",
       }}
     >
-      <p onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}>Admin</p>
+      <div style={{ display: "flex", gap: "20px" }}>
+        <p onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}>Admin</p>
+        <p onClick={() => navigate(ROUTE_PATHS.USER_HOME)}>User</p>
+      </div>
       {hasHeader && <Header />}
 
       <Box

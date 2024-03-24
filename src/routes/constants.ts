@@ -16,6 +16,7 @@ export const ROUTE_PATHS = {
   ADMIN_MANAGE_ANALYTICS: "/admin/manage-analytics",
   ADMIN_MANAGE_BLOG: "/admin/manage-blog",
   ADMIN_MANAGE_CONTENT: "/admin/manage-content",
+  USER_HOME: "/user",
   LOGIN: "/auth/login",
   REGISTER: "/auth/register",
   PRIVACY_POLICY: "/privacy-policy",

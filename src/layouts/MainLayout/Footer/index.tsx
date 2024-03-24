@@ -51,7 +51,7 @@ const Footer = () => {
 
   const renderLaptop = () => {
     return (
-      <Box style={{ backgroundColor: "lightGrey" }}>
+      <Box style={{ backgroundColor: "white" }}>
         <Container maxWidth="xl">
           <Grid
             container
@@ -257,7 +257,7 @@ const Footer = () => {
   };
   const renderMobile = () => {
     return (
-      <Box style={{ backgroundColor: "lightGrey" }}>
+      <Box style={{ backgroundColor: "white" }}>
         <Container maxWidth="xl">
           <Grid
             container
