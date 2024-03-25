@@ -4,14 +4,14 @@ import Manage from "../../../assets/share.svg";
 import Settings from "../../../assets/setting-5.svg";
 
 import Logo from "../../../assets/Logo.svg";
+import Schedulle from "../../../assets/Agenda Icon.svg";
+import Member from "../../../assets/Member Icon.svg";
 
-import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../routes/constants";
 import { i18n } from "../../../translations/i18n";
 import Button from "./Button";
 
 const UserSidebar = () => {
-  const navigate = useNavigate();
   return (
     <Box
       display="flex"
@@ -31,7 +31,7 @@ const UserSidebar = () => {
           display: "flex",
           flexDirection: "column",
           rowGap: "7px",
-          padding: "0px 50px 20px 0px",
+          padding: "0px 80px 20px 0px",
         }}
       >
         <Box
@@ -54,23 +54,32 @@ const UserSidebar = () => {
             ÁREA DE CLIENTE
           </p>
         </Box>
-        <Button
-          label={"Documentos"}
-          icon={<img src={File} style={{ height: "34px" }} alt="" />}
-          path={ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS}
-        />
+        <Box
+          style={{
+            paddingLeft: "25%",
+            marginTop: "20px",
+          }}
+        >
+          <Button
+            label={"Documentos"}
+            icon={<img src={File} style={{ height: "34px" }} alt="" />}
+            path={ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS}
+            bottomLine
+          />
 
-        <Button
-          label={i18n.t("Gestão Conteúdos")}
-          icon={<img src={Manage} style={{ height: "24px" }} alt="" />}
-          path={ROUTE_PATHS.ADMIN_MANAGE_CONTENT}
-        />
+          <Button
+            label="Minhas Marcações"
+            icon={<img src={Schedulle} style={{ height: "33px" }} alt="" />}
+            path={ROUTE_PATHS.ADMIN_MANAGE_CONTENT}
+            bottomLine
+          />
 
-        <Button
-          label={i18n.t("Utilizadores")}
-          icon={<img src={Settings} style={{ height: "24px" }} alt="" />}
-          path={ROUTE_PATHS.ADMIN_MANAGE_USERS}
-        />
+          <Button
+            label={"Membership"}
+            icon={<img src={Member} style={{ height: "33px" }} alt="" />}
+            path={ROUTE_PATHS.ADMIN_MANAGE_USERS}
+          />
+        </Box>
       </Box>
     </Box>
   );

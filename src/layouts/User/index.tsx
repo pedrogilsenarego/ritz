@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import Footer from "../MainLayout/Footer";
 import UserSidebar from "./SideBar";
 import backgroundImage from "../../assets/Rectangle 2.jpg";
+import UserMenu from "./UserMenu";
 
 interface HomepageLayoutProps {
   children: React.ReactNode;
@@ -22,7 +23,7 @@ const UserLayout = ({ children }: HomepageLayoutProps) => {
     >
       <Box style={{ display: "flex", height: "100%" }}>
         <UserSidebar />
-
+        <UserMenu />
         <Box
           style={{
             width: "100%",

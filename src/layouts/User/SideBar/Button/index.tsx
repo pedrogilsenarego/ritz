@@ -7,9 +7,10 @@ interface Props {
   icon: ReactNode;
   label: string;
   path: string;
+  bottomLine?: boolean;
 }
 
-const Button = ({ icon, label, path, ...props }: Props) => {
+const Button = ({ icon, label, path, bottomLine, ...props }: Props) => {
   const [hover, setHover] = useState<boolean>(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -29,7 +30,6 @@ const Button = ({ icon, label, path, ...props }: Props) => {
       display="flex"
       columnGap={1}
       alignItems="center"
-      padding="16px 20px"
       style={{
         backgroundColor:
           location.pathname === path ? `rgba(255, 255, 255, 0.03)` : undefined,
@@ -47,20 +47,28 @@ const Button = ({ icon, label, path, ...props }: Props) => {
       ) : (
         <span style={iconStyle}>{icon}</span>
       )}
-
-      <p
+      <Box
         style={{
-          marginTop: "1px",
-          fontSize: "14px",
-          lineHeight: "18px",
-          textShadow:
-            hover || location.pathname === path ? "0px 0px 16px white" : "none",
-
-          color: "black",
+          borderBottom: bottomLine ? "solid 1px grey" : undefined,
+          padding: "30px 0px",
         }}
       >
-        {label}
-      </p>
+        <p
+          style={{
+            marginTop: "1px",
+            fontSize: "14px",
+            lineHeight: "18px",
+            textShadow:
+              hover || location.pathname === path
+                ? "0px 0px 16px white"
+                : "none",
+
+            color: "black",
+          }}
+        >
+          {label}
+        </p>
+      </Box>
     </Box>
   );
 };

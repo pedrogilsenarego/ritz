@@ -33,7 +33,7 @@ const BasicPopover: React.FC<BasicPopoverProps> = ({
           horizontal: "center",
         }}
         sx={{
-          marginTop: "40px",
+          marginTop: "20px",
           cursor: "pointer",
         }}
         PaperProps={{
