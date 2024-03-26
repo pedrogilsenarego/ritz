@@ -13,4 +13,12 @@ export const userPages = [
       </UserLayout>
     ),
   },
+  {
+    path: ROUTE_PATHS.USER_DOCUMENTS,
+    component: (
+      <UserLayout>
+        <RoutesI.UserDocuments />
+      </UserLayout>
+    ),
+  },
 ];

@@ -28,6 +28,9 @@ export const RoutesI = {
   ),
   AdminHome: lazyWithRetryAndLoader(() => import("../pages/Admin/Home")),
   UserHome: lazyWithRetryAndLoader(() => import("../pages/User/Home")),
+  UserDocuments: lazyWithRetryAndLoader(
+    () => import("../pages/User/Documents")
+  ),
   Login: lazyWithRetryAndLoader(() => import("../pages/Auth/Login")),
   Register: lazyWithRetryAndLoader(() => import("../pages/Auth/Register")),
   About: lazyWithRetryAndLoader(() => import("../pages/About")),

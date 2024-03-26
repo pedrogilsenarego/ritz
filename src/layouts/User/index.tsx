@@ -5,12 +5,17 @@ import UserSidebar from "./SideBar";
 import backgroundImage from "../../assets/Rectangle 2.jpg";
 import UserMenu from "./UserMenu";
 
+import { useLocation } from "react-router-dom";
+import { ROUTE_PATHS } from "../../routes/constants";
+
 interface HomepageLayoutProps {
   children: React.ReactNode;
   hasHeader?: boolean;
 }
 
 const UserLayout = ({ children }: HomepageLayoutProps) => {
+  const location = useLocation();
+
   return (
     <Box
       style={{
@@ -26,9 +31,9 @@ const UserLayout = ({ children }: HomepageLayoutProps) => {
         <UserMenu />
         <Box
           style={{
-            width: "100%",
-
             position: "relative",
+            width: "100%",
+            height: "100%",
           }}
         >
           <img
@@ -36,12 +41,21 @@ const UserLayout = ({ children }: HomepageLayoutProps) => {
             alt=""
             style={{
               position: "absolute",
+              top: 0,
+              left: 0,
               width: "100%",
               height: "100%",
               objectFit: "cover",
+              zIndex: 1,
+              filter:
+                location.pathname === ROUTE_PATHS.USER_HOME
+                  ? "none"
+                  : "blur(4px)",
             }}
           />
-          {children}
+          <div style={{ position: "relative", zIndex: 2, height: "100%" }}>
+            {children}
+          </div>
         </Box>
       </Box>
       <Footer />

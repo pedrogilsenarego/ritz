@@ -5,23 +5,25 @@ import { Colors } from "../../../../theme/theme";
 
 interface Props {
   icon: ReactNode;
+  iconsSelected?: ReactNode;
   label: string;
   path: string;
   bottomLine?: boolean;
 }
 
-const Button = ({ icon, label, path, bottomLine, ...props }: Props) => {
+const Button = ({
+  icon,
+  label,
+  path,
+  iconsSelected,
+  bottomLine,
+  ...props
+}: Props) => {
   const [hover, setHover] = useState<boolean>(false);
   const navigate = useNavigate();
   const location = useLocation();
 
-  const iconStyle = {
-    color:
-      hover || location.pathname === path
-        ? Colors.black[400]
-        : Colors.black[40025],
-    marginRight: "4px",
-  };
+  const iconStyle = {};
 
   return (
     <Box
@@ -39,14 +41,35 @@ const Button = ({ icon, label, path, bottomLine, ...props }: Props) => {
       onClick={() => navigate(path)}
       {...props}
     >
-      {(icon as React.ReactElement).type ? (
-        // Check if the icon is a valid React element
-        React.cloneElement(icon as React.ReactElement, {
-          style: iconStyle,
-        }) // Apply the icon style
-      ) : (
-        <span style={iconStyle}>{icon}</span>
-      )}
+      <Box
+        style={{
+          backgroundColor: location.pathname === path ? "black" : "transparent",
+          borderRadius: "5px",
+          width: "33px",
+          aspectRatio: 1,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {location.pathname === path ? (
+          (iconsSelected as React.ReactElement).type ? (
+            // Check if the icon is a valid React element
+            React.cloneElement(iconsSelected as React.ReactElement, {
+              style: iconStyle,
+            }) // Apply the icon style
+          ) : (
+            <span style={iconStyle}>{iconsSelected}</span>
+          )
+        ) : (icon as React.ReactElement).type ? (
+          // Check if the icon is a valid React element
+          React.cloneElement(icon as React.ReactElement, {
+            style: iconStyle,
+          }) // Apply the icon style
+        ) : (
+          <span style={iconStyle}>{icon}</span>
+        )}
+      </Box>
       <Box
         style={{
           borderBottom: bottomLine ? "solid 1px grey" : undefined,

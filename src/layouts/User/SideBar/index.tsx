@@ -1,14 +1,13 @@
 import { Box } from "@mui/material";
-import File from "../../../assets/File Icon.svg";
-import Manage from "../../../assets/share.svg";
-import Settings from "../../../assets/setting-5.svg";
 
+import { ReactComponent as FileIconSelected } from "../../../assets/Documents.svg";
+import { ReactComponent as File } from "../../../assets/File Icon.svg";
 import Logo from "../../../assets/Logo.svg";
 import Schedulle from "../../../assets/Agenda Icon.svg";
 import Member from "../../../assets/Member Icon.svg";
 
 import { ROUTE_PATHS } from "../../../routes/constants";
-import { i18n } from "../../../translations/i18n";
+
 import Button from "./Button";
 
 const UserSidebar = () => {
@@ -62,8 +61,9 @@ const UserSidebar = () => {
         >
           <Button
             label={"Documentos"}
-            icon={<img src={File} style={{ height: "34px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS}
+            iconsSelected={<FileIconSelected />}
+            icon={<File />}
+            path={ROUTE_PATHS.USER_DOCUMENTS}
             bottomLine
           />
 
