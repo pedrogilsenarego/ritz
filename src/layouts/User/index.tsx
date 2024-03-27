@@ -58,7 +58,7 @@ const UserLayout = ({ children }: HomepageLayoutProps) => {
           </div>
         </Box>
       </Box>
-      <Footer />
+      <Footer isUser />
     </Box>
   );
 };

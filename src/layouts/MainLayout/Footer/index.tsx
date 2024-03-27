@@ -7,8 +7,6 @@ import {
   useTheme,
 } from "@mui/material";
 
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import Facebook from "../../../assets/Facebook.svg";
 import Instagram from "../../../assets/Insta.svg";
 import LivroReclamações from "../../../assets/LivroReclamações.svg";
@@ -18,11 +16,13 @@ import mail from "../../../assets/mail.svg";
 import map from "../../../assets/map.svg";
 import phone from "../../../assets/phone.svg";
 import Button from "../../../components/Ui/Button";
-import { i18n } from "../../../translations/i18n";
+import Logo from "../../../assets/EHTIQ BRANDS-12.svg";
 
-const Footer = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+type Props = {
+  isUser?: boolean;
+};
+
+const Footer = ({ isUser }: Props) => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const handleInstagram = () => {
@@ -39,14 +39,6 @@ const Footer = () => {
         "_blank"
       );
     }
-  };
-
-  type ItemProps = {
-    title: string;
-    list: {
-      title: string;
-      link?: string;
-    }[];
   };
 
   const renderLaptop = () => {
@@ -72,11 +64,13 @@ const Footer = () => {
                 }}
               />
             </Grid>
-            <Grid item xs={2.4}>
-              <Button>
-                <Typography>Marcações</Typography>
-              </Button>
-            </Grid>
+            {!isUser && (
+              <Grid item xs={2.4}>
+                <Button>
+                  <Typography>Marcações</Typography>
+                </Button>
+              </Grid>
+            )}
             <Grid item xs={2.4}>
               <div
                 style={{
@@ -188,7 +182,16 @@ const Footer = () => {
                 </div>
               </div>
             </Grid>
-            <Grid item xs={2.4}>
+            {isUser && (
+              <Grid
+                item
+                xs={1.4}
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <img src={Logo} alt="" style={{ width: "70px" }} />
+              </Grid>
+            )}
+            <Grid item xs={isUser ? 3.4 : 2.4}>
               <div
                 style={{
                   display: "flex",

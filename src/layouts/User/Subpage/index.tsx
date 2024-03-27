@@ -17,7 +17,14 @@ const Subpage = ({ children, title }: Props) => {
           {title}
         </p>
       </div>
-      {children}
+      <div
+        style={{
+          height: "100%",
+          padding: "80px 60px 70px 60px",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 };
