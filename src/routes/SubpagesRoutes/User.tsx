@@ -21,4 +21,12 @@ export const userPages = [
       </UserLayout>
     ),
   },
+  {
+    path: ROUTE_PATHS.USER_SCHEDULLE,
+    component: (
+      <UserLayout>
+        <RoutesI.UserSchedulle />
+      </UserLayout>
+    ),
+  },
 ];

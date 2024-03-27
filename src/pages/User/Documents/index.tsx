@@ -30,6 +30,7 @@ const UserDocuments = () => {
           >
             <p
               style={{
+                marginLeft: "20px",
                 fontSize: "17px",
                 letterSpacing: "1px",
                 textTransform: "uppercase",
@@ -45,6 +46,7 @@ const UserDocuments = () => {
               flexDirection: "column",
               rowGap: "20px",
               marginTop: "40px",
+              paddingLeft: "20px",
             }}
           >
             {mokData1.map((data, index) => {
@@ -73,6 +75,7 @@ const UserDocuments = () => {
           >
             <p
               style={{
+                marginLeft: "20px",
                 fontSize: "17px",
                 letterSpacing: "1px",
                 textTransform: "uppercase",
@@ -88,6 +91,7 @@ const UserDocuments = () => {
               flexDirection: "column",
               rowGap: "20px",
               marginTop: "40px",
+              paddingLeft: "20px",
             }}
           >
             {mokData2.map((data, index) => {

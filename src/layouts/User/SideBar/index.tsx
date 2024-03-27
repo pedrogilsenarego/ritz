@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-
+import { ReactComponent as SchedulleIconSelected } from "../../../assets/calendarWhite.svg";
 import { ReactComponent as FileIconSelected } from "../../../assets/Documents.svg";
 import { ReactComponent as File } from "../../../assets/File Icon.svg";
 import Logo from "../../../assets/Logo.svg";
@@ -9,8 +9,10 @@ import Member from "../../../assets/Member Icon.svg";
 import { ROUTE_PATHS } from "../../../routes/constants";
 
 import Button from "./Button";
+import { useNavigate } from "react-router-dom";
 
 const UserSidebar = () => {
+  const navigate = useNavigate();
   return (
     <Box
       display="flex"
@@ -21,7 +23,10 @@ const UserSidebar = () => {
         backgroundColor: "white",
       }}
     >
-      <Box style={{ padding: "100px 50px 0px 50px" }}>
+      <Box
+        style={{ padding: "100px 50px 0px 50px", cursor: "pointer" }}
+        onClick={() => navigate(ROUTE_PATHS.HOME)}
+      >
         <img src={Logo} style={{ height: "52px" }} alt="" />
       </Box>
 
@@ -70,7 +75,8 @@ const UserSidebar = () => {
           <Button
             label="Minhas Marcações"
             icon={<img src={Schedulle} style={{ height: "33px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_CONTENT}
+            iconsSelected={<SchedulleIconSelected />}
+            path={ROUTE_PATHS.USER_SCHEDULLE}
             bottomLine
           />
 

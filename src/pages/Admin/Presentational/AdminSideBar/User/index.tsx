@@ -5,6 +5,7 @@ const User = () => {
   return (
     <Box style={{ display: "flex", columnGap: "10px", alignItems: "center" }}>
       <img
+        alt=""
         src="https://letstryai.com/wp-content/uploads/2023/11/stable-diffusion-avatar-prompt-example-6.jpg"
         style={{ height: "50px", aspectRatio: 1, borderRadius: "50%" }}
       />

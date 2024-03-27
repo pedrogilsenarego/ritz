@@ -20,7 +20,8 @@ const Subpage = ({ children, title }: Props) => {
       <div
         style={{
           height: "100%",
-          padding: "80px 60px 70px 60px",
+
+          padding: "80px 60px 10px 60px",
         }}
       >
         {children}
