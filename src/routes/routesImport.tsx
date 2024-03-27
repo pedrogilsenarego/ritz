@@ -34,6 +34,9 @@ export const RoutesI = {
   UserSchedulle: lazyWithRetryAndLoader(
     () => import("../pages/User/Schedulle")
   ),
+  UserMembership: lazyWithRetryAndLoader(
+    () => import("../pages/User/Membership")
+  ),
   Login: lazyWithRetryAndLoader(() => import("../pages/Auth/Login")),
   Register: lazyWithRetryAndLoader(() => import("../pages/Auth/Register")),
   About: lazyWithRetryAndLoader(() => import("../pages/About")),

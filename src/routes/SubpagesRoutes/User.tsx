@@ -29,4 +29,12 @@ export const userPages = [
       </UserLayout>
     ),
   },
+  {
+    path: ROUTE_PATHS.USER_MEMBERSHIP,
+    component: (
+      <UserLayout>
+        <RoutesI.UserMembership />
+      </UserLayout>
+    ),
+  },
 ];

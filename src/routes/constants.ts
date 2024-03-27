@@ -19,6 +19,7 @@ export const ROUTE_PATHS = {
   USER_HOME: "/user",
   USER_DOCUMENTS: "/user/documents",
   USER_SCHEDULLE: "/user/schedulle",
+  USER_MEMBERSHIP: "/user/membership",
   LOGIN: "/auth/login",
   REGISTER: "/auth/register",
   PRIVACY_POLICY: "/privacy-policy",

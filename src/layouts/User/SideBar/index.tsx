@@ -5,6 +5,7 @@ import { ReactComponent as File } from "../../../assets/File Icon.svg";
 import Logo from "../../../assets/Logo.svg";
 import Schedulle from "../../../assets/Agenda Icon.svg";
 import Member from "../../../assets/Member Icon.svg";
+import { ReactComponent as MemberSelected } from "../../../assets/championSelected.svg";
 
 import { ROUTE_PATHS } from "../../../routes/constants";
 
@@ -82,8 +83,9 @@ const UserSidebar = () => {
 
           <Button
             label={"Membership"}
+            iconsSelected={<MemberSelected />}
             icon={<img src={Member} style={{ height: "33px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_USERS}
+            path={ROUTE_PATHS.USER_MEMBERSHIP}
           />
         </Box>
       </Box>
