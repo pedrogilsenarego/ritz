@@ -13,6 +13,7 @@ export const ROUTE_PATHS = {
   ADMIN_CREATE_PRODUCT: "/admin/manage-products/create-product",
   ADMIN_MANAGE_USERS: "/admin/manage-users",
   ADMIN_MANAGE_USERS_CREATE: "/admin/manage-users/create",
+  ADMIN_MANAGE_CLIENTS: "/admin/manage-clients",
   ADMIN_MANAGE_ANALYTICS: "/admin/manage-analytics",
   ADMIN_MANAGE_BLOG: "/admin/manage-blog",
   ADMIN_MANAGE_CONTENT: "/admin/manage-content",

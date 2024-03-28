@@ -42,11 +42,11 @@ export const TableCell = styled(MuiTableCell, {
   fontSize: isFirstRow ? "14px" : "14px",
   fontWeight: isFirstRow ? "bold" : 500,
   paddingLeft: "30px",
-  paddingTop: isFirstRow ? "16px" : "14px",
-  paddingBottom: isFirstRow ? "4px" : "12px",
-  color: isFirstRow ? "#6B7280" : Colors.black[400],
+  paddingTop: isFirstRow ? "14px" : "14px",
+  paddingBottom: isFirstRow ? "14px" : "14px",
+  color: isFirstRow ? "rgba(107, 114, 128, 1)" : Colors.black[400],
   cursor: onClick ? "pointer" : "default",
-  backgroundColor: isFirstRow ? "inherit" : "white",
+  backgroundColor: isFirstRow ? "rgba(243, 244, 246, 1)" : "white",
 }));
 
 export const ActionContainer = styled(Box)({

@@ -10,9 +10,10 @@ const ButtonBlue = ({ icon, label, onClick }: Props) => {
       onClick={onClick}
       style={{
         backgroundColor: "#93C0D9",
-        borderRadius: "15px",
+        borderRadius: "18px",
         padding: "6px 20px",
         display: "flex",
+
         alignItems: "center",
         gap: "10px",
         cursor: "pointer",

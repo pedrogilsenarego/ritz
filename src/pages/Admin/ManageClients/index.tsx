@@ -9,33 +9,47 @@ import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../routes/constants";
 import ButtonBlue from "../../../components/Ui/ButtonBlue";
 
-const ManageUsers = () => {
+const ManageClients = () => {
   const { reset, control, handleSubmit } = useForm<any>({});
   const navigate = useNavigate();
 
   return (
-    <GeneralPage title="STAFF INTERNO" subTitle="Utilizadores">
+    <GeneralPage title="Dados de Cliente" subTitle="Clientes">
       <div
         style={{
           display: "flex",
-          width: "100%",
           alignItems: "center",
+          width: "100%",
           columnGap: "40px",
         }}
       >
         <form style={{ width: "100%" }}>
-          <div style={{ width: "100%" }}>
+          <div style={{ width: "100%", display: "flex", columnGap: "30px" }}>
             <ControlledFormInput
               fullWidth
               type="search"
               control={control}
               name="search"
-              inputPlaceholder="Encontrar páginas"
+              inputPlaceholder="Nome de cliente"
               style={{
                 width: "100%",
                 padding: "20px 3px",
                 borderRadius: "15px",
-                background: "red",
+
+                display: "flex",
+              }}
+            />
+            <ControlledFormInput
+              fullWidth
+              type="search"
+              control={control}
+              name="nif"
+              inputPlaceholder="NIF"
+              style={{
+                width: "100%",
+                padding: "20px 3px",
+                borderRadius: "15px",
+
                 display: "flex",
               }}
             />
@@ -52,7 +66,7 @@ const ManageUsers = () => {
       <div style={{ marginTop: "30px" }}>
         <TableList
           columns={tableColumns}
-          rows={mapAlarmHistoryList([1, 2, 2])}
+          rows={mapAlarmHistoryList([1, 2, 2, 4, 5])}
           onAction={() => {}}
           pagination={{ page: 2, numberPages: 10 }}
         />
@@ -61,4 +75,4 @@ const ManageUsers = () => {
   );
 };
 
-export default ManageUsers;
+export default ManageClients;

@@ -77,6 +77,14 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_MANAGE_CLIENTS,
+    component: (
+      <AdminLayout>
+        <RoutesI.AdminManageClients />
+      </AdminLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS,
     component: (
       <AdminLayout>

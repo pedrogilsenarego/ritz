@@ -79,7 +79,7 @@ const AdminSideBar = () => {
           <Button
             label={i18n.t("Clientes")}
             icon={<img src={UserIcon} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN}
+            path={ROUTE_PATHS.ADMIN_MANAGE_CLIENTS}
           />
 
           <Button

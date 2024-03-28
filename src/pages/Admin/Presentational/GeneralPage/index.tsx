@@ -71,7 +71,7 @@ const GeneralPage = ({ children, title, subTitle }: Props) => {
           paddingRight: "80px",
           paddingTop: "100px",
         }}
-        className="custom-scrollbar"
+        className="custom-scroll"
       >
         {children}
       </div>
