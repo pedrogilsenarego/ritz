@@ -223,7 +223,7 @@ const TableList = <T extends BaseProps>({
             </div>
             <div
               style={{
-                backgroundColor: "#F3F4F6",
+                backgroundColor: "rgba(3, 7, 18, 1)",
                 width: "36px",
                 height: "36px",
                 borderRadius: "25px",
@@ -233,7 +233,7 @@ const TableList = <T extends BaseProps>({
                 cursor: "pointer",
               }}
             >
-              <p style={{ fontSize: "12px", fontWeight: 500 }}>
+              <p style={{ fontSize: "12px", color: "white", fontWeight: 500 }}>
                 {pagination.page}
               </p>
             </div>

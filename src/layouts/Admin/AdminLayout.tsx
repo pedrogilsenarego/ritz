@@ -8,7 +8,8 @@ const AdminLayout = (props: any) => {
     <Box
       style={{
         display: "flex",
-        backgroundColor: "#D9D9D9",
+        background:
+          "linear-gradient(180deg, #FFFAF9 0%, #E6DFDD 51%, #E3E8EB 100%)",
         position: "relative",
       }}
     >
@@ -70,7 +71,7 @@ const AdminLayout = (props: any) => {
             height: "100%",
 
             width: "100%",
-            padding: "50px 60px 80px 0px",
+            padding: "50px 60px 60px 0px",
           }}
         >
           {props.children}

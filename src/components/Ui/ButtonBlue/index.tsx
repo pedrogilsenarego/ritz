@@ -1,16 +1,19 @@
 type Props = {
   icon: string;
   label: string;
+  onClick?: () => void;
 };
 
-const ButtonBlue = ({ icon, label }: Props) => {
+const ButtonBlue = ({ icon, label, onClick }: Props) => {
   return (
     <div
+      onClick={onClick}
       style={{
         backgroundColor: "#93C0D9",
         borderRadius: "15px",
         padding: "6px 20px",
         display: "flex",
+        alignItems: "center",
         gap: "10px",
         cursor: "pointer",
       }}

@@ -7,6 +7,7 @@ import { mapAlarmHistoryList } from "./mapper";
 import UserAdd from "../../../assets/user-add--01.svg";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../routes/constants";
+import ButtonBlue from "../../../components/Ui/ButtonBlue";
 
 const ManageUsers = () => {
   const { reset, control, handleSubmit } = useForm<any>({});
@@ -39,20 +40,12 @@ const ManageUsers = () => {
             />
           </div>
         </form>
-        <div
+
+        <ButtonBlue
+          label="Novo"
+          icon={UserAdd}
           onClick={() => navigate(ROUTE_PATHS.ADMIN_MANAGE_USERS_CREATE)}
-          style={{
-            backgroundColor: "#93C0D9",
-            borderRadius: "15px",
-            padding: "10px 20px",
-            display: "flex",
-            gap: "10px",
-            cursor: "pointer",
-          }}
-        >
-          <img src={UserAdd} alt="" style={{ width: "20px" }} />
-          <p style={{ fontSize: "15px" }}>Novo</p>
-        </div>
+        />
       </div>
       <div style={{ marginTop: "30px" }}>
         <TableList

@@ -8,6 +8,7 @@ import ControlledFormInput from "../../../components/Inputs/ControlledInputAdmin
 import { useForm } from "react-hook-form";
 import Edit from "../../../assets/Component 1.svg";
 import GeneralPage from "../Presentational/GeneralPage";
+import ButtonBlue from "../../../components/Ui/ButtonBlue";
 
 const ManageContent = () => {
   const classes = useStyles();
@@ -116,19 +117,8 @@ const ManageContent = () => {
             gap: "20px",
           }}
         >
-          <div
-            style={{
-              backgroundColor: "white",
-              borderRadius: "15px",
-              padding: "10px 20px",
-              display: "flex",
-              gap: "10px",
-              cursor: "pointer",
-            }}
-          >
-            <img src={Edit} alt="" style={{ width: "17px" }} />
-            <p style={{ fontSize: "15px" }}>NOVA PÁGINA</p>
-          </div>
+          <ButtonBlue label="NOVA PÁGINA" icon={Edit} />
+
           <div
             style={{
               padding: "30px",
