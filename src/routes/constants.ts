@@ -7,6 +7,7 @@ export const ROUTE_PATHS = {
   YOUR_EXPERIENCE: "/your-experience",
   ADMIN_HOME: "/admin",
   ADMIN: "/admin/manage-products",
+  ADMIN_MANAGE_DASHBOARD: "/admin/manage-dashboard",
   ADMIN_EDIT_BLOG: "/admin/manage-blog/edit/:id",
   ADMIN_CREATE_BLOG: "/admin/manage-blog/create-blog",
   ADMIN_EDIT_PRODUCT: "/admin/manage-products/edit/:id",

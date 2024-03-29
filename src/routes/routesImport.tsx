@@ -11,6 +11,9 @@ export const RoutesI = {
   AdminCreateBlog: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageBlog/CreateBlog")
   ),
+  AdminManageDashboard: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManageDashboard")
+  ),
   AdminManageUsers: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageUsers")
   ),

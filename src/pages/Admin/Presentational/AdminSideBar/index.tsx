@@ -61,7 +61,7 @@ const AdminSideBar = () => {
           <Button
             label={"Performance"}
             icon={<img src={Status} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS}
+            path={ROUTE_PATHS.ADMIN_MANAGE_DASHBOARD}
           />
 
           <Button

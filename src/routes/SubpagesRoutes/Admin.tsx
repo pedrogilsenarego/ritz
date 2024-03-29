@@ -45,6 +45,14 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_MANAGE_DASHBOARD,
+    component: (
+      <AdminLayout>
+        <RoutesI.AdminManageDashboard />
+      </AdminLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_EDIT_BLOG,
     component: (
       <AdminLayout>
