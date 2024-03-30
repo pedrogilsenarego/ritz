@@ -2,6 +2,10 @@ import { Grid } from "@mui/material";
 import GeneralPage from "../Presentational/GeneralPage";
 import Dognut from "../../../assets/bx_bx-doughnut-chart.svg";
 import { CSSProperties } from "react";
+import Carousel from "../../../components/Carousel";
+import FileImage from "../../../assets/file_flat.svg";
+import Download from "../../../assets/download-04.svg";
+import Chart from "../../../assets/icon_chart_bar.svg";
 
 const ManageDashboard = () => {
   const Panel = ({
@@ -26,7 +30,7 @@ const ManageDashboard = () => {
         style={{
           backgroundColor: "white",
           borderRadius: "20px",
-          padding: "40px",
+          padding: "30px",
           display: "flex",
           height: "100%",
 
@@ -132,6 +136,223 @@ const ManageDashboard = () => {
       </div>
     );
   };
+  const Link = () => {
+    return (
+      <div style={{ display: "flex", padding: "0px 30px 10px 30px" }}>
+        <div style={{ width: "60%" }}>
+          <p
+            style={{
+              color: "rgba(43, 54, 116, 1)",
+              fontSize: "12px",
+              fontWeight: 400,
+              textDecoration: "underline",
+            }}
+          >
+            www.ehtiq.com/blog/os-5-beneficios-do-aci ...
+          </p>
+        </div>
+        <div
+          style={{
+            width: "20%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <p
+            style={{
+              color: "rgba(0, 119, 182, 1)",
+              fontSize: "12px",
+              fontWeight: 400,
+            }}
+          >
+            341
+          </p>
+        </div>
+        <div
+          style={{
+            width: "20%",
+            display: "flex",
+            justifyContent: "center",
+          }}
+        >
+          <p
+            style={{
+              color: "rgba(0, 119, 182, 1)",
+              fontSize: "12px",
+              fontWeight: 400,
+            }}
+          >
+            2
+          </p>
+        </div>
+      </div>
+    );
+  };
+  const PanelLink = ({
+    title,
+
+    panelStyles,
+  }: {
+    title?: string;
+
+    panelStyles?: CSSProperties;
+  }) => {
+    return (
+      <div
+        style={{
+          backgroundColor: "white",
+          borderRadius: "20px",
+          paddingBottom: "30px",
+          display: "flex",
+          height: "100%",
+
+          flexDirection: "column",
+
+          ...panelStyles,
+        }}
+      >
+        {title && (
+          <p
+            style={{
+              fontSize: "14px",
+              fontWeight: 600,
+              padding: "30px 30px 20px 30px",
+            }}
+          >
+            {title}
+          </p>
+        )}
+        <div style={{ display: "flex", padding: "0px 30px 10px 30px" }}>
+          <div style={{ width: "60%" }}>
+            <p style={{ color: "gray", fontSize: "12px", fontWeight: 400 }}>
+              URL
+            </p>
+          </div>
+          <div
+            style={{ width: "20%", display: "flex", justifyContent: "center" }}
+          >
+            <p style={{ color: "gray", fontSize: "12px", fontWeight: 400 }}>
+              Tráfego
+            </p>
+          </div>
+          <div
+            style={{ width: "20%", display: "flex", justifyContent: "center" }}
+          >
+            <p style={{ color: "gray", fontSize: "12px", fontWeight: 400 }}>
+              Palavras-chave
+            </p>
+          </div>
+        </div>
+        <div
+          style={{
+            height: "1px",
+            width: "100%",
+            backgroundColor: "lightGray",
+            marginBottom: "30px",
+          }}
+        />
+        <Link />
+        <Link />
+        <Link />
+        <Link />
+      </div>
+    );
+  };
+  const PanelCarousel = ({
+    title,
+
+    panelStyles,
+  }: {
+    title?: string;
+
+    panelStyles?: CSSProperties;
+  }) => {
+    const pdfs = [
+      { month: "Janeiro" },
+      { month: "Fevereiro" },
+      { month: "Março" },
+    ];
+    return (
+      <div
+        style={{
+          backgroundColor: "white",
+          borderRadius: "20px",
+
+          flexDirection: "column",
+
+          ...panelStyles,
+        }}
+      >
+        {title && (
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            <p
+              style={{
+                fontSize: "14px",
+                fontWeight: 600,
+                padding: "30px 30px 0px 30px",
+              }}
+            >
+              {title}
+            </p>
+          </div>
+        )}
+        <div style={{ padding: "40px 0px 30px 0px" }}>
+          <Carousel
+            navButton={true}
+            width={"100%"}
+            dragThreshold={50}
+            dots={false}
+            height={"auto"}
+            pauseDuration={3000}
+            slideDuration={1000}
+            direction={1}
+            autoPlay={false}
+            tweenAnime="ease"
+          >
+            {pdfs.map((item, index) => (
+              <div
+                draggable={false}
+                key={index}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  rowGap: "20px",
+                  position: "relative",
+                }}
+              >
+                <img
+                  src={Chart}
+                  alt=""
+                  style={{ position: "absolute", top: "20px" }}
+                />
+                <img src={FileImage} alt="" />
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    columnGap: "4px",
+                  }}
+                >
+                  <p style={{ fontSize: "12px" }}>{item.month}</p>
+                  <div
+                    style={{
+                      backgroundColor: "rgba(75, 173, 204, 0.32)",
+                      padding: "2px 14px",
+                      borderRadius: "7px",
+                      display: "flex",
+                    }}
+                  >
+                    <img src={Download} alt="" />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      </div>
+    );
+  };
   return (
     <GeneralPage title="Dashboard Analítico" subTitle="Performance">
       <Grid
@@ -142,7 +363,7 @@ const ManageDashboard = () => {
           overflowY: "scroll",
         }}
       >
-        <Grid item xs={8} style={{ height: "100%" }}>
+        <Grid item xs={9} style={{ height: "100%" }}>
           <Grid container columnSpacing={"10px"}>
             <Grid item xs={4}>
               <Panel
@@ -179,23 +400,23 @@ const ManageDashboard = () => {
               />
             </Grid>
             <Grid item xs={8}>
-              <Panel title="Ranking de URL" />
+              <PanelLink title="Ranking de URL" />
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={3}>
           <div
             style={{ display: "flex", flexDirection: "column", rowGap: "10px" }}
           >
             <Panel
-              panelStyles={{ padding: "40px 20px" }}
+              panelStyles={{ padding: "30px 30px 20px 30px" }}
               entries={[
                 { title: "Links Externos", value: 12 },
                 { title: "Links Internos", value: 10 },
               ]}
             />
             <Panel
-              panelStyles={{ padding: "40px 20px" }}
+              panelStyles={{ padding: "30px 30px 20px 30px" }}
               entries={[
                 { title: "Total Páginas", value: 24 },
                 { title: "Indexadas", value: 10 },
@@ -203,7 +424,10 @@ const ManageDashboard = () => {
             />
           </div>
           <div>
-            <Panel panelStyles={{ marginTop: "30px" }} title="Report Mensal" />
+            <PanelCarousel
+              panelStyles={{ marginTop: "20px" }}
+              title="Report Mensal"
+            />
           </div>
         </Grid>
       </Grid>

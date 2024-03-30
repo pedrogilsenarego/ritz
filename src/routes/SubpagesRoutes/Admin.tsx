@@ -85,12 +85,4 @@ export const adminPages = [
       </AdminLayout>
     ),
   },
-  {
-    path: ROUTE_PATHS.ADMIN_MANAGE_ANALYTICS,
-    component: (
-      <AdminLayout>
-        <RoutesI.AdminManageAnalytics />
-      </AdminLayout>
-    ),
-  },
 ];

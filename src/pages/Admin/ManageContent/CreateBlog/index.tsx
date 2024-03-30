@@ -59,6 +59,7 @@ const CreateBlog = ({ edit = false }: Props) => {
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <ControlledFormInput
+                    label="H1|Título"
                     control={control}
                     name="titlePT"
                     inputPlaceholder="Escreva em Português"
