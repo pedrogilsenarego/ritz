@@ -296,9 +296,10 @@ const ManageDashboard = () => {
             </p>
           </div>
         )}
-        <div style={{ padding: "40px 0px 30px 0px" }}>
+        <div style={{ padding: "40px 30px 30px 30px" }}>
           <Carousel
             navButton={true}
+            navType="admin"
             width={"100%"}
             dragThreshold={50}
             dots={false}

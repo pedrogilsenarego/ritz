@@ -2,6 +2,8 @@ import React, { MouseEvent, useEffect, useMemo, useRef, useState } from "react";
 import usePreventScroll from "../../hooks/usePreventScrollY";
 import "./index.css";
 import tween from "./tween";
+import Next from "../../assets/flat-color-icons_next.svg";
+import Previous from "../../assets/flat-color-icons_previous.svg";
 
 export interface ClickedItem {
   index: number;
@@ -24,6 +26,7 @@ export interface ICarouselProps {
     | "bounce"
     | Function;
   navButton?: boolean;
+  navType?: "admin";
   navButtonOrientation?: "horizontal" | "vertical";
   dots?: boolean;
   dotsColor?: string;
@@ -47,6 +50,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     autoPlay = true,
     tweenAnime = "ease",
     navButton = false,
+    navType,
     navButtonOrientation = "horizontal",
     dots = true,
     dotsColor = "#ffffff",
@@ -363,7 +367,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
   return (
     <div
       className="carousel"
-      style={{ width, height }}
+      style={{ width, height, position: "relative" }}
       onMouseEnter={pauseTimer}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -388,7 +392,37 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
           </div>
         ))}
       </div>
-      {navButton && (
+      {navButton && navType === "admin" && (
+        <div
+          style={{
+            position: "absolute",
+            width: "100%",
+            justifyContent: "space-between",
+            bottom: "50%",
+            display: "flex",
+          }}
+        >
+          <div
+            style={{ padding: "10px" }}
+            onClick={goPrev}
+            onMouseUp={(e) => e.stopPropagation()}
+            onMouseDown={(e) => e.stopPropagation()}
+            onMouseMove={(e) => e.stopPropagation()}
+          >
+            <img src={Next} alt="" />
+          </div>
+          <div
+            style={{ padding: "10px" }}
+            onClick={goNext}
+            onMouseUp={(e) => e.stopPropagation()}
+            onMouseDown={(e) => e.stopPropagation()}
+            onMouseMove={(e) => e.stopPropagation()}
+          >
+            <img src={Previous} alt="" />
+          </div>
+        </div>
+      )}
+      {navButton && navType !== "admin" && (
         <>
           <div
             className={`nav-btn ${navButtonOrientation} ${
