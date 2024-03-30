@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import Edit from "../../../assets/Component 1.svg";
 import GeneralPage from "../Presentational/GeneralPage";
 import ButtonBlue from "../../../components/Ui/ButtonBlue";
+import { ROUTE_PATHS } from "../../../routes/constants";
 
 const ManageContent = () => {
   const classes = useStyles();
@@ -117,7 +118,11 @@ const ManageContent = () => {
             gap: "20px",
           }}
         >
-          <ButtonBlue label="NOVA PÁGINA" icon={Edit} />
+          <ButtonBlue
+            label="NOVA PÁGINA"
+            icon={Edit}
+            onClick={() => navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_CREATE)}
+          />
 
           <div
             style={{

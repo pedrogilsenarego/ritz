@@ -1,5 +1,5 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
-import ControlledFormInput from "../../../../components/Inputs/ControlledInput";
+
 import ControlledFormInputEditor from "../../../../components/Inputs/ControlledInputEditor";
 import ControlledSelect from "../../../../components/Inputs/ControlledSelect";
 import FileUploader from "../../../../components/Inputs/FileUploader";
@@ -9,6 +9,8 @@ import Button from "../../../../components/Ui/Button";
 import { i18n } from "../../../../translations/i18n";
 import useStyles from "./styles";
 import useCreateProduct from "./useCreateProduct";
+import GeneralPage from "../../Presentational/GeneralPage";
+import ControlledFormInput from "../../../../components/Inputs/ControlledInputAdmin";
 
 interface Props {
   edit?: boolean;
@@ -31,19 +33,7 @@ const CreateBlog = ({ edit = false }: Props) => {
     setTouchedImages,
   } = useCreateProduct({ edit });
   return (
-    <>
-      <Typography fontSize="16px">
-        {edit
-          ? i18n.t(
-              "pages.admin.createBlog.editTitle",
-              "Manage Blog - Edit Blog Entry"
-            )
-          : i18n.t(
-              "pages.admin.createBlog.title",
-              "Manage Blog - Create Blog Entry"
-            )}
-      </Typography>
-      <Divider />
+    <GeneralPage title="Nova Publicação" subTitle="Blog EHTIQ">
       {isCreatingProduct || isEditingProduct || (isLoadingProduct && edit) ? (
         <Loader
           customMessage={
@@ -60,7 +50,6 @@ const CreateBlog = ({ edit = false }: Props) => {
         />
       ) : (
         <Box className={classes.root}>
-          {" "}
           <form
             className={classes.form}
             id="createBlog-form"
@@ -68,6 +57,23 @@ const CreateBlog = ({ edit = false }: Props) => {
           >
             <Box className={classes.inputBox}>
               <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <ControlledFormInput
+                    control={control}
+                    name="titlePT"
+                    inputPlaceholder="Escreva em Português"
+                  />
+                  <ControlledFormInput
+                    control={control}
+                    name="titleEN"
+                    inputPlaceholder="Write in English"
+                  />
+                  <ControlledFormInput
+                    control={control}
+                    name="ES"
+                    inputPlaceholder="Espanhol"
+                  />
+                </Grid>
                 <Grid item xs={12}>
                   <FileUploader
                     name="images"
@@ -215,7 +221,7 @@ const CreateBlog = ({ edit = false }: Props) => {
           </form>
         </Box>
       )}
-    </>
+    </GeneralPage>
   );
 };
 

@@ -29,6 +29,14 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_CREATE,
+    component: (
+      <AdminLayout>
+        <RoutesI.AdminManageContentCreate />
+      </AdminLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_EDIT_PRODUCT,
     component: (
       <AdminLayout>
@@ -52,22 +60,7 @@ export const adminPages = [
       </AdminLayout>
     ),
   },
-  {
-    path: ROUTE_PATHS.ADMIN_EDIT_BLOG,
-    component: (
-      <AdminLayout>
-        <RoutesI.AdminCreateBlog edit />
-      </AdminLayout>
-    ),
-  },
-  {
-    path: ROUTE_PATHS.ADMIN_CREATE_BLOG,
-    component: (
-      <AdminLayout>
-        <RoutesI.AdminCreateBlog />
-      </AdminLayout>
-    ),
-  },
+
   {
     path: ROUTE_PATHS.ADMIN_MANAGE_USERS,
     component: (
@@ -97,14 +90,6 @@ export const adminPages = [
     component: (
       <AdminLayout>
         <RoutesI.AdminManageAnalytics />
-      </AdminLayout>
-    ),
-  },
-  {
-    path: ROUTE_PATHS.ADMIN_MANAGE_BLOG,
-    component: (
-      <AdminLayout>
-        <RoutesI.AdminManageBlog />
       </AdminLayout>
     ),
   },

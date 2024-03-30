@@ -8,9 +8,7 @@ export const RoutesI = {
   AdminCreateProduct: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageProducts/CreateProduct")
   ),
-  AdminCreateBlog: lazyWithRetryAndLoader(
-    () => import("../pages/Admin/ManageBlog/CreateBlog")
-  ),
+
   AdminManageDashboard: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageDashboard")
   ),
@@ -26,11 +24,12 @@ export const RoutesI = {
   AdminManageAnalytics: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageAnalytics")
   ),
-  AdminManageBlog: lazyWithRetryAndLoader(
-    () => import("../pages/Admin/ManageBlog")
-  ),
+
   AdminManageContent: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageContent")
+  ),
+  AdminManageContentCreate: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManageContent/CreateBlog")
   ),
   AdminHome: lazyWithRetryAndLoader(() => import("../pages/Admin/Home")),
   UserHome: lazyWithRetryAndLoader(() => import("../pages/User/Home")),

@@ -8,8 +8,7 @@ export const ROUTE_PATHS = {
   ADMIN_HOME: "/admin",
   ADMIN: "/admin/manage-products",
   ADMIN_MANAGE_DASHBOARD: "/admin/manage-dashboard",
-  ADMIN_EDIT_BLOG: "/admin/manage-blog/edit/:id",
-  ADMIN_CREATE_BLOG: "/admin/manage-blog/create-blog",
+
   ADMIN_EDIT_PRODUCT: "/admin/manage-products/edit/:id",
   ADMIN_CREATE_PRODUCT: "/admin/manage-products/create-product",
   ADMIN_MANAGE_USERS: "/admin/manage-users",
@@ -18,6 +17,7 @@ export const ROUTE_PATHS = {
   ADMIN_MANAGE_ANALYTICS: "/admin/manage-analytics",
   ADMIN_MANAGE_BLOG: "/admin/manage-blog",
   ADMIN_MANAGE_CONTENT: "/admin/manage-content",
+  ADMIN_MANAGE_CONTENT_CREATE: "/admin/manage-content/create",
   USER_HOME: "/user",
   USER_DOCUMENTS: "/user/documents",
   USER_SCHEDULLE: "/user/schedulle",
