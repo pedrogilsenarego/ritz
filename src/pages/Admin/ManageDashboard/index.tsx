@@ -6,6 +6,7 @@ import Carousel from "../../../components/Carousel";
 import FileImage from "../../../assets/file_flat.svg";
 import Download from "../../../assets/download-04.svg";
 import Chart from "../../../assets/icon_chart_bar.svg";
+import TwoLevelChartPie from "../../../components/Charts/TwoLevelChartPie";
 
 const ManageDashboard = () => {
   const Panel = ({
@@ -30,7 +31,7 @@ const ManageDashboard = () => {
         style={{
           backgroundColor: "white",
           borderRadius: "20px",
-          padding: "30px",
+          padding: "30px 30px 20px 30px",
           display: "flex",
           height: "100%",
 
@@ -277,7 +278,7 @@ const ManageDashboard = () => {
         style={{
           backgroundColor: "white",
           borderRadius: "20px",
-
+          height: "100%",
           flexDirection: "column",
 
           ...panelStyles,
@@ -296,7 +297,7 @@ const ManageDashboard = () => {
             </p>
           </div>
         )}
-        <div style={{ padding: "40px 30px 30px 30px" }}>
+        <div style={{ padding: "40px 30px 28px 30px" }}>
           <Carousel
             navButton={true}
             navType="admin"
@@ -354,6 +355,92 @@ const ManageDashboard = () => {
       </div>
     );
   };
+  const PanelChart = ({
+    title,
+    subtitle,
+    value,
+    percentage,
+    icon,
+    entries,
+    panelStyles,
+  }: {
+    title?: string;
+    subtitle?: string;
+    value?: number;
+    percentage?: number;
+    icon?: string;
+    panelStyles?: CSSProperties;
+    entries?: { title: string; value: number }[];
+  }) => {
+    const data = [
+      { name: "PT", value: 50, color: "rgba(0, 180, 216, 1)" },
+      { name: "UK", value: 25, color: "rgba(0, 119, 182, 1)" },
+      { name: "ES", value: 25, color: "rgba(3, 4, 94, 1)" },
+    ];
+    return (
+      <div
+        style={{
+          backgroundColor: "white",
+          borderRadius: "20px",
+          padding: "30px 30px 20px 30px",
+          display: "flex",
+          height: "100%",
+
+          flexDirection: "column",
+          rowGap: "5px",
+          ...panelStyles,
+        }}
+      >
+        {(title || icon || subtitle) && (
+          <div style={{ display: "flex", columnGap: "10px" }}>
+            {icon && <img src={icon} alt="" />}
+            <div>
+              {title && (
+                <p style={{ fontSize: "14px", fontWeight: 600 }}>{title}</p>
+              )}
+              {subtitle && (
+                <p
+                  style={{
+                    fontSize: "11px",
+                    fontWeight: 400,
+                    color: "rgba(99, 98, 98, 1)",
+                  }}
+                >
+                  {subtitle}
+                </p>
+              )}
+            </div>
+          </div>
+        )}
+
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <TwoLevelChartPie data={data} />
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between  " }}>
+          {data.map((item, index) => (
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                columnGap: "10px",
+                alignItems: "center",
+              }}
+            >
+              <div
+                style={{
+                  height: "13px",
+                  borderRadius: "20px",
+                  width: "20px",
+                  backgroundColor: item.color,
+                }}
+              />
+              <p>{item.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
   return (
     <GeneralPage title="Dashboard Analítico" subTitle="Performance">
       <Grid
@@ -394,7 +481,7 @@ const ManageDashboard = () => {
             }}
           >
             <Grid item xs={4}>
-              <Panel
+              <PanelChart
                 icon={Dognut}
                 title="Tráfego Geográfico"
                 subtitle="Distribuição Orgânica"
