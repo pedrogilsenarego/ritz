@@ -128,7 +128,8 @@ const ManageContent = () => {
             style={{
               padding: "30px",
               borderRadius: "20px",
-              border: "1px solid #CDCDCD",
+
+              backgroundColor: "white",
               marginTop: "32px",
             }}
           >
@@ -198,7 +199,7 @@ const ManageContent = () => {
             style={{
               padding: "30px",
               borderRadius: "20px",
-              border: "1px solid #CDCDCD",
+              backgroundColor: "white",
             }}
           >
             <div style={{ display: "flex", justifyContent: "space-between" }}>
