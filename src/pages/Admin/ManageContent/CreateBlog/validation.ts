@@ -14,11 +14,20 @@ const onlySpecifiTypes = (fileFormats: string[]): Yup.TestConfig<any> => ({
 
 const fileSize = (max: number, unit = "MB"): Yup.TestConfig<any> => ({
   name: "fileSize",
-  message: `${i18n.t(
-    "pages.admin.createProducts.form.fileSize",
-    "The file size should be less than:"
-  )} ${max}${unit}`,
-  test: (f: FileList) => f && f[0]?.size <= 1000000 * max,
+  message: (fileList: any | undefined) => {
+    console.log(fileList);
+    if (!fileList || fileList.value.length === 0) {
+      // Handle case when no file is provided
+      return "Please select a file";
+    } else {
+      return `${i18n.t(
+        "pages.admin.createProducts.form.fileSize",
+        "The file size should be less than:"
+      )} ${max}${unit}`;
+    }
+  },
+  test: (fileList: FileList | undefined) =>
+    !fileList || fileList[0]?.size <= 1000000 * max,
 });
 
 export const FORM_VALIDATION = Yup.object().shape({
@@ -29,6 +38,9 @@ export const FORM_VALIDATION = Yup.object().shape({
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   subtitlePT: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  altImage: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   subtitleEN: Yup.string().required(

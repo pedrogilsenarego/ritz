@@ -62,7 +62,16 @@ const useCreateProduct = ({ edit = false }: Props) => {
       defaultValues: initialValues,
     });
   useEffect(() => {
-    console.log("template", watch("template"), "tag", watch("tag"));
+    console.log(
+      "template",
+      watch("template"),
+      "tag",
+      watch("tag"),
+      "altImage",
+      watch("altImage"),
+      "image",
+      watch("images")
+    );
   }, [formState]);
 
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(

@@ -4,7 +4,7 @@ export const defaultValues = {
   subtitlePT: "",
   subtitleEN: "",
   images: [],
-
+  altImage: "",
   template: "1",
   mainTextPT: "",
   mainTextEN: "",
@@ -18,7 +18,7 @@ export const defaultValues1 = (createData: any) => {
     subtitlePT: createData?.subtitlePT || "",
     subtitleEN: createData?.subtitleEN || "",
     images: createData?.images || [],
-
+    altImage: createData?.altImage || "",
     template: createData?.template || "0",
     mainTextPT: createData?.mainTextPT || "",
     mainTextEN: createData?.mainTextEN || "",

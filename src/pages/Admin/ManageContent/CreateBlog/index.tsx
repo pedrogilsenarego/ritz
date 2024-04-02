@@ -2,8 +2,7 @@ import { Box, Grid } from "@mui/material";
 
 import ControlledFormInputEditor from "../../../../components/Inputs/ControlledInputEditor";
 import ControlledSelect from "../../../../components/Inputs/ControlledSelect";
-import FileUploader from "../../../../components/Inputs/FileUploader";
-import MultiSelectInput from "../../../../components/Inputs/MultiSelect/MultiSelectInput";
+
 import Loader from "../../../../components/Loader";
 
 import { i18n } from "../../../../translations/i18n";
@@ -14,6 +13,7 @@ import ControlledFormInput from "../../../../components/Inputs/ControlledInputAd
 import ButtonBlue from "../../../../components/Ui/ButtonBlue";
 import Internet from "../../../../assets/internet.svg";
 import Eye from "../../../../assets/eye.svg";
+import FileUploaderAdmin from "../../../../components/Inputs/FileUploaderAdmin";
 
 interface Props {
   edit?: boolean;
@@ -90,21 +90,36 @@ const CreateBlog = ({ edit = false }: Props) => {
                       />
                     </Grid>
                     <Grid item xs={12}>
-                      <FileUploader
-                        name="images"
-                        hasLabel
-                        multiple
-                        loading={imagesLoader}
-                        touched={setTouchedImages}
-                        value={imagesValue || undefined}
-                        control={control}
-                        setValue={setValue}
-                        setError={setError}
-                        fieldTitle={i18n.t(
-                          "pages.admin.createProducts.form.images",
-                          "Images"
-                        )}
-                      />
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "end",
+                          columnGap: "30px",
+                          width: "70%",
+                        }}
+                      >
+                        <div style={{ width: "50%" }}>
+                          <FileUploaderAdmin
+                            name="images"
+                            hasLabel
+                            loading={imagesLoader}
+                            touched={setTouchedImages}
+                            value={imagesValue || undefined}
+                            control={control}
+                            setValue={setValue}
+                            setError={setError}
+                            fieldTitle={"Imagem Única"}
+                          />
+                        </div>
+                        <div style={{ width: "50%" }}>
+                          <ControlledFormInput
+                            label=""
+                            control={control}
+                            name="altImage"
+                            inputPlaceholder="Alt text"
+                          />
+                        </div>
+                      </div>
                     </Grid>
 
                     <Grid item xs={12}>
