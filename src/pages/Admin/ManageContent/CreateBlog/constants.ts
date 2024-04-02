@@ -4,11 +4,11 @@ export const defaultValues = {
   subtitlePT: "",
   subtitleEN: "",
   images: [],
-  clinic: "clinic1",
+
   template: "1",
   mainTextPT: "",
   mainTextEN: "",
-  tags: [],
+  tag: "1",
 };
 
 export const defaultValues1 = (createData: any) => {
@@ -18,10 +18,10 @@ export const defaultValues1 = (createData: any) => {
     subtitlePT: createData?.subtitlePT || "",
     subtitleEN: createData?.subtitleEN || "",
     images: createData?.images || [],
-    clinic: createData?.clinic || "clinic1",
+
     template: createData?.template || "0",
     mainTextPT: createData?.mainTextPT || "",
     mainTextEN: createData?.mainTextEN || "",
-    tags: createData?.tags || [],
+    tag: createData?.tag || "1",
   };
 };

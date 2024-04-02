@@ -40,13 +40,11 @@ export const FORM_VALIDATION = Yup.object().shape({
   mainTextEN: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  clinic: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  ),
+
   template: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  tags: Yup.mixed().required(
+  tag: Yup.mixed().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   images: Yup.mixed()

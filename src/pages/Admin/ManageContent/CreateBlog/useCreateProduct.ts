@@ -56,10 +56,14 @@ const useCreateProduct = ({ edit = false }: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoadingProduct, initialValues.images]);
 
-  const { reset, control, handleSubmit, setValue, setError } = useForm({
-    resolver: yupResolver(FORM_VALIDATION),
-    defaultValues: initialValues,
-  });
+  const { reset, control, handleSubmit, setValue, setError, watch, formState } =
+    useForm({
+      resolver: yupResolver(FORM_VALIDATION),
+      defaultValues: initialValues,
+    });
+  useEffect(() => {
+    console.log("template", watch("template"), "tag", watch("tag"));
+  }, [formState]);
 
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
     productsServices.createProduct,

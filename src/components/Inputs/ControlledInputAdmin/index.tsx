@@ -126,7 +126,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
         style={{
           marginBottom: hasError ? "0.2rem" : "0",
           borderRadius: type === "search" ? "15px" : "10px",
-          backgroundColor: type === "search" ? "#CBCBCB" : "transparent",
+          backgroundColor: type === "search" ? "#CBCBCB" : "white",
           width: "100%",
         }}
         {...field}
@@ -177,7 +177,7 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
                   </InputAdornment>
                 ),
               }
-            : { sx: { fontSize: "20px" } }
+            : { sx: { fontSize: "20px", fontFamily: "Inter" } }
         }
       />
     </FormControlComp>

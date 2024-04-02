@@ -124,42 +124,27 @@ const CreateBlog = ({ edit = false }: Props) => {
                   </Grid>
                 </Grid>
                 <Grid item xs={4}>
-                  <Grid item xs={12}>
+                  <Grid item xs={12} marginTop={"30px"}>
                     <ControlledSelect
                       control={control}
-                      label="Template"
-                      name="clinic"
+                      name="template"
                       options={[
-                        { value: "clinic1", label: "Clinic1" },
-                        { value: "clinic2", label: "Clinic2" },
-                        { value: "clinic3", label: "Clinic3" },
-                        { value: "clinic4", label: "Clinic4" },
+                        { value: "1", label: "1 -  Capa > Corpo" },
+                        { value: "2", label: "2 -  Corpo > Imagem > Corpo" },
                       ]}
                       defaultLabel={"Template"}
                     />
                   </Grid>
-                  <Grid item xs={12}>
-                    <MultiSelectInput
-                      disableDefaultLabel
-                      setValue={setValue}
-                      multiple
+                  <Grid item xs={12} style={{ marginTop: "20px" }}>
+                    <ControlledSelect
+                      balls
                       control={control}
-                      chips
-                      label="Etiqueta"
-                      items={[
-                        {
-                          value: "unique",
-                          title: "Unique",
-                          titlePT: "Unico",
-                        },
-                        {
-                          value: "original",
-                          title: "Original",
-                          titlePT: "Original",
-                        },
-                        { value: "kids", title: "Kids", titlePT: "Crianças" },
+                      name="tag"
+                      options={[
+                        { value: "1", label: "ESTÉTICA" },
+                        { value: "2", label: "CIRÚRGICO" },
                       ]}
-                      name="etiqueta"
+                      defaultLabel={"Template"}
                     />
                   </Grid>
                 </Grid>
