@@ -23,7 +23,7 @@ const UserSidebarMobile = () => {
       style={{
         position: "absolute",
 
-        bottom: "40%",
+        bottom: "25%",
 
         zIndex: 10,
       }}
@@ -67,7 +67,7 @@ const UserSidebarMobile = () => {
             display: "flex",
             flexDirection: "column",
             rowGap: "20px",
-            padding: "20px 20px",
+            padding: "40px 20px 50px 20px",
           }}
         >
           <Button

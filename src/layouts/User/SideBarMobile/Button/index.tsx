@@ -38,6 +38,8 @@ const Button = ({
           location.pathname === path ? `rgba(255, 255, 255, 0.03)` : undefined,
         cursor: "pointer",
         borderRadius: "24px",
+        paddingBottom: "18px",
+        paddingTop: "20px",
       }}
       onClick={() => navigate(path)}
       {...props}
@@ -73,7 +75,13 @@ const Button = ({
       </Box>
       <Box
         style={{
-          borderBottom: bottomLine ? "solid 1px grey" : undefined,
+          minWidth:
+            location.pathname === ROUTE_PATHS.USER_HOME ? "45vw" : "0vw",
+
+          borderBottom:
+            bottomLine && location.pathname === ROUTE_PATHS.USER_HOME
+              ? "solid 1px grey"
+              : undefined,
         }}
       >
         <p
