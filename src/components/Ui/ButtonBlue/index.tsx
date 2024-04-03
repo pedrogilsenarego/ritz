@@ -2,13 +2,14 @@ import { CSSProperties } from "react";
 import { ButtonProps } from "@mui/material";
 
 interface Props extends ButtonProps {
-  icon: string;
+  icon?: string;
   label: string;
   onClick?: () => void;
   styles?: CSSProperties;
+  textStyles?: CSSProperties;
 }
 
-const ButtonBlue = ({ icon, label, onClick, styles }: Props) => {
+const ButtonBlue = ({ icon, label, onClick, styles, textStyles }: Props) => {
   return (
     <button
       onClick={onClick}
@@ -25,8 +26,8 @@ const ButtonBlue = ({ icon, label, onClick, styles }: Props) => {
         ...styles,
       }}
     >
-      <img src={icon} alt="" style={{ width: "20px" }} />
-      <p style={{ fontSize: "15px" }}>{label}</p>
+      {icon && <img src={icon} alt="" style={{ width: "20px" }} />}
+      <p style={{ fontSize: "15px", ...textStyles }}>{label}</p>
     </button>
   );
 };

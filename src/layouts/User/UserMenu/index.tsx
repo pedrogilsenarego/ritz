@@ -12,6 +12,8 @@ const UserMenu = () => {
   };
   const handleClickPopover = (event: React.MouseEvent<HTMLElement>) => {
     if (anchorEl) {
+      event.preventDefault();
+      event.stopPropagation();
       setAnchorEl(null);
     } else {
       setAnchorEl(event.currentTarget);
