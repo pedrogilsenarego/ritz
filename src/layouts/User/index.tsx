@@ -8,6 +8,7 @@ import UserMenu from "./UserMenu";
 import { useLocation } from "react-router-dom";
 import { ROUTE_PATHS } from "../../routes/constants";
 import UserSidebarMobile from "./SideBarMobile";
+import HeaderMobile from "./HeaderMobile";
 
 interface HomepageLayoutProps {
   children: React.ReactNode;
@@ -81,6 +82,7 @@ const UserLayout = ({ children }: HomepageLayoutProps) => {
                 : "blur(4px)",
           }}
         />
+        <HeaderMobile />
         <UserSidebarMobile />
         <img
           src={backgroundImage}

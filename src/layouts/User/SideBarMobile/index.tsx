@@ -23,7 +23,7 @@ const UserSidebarMobile = () => {
       style={{
         position: "absolute",
 
-        bottom: "25%",
+        bottom: "20%",
 
         zIndex: 10,
       }}
