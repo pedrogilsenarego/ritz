@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Close from "../../../../assets/close.svg";
 import Settings from "../../../../assets/setting-01.svg";
 import { useState } from "react";
@@ -10,6 +10,8 @@ import Check from "../../../../assets/tick-02-white.svg";
 
 const UserPopoverContent = ({ handleClose }: any) => {
   const [mode, setMode] = useState<"normal" | "edit">("normal");
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const { reset, control, handleSubmit } = useForm<any>({});
   const Normal = () => {
     return (
@@ -18,12 +20,12 @@ const UserPopoverContent = ({ handleClose }: any) => {
           e.stopPropagation();
         }}
         style={{
-          padding: "30px 100px",
+          padding: "30px 50px",
           display: "flex",
           flexDirection: "column",
           rowGap: "12px",
-          minWidth: "400px",
-          justifyContent: "end",
+          width: mobile ? "90vw" : "400px",
+          justifyContent: "center",
           alignItems: "center",
         }}
       >
@@ -54,7 +56,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
             alignItems: "center",
             borderTop: "2px solid lightGray",
             borderBottom: "1px solid lightGray",
-            padding: "20px 0px",
+            padding: "20px 40px",
             marginTop: "20px",
           }}
         >
@@ -79,7 +81,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
           display: "flex",
           flexDirection: "column",
           rowGap: "12px",
-          width: "400px",
+          width: mobile ? "90vw" : "400px",
           justifyContent: "end",
           alignItems: "center",
         }}
@@ -169,6 +171,12 @@ const UserPopoverContent = ({ handleClose }: any) => {
             name="email"
             inputPlaceholder="e-mail"
           />
+          <ControlledFormInput
+            label="Telefone"
+            control={control}
+            name="mobile"
+            inputPlaceholder="telefone"
+          />
 
           <div
             style={{
@@ -190,16 +198,32 @@ const UserPopoverContent = ({ handleClose }: any) => {
           </div>
 
           <ControlledFormInput
-            label="Nome Completo"
+            label="Morada"
             control={control}
-            name="name"
-            inputPlaceholder="nome"
+            name="address"
+            inputPlaceholder="rua"
           />
+          <div style={{ display: "flex", columnGap: "10px" }}>
+            <div style={{ width: "40%" }}>
+              <ControlledFormInput
+                control={control}
+                name="postalCode"
+                inputPlaceholder="Código Postal"
+              />
+            </div>
+            <div style={{ width: "60%" }}>
+              <ControlledFormInput
+                control={control}
+                name="emailcity"
+                inputPlaceholder="Cidade"
+              />
+            </div>
+          </div>
           <ControlledFormInput
-            label="E-mail"
+            label="Contribuinte"
             control={control}
-            name="email"
-            inputPlaceholder="e-mail"
+            name="nif"
+            inputPlaceholder="NIF"
           />
           <div
             style={{

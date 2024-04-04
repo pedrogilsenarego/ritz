@@ -34,7 +34,7 @@ const BasicPopover: React.FC<BasicPopoverProps> = ({
         }}
         sx={{
           marginTop: "20px",
-
+          maxHeight: "85vh",
           cursor: "pointer",
         }}
         PaperProps={{

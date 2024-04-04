@@ -101,7 +101,9 @@ const UserLayout = ({ children }: HomepageLayoutProps) => {
                 : "blur(4px)",
           }}
         />
-        <div style={{ position: "relative", zIndex: 2, height: "100%" }}>
+        <div
+          style={{ position: "absolute", zIndex: 2, height: "100%", top: 0 }}
+        >
           {children}
         </div>
         <Footer isUser />
