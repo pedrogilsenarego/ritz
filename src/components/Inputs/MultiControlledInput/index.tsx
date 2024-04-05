@@ -9,7 +9,7 @@ export type MultiControlInputLabelProps = {
 
 const MultiControlInputLabel = ({ children }: MultiControlInputLabelProps) => {
   return (
-    <div style={{ marginLeft: "5px" }}>
+    <div style={{ marginLeft: "5px", marginBottom: "10px" }}>
       <p style={{ fontSize: "12px", fontWeight: 600, fontFamily: "Inter" }}>
         {children}
       </p>
