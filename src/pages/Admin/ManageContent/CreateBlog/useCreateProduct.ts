@@ -70,7 +70,9 @@ const useCreateProduct = ({ edit = false }: Props) => {
       "altImage",
       watch("altImage"),
       "image",
-      watch("images")
+      watch("images"),
+      "English",
+      watch("titleEN")
     );
   }, [formState]);
 

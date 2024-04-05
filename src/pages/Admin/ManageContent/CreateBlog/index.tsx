@@ -14,6 +14,10 @@ import ButtonBlue from "../../../../components/Ui/ButtonBlue";
 import Internet from "../../../../assets/internet.svg";
 import Eye from "../../../../assets/eye.svg";
 import FileUploaderAdmin from "../../../../components/Inputs/FileUploaderAdmin";
+import {
+  MultiControlInput,
+  MultiControlInputLabel,
+} from "../../../../components/Inputs/MultiControlledInput";
 
 interface Props {
   edit?: boolean;
@@ -61,9 +65,22 @@ const CreateBlog = ({ edit = false }: Props) => {
             <Box className={classes.inputBox}>
               <Grid container spacing={"80px"}>
                 <Grid item xs={8}>
-                  {" "}
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
+                      <MultiControlInput
+                        miniLabels={["PT", "EN", "ES"]}
+                        names={["titlePT", "titleEN", "titleES"]}
+                        control={control}
+                        placeholders={[
+                          "Escreva em Portugês",
+                          "Escreva em Inglês",
+                          "Escreva em Espanhol",
+                        ]}
+                      >
+                        <MultiControlInputLabel>
+                          H1|Título
+                        </MultiControlInputLabel>
+                      </MultiControlInput>
                       <ControlledFormInput
                         label="H1|Título"
                         control={control}
@@ -77,7 +94,7 @@ const CreateBlog = ({ edit = false }: Props) => {
                       />
                       <ControlledFormInput
                         control={control}
-                        name="ES"
+                        name="titleES"
                         inputPlaceholder="Escreva em Espanhol"
                       />
                     </Grid>
