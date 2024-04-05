@@ -34,12 +34,14 @@ const MultiControlInput = ({
   const name = names[activeInput];
   const {
     formState: { errors },
+    field,
   } = useController({ name, control });
   const error = get(errors, name, "");
   const classes = useStyles();
   return (
     <div>
       {children}
+
       <TextField
         variant="outlined"
         className={classes().root}
@@ -48,23 +50,50 @@ const MultiControlInput = ({
           backgroundColor: "white",
           width: "100%",
         }}
+        onChange={field.onChange}
+        value={field.value}
         //{...field}
         id={name}
         //disabled={isSubmitting}
         placeholder={placeholders[activeInput]}
         InputProps={{
-          sx: { fontSize: "20px" },
+          sx: {
+            paddingRight: 0,
+            fontFamily: "Inter",
+            fontSize: "12px",
+          },
           endAdornment: (
             <div style={{ display: "flex" }}>
               {miniLabels.map((label, index) => {
                 return (
-                  <div onClick={() => setActiveInput(index)} key={index}>
+                  <div
+                    onClick={() => setActiveInput(index)}
+                    key={index}
+                    style={{
+                      cursor: "pointer",
+                      backgroundColor:
+                        index === activeInput
+                          ? "rgba(84, 83, 83, 1)"
+                          : "transparent",
+                      borderTopLeftRadius: index === 0 ? "10px" : "5px",
+                      borderBottomLeftRadius: index === 0 ? "10px" : "5px",
+                      borderTopRightRadius:
+                        index === names.length - 1 ? "10px" : "5px",
+                      borderBottomRightRadius:
+                        index === names.length - 1 ? "10px" : "5px",
+                      padding: "10px",
+                    }}
+                  >
                     <p
                       style={{
                         fontSize: "15px",
                         lineHeight: "20px",
                         fontFamily: "Inter",
                         fontWeight: 500,
+                        color:
+                          index === activeInput
+                            ? "white"
+                            : "rgba(84, 83, 83, 1)",
                       }}
                     >
                       {label}

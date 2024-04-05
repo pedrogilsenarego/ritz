@@ -72,7 +72,9 @@ const useCreateProduct = ({ edit = false }: Props) => {
       "image",
       watch("images"),
       "English",
-      watch("titleEN")
+      watch("titleEN"),
+      "spanish",
+      watch("titleES")
     );
   }, [formState]);
 
