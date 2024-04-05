@@ -135,7 +135,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
 
     imagesLoader,
     imagesValue,
-
+    watch,
     setTouchedImages,
   };
 };

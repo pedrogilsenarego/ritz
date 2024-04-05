@@ -32,6 +32,7 @@ const CreateBlog = ({ edit = false }: Props) => {
     control,
     setValue,
     setError,
+    watch,
     isCreatingProduct,
     isEditingProduct,
     isLoadingProduct,
@@ -76,27 +77,12 @@ const CreateBlog = ({ edit = false }: Props) => {
                           "Escreva em Inglês",
                           "Escreva em Espanhol",
                         ]}
+                        watch={watch}
                       >
                         <MultiControlInputLabel>
                           H1|Título
                         </MultiControlInputLabel>
                       </MultiControlInput>
-                      <ControlledFormInput
-                        label="H1|Título"
-                        control={control}
-                        name="titlePT"
-                        inputPlaceholder="Escreva em Português"
-                      />
-                      <ControlledFormInput
-                        control={control}
-                        name="titleEN"
-                        inputPlaceholder="Escreva em Inglês"
-                      />
-                      <ControlledFormInput
-                        control={control}
-                        name="titleES"
-                        inputPlaceholder="Escreva em Espanhol"
-                      />
                     </Grid>
                     <Grid item xs={12}>
                       <ControlledFormInput

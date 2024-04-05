@@ -1,5 +1,5 @@
 import { FormHelperText, TextField } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Control, get, useController } from "react-hook-form";
 import useStyles from "./styles";
 
@@ -23,21 +23,25 @@ const MultiControlInput = ({
   names,
   placeholders,
   miniLabels,
+  watch,
 }: {
   children: React.ReactNode;
   control: Control<any, any>;
   names: string[];
   placeholders: string[];
   miniLabels: string[];
+  watch: any;
 }) => {
   const [activeInput, setActiveInput] = useState<number>(0);
   const name = names[activeInput];
-  const {
-    formState: { errors },
-    field,
-  } = useController({ name, control });
-  const error = get(errors, name, "");
+  const { formState, field } = useController({ name, control });
+
+  const error = get(formState.errors, name, "");
   const classes = useStyles();
+  const handleActiveInputChange = (index: number) => {
+    setActiveInput(index);
+  };
+
   return (
     <div>
       {children}
@@ -51,8 +55,7 @@ const MultiControlInput = ({
           width: "100%",
         }}
         onChange={field.onChange}
-        value={field.value}
-        //{...field}
+        value={watch(name)}
         id={name}
         //disabled={isSubmitting}
         placeholder={placeholders[activeInput]}
@@ -67,7 +70,7 @@ const MultiControlInput = ({
               {miniLabels.map((label, index) => {
                 return (
                   <div
-                    onClick={() => setActiveInput(index)}
+                    onClick={() => handleActiveInputChange(index)}
                     key={index}
                     style={{
                       cursor: "pointer",
