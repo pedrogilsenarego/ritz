@@ -108,8 +108,16 @@ const MultiControlInput = ({
           ),
         }}
       />
-
-      <FormHelperText color="error">{error.message}</FormHelperText>
+      <div style={{ display: "flex", columnGap: "10px", marginTop: "5px" }}>
+        {names.map((name, index) => {
+          const error = get(formState.errors, name, "");
+          return (
+            <p style={{ fontFamily: "Inter", color: "red", fontSize: "12px" }}>
+              {error.message}
+            </p>
+          );
+        })}
+      </div>
     </div>
   );
 };

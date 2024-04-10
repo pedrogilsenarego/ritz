@@ -44,12 +44,18 @@ const FormControlComp = (props: BaseProps) => {
         }}
       >
         {label && (
-          <InputLabel
-            htmlFor={name}
-            style={{ transform: "translate(0, -0rem)" }}
-          >
-            {label}
-          </InputLabel>
+          <div style={{ display: "flex", width: "100%" }}>
+            <p
+              style={{
+                fontSize: "12px",
+                fontWeight: 500,
+                fontFamily: "Inter",
+                marginBottom: "10px",
+              }}
+            >
+              {label}
+            </p>
+          </div>
         )}
         {tooltipLabel && (
           <Tooltip placement="left" color="primary.100" title={tooltipLabel}>
@@ -60,7 +66,16 @@ const FormControlComp = (props: BaseProps) => {
         )}
       </Box>
       {children}
-      <FormHelperText color="error">{error.message}</FormHelperText>
+      <p
+        style={{
+          fontFamily: "Inter",
+          color: "red",
+          fontSize: "12px",
+          marginLeft: "10px",
+        }}
+      >
+        {error.message}
+      </p>
     </FormControl>
   );
 };

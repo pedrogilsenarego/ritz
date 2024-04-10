@@ -179,7 +179,7 @@ const FileUploaderAdmin = ({
           <div
             style={{
               backgroundColor: "white",
-
+              height: "28px",
               borderRadius: "5px",
               padding: "8px",
               marginTop: "10px",
@@ -214,16 +214,17 @@ const FileUploaderAdmin = ({
 
           <Box display="flex" justifyContent="start">
             {error && (
-              <Typography
+              <p
                 style={{
+                  fontFamily: "Inter",
                   color: "red",
                   fontSize: "12px",
-                  marginLeft: "15px",
+                  marginLeft: "10px",
                   marginTop: "5px",
                 }}
               >
                 {error.message}
-              </Typography>
+              </p>
             )}
           </Box>
         </div>

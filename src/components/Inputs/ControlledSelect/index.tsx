@@ -140,7 +140,16 @@ const ControlledSelect = ({
           </Select>
         )}
       />
-      <FormHelperText color="error">{error.message}</FormHelperText>
+      <p
+        style={{
+          fontFamily: "Inter",
+          color: "red",
+          fontSize: "12px",
+          marginLeft: "10px",
+        }}
+      >
+        {error.message}
+      </p>
     </FormControl>
   );
 };

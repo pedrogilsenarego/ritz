@@ -32,13 +32,13 @@ const fileSize = (max: number, unit = "MB"): Yup.TestConfig<any> => ({
 
 export const FORM_VALIDATION = Yup.object().shape({
   titlePT: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
   titleEN: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} EN`
   ),
   titleES: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} ES`
   ),
   subtitlePT: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`

@@ -73,7 +73,7 @@ const CreateBlog = ({ edit = false }: Props) => {
                         names={["titlePT", "titleEN", "titleES"]}
                         control={control}
                         placeholders={[
-                          "Escreva em Portugês",
+                          "Escreva em Português",
                           "Escreva em Inglês",
                           "Escreva em Espanhol",
                         ]}
@@ -92,16 +92,16 @@ const CreateBlog = ({ edit = false }: Props) => {
                         inputPlaceholder="Escreva em Português"
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} style={{ marginTop: "40px" }}>
                       <div
                         style={{
                           display: "flex",
                           alignItems: "end",
-                          columnGap: "30px",
+                          columnGap: "10px",
                           width: "70%",
                         }}
                       >
-                        <div style={{ width: "50%" }}>
+                        <div style={{ width: "25%" }}>
                           <FileUploaderAdmin
                             name="images"
                             hasLabel
@@ -125,14 +125,11 @@ const CreateBlog = ({ edit = false }: Props) => {
                       </div>
                     </Grid>
 
-                    <Grid item xs={12}>
+                    <Grid item xs={12} style={{ marginTop: "40px" }}>
                       <ControlledFormInputEditor
                         control={control}
                         name="mainTextPT"
-                        label={i18n.t(
-                          "pages.admin.createProducts.form.maintextPT",
-                          "Main text PT"
-                        )}
+                        label="Corpo Único"
                         inputPlaceholder={i18n.t(
                           "pages.admin.createProducts.form.maintextPT",
                           "Main text PT"
