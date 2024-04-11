@@ -1,13 +1,13 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import Button from "../../../../components/Ui/Button";
 import FAQI from "../../../../assets/faq.svg";
 import { useState } from "react";
+import { Content } from "../../types";
 
-const FAQ = () => {
+const FAQ = ({ data }: { data: Content }) => {
   const theme = useTheme();
 
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const MoreInfo = () => {
+  const MoreInfo = ({ q, a }: { q: string; a: string }) => {
     const [open, setOpen] = useState<boolean>(false);
     return (
       <div>
@@ -25,21 +25,22 @@ const FAQ = () => {
           <Typography
             style={{ fontSize: "17px", fontWeight: 600, letterSpacing: "1px" }}
           >
-            Para quem é indicado este tratamento?
+            {q}
           </Typography>
           <p style={{ fontSize: "30px" }}>+</p>
         </div>
         {open && (
           <div style={{ width: "80%", padding: "20px 0px 0px 10px" }}>
-            <Typography style={{ fontSize: "15px", fontWeight: 400 }}>
-              É indicado para qualquer pessoa que pretenda corrigir assimetrias
-              ou conferir à face um aspeto harmonioso ou mais jovem.
-            </Typography>
+            <Typography
+              style={{ fontSize: "15px", fontWeight: 400 }}
+              dangerouslySetInnerHTML={{ __html: a }}
+            />
           </div>
         )}
       </div>
     );
   };
+  if (!data?.faq?.length || data?.faq?.length < 0) return <></>;
   return (
     <div
       style={{
@@ -64,9 +65,9 @@ const FAQ = () => {
           PERGUNTAS FREQUENTES
         </Typography>
       </div>
-      <MoreInfo />
-      <MoreInfo />
-      <MoreInfo />
+      {data?.faq?.map((each, index) => (
+        <MoreInfo key={index} q={each.q} a={each.a} />
+      ))}
     </div>
   );
 };

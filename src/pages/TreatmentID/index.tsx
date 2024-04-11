@@ -3,8 +3,24 @@ import Description from "./Components/Description";
 
 import FAQ from "./Components/FAQ";
 import { MAX_SCREEN } from "../../constants/screen";
+import { useNavigate, useParams } from "react-router-dom";
+import { Content, listPages } from "./types";
+import { ROUTE_PATHS } from "../../routes/constants";
+import { useEffect } from "react";
 
 const TreatmentID = () => {
+  const params = useParams();
+  const navigate = useNavigate();
+  const content = listPages.includes(params?.id || "")
+    ? require(`./${params.id}`)
+    : null;
+
+  useEffect(() => {
+    if (!content) navigate(ROUTE_PATHS.HOME);
+  }, [content]);
+
+  const data = content?.content as Content;
+
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -37,22 +53,22 @@ const TreatmentID = () => {
               fontWeight: 500,
             }}
           >
-            A02 | Nome do tratamento
+            {data?.title}
           </Typography>
         </Container>
       </div>
       <Container
         style={{
-          marginTop: mobile ? "100px" : "200px",
+          marginTop: mobile ? "100px" : "0px",
           maxWidth: MAX_SCREEN,
           padding: mobile ? undefined : "0px 190px",
         }}
       >
-        <div style={{ marginTop: "50px" }}>
-          <Description />
+        <div>
+          <Description data={data} />
         </div>
         <div style={{ marginTop: "150px" }}>
-          <FAQ />
+          <FAQ data={data} />
         </div>
       </Container>
     </>
