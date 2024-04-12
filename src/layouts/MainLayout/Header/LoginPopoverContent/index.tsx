@@ -1,12 +1,9 @@
-import { Box, Typography } from "@mui/material";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { useSignOut } from "../../../../hooks/useLogout";
 import { State } from "../../../../redux/types";
-import { ROUTE_PATHS } from "../../../../routes/constants";
-import { Colors } from "../../../../theme/theme";
-import { i18n } from "../../../../translations/i18n";
+
 import { CurrentUser } from "../../../../types/user";
 import Login from "./Auth/Login";
 import RecoverPassword from "./Auth/RecoverPassword";
@@ -38,11 +35,10 @@ const LoginPopoverContent = ({ handleClose }: any) => {
     <div
       //onMouseLeave={handleClose}
       style={{
-        margin: "20px 50px",
         display: "flex",
         flexDirection: "column",
         rowGap: "12px",
-        minWidth: "200px",
+        width: "400px",
         justifyContent: "end",
         alignItems: "end",
       }}

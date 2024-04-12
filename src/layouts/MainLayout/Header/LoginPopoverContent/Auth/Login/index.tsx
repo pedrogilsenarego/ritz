@@ -1,19 +1,20 @@
 import { Box, Divider, Grid, Typography } from "@mui/material";
-import ControlledFormInput from "../../../../../../components/Inputs/ControlledInput";
+
 import Loader from "../../../../../../components/Loader";
 import Button from "../../../../../../components/Ui/Button";
 import { ROUTE_PATHS } from "../../../../../../routes/constants";
 import { Colors } from "../../../../../../theme/theme";
 import { i18n } from "../../../../../../translations/i18n";
-import useStyles from "./styles";
+
 import useLogin from "./useLogin";
+import ControlledFormInput from "../../../../../../components/Inputs/ControlledInputAdmin";
+import ButtonBlue from "../../../../../../components/Ui/ButtonBlue";
 
 type Props = {
   setMode: (mode: "register") => void;
 };
 
 const Login = ({ setMode }: Props) => {
-  const classes = useStyles();
   const { handleSubmit, onSubmit, control, isLogin, navigate } = useLogin();
   return (
     <>
@@ -22,99 +23,129 @@ const Login = ({ setMode }: Props) => {
           customMessage={i18n.t("pages.auth.login.loaderMessage", "Logging in")}
         />
       ) : (
-        <Box className={classes.root} margin="0px 20px 0px 20px">
-          <Box>
-            <Typography
+        <div>
+          <Box style={{ padding: "80px 70px 40px 70px" }}>
+            <p
               style={{
-                fontSize: "35px",
-                fontWeight: 800,
+                fontSize: "20px",
+                fontWeight: 600,
                 textAlign: "center",
-                lineHeight: "49px",
+                letterSpacing: "1px",
+                fontFamily: "Inter",
               }}
             >
               Área de cliente
-            </Typography>
-          </Box>
-          <form
-            className={classes.form}
-            id="login-in"
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <Box className={classes.inputBox}>
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <ControlledFormInput
-                    control={control}
-                    name="email"
-                    inputPlaceholder={i18n.t("pages.auth.login.email", "Email")}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <ControlledFormInput
-                    control={control}
-                    type="password"
-                    name="password"
-                    inputPlaceholder={i18n.t(
-                      "pages.auth.login.password",
-                      "Password"
-                    )}
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                  <Typography
-                    className={classes.register}
-                    onClick={() => navigate(ROUTE_PATHS.RECOVER_PASSWORD)}
-                  >
-                    Recuperar password
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Box>
-            <Box
-              style={{
-                marginTop: "60px",
-                display: "flex",
-                flexDirection: "column",
-                rowGap: "15px",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-              }}
+            </p>
+
+            <form
+              style={{ marginTop: "40px" }}
+              id="login-in"
+              onSubmit={handleSubmit(onSubmit)}
             >
-              <Button
-                fullWidth
-                darkenColors
-                type="submit"
-                style={{ color: Colors.blackish[400] }}
+              <Box>
+                <Grid container spacing={4}>
+                  <Grid item xs={12}>
+                    <ControlledFormInput
+                      control={control}
+                      name="email"
+                      inputPlaceholder={i18n.t(
+                        "pages.auth.login.email",
+                        "Email"
+                      )}
+                    />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <ControlledFormInput
+                      control={control}
+                      type="password"
+                      name="password"
+                      inputPlaceholder={i18n.t(
+                        "pages.auth.login.password",
+                        "Password"
+                      )}
+                    />
+                    <p
+                      style={{
+                        marginTop: "12px",
+                        marginLeft: "12px",
+                        fontFamily: "Inter",
+                        fontSize: "8px",
+                        fontWeight: 400,
+                        letterSpacing: "1px",
+                        textDecoration: "underline",
+                        textTransform: "uppercase",
+                      }}
+                      onClick={() => navigate(ROUTE_PATHS.RECOVER_PASSWORD)}
+                    >
+                      Recuperar password
+                    </p>
+                  </Grid>
+                </Grid>
+              </Box>
+              <Box
+                style={{
+                  marginTop: "60px",
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: "15px",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                }}
               >
-                Iniciar sessão
-              </Button>
-            </Box>
-          </form>
-          <Divider style={{ width: "100%", height: "1px" }} />
+                <p
+                  style={{
+                    fontFamily: "Inter",
+                    fontSize: "15px",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    textDecoration: "underlined",
+                    borderBottom: "solid 2px gray",
+                  }}
+                >
+                  Iniciar sessão
+                </p>
+              </Box>
+            </form>
+          </Box>
           <div
-            style={{ display: "flex", flexDirection: "column", rowGap: "20px" }}
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              padding: "40px",
+              rowGap: "20px",
+              alignItems: "center",
+              background: "rgba(237, 233, 225, 1)",
+            }}
           >
-            <Typography
-              onClick={() => navigate(ROUTE_PATHS.REGISTER)}
+            <p
+              //onClick={() => navigate(ROUTE_PATHS.REGISTER)}
               style={{
-                color: Colors.blackish[400],
+                color: "black",
                 cursor: "pointer",
-                fontSize: "20px",
+                fontSize: "11px",
+                fontWeight: 500,
+                textTransform: "uppercase",
               }}
             >
               Ainda não é cliente ehtiq?
-            </Typography>
-            <Button
+            </p>
+            <ButtonBlue
               onClick={() => setMode("register")}
-              fullWidth
-              darkenColors
-              style={{ color: Colors.blackish[400] }}
-            >
-              Criar conta
-            </Button>
+              label=" Criar conta"
+              textStyles={{
+                color: Colors.blackish[400],
+                textTransform: "uppercase",
+                fontFamily: "Inter",
+                fontSize: "13px",
+                fontWeight: 500,
+              }}
+              styles={{
+                backgroundColor: "rgba(255, 255, 255, 1)",
+              }}
+            />
           </div>
-        </Box>
+        </div>
       )}
     </>
   );
