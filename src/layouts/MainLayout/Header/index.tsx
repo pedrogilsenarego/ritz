@@ -32,9 +32,11 @@ import Cart from "./Cart";
 import LoginPopoverContent from "./LoginPopoverContent";
 import UserPopoverContent from "./UserPopoverContent";
 import { langOptions, options } from "./constants";
+
 import "./index.css";
 import useStyles from "./styles";
 import useHeader from "./useHeader";
+import MenuPopopverContent from "./MenuPopopverContent";
 
 const Header = () => {
   const classes = useStyles();
@@ -51,12 +53,13 @@ const Header = () => {
   const currentUser = useSelector<State, CurrentUser | null>(
     (state) => state.user.currentUser
   );
-  const path = location.pathname;
+
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
   const [mobileDrawer, setMobileDrawer] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [anchorElLogin, setAnchorElLogin] = useState<HTMLElement | null>(null);
+  const [anchorElMenu, setAnchorElMenu] = useState<HTMLElement | null>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const { onSignOut } = useSignOut();
 
@@ -76,6 +79,14 @@ const Header = () => {
     }
   };
 
+  const handleClickPopoverMenu = (event: React.MouseEvent<HTMLElement>) => {
+    if (anchorElMenu) {
+      setAnchorElMenu(null);
+    } else {
+      setAnchorElMenu(event.currentTarget);
+    }
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -84,16 +95,22 @@ const Header = () => {
     setAnchorElLogin(null);
   };
 
+  const handleCloseMenu = () => {
+    setAnchorElMenu(null);
+  };
+
   const isOpen = Boolean(anchorEl);
 
   const isOpenLogin = Boolean(anchorElLogin);
+
+  const isOpenMenu = Boolean(anchorElMenu);
 
   const handleLogin = (e: any) => {
     handleClickPopoverLogin(e);
   };
 
-  const handleUser = (e: any) => {
-    handleClickPopover(e);
+  const handleMenu = (e: any) => {
+    handleClickPopoverMenu(e);
   };
 
   const handleScroll = () => {
@@ -155,7 +172,21 @@ const Header = () => {
                 columnGap: "30px",
               }}
             >
-              <Icons.Menu size={"30px"} />
+              <Icons.Menu
+                style={{
+                  cursor: isScrolled ? "default" : "pointer",
+                  opacity: isScrolled ? 0 : 1,
+                  transition: "opacity ease-in-out 1s",
+                }}
+                size={"30px"}
+                onClick={
+                  isScrolled
+                    ? () => null
+                    : (e) => {
+                        handleMenu(e);
+                      }
+                }
+              />
             </Grid>
             <Grid
               item
@@ -274,6 +305,14 @@ const Header = () => {
         </BasicPopover>
         <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
           <UserPopoverContent handleClose={handleClose} />
+        </BasicPopover>
+        <BasicPopover
+          paperStyles={{ borderRadius: 0 }}
+          isOpen={isOpenMenu}
+          anchorEl={anchorElMenu}
+          onClose={handleCloseMenu}
+        >
+          <MenuPopopverContent handleClose={handleClickPopoverMenu} />
         </BasicPopover>
         <DrawerMine
           minWidth="30vw"
