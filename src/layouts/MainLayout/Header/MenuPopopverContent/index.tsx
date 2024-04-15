@@ -204,7 +204,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
             }}
           >
             <img
-              onClick={handleClose}
+              onClick={() => handleClose(false)}
               src={Close}
               alt=""
               style={{ position: "absolute", top: "20px", left: "20px" }}

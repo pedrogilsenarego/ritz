@@ -15,7 +15,9 @@ type Props = {
 };
 
 const Login = ({ setMode }: Props) => {
-  const { handleSubmit, onSubmit, control, isLogin, navigate } = useLogin();
+  const { handleSubmit, onSubmit, control, isLogin, navigate, mobile } =
+    useLogin();
+
   return (
     <>
       {isLogin ? (
@@ -24,7 +26,11 @@ const Login = ({ setMode }: Props) => {
         />
       ) : (
         <div>
-          <Box style={{ padding: "80px 70px 40px 70px" }}>
+          <Box
+            style={{
+              padding: mobile ? "80px 40px 40px 40px" : "80px 70px 40px 70px",
+            }}
+          >
             <p
               style={{
                 fontSize: "20px",

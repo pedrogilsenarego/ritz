@@ -8,6 +8,7 @@ import { CurrentUser } from "../../../../types/user";
 import Login from "./Auth/Login";
 import RecoverPassword from "./Auth/RecoverPassword";
 import Register from "./Auth/Register";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const LoginPopoverContent = ({ handleClose }: any) => {
   const navigate = useNavigate();
@@ -15,6 +16,8 @@ const LoginPopoverContent = ({ handleClose }: any) => {
     (state) => state.user.currentUser
   );
   const { onSignOut } = useSignOut();
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [mode, setMode] = useState<"login" | "register" | "recover">("login");
 
@@ -38,7 +41,7 @@ const LoginPopoverContent = ({ handleClose }: any) => {
         display: "flex",
         flexDirection: "column",
         rowGap: "12px",
-        width: "400px",
+        width: mobile ? "auto" : "400px",
         justifyContent: "end",
         alignItems: "end",
       }}

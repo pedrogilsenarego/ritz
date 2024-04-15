@@ -10,10 +10,12 @@ import { userServices } from "../../../../../../services/user.services";
 import { CurrentUser, Login } from "../../../../../../types/user";
 import { defaultValues } from "./constants";
 import { CreateProductSchema, CreateProductSchemaType } from "./validation";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const useLogin = () => {
   const navigate = useNavigate();
-
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const dispatch = useDispatch();
   const { reset, control, handleSubmit } = useForm<CreateProductSchemaType>({
     resolver: zodResolver(CreateProductSchema),
@@ -45,6 +47,7 @@ const useLogin = () => {
     control,
     navigate,
     isLogin,
+    mobile,
   };
 };
 

@@ -1,4 +1,11 @@
-import { Box, Divider, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Icons } from "../../../../../../components/Icons";
 import ControlledFormInput from "../../../../../../components/Inputs/ControlledInputAdmin";
 import Loader from "../../../../../../components/Loader";
@@ -13,6 +20,8 @@ type Props = {
 
 const Register = ({ setMode }: Props) => {
   const { handleSubmit, onSubmit, control, isRegistering } = useRegister();
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <>
       {isRegistering ? (
@@ -24,7 +33,12 @@ const Register = ({ setMode }: Props) => {
         />
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: "10px" }}>
-          <Box style={{ padding: "80px 70px 40px 70px", position: "relative" }}>
+          <Box
+            style={{
+              padding: mobile ? "80px 40px 40px 40px" : "80px 70px 40px 70px",
+              position: "relative",
+            }}
+          >
             <div
               onClick={() => setMode("login")}
               style={{

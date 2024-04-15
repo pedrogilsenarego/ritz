@@ -375,7 +375,7 @@ const Header = () => {
           openDrawer={mobileDrawer}
           setOpenDrawer={setMobileDrawer}
         >
-          <MenuPopopverContent handleClose={handleCloseMenu} />
+          <MenuPopopverContent handleClose={setMobileDrawer} />
         </DrawerMine>
         <DrawerMine
           fullHeight
@@ -386,6 +386,13 @@ const Header = () => {
         >
           <Cart closeCart={setCartDrawer} />
         </DrawerMine>
+        <BasicPopover
+          isOpen={isOpenLogin}
+          anchorEl={anchorElLogin}
+          onClose={handleCloseLogin}
+        >
+          <LoginPopoverContent handleClose={handleCloseLogin} />
+        </BasicPopover>
       </>
     );
   };
