@@ -24,13 +24,13 @@ const LoginPopoverContent = ({ handleClose }: any) => {
   const render = () => {
     switch (mode) {
       case "login":
-        return <Login setMode={setMode} />;
+        return <Login setMode={setMode} handleClose={handleClose} />;
       case "register":
         return <Register setMode={setMode} />;
       case "recover":
         return <RecoverPassword />;
       default:
-        return <Login setMode={setMode} />;
+        return <Login setMode={setMode} handleClose={handleClose} />;
     }
   };
 

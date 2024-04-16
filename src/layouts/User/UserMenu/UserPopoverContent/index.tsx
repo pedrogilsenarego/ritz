@@ -7,12 +7,22 @@ import ButtonBlue from "../../../../components/Ui/ButtonBlue";
 import ControlledFormInput from "../../../../components/Inputs/ControlledInputAdmin";
 import { useForm } from "react-hook-form";
 import Check from "../../../../assets/tick-02-white.svg";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../../routes/constants";
+import useCookies from "../../../../hooks/useCookies";
 
 const UserPopoverContent = ({ handleClose }: any) => {
   const [mode, setMode] = useState<"normal" | "edit">("normal");
+  const navigate = useNavigate();
   const theme = useTheme();
+  const { removeCookie } = useCookies();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const { reset, control, handleSubmit } = useForm<any>({});
+  const handleLogout = () => {
+    navigate(ROUTE_PATHS.HOME);
+    removeCookie("access");
+    removeCookie("refresh");
+  };
   const Normal = () => {
     return (
       <div
@@ -62,7 +72,10 @@ const UserPopoverContent = ({ handleClose }: any) => {
         >
           <p style={{ fontWeight: 600, fontSize: "14px" }}>Website EHTIQ</p>
         </Box>
-        <p style={{ fontSize: "10px", textTransform: "uppercase" }}>
+        <p
+          onClick={handleLogout}
+          style={{ fontSize: "10px", textTransform: "uppercase" }}
+        >
           Encerrar sessão
         </p>
       </div>

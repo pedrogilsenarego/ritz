@@ -37,6 +37,7 @@ import "./index.css";
 import useStyles from "./styles";
 import useHeader from "./useHeader";
 import MenuPopopverContent from "./MenuPopopverContent";
+import useCookies from "../../../hooks/useCookies";
 
 const Header = () => {
   const classes = useStyles();
@@ -62,6 +63,8 @@ const Header = () => {
   const [anchorElMenu, setAnchorElMenu] = useState<HTMLElement | null>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const { onSignOut } = useSignOut();
+  const { getCookie } = useCookies();
+  const accessUser = getCookie("access");
 
   const handleClickPopover = (event: React.MouseEvent<HTMLElement>) => {
     if (anchorEl) {
@@ -225,9 +228,13 @@ const Header = () => {
               </div>
               <div>
                 <img
-                  onClick={(e) => {
-                    handleLogin(e);
-                  }}
+                  onClick={
+                    accessUser
+                      ? () => navigate(ROUTE_PATHS.USER_HOME)
+                      : (e) => {
+                          handleLogin(e);
+                        }
+                  }
                   src={Login}
                   alt="logo"
                   style={{
