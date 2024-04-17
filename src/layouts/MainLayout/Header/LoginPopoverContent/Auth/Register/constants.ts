@@ -21,11 +21,5 @@ export const defaultValues = {
   password: undefined,
   confirmPassword: undefined,
   phone: undefined,
-  birthday: undefined,
-  fullName: undefined,
-  address1: undefined,
-  address2: undefined,
-  city: undefined,
-  postalCode: undefined,
-  country: countryOptions[0].value,
+  prePhone: undefined,
 };

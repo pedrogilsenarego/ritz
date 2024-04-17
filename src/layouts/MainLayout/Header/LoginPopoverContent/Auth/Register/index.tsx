@@ -16,10 +16,13 @@ import ButtonBlue from "../../../../../../components/Ui/ButtonBlue";
 
 type Props = {
   setMode: (mode: "login") => void;
+  handleClose: () => void;
 };
 
-const Register = ({ setMode }: Props) => {
-  const { handleSubmit, onSubmit, control, isRegistering } = useRegister();
+const Register = ({ setMode, handleClose }: Props) => {
+  const { handleSubmit, onSubmit, control, isRegistering } = useRegister({
+    handleClose,
+  });
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
@@ -174,7 +177,7 @@ const Register = ({ setMode }: Props) => {
                   Telefone
                 </p>
                 <div style={{ display: "flex", columnGap: "5px" }}>
-                  <div style={{ width: "60px" }}>
+                  <div style={{ width: "100px" }}>
                     <ControlledFormInput
                       control={control}
                       name="prePhone"

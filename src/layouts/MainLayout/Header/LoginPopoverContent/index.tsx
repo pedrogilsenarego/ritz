@@ -26,7 +26,7 @@ const LoginPopoverContent = ({ handleClose }: any) => {
       case "login":
         return <Login setMode={setMode} handleClose={handleClose} />;
       case "register":
-        return <Register setMode={setMode} />;
+        return <Register setMode={setMode} handleClose={handleClose} />;
       case "recover":
         return <RecoverPassword />;
       default:

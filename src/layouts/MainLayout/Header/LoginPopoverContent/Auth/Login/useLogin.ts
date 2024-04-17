@@ -13,7 +13,6 @@ import { CreateProductSchema, CreateProductSchemaType } from "./validation";
 import { useMediaQuery, useTheme } from "@mui/material";
 import useCookies from "../../../../../../hooks/useCookies";
 import { useState } from "react";
-import { rejects } from "assert";
 
 const useLogin = ({ handleClose }: { handleClose: () => void }) => {
   const navigate = useNavigate();
@@ -64,9 +63,7 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
       onError: (error: any) => {
         setError(error.detail);
       },
-      onSuccess: (data: any) => {
-        console.log(data);
-      },
+      onSuccess: (data: any) => {},
       onSettled: () => {},
     }
   );
