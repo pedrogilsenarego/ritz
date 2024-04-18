@@ -9,6 +9,7 @@ import { defaultValues } from "./constants";
 import { CreateUserSchema, CreateUserSchemaType } from "./validation";
 import { useState } from "react";
 import useCookies from "../../../../../../hooks/useCookies";
+import { BASE_URL } from "../../../../../../services/constants";
 
 const useRegister = ({ handleClose }: { handleClose: () => void }) => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const useRegister = ({ handleClose }: { handleClose: () => void }) => {
   });
 
   const registerUser = async (data: any) => {
-    const baseUrl = "https://clinicasritz-be-staging.qloudyx.pt";
+    const baseUrl = BASE_URL;
     const url = `${baseUrl}/clients/register/`;
     //const email = "marco.rocha@qloudyx.pt";
     //const password = "a123456b";

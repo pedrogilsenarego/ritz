@@ -13,6 +13,7 @@ import { CreateProductSchema, CreateProductSchemaType } from "./validation";
 import { useMediaQuery, useTheme } from "@mui/material";
 import useCookies from "../../../../../../hooks/useCookies";
 import { useState } from "react";
+import { BASE_URL } from "../../../../../../services/constants";
 
 const useLogin = ({ handleClose }: { handleClose: () => void }) => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
   const { setCookie } = useCookies();
 
   const loginUser = async ({ email, password }: Login) => {
-    const baseUrl = "https://clinicasritz-be-staging.qloudyx.pt";
+    const baseUrl = BASE_URL;
     const url = `${baseUrl}/login/`;
     //const email = "marco.rocha@qloudyx.pt";
     //const password = "a123456b";
@@ -45,6 +46,7 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
 
       if (response.ok) {
         // Handle successful login
+        setCookie("email", email);
         setCookie("access", body.access);
         setCookie("refresh", body.refresh);
         handleClose();

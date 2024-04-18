@@ -38,6 +38,8 @@ import useStyles from "./styles";
 import useHeader from "./useHeader";
 import MenuPopopverContent from "./MenuPopopverContent";
 import useCookies from "../../../hooks/useCookies";
+import useUser from "../../../hooks/useUser";
+import { BASE_URL } from "../../../services/constants";
 
 const Header = () => {
   const classes = useStyles();
@@ -51,9 +53,8 @@ const Header = () => {
   } = useHeader();
   const navigate = useNavigate();
 
-  const currentUser = useSelector<State, CurrentUser | null>(
-    (state) => state.user.currentUser
-  );
+  const userQuery = useUser();
+  console.log("data", `${BASE_URL}${userQuery?.data?.Data?.imagem}`);
 
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
@@ -62,17 +63,9 @@ const Header = () => {
   const [anchorElLogin, setAnchorElLogin] = useState<HTMLElement | null>(null);
   const [anchorElMenu, setAnchorElMenu] = useState<HTMLElement | null>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
-  const { onSignOut } = useSignOut();
+
   const { getCookie } = useCookies();
   const accessUser = getCookie("access");
-
-  const handleClickPopover = (event: React.MouseEvent<HTMLElement>) => {
-    if (anchorEl) {
-      setAnchorEl(null);
-    } else {
-      setAnchorEl(event.currentTarget);
-    }
-  };
 
   const handleClickPopoverLogin = (event: React.MouseEvent<HTMLElement>) => {
     if (anchorElLogin) {
@@ -235,7 +228,11 @@ const Header = () => {
                           handleLogin(e);
                         }
                   }
-                  src={Login}
+                  src={
+                    userQuery?.data?.Data?.imagem
+                      ? `${BASE_URL}${userQuery?.data?.Data?.imagem}`
+                      : Login
+                  }
                   alt="logo"
                   style={{
                     width: "24px",
@@ -262,6 +259,7 @@ const Header = () => {
             {options.map((option, index) => {
               return (
                 <div
+                  key={index}
                   style={{
                     display: "flex",
                     alignItems: "center",

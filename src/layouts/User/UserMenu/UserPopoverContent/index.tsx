@@ -20,6 +20,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
   const { reset, control, handleSubmit } = useForm<any>({});
   const handleLogout = () => {
     navigate(ROUTE_PATHS.HOME);
+    removeCookie("email");
     removeCookie("access");
     removeCookie("refresh");
   };
