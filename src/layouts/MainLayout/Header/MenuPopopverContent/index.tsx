@@ -7,12 +7,16 @@ import INsta from "../../../../assets/Insta.svg";
 import Face from "../../../../assets/Facebook.svg";
 import Youtue from "../../../../assets/Youtube.svg";
 import Close from "../../../../assets/close.svg";
-
+import Logo from "../../../../assets/EHTIQ_Logo.svg";
+import Login from "../../../../assets/Log_In.svg";
+import useCookies from "../../../../hooks/useCookies";
 const MenuPopopverContent = ({ handleClose }: any) => {
   const location = useLocation();
   const navigate = useNavigate();
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const { getCookie } = useCookies();
+  const accessUser = getCookie("access");
 
   const renderLaptop = () => {
     return (
@@ -193,123 +197,85 @@ const MenuPopopverContent = ({ handleClose }: any) => {
           <div
             style={{
               border: "solid 1px rgba(136, 127, 127, 1)",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              rowGap: "25px",
-              height: "100%",
-              padding: "60px 0px 40px 0px",
-              position: "relative",
             }}
           >
-            <img
-              onClick={() => handleClose(false)}
-              src={Close}
-              alt=""
-              style={{ position: "absolute", top: "20px", left: "20px" }}
-            />
-            {options.map((option, index) => {
-              return (
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    columnGap: "24px",
-                  }}
-                >
-                  <Typography
-                    className={"text"}
-                    style={{
-                      cursor: "pointer",
-                      fontSize: "15px",
-                      fontWeight: 500,
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
-                      color:
-                        location.pathname === option.link
-                          ? mainColors.secondary[400]
-                          : "inherit",
-                    }}
-                    key={option.name}
-                    onClick={() => {
-                      navigate(option.link);
-                      handleClose();
-                    }}
-                  >
-                    {option.name}
-                  </Typography>
-                </div>
-              );
-            })}
-            <div
-              style={{
-                height: "1px",
-                backgroundColor: "lightGray",
-                width: "250px",
-              }}
-            ></div>
             <div
               style={{
                 display: "flex",
-                flexDirection: "column",
-                rowGap: "20px",
+                justifyContent: "space-between",
+                width: "100%",
+                padding: "0px 20px",
+                marginTop: "20px",
               }}
             >
-              <Typography
-                className={"text"}
+              <img
+                onClick={() => handleClose(false)}
+                src={Close}
+                alt=""
+                style={{}}
+              />
+              <img
+                onClick={() => navigate(ROUTE_PATHS.HOME)}
+                src={Logo}
+                alt="logo"
                 style={{
+                  width: "120px",
                   cursor: "pointer",
-                  fontSize: "15px",
-                  fontWeight: 500,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  color:
-                    location.pathname === ROUTE_PATHS.BLOG_
-                      ? mainColors.secondary[400]
-                      : "inherit",
                 }}
-                onClick={() => {
-                  navigate(ROUTE_PATHS.BLOG_);
-                  handleClose();
-                }}
-              >
-                Blog Ehtiq
-              </Typography>
-              <Typography
+              />
+              <img
+                src={Login}
+                alt="logo"
                 style={{
+                  width: "15px",
                   cursor: "pointer",
-                  fontSize: "13px",
-                  fontWeight: 500,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                  color: "rgba(0, 0, 0, 0.7)",
                 }}
-                onClick={() => navigate(ROUTE_PATHS.BLOG_)}
-              >
-                Contactos
-              </Typography>
-              <div
-                style={{
-                  display: "flex",
-                  rowGap: "10px",
-                  width: "100%",
-                  justifyContent: "space-between",
-                }}
-              >
-                <img src={INsta} alt="" />
-                <img src={Face} alt="" />
-                <img src={Youtue} alt="" />
-              </div>
+              />
             </div>
             <div
               style={{
+                padding: "40px 0px 40px 0px",
                 display: "flex",
                 flexDirection: "column",
-                rowGap: "15px",
+                justifyContent: "center",
                 alignItems: "center",
+                rowGap: "25px",
+                height: "100%",
               }}
             >
+              {options.map((option, index) => {
+                return (
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      columnGap: "24px",
+                    }}
+                  >
+                    <Typography
+                      className={"text"}
+                      style={{
+                        cursor: "pointer",
+                        fontSize: "15px",
+                        fontWeight: 500,
+                        letterSpacing: "1px",
+                        textTransform: "uppercase",
+                        color:
+                          location.pathname === option.link
+                            ? mainColors.secondary[400]
+                            : "inherit",
+                      }}
+                      key={option.name}
+                      onClick={() => {
+                        navigate(option.link);
+                        handleClose();
+                      }}
+                    >
+                      {option.name}
+                    </Typography>
+                  </div>
+                );
+              })}
               <div
                 style={{
                   height: "1px",
@@ -317,30 +283,99 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                   width: "250px",
                 }}
               ></div>
-              <Typography
-                className={"text"}
+              <div
                 style={{
-                  cursor: "pointer",
-                  fontSize: "10px",
-                  fontWeight: 500,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: "20px",
                 }}
               >
-                Políticas de privacidade
-              </Typography>
-              <Typography
-                className={"text"}
+                <Typography
+                  className={"text"}
+                  style={{
+                    cursor: "pointer",
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                    color:
+                      location.pathname === ROUTE_PATHS.BLOG_
+                        ? mainColors.secondary[400]
+                        : "inherit",
+                  }}
+                  onClick={() => {
+                    navigate(ROUTE_PATHS.BLOG_);
+                    handleClose();
+                  }}
+                >
+                  Blog Ehtiq
+                </Typography>
+                <Typography
+                  style={{
+                    cursor: "pointer",
+                    fontSize: "13px",
+                    fontWeight: 500,
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                    color: "rgba(0, 0, 0, 0.7)",
+                  }}
+                  onClick={() => navigate(ROUTE_PATHS.BLOG_)}
+                >
+                  Contactos
+                </Typography>
+                <div
+                  style={{
+                    display: "flex",
+                    rowGap: "10px",
+                    width: "100%",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  <img src={INsta} alt="" />
+                  <img src={Face} alt="" />
+                  <img src={Youtue} alt="" />
+                </div>
+              </div>
+              <div
                 style={{
-                  cursor: "pointer",
-                  fontSize: "10px",
-                  fontWeight: 500,
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: "15px",
+                  alignItems: "center",
                 }}
               >
-                Políticas de cookies
-              </Typography>
+                <div
+                  style={{
+                    height: "1px",
+                    backgroundColor: "lightGray",
+                    width: "250px",
+                  }}
+                ></div>
+                <Typography
+                  className={"text"}
+                  style={{
+                    cursor: "pointer",
+                    fontSize: "10px",
+                    fontWeight: 500,
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Políticas de privacidade
+                </Typography>
+                <Typography
+                  className={"text"}
+                  style={{
+                    cursor: "pointer",
+                    fontSize: "10px",
+                    fontWeight: 500,
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Políticas de cookies
+                </Typography>
+              </div>
             </div>
           </div>
         </div>
