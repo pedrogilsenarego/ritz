@@ -19,6 +19,15 @@ const ManageContent = () => {
 
   return (
     <GeneralPage title="BLOG EHTIQ" subTitle="Gestão Conteúdos">
+      <div>
+        <ButtonBlue
+          label="Novo Tratamento"
+          icon={Edit}
+          onClick={() =>
+            navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_NEW_TREATMENT)
+          }
+        />
+      </div>
       <div
         style={{
           width: "100%",

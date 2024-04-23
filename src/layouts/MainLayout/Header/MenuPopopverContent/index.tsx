@@ -215,7 +215,10 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                 style={{}}
               />
               <img
-                onClick={() => navigate(ROUTE_PATHS.HOME)}
+                onClick={() => {
+                  navigate(ROUTE_PATHS.HOME);
+                  handleClose(false);
+                }}
                 src={Logo}
                 alt="logo"
                 style={{

@@ -28,6 +28,9 @@ export const RoutesI = {
   AdminManageContentCreate: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManageContent/CreateBlog")
   ),
+  AdminManageContentNewTreatment: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManageContent/CreateTreatment")
+  ),
   AdminHome: lazyWithRetryAndLoader(() => import("../pages/Admin/Home")),
   UserHome: lazyWithRetryAndLoader(() => import("../pages/User/Home")),
   UserDocuments: lazyWithRetryAndLoader(

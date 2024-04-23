@@ -37,6 +37,14 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_NEW_TREATMENT,
+    component: (
+      <AdminLayout>
+        <RoutesI.AdminManageContentNewTreatment />
+      </AdminLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_EDIT_PRODUCT,
     component: (
       <AdminLayout>
