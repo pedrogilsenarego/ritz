@@ -1,10 +1,7 @@
 import { Box, Grid } from "@mui/material";
-
 import ControlledFormInputEditor from "../../../../components/Inputs/ControlledInputEditor";
 import ControlledSelect from "../../../../components/Inputs/ControlledSelect";
-
 import Loader from "../../../../components/Loader";
-
 import { i18n } from "../../../../translations/i18n";
 import useStyles from "./styles";
 import useCreateProduct from "./useCreateProduct";
@@ -41,7 +38,7 @@ const CreateTreatment = ({ edit = false }: Props) => {
     setTouchedImages,
   } = useCreateProduct({ edit });
   return (
-    <GeneralPage title="Nova Publicação" subTitle="Blog EHTIQ">
+    <GeneralPage title="Novo tratamento" subTitle="Tratamentos">
       {isCreatingProduct || isEditingProduct || (isLoadingProduct && edit) ? (
         <Loader
           customMessage={
@@ -65,31 +62,62 @@ const CreateTreatment = ({ edit = false }: Props) => {
           >
             <Box className={classes.inputBox}>
               <Grid container spacing={"80px"}>
-                <Grid item xs={8}>
+                <Grid item xs={12}>
                   <Grid container spacing={2}>
                     <Grid item xs={12}>
-                      <MultiControlInput
-                        miniLabels={["PT", "EN", "ES"]}
-                        names={["titlePT", "titleEN", "titleES"]}
+                      <ControlledFormInput
+                        label="Título"
                         control={control}
-                        placeholders={[
-                          "Escreva em Português",
-                          "Escreva em Inglês",
-                          "Escreva em Espanhol",
-                        ]}
-                        watch={watch}
-                      >
-                        <MultiControlInputLabel>
-                          H1|Título
-                        </MultiControlInputLabel>
-                      </MultiControlInput>
+                        name="title"
+                        inputPlaceholder="Escreva o Título"
+                      />
                     </Grid>
                     <Grid item xs={12}>
                       <ControlledFormInput
-                        label="H2|Subtítulo"
+                        label="SubTítulo"
                         control={control}
-                        name="subtitlePT"
-                        inputPlaceholder="Escreva em Português"
+                        name="subtitle"
+                        inputPlaceholder="Escreva Subtítulo"
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <ControlledFormInput
+                        label="specialty"
+                        control={control}
+                        name="specialty"
+                        inputPlaceholder="Escreva Especialidade"
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <ControlledFormInput
+                        label="Tempo Procedimento"
+                        control={control}
+                        name="tprocediment"
+                        inputPlaceholder="T procedimento"
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <ControlledFormInput
+                        label="Tempo Recuperação"
+                        control={control}
+                        name="trecuperation"
+                        inputPlaceholder="T recuperação"
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <ControlledFormInput
+                        label="Anestesia"
+                        control={control}
+                        name="anesthetic"
+                        inputPlaceholder="anestesia"
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <ControlledFormInput
+                        label="Results"
+                        control={control}
+                        name="results"
+                        inputPlaceholder="Resultados"
                       />
                     </Grid>
                     <Grid item xs={12} style={{ marginTop: "40px" }}>
@@ -124,43 +152,17 @@ const CreateTreatment = ({ edit = false }: Props) => {
                         </div>
                       </div>
                     </Grid>
-
                     <Grid item xs={12} style={{ marginTop: "40px" }}>
                       <ControlledFormInputEditor
                         control={control}
-                        name="mainTextPT"
-                        label="Corpo Único"
+                        name="mainText"
+                        label="Texto principal"
                         inputPlaceholder={i18n.t(
                           "pages.admin.createProducts.form.maintextPT",
                           "Main text PT"
                         )}
                       />
                     </Grid>
-                  </Grid>
-                </Grid>
-                <Grid item xs={4}>
-                  <Grid item xs={12} marginTop={"30px"}>
-                    <ControlledSelect
-                      control={control}
-                      name="template"
-                      options={[
-                        { value: "1", label: "1 -  Capa > Corpo" },
-                        { value: "2", label: "2 -  Corpo > Imagem > Corpo" },
-                      ]}
-                      defaultLabel={"Template"}
-                    />
-                  </Grid>
-                  <Grid item xs={12} style={{ marginTop: "20px" }}>
-                    <ControlledSelect
-                      balls
-                      control={control}
-                      name="tag"
-                      options={[
-                        { value: "1", label: "ESTÉTICA" },
-                        { value: "2", label: "CIRÚRGICO" },
-                      ]}
-                      defaultLabel={"Template"}
-                    />
                   </Grid>
                 </Grid>
               </Grid>

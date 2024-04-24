@@ -31,50 +31,28 @@ const fileSize = (max: number, unit = "MB"): Yup.TestConfig<any> => ({
 });
 
 export const FORM_VALIDATION = Yup.object().shape({
-  titlePT: Yup.string().required(
+  title: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
-  titleEN: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} EN`
+  subtitle: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
-  titleES: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} ES`
+  specialty: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
-  subtitlePT: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  tprocediment: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
-  altImage: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  trecuperation: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
-  subtitleEN: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  anesthetic: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
-  mainTextPT: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  results: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
-  mainTextEN: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  mainText: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
-
-  template: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  ),
-  tag: Yup.mixed().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  ),
-  images: Yup.mixed()
-    .required(
-      `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-    )
-    .test(fileSize(0.5))
-    .test(
-      onlySpecifiTypes([
-        //"image/jpeg",
-        // 'image/jpg',
-        // 'image/gif',
-        // 'image/png',
-        // 'image/pdf',
-        "image/webp",
-      ])
-    ),
 });
