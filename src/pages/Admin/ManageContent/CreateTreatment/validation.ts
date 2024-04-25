@@ -55,4 +55,5 @@ export const FORM_VALIDATION = Yup.object().shape({
   mainText: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
+  listFAQ: Yup.array(),
 });

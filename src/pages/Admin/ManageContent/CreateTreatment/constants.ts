@@ -7,4 +7,5 @@ export const defaultValues = {
   anesthetic: "",
   results: "",
   mainText: "",
+  listFAQ: [],
 };

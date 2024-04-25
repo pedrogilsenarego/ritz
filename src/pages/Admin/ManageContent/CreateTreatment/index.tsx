@@ -15,6 +15,7 @@ import {
   MultiControlInput,
   MultiControlInputLabel,
 } from "../../../../components/Inputs/MultiControlledInput";
+import { ControlledListDoubleInput } from "../../../../components/Inputs/ControlledListDoubleInput";
 
 interface Props {
   edit?: boolean;
@@ -118,6 +119,13 @@ const CreateTreatment = ({ edit = false }: Props) => {
                         control={control}
                         name="results"
                         inputPlaceholder="Resultados"
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <ControlledListDoubleInput
+                        control={control}
+                        name="listFAQ"
+                        label="Adicionar FAQ"
                       />
                     </Grid>
                     <Grid item xs={12} style={{ marginTop: "40px" }}>
