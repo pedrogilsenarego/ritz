@@ -56,4 +56,34 @@ export const FORM_VALIDATION = Yup.object().shape({
     `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
   listFAQ: Yup.array(),
+  topImage: Yup.mixed()
+    .required(
+      `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+    )
+    .test(fileSize(0.5))
+    .test(
+      onlySpecifiTypes([
+        //"image/jpeg",
+        // 'image/jpg',
+        // 'image/gif',
+        // 'image/png',
+        // 'image/pdf',
+        "image/webp",
+      ])
+    ),
+  mainImage: Yup.mixed()
+    .required(
+      `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+    )
+    .test(fileSize(0.5))
+    .test(
+      onlySpecifiTypes([
+        //"image/jpeg",
+        // 'image/jpg',
+        // 'image/gif',
+        // 'image/png',
+        // 'image/pdf',
+        "image/webp",
+      ])
+    ),
 });

@@ -1,5 +1,7 @@
 import { FormHelperText, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { Control, get, useController } from "react-hook-form";
 import useStyles from "./styles";
 
@@ -39,7 +41,7 @@ const ControlledListDoubleInput = ({
           {label}
         </p>
       </div>
-      <div style={{ display: "flex", columnGap: "10px" }}>
+      <div style={{ display: "flex", flexDirection: "column", rowGap: "10px" }}>
         <TextField
           variant="outlined"
           className={classes().root}
@@ -61,27 +63,13 @@ const ControlledListDoubleInput = ({
             },
           }}
         />
-        <TextField
-          variant="outlined"
-          className={classes().root}
-          style={{
-            borderRadius: "10px",
-            backgroundColor: "white",
-            width: "100%",
-          }}
-          value={a}
-          onChange={(e) => setA(e.currentTarget.value)}
-          id={name}
-          //disabled={isSubmitting}
-          placeholder={"Resposta"}
-          InputProps={{
-            sx: {
-              paddingRight: 0,
-              fontFamily: "Inter",
-              fontSize: "12px",
-            },
-          }}
+        <p>Resposta</p>
+        <CKEditor
+          editor={ClassicEditor}
+          data={a}
+          onChange={(event, editor) => setA(editor.getData())}
         />
+
         <div>
           <div
             onClick={handleAdd}

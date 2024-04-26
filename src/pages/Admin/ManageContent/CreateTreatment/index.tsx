@@ -139,7 +139,7 @@ const CreateTreatment = ({ edit = false }: Props) => {
                       >
                         <div style={{ width: "25%" }}>
                           <FileUploaderAdmin
-                            name="images"
+                            name="topImage"
                             hasLabel
                             loading={imagesLoader}
                             touched={setTouchedImages}
@@ -147,15 +147,31 @@ const CreateTreatment = ({ edit = false }: Props) => {
                             control={control}
                             setValue={setValue}
                             setError={setError}
-                            fieldTitle={"Imagem Única"}
+                            fieldTitle={"ImagemTopo"}
                           />
                         </div>
-                        <div style={{ width: "50%" }}>
-                          <ControlledFormInput
-                            label=""
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} style={{ marginTop: "40px" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "end",
+                          columnGap: "10px",
+                          width: "70%",
+                        }}
+                      >
+                        <div style={{ width: "25%" }}>
+                          <FileUploaderAdmin
+                            name="mainImage"
+                            hasLabel
+                            loading={imagesLoader}
+                            touched={setTouchedImages}
+                            value={imagesValue || undefined}
                             control={control}
-                            name="altImage"
-                            inputPlaceholder="Alt text"
+                            setValue={setValue}
+                            setError={setError}
+                            fieldTitle={"ImagemPrincipal"}
                           />
                         </div>
                       </div>

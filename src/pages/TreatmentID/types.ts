@@ -1,4 +1,6 @@
 export type Content = {
+  topImage: string;
+  mainImage: string;
   title: string;
   subtitle: string;
   mainText: string;

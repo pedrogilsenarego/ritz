@@ -1,6 +1,10 @@
 import { Content } from "./types";
 
 export const content: Content = {
+  topImage:
+    "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
+  mainImage:
+    "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
   title: "A02 | Harmonização Facial",
   subtitle: "Sobre a harmonização facial",
   specialty: "Estética & Cirúrgica",

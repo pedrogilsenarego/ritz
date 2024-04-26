@@ -8,4 +8,6 @@ export const defaultValues = {
   results: "",
   mainText: "",
   listFAQ: [],
+  topImage: [],
+  mainImage: [],
 };
