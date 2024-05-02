@@ -1,15 +1,15 @@
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import { ButtonBase, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Image1 from "../../../../assets/Airport.svg";
 import Limousine from "../../../../assets/Limousine.svg";
 import Valet from "../../../../assets/Valet.svg";
-import Button from "../../../../components/Ui/Button";
+import Buffet from "../../../../assets/Service Bell.svg";
 import { i18n } from "../../../../translations/i18n";
 
 const Escort = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const iconSize = mobile ? "29px" : "50px";
-  const iconTextSize = mobile ? "7px" : "16px";
+  const iconSize = mobile ? "29px" : "24px";
+  const iconTextSize = mobile ? "7px" : "12px";
   return (
     <div
       style={{
@@ -34,6 +34,7 @@ const Escort = () => {
           padding: "60px",
           backgroundColor: "rgba(223, 218, 214, 1)",
           flexDirection: "column",
+          justifyContent: "space-between",
           display: "flex",
           zIndex: 10,
         }}
@@ -85,6 +86,26 @@ const Escort = () => {
               marginTop: "40px",
             }}
           />
+          <ButtonBase
+            sx={{
+              marginTop: "40px",
+              borderRadius: "30px",
+              padding: "10px 30px",
+              backgroundColor: "rgba(255, 255, 255, 0.4)",
+            }}
+          >
+            <Typography
+              sx={{
+                color: "black",
+                textTransform: "uppercase",
+                fontSize: "14px",
+                lineHeight: "14px",
+                letterSpacing: "1px",
+              }}
+            >
+              {i18n.t("pages.home.conciergeButton")}
+            </Typography>
+          </ButtonBase>
         </div>
 
         <div
@@ -107,11 +128,13 @@ const Escort = () => {
             }}
           >
             <img
-              src={Image1}
+              src={Buffet}
               alt=""
-              style={{
-                height: iconSize,
-              }}
+              style={
+                {
+                  // height: iconSize,
+                }
+              }
             />
             <Typography
               style={{
@@ -135,9 +158,11 @@ const Escort = () => {
             <img
               src={Image1}
               alt=""
-              style={{
-                height: iconSize,
-              }}
+              style={
+                {
+                  //  height: iconSize,
+                }
+              }
             />
             <Typography
               style={{
@@ -160,9 +185,11 @@ const Escort = () => {
             <img
               src={Limousine}
               alt=""
-              style={{
-                height: iconSize,
-              }}
+              style={
+                {
+                  //   height: iconSize,
+                }
+              }
             />
             <Typography
               style={{
@@ -185,9 +212,11 @@ const Escort = () => {
             <img
               src={Valet}
               alt=""
-              style={{
-                height: iconSize,
-              }}
+              style={
+                {
+                  //  height: iconSize,
+                }
+              }
             />
             <Typography
               style={{
