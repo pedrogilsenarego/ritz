@@ -31,6 +31,7 @@ const Home = () => {
       <Container
         style={{
           maxWidth: MAX_SCREEN,
+          marginTop: "120px",
         }}
       >
         <Treatments />

@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import logo12 from "../../../../assets/EHTIQ BRANDS-12.svg";
-import { mainColors } from "../../../../theme/theme";
+import { Colors, mainColors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
 
 const Treatments = () => {
@@ -51,7 +51,17 @@ const Treatments = () => {
         >
           <div
             style={{
-              width: "70%",
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              backgroundColor: !hover
+                ? "rgba(181, 174, 166, 0.4)"
+                : "transparent",
+            }}
+          />
+          <div
+            style={{
+              width: "80%",
               display: "flex",
               justifyContent: "center",
               flexDirection: "column",
@@ -60,6 +70,7 @@ const Treatments = () => {
           >
             <div
               style={{
+                zIndex: 10,
                 height: "60px",
                 display: "flex",
                 alignItems: "end",
@@ -68,13 +79,15 @@ const Treatments = () => {
               }}
             >
               <Typography
+                variant="h1"
                 style={{
-                  fontSize: mobile ? "14px" : "18px",
+                  fontSize: mobile ? "14px" : "27px",
                   textTransform: "uppercase",
                   fontWeight: 500,
-                  lineHeight: "27px",
-                  letterSpacing: "2px",
+                  lineHeight: "34px",
+                  letterSpacing: "3px",
                   textAlign: "center",
+                  color: Colors.white[400],
                 }}
               >
                 {clinic}
@@ -82,9 +95,10 @@ const Treatments = () => {
             </div>
             <div
               style={{
+                zIndex: 10,
                 height: "1px",
                 width: "40%",
-                backgroundColor: "black",
+                backgroundColor: "white",
                 marginTop: "10px",
                 transform: hover ? "translateY(-40px)" : "none",
                 transition: "all ease-in-out 0.5s", // Add transition
@@ -104,6 +118,7 @@ const Treatments = () => {
                 return (
                   <Typography
                     style={{
+                      color: "white",
                       position: "absolute",
                       textAlign: "center",
                       textDecoration: "underline",
@@ -119,9 +134,11 @@ const Treatments = () => {
               })}
               <Typography
                 style={{
+                  zIndex: 10,
+                  color: "white",
                   transform: hover
                     ? `translateY(${subtitles.length * 38 - 30}px)`
-                    : "none",
+                    : `translateY(-20px)`,
                   transition: "all ease-in-out 0.5s",
                 }}
               >
@@ -137,34 +154,32 @@ const Treatments = () => {
     <>
       <div
         style={{
-          backgroundImage: "linear-gradient(to right, #848387, #314F5F4A)",
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Typography
+          variant="h1"
+          style={{
+            fontSize: "80px",
+            letterSpacing: "8px",
+            color: "rgba(202, 202, 202, 1)",
+          }}
+        >
+          EHTIQ <i>Blend</i>
+        </Typography>
+      </div>
+      <div
+        style={{
           padding: mobile ? "50px 20px 80px 20px" : "50px 100px 100px 120px",
           justifyContent: "center",
-          marginTop: mobile ? "100px" : "200px",
+          marginTop: mobile ? "50px" : "20px",
           position: "relative",
         }}
       >
-        <div
-          style={{ display: "flex", justifyContent: "center", width: "100%" }}
-        >
-          <Typography
-            variant="h1"
-            style={{
-              textTransform: "uppercase",
-              fontSize: mobile ? "25px" : "30px",
-              fontWeight: 700,
-              letterSpacing: mobile ? "2px" : "3px",
-            }}
-          >
-            {i18n.t("pages.home.treatments")}
-          </Typography>
-        </div>
-
-        <Grid
-          container
-          spacing={mobile ? "10px" : "40px"}
-          style={{ marginTop: mobile ? "50px" : "75px" }}
-        >
+        <Grid container spacing={mobile ? "10px" : "20px"}>
           <Grid item xs={6} md={3}>
             <Tile
               subtitles={["Tratamentos", "Consultoria", "teste", "oleol"]}
@@ -194,6 +209,7 @@ const Treatments = () => {
             />
           </Grid>
         </Grid>
+
         <div
           style={{
             position: "absolute",
