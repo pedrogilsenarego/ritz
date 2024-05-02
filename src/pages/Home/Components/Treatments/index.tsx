@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  ButtonBase,
   Grid,
   Typography,
   useMediaQuery,
@@ -54,6 +55,7 @@ const Treatments = () => {
               position: "absolute",
               width: "100%",
               height: "100%",
+              transition: "all ease-in-out 0.5s",
               backgroundColor: !hover
                 ? "rgba(181, 174, 166, 0.4)"
                 : "transparent",
@@ -173,7 +175,7 @@ const Treatments = () => {
       </div>
       <div
         style={{
-          padding: mobile ? "50px 20px 80px 20px" : "50px 100px 100px 120px",
+          padding: mobile ? "50px 20px 80px 20px" : "50px 100px 100px 100px",
           justifyContent: "center",
           marginTop: mobile ? "50px" : "20px",
           position: "relative",
@@ -215,8 +217,8 @@ const Treatments = () => {
             position: "absolute",
             width: "1px",
             left: "50%",
-            height: mobile ? "60px" : "111px",
-            bottom: mobile ? -50 : -80,
+            height: mobile ? "60px" : "131px",
+            bottom: mobile ? -50 : -150,
             backgroundColor: "#8C8787",
             zIndex: 10,
           }}
@@ -227,32 +229,73 @@ const Treatments = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          rowGap: "20px",
+          rowGap: "10px",
+          position: "relative",
           marginTop: "100px",
+          padding: "120px 0px 120px 0px",
+          backgroundColor: "rgba(218, 208, 201, 0.5)",
         }}
       >
         <Typography
           style={{
-            fontSize: mobile ? "9px" : "13px",
-            letterSpacing: "2px",
+            fontSize: mobile ? "9px" : "20px",
+            letterSpacing: "1px",
+            fontWeight: 300,
+            textTransform: "uppercase",
+            color: "rgba(110, 110, 110, 1)",
             textAlign: mobile ? "center" : "left",
             maxWidth: "80%",
           }}
         >
-          {" "}
+          {i18n.t("pages.home.inteligentResearch")}
+        </Typography>
+        <Typography
+          style={{
+            fontSize: mobile ? "9px" : "19px",
+            letterSpacing: "1px",
+            textTransform: "uppercase",
+            fontWeight: 500,
+            textAlign: mobile ? "center" : "left",
+            maxWidth: "80%",
+          }}
+        >
           {i18n.t("pages.home.correctTreatment")}
         </Typography>
-        <Button>
+
+        <img
+          style={{
+            height: "247px",
+            width: "65%",
+            objectFit: "cover",
+            position: "absolute",
+            bottom: "-149px",
+          }}
+          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+          alt=""
+        />
+        <ButtonBase
+          sx={{
+            display: "inline-block",
+            position: "absolute",
+            bottom: "-45px",
+            borderRadius: "30px",
+            padding: "16px 30px",
+            backgroundColor: "rgba(73, 73, 73, 1)",
+            boxShadow: "0px 4px 4.9px 0px rgba(0, 0, 0, 0.25)",
+          }}
+        >
           <Typography
-            style={{
-              fontSize: mobile ? "15px" : "14px",
-              color: "#5D5C5C",
+            sx={{
+              color: "white",
+              textTransform: "uppercase",
+              fontSize: "14px",
+              lineHeight: "14px",
               letterSpacing: "1px",
             }}
           >
-            EXPERT ADVICE
+            {i18n.t("pages.home.exportAdvice")}
           </Typography>
-        </Button>
+        </ButtonBase>
       </div>
     </>
   );

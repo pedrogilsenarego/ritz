@@ -13,81 +13,66 @@ const Escort = () => {
   return (
     <div
       style={{
-        position: "relative",
         width: "100%",
-        height: mobile ? "600px" : "670px",
+        columnGap: "10px",
         display: "flex",
-        flexDirection: "column",
-        rowGap: mobile ? "70px" : "100px",
-        justifyContent: "center",
       }}
     >
       <img
         alt=""
         style={{
           width: mobile ? "100%" : "50%",
-          height: mobile ? "110vh" : "90vh",
+          aspectRatio: 1,
           zIndex: 1,
-          position: "absolute",
+
           objectFit: "cover",
         }}
         src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
       />
       <div
         style={{
-          paddingTop: "5%",
-
-          margin: mobile ? "0px 40px" : "0px 10%",
+          padding: "60px",
+          backgroundColor: "rgba(223, 218, 214, 1)",
+          flexDirection: "column",
           display: "flex",
           zIndex: 10,
-
-          justifyContent: mobile ? "start" : "end",
         }}
       >
-        <div
-          style={{
-            maxWidth: mobile ? undefined : "40%",
-            display: "flex",
-            flexDirection: "column",
-            zIndex: 1000,
-            rowGap: "40px",
-          }}
-        >
-          <div>
-            <Typography
+        <div>
+          <Typography
+            style={{
+              textTransform: "uppercase",
+              color: "rgba(0, 0, 0, 0.6)",
+              fontSize: mobile ? "8px" : "11px",
+              letterSpacing: "2px",
+            }}
+          >
+            {i18n.t("pages.home.conciergeServices")}
+          </Typography>
+          <Typography
+            variant="h1"
+            style={{
+              maxWidth: mobile ? undefined : "40%",
+              marginTop: "20px",
+              textTransform: "uppercase",
+              fontWeight: "bold",
+              fontSize: mobile ? "28px" : "32px",
+              letterSpacing: mobile ? "2px" : "1px",
+            }}
+          >
+            {i18n.t("pages.home.conciergeTitle")}
+            <span
               style={{
-                textTransform: "uppercase",
-                fontSize: mobile ? "8px" : "11px",
-                letterSpacing: "2px",
+                fontStyle: "italic",
+                fontWeight: 400,
+                textTransform: "capitalize",
               }}
             >
-              {i18n.t("pages.home.conciergeServices")}
-            </Typography>
-            <Typography
-              variant="h1"
-              style={{
-                maxWidth: mobile ? undefined : "70%",
-                marginTop: "20px",
-                textTransform: "uppercase",
-                fontWeight: "bold",
-                fontSize: mobile ? "28px" : "32px",
-                letterSpacing: mobile ? "2px" : "1px",
-              }}
-            >
-              {i18n.t("pages.home.conciergeTitle")}
-              <span
-                style={{
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  textTransform: "capitalize",
-                }}
-              >
-                {" "}
-                {i18n.t("pages.home.conciergeTitle2")}{" "}
-              </span>
-              {i18n.t("pages.home.conciergeTitle3")}
-            </Typography>
-          </div>
+              {" "}
+              {i18n.t("pages.home.conciergeTitle2")}{" "}
+            </span>
+            {i18n.t("pages.home.conciergeTitle3")}
+          </Typography>
           <Typography
             dangerouslySetInnerHTML={{
               __html: i18n.t("pages.home.conciergeText"),
@@ -95,134 +80,125 @@ const Escort = () => {
             style={{
               fontSize: mobile ? "12px" : "13px",
               textAlign: "justify",
-              lineHeight: "23px",
-              fontWeight: "300",
+              lineHeight: "25px",
+              fontWeight: "400",
+              marginTop: "40px",
             }}
           />
-          <div>
-            <Button
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            columnGap: mobile ? "0px" : "70px",
+            width: "100%",
+            padding: mobile ? "0px 35px" : undefined,
+            zIndex: 10,
+
+            justifyContent: mobile ? "space-between" : "center",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              columnGap: "10px",
+              flexDirection: "column",
+            }}
+          >
+            <img
+              src={Image1}
+              alt=""
               style={{
-                marginRight: "70px",
+                height: iconSize,
+              }}
+            />
+            <Typography
+              style={{
+                textTransform: "uppercase",
+                fontSize: iconTextSize,
+                letterSpacing: "1px",
               }}
             >
-              <Typography style={{ fontSize: mobile ? "11px" : "16px" }}>
-                {i18n.t("pages.home.conciergeButton")}
-              </Typography>
-            </Button>
+              {i18n.t("pages.home.hotel")}
+            </Typography>
           </div>
-        </div>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          columnGap: mobile ? "0px" : "70px",
-          width: "100%",
-          padding: mobile ? "0px 35px" : undefined,
-          zIndex: 10,
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
 
-          justifyContent: mobile ? "space-between" : "center",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            columnGap: "10px",
-            flexDirection: mobile ? "column" : "row",
-          }}
-        >
-          <img
-            src={Image1}
-            alt=""
-            style={{
-              height: iconSize,
-            }}
-          />
-          <Typography
-            style={{
-              textTransform: "uppercase",
-              fontSize: iconTextSize,
-              letterSpacing: "1px",
+              columnGap: "10px",
+              flexDirection: "column",
             }}
           >
-            {i18n.t("pages.home.hotel")}
-          </Typography>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-
-            columnGap: "10px",
-            flexDirection: mobile ? "column" : "row",
-          }}
-        >
-          <img
-            src={Image1}
-            alt=""
+            <img
+              src={Image1}
+              alt=""
+              style={{
+                height: iconSize,
+              }}
+            />
+            <Typography
+              style={{
+                textTransform: "uppercase",
+                fontSize: iconTextSize,
+                letterSpacing: "1px",
+              }}
+            >
+              {i18n.t("pages.home.travel")}
+            </Typography>
+          </div>
+          <div
             style={{
-              height: iconSize,
-            }}
-          />
-          <Typography
-            style={{
-              textTransform: "uppercase",
-              fontSize: iconTextSize,
-              letterSpacing: "1px",
-            }}
-          >
-            {i18n.t("pages.home.travel")}
-          </Typography>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            columnGap: "10px",
-            flexDirection: mobile ? "column" : "row",
-          }}
-        >
-          <img
-            src={Limousine}
-            alt=""
-            style={{
-              height: iconSize,
-            }}
-          />
-          <Typography
-            style={{
-              textTransform: "uppercase",
-              fontSize: iconTextSize,
-              letterSpacing: "1px",
+              display: "flex",
+              alignItems: "center",
+              columnGap: "10px",
+              flexDirection: "column",
             }}
           >
-            {i18n.t("pages.home.transport")}
-          </Typography>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            columnGap: "10px",
-            flexDirection: mobile ? "column" : "row",
-          }}
-        >
-          <img
-            src={Valet}
-            alt=""
+            <img
+              src={Limousine}
+              alt=""
+              style={{
+                height: iconSize,
+              }}
+            />
+            <Typography
+              style={{
+                textTransform: "uppercase",
+                fontSize: iconTextSize,
+                letterSpacing: "1px",
+              }}
+            >
+              {i18n.t("pages.home.transport")}
+            </Typography>
+          </div>
+          <div
             style={{
-              height: iconSize,
-            }}
-          />
-          <Typography
-            style={{
-              textTransform: "uppercase",
-              fontSize: iconTextSize,
-              letterSpacing: "1px",
+              display: "flex",
+              alignItems: "center",
+              columnGap: "10px",
+              flexDirection: "column",
             }}
           >
-            {i18n.t("pages.home.concierge")}
-          </Typography>
+            <img
+              src={Valet}
+              alt=""
+              style={{
+                height: iconSize,
+              }}
+            />
+            <Typography
+              style={{
+                textTransform: "uppercase",
+                fontSize: iconTextSize,
+                letterSpacing: "1px",
+              }}
+            >
+              {i18n.t("pages.home.concierge")}
+            </Typography>
+          </div>
         </div>
       </div>
     </div>

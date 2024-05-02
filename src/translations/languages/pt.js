@@ -42,12 +42,14 @@ export const content = {
           beutyText:
             "Um espaço de sofisticação e auto-descoberta que o leva a viajar num horizonte de beleza e bem-estar.",
           treatments: "Tratamentos",
-          correctTreatment: "DESCUBRA OS TRATAMENTOS INDICADOS PARA SI",
+          correctTreatment: "ENCONTRE OS TRATAMENTOS INDICADOS PARA SI",
           cirurgy: "Estética & cirúrgica",
           dental: "Dentária",
           nonCirurgy: "pós-cirúrgico & bem-estar",
           healthPrevention: "SAÚDE PREVENTIVA",
           conciergeServices: "serviços concierge",
+          inteligentResearch: "Pesquisa inteligente",
+          exportAdvice: "Expert Advice",
           conciergeTitle: "Descubra o",
           conciergeTitle2: "padrão",
           conciergeTitle3: "ehtiq",
@@ -60,6 +62,7 @@ export const content = {
           concierge: "Concierge",
           spaceWhere: "conheça o espaço onde cuidamos de si",
           ctaSpaceWhere: "A Clínica",
+          inFocus: "Em destaque...",
         },
         admin: {
           sidebar: {

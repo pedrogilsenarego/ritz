@@ -28,27 +28,34 @@ const Home = () => {
       >
         <ContainerC />
       </div>
-      <Container
+      <div
         style={{
           maxWidth: MAX_SCREEN,
           marginTop: "120px",
         }}
       >
         <Treatments />
-      </Container>
+      </div>
       <Container
         style={{
+          marginTop: "120px",
           maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 414px",
+          padding: mobile ? undefined : "0px 100px",
         }}
       >
         <div style={{ marginTop: "200px" }}>
           <Whats />
         </div>
       </Container>
-      <div style={{ marginTop: mobile ? "100px" : "400px" }}>
+      <Container
+        style={{
+          marginTop: mobile ? "100px" : "250px",
+          maxWidth: MAX_SCREEN,
+          padding: mobile ? undefined : "0px 100px",
+        }}
+      >
         <Escort />
-      </div>
+      </Container>
       <SpaceWhere />
     </>
   );
