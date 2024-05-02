@@ -21,15 +21,13 @@ const Home = () => {
           objectFit: "cover",
         }}
       />
-      <Container
+      <div
         style={{
           marginTop: mobile ? "50px" : "86px",
-          maxWidth: MAX_SCREEN,
-          padding: "0px 80px",
         }}
       >
         <ContainerC />
-      </Container>
+      </div>
       <Container
         style={{
           maxWidth: MAX_SCREEN,
