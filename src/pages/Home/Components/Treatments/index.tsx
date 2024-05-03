@@ -28,7 +28,7 @@ const Treatments = () => {
           position: "relative",
           cursor: "pointer",
           width: "100%",
-
+          borderRadius: "8px",
           aspectRatio: 0.72,
         }}
       >
@@ -37,6 +37,7 @@ const Treatments = () => {
           onMouseLeave={() => setHover(false)}
           style={{
             position: "absolute",
+            borderRadius: "8px",
             top: 0,
             left: 0,
             right: 0,
@@ -52,6 +53,7 @@ const Treatments = () => {
         >
           <div
             style={{
+              borderRadius: "8px",
               position: "absolute",
               width: "100%",
               height: "100%",
@@ -162,22 +164,35 @@ const Treatments = () => {
           alignItems: "center",
         }}
       >
-        <Typography
-          variant="h1"
-          style={{
-            fontSize: "80px",
-            letterSpacing: "8px",
-            color: "rgba(202, 202, 202, 1)",
-          }}
-        >
-          EHTIQ <i>Blend</i>
-        </Typography>
+        {mobile ? (
+          <Typography
+            variant="h1"
+            style={{
+              fontSize: "40px",
+              letterSpacing: "4px",
+              color: "rgba(202, 202, 202, 1)",
+            }}
+          >
+            EHTIQ BLEND
+          </Typography>
+        ) : (
+          <Typography
+            variant="h1"
+            style={{
+              fontSize: "80px",
+              letterSpacing: "8px",
+              color: "rgba(202, 202, 202, 1)",
+            }}
+          >
+            EHTIQ <i>Blend</i>
+          </Typography>
+        )}
       </div>
       <div
         style={{
-          padding: mobile ? "50px 20px 80px 20px" : "50px 100px 100px 100px",
+          padding: mobile ? "20px 20px 80px 20px" : "50px 100px 100px 100px",
           justifyContent: "center",
-          marginTop: mobile ? "50px" : "20px",
+          marginTop: mobile ? "20px" : "20px",
           position: "relative",
         }}
       >

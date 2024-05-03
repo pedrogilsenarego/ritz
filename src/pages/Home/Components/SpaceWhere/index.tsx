@@ -8,38 +8,57 @@ const SpaceWhere = () => {
     <div
       style={{
         marginTop: mobile ? "100px" : "350px",
+        height: "874px",
         width: "100%",
         display: "flex",
         alignItems: "center",
         rowGap: mobile ? "30px" : "50px",
-        flexDirection: "column",
+
+        backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
       }}
     >
       <div
-        style={{ width: "10%", height: "1px", backgroundColor: "darkGrey" }}
-      ></div>
-      <Typography
         style={{
-          fontSize: mobile ? "12px" : "19px",
-          letterSpacing: "1px",
-          lineHeight: "22px",
-          textTransform: "uppercase",
-          maxWidth: mobile ? "60%" : "70%",
-          textAlign: "center",
+          width: "40%",
+          background: "rgba(227, 223, 219, 0.8)",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          rowGap: "60px",
         }}
       >
-        {i18n.t("pages.home.spaceWhere")}
-      </Typography>
-      <Button>
+        <div
+          style={{ width: "30%", height: "1px", backgroundColor: "darkGrey" }}
+        ></div>
         <Typography
+          variant="h1"
           style={{
+            fontSize: mobile ? "12px" : "50px",
+            letterSpacing: "1px",
+            lineHeight: "87px",
             textTransform: "uppercase",
-            fontSize: mobile ? "12px" : "22px",
+            maxWidth: mobile ? "60%" : "60%",
+            textAlign: "left",
+            fontWeight: 500,
           }}
         >
-          {i18n.t("pages.home.ctaSpaceWhere")}
+          {i18n.t("pages.home.spaceWhere")}
         </Typography>
-      </Button>
+        <Button>
+          <Typography
+            style={{
+              textTransform: "uppercase",
+              fontSize: mobile ? "12px" : "22px",
+            }}
+          >
+            {i18n.t("pages.home.ctaSpaceWhere")}
+          </Typography>
+        </Button>
+      </div>
     </div>
   );
 };

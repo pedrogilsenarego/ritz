@@ -127,15 +127,26 @@ const Escort = () => {
               flexDirection: "column",
             }}
           >
-            <img
-              src={Buffet}
-              alt=""
-              style={
-                {
-                  // height: iconSize,
+            <div
+              style={{
+                height: "36px",
+                width: "36px",
+
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={Buffet}
+                alt=""
+                style={
+                  {
+                    // height: iconSize,
+                  }
                 }
-              }
-            />
+              />
+            </div>
             <Typography
               style={{
                 textTransform: "uppercase",
@@ -155,15 +166,26 @@ const Escort = () => {
               flexDirection: "column",
             }}
           >
-            <img
-              src={Image1}
-              alt=""
-              style={
-                {
-                  //  height: iconSize,
+            <div
+              style={{
+                height: "36px",
+                width: "36px",
+
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={Image1}
+                alt=""
+                style={
+                  {
+                    //  height: iconSize,
+                  }
                 }
-              }
-            />
+              />
+            </div>
             <Typography
               style={{
                 textTransform: "uppercase",
@@ -182,15 +204,26 @@ const Escort = () => {
               flexDirection: "column",
             }}
           >
-            <img
-              src={Limousine}
-              alt=""
-              style={
-                {
-                  //   height: iconSize,
+            <div
+              style={{
+                height: "36px",
+                width: "36px",
+
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={Limousine}
+                alt=""
+                style={
+                  {
+                    //   height: iconSize,
+                  }
                 }
-              }
-            />
+              />
+            </div>
             <Typography
               style={{
                 textTransform: "uppercase",
@@ -209,15 +242,27 @@ const Escort = () => {
               flexDirection: "column",
             }}
           >
-            <img
-              src={Valet}
-              alt=""
-              style={
-                {
-                  //  height: iconSize,
+            {" "}
+            <div
+              style={{
+                height: "36px",
+                width: "36px",
+
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <img
+                src={Valet}
+                alt=""
+                style={
+                  {
+                    //  height: iconSize,
+                  }
                 }
-              }
-            />
+              />
+            </div>
             <Typography
               style={{
                 textTransform: "uppercase",
