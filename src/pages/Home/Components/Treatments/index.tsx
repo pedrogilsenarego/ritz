@@ -230,10 +230,10 @@ const Treatments = () => {
         <div
           style={{
             position: "absolute",
-            width: "1px",
+            width: "2px",
             left: "50%",
-            height: mobile ? "60px" : "131px",
-            bottom: mobile ? -50 : -150,
+            height: mobile ? "160px" : "131px",
+            bottom: mobile ? -150 : -150,
             backgroundColor: "#8C8787",
             zIndex: 10,
           }}
@@ -244,16 +244,16 @@ const Treatments = () => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          rowGap: "10px",
+          rowGap: "15px",
           position: "relative",
           marginTop: "100px",
-          padding: "120px 0px 120px 0px",
+          padding: mobile ? "70px 0px 80px 0px" : "120px 0px 120px 0px",
           backgroundColor: "rgba(218, 208, 201, 0.5)",
         }}
       >
         <Typography
           style={{
-            fontSize: mobile ? "9px" : "20px",
+            fontSize: mobile ? "12px" : "20px",
             letterSpacing: "1px",
             fontWeight: 300,
             textTransform: "uppercase",
@@ -279,11 +279,11 @@ const Treatments = () => {
 
         <img
           style={{
-            height: "247px",
-            width: "65%",
+            height: mobile ? "150px" : "247px",
+            width: mobile ? "95%" : "65%",
             objectFit: "cover",
             position: "absolute",
-            bottom: "-149px",
+            bottom: mobile ? "-100px" : "-149px",
           }}
           src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
           alt=""
