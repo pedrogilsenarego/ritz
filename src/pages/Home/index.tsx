@@ -36,9 +36,9 @@ const Home = () => {
       >
         <Treatments />
       </div>
-      {/*<Container
+      <Container
         style={{
-          marginTop: "120px",
+          marginTop: mobile ? "10px" : "120px",
           maxWidth: MAX_SCREEN,
           padding: mobile ? undefined : "0px 100px",
         }}
@@ -51,12 +51,12 @@ const Home = () => {
         style={{
           marginTop: mobile ? "100px" : "250px",
           maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 100px",
+          padding: mobile ? "0px" : "0px 100px",
         }}
       >
         <Escort />
       </Container>
-      <SpaceWhere /> */}
+      <SpaceWhere />
     </>
   );
 };
