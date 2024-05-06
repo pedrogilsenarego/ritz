@@ -4,10 +4,11 @@ import {
   Typography,
   useMediaQuery,
   useTheme,
+  Button,
 } from "@mui/material";
 
 import Carousel from "../../components/Carousel";
-import Button from "../../components/Ui/Button";
+
 import { MAX_SCREEN } from "../../constants/screen";
 import SchedulleMembership from "./Components/SchedulleMembership";
 import Team from "./Components/Team";
@@ -424,7 +425,7 @@ const Complex = () => {
               <div
                 style={{
                   marginLeft: mobile ? "10%" : "10px",
-                  borderLeft: "solid 2px black",
+                  borderLeft: "solid 3px rgba(217, 211, 206, 1)",
                   width: mobile ? "80%" : "70%",
                   padding: mobile ? "10px" : "20px",
                 }}
@@ -495,9 +496,22 @@ const Complex = () => {
                     paddingRight: mobile ? undefined : "200px",
                   }}
                 >
-                  <Button>
-                    <Typography style={{ fontSize: mobile ? "12px" : "16px" }}>
-                      Experiência
+                  <Button
+                    style={{
+                      backgroundColor: "rgba(255, 255, 255, 0.5)",
+                      borderRadius: "20px",
+
+                      padding: "8px 20px",
+                    }}
+                  >
+                    <Typography
+                      style={{
+                        fontSize: mobile ? "12px" : "16px",
+                        fontWeight: 500,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {i18n.t("pages.complex.experience")}
                     </Typography>
                   </Button>
                 </div>

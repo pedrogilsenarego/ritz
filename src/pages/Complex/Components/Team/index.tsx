@@ -14,16 +14,15 @@ const Team = () => {
         marginTop: mobile ? "100px" : "0px",
         flexDirection: "column",
         rowGap: "70px",
-        padding: mobile ? undefined : "0px 190px",
       }}
     >
       <div
         style={{
           display: "flex",
-          backgroundColor: "lightGrey",
+          backgroundColor: "rgba(255, 255, 255, 1)",
           width: "100%",
           alignItems: "center",
-          padding: mobile ? "10px 20px" : "30px",
+          padding: mobile ? "10px 20px" : "30px 150px",
           columnGap: mobile ? "5px" : "0px",
         }}
       >

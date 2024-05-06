@@ -43,6 +43,7 @@ export const content = {
           eyes: "De olhos",
           in: "na",
           persona: "personalização",
+          experience: "A experiencia",
           mainText:
             "Na EHTIQ a personalização é a essência da nossa filosofia. Moldamos cada tratamento para refletir as suas aspirações.",
           secondText:
