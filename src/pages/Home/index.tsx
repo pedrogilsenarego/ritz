@@ -40,7 +40,7 @@ const Home = () => {
         style={{
           marginTop: mobile ? "10px" : "120px",
           maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 100px",
+          padding: mobile ? undefined : "0px 150px",
         }}
       >
         <div style={{ marginTop: "200px" }}>
@@ -51,7 +51,7 @@ const Home = () => {
         style={{
           marginTop: mobile ? "100px" : "250px",
           maxWidth: MAX_SCREEN,
-          padding: mobile ? "0px" : "0px 100px",
+          padding: mobile ? "0px" : "0px 150px",
         }}
       >
         <Escort />

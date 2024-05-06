@@ -190,7 +190,7 @@ const Treatments = () => {
       </div>
       <div
         style={{
-          padding: mobile ? "20px 20px 80px 20px" : "50px 100px 100px 100px",
+          padding: mobile ? "20px 20px 80px 20px" : "50px 150px 100px 150px",
           justifyContent: "center",
           marginTop: mobile ? "20px" : "20px",
           position: "relative",

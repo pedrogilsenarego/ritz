@@ -40,6 +40,13 @@ export const content = {
         complex: {
           title:
             "Elegância e inovação, onde cada espaço é uma celebração da estética.",
+          eyes: "De olhos",
+          in: "na",
+          persona: "personalização",
+          mainText:
+            "Na EHTIQ a personalização é a essência da nossa filosofia. Moldamos cada tratamento para refletir as suas aspirações.",
+          secondText:
+            "Acreditamos que a beleza é uma jornada individual, feita à sua medida para realçar a sua singularidade.",
         },
         home: {
           beutyAndWellBeing: "Fusão de Beleza e Bem-Estar",

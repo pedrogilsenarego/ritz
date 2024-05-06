@@ -142,7 +142,9 @@ const Complex = () => {
       <div style={{ marginTop: "150px" }}>
         <Legendas />
       </div>
-      <Container style={{ maxWidth: MAX_SCREEN }}>
+      <Container
+        style={{ maxWidth: MAX_SCREEN, padding: mobile ? "0px" : "0px 150px" }}
+      >
         <div
           style={{
             marginTop: mobile ? "80px" : "200px",
@@ -358,160 +360,166 @@ const Complex = () => {
               </Grid>
             </>
           )} */}
-          <Grid
-            container
-            spacing={"20px"}
-            style={{ padding: mobile ? undefined : "0px 190px" }}
+
+          <div
+            style={{
+              width: "100%",
+              position: "relative",
+              height: "600px",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
-            <Grid item xs={12} sm={6}>
+            <div
+              style={{
+                marginTop: "-15px",
+
+                width: "70%",
+                display: "flex",
+                flexDirection: "column",
+                rowGap: "50px",
+                backgroundColor: "rgba(195, 176, 162, 0.3)",
+                padding: "80px 50px 40px 50px",
+              }}
+            >
+              <Typography
+                variant="h1"
+                style={{
+                  width: mobile ? "100%" : "50%",
+                  textTransform: "uppercase",
+                  fontSize: mobile ? "22px" : "32px",
+                  fontWeight: 500,
+                  margin: mobile ? "20px" : undefined,
+                  letterSpacing: "2px",
+                }}
+              >
+                {i18n.t("pages.complex.eyes", "De olhos")}
+                <div style={{ display: "flex", columnGap: "10px" }}>
+                  <Typography
+                    variant="h1"
+                    style={{
+                      textTransform: "uppercase",
+                      fontSize: mobile ? "22px" : "32px",
+                      fontWeight: 500,
+
+                      letterSpacing: "2px",
+                    }}
+                  >
+                    {i18n.t("pages.complex.in", "Na")}
+                  </Typography>
+                  <Typography
+                    variant="h1"
+                    style={{
+                      fontStyle: "italic",
+                      textTransform: "capitalize",
+                      fontSize: mobile ? "22px" : "32px",
+                      letterSpacing: "2px",
+                    }}
+                  >
+                    {i18n.t("pages.complex.persona", "Personalização")}
+                  </Typography>
+                </div>
+              </Typography>
+
               <div
                 style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  rowGap: "50px",
+                  marginLeft: mobile ? "10%" : "10px",
+                  borderLeft: "solid 2px black",
+                  width: mobile ? "80%" : "70%",
+                  padding: mobile ? "10px" : "20px",
                 }}
               >
                 <Typography
-                  variant="h1"
                   style={{
-                    width: mobile ? "100%" : "50%",
-                    textTransform: "uppercase",
-                    fontSize: mobile ? "22px" : "32px",
-                    fontWeight: 500,
-                    margin: mobile ? "20px" : undefined,
-                    letterSpacing: "2px",
+                    fontSize: mobile ? "11px" : "15px",
+                    letterSpacing: "1px",
+                    lineHeight: mobile ? "19px" : "25px",
+                    fontWeight: 400,
                   }}
                 >
-                  De olhos
-                  <div style={{ display: "flex", columnGap: "10px" }}>
-                    <Typography
-                      variant="h1"
-                      style={{
-                        textTransform: "uppercase",
-                        fontSize: mobile ? "22px" : "32px",
-                        fontWeight: 500,
-
-                        letterSpacing: "2px",
-                      }}
-                    >
-                      na
-                    </Typography>
-                    <Typography
-                      variant="h1"
-                      style={{
-                        fontStyle: "italic",
-                        textTransform: "capitalize",
-                        fontSize: mobile ? "22px" : "32px",
-                        letterSpacing: "2px",
-                      }}
-                    >
-                      personalização
-                    </Typography>
-                  </div>
+                  {i18n.t("pages.complex.mainText")}
                 </Typography>
-
+                {!mobile && (
+                  <Typography
+                    style={{
+                      marginTop: "20px",
+                      marginLeft: "20px",
+                      fontSize: mobile ? "10px" : "12px",
+                      letterSpacing: "1px",
+                      lineHeight: "25px",
+                      fontWeight: 400,
+                    }}
+                  >
+                    {i18n.t("pages.complex.secondText")}
+                  </Typography>
+                )}
+              </div>
+              {mobile && (
                 <div
                   style={{
-                    marginLeft: mobile ? "10%" : "10px",
-                    borderLeft: "solid 2px black",
-                    width: mobile ? "80%" : "70%",
-                    padding: mobile ? "10px" : "20px",
+                    marginTop: "-30px",
+                    marginLeft: "30px",
+                    width: mobile ? "90%" : "70%",
+                    padding: mobile ? "15px" : "20px",
+                    display: "flex",
+                    flexDirection: "column",
+                    rowGap: "10px",
+                    alignItems: "end",
                   }}
                 >
                   <Typography
                     style={{
-                      fontSize: mobile ? "11px" : "15px",
+                      fontSize: mobile ? "9px" : "12px",
                       letterSpacing: "1px",
-                      lineHeight: mobile ? "19px" : "25px",
+                      lineHeight: "15px",
                       fontWeight: 400,
+                      textAlign: "right",
                     }}
                   >
-                    Na EHTIQ a personalização é a essência da nossa filosofia.
-                    Moldamos cada tratamento para refletir as suas aspirações.
+                    Acreditamos que a beleza é uma jornada individual, feita à
+                    sua medida para realçar a sua singularidade.
                   </Typography>
-                  {!mobile && (
-                    <Typography
-                      style={{
-                        marginTop: "20px",
-                        marginLeft: "20px",
-                        fontSize: mobile ? "10px" : "12px",
-                        letterSpacing: "1px",
-                        lineHeight: "25px",
-                        fontWeight: 400,
-                      }}
-                    >
-                      Acreditamos que a beleza é uma jornada individual, feita à
-                      sua medida para realçar a sua singularidade.
+                  <Button>
+                    <Typography style={{ fontSize: mobile ? "12px" : "16px" }}>
+                      Experiência
                     </Typography>
-                  )}
+                  </Button>
                 </div>
-                {mobile && (
-                  <div
-                    style={{
-                      marginTop: "-30px",
-                      marginLeft: "30px",
-                      width: mobile ? "90%" : "70%",
-                      padding: mobile ? "15px" : "20px",
-                      display: "flex",
-                      flexDirection: "column",
-                      rowGap: "10px",
-                      alignItems: "end",
-                    }}
-                  >
-                    <Typography
-                      style={{
-                        fontSize: mobile ? "9px" : "12px",
-                        letterSpacing: "1px",
-                        lineHeight: "15px",
-                        fontWeight: 400,
-                        textAlign: "right",
-                      }}
-                    >
-                      Acreditamos que a beleza é uma jornada individual, feita à
-                      sua medida para realçar a sua singularidade.
+              )}
+              {!mobile && (
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "end",
+                    paddingRight: mobile ? undefined : "200px",
+                  }}
+                >
+                  <Button>
+                    <Typography style={{ fontSize: mobile ? "12px" : "16px" }}>
+                      Experiência
                     </Typography>
-                    <Button>
-                      <Typography
-                        style={{ fontSize: mobile ? "12px" : "16px" }}
-                      >
-                        Experiência
-                      </Typography>
-                    </Button>
-                  </div>
-                )}
-                {!mobile && (
-                  <div
-                    style={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "end",
-                      paddingRight: mobile ? undefined : "200px",
-                    }}
-                  >
-                    <Button>
-                      <Typography
-                        style={{ fontSize: mobile ? "12px" : "16px" }}
-                      >
-                        Experiência
-                      </Typography>
-                    </Button>
-                  </div>
-                )}
-              </div>
-            </Grid>
+                  </Button>
+                </div>
+              )}
+            </div>
+            <img
+              style={{
+                right: 0,
+                top: 0,
+                opacity: 0.5,
+                position: "absolute",
+                height: "600px",
+                width: "550px",
+                objectFit: "cover",
+              }}
+              alt=""
+              src={
+                "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+              }
+            />
+          </div>
 
-            <Grid item xs={12} sm={6}>
-              <img
-                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                alt=""
-                style={{
-                  width: mobile ? "100vw" : "100%",
-                  objectFit: "cover",
-                  marginLeft: mobile ? "-16px" : undefined,
-                }}
-              />
-            </Grid>
-          </Grid>
           <Team />
           <SchedulleMembership />
         </div>
