@@ -37,6 +37,10 @@ export const content = {
         noProducts: "There aren't any products on the cart",
       },
       pages: {
+        complex: {
+          title:
+            "Elegância e inovação, onde cada espaço é uma celebração da estética.",
+        },
         home: {
           beutyAndWellBeing: "Fusão de Beleza e Bem-Estar",
           beutyText:

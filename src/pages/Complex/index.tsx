@@ -11,6 +11,9 @@ import Button from "../../components/Ui/Button";
 import { MAX_SCREEN } from "../../constants/screen";
 import SchedulleMembership from "./Components/SchedulleMembership";
 import Team from "./Components/Team";
+import { i18n } from "../../translations/i18n";
+import Logo from "../../assets/EHTIQ BRANDS-11_3.svg";
+import Legendas from "./Components/Legendas";
 
 const Complex = () => {
   const theme = useTheme();
@@ -32,19 +35,19 @@ const Complex = () => {
 
   return (
     <>
-      <div style={{ marginTop: mobile ? "100px" : "230px" }}>
+      <div style={{ marginTop: mobile ? "100px" : "0px" }}>
         <Carousel
           navButton={mobile ? false : true}
           width={"100%"}
-          height={mobile ? "600px" : `calc(100vh - 330px)`}
+          height={mobile ? "600px" : `778px`}
           pauseDuration={3000}
           slideDuration={1000}
           direction={1}
           autoPlay={mobile ? false : true}
           pauseOnHover={true}
           tweenAnime="ease"
-          dotsActivedColor="black"
-          dotsColor="grey"
+          dotsActivedColor="rgba(120, 100, 78, 1)"
+          dotsColor="rgba(217, 217, 217, 1)"
           dragThreshold={mobile ? 10 : undefined}
           onItemClick={(item) => console.log(item)}
         >
@@ -56,55 +59,88 @@ const Complex = () => {
                 backgroundImage: `url(${item.link})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center center",
-                height: mobile ? "600px" : `calc(100vh - 330px)`,
+                height: mobile ? "600px" : `100%`,
                 objectFit: "cover",
                 width: "100%",
-                padding: mobile ? "40px" : "80px",
-
-                paddingBottom: mobile ? undefined : "100px",
+                position: "relative",
               }}
             >
               <div
                 style={{
+                  backgroundColor: "rgba(248, 247, 247, 0.6)",
                   display: "flex",
+                  position: "absolute",
+                  width: "376px",
+                  right: 0,
+                  bottom: "50px",
+                  padding: "40px",
                   flexDirection: "column",
-                  justifyContent: "end",
-                  alignItems: "end",
-                  height: "100%",
-                  rowGap: mobile ? "20px" : "30px",
-                  paddingBottom: mobile ? "60px" : undefined,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  rowGap: "20px",
                 }}
               >
                 <Typography
-                  variant="h1"
                   style={{
-                    fontSize: mobile ? "18px" : "25px",
+                    fontSize: mobile ? "18px" : "13px",
                     textTransform: "uppercase",
                     letterSpacing: "1px",
                     fontWeight: 700,
-                    width: mobile ? "100%" : "25%",
+
                     textAlign: "center",
                   }}
                 >
-                  Título 1-4
+                  Paixão pelo detalhe
                 </Typography>
                 <Typography
+                  variant="h1"
                   style={{
-                    fontSize: mobile ? "10px" : "17px",
+                    fontSize: mobile ? "10px" : "16px",
                     textTransform: "uppercase",
-                    width: mobile ? "100%" : "25%",
+
                     letterSpacing: mobile ? "1px" : "2px",
-                    lineHeight: mobile ? "14px" : "15px",
+                    lineHeight: mobile ? "14px" : "21px",
                     textAlign: "center",
                   }}
                 >
-                  Descrição Descrição Descrição Descrição Descrição Descrição
-                  Descrição Descrição
+                  Elementos de arquitetura moderna, tons elegantes e iluminação
+                  quente.
                 </Typography>
               </div>
             </div>
           ))}
         </Carousel>
+      </div>
+      <div
+        style={{
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          rowGap: "20px",
+          alignItems: "center",
+          justifyContent: "center",
+          marginTop: "150px",
+        }}
+      >
+        <Typography
+          style={{
+            textTransform: "uppercase",
+            fontSize: "20px",
+            maxWidth: "40%",
+            textAlign: "center",
+            lineHeight: "35px",
+            letterSpacing: "2px",
+          }}
+        >
+          {i18n.t(
+            "pages.complex.title",
+            "Elegância e inovação, onde cada espaço é uma celebração da estética."
+          )}
+        </Typography>
+        <img src={Logo} alt="" style={{ width: "130px" }} />
+      </div>
+      <div style={{ marginTop: "150px" }}>
+        <Legendas />
       </div>
       <Container style={{ maxWidth: MAX_SCREEN }}>
         <div
@@ -117,7 +153,7 @@ const Complex = () => {
             rowGap: mobile ? "70px" : "200px",
           }}
         >
-          {!mobile && (
+          {/* {!mobile && (
             <Grid
               container
               columnSpacing={"50px"}
@@ -321,7 +357,7 @@ const Complex = () => {
                 </Grid>
               </Grid>
             </>
-          )}
+          )} */}
           <Grid
             container
             spacing={"20px"}

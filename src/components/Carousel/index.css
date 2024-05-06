@@ -1,6 +1,6 @@
 .carousel {
   overflow: hidden;
-  /* border: 2px solid red; */
+
   cursor: pointer;
   position: relative;
   width: 100%;
@@ -77,7 +77,8 @@
 
 .carousel .dots {
   position: absolute;
-  background-color: #ffffff00;
+  background-color:"rgba(120, 100, 78, 1)";
+
   padding: 3px 5px;
   border-radius: 15px;
   display: flex;
