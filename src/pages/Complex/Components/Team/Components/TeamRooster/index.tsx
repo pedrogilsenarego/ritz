@@ -167,6 +167,7 @@ const TeamRooster = () => {
                       textTransform: "uppercase",
                       fontSize: "12px",
                       letterSpacing: "1px",
+                      textDecoration: index === team ? "underline" : undefined,
                       fontWeight: index === team ? 700 : 500,
                       cursor: "pointer",
                     }}

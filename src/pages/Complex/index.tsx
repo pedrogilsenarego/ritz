@@ -36,11 +36,11 @@ const Complex = () => {
 
   return (
     <>
-      <div style={{ marginTop: mobile ? "100px" : "0px" }}>
+      <div style={{ marginTop: mobile ? "0px" : "0px" }}>
         <Carousel
           navButton={mobile ? false : true}
           width={"100%"}
-          height={mobile ? "600px" : `778px`}
+          height={mobile ? "auto" : `778px`}
           pauseDuration={3000}
           slideDuration={1000}
           direction={1}
@@ -53,62 +53,114 @@ const Complex = () => {
           onItemClick={(item) => console.log(item)}
         >
           {childrenData.map((item, index) => (
-            <div
-              draggable={false}
-              key={item.link}
-              style={{
-                backgroundImage: `url(${item.link})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center center",
-                height: mobile ? "600px" : `100%`,
-                objectFit: "cover",
-                width: "100%",
-                position: "relative",
-              }}
-            >
+            <>
               <div
+                draggable={false}
+                key={item.link}
                 style={{
-                  backgroundColor: "rgba(248, 247, 247, 0.6)",
-                  display: "flex",
-                  position: "absolute",
-                  width: "376px",
-                  right: 0,
-                  bottom: "50px",
-                  padding: "40px",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  rowGap: "20px",
+                  backgroundImage: `url(${item.link})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center center",
+                  height: mobile ? "526px" : `100%`,
+                  objectFit: "cover",
+                  width: "100%",
+                  position: "relative",
                 }}
               >
-                <Typography
-                  style={{
-                    fontSize: mobile ? "18px" : "13px",
-                    textTransform: "uppercase",
-                    letterSpacing: "1px",
-                    fontWeight: 700,
+                {!mobile && (
+                  <div
+                    style={{
+                      backgroundColor: mobile
+                        ? "rgba(155, 129, 109, 0.4)"
+                        : "rgba(248, 247, 247, 0.6)",
+                      display: "flex",
+                      position: mobile ? "unset" : "absolute",
+                      width: "376px",
+                      right: 0,
+                      bottom: mobile ? "-150px" : "50px",
+                      padding: "40px",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      rowGap: "20px",
+                    }}
+                  >
+                    <Typography
+                      style={{
+                        fontSize: mobile ? "14px" : "13px",
+                        textTransform: "uppercase",
+                        letterSpacing: "1px",
+                        fontWeight: 700,
 
-                    textAlign: "center",
-                  }}
-                >
-                  Paixão pelo detalhe
-                </Typography>
-                <Typography
-                  variant="h1"
-                  style={{
-                    fontSize: mobile ? "10px" : "16px",
-                    textTransform: "uppercase",
+                        textAlign: "center",
+                      }}
+                    >
+                      Paixão pelo detalhe
+                    </Typography>
+                    <Typography
+                      variant="h1"
+                      style={{
+                        fontSize: mobile ? "15px" : "16px",
+                        textTransform: mobile ? "capitalize" : "uppercase",
 
-                    letterSpacing: mobile ? "1px" : "2px",
-                    lineHeight: mobile ? "14px" : "21px",
-                    textAlign: "center",
-                  }}
-                >
-                  Elementos de arquitetura moderna, tons elegantes e iluminação
-                  quente.
-                </Typography>
+                        letterSpacing: mobile ? "1px" : "2px",
+                        lineHeight: mobile ? "20px" : "21px",
+                        textAlign: "center",
+                      }}
+                    >
+                      Elementos de arquitetura moderna, tons elegantes e
+                      iluminação quente.
+                    </Typography>
+                  </div>
+                )}
               </div>
-            </div>
+              {mobile && (
+                <div
+                  style={{
+                    backgroundColor: mobile
+                      ? "rgba(155, 129, 109, 0.4)"
+                      : "rgba(248, 247, 247, 0.6)",
+                    display: "flex",
+                    position: mobile ? "unset" : "absolute",
+                    width: "376px",
+                    right: 0,
+                    bottom: mobile ? "-150px" : "50px",
+                    padding: "40px",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    rowGap: "20px",
+                  }}
+                >
+                  <Typography
+                    style={{
+                      fontSize: mobile ? "14px" : "13px",
+                      textTransform: "uppercase",
+                      letterSpacing: "1px",
+                      fontWeight: 700,
+
+                      textAlign: "center",
+                    }}
+                  >
+                    Paixão pelo detalhe
+                  </Typography>
+                  <Typography
+                    variant="h1"
+                    style={{
+                      fontSize: mobile ? "15px" : "16px",
+                      textTransform: mobile ? "capitalize" : "uppercase",
+
+                      letterSpacing: mobile ? "1px" : "2px",
+                      lineHeight: mobile ? "20px" : "21px",
+                      textAlign: "center",
+                    }}
+                  >
+                    Elementos de arquitetura moderna, tons elegantes e
+                    iluminação quente.
+                  </Typography>
+                </div>
+              )}
+            </>
           ))}
         </Carousel>
       </div>
@@ -126,10 +178,10 @@ const Complex = () => {
         <Typography
           style={{
             textTransform: "uppercase",
-            fontSize: "20px",
-            maxWidth: "40%",
+            fontSize: mobile ? "11px" : "20px",
+            maxWidth: mobile ? "80%" : "40%",
             textAlign: "center",
-            lineHeight: "35px",
+            lineHeight: mobile ? "20px" : "35px",
             letterSpacing: "2px",
           }}
         >
@@ -138,9 +190,9 @@ const Complex = () => {
             "Elegância e inovação, onde cada espaço é uma celebração da estética."
           )}
         </Typography>
-        <img src={Logo} alt="" style={{ width: "130px" }} />
+        <img src={Logo} alt="" style={{ width: mobile ? "65px" : "130px" }} />
       </div>
-      <div style={{ marginTop: "150px" }}>
+      <div style={{ marginTop: mobile ? "100px" : "150px" }}>
         <Legendas />
       </div>
       <Container
@@ -156,212 +208,6 @@ const Complex = () => {
             rowGap: mobile ? "70px" : "200px",
           }}
         >
-          {/* {!mobile && (
-            <Grid
-              container
-              columnSpacing={"50px"}
-              style={{ padding: "0px 100px" }}
-            >
-              <Grid item xs={12} md={6}>
-                <div
-                  style={{
-                    marginTop: "50px",
-                    display: "flex",
-                    flexDirection: "column",
-                    rowGap: "40px",
-                  }}
-                >
-                  <div style={{ display: "flex", columnGap: "10px" }}>
-                    {!mobile && (
-                      <div
-                        style={{
-                          display: "flex",
-                          justifyContent: "end",
-                          writingMode: "vertical-rl",
-                          textOrientation: "mixed",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        <Typography
-                          style={{
-                            transform: "rotate(180deg)",
-                            transformOrigin: "center",
-                            fontSize: "17px",
-                          }}
-                        >
-                          Legenda 1
-                        </Typography>
-                      </div>
-                    )}
-                    <img
-                      src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                      alt=""
-                      style={{
-                        height: "340px",
-                        width: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-
-                  <div>
-                    <div style={{ display: "flex", columnGap: "10px" }}>
-                      {!mobile && (
-                        <div
-                          style={{
-                            writingMode: "vertical-rl",
-                            textOrientation: "mixed",
-                            whiteSpace: "nowrap",
-
-                            width: "400px",
-                          }}
-                        >
-                          <Typography
-                            style={{
-                              transform: "rotate(180deg)", // Rotate 180 degrees
-                              transformOrigin: "center",
-                              fontSize: "17px",
-                            }}
-                          >
-                            Legenda 2
-                          </Typography>
-                        </div>
-                      )}
-                      <img
-                        src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                        alt=""
-                        style={{
-                          height: "250px",
-                          width: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </Grid>
-              <Grid
-                item
-                xs={12}
-                md={6}
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                }}
-              >
-                <div style={{ display: "flex", columnGap: "10px" }}>
-                  <img
-                    src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                    alt=""
-                    style={{
-                      width: "100%",
-                      height: "550px",
-                      objectFit: "cover",
-                    }}
-                  />
-                  {!mobile && (
-                    <div
-                      style={{
-                        writingMode: "vertical-rl",
-                        textOrientation: "mixed",
-                        whiteSpace: "nowrap",
-                      }}
-                    >
-                      <Typography style={{ fontSize: "17px" }}>
-                        Legenda 3
-                      </Typography>
-                    </div>
-                  )}
-                </div>
-                <Typography
-                  style={{
-                    textTransform: "uppercase",
-                    marginTop: "40px",
-                    marginLeft: "20px",
-                    width: mobile ? "100%" : "90%",
-                    textAlign: mobile ? "center" : undefined,
-                    fontSize: mobile ? "10px" : "15px",
-                    letterSpacing: "1px",
-                  }}
-                >
-                  Elegância e inovação, onde cada espaço é uma celebração da
-                  estética.
-                </Typography>
-              </Grid>
-            </Grid>
-          )}
-          {mobile && (
-            <>
-              <Typography
-                style={{
-                  textTransform: "uppercase",
-                  width: "90%",
-                  marginTop: "40px",
-                  marginLeft: "20px",
-                  lineHeight: "19px",
-                  textAlign: mobile ? "center" : undefined,
-                  fontSize: mobile ? "10px" : "15px",
-                  letterSpacing: "1px",
-                }}
-              >
-                Elegância e inovação, onde cada espaço é uma celebração da
-                estética.
-              </Typography>
-              <Grid container rowSpacing={"60px"}>
-                <Grid item xs={12} md={6}>
-                  <div
-                    style={{
-                      padding: "0px 30px",
-                    }}
-                  >
-                    <img
-                      src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                      alt=""
-                      style={{
-                        height: "340px",
-                        width: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  md={6}
-                  style={{
-                    marginTop: "20px",
-                    display: "flex",
-                    justifyContent: "center",
-                    columnGap: "20px",
-                    padding: "10px",
-                  }}
-                >
-                  <img
-                    src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                    alt=""
-                    style={{
-                      marginTop: "40px",
-                      width: "45%",
-                      height: "222px",
-                      objectFit: "cover",
-                    }}
-                  />
-                  <img
-                    src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-                    alt=""
-                    style={{
-                      width: "45%",
-                      height: "222px",
-                      objectFit: "cover",
-                    }}
-                  />
-                </Grid>
-              </Grid>
-            </>
-          )} */}
-
           <div
             style={{
               width: "100%",
@@ -535,9 +381,11 @@ const Complex = () => {
           </div>
 
           <Team />
-          <SchedulleMembership />
         </div>
       </Container>
+      <div style={{ marginTop: "200px" }}>
+        <SchedulleMembership />
+      </div>
     </>
   );
 };

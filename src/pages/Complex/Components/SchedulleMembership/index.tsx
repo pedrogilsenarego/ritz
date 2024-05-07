@@ -1,16 +1,27 @@
-import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
-import Button from "../../../../components/Ui/Button";
+import {
+  Button,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 
 const SchedulleMembership = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Grid container>
+    <Grid
+      container
+      style={{
+        backgroundColor: "rgba(155, 129, 109, 0.4)",
+        padding: "40px 0px",
+      }}
+    >
       <Grid item xs={12} md={6}>
         <div
           style={{
             padding: "50px 0px",
-            borderRight: mobile ? undefined : "solid 1px black",
+            borderRight: mobile ? undefined : "solid 1px rgba(0, 0, 0, 0.7)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -37,9 +48,16 @@ const SchedulleMembership = () => {
           >
             Agende online ou faça a sua marcação com os nossos assistentes.
           </Typography>
-          <Button>
+          <Button
+            sx={{
+              backgroundColor: "rgba(69, 69, 69, 1)",
+              padding: "10px 30px",
+              borderRadius: "30px",
+            }}
+          >
             <Typography
               style={{
+                color: "white",
                 fontSize: mobile ? "12px" : "16px",
                 textTransform: "uppercase",
               }}
@@ -53,7 +71,7 @@ const SchedulleMembership = () => {
         <div
           style={{
             padding: "50px 0px",
-            borderLeft: mobile ? undefined : "solid 1px black",
+            borderLeft: mobile ? undefined : "solid 1px rgba(0, 0, 0, 0.7)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -80,9 +98,16 @@ const SchedulleMembership = () => {
           >
             Explore benefícios exclusivos com o nosso Acesso Membership.
           </Typography>
-          <Button>
+          <Button
+            sx={{
+              backgroundColor: "rgba(69, 69, 69, 1)",
+              padding: "10px 30px",
+              borderRadius: "30px",
+            }}
+          >
             <Typography
               style={{
+                color: "white",
                 fontSize: mobile ? "12px" : "16px",
                 textTransform: "uppercase",
               }}

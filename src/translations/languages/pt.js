@@ -48,6 +48,9 @@ export const content = {
             "Na EHTIQ a personalização é a essência da nossa filosofia. Moldamos cada tratamento para refletir as suas aspirações.",
           secondText:
             "Acreditamos que a beleza é uma jornada individual, feita à sua medida para realçar a sua singularidade.",
+          teamTitle: "A equipa Ethiq",
+          teamSubtitle:
+            "Cada rosto da nossa equipa é uma extensão do nosso compromisso em realçar a sua beleza única.",
         },
         home: {
           beutyAndWellBeing: "Fusão de Beleza e Bem-Estar",

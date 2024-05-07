@@ -1,5 +1,6 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import TeamRooster from "./Components/TeamRooster";
+import { i18n } from "../../../../translations/i18n";
 
 const Team = () => {
   const theme = useTheme();
@@ -43,7 +44,7 @@ const Team = () => {
             textAlign: "center",
           }}
         >
-          A equipa Ethiq
+          {i18n.t("pages.complex.teamTitle")}
         </Typography>
         <div
           style={{
@@ -63,8 +64,7 @@ const Team = () => {
           lineHeight: mobile ? "15px" : "25px",
         }}
       >
-        Cada rosto da nossa equipa é uma extensão do nosso compromisso em
-        realçar a sua beleza única.
+        {i18n.t("pages.complex.teamSubtitle")}
       </Typography>
       <TeamRooster />
     </div>
