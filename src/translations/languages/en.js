@@ -13,6 +13,7 @@ export const content = {
         testemonials: "Testemonials",
         contacts: "Contacts",
         membership: "Membership",
+        clinic: "clinic",
       },
       errors: {
         notFound404: "404: Page not found",

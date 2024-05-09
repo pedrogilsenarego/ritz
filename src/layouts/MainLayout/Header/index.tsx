@@ -40,6 +40,7 @@ import MenuPopopverContent from "./MenuPopopverContent";
 import useCookies from "../../../hooks/useCookies";
 import useUser from "../../../hooks/useUser";
 import { BASE_URL } from "../../../services/constants";
+import { Lang } from "./Lang";
 
 const Header = () => {
   const classes = useStyles();
@@ -219,6 +220,7 @@ const Header = () => {
                   }}
                 />
               </div>
+              <Lang />
               <div>
                 <img
                   onClick={

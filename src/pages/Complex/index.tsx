@@ -39,7 +39,7 @@ const Complex = () => {
     <>
       <div style={{ marginTop: mobile ? "0px" : "0px" }}>
         <Carousel
-          navButton={mobile ? false : true}
+          navButton={mobile ? false : false}
           width={"100%"}
           height={mobile ? "auto" : `778px`}
           pauseDuration={3000}
