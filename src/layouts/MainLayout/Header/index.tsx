@@ -124,7 +124,7 @@ const Header = () => {
 
   const opacity = Math.min(1, Math.max(0, scrollPosition / 500));
 
-  const backgroundColor = `rgba(207, 181, 59, ${0.1 * opacity})`;
+  const backgroundColor = `rgba(224, 211, 193, ${1 - 0.3 * opacity})`;
 
   const viewportHeight =
     window.innerHeight || document.documentElement.clientHeight;
@@ -264,7 +264,7 @@ const Header = () => {
                     display: "flex",
                     alignItems: "center",
                     columnGap: "24px",
-                    margin: "0px 15px",
+                    margin: "0px 45px",
                   }}
                 >
                   <Typography
@@ -287,15 +287,6 @@ const Header = () => {
                   >
                     {option.name}
                   </Typography>
-                  {index < options.length - 1 && (
-                    <div
-                      style={{
-                        width: "2px",
-                        height: "20px",
-                        backgroundColor: "grey",
-                      }}
-                    />
-                  )}
                 </div>
               );
             })}

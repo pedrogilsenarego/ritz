@@ -8,7 +8,7 @@ type Option = {
 
 export const options: Option[] = [
   {
-    name: "O Complexo",
+    name: i18n.t("header.clinic", "A Clínica"),
     link: ROUTE_PATHS.COMPLEX,
   },
 

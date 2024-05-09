@@ -211,7 +211,7 @@ const Complex = () => {
         >
           <Eyes />
 
-          <Team />
+          {/* <Team /> */}
         </div>
       </Container>
       <div style={{ marginTop: "200px" }}>

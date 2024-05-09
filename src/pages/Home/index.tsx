@@ -36,7 +36,7 @@ const Home = () => {
       >
         <Treatments />
       </div>
-      <Container
+      {/* <Container
         style={{
           marginTop: mobile ? "10px" : "120px",
           maxWidth: MAX_SCREEN,
@@ -46,7 +46,7 @@ const Home = () => {
         <div style={{ marginTop: "200px" }}>
           <Whats />
         </div>
-      </Container>
+      </Container> */}
       <Container
         style={{
           marginTop: mobile ? "100px" : "250px",

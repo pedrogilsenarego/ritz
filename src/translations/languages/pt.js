@@ -3,6 +3,7 @@ export const content = {
     translations: {
       header: {
         home: "Home",
+        clinic: "A clínica",
         products: "Produtos",
         about: "Sobre a ETHIQ",
         account: "My account",

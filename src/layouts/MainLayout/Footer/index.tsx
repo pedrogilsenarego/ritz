@@ -43,7 +43,12 @@ const Footer = ({ isUser }: Props) => {
 
   const renderLaptop = () => {
     return (
-      <Box style={{ backgroundColor: "white" }}>
+      <Box
+        style={{
+          backgroundColor: "rgba(248, 247, 247, 1)",
+          borderTop: "solid 25px rgba(231, 221, 207, 0.77",
+        }}
+      >
         <Container maxWidth="xl">
           <Grid
             container
