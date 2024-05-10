@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Grid,
   Typography,
@@ -15,7 +16,7 @@ import Youtube from "../../../assets/Youtube.svg";
 import mail from "../../../assets/mail.svg";
 import map from "../../../assets/map.svg";
 import phone from "../../../assets/phone.svg";
-import Button from "../../../components/Ui/Button";
+
 import Logo from "../../../assets/EHTIQ BRANDS-12.svg";
 
 type Props = {
@@ -60,19 +61,35 @@ const Footer = ({ isUser }: Props) => {
             }}
             spacing={2}
           >
-            <Grid item xs={2.4}>
+            <Grid
+              item
+              xs={2.4}
+              style={{ display: "flex", alignItems: "center" }}
+            >
               <img
                 src={mainLogo}
                 alt=""
                 style={{
-                  height: 40,
+                  width: "274px",
                 }}
               />
             </Grid>
             {!isUser && (
-              <Grid item xs={2.4}>
-                <Button>
-                  <Typography>Marcações</Typography>
+              <Grid
+                item
+                xs={2.4}
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <Button
+                  style={{
+                    backgroundColor: "rgba(59, 52, 52, 1)",
+                    borderRadius: "30px",
+                    padding: "6px 20px",
+                  }}
+                >
+                  <Typography style={{ fontSize: "11px", color: "white" }}>
+                    Marcações
+                  </Typography>
                 </Button>
               </Grid>
             )}
@@ -95,21 +112,21 @@ const Footer = ({ isUser }: Props) => {
                     src={Instagram}
                     alt=""
                     style={{
-                      height: 23,
+                      width: "23px",
                     }}
                   />
                   <img
                     src={Facebook}
                     alt=""
                     style={{
-                      height: 23,
+                      width: "23px",
                     }}
                   />
                   <img
                     src={Youtube}
                     alt=""
                     style={{
-                      height: 16,
+                      width: "23px",
                     }}
                   />
                 </div>
@@ -121,7 +138,13 @@ const Footer = ({ isUser }: Props) => {
                     rowGap: "10px",
                   }}
                 >
-                  <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
+                  <Typography
+                    style={{
+                      fontSize: "11px",
+                      fontWeight: "medium",
+                      textTransform: "uppercase",
+                    }}
+                  >
                     Contacte-nos
                   </Typography>
                   <div
@@ -206,7 +229,13 @@ const Footer = ({ isUser }: Props) => {
                   rowGap: "10px",
                 }}
               >
-                <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
+                <Typography
+                  style={{
+                    fontSize: "11px",
+                    fontWeight: "medium",
+                    textTransform: "uppercase",
+                  }}
+                >
                   As nossas políticas
                 </Typography>
                 <Typography
@@ -245,15 +274,22 @@ const Footer = ({ isUser }: Props) => {
                 />
                 <Typography
                   style={{
+                    textTransform: "uppercase",
                     fontSize: "5px",
-                    marginTop: "-15px",
+                    marginTop: "0px",
                     fontWeight: 500,
                   }}
                 >
                   Registar reclamação
                 </Typography>
 
-                <Typography style={{ fontSize: "7px", fontWeight: 600 }}>
+                <Typography
+                  style={{
+                    fontSize: "8px",
+                    fontWeight: 500,
+                    textTransform: "uppercase",
+                  }}
+                >
                   @Copyright 2024, develop by <u>Linea Agency</u>
                 </Typography>
               </div>

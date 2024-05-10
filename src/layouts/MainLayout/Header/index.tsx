@@ -184,6 +184,16 @@ const Header = () => {
                       }
                 }
               />
+              <div>
+                <img
+                  src={SearchIcon}
+                  alt="logo"
+                  style={{
+                    width: "21px",
+                    cursor: "pointer",
+                  }}
+                />
+              </div>
             </Grid>
             <Grid
               item
@@ -210,16 +220,6 @@ const Header = () => {
                 columnGap: "30px",
               }}
             >
-              <div>
-                <img
-                  src={SearchIcon}
-                  alt="logo"
-                  style={{
-                    width: "24px",
-                    cursor: "pointer",
-                  }}
-                />
-              </div>
               <Lang />
               <div>
                 <img
@@ -237,7 +237,7 @@ const Header = () => {
                   }
                   alt="logo"
                   style={{
-                    width: "24px",
+                    width: "19px",
                     cursor: "pointer",
                   }}
                 />
@@ -274,13 +274,9 @@ const Header = () => {
                     style={{
                       cursor: !isScrolled ? undefined : "pointer",
                       fontSize: "14px",
-                      fontWeight: 500,
+                      fontWeight: location.pathname === option.link ? 600 : 400,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color:
-                        location.pathname === option.link
-                          ? mainColors.secondary[400]
-                          : "inherit",
                     }}
                     key={option.name}
                     onClick={

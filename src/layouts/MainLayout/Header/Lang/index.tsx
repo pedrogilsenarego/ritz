@@ -14,7 +14,13 @@ export const Lang: React.FC = () => {
         onClick={() => {
           changeLanguage(LANG.pt);
         }}
-        style={{ cursor: "pointer", fontWeight: lang === "PT" ? 600 : 400 }}
+        style={{
+          color: lang !== "PT" ? "rgba(152, 152, 152, 1)" : "black",
+
+          cursor: "pointer",
+          fontSize: "14px",
+          fontWeight: 500,
+        }}
       >
         PT
       </Typography>
@@ -22,7 +28,12 @@ export const Lang: React.FC = () => {
         onClick={() => {
           changeLanguage(LANG.en);
         }}
-        style={{ cursor: "pointer", fontWeight: lang === "EN" ? 600 : 400 }}
+        style={{
+          color: lang !== "EN" ? "rgba(152, 152, 152, 1)" : "black",
+          cursor: "pointer",
+          fontSize: "14px",
+          fontWeight: 500,
+        }}
       >
         EN
       </Typography>
@@ -30,7 +41,12 @@ export const Lang: React.FC = () => {
         onClick={() => {
           changeLanguage(LANG.es);
         }}
-        style={{ cursor: "pointer", fontWeight: lang === "ES" ? 600 : 400 }}
+        style={{
+          color: lang !== "ES" ? "rgba(152, 152, 152, 1)" : "black",
+          cursor: "pointer",
+          fontSize: "14px",
+          fontWeight: 500,
+        }}
       >
         ES
       </Typography>

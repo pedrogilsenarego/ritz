@@ -111,6 +111,7 @@ const SpaceWhere = () => {
           <Typography
             variant="h1"
             style={{
+              color: "rgba(39, 39, 39, 1)",
               fontSize: mobile ? "40px" : "50px",
               letterSpacing: "1px",
               lineHeight: mobile ? "60px" : "87px",
@@ -132,7 +133,7 @@ const SpaceWhere = () => {
             <Typography
               style={{
                 textTransform: "uppercase",
-                fontSize: mobile ? "12px" : "22px",
+                fontSize: mobile ? "12px" : "15px",
               }}
             >
               {i18n.t("pages.home.ctaSpaceWhere")}

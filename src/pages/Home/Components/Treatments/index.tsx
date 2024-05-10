@@ -11,6 +11,7 @@ import { useState } from "react";
 import logo12 from "../../../../assets/EHTIQ BRANDS-12.svg";
 import { Colors, mainColors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
+import plus from "../../../../assets/Group 9.svg";
 
 const Treatments = () => {
   const theme = useTheme();
@@ -28,7 +29,7 @@ const Treatments = () => {
           position: "relative",
           cursor: "pointer",
           width: "100%",
-          borderRadius: "8px",
+
           aspectRatio: 0.72,
         }}
       >
@@ -37,7 +38,7 @@ const Treatments = () => {
           onMouseLeave={() => setHover(false)}
           style={{
             position: "absolute",
-            borderRadius: "8px",
+
             top: 0,
             left: 0,
             right: 0,
@@ -53,7 +54,6 @@ const Treatments = () => {
         >
           <div
             style={{
-              borderRadius: "8px",
               position: "absolute",
               width: "100%",
               height: "100%",
@@ -136,18 +136,22 @@ const Treatments = () => {
                   </Typography>
                 );
               })}
-              <Typography
-                style={{
-                  zIndex: 10,
-                  color: "white",
-                  transform: hover
-                    ? `translateY(${subtitles.length * 38 - 30}px)`
-                    : `translateY(-20px)`,
-                  transition: "all ease-in-out 0.5s",
-                }}
-              >
-                {hover ? "-" : "+"}
-              </Typography>
+              {hover ? (
+                <Typography
+                  style={{
+                    zIndex: 10,
+                    color: "white",
+                    transform: hover
+                      ? `translateY(${subtitles.length * 38 - 30}px)`
+                      : `translateY(-20px)`,
+                    transition: "all ease-in-out 0.5s",
+                  }}
+                >
+                  -
+                </Typography>
+              ) : (
+                <img src={plus} alt="" style={{ width: "17px" }} />
+              )}
             </div>
           </div>
         </div>
@@ -279,8 +283,9 @@ const Treatments = () => {
 
         <img
           style={{
+            borderRadius: "5px",
             height: mobile ? "150px" : "247px",
-            width: mobile ? "95%" : "65%",
+            width: mobile ? "95%" : "962px",
             objectFit: "cover",
             position: "absolute",
             bottom: mobile ? "-100px" : "-149px",
