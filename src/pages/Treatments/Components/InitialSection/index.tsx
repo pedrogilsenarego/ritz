@@ -1,150 +1,114 @@
 import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
-import Carousel from "../../../../components/Carousel";
-import Button from "../../../../components/Ui/Button";
+import { i18n } from "../../../../translations/i18n";
 
 const InitialSection = () => {
-  const childrenData = [
-    {
-      link: "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-      title: "Tratamento 1",
-      description:
-        "Descrição Descrição Descrição Descrição Descrição Descrição",
-    },
-    {
-      link: "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-      title: "Tratamento 1",
-      description:
-        "Descrição Descrição Descrição Descrição Descrição Descrição",
-    },
-    {
-      link: "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-      title: "Tratamento 1",
-      description:
-        "Descrição Descrição Descrição Descrição Descrição Descrição",
-    },
-    {
-      link: "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-      title: "Tratamento 1",
-      description:
-        "Descrição Descrição Descrição Descrição Descrição Descrição",
-    },
-  ];
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <Grid
-      container
-      height="100%"
-      width="100%"
-      style={{ marginTop: mobile ? undefined : "45px" }}
-      spacing={mobile ? undefined : "50px"}
-      rowSpacing={mobile ? "50px" : undefined}
-    >
-      <Grid item xs={12} md={6}>
+    <Grid container height="100%" width="100%" style={{ position: "relative" }}>
+      <div
+        style={{
+          marginTop: "151px",
+          position: "absolute",
+          left: "50%",
+          width: "100%",
+          padding: "0px 200px",
+          transform: "translateX(-50%)",
+        }}
+      >
         <div
           style={{
-            height: "100%",
             display: "flex",
-            flexDirection: mobile ? "column" : "row",
-            justifyContent: "center",
-            alignItems: mobile ? "end" : "center",
-            width: "100%",
-            columnGap: "20px",
+            flexDirection: "column",
+            rowGap: "20px",
+            alignItems: "center",
           }}
         >
-          <div style={{ width: "100%" }}>
-            <Typography
-              style={{
-                textTransform: "uppercase",
-                fontSize: mobile ? "11px" : "18px",
-              }}
-            >
-              Tratamentos de
-            </Typography>
-            <Typography
-              style={{
-                textTransform: "uppercase",
-                fontSize: "45px",
-                fontStyle: "italic",
-              }}
-            >
-              Assinatura
-            </Typography>
-          </div>
-          <div
+          <Typography
             style={{
-              width: mobile ? "50%" : "100%",
-              height: "1px",
-              backgroundColor: "black",
+              color: "rgba(0, 0, 0, 0.7)",
+              fontSize: "13px",
+              fontWeight: 400,
+              letterSpacing: "1px",
+              textTransform: "uppercase",
             }}
-          />
+          >
+            {i18n.t("pages.treatments.signatures")}
+          </Typography>
+          <Typography
+            variant="h1"
+            style={{
+              fontSize: "45px",
+              fontStyle: "italic",
+              fontWeight: 400,
+              letterSpacing: "2px",
+            }}
+          >
+            {i18n.t("pages.treatments.aesthetic")}
+          </Typography>
+          <Typography
+            style={{
+              fontSize: "12px",
+              maxWidth: "650px",
+              fontWeight: 400,
+              lineHeight: "20px",
+              letterSpacing: "1px",
+            }}
+          >
+            {i18n.t("pages.treatments.text1")}
+          </Typography>
         </div>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            marginTop: "120px",
+          }}
+        >
+          <div style={{ display: "flex" }}>
+            <div style={{ width: "50%" }} />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "50%",
+                padding: "0px 50px",
+              }}
+            >
+              <img
+                alt=""
+                style={{
+                  height: "113px",
+                  objectFit: "cover",
+                }}
+                src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <Grid item xs={12} md={6}>
+        <img
+          alt=""
+          style={{
+            width: "100%",
+            height: "2289px",
+            objectFit: "cover",
+          }}
+          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+        />
       </Grid>
       <Grid item xs={12} md={6}>
-        <div style={{ position: "relative" }}>
-          <Carousel
-            width={"100%"}
-            height={"400px"}
-            pauseDuration={3000}
-            slideDuration={1000}
-            direction={1}
-            autoPlay={false}
-            pauseOnHover={true}
-            tweenAnime="ease"
-            dotsActivedColor="black"
-            dragThreshold={mobile ? 10 : undefined}
-            dotsColor="grey"
-            onItemClick={(item) => console.log(item)}
-          >
-            {childrenData.map((item, index) => (
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  rowGap: "30px",
-                }}
-              >
-                <img
-                  draggable={false}
-                  alt=""
-                  key={item.link}
-                  src={item.link}
-                  style={{
-                    height: `200px`,
-                    objectFit: "cover",
-                    width: "100%",
-                  }}
-                />
-                <div
-                  style={{
-                    maxWidth: "50%",
-                    display: "flex",
-                    flexDirection: "column",
-                    rowGap: "30px",
-                  }}
-                >
-                  <Typography style={{ fontSize: "22px", fontWeight: "bold" }}>
-                    {item.title}
-                  </Typography>
-                  <Typography>{item.description}</Typography>
-                </div>
-              </div>
-            ))}
-          </Carousel>
-          <div
-            style={{
-              position: "absolute",
-              right: mobile ? 10 : 20,
-              bottom: mobile ? -50 : 40,
-            }}
-          >
-            <Button>
-              <Typography style={{ textTransform: "uppercase" }}>
-                Abrir agenda
-              </Typography>
-            </Button>
-          </div>
-        </div>
+        <img
+          alt=""
+          style={{
+            marginTop: "2200px",
+            width: "100%",
+            height: "2289px",
+            objectFit: "cover",
+          }}
+          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+        />
       </Grid>
     </Grid>
   );

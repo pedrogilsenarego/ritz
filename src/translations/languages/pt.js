@@ -38,6 +38,13 @@ export const content = {
         noProducts: "There aren't any products on the cart",
       },
       pages: {
+        treatments: {
+          treatments: "Tratamentos",
+          signatures: "Assinaturas",
+          aesthetic: "Estética & Cirúrgica",
+          text1:
+            "Aliámos os melhores Profissionais à melhor Tecnologia do mercado, para garantir resultados excecionais e o mais elevado acompanhamento clínico.",
+        },
         complex: {
           title:
             "Elegância e inovação, onde cada espaço é uma celebração da estética.",

@@ -69,7 +69,7 @@ export const routes: AppRoute[] = [
     path: ROUTE_PATHS.YOUR_EXPERIENCE,
     component: (
       <MainLayout>
-        <RoutesI.Treatments />
+        <RoutesI.Experience />
       </MainLayout>
     ),
   },
