@@ -43,6 +43,12 @@ export const content = {
           signatures: "Assinaturas",
           aesthetic: "Estética & Cirúrgica",
           afterCirurgy: "Pós-Cirúrgico & Bem-estar",
+          health: "Saúde Preventiva",
+          dental: "Dentária",
+          text4:
+            "Especializada em Facetas Dentárias trabalhadas à mão, a Unidade Dentária EHTIQ pauta-se por elevados padrões de brio e sensibilidade.",
+          text3:
+            "A revolução da prática clínica com foco no equilíbrio físico, mental e emocional. Deixámos o conceito interventivo para dar lugar à longevidade.",
           text2:
             "Cuidados pós-operatórios executados com a Técnica Nany Mota® e Protocolos Personalizados para garantir o bem-estar do corpo e da mente.",
           text1:
@@ -66,6 +72,22 @@ export const content = {
           image5: {
             title: "Glass Skin by HydraFacial",
             text: "A combinação de limpeza, exfoliação, extração e hidratação num único processo, graças à tecnologia HydraFacial.",
+          },
+          image6: {
+            title: "Reposição Hormonal",
+            text: "O poderoso auxílio contra a fadiga, mudanças de humor e ganho de peso, conseguido com protocolos personalizados,",
+          },
+          image7: {
+            title: "Reposição Vitamínica IV Drips",
+            text: "Conseguida com nutrientes essenciais que fluem diretamente no sistema sanguíneo, revitalizando o seu corpo de dentro para fora.",
+          },
+          image8: {
+            title: "FACETAS de Última Geração",
+            text: "Finas lâminas de cerâmica ou resina composta, elaboradas à mão para um efeito além do natural.",
+          },
+          image9: {
+            title: "ORTONDÔNTIA INVISÍVEL",
+            text: "Alinhadores impercetíveis que garantem conforto e mantém a estética do seu sorriso durante todo o processo.",
           },
         },
         complex: {
