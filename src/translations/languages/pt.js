@@ -42,8 +42,31 @@ export const content = {
           treatments: "Tratamentos",
           signatures: "Assinaturas",
           aesthetic: "Estética & Cirúrgica",
+          afterCirurgy: "Pós-Cirúrgico & Bem-estar",
+          text2:
+            "Cuidados pós-operatórios executados com a Técnica Nany Mota® e Protocolos Personalizados para garantir o bem-estar do corpo e da mente.",
           text1:
             "Aliámos os melhores Profissionais à melhor Tecnologia do mercado, para garantir resultados excecionais e o mais elevado acompanhamento clínico.",
+          image1: {
+            title: "LIPO DE ALTA DEFINIÇÃO",
+            text: "Uma abordagem inovadora e exclusiva, que permite realçar contornos musculares e evidenciar os seus melhores detalhes, deixando a Lipoaspiração Convencial no passado.",
+          },
+          image2: {
+            title: "EHTIQ ELIXIR",
+            text: "Concebido para contrariar os sinais do tempo, devolvendo a firmeza, elasticidade e brilho. Um cocktail de poderosos ingredientes, formulado para diferentes zonas de corpo.",
+          },
+          image3: {
+            title: "EHTIQ AGELESS Neck & Neckline",
+            text: "A vanguarda da tecnologia associada às melhores fórmulas do mercado. Um protocolo anti-envelhecimento com resultados inigualáveis. ",
+          },
+          image4: {
+            title: "Massagem Pós-cirúrgica by Nany Mota",
+            text: "Uma referência no acompanhamento pós-cirúrgico, com técnica exclusiva Nany Mota®.",
+          },
+          image5: {
+            title: "Glass Skin by HydraFacial",
+            text: "A combinação de limpeza, exfoliação, extração e hidratação num único processo, graças à tecnologia HydraFacial.",
+          },
         },
         complex: {
           title:
