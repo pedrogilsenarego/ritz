@@ -89,6 +89,8 @@ export const content = {
             title: "ORTONDÔNTIA INVISÍVEL",
             text: "Alinhadores impercetíveis que garantem conforto e mantém a estética do seu sorriso durante todo o processo.",
           },
+          smartReserach: "pesquisa inteligente",
+          findTheCorrectTreatments: "ENCONTRE OS TRATAMENTOS INDICADOS PARA SI",
         },
         complex: {
           title:

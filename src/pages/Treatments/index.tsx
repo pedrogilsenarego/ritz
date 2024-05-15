@@ -19,12 +19,15 @@ const Treatments = () => {
       <div style={{ marginTop: mobile ? "120px" : "0px" }}>
         <InitialSection />
       </div>
-      <div style={{ marginTop: mobile ? "250px" : "400px" }}>
+      <div style={{ marginTop: mobile ? "120px" : "195px" }}>
+        <InitialSection2 />
+      </div>
+      {/* <div style={{ marginTop: mobile ? "250px" : "400px" }}>
         <Escort />
       </div>
       <div style={{ marginTop: mobile ? "100px" : "0px" }}>
         <SpaceWhere />
-      </div>
+      </div> */}
     </>
   );
 };
