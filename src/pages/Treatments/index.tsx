@@ -1,12 +1,10 @@
-import { Container, useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import InitialImage from "./Components/InitialImage";
 
-import { MAX_SCREEN } from "../../constants/screen";
-import Escort from "../Home/Components/Escort";
-import SpaceWhere from "../Home/Components/SpaceWhere";
-import IdentityProtection from "./Components/IdentityProtection";
 import InitialSection2 from "./Components/InitialSection2";
 import InitialSection from "./Components/InitialSection";
+import SchedulleMembership from "../Complex/Components/SchedulleMembership";
+import { TreatmentSelection } from "./Components/TreatmentSelection";
 
 const Treatments = () => {
   const theme = useTheme();
@@ -22,12 +20,12 @@ const Treatments = () => {
       <div style={{ marginTop: mobile ? "120px" : "195px" }}>
         <InitialSection2 />
       </div>
-      {/* <div style={{ marginTop: mobile ? "250px" : "400px" }}>
-        <Escort />
+      <div style={{ marginTop: "300px" }}>
+        <TreatmentSelection />
       </div>
-      <div style={{ marginTop: mobile ? "100px" : "0px" }}>
-        <SpaceWhere />
-      </div> */}
+      <div style={{ marginTop: "200px" }}>
+        <SchedulleMembership />
+      </div>
     </>
   );
 };

@@ -61,7 +61,7 @@ export default function CustomizedAccordions({
           id="panel1d-header"
           style={{
             padding: 0,
-            borderBottom: "solid 2px black",
+            borderBottom: "solid 1px black",
           }}
         >
           <div
@@ -74,14 +74,15 @@ export default function CustomizedAccordions({
           >
             <Typography
               style={{
-                fontSize: mobile ? "13px" : "24px",
-                fontWeight: "bold",
+                fontSize: mobile ? "13px" : "17px",
+                fontWeight: 500,
+                letterSpacing: "1px",
                 textTransform: "uppercase",
               }}
             >
               {title}
             </Typography>
-            <Typography style={{ fontSize: "30px", fontWeight: "bold" }}>
+            <Typography style={{ fontSize: "17px", fontWeight: 500 }}>
               {expanded ? "-" : "+"}
             </Typography>
           </div>
@@ -93,9 +94,7 @@ export default function CustomizedAccordions({
         </MuiAccordionSummary>
         <AccordionDetails
           style={{
-            display: "flex",
-            flexDirection: "column",
-            rowGap: "20px",
+            padding: 0,
           }}
         >
           {children}

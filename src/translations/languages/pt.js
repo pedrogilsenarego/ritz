@@ -91,6 +91,14 @@ export const content = {
           },
           smartReserach: "pesquisa inteligente",
           findTheCorrectTreatments: "ENCONTRE OS TRATAMENTOS INDICADOS PARA SI",
+          selectServices: "SELEção de Serviços",
+          completeRange: "Gama Completa EHTIQ",
+          bySpecialty: "POR ESPECIALIDADE",
+          byBody: "POR Zonas de corpo",
+          face: "rosto",
+          smile: "sorriso",
+          body: "corpo",
+          helth: "health 360º",
         },
         complex: {
           title:

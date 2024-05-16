@@ -1,7 +1,7 @@
 import { Container, useMediaQuery, useTheme } from "@mui/material";
 
 import SchedulleMembership from "../Complex/Components/SchedulleMembership";
-import IdentityProtection from "../Treatments/Components/IdentityProtection";
+import IdentityProtection from "../Experience/Components/IdentityProtection";
 import Journey from "./Components/Journey";
 import Location from "./Components/Location";
 import Slogan from "./Components/Slogan";

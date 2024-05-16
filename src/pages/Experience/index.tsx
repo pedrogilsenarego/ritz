@@ -27,7 +27,6 @@ const Experience = () => {
           <IdentityProtection />
         </div>
         {/* <InitialSection /> */}
-        {/* <SearchSection /> */}
       </Container>
       <div style={{ marginTop: mobile ? "250px" : "400px" }}>
         <Escort />
