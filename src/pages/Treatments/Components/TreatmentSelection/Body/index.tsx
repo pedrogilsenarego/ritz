@@ -61,9 +61,9 @@ export const Body = () => {
     >
       <div style={{ display: "flex", columnGap: "73px" }}>
         <ButtonLogo icon={Face} title={i18n.t("pages.treatments.face")} />
-        <ButtonLogo icon={Smile} title={i18n.t("pages.treatments.face")} />
-        <ButtonLogo icon={Bodi} title={i18n.t("pages.treatments.face")} />
-        <ButtonLogo icon={Health} title={i18n.t("pages.treatments.face")} />
+        <ButtonLogo icon={Smile} title={i18n.t("pages.treatments.smile")} />
+        <ButtonLogo icon={Bodi} title={i18n.t("pages.treatments.body")} />
+        <ButtonLogo icon={Health} title={i18n.t("pages.treatments.health")} />
       </div>
     </div>
   );

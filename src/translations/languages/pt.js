@@ -99,6 +99,9 @@ export const content = {
           smile: "sorriso",
           body: "corpo",
           helth: "health 360º",
+          cirurgy: "Estética & cirúrgica",
+          postCirurgy: "pós-cirúrgico & bem-estar",
+          prevention: "SAÚDE PREVENTIVA",
         },
         complex: {
           title:
