@@ -52,14 +52,15 @@ const SpaceWhere = () => {
           <Button
             style={{
               border: "solid 2px rgba(119, 124, 126, 1)",
-              padding: "5px 40px",
+              padding: "8px 24px",
               borderRadius: "30px",
             }}
           >
             <Typography
               style={{
                 textTransform: "uppercase",
-                fontSize: mobile ? "12px" : "22px",
+                fontSize: "15px",
+                lineHeight: "14px",
               }}
             >
               {i18n.t("pages.home.ctaSpaceWhere")}

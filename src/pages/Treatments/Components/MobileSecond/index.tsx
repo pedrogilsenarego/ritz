@@ -1,11 +1,8 @@
-import { Button, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Typography } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
 
-const InitialSection2 = () => {
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-
+export const MobileSecond = () => {
   return (
     <div
       style={{
@@ -83,5 +80,3 @@ const InitialSection2 = () => {
     </div>
   );
 };
-
-export default InitialSection2;

@@ -7,6 +7,7 @@ import SchedulleMembership from "../Complex/Components/SchedulleMembership";
 import { TreatmentSelection } from "./Components/TreatmentSelection";
 import { MobileInitial } from "./Components/MobileInitial";
 import { MobileFirst } from "./Components/MobileFirst";
+import { MobileSecond } from "./Components/MobileSecond";
 
 const Treatments = () => {
   const theme = useTheme();
@@ -41,6 +42,7 @@ const Treatments = () => {
         <div style={{ marginTop: "150px" }}>
           <MobileFirst />
         </div>
+        <div>{/* <MobileSecond /> */}</div>
       </>
     );
   };
