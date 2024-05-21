@@ -42,7 +42,9 @@ const Treatments = () => {
         <div style={{ marginTop: "150px" }}>
           <MobileFirst />
         </div>
-        <div>{/* <MobileSecond /> */}</div>
+        <div style={{ marginTop: "240px" }}>
+          <MobileSecond />
+        </div>
       </>
     );
   };

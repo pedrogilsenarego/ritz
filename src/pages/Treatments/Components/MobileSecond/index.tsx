@@ -12,7 +12,7 @@ export const MobileSecond = () => {
         justifyContent: "center",
         alignItems: "center",
         rowGap: "120px",
-        height: "287px",
+        height: "197px",
         backgroundColor: "rgba(218, 208, 201, 0.5)",
       }}
     >
@@ -23,7 +23,7 @@ export const MobileSecond = () => {
           left: "50%",
           transform: "translateX(-50%)",
           top: "-150px",
-          height: "188px",
+          height: "164px",
           width: "1px",
           backgroundColor: "rgba(0, 0, 0, 0.8)",
         }}
@@ -33,7 +33,7 @@ export const MobileSecond = () => {
           style={{
             fontWeight: 300,
             textAlign: "center",
-            fontSize: "20px",
+            fontSize: "12px",
             textTransform: "uppercase",
             color: "rgba(110, 110, 110, 1)",
           }}
@@ -42,9 +42,10 @@ export const MobileSecond = () => {
         </Typography>
         <Typography
           style={{
+            margin: "0px 16px",
             fontWeight: 500,
             textAlign: "center",
-            fontSize: "19px",
+            fontSize: "12px",
             textTransform: "uppercase",
             color: "black",
           }}
@@ -53,29 +54,27 @@ export const MobileSecond = () => {
         </Typography>
       </div>
 
-      <img
-        alt=""
-        style={{
-          top: "197px",
-          width: "962px",
-          height: "247px",
-          objectFit: "cover",
-          position: "absolute",
-          left: "50%",
-          transform: "translateX(-50%)",
-        }}
-        src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-      />
-
       <div
         style={{
+          top: "157px",
           position: "absolute",
           left: "50%",
-          bottom: "-40px",
           transform: "translateX(-50%)",
+          width: "calc(100% - 32px)",
+          height: "156px",
+          backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        <ButtonNinja label={i18n.t("pages.home.exportAdvice")} />
+        {" "}
+        <ButtonNinja
+          textStyles={{ fontSize: "12px" }}
+          label={i18n.t("pages.home.exportAdvice")}
+        />
       </div>
     </div>
   );
