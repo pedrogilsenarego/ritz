@@ -8,6 +8,7 @@ import { TreatmentSelection } from "./Components/TreatmentSelection";
 import { MobileInitial } from "./Components/MobileInitial";
 import { MobileFirst } from "./Components/MobileFirst";
 import { MobileSecond } from "./Components/MobileSecond";
+import { MobileTreatmentSelection } from "./Components/MobileTratmentSelection";
 
 const Treatments = () => {
   const theme = useTheme();
@@ -44,6 +45,12 @@ const Treatments = () => {
         </div>
         <div style={{ marginTop: "240px" }}>
           <MobileSecond />
+        </div>
+        <div style={{ marginTop: "340px" }}>
+          <MobileTreatmentSelection />
+        </div>
+        <div style={{ marginTop: "80px" }}>
+          <SchedulleMembership />
         </div>
       </>
     );

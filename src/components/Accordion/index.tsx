@@ -52,7 +52,10 @@ export default function CustomizedAccordions({
   return (
     <div>
       <Accordion
-        sx={{ border: "none", backgroundColor: "transparent" }}
+        sx={{
+          border: "none",
+          backgroundColor: "transparent",
+        }}
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
@@ -61,6 +64,7 @@ export default function CustomizedAccordions({
           id="panel1d-header"
           style={{
             padding: 0,
+
             borderBottom: "solid 1px black",
           }}
         >
@@ -69,6 +73,7 @@ export default function CustomizedAccordions({
               justifyContent: "space-between",
               display: "flex",
               width: "100%",
+              marginBottom: mobile ? "-10px" : undefined,
               alignItems: "center",
             }}
           >

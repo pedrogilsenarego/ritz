@@ -452,6 +452,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
               className={isDotActive(index) ? "active" : ""}
               onClick={() => handleDotClick(index)}
               style={{
+                //transform: "translateY(10px)",
                 backgroundColor: isDotActive(index)
                   ? dotsActivedColor
                   : dotsColor,
