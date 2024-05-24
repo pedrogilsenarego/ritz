@@ -1,11 +1,4 @@
-import {
-  Container,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-  Button,
-} from "@mui/material";
+import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import Carousel from "../../components/Carousel";
 
@@ -123,7 +116,7 @@ const Complex = () => {
                       : "rgba(248, 247, 247, 0.6)",
                     display: "flex",
                     position: mobile ? "unset" : "absolute",
-                    width: "376px",
+                    width: "100%",
                     right: 0,
                     bottom: mobile ? "-150px" : "50px",
                     padding: "40px",
