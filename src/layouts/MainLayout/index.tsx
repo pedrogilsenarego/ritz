@@ -23,9 +23,9 @@ const HomepageLayout = ({
         justifyContent: "space-between",
       }}
     >
-      <div style={{ display: "flex", gap: "20px" }}>
+      {/* <div style={{ display: "flex", gap: "20px" }}>
         <p onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}>Admin</p>
-      </div>
+      </div> */}
       {hasHeader && <Header />}
 
       <Box

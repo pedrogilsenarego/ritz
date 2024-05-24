@@ -2,20 +2,23 @@ import {
   Box,
   Button,
   ButtonBase,
+  Container,
   Grid,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
-import logo12 from "../../../../assets/EHTIQ BRANDS-12.svg";
-import { Colors, mainColors } from "../../../../theme/theme";
+import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
 import plus from "../../../../assets/Group 9.svg";
+import { MAX_SCREEN } from "../../../../constants/screen";
 
 const Treatments = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+
+  const getRandomNumber = () => Math.floor(Math.random() * 4) + 1;
   type PropsTile = {
     image: string;
     clinic: string;
@@ -203,30 +206,30 @@ const Treatments = () => {
         <Grid container spacing={mobile ? "10px" : "20px"}>
           <Grid item xs={6} md={3}>
             <Tile
-              subtitles={["Tratamentos", "Consultoria", "teste", "oleol"]}
+              subtitles={["Tratamentos"]}
               clinic={i18n.t("pages.home.cirurgy")}
-              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
-              subtitles={["Tratamentos", "Consultoria"]}
+              subtitles={["Tratamentos"]}
               clinic={i18n.t("pages.home.dental")}
-              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
-              subtitles={["Tratamentos", "Consultoria"]}
+              subtitles={["Tratamentos"]}
               clinic={i18n.t("pages.home.nonCirurgy")}
-              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
-              subtitles={["Tratamentos", "Consultoria"]}
+              subtitles={["Tratamentos"]}
               clinic={i18n.t("pages.home.healthPrevention")}
-              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
             />
           </Grid>
         </Grid>
@@ -249,7 +252,7 @@ const Treatments = () => {
           flexDirection: "column",
           alignItems: "center",
           rowGap: "15px",
-          position: "relative",
+          height: mobile ? "197px" : "287px",
           marginTop: "100px",
           padding: mobile ? "70px 0px 80px 0px" : "120px 0px 120px 0px",
           backgroundColor: "rgba(218, 208, 201, 0.5)",
@@ -280,42 +283,52 @@ const Treatments = () => {
         >
           {i18n.t("pages.home.correctTreatment")}
         </Typography>
-
-        <img
+        <Container
           style={{
-            borderRadius: "5px",
-            height: mobile ? "150px" : "247px",
-            width: mobile ? "95%" : "962px",
-            objectFit: "cover",
-            position: "absolute",
-            bottom: mobile ? "-100px" : "-149px",
-          }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-          alt=""
-        />
-        <ButtonBase
-          sx={{
-            display: "inline-block",
-            position: "absolute",
-            bottom: "-45px",
-            borderRadius: "30px",
-            padding: "16px 30px",
-            backgroundColor: "rgba(73, 73, 73, 1)",
-            boxShadow: "0px 4px 4.9px 0px rgba(0, 0, 0, 0.25)",
+            maxWidth: MAX_SCREEN,
+            padding: mobile ? undefined : "0px 250px",
+            display: "flex",
+            position: "relative",
+            justifyContent: "center",
           }}
         >
-          <Typography
+          <video
+            style={{
+              borderRadius: "5px",
+              height: mobile ? "150px" : undefined,
+              aspectRatio: mobile ? undefined : 3.89,
+              width: mobile ? "99%" : "90%",
+              objectFit: "cover",
+            }}
+            src={`https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.mov`}
+            autoPlay
+            muted
+            loop
+          />
+          <ButtonBase
             sx={{
-              color: "white",
-              textTransform: "uppercase",
-              fontSize: "14px",
-              lineHeight: "14px",
-              letterSpacing: "1px",
+              display: "inline-block",
+              position: "absolute",
+              bottom: "50%",
+              borderRadius: "30px",
+              padding: "16px 30px",
+              backgroundColor: "rgba(73, 73, 73, 1)",
+              boxShadow: "0px 4px 4.9px 0px rgba(0, 0, 0, 0.25)",
             }}
           >
-            {i18n.t("pages.home.exportAdvice")}
-          </Typography>
-        </ButtonBase>
+            <Typography
+              sx={{
+                color: "white",
+                textTransform: "uppercase",
+                fontSize: "14px",
+                lineHeight: "14px",
+                letterSpacing: "1px",
+              }}
+            >
+              {i18n.t("pages.home.exportAdvice")}
+            </Typography>
+          </ButtonBase>
+        </Container>
       </div>
     </>
   );

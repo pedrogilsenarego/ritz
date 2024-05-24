@@ -55,7 +55,6 @@ const Header = () => {
   const navigate = useNavigate();
 
   const userQuery = useUser();
-  console.log("data", `${BASE_URL}${userQuery?.data?.Data?.imagem}`);
 
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
@@ -140,7 +139,7 @@ const Header = () => {
         style={{
           padding: "15px 0px 15px 0px",
           backgroundColor,
-          marginTop: "20px",
+          //marginTop: "20px",
           position: "fixed",
           width: "100%",
           zIndex: 1000,

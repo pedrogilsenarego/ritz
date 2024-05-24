@@ -15,7 +15,7 @@ const SpaceWhere = () => {
           alignItems: "center",
           rowGap: mobile ? "30px" : "50px",
 
-          backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+          backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-A-CLINICA.webp)`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
@@ -83,7 +83,7 @@ const SpaceWhere = () => {
             alignItems: "center",
             rowGap: mobile ? "30px" : "50px",
 
-            backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-A-CLINICA.webp)`,
             backgroundPosition: "center",
             backgroundSize: "cover",
           }}

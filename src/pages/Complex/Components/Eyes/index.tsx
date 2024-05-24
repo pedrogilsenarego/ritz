@@ -193,12 +193,14 @@ const Eyes = () => {
           opacity: 0.5,
           position: "absolute",
           height: mobile ? "796px" : "600px",
-          width: "550px",
+          width: mobile ? "100%" : "550px",
           objectFit: "cover",
         }}
         alt=""
         src={
-          "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+          mobile
+            ? "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/A-CLINICA-3-Mobile.webp"
+            : "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-3.webp"
         }
       />
     </div>

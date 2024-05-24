@@ -47,15 +47,17 @@ const Home = () => {
           <Whats />
         </div>
       </Container> */}
-      <Container
-        style={{
-          marginTop: mobile ? "100px" : "250px",
-          maxWidth: MAX_SCREEN,
-          padding: mobile ? "0px" : "0px 150px",
-        }}
-      >
-        <Escort />
-      </Container>
+      <div style={{ marginTop: "100px" }}>
+        <Container
+          style={{
+            marginTop: mobile ? "100px" : "250px",
+            maxWidth: MAX_SCREEN,
+            padding: mobile ? "0px" : "0px 150px",
+          }}
+        >
+          <Escort />
+        </Container>
+      </div>
       <SpaceWhere />
     </>
   );

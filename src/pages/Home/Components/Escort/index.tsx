@@ -8,7 +8,6 @@ import { i18n } from "../../../../translations/i18n";
 const Escort = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const iconSize = mobile ? "29px" : "24px";
   const iconTextSize = mobile ? "7px" : "12px";
 
   const renderLaptop = () => {
@@ -26,14 +25,14 @@ const Escort = () => {
             width: mobile ? "100%" : "50%",
             aspectRatio: 1,
             zIndex: 1,
-
             objectFit: "cover",
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-CONCIERGE-70_.webp"
         />
         <div
           style={{
             padding: "60px",
+            width: mobile ? "100%" : "50%",
             backgroundColor: "rgba(223, 218, 214, 1)",
             flexDirection: "column",
             justifyContent: "space-between",
@@ -308,7 +307,7 @@ const Escort = () => {
               marginTop: "30px",
               objectFit: "cover",
             }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-CONCIERGE-70_.webp"
           />
           <div style={{ padding: "40px" }}>
             <Typography

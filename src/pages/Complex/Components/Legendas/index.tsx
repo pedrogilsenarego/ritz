@@ -11,7 +11,7 @@ const Legendas = () => {
             style={{
               width: "50%",
               height: "630px",
-              backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-2.1.webp)`,
               backgroundSize: "cover",
               backgroundPosition: "center center",
             }}
@@ -28,7 +28,7 @@ const Legendas = () => {
             style={{
               width: "50%",
               height: "630px",
-              backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINCIA-2.2.webp)`,
               backgroundSize: "cover",
               backgroundPosition: "center center",
             }}
@@ -39,7 +39,7 @@ const Legendas = () => {
             style={{
               width: "50%",
               height: "630px",
-              backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-2.3.webp)`,
               backgroundSize: "cover",
               backgroundPosition: "center center",
             }}
@@ -62,7 +62,7 @@ const Legendas = () => {
             style={{
               width: "100%",
               height: "583px",
-              backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-2.1.webp)`,
               backgroundSize: "cover",
               backgroundPosition: "center center",
             }}
@@ -76,7 +76,7 @@ const Legendas = () => {
             style={{
               width: "100%",
               height: "583px",
-              backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINCIA-2.2.webp)`,
               backgroundSize: "cover",
               backgroundPosition: "center center",
             }}
@@ -96,7 +96,7 @@ const Legendas = () => {
             style={{
               width: "100%",
               height: "583px",
-              backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-2.3.webp)`,
               backgroundSize: "cover",
               backgroundPosition: "center center",
             }}

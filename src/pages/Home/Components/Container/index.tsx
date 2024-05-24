@@ -86,7 +86,7 @@ const ContainerC = () => {
               objectFit: "cover",
               width: "100%",
             }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-2.webp"
             alt=""
           />
         </div>
@@ -169,7 +169,7 @@ const ContainerC = () => {
               width: "100%",
               margin: "0px 250px",
             }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-2.webp"
             alt=""
           />
         </div>
