@@ -1,29 +1,37 @@
-import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 
 const InitialSection = () => {
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-
   const ImageElement = ({
     title,
     text,
     alignRight,
+    srcImage,
   }: {
     title: string;
     text: string;
     alignRight?: boolean;
+    srcImage: string;
   }) => {
     return (
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-
+          position: "relative",
           padding: "0px 50px",
           rowGap: "15px",
         }}
       >
+        <div
+          style={{
+            position: "absolute",
+            height: "113px",
+
+            width: "calc(100% - 100px)",
+            backgroundColor: "rgba(184, 163, 151, 0.54)",
+          }}
+        />
         <img
           alt=""
           style={{
@@ -31,7 +39,7 @@ const InitialSection = () => {
             width: "100%",
             objectFit: "cover",
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+          src={srcImage}
         />
         <Typography
           style={{
@@ -158,14 +166,17 @@ const InitialSection = () => {
               <ImageElement
                 title={i18n.t("pages.treatments.image1.title")}
                 text={i18n.t("pages.treatments.image1.text")}
+                srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-1.1.webp"
               />
               <ImageElement
                 title={i18n.t("pages.treatments.image2.title")}
                 text={i18n.t("pages.treatments.image2.text")}
+                srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-1.2.webp"
               />
               <ImageElement
                 title={i18n.t("pages.treatments.image3.title")}
                 text={i18n.t("pages.treatments.image3.text")}
+                srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-1.3.webp"
               />
             </div>
           </div>
@@ -195,10 +206,12 @@ const InitialSection = () => {
               <ImageElement
                 title={i18n.t("pages.treatments.image4.title")}
                 text={i18n.t("pages.treatments.image4.text")}
+                srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-2.1.webp"
               />
               <ImageElement
                 title={i18n.t("pages.treatments.image5.title")}
                 text={i18n.t("pages.treatments.image5.text")}
+                srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-2.2.webp"
               />
             </div>
           </div>
@@ -229,11 +242,13 @@ const InitialSection = () => {
                 alignRight
                 title={i18n.t("pages.treatments.image6.title")}
                 text={i18n.t("pages.treatments.image6.text")}
+                srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-3.1.webp"
               />
               <ImageElement
                 alignRight
                 title={i18n.t("pages.treatments.image7.title")}
                 text={i18n.t("pages.treatments.image7.text")}
+                srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-3.2.webp"
               />
             </div>
             <div style={{ width: "50%" }} />
@@ -265,11 +280,13 @@ const InitialSection = () => {
                 alignRight
                 title={i18n.t("pages.treatments.image8.title")}
                 text={i18n.t("pages.treatments.image8.text")}
+                srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-4.1.webp"
               />
               <ImageElement
                 alignRight
                 title={i18n.t("pages.treatments.image9.title")}
                 text={i18n.t("pages.treatments.image9.text")}
+                srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-4.2.webp"
               />
             </div>
             <div style={{ width: "50%" }} />
@@ -284,7 +301,7 @@ const InitialSection = () => {
             height: "2289px",
             objectFit: "cover",
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-1-2.webp"
         />
       </Grid>
       <Grid item xs={12} md={6}>
@@ -296,7 +313,7 @@ const InitialSection = () => {
             height: "2029px",
             objectFit: "cover",
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-3-4.webp"
         />
       </Grid>
     </Grid>
