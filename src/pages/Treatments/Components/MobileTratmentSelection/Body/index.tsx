@@ -55,7 +55,7 @@ export const Body = () => {
         width: "100%",
         height: "235px",
         objectFit: "cover",
-        backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+        backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-8-Mobile.webp)`,
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}

@@ -70,10 +70,12 @@ export const MobileFirst = () => {
     title,
     text,
     alignRight,
+    imageSrc,
   }: {
     title: string;
     text: string;
     alignRight?: boolean;
+    imageSrc: string;
   }) => {
     return (
       <div
@@ -82,8 +84,17 @@ export const MobileFirst = () => {
           flexDirection: "column",
           padding: "0px 20px",
           rowGap: "15px",
+          position: "relative",
         }}
       >
+        <div
+          style={{
+            backgroundColor: "rgba(184, 163, 151, 0.54)",
+            height: "113px",
+            position: "absolute",
+            width: "calc(100% - 40px)",
+          }}
+        />
         <img
           alt=""
           style={{
@@ -91,7 +102,7 @@ export const MobileFirst = () => {
             width: "100%",
             objectFit: "cover",
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+          src={imageSrc}
         />
         <Typography
           style={{
@@ -143,7 +154,7 @@ export const MobileFirst = () => {
             height: "518px",
             objectFit: "cover",
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-1-Mobile.webp"
         />
         <div
           style={{
@@ -157,14 +168,17 @@ export const MobileFirst = () => {
           <ImageElement
             title={i18n.t("pages.treatments.image1.title")}
             text={i18n.t("pages.treatments.image1.text")}
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-1.1-Mobile.webp"
           />
           <ImageElement
             title={i18n.t("pages.treatments.image2.title")}
             text={i18n.t("pages.treatments.image2.text")}
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-1.2-Mobile.webp"
           />
           <ImageElement
             title={i18n.t("pages.treatments.image3.title")}
             text={i18n.t("pages.treatments.image3.text")}
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-1.3-Mobile.webp"
           />
         </div>
       </div>
@@ -191,7 +205,7 @@ export const MobileFirst = () => {
             height: "518px",
             objectFit: "cover",
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-2-Mobile.webp"
         />
         <div
           style={{
@@ -205,10 +219,12 @@ export const MobileFirst = () => {
           <ImageElement
             title={i18n.t("pages.treatments.image4.title")}
             text={i18n.t("pages.treatments.image4.text")}
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-2.1-Mobile.webp"
           />
           <ImageElement
             title={i18n.t("pages.treatments.image5.title")}
             text={i18n.t("pages.treatments.image5.text")}
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-2.2-Mobile.webp"
           />
         </div>
       </div>
@@ -236,7 +252,7 @@ export const MobileFirst = () => {
             height: "518px",
             objectFit: "cover",
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-3-Mobile.webp"
         />
         <div
           style={{
@@ -251,11 +267,13 @@ export const MobileFirst = () => {
             alignRight
             title={i18n.t("pages.treatments.image6.title")}
             text={i18n.t("pages.treatments.image6.text")}
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-1.2-Mobile.webp"
           />
           <ImageElement
             alignRight
             title={i18n.t("pages.treatments.image7.title")}
             text={i18n.t("pages.treatments.image7.text")}
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-1.2-Mobile.webp"
           />
         </div>
       </div>
@@ -283,7 +301,7 @@ export const MobileFirst = () => {
             height: "518px",
             objectFit: "cover",
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)"
+          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-4-Mobile.webp"
         />
         <div
           style={{
@@ -298,11 +316,13 @@ export const MobileFirst = () => {
             alignRight
             title={i18n.t("pages.treatments.image8.title")}
             text={i18n.t("pages.treatments.image8.text")}
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-3.1-Mobile.webp"
           />
           <ImageElement
             alignRight
             title={i18n.t("pages.treatments.image9.title")}
             text={i18n.t("pages.treatments.image9.text")}
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-3.2-Mobile.webp"
           />
         </div>
       </div>

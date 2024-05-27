@@ -89,7 +89,7 @@ export const TreatmentVideo = () => {
           sx={{
             display: "inline-block",
             position: "absolute",
-            bottom: "50%",
+            bottom: mobile ? "25%" : "50%",
             borderRadius: "30px",
             padding: "16px 30px",
             backgroundColor: "rgba(73, 73, 73, 1)",

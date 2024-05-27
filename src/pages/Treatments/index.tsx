@@ -5,7 +5,6 @@ import SchedulleMembership from "../Complex/Components/SchedulleMembership";
 import { TreatmentSelection } from "./Components/TreatmentSelection";
 import { MobileInitial } from "./Components/MobileInitial";
 import { MobileFirst } from "./Components/MobileFirst";
-import { MobileSecond } from "./Components/MobileSecond";
 import { MobileTreatmentSelection } from "./Components/MobileTratmentSelection";
 import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
 
@@ -43,7 +42,7 @@ const Treatments = () => {
           <MobileFirst />
         </div>
         <div style={{ marginTop: "240px" }}>
-          <MobileSecond />
+          <TreatmentVideo />
         </div>
         <div style={{ marginTop: "340px" }}>
           <MobileTreatmentSelection />
