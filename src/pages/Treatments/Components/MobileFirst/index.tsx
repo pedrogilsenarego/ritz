@@ -168,7 +168,7 @@ export const MobileFirst = () => {
           <ImageElement
             title={i18n.t("pages.treatments.image1.title")}
             text={i18n.t("pages.treatments.image1.text")}
-            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-1.1-Mobile.webp"
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-1.1.webp"
           />
           <ImageElement
             title={i18n.t("pages.treatments.image2.title")}
@@ -219,12 +219,12 @@ export const MobileFirst = () => {
           <ImageElement
             title={i18n.t("pages.treatments.image4.title")}
             text={i18n.t("pages.treatments.image4.text")}
-            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-2.1-Mobile.webp"
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-2.1.webp"
           />
           <ImageElement
             title={i18n.t("pages.treatments.image5.title")}
             text={i18n.t("pages.treatments.image5.text")}
-            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-2.2-Mobile.webp"
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-2.2.webp"
           />
         </div>
       </div>
@@ -267,13 +267,13 @@ export const MobileFirst = () => {
             alignRight
             title={i18n.t("pages.treatments.image6.title")}
             text={i18n.t("pages.treatments.image6.text")}
-            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-1.2-Mobile.webp"
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-3.1.webp"
           />
           <ImageElement
             alignRight
             title={i18n.t("pages.treatments.image7.title")}
             text={i18n.t("pages.treatments.image7.text")}
-            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-1.2-Mobile.webp"
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-3.2.webp"
           />
         </div>
       </div>
@@ -316,13 +316,13 @@ export const MobileFirst = () => {
             alignRight
             title={i18n.t("pages.treatments.image8.title")}
             text={i18n.t("pages.treatments.image8.text")}
-            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-3.1-Mobile.webp"
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-4.1.webp"
           />
           <ImageElement
             alignRight
             title={i18n.t("pages.treatments.image9.title")}
             text={i18n.t("pages.treatments.image9.text")}
-            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-3.2-Mobile.webp"
+            imageSrc="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-4.2.webp"
           />
         </div>
       </div>

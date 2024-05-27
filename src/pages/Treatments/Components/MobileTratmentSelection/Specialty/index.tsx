@@ -5,7 +5,15 @@ import Carousel from "../../../../../components/Carousel";
 
 export const Specialty = () => {
   const [selected, setSelected] = useState(0);
-  const ImageElement = ({ title, index }: { title: string; index: number }) => {
+  const ImageElement = ({
+    title,
+    index,
+    image,
+  }: {
+    title: string;
+    index: number;
+    image: string;
+  }) => {
     return (
       <div
         style={{
@@ -25,7 +33,7 @@ export const Specialty = () => {
             justifyContent: "center",
             width: "100%",
             aspectRatio: 0.75,
-            backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+            backgroundImage: `url(${image})`,
             backgroundSize: "cover",
             backgroundPosition: "center center",
           }}
@@ -94,15 +102,33 @@ export const Specialty = () => {
           dragThreshold={10}
           onItemClick={(item) => console.log(item)}
         >
-          <ImageElement title={i18n.t("pages.treatments.cirurgy")} index={0} />
-          <ImageElement title={i18n.t("pages.treatments.dental")} index={1} />
+          <ImageElement
+            title={i18n.t("pages.treatments.cirurgy")}
+            index={0}
+            image={
+              "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-7.1.webp"
+            }
+          />
+          <ImageElement
+            title={i18n.t("pages.treatments.dental")}
+            index={1}
+            image={
+              "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-7.2.webp"
+            }
+          />
           <ImageElement
             title={i18n.t("pages.treatments.postCirurgy")}
             index={2}
+            image={
+              "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-7.3.webp"
+            }
           />
           <ImageElement
             title={i18n.t("pages.treatments.prevention")}
             index={3}
+            image={
+              "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-7.4.webp"
+            }
           />
         </Carousel>
       </div>
