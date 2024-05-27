@@ -93,14 +93,14 @@ const InitialSection2 = () => {
           <img
             alt=""
             style={{ width: "50%", height: "340px", objectFit: "cover" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.1.webp"
           />
         </div>
         <div style={{ display: "flex", columnGap: "50px" }}>
           <img
             alt=""
             style={{ width: "50%", height: "340px", objectFit: "cover" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.2.webp"
           />
           <div
             style={{
@@ -249,14 +249,14 @@ const InitialSection2 = () => {
           <img
             alt=""
             style={{ width: "50%", height: "340px", objectFit: "cover" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.3.webp"
           />
         </div>
         <div style={{ display: "flex", columnGap: "50px" }}>
           <img
             alt=""
             style={{ width: "50%", height: "340px", objectFit: "cover" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.4.webp"
           />
           <div
             style={{
@@ -347,7 +347,7 @@ const InitialSection2 = () => {
           <img
             alt=""
             style={{ height: "86px", objectFit: "cover", width: "100%" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.1.webp"
           />
           <div
             style={{
@@ -422,7 +422,7 @@ const InitialSection2 = () => {
           <img
             alt=""
             style={{ height: "86px", objectFit: "cover", width: "100%" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.2.webp"
           />
           <div
             style={{
@@ -497,7 +497,7 @@ const InitialSection2 = () => {
           <img
             alt=""
             style={{ height: "86px", objectFit: "cover", width: "100%" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.3.webp"
           />
           <div
             style={{
@@ -572,7 +572,7 @@ const InitialSection2 = () => {
           <img
             alt=""
             style={{ height: "86px", objectFit: "cover", width: "100%" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.4.webp"
           />
           <div
             style={{

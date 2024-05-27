@@ -24,7 +24,7 @@ const Location = () => {
           }}
         >
           <img
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-3.webp"
             alt=""
             style={{ height: "500px", width: "100%", objectFit: "cover" }}
           />
