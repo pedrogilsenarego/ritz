@@ -7,13 +7,17 @@ import Location from "./Components/Location";
 import Slogan from "./Components/Slogan";
 import Values from "./Components/Values";
 
+import { i18n } from "../../translations/i18n";
+import InitialImage from "../Treatments/Components/InitialImage";
+
 const About = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <>
-      <div style={{ marginTop: mobile ? "200px" : "300px" }}>
+      <InitialImage text={i18n.t("pages.about.title")} />
+      <div style={{ marginTop: mobile ? "200px" : "-400px" }}>
         <Slogan />
       </div>
       <Location />

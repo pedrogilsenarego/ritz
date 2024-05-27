@@ -226,9 +226,8 @@ export const content = {
             register: "Register",
           },
         },
-        dna: {
-          theBrand: "The brand",
-          theLogo: "The logo",
+        about: {
+          title: "SOBRE A EHTIQ",
         },
         myCollection: {
           edit: "Edit Information",

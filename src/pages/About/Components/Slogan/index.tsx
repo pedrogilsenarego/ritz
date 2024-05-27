@@ -15,28 +15,6 @@ const Slogan = () => {
         alignItems: "center",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          rowGap: "50px",
-          margin: mobile ? "20px" : "0px",
-        }}
-      >
-        <Typography
-          variant="h1"
-          style={{
-            fontSize: mobile ? "24px" : "45px",
-            textTransform: "uppercase",
-            textAlign: "center",
-            fontWeight: 500,
-            maxWidth: "550px",
-            lineHeight: mobile ? "41px" : "61px",
-          }}
-        >
-          A nossa promessa é o seu Bem-estar
-        </Typography>
-      </div>
       <Container
         style={{
           maxWidth: MAX_SCREEN,
@@ -47,23 +25,31 @@ const Slogan = () => {
       >
         <div
           style={{
-            width: "1px",
-            height: mobile ? "100px" : "216px",
-            position: "absolute",
-            backgroundColor: "black",
-            left: "50%",
-            top: mobile ? "-58px" : "-150px",
-          }}
-        />
-        <img
-          alt=""
-          style={{
             width: "100%",
             height: mobile ? "194px" : "580px",
-            objectFit: "cover",
+            display: "flex",
+            alignItems: "end",
+            justifyContent: "end",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
           }}
-          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp"
-        />
+        >
+          <Typography
+            variant="h1"
+            style={{
+              fontSize: "45px",
+              color: "rgba(255, 255, 255, 0.7)",
+              textTransform: "uppercase",
+              textAlign: "right",
+              lineHeight: "55px",
+              padding: "40px 35px",
+            }}
+            dangerouslySetInnerHTML={{
+              __html: "A nossa promessa é</br> o seu Bem-estar",
+            }}
+          />
+        </div>
       </Container>
     </div>
   );

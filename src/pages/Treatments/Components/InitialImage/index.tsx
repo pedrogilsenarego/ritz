@@ -1,11 +1,7 @@
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Typography } from "@mui/material";
 import Logo from "../../../../assets/Slogan.svg";
 
-import { i18n } from "../../../../translations/i18n";
-
-const InitialImage = () => {
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+const InitialImage = ({ text }: { text: string }) => {
   return (
     <div
       style={{
@@ -29,7 +25,7 @@ const InitialImage = () => {
           color: "rgba(95, 95, 95, 1)",
         }}
       >
-        {i18n.t("pages.treatments.treatments")}
+        {text}
       </Typography>
       <img src={Logo} alt="" />
     </div>

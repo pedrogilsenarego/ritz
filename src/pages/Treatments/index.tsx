@@ -7,6 +7,7 @@ import { MobileInitial } from "./Components/MobileInitial";
 import { MobileFirst } from "./Components/MobileFirst";
 import { MobileTreatmentSelection } from "./Components/MobileTratmentSelection";
 import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
+import { i18n } from "../../translations/i18n";
 
 const Treatments = () => {
   const theme = useTheme();
@@ -16,7 +17,7 @@ const Treatments = () => {
     return (
       <>
         <div style={{ marginTop: mobile ? "120px" : "0px" }}>
-          <InitialImage />
+          <InitialImage text={i18n.t("pages.treatments.treatments")} />
         </div>
         <div style={{ marginTop: mobile ? "120px" : "0px" }}>
           <InitialSection />
