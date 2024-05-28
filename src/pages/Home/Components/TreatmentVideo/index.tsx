@@ -78,6 +78,8 @@ export const TreatmentVideo = () => {
             height: mobile ? "150px" : undefined,
             aspectRatio: mobile ? undefined : 3.89,
             width: mobile ? "99%" : "90%",
+
+            clipPath: "inset(0px)",
             objectFit: "cover",
           }}
           src={`https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.webm`}

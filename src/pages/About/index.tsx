@@ -34,14 +34,12 @@ const About = () => {
         <Journey />
       </div>
 
-      <Container style={{}} maxWidth="xl">
-        <div style={{ marginTop: mobile ? "200px" : "300px" }}>
-          <IdentityProtection />
-        </div>
-        <div style={{ marginTop: "300px" }}>
-          <SchedulleMembership />
-        </div>
-      </Container>
+      <div style={{ marginTop: mobile ? "200px" : "250px" }}>
+        <IdentityProtection />
+      </div>
+      <div style={{ marginTop: "200px" }}>
+        <SchedulleMembership />
+      </div>
     </>
   );
 };

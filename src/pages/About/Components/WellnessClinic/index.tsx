@@ -3,7 +3,7 @@ import Logo from "../../../../assets/EHTIQ BRANDS-12_2.svg";
 import Brand from "../../../../assets/EHTIQ BRANDS-09_2.svg";
 export const WellnessClinic = () => {
   return (
-    <div style={{ height: "853px", width: "100%" }}>
+    <div style={{ height: "853px", width: "100%", position: "relative" }}>
       <div
         style={{
           backgroundPosition: "center center",
@@ -50,6 +50,16 @@ export const WellnessClinic = () => {
           }}
         ></div>
       </div>
+      <div
+        style={{
+          position: "absolute",
+          height: "264px",
+          width: "1px",
+          left: "50%",
+          top: "-240px",
+          backgroundColor: "black",
+        }}
+      />
     </div>
   );
 };
