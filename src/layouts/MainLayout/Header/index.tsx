@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 //import logo from "../../../assets/logo.svg";
 import Logo from "../../../assets/EHTIQ_Logo.svg";
-import LogoMobile from "../../../assets/EHTIQ BRANDS-01 1_mobile.svg";
+import LogoMobile from "../../../assets/EHTIQ BRANDS-01 1_mobile2.png";
 import SearchIcon from "../../../assets/Icon_Search.svg";
 import Login from "../../../assets/Log_In.svg";
 import DrawerMine from "../../../components/Drawer";
@@ -344,9 +344,6 @@ const Header = () => {
             onClick={() => navigate(ROUTE_PATHS.HOME)}
             src={LogoMobile}
             alt="logo"
-            style={{
-              cursor: "pointer",
-            }}
           />
           <img
             onClick={(e) => {
