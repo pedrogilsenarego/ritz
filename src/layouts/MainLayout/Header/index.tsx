@@ -14,6 +14,7 @@ import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 //import logo from "../../../assets/logo.svg";
 import Logo from "../../../assets/EHTIQ_Logo.svg";
+import LogoMobile from "../../../assets/EHTIQ BRANDS-01 1_mobile.svg";
 import SearchIcon from "../../../assets/Icon_Search.svg";
 import Login from "../../../assets/Log_In.svg";
 import DrawerMine from "../../../components/Drawer";
@@ -26,8 +27,7 @@ import { useSignOut } from "../../../hooks/useLogout";
 import { State } from "../../../redux/types";
 import { ROUTE_PATHS } from "../../../routes/constants";
 import { Colors, mainColors } from "../../../theme/theme";
-import { i18n } from "../../../translations/i18n";
-import { CurrentUser } from "../../../types/user";
+
 import Cart from "./Cart";
 import LoginPopoverContent from "./LoginPopoverContent";
 import UserPopoverContent from "./UserPopoverContent";
@@ -342,10 +342,9 @@ const Header = () => {
           />
           <img
             onClick={() => navigate(ROUTE_PATHS.HOME)}
-            src={Logo}
+            src={LogoMobile}
             alt="logo"
             style={{
-              width: "123px",
               cursor: "pointer",
             }}
           />
