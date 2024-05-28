@@ -21,35 +21,6 @@ const Journey = () => {
         maxWidth: MAX_SCREEN,
       }}
     >
-      {!mobile && (
-        <>
-          <Typography
-            style={{
-              fontSize: "18px",
-              textAlign: "center",
-              letterSpacing: "1px",
-              lineHeight: "30px",
-              width: "60%",
-            }}
-          >
-            Estes valores são a essência da nossa marca e guiam cada aspecto da
-            nossa prática.
-          </Typography>
-          <Typography
-            variant="h1"
-            style={{
-              fontSize: "30px",
-              textAlign: "center",
-              letterSpacing: "1px",
-              lineHeight: "30px",
-              textTransform: "uppercase",
-              marginTop: "30px",
-            }}
-          >
-            Elevamos os <b>padrões de qualidade</b> nos cuidados de saúde.
-          </Typography>
-        </>
-      )}
       <Grid
         container
         columnSpacing={mobile ? "20px" : "60px"}

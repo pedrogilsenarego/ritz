@@ -9,6 +9,7 @@ import Values from "./Components/Values";
 
 import { i18n } from "../../translations/i18n";
 import InitialImage from "../Treatments/Components/InitialImage";
+import { WellnessClinic } from "./Components/WellnessClinic";
 
 const About = () => {
   const theme = useTheme();
@@ -20,8 +21,15 @@ const About = () => {
       <div style={{ marginTop: mobile ? "200px" : "-400px" }}>
         <Slogan />
       </div>
-      <Location />
-      <Values />
+      <div style={{ marginTop: "319px" }}>
+        <WellnessClinic />
+      </div>
+      <div style={{ marginTop: "173px" }}>
+        <Location />
+      </div>
+      <div style={{ marginTop: "200px" }}>
+        <Values />
+      </div>
       <div style={{ marginTop: mobile ? "150px" : "300px" }}>
         <Journey />
       </div>

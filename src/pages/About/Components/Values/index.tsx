@@ -1,5 +1,4 @@
 import {
-  Button,
   Container,
   Grid,
   Typography,
@@ -12,288 +11,190 @@ const Values = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   return (
-    <div
-      style={{
-        width: "100vw",
-        marginTop: "200px",
-        backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: mobile ? "100px 20px" : "132px 22.5% 122px 22.5%",
-      }}
-    >
-      <Container
+    <>
+      <Typography
+        variant="h1"
         style={{
-          maxWidth: MAX_SCREEN,
+          textAlign: "center",
+          fontSize: "30px",
+          letterSpacing: "3px",
+          fontWeight: 500,
+          textTransform: "uppercase",
         }}
       >
+        Elevamos os <b>padrões de qualidade</b> nos cuidados de saúde.
+      </Typography>
+      <Grid
+        container
+        columnSpacing={"30px"}
+        style={{
+          backgroundColor: "rgba(57, 57, 57, 1)",
+          padding: "98px 37px",
+          marginTop: "200px",
+        }}
+      >
+        <Grid item xs={3}>
+          <img
+            style={{ width: "100%" }}
+            alt=""
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.1.webp"
+          />
+        </Grid>
+        <Grid item xs={3}>
+          <img
+            style={{ width: "100%" }}
+            alt=""
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.2.webp"
+          />
+        </Grid>
+        <Grid item xs={3}>
+          <img
+            style={{ width: "100%" }}
+            alt=""
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.3.webp"
+          />
+        </Grid>
+        <Grid item xs={3}>
+          <img
+            style={{ width: "100%" }}
+            alt=""
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.4.webp"
+          />
+        </Grid>
+      </Grid>
+      <div style={{ position: "relative" }}>
         <div
           style={{
-            backgroundColor: mobile ? undefined : "lightgray",
-            padding: mobile ? "0px" : "150px 116px 68px 90px",
+            position: "absolute",
+            width: "50%",
+            height: "1095px",
+            backgroundColor: "rgba(107, 71, 51, 0.2)",
+            right: 0,
+            top: 0,
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            width: "calc(50% - (50% - 300px))",
+            height: "40px",
+            backgroundColor: "rgba(57, 57, 57, 1)",
+            right: 0,
+            top: 0,
+          }}
+        />
+        <Container
+          style={{
+            maxWidth: MAX_SCREEN,
+            padding: "0px 300px",
+            marginTop: "-40px",
           }}
         >
-          <Typography
-            variant="h1"
-            style={{
-              textTransform: "uppercase",
-              fontSize: mobile ? "19px" : "27px",
-              letterSpacing: "1px",
-              lineHeight: "27px",
-              textAlign: "center",
-            }}
-          >
-            VALORES QUE REPRESENTAM{" "}
-          </Typography>
-          <Typography
-            variant="h1"
-            style={{
-              marginTop: mobile ? "5px" : "20px",
-              textAlign: "center",
-              textTransform: "uppercase",
-              fontSize: mobile ? "19px" : "27px",
-              fontWeight: 700,
-              letterSpacing: "1px",
-              lineHeight: "27px",
-            }}
-          >
-            EXCELÊNCIA
-          </Typography>
           <div
             style={{
-              marginTop: "106px",
-              display: "flex",
-              flexDirection: "column",
-              rowGap: "30px",
+              padding: mobile ? "0px" : "70px 135px",
+              height: "940px",
+              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.3.webp`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
             }}
           >
+            <Typography
+              variant="h1"
+              style={{
+                textTransform: "uppercase",
+                color: "rgba(255, 255, 255, 0.8)",
+                fontSize: mobile ? "19px" : "40px",
+                letterSpacing: "4px",
+                lineHeight: "55px",
+
+                textAlign: "center",
+              }}
+              dangerouslySetInnerHTML={{
+                __html: "VALORES QUE REPRESENTAM</br> EXCELÊNCIA",
+              }}
+            ></Typography>
+
             <div
               style={{
                 display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
+                flexDirection: "column",
+                justifyContent: "end",
+                rowGap: "30px",
+                marginTop: "20px",
+                backgroundColor: mobile ? undefined : "lightgray",
+                height: "814px",
+                padding: "100px 60px",
+                backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.2.webp`,
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
               }}
             >
-              <div
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h1"
-                  style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    display: "flex",
-                    width: "50px",
-                    height: "50px",
-                    fontWeight: 600,
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  E
-                </Typography>
-              </div>
               <Typography
+                variant="h1"
                 style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
+                  fontSize: "25px",
+                  fontWeight: 500,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
                 }}
               >
-                <b style={{ textTransform: "uppercase" }}>Elegância</b> Reflete
-                a abordagem sofisticada e atenta aos detalhes, criando um
-                ambiente esteticamente agradável e acolhedor.
+                <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>E</span>
+                legância
               </Typography>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
-              }}
-            >
-              <div
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h1"
-                  style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    display: "flex",
-                    width: "50px",
-                    fontWeight: 600,
-                    height: "50px",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  H
-                </Typography>
-              </div>
               <Typography
+                variant="h1"
                 style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
+                  fontSize: "25px",
+                  fontWeight: 500,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
                 }}
               >
-                <b style={{ textTransform: "uppercase" }}>Harmonia</b> A
-                constante procura pelo equilíbrio entre tecnologia avançada e
-                atendimento personalizado.
+                <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>H</span>
+                armonia
               </Typography>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
-              }}
-            >
-              <div
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h1"
-                  style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    fontWeight: 600,
-                    display: "flex",
-                    width: "50px",
-                    height: "50px",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  T
-                </Typography>
-              </div>
               <Typography
+                variant="h1"
                 style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
+                  fontSize: "25px",
+                  fontWeight: 500,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
                 }}
               >
-                <b style={{ textTransform: "uppercase" }}>Tranquilidade</b>{" "}
-                Traduz o compromisso em oferecer um espaço de paz e serenidade,
-                para que se sinta seguro e cuidado.
+                <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>T</span>
+                ranquilidade
               </Typography>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
-              }}
-            >
-              <div
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h1"
-                  style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    display: "flex",
-                    width: "50px",
-                    fontWeight: 600,
-                    height: "50px",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  I
-                </Typography>
-              </div>
               <Typography
+                variant="h1"
                 style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
+                  fontSize: "25px",
+                  fontWeight: 500,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
                 }}
               >
-                <b style={{ textTransform: "uppercase" }}>Inovação</b> Motivados
-                a superar os limites do possível, trazendo novas soluções para o
-                cuidado e bem-estar dos nossos pacientes.
+                <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>I</span>
+                novação
               </Typography>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
-              }}
-            >
-              <div
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Typography
-                  variant="h1"
-                  style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    display: "flex",
-                    width: "50px",
-                    fontWeight: 600,
-                    height: "50px",
-                    justifyContent: "center",
-                    alignItems: "center",
-                  }}
-                >
-                  Q
-                </Typography>
-              </div>
               <Typography
+                variant="h1"
                 style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
+                  fontSize: "25px",
+                  fontWeight: 500,
+                  letterSpacing: "2px",
+                  textTransform: "uppercase",
                 }}
               >
-                <b style={{ textTransform: "uppercase" }}>Qualidade</b> O pilar
-                sobre o qual todos os nossos serviços são construídos,
-                garantindo excelência em cada interação e tratamento.
+                <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>Q</span>
+                ualidade
               </Typography>
             </div>
           </div>
-        </div>
-      </Container>
-    </div>
+        </Container>
+      </div>
+    </>
   );
 };
 

@@ -6,12 +6,7 @@ const Location = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("sm"));
   const renderLaptop = () => {
     return (
-      <Grid
-        container
-        height="100%"
-        width="100%"
-        style={{ marginTop: mobile ? "200px" : "450px" }}
-      >
+      <Grid container height="100%" width="100%">
         <Grid
           item
           xs={12}
@@ -23,11 +18,27 @@ const Location = () => {
             alignItems: "center",
           }}
         >
-          <img
-            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-3.webp"
-            alt=""
-            style={{ height: "500px", width: "100%", objectFit: "cover" }}
-          />
+          <div
+            style={{
+              position: "relative",
+              height: "500px",
+              width: "100%",
+              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-3.webp)`,
+              backgroundSize: "cover",
+              backgroundPosition: "center center",
+            }}
+          >
+            <Typography
+              style={{
+                position: "absolute",
+                bottom: "-22px",
+                right: 0,
+                fontSize: "12px",
+              }}
+            >
+              Ilustração de @laviebypi
+            </Typography>
+          </div>
         </Grid>
         <Grid
           item
@@ -61,16 +72,19 @@ const Location = () => {
                 fontSize: mobile ? "16px" : "49px",
                 textTransform: "uppercase",
                 letterSpacing: "4px",
-                fontWeight: 700,
+                fontWeight: 600,
               }}
             >
               Castilho{" "}
               <span
                 style={{
+                  marginTop: "6px",
+                  marginLeft: "8px",
                   fontSize: 60,
                   letterSpacing: "5px",
                 }}
               >
+                {" "}
                 77
               </span>
             </Typography>
