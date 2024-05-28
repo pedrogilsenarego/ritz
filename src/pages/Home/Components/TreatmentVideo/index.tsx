@@ -80,7 +80,7 @@ export const TreatmentVideo = () => {
             width: mobile ? "99%" : "90%",
             objectFit: "cover",
           }}
-          src={`https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.mov`}
+          src={`https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.webm`}
           autoPlay
           muted
           loop
