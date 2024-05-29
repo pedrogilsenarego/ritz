@@ -78,7 +78,7 @@ const SpaceWhere = () => {
         <div
           style={{
             marginTop: mobile ? "100px" : "350px",
-            height: "1054px",
+            height: mobile ? "620px" : "1054px",
             width: "100%",
             display: "flex",
             alignItems: "center",

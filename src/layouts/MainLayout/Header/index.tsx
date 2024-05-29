@@ -324,9 +324,11 @@ const Header = () => {
             zIndex: 1000,
             position: "fixed",
             justifyContent: "space-between",
-            padding: "0px 35px",
-            top: "20px",
+            padding: "15px 35px",
+
             width: "100%",
+            background:
+              "linear-gradient(90deg, rgba(220, 207, 190, 0.7) 0%, #DCCFBE 39.5%, #DCCFBE 61.5%, rgba(224, 211, 193, 0.7) 100%)",
           }}
         >
           <VscMenu

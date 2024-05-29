@@ -22,7 +22,7 @@ const Treatments = () => {
           position: "relative",
           cursor: "pointer",
           width: "100%",
-
+          borderRadius: mobile ? "5px" : "0px",
           aspectRatio: 0.72,
         }}
       >
@@ -31,7 +31,7 @@ const Treatments = () => {
           onMouseLeave={() => setHover(false)}
           style={{
             position: "absolute",
-
+            borderRadius: mobile ? "5px" : "0px",
             top: 0,
             left: 0,
             right: 0,
@@ -50,6 +50,7 @@ const Treatments = () => {
               position: "absolute",
               width: "100%",
               height: "100%",
+              borderRadius: mobile ? "5px" : "0px",
               transition: "all ease-in-out 0.5s",
               backgroundColor: !hover
                 ? "rgba(181, 174, 166, 0.4)"

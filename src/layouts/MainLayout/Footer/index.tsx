@@ -353,8 +353,24 @@ const Footer = ({ isUser }: Props) => {
                 width: "100%",
               }}
             >
-              <Button>
-                <Typography>Marcações</Typography>
+              <Button
+                style={{
+                  backgroundColor: "rgba(59, 52, 52, 1)",
+                  borderRadius: "30px",
+                  padding: "6px 20px",
+                }}
+              >
+                <Typography
+                  style={{
+                    color: "white",
+                    fontSize: "11px",
+                    fontWeight: 500,
+                    lineHeight: "11px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  Marcações
+                </Typography>
               </Button>
             </Grid>
             <Grid item xs={12} style={{ margin: "20px 50px" }}>

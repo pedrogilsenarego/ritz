@@ -384,7 +384,7 @@ const Escort = () => {
                 __html: i18n.t("pages.home.conciergeText"),
               }}
               style={{
-                fontSize: mobile ? "12px" : "13px",
+                fontSize: mobile ? "11px" : "13px",
                 textAlign: "justify",
                 lineHeight: "25px",
                 fontWeight: "400",
@@ -401,11 +401,11 @@ const Escort = () => {
             >
               <Typography
                 sx={{
-                  color: "black",
                   textTransform: "uppercase",
-                  fontSize: "8px",
+                  fontSize: "10px",
                   lineHeight: "14px",
                   letterSpacing: "1px",
+                  color: "rgba(0, 0, 0, 0.59)",
                 }}
               >
                 {i18n.t("pages.home.conciergeButton")}

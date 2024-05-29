@@ -43,7 +43,7 @@ const ContainerC = () => {
               style={{
                 width: "420px",
                 textAlign: "center",
-                marginBottom: "40px",
+                marginBottom: "30px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -68,11 +68,11 @@ const ContainerC = () => {
               />
               <Typography
                 sx={{
-                  marginTop: "30px",
-                  fontSize: "13px",
+                  marginTop: "20px",
+                  fontSize: "10px",
                   maxWidth: "85%",
                   fontWeight: 400,
-                  lineHeight: "30px",
+                  lineHeight: "20px",
                 }}
               >
                 {i18n.t("pages.home.beutyText")}
@@ -82,7 +82,7 @@ const ContainerC = () => {
           <img
             style={{
               marginTop: "50px",
-              height: "200px",
+              height: "250px",
               objectFit: "cover",
               width: "100%",
             }}

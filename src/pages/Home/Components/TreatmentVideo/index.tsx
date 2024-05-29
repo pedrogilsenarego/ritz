@@ -33,8 +33,8 @@ export const TreatmentVideo = () => {
           position: "absolute",
           width: "1px",
           left: "50%",
-          height: mobile ? "160px" : "189px",
-          top: mobile ? -150 : -145,
+          height: mobile ? "164px" : "189px",
+          top: mobile ? -130 : -145,
           backgroundColor: "black",
           zIndex: 10,
         }}
@@ -91,7 +91,7 @@ export const TreatmentVideo = () => {
           sx={{
             display: "inline-block",
             position: "absolute",
-            bottom: mobile ? "25%" : "50%",
+            bottom: mobile ? "50%" : "50%",
             transform: "translateY(50%)",
             borderRadius: "30px",
             padding: "16px 30px",

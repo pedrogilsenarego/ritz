@@ -50,7 +50,7 @@ const Home = () => {
       <div style={{ marginTop: "150px" }}>
         <Container
           style={{
-            marginTop: mobile ? "100px" : "130px",
+            marginTop: mobile ? "50px" : "130px",
             maxWidth: MAX_SCREEN,
             padding: mobile ? "0px" : "0px 150px",
           }}
