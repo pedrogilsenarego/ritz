@@ -18,6 +18,7 @@ import map from "../../../assets/map.svg";
 import phone from "../../../assets/phone.svg";
 
 import Logo from "../../../assets/EHTIQ BRANDS-12.svg";
+import { MAX_SCREEN } from "../../../constants/screen";
 
 type Props = {
   isUser?: boolean;
@@ -50,7 +51,7 @@ const Footer = ({ isUser }: Props) => {
           borderTop: "solid 25px rgba(231, 221, 207, 0.77",
         }}
       >
-        <Container maxWidth="xl">
+        <Container style={{ maxWidth: MAX_SCREEN, padding: "0px 97px" }}>
           <Grid
             container
             style={{
@@ -63,7 +64,8 @@ const Footer = ({ isUser }: Props) => {
           >
             <Grid
               item
-              xs={2.4}
+              xl={2.4}
+              xs={6}
               style={{ display: "flex", alignItems: "center" }}
             >
               <img
@@ -77,23 +79,35 @@ const Footer = ({ isUser }: Props) => {
             {!isUser && (
               <Grid
                 item
-                xs={2.4}
-                style={{ display: "flex", alignItems: "center" }}
+                xl={2.4}
+                xs={6}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                }}
               >
                 <Button
                   style={{
                     backgroundColor: "rgba(59, 52, 52, 1)",
                     borderRadius: "30px",
-                    padding: "6px 20px",
+                    padding: "8px 20px",
                   }}
                 >
-                  <Typography style={{ fontSize: "11px", color: "white" }}>
+                  <Typography
+                    style={{
+                      fontSize: "11px",
+                      color: "white",
+                      fontWeight: 500,
+                      textTransform: "uppercase",
+                      lineHeight: "11px",
+                    }}
+                  >
                     Marcações
                   </Typography>
                 </Button>
               </Grid>
             )}
-            <Grid item xs={2.4}>
+            <Grid item xl={2.4} xs={6}>
               <div
                 style={{
                   display: "flex",
@@ -141,7 +155,7 @@ const Footer = ({ isUser }: Props) => {
                   <Typography
                     style={{
                       fontSize: "11px",
-                      fontWeight: "medium",
+                      fontWeight: 500,
                       textTransform: "uppercase",
                     }}
                   >
@@ -232,7 +246,7 @@ const Footer = ({ isUser }: Props) => {
                 <Typography
                   style={{
                     fontSize: "11px",
-                    fontWeight: "medium",
+                    fontWeight: 500,
                     textTransform: "uppercase",
                   }}
                 >
@@ -290,7 +304,7 @@ const Footer = ({ isUser }: Props) => {
                     textTransform: "uppercase",
                   }}
                 >
-                  @Copyright 2024, develop by <u>Linea Agency</u>
+                  @Copyright 2024, developed by <u>Linea Agency</u>
                 </Typography>
               </div>
             </Grid>

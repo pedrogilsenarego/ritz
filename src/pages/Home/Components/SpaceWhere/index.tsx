@@ -8,7 +8,7 @@ const SpaceWhere = () => {
     return (
       <div
         style={{
-          marginTop: mobile ? "100px" : "350px",
+          marginTop: mobile ? "100px" : "150px",
           height: "874px",
           width: "100%",
           display: "flex",
@@ -41,6 +41,7 @@ const SpaceWhere = () => {
               fontSize: mobile ? "12px" : "50px",
               letterSpacing: "1px",
               lineHeight: "87px",
+              color: "rgba(39, 39, 39, 1)",
               textTransform: "uppercase",
               maxWidth: mobile ? "60%" : "60%",
               textAlign: "left",

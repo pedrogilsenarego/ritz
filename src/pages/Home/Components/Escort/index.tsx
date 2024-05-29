@@ -1,4 +1,10 @@
-import { ButtonBase, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  ButtonBase,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Image1 from "../../../../assets/Airport.svg";
 import Limousine from "../../../../assets/Limousine.svg";
 import Valet from "../../../../assets/Valet.svg";
@@ -54,9 +60,10 @@ const Escort = () => {
             <Typography
               variant="h1"
               style={{
-                maxWidth: mobile ? undefined : "40%",
+                maxWidth: mobile ? undefined : "100%",
                 marginTop: "20px",
                 textTransform: "uppercase",
+                color: "rgba(39, 39, 39, 1)",
                 fontWeight: "bold",
                 fontSize: mobile ? "28px" : "35px",
                 letterSpacing: mobile ? "2px" : "1px",
@@ -73,6 +80,19 @@ const Escort = () => {
                 {" "}
                 {i18n.t("pages.home.conciergeTitle2")}{" "}
               </span>
+            </Typography>
+            <Typography
+              variant="h1"
+              style={{
+                maxWidth: mobile ? undefined : "100%",
+
+                textTransform: "uppercase",
+                color: "rgba(39, 39, 39, 1)",
+                fontWeight: "bold",
+                fontSize: mobile ? "28px" : "35px",
+                letterSpacing: mobile ? "2px" : "1px",
+              }}
+            >
               {i18n.t("pages.home.conciergeTitle3")}
             </Typography>
             <Typography
@@ -81,7 +101,7 @@ const Escort = () => {
               }}
               style={{
                 fontSize: mobile ? "12px" : "13px",
-                textAlign: "justify",
+                textAlign: "left",
                 lineHeight: "25px",
                 fontWeight: "400",
                 marginTop: "40px",
@@ -100,6 +120,7 @@ const Escort = () => {
                   color: "black",
                   textTransform: "uppercase",
                   fontSize: "10px",
+                  fontWeight: 500,
                   lineHeight: "14px",
                   letterSpacing: "1px",
                 }}
@@ -109,10 +130,12 @@ const Escort = () => {
             </ButtonBase>
           </div>
 
-          <div
+          <Grid
+            container
+            spacing={4}
             style={{
               display: "flex",
-              columnGap: mobile ? "0px" : "70px",
+              marginTop: "20px",
               width: "100%",
               padding: mobile ? "0px 35px" : undefined,
               zIndex: 10,
@@ -120,7 +143,10 @@ const Escort = () => {
               justifyContent: mobile ? "space-between" : "center",
             }}
           >
-            <div
+            <Grid
+              item
+              xs={6}
+              xl={3}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -157,12 +183,14 @@ const Escort = () => {
               >
                 {i18n.t("pages.home.hotel")}
               </Typography>
-            </div>
-            <div
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              xl={3}
               style={{
                 display: "flex",
                 alignItems: "center",
-
                 columnGap: "10px",
                 flexDirection: "column",
               }}
@@ -196,8 +224,11 @@ const Escort = () => {
               >
                 {i18n.t("pages.home.travel")}
               </Typography>
-            </div>
-            <div
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              xl={3}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -234,8 +265,11 @@ const Escort = () => {
               >
                 {i18n.t("pages.home.transport")}
               </Typography>
-            </div>
-            <div
+            </Grid>
+            <Grid
+              item
+              xs={6}
+              xl={3}
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -273,8 +307,8 @@ const Escort = () => {
               >
                 {i18n.t("pages.home.concierge")}
               </Typography>
-            </div>
-          </div>
+            </Grid>
+          </Grid>
         </div>
       </div>
     );
@@ -325,9 +359,10 @@ const Escort = () => {
               style={{
                 maxWidth: mobile ? undefined : "40%",
                 marginTop: "20px",
+                color: "rgba(39, 39, 39, 1)",
                 textTransform: "uppercase",
                 fontWeight: "bold",
-                fontSize: mobile ? "28px" : "32px",
+                fontSize: mobile ? "28px" : "35px",
                 letterSpacing: mobile ? "2px" : "1px",
               }}
             >

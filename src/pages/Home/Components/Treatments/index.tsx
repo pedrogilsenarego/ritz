@@ -58,7 +58,7 @@ const Treatments = () => {
           />
           <div
             style={{
-              width: "80%",
+              padding: "0px 10px",
               display: "flex",
               justifyContent: "center",
               flexDirection: "column",
@@ -86,9 +86,10 @@ const Treatments = () => {
                   textAlign: "center",
                   color: Colors.white[400],
                 }}
-              >
-                {clinic}
-              </Typography>
+                dangerouslySetInnerHTML={{
+                  __html: clinic,
+                }}
+              />
             </div>
             <div
               style={{

@@ -19,7 +19,7 @@ function App() {
         <StyledEngineProvider injectFirst>
           <ThemeProvider theme={theme}>
             <QueryClientProvider client={queryClient}>
-              <CookiePolicy />
+              {/* <CookiePolicy /> */}
               <AppRoutes />
             </QueryClientProvider>
           </ThemeProvider>

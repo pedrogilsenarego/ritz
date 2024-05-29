@@ -33,8 +33,8 @@ export const TreatmentVideo = () => {
           position: "absolute",
           width: "1px",
           left: "50%",
-          height: mobile ? "160px" : "131px",
-          top: mobile ? -150 : -110,
+          height: mobile ? "160px" : "189px",
+          top: mobile ? -150 : -145,
           backgroundColor: "black",
           zIndex: 10,
         }}
@@ -78,7 +78,7 @@ export const TreatmentVideo = () => {
             height: mobile ? "150px" : undefined,
             aspectRatio: mobile ? undefined : 3.89,
             width: mobile ? "99%" : "90%",
-
+            borderRadius: "5px",
             clipPath: "inset(0px)",
             objectFit: "cover",
           }}
@@ -92,6 +92,7 @@ export const TreatmentVideo = () => {
             display: "inline-block",
             position: "absolute",
             bottom: mobile ? "25%" : "50%",
+            transform: "translateY(50%)",
             borderRadius: "30px",
             padding: "16px 30px",
             backgroundColor: "rgba(73, 73, 73, 1)",

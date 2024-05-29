@@ -47,10 +47,10 @@ const Home = () => {
           <Whats />
         </div>
       </Container> */}
-      <div style={{ marginTop: "100px" }}>
+      <div style={{ marginTop: "150px" }}>
         <Container
           style={{
-            marginTop: mobile ? "100px" : "250px",
+            marginTop: mobile ? "100px" : "130px",
             maxWidth: MAX_SCREEN,
             padding: mobile ? "0px" : "0px 150px",
           }}

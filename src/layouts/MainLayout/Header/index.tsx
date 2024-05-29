@@ -14,7 +14,7 @@ import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 //import logo from "../../../assets/logo.svg";
 import Logo from "../../../assets/EHTIQ_Logo.svg";
-import LogoMobile from "../../../assets/EHTIQ BRANDS-01 1_mobile2.png";
+import LogoMobile from "../../../assets/ole.png";
 import SearchIcon from "../../../assets/Icon_Search.svg";
 import Login from "../../../assets/Log_In.svg";
 import DrawerMine from "../../../components/Drawer";
@@ -124,7 +124,7 @@ const Header = () => {
 
   const opacity = Math.min(1, Math.max(0, scrollPosition / 500));
 
-  const backgroundColor = `rgba(224, 211, 193, ${1 - 0.3 * opacity})`;
+  const backgroundColor = `rgba(224, 211, 193, ${0.8 - 0.3 * opacity})`;
 
   const viewportHeight =
     window.innerHeight || document.documentElement.clientHeight;
@@ -137,7 +137,7 @@ const Header = () => {
       <Box
         id="first-box"
         style={{
-          padding: "15px 0px 15px 0px",
+          padding: "0px 0px 15px 0px",
           backgroundColor,
           //marginTop: "20px",
           position: "fixed",
@@ -171,7 +171,7 @@ const Header = () => {
               <Icons.Menu
                 style={{
                   cursor: isScrolled ? "default" : "pointer",
-                  opacity: isScrolled ? 0 : 1,
+
                   transition: "opacity ease-in-out 1s",
                 }}
                 size={"30px"}
@@ -190,6 +190,7 @@ const Header = () => {
                   style={{
                     width: "21px",
                     cursor: "pointer",
+                    marginBottom: "-6px",
                   }}
                 />
               </div>
@@ -244,30 +245,23 @@ const Header = () => {
             </Grid>
           </Grid>
 
-          <Box
+          <Container
             style={{
               display: "flex",
-
+              maxWidth: 1200,
               width: "100%",
-              justifyContent: "center",
+              padding: "0px 50px",
+              justifyContent: "space-between",
               alignItems: "center",
               marginBottom: "10px",
               opacity: isScrolled ? 1 : 0,
-              marginTop: isScrolled ? "40px" : "-20px", // Adjust the marginTop based on the scroll position
+              marginTop: isScrolled ? "20px" : "-20px", // Adjust the marginTop based on the scroll position
               transition: "all 0.5s ease-in-out", // Add transition property
             }}
           >
             {options.map((option, index) => {
               return (
-                <div
-                  key={index}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    columnGap: "24px",
-                    margin: "0px 45px",
-                  }}
-                >
+                <div key={index} style={{}}>
                   <Typography
                     className={"text"}
                     style={{
@@ -287,7 +281,7 @@ const Header = () => {
                 </div>
               );
             })}
-          </Box>
+          </Container>
         </Container>
         <BasicPopover
           isOpen={isOpenLogin}
@@ -344,6 +338,10 @@ const Header = () => {
             onClick={() => navigate(ROUTE_PATHS.HOME)}
             src={LogoMobile}
             alt="logo"
+            style={{
+              width: "123px",
+              cursor: "pointer",
+            }}
           />
           <img
             onClick={(e) => {
