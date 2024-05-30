@@ -4,7 +4,7 @@ import { i18n } from "../../../../translations/i18n";
 
 const Eyes = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div
       style={{
@@ -12,13 +12,26 @@ const Eyes = () => {
         position: "relative",
         height: mobile ? "796px" : "600px",
         display: "flex",
+        justifyContent: "center",
         alignItems: "center",
       }}
     >
+      {mobile && (
+        <div
+          style={{
+            position: "absolute",
+            top: -50,
+            height: "440px",
+            background: "rgba(195, 176, 162, 0.3)",
+            width: "100%",
+            zIndex: -5,
+          }}
+        ></div>
+      )}
       <div
         style={{
           marginTop: mobile ? undefined : "-15px",
-
+          maxWidth: mobile ? 450 : undefined,
           width: mobile ? "100%" : "70%",
           display: "flex",
           flexDirection: "column",
@@ -105,6 +118,7 @@ const Eyes = () => {
               marginTop: "-30px",
               marginLeft: "30px",
               width: mobile ? "90%" : "70%",
+
               padding: mobile ? "15px" : "20px",
               display: "flex",
               flexDirection: "column",
@@ -174,23 +188,13 @@ const Eyes = () => {
           </div>
         )}
       </div>
-      {mobile && (
-        <div
-          style={{
-            position: "absolute",
-            top: -50,
-            height: "440px",
-            background: "rgba(195, 176, 162, 0.3)",
-            width: "100%",
-          }}
-        ></div>
-      )}
+
       <img
         style={{
           zIndex: -10,
           right: 0,
           top: 0,
-          opacity: 0.5,
+
           position: "absolute",
           height: mobile ? "796px" : "600px",
           width: mobile ? "100%" : "550px",

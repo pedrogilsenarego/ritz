@@ -24,7 +24,7 @@ const Register = ({ setMode, handleClose }: Props) => {
     handleClose,
   });
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       {isRegistering ? (

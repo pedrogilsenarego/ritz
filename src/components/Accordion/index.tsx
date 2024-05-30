@@ -43,7 +43,7 @@ export default function CustomizedAccordions({
 }: Props) {
   const [expanded, setExpanded] = React.useState<string | false>(false);
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
       setExpanded(newExpanded ? panel : false);

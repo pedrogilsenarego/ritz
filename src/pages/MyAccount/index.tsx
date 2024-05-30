@@ -12,7 +12,7 @@ const Register = () => {
   const classes = useStyles();
   const { handleSubmit, onSubmit, control, isEditing } = useRegister();
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   return (
     <>
       {isEditing ? (

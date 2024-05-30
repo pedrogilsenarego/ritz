@@ -4,7 +4,7 @@ import { Icons } from "../../../../../../components/Icons";
 
 const TeamRooster = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const [team, setTeam] = useState<number>(0);
   const [member, setMember] = useState<number>(0);
 

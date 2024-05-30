@@ -7,7 +7,7 @@ import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
 
 const IdentityProtection = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div
       style={{

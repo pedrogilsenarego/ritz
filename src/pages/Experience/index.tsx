@@ -9,7 +9,7 @@ import InitialSection2 from "./Components/InitialSection2";
 
 const Experience = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       <div style={{ marginTop: mobile ? "120px" : "200px" }}>

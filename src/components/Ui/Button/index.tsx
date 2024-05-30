@@ -14,7 +14,7 @@ interface Props extends ButtonProps {
 
 const Button = React.forwardRef<HTMLButtonElement, Props>((props, ref) => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const [hover, setHover] = useState<boolean>(false);
 
   return (

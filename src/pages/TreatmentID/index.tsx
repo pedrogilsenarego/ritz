@@ -22,7 +22,7 @@ const TreatmentID = () => {
   const data = content?.content as Content;
 
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       <div

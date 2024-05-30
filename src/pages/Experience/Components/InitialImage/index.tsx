@@ -4,7 +4,7 @@ import { MAX_SCREEN } from "../../../../constants/screen";
 
 const InitialImage = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Container
       style={{

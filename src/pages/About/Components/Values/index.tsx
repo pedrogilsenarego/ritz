@@ -9,7 +9,7 @@ import { MAX_SCREEN } from "../../../../constants/screen";
 
 const Values = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       <Typography

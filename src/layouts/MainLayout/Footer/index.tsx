@@ -26,7 +26,7 @@ type Props = {
 
 const Footer = ({ isUser }: Props) => {
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   const handleInstagram = () => {
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile) {
@@ -64,9 +64,13 @@ const Footer = ({ isUser }: Props) => {
           >
             <Grid
               item
-              xl={2.4}
-              xs={6}
-              style={{ display: "flex", alignItems: "center" }}
+              xs={12}
+              lg={6}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                columnGap: "20px",
+              }}
             >
               <img
                 src={mainLogo}
@@ -75,17 +79,7 @@ const Footer = ({ isUser }: Props) => {
                   width: "274px",
                 }}
               />
-            </Grid>
-            {!isUser && (
-              <Grid
-                item
-                xl={2.4}
-                xs={6}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
+              {!isUser && (
                 <Button
                   style={{
                     backgroundColor: "rgba(59, 52, 52, 1)",
@@ -105,9 +99,10 @@ const Footer = ({ isUser }: Props) => {
                     Marcações
                   </Typography>
                 </Button>
-              </Grid>
-            )}
-            <Grid item xl={2.4} xs={6}>
+              )}
+            </Grid>
+
+            <Grid xs={12} lg={6} style={{ display: "flex" }}>
               <div
                 style={{
                   display: "flex",
@@ -177,9 +172,11 @@ const Footer = ({ isUser }: Props) => {
                     />
                     <Typography
                       style={{ fontSize: "8px", textDecoration: "underline" }}
-                    >
-                      RUA CASTILHO, 77 - PISO 21070-050 LISBOA - PORTUGAL
-                    </Typography>
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          "RUA CASTILHO, 77 - PISO 2</br>1070-050 LISBOA - PORTUGAL",
+                      }}
+                    ></Typography>
                   </div>
                   <div
                     style={{
@@ -222,58 +219,49 @@ const Footer = ({ isUser }: Props) => {
                     </Typography>
                   </div>
                 </div>
-              </div>
-            </Grid>
-            {isUser && (
-              <Grid
-                item
-                xs={1.4}
-                style={{ display: "flex", justifyContent: "center" }}
-              >
-                <img src={Logo} alt="" style={{ width: "70px" }} />
-              </Grid>
-            )}
-            <Grid item xs={isUser ? 3.4 : 2.4}>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "start",
-                  height: "100%",
-                  rowGap: "10px",
-                }}
-              >
-                <Typography
+                <div
                   style={{
-                    fontSize: "11px",
-                    fontWeight: 500,
-                    textTransform: "uppercase",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "start",
+                    height: "100%",
+                    rowGap: "10px",
                   }}
                 >
-                  As nossas políticas
-                </Typography>
-                <Typography
-                  style={{ fontSize: "8px", textDecoration: "underline" }}
-                >
-                  POLITICA DE PRIVACIDADE
-                </Typography>
-                <Typography
-                  style={{ fontSize: "8px", textDecoration: "underline" }}
-                >
-                  POLÍTICA DE COOKIES
-                </Typography>
-                <Typography
-                  style={{ fontSize: "8px", textDecoration: "underline" }}
-                >
-                  POLÍTICA DE E-COMMERCE
-                </Typography>
+                  <Typography
+                    style={{
+                      fontSize: "11px",
+                      fontWeight: 500,
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    As nossas políticas
+                  </Typography>
+                  <Typography
+                    style={{ fontSize: "8px", textDecoration: "underline" }}
+                  >
+                    POLITICA DE PRIVACIDADE
+                  </Typography>
+                  <Typography
+                    style={{ fontSize: "8px", textDecoration: "underline" }}
+                  >
+                    POLÍTICA DE COOKIES
+                  </Typography>
+                  <Typography
+                    style={{ fontSize: "8px", textDecoration: "underline" }}
+                  >
+                    POLÍTICA DE E-COMMERCE
+                  </Typography>
+                </div>
               </div>
             </Grid>
-            <Grid item xs={2.4}>
+
+            <Grid item xs={12}>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
+                  rowGap: "10px",
                   alignItems: "end",
                   height: "100%",
                   justifyContent: "space-around",
@@ -299,6 +287,7 @@ const Footer = ({ isUser }: Props) => {
 
                 <Typography
                   style={{
+                    marginTop: "10px",
                     fontSize: "8px",
                     fontWeight: 500,
                     textTransform: "uppercase",
@@ -316,7 +305,7 @@ const Footer = ({ isUser }: Props) => {
   const renderMobile = () => {
     return (
       <Box style={{ backgroundColor: "white" }}>
-        <Container maxWidth="xl">
+        <Container maxWidth="lg">
           <Grid
             container
             style={{

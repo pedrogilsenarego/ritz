@@ -1,12 +1,13 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "../../../../assets/Box 2 - Slogan.svg";
 import Logo2 from "../../../../assets/EHTIQ BRANDS-12.svg";
-import Logo3 from "../../../../assets/EHTIQ BRANDS-11_2.svg";
+
+import Logo3 from "../../../../assets/EHTIQ BRANDS-11_GQ.png";
 import { i18n } from "../../../../translations/i18n";
 
 const ContainerC = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const renderMobile = () => {
     return (
@@ -106,7 +107,6 @@ const ContainerC = () => {
           style={{
             marginTop: "100px",
 
-            width: "100%",
             height: "615px",
             display: "flex",
             justifyContent: "center",

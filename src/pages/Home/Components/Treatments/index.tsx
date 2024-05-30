@@ -7,7 +7,7 @@ import { TreatmentVideo } from "../TreatmentVideo";
 
 const Treatments = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
   type PropsTile = {
     image: string;
@@ -59,7 +59,7 @@ const Treatments = () => {
           />
           <div
             style={{
-              padding: "0px 10px",
+              padding: mobile ? "0px 6px" : "0px 10px",
               display: "flex",
               justifyContent: "center",
               flexDirection: "column",
@@ -82,7 +82,7 @@ const Treatments = () => {
                   fontSize: mobile ? "14px" : "27px",
                   textTransform: "uppercase",
                   fontWeight: 500,
-                  lineHeight: "34px",
+                  lineHeight: mobile ? "20px" : "34px",
                   letterSpacing: "3px",
                   textAlign: "center",
                   color: Colors.white[400],
@@ -189,7 +189,7 @@ const Treatments = () => {
       </div>
       <div
         style={{
-          padding: mobile ? "20px 20px 80px 20px" : "50px 150px 100px 150px",
+          padding: mobile ? "20px 20px 80px 20px" : "50px 5% 100px 5%",
           justifyContent: "center",
           marginTop: mobile ? "20px" : "20px",
           position: "relative",

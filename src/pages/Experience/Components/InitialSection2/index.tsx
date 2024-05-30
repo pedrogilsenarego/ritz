@@ -2,7 +2,7 @@ import { Typography, useMediaQuery, useTheme } from "@mui/material";
 
 const InitialSection2 = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const renderLaptop = () => {
     return (
       <div

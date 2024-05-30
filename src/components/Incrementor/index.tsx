@@ -14,7 +14,7 @@ const Incrementor = ({ minimumOne, initialValue, updateValue }: Props) => {
 
   const theme = useTheme();
 
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleValue = (signal: "minus" | "plus") => {
     let newValue = value;

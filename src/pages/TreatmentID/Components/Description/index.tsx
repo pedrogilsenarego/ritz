@@ -7,7 +7,7 @@ import { Content } from "../../types";
 const Description = ({ data }: { data: Content }) => {
   const theme = useTheme();
 
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const htmlString =
     data?.mainText ||
     "Consiste num conjunto de técnicas que visam realçar e equilibrar os traços faciais de forma natural e completamente  personalizada.</br> Este tratamento envolve uma combinação cuidadosa  de diferentes procedimentos estéticos para criar <b>uma aparência  mais simétrica, harmoniosa e jovem.</b></br></br> Aqui poderão ser utilizadas  técnicas de preenchimento - <b>com ácido hialurónico ou toxina  botulínica, fios de PDO, bem como outros procedimentos</b> estéticos  avançados, para alcançar resultados excecionais!</br></br> Esta abordagem  holística permite não apenas melhorar a estética facial, mas  também preservar a individualidade e a autenticidade de cada  pessoa.";

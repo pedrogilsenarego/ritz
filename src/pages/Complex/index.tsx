@@ -12,7 +12,7 @@ import Eyes from "./Components/Eyes";
 
 const Complex = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const childrenData = [
     {
       link: "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.1.webp",

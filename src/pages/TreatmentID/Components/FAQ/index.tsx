@@ -6,7 +6,7 @@ import { Content } from "../../types";
 const FAQ = ({ data }: { data: Content }) => {
   const theme = useTheme();
 
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const MoreInfo = ({ q, a }: { q: string; a: string }) => {
     const [open, setOpen] = useState<boolean>(false);
     return (

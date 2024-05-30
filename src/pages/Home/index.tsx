@@ -9,7 +9,7 @@ import Whats from "./Components/Whats";
 
 const Home = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       <img
@@ -47,7 +47,7 @@ const Home = () => {
           <Whats />
         </div>
       </Container> */}
-      <div style={{ marginTop: "150px" }}>
+      <div style={{ marginTop: "200px" }}>
         <Container
           style={{
             marginTop: mobile ? "50px" : "130px",

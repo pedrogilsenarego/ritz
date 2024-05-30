@@ -14,7 +14,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
   const location = useLocation();
   const navigate = useNavigate();
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const { getCookie } = useCookies();
   const accessUser = getCookie("access");
 

@@ -2,7 +2,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 
 const Legendas = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const renderLaptop = () => {
     return (
       <>

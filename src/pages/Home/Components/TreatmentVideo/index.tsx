@@ -10,7 +10,7 @@ import { MAX_SCREEN } from "../../../../constants/screen";
 
 export const TreatmentVideo = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const getRandomNumber = () => Math.floor(Math.random() * 4) + 1;
 

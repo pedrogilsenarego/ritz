@@ -7,7 +7,7 @@ import { Body } from "./Body";
 
 export const TreatmentSelection = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div>
       <img

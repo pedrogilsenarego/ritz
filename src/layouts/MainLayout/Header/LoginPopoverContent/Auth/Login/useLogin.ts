@@ -19,7 +19,7 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
   const navigate = useNavigate();
   const theme = useTheme();
   const [error, setError] = useState(null);
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const dispatch = useDispatch();
   const { reset, control, handleSubmit } = useForm<CreateProductSchemaType>({
     resolver: zodResolver(CreateProductSchema),

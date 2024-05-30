@@ -57,7 +57,7 @@ const Header = () => {
   const userQuery = useUser();
 
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   const [mobileDrawer, setMobileDrawer] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [anchorElLogin, setAnchorElLogin] = useState<HTMLElement | null>(null);

@@ -16,7 +16,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
   const navigate = useNavigate();
   const theme = useTheme();
   const { removeCookie } = useCookies();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const { reset, control, handleSubmit } = useForm<any>({});
   const handleLogout = () => {
     navigate(ROUTE_PATHS.HOME);

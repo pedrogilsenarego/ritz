@@ -17,7 +17,7 @@ const LoginPopoverContent = ({ handleClose }: any) => {
   );
   const { onSignOut } = useSignOut();
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const [mode, setMode] = useState<"login" | "register" | "recover">("login");
 

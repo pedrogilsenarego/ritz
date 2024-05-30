@@ -34,7 +34,7 @@ const Cart = ({ closeCart }: Props) => {
   const [submitingOrder, setSubmitingOrder] = useState<boolean>(false);
   const discount = null;
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const dispatch = useDispatch();
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     event.stopPropagation();
