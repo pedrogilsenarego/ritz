@@ -10,7 +10,7 @@ import {
 
 import Facebook from "../../../assets/Facebook.svg";
 import Instagram from "../../../assets/Insta.svg";
-import LivroReclamações from "../../../assets/LivroReclamações.svg";
+import LivroReclamações from "../../../assets/Footer_Icon_Reclamações.png";
 import mainLogo from "../../../assets/Logo_Footer.webp";
 import Youtube from "../../../assets/Youtube.svg";
 import mail from "../../../assets/mail.svg";

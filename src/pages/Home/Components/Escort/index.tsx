@@ -5,10 +5,14 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import Image1 from "../../../../assets/Airport.svg";
-import Limousine from "../../../../assets/Limousine.svg";
-import Valet from "../../../../assets/Valet.svg";
-import Buffet from "../../../../assets/Service Bell.svg";
+import Image1 from "../../../../assets/Concierge_Icon-2.png";
+import Image1M from "../../../../assets/Concierge_Icon-2_M.png";
+import Limousine from "../../../../assets/Concierge_Icon-3.png";
+import LimousineM from "../../../../assets/Concierge_Icon-3_M.png";
+import Valet from "../../../../assets/Concierge_Icon-4.png";
+import ValetM from "../../../../assets/Concierge_Icon-4_M.png";
+import Buffet from "../../../../assets/Concierge_Icon-1.png";
+import BuffetM from "../../../../assets/Concierge_Icon-1_M.png";
 import { i18n } from "../../../../translations/i18n";
 
 const Escort = () => {
@@ -172,6 +176,7 @@ const Escort = () => {
                       // height: iconSize,
                     }
                   }
+                  width="31px"
                 />
               </div>
               <Typography
@@ -208,11 +213,9 @@ const Escort = () => {
                 <img
                   src={Image1}
                   alt=""
-                  style={
-                    {
-                      //  height: iconSize,
-                    }
-                  }
+                  style={{
+                    width: "35px",
+                  }}
                 />
               </div>
               <Typography
@@ -249,11 +252,9 @@ const Escort = () => {
                 <img
                   src={Limousine}
                   alt=""
-                  style={
-                    {
-                      //   height: iconSize,
-                    }
-                  }
+                  style={{
+                    width: "35px",
+                  }}
                 />
               </div>
               <Typography
@@ -291,11 +292,9 @@ const Escort = () => {
                 <img
                   src={Valet}
                   alt=""
-                  style={
-                    {
-                      //  height: iconSize,
-                    }
-                  }
+                  style={{
+                    width: "35px",
+                  }}
                 />
               </div>
               <Typography
@@ -443,13 +442,11 @@ const Escort = () => {
                 }}
               >
                 <img
-                  src={Buffet}
+                  src={BuffetM}
                   alt=""
-                  style={
-                    {
-                      // height: iconSize,
-                    }
-                  }
+                  style={{
+                    width: "24px",
+                  }}
                 />
               </div>
               <Typography
@@ -457,6 +454,7 @@ const Escort = () => {
                   textTransform: "uppercase",
                   fontSize: iconTextSize,
                   letterSpacing: "1px",
+                  color: "rgba(71, 71, 71, 1)",
                 }}
               >
                 {i18n.t("pages.home.hotel")}
@@ -482,13 +480,11 @@ const Escort = () => {
                 }}
               >
                 <img
-                  src={Image1}
+                  src={Image1M}
                   alt=""
-                  style={
-                    {
-                      //  height: iconSize,
-                    }
-                  }
+                  style={{
+                    width: "26px",
+                  }}
                 />
               </div>
               <Typography
@@ -496,6 +492,7 @@ const Escort = () => {
                   textTransform: "uppercase",
                   fontSize: iconTextSize,
                   letterSpacing: "1px",
+                  color: "rgba(71, 71, 71, 1)",
                 }}
               >
                 {i18n.t("pages.home.travel")}
@@ -520,13 +517,11 @@ const Escort = () => {
                 }}
               >
                 <img
-                  src={Limousine}
+                  src={LimousineM}
                   alt=""
-                  style={
-                    {
-                      //   height: iconSize,
-                    }
-                  }
+                  style={{
+                    width: "25px",
+                  }}
                 />
               </div>
               <Typography
@@ -534,6 +529,7 @@ const Escort = () => {
                   textTransform: "uppercase",
                   fontSize: iconTextSize,
                   letterSpacing: "1px",
+                  color: "rgba(71, 71, 71, 1)",
                 }}
               >
                 {i18n.t("pages.home.transport")}
@@ -559,13 +555,11 @@ const Escort = () => {
                 }}
               >
                 <img
-                  src={Valet}
+                  src={ValetM}
                   alt=""
-                  style={
-                    {
-                      //  height: iconSize,
-                    }
-                  }
+                  style={{
+                    width: "22px",
+                  }}
                 />
               </div>
               <Typography
@@ -573,6 +567,7 @@ const Escort = () => {
                   textTransform: "uppercase",
                   fontSize: iconTextSize,
                   letterSpacing: "1px",
+                  color: "rgba(71, 71, 71, 1)",
                 }}
               >
                 {i18n.t("pages.home.concierge")}

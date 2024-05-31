@@ -1,5 +1,5 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import Logo from "../../../../assets/Slogan.svg";
+import Logo from "../../../../assets/LOGO 3.png";
 
 const InitialImage = ({ text }: { text: string }) => {
   const Theme = useTheme();
@@ -30,7 +30,7 @@ const InitialImage = ({ text }: { text: string }) => {
         >
           {text}
         </Typography>
-        <img src={Logo} alt="" />
+        <img src={Logo} alt="" width={"309px"} />
       </div>
     );
   };
@@ -61,7 +61,7 @@ const InitialImage = ({ text }: { text: string }) => {
         >
           {text}
         </Typography>
-        <img src={Logo} alt="" />
+        <img src={Logo} alt="" width="251px" />
       </div>
     );
   };
