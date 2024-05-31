@@ -24,17 +24,17 @@ const About = () => {
       <div style={{ marginTop: mobile ? "220px" : "319px" }}>
         <WellnessClinic />
       </div>
-      <div style={{ marginTop: "173px" }}>
+      <div style={{ marginTop: mobile ? "150px" : "173px" }}>
         <Location />
       </div>
-      <div style={{ marginTop: "200px" }}>
+      <div style={{ marginTop: mobile ? "150px" : "200px" }}>
         <Values />
       </div>
       <div style={{ marginTop: mobile ? "150px" : "300px" }}>
         <Journey />
       </div>
 
-      <div style={{ marginTop: mobile ? "200px" : "250px" }}>
+      <div style={{ marginTop: mobile ? "100px" : "250px" }}>
         <IdentityProtection />
       </div>
       <div style={{ marginTop: "200px" }}>
