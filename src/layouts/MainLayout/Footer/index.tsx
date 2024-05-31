@@ -11,13 +11,11 @@ import {
 import Facebook from "../../../assets/Facebook.svg";
 import Instagram from "../../../assets/Insta.svg";
 import LivroReclamações from "../../../assets/LivroReclamações.svg";
-import mainLogo from "../../../assets/LogoFull.svg";
+import mainLogo from "../../../assets/Logo_Footer.webp";
 import Youtube from "../../../assets/Youtube.svg";
 import mail from "../../../assets/mail.svg";
 import map from "../../../assets/map.svg";
 import phone from "../../../assets/phone.svg";
-
-import Logo from "../../../assets/EHTIQ BRANDS-12.svg";
 import { MAX_SCREEN } from "../../../constants/screen";
 
 type Props = {
@@ -51,16 +49,16 @@ const Footer = ({ isUser }: Props) => {
           borderTop: "solid 25px rgba(231, 221, 207, 0.77",
         }}
       >
-        <Container style={{ maxWidth: MAX_SCREEN, padding: "0px 97px" }}>
+        <Container style={{ maxWidth: MAX_SCREEN - 800, padding: "0px 7%" }}>
           <Grid
             container
             style={{
-              marginTop: "60px",
-              marginBottom: "50px",
+              marginTop: "80px",
+              marginBottom: "80px",
               flex: "display",
               flexDirection: mobile ? "column" : "row",
             }}
-            spacing={2}
+            rowSpacing={2}
           >
             <Grid
               item
@@ -102,7 +100,11 @@ const Footer = ({ isUser }: Props) => {
               )}
             </Grid>
 
-            <Grid xs={12} lg={6} style={{ display: "flex" }}>
+            <Grid
+              xs={12}
+              lg={6}
+              style={{ display: "flex", justifyContent: "end" }}
+            >
               <div
                 style={{
                   display: "flex",

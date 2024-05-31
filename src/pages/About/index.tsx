@@ -18,10 +18,10 @@ const About = () => {
   return (
     <>
       <InitialImage text={i18n.t("pages.about.title")} />
-      <div style={{ marginTop: mobile ? "200px" : "-400px" }}>
+      <div style={{ marginTop: mobile ? "-20px" : "-400px" }}>
         <Slogan />
       </div>
-      <div style={{ marginTop: "319px" }}>
+      <div style={{ marginTop: mobile ? "220px" : "319px" }}>
         <WellnessClinic />
       </div>
       <div style={{ marginTop: "173px" }}>
