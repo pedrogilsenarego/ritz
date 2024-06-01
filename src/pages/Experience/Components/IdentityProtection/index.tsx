@@ -4,6 +4,9 @@ import Shield from "../../../../assets/Group 73.svg";
 import Search from "../../../../assets/search_off.svg";
 import Eye from "../../../../assets/remove_red_eye.svg";
 import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
+import icon1M from "../../../../assets/Identity_M_1.png";
+import icon2M from "../../../../assets/Identity_M_2.png";
+import icon3M from "../../../../assets/Identit_M_3.png";
 
 const IdentityProtection = () => {
   const theme = useTheme();
@@ -266,7 +269,7 @@ const IdentityProtection = () => {
         <div
           style={{
             position: "absolute",
-            top: 200,
+            top: 220,
             display: "flex",
             width: "100%",
             alignItems: "center",
@@ -276,8 +279,8 @@ const IdentityProtection = () => {
           <div
             style={{
               display: "flex",
-              marginTop: "50px",
-              rowGap: mobile ? "30px" : undefined,
+
+              rowGap: mobile ? "35px" : undefined,
               flexDirection: mobile ? "column" : "row",
               alignItems: mobile ? "center" : undefined,
               justifyContent: mobile ? "center" : "space-between",
@@ -289,15 +292,15 @@ const IdentityProtection = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                rowGap: "30px",
+                rowGap: "20px",
               }}
             >
-              <img src={Shield} alt="" />
+              <img src={icon1M} alt="" style={{ width: "37px" }} />
               <Typography
                 style={{
                   fontWeight: 500,
                   letterSpacing: "1px",
-                  fontSize: mobile ? "8px" : "15px",
+                  fontSize: "12px",
                   textTransform: "uppercase",
                 }}
               >
@@ -309,26 +312,16 @@ const IdentityProtection = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                rowGap: "30px",
+                rowGap: "20px",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "142px",
-                  height: "132px",
-                  background: "rgba(255, 255, 255, 0.2)",
-                }}
-              >
-                <img src={Eye} alt="" />
-              </div>
+              <img src={icon2M} alt="" style={{ width: "45px" }} />
+
               <Typography
                 style={{
                   fontWeight: 500,
                   letterSpacing: "1px",
-                  fontSize: mobile ? "8px" : "15px",
+                  fontSize: mobile ? "12px" : "15px",
                   textTransform: "uppercase",
                 }}
               >
@@ -340,26 +333,16 @@ const IdentityProtection = () => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
-                rowGap: "30px",
+                rowGap: "20px",
               }}
             >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  width: "142px",
-                  height: "132px",
-                  background: "rgba(255, 255, 255, 0.2)",
-                }}
-              >
-                <img src={Search} alt="" />
-              </div>
+              <img src={icon3M} alt="" style={{ width: "46px" }} />
+
               <Typography
                 style={{
                   fontWeight: 500,
                   letterSpacing: "1px",
-                  fontSize: mobile ? "8px" : "15px",
+                  fontSize: mobile ? "12px" : "15px",
                   textTransform: "uppercase",
                 }}
               >
@@ -367,21 +350,21 @@ const IdentityProtection = () => {
               </Typography>
             </div>
           </div>
-          <Typography
-            style={{
-              marginTop: "70px",
-              fontWeight: 400,
-              letterSpacing: "1px",
-              fontSize: mobile ? "12px" : "12px",
-              textTransform: "uppercase",
-              color: "rgba(0, 0, 0, 0.8)",
-            }}
-          >
-            Agenda a sua consulta
-          </Typography>
+
           <ButtonNinja
             label="Contactar"
-            buttonStyles={{ padding: "8px 20px", marginTop: "20px" }}
+            textStyles={{
+              color: "rgba(93, 92, 92, 1)",
+              textTransform: "uppercase",
+              fontSize: "12px",
+            }}
+            buttonStyles={{
+              padding: "8px 20px",
+              marginTop: "100px",
+              backgroundColor: "transparent",
+              border: "1px solid rgba(0, 0, 0, 0.8)",
+              boxShadow: "0px 4px 4.9px 0px rgba(0, 0, 0, 0.25)",
+            }}
           ></ButtonNinja>
         </div>
       </div>

@@ -98,9 +98,14 @@ const Journey = () => {
   const renderMobile = () => {
     return (
       <div>
-        <div style={{ paddingLeft: "54px" }}>
+        <div
+          style={{
+            paddingLeft: "54px",
+            width: "100%",
+          }}
+        >
           <img
-            style={{ height: "461px" }}
+            style={{ height: "461px", width: "100%", objectFit: "cover" }}
             alt=""
             src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-5.webp"
           />

@@ -9,6 +9,7 @@ import {
 const SchedulleMembership = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <Grid
       container
@@ -67,6 +68,21 @@ const SchedulleMembership = () => {
           </Button>
         </div>
       </Grid>
+      {mobile && (
+        <Grid
+          xs={12}
+          item
+          style={{ width: "100%", display: "flex", justifyContent: "center" }}
+        >
+          <div
+            style={{
+              height: "1px",
+              width: "60%",
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
+            }}
+          />
+        </Grid>
+      )}
       <Grid item xs={12} md={6}>
         <div
           style={{
