@@ -68,7 +68,7 @@ const Escort = () => {
                 marginTop: "20px",
                 textTransform: "uppercase",
                 color: "rgba(39, 39, 39, 1)",
-                fontWeight: "bold",
+                fontWeight: 500,
                 fontSize: mobile ? "28px" : "35px",
                 letterSpacing: mobile ? "2px" : "1px",
               }}
@@ -92,7 +92,7 @@ const Escort = () => {
 
                 textTransform: "uppercase",
                 color: "rgba(39, 39, 39, 1)",
-                fontWeight: "bold",
+                fontWeight: 500,
                 fontSize: mobile ? "28px" : "35px",
                 letterSpacing: mobile ? "2px" : "1px",
               }}

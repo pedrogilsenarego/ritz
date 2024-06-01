@@ -267,7 +267,7 @@ const Header = () => {
                     style={{
                       cursor: !isScrolled ? undefined : "pointer",
                       fontSize: "14px",
-                      fontWeight: location.pathname === option.link ? 600 : 400,
+                      fontWeight: location.pathname === option.link ? 600 : 500,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
                     }}

@@ -258,35 +258,17 @@ const Footer = ({ isUser }: Props) => {
               </div>
             </Grid>
 
-            <Grid item xs={12}>
+            <Grid item xs={12} style={{ marginTop: "30px" }}>
               <div
                 style={{
                   display: "flex",
-                  flexDirection: "column",
-                  rowGap: "10px",
                   alignItems: "end",
+                  columnGap: "60px",
+                  rowGap: "10px",
+                  justifyContent: "end",
                   height: "100%",
-                  justifyContent: "space-around",
                 }}
               >
-                <img
-                  src={LivroReclamações}
-                  alt=""
-                  style={{
-                    height: 38,
-                  }}
-                />
-                <Typography
-                  style={{
-                    textTransform: "uppercase",
-                    fontSize: "5px",
-                    marginTop: "0px",
-                    fontWeight: 500,
-                  }}
-                >
-                  Registar reclamação
-                </Typography>
-
                 <Typography
                   style={{
                     marginTop: "10px",
@@ -297,6 +279,32 @@ const Footer = ({ isUser }: Props) => {
                 >
                   @Copyright 2024, developed by <u>Linea Agency</u>
                 </Typography>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "end",
+                    rowGap: "10px",
+                  }}
+                >
+                  <img
+                    src={LivroReclamações}
+                    alt=""
+                    style={{
+                      width: "70px",
+                    }}
+                  />
+                  <Typography
+                    style={{
+                      textTransform: "uppercase",
+                      fontSize: "5px",
+                      marginTop: "0px",
+                      fontWeight: 500,
+                    }}
+                  >
+                    Registar reclamação
+                  </Typography>
+                </div>
               </div>
             </Grid>
           </Grid>
@@ -526,10 +534,15 @@ const Footer = ({ isUser }: Props) => {
                     fontSize: "7px",
                     marginTop: "20px",
                     letterSpacing: "1px",
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    textAlign: "center",
                   }}
-                >
-                  @Copyright 2024, develop by <u>Linea Agency</u>
-                </Typography>
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      "@Copyright 2024</br> develop by <u>Linea Agency</u>",
+                  }}
+                ></Typography>
               </div>
             </Grid>
           </Grid>

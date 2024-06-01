@@ -1,5 +1,5 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import Logo from "../../../../assets/EHTIQ BRANDS-12_2.svg";
+import Logo from "../../../../assets/Mini_Beige.webp";
 import Brand from "../../../../assets/EHTIQ BRANDS-09_2.svg";
 export const WellnessClinic = () => {
   const theme = useTheme();
@@ -22,7 +22,7 @@ export const WellnessClinic = () => {
           }}
         >
           <div style={{ position: "absolute", top: 80, left: 70 }}>
-            <img src={Logo} alt="" />
+            <img src={Logo} alt="" style={{ width: "77px" }} />
             <Typography
               variant="h1"
               style={{

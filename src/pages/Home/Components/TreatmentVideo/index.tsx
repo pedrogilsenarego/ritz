@@ -67,7 +67,7 @@ export const TreatmentVideo = () => {
       <Container
         style={{
           maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 250px",
+          padding: mobile ? undefined : "0px 12%",
           display: "flex",
           position: "relative",
           justifyContent: "center",

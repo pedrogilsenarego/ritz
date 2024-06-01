@@ -1,5 +1,6 @@
 import { Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
+import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
 
 const SpaceWhere = () => {
   const theme = useTheme();
@@ -50,23 +51,10 @@ const SpaceWhere = () => {
           >
             {i18n.t("pages.home.spaceWhere")}
           </Typography>
-          <Button
-            style={{
-              border: "solid 2px rgba(119, 124, 126, 1)",
-              padding: "8px 24px",
-              borderRadius: "30px",
-            }}
-          >
-            <Typography
-              style={{
-                textTransform: "uppercase",
-                fontSize: "15px",
-                lineHeight: "14px",
-              }}
-            >
-              {i18n.t("pages.home.ctaSpaceWhere")}
-            </Typography>
-          </Button>
+          <ButtonNinja
+            buttonStyles={{ padding: "8px 20px" }}
+            label={i18n.t("pages.home.ctaSpaceWhere")}
+          ></ButtonNinja>
         </div>
       </div>
     );
