@@ -6,7 +6,7 @@ import { MAX_SCREEN } from "../../constants/screen";
 import SchedulleMembership from "./Components/SchedulleMembership";
 import Team from "./Components/Team";
 import { i18n } from "../../translations/i18n";
-import Logo from "../../assets/EHTIQ BRANDS-11_3.svg";
+import Logo from "../../assets/LogoBeigeClinic.png";
 import Legendas from "./Components/Legendas";
 import Eyes from "./Components/Eyes";
 
@@ -163,7 +163,7 @@ const Complex = () => {
           width: "100%",
           display: "flex",
           flexDirection: "column",
-          rowGap: "20px",
+          rowGap: "35px",
           alignItems: "center",
           justifyContent: "center",
           marginTop: "150px",
@@ -173,18 +173,17 @@ const Complex = () => {
           style={{
             textTransform: "uppercase",
             fontSize: mobile ? "11px" : "20px",
-            maxWidth: mobile ? "80%" : "40%",
+            maxWidth: mobile ? "80%" : "100%",
             textAlign: "center",
             lineHeight: mobile ? "20px" : "35px",
             letterSpacing: "2px",
           }}
-        >
-          {i18n.t(
-            "pages.complex.title",
-            "Elegância e inovação, onde cada espaço é uma celebração da estética."
-          )}
-        </Typography>
-        <img src={Logo} alt="" style={{ width: mobile ? "65px" : "130px" }} />
+          dangerouslySetInnerHTML={{
+            __html:
+              "Elegância e inovação, onde cada espaço é uma<br/> celebração da estética.",
+          }}
+        ></Typography>
+        <img src={Logo} alt="" style={{ width: mobile ? "65px" : "89x" }} />
       </div>
       <div style={{ marginTop: mobile ? "100px" : "150px" }}>
         <Legendas />

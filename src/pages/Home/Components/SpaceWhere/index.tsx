@@ -52,7 +52,12 @@ const SpaceWhere = () => {
             {i18n.t("pages.home.spaceWhere")}
           </Typography>
           <ButtonNinja
-            buttonStyles={{ padding: "8px 20px" }}
+            textStyles={{ color: "rgba(119, 124, 126, 1)" }}
+            buttonStyles={{
+              padding: "8px 20px",
+              backgroundColor: "transparent",
+              border: "solid 2px rgba(119, 124, 126, 1)",
+            }}
             label={i18n.t("pages.home.ctaSpaceWhere")}
           ></ButtonNinja>
         </div>

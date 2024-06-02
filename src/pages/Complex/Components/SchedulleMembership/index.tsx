@@ -59,8 +59,9 @@ const SchedulleMembership = () => {
             <Typography
               style={{
                 color: "white",
-                fontSize: mobile ? "12px" : "16px",
+                fontSize: mobile ? "12px" : "12px",
                 textTransform: "uppercase",
+                fontWeight: 500,
               }}
             >
               Abrir agenda
@@ -87,7 +88,7 @@ const SchedulleMembership = () => {
         <div
           style={{
             padding: "50px 0px",
-            borderLeft: mobile ? undefined : "solid 1px rgba(0, 0, 0, 0.7)",
+            borderLeft: mobile ? undefined : "solid 0px rgba(0, 0, 0, 0.7)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -124,11 +125,12 @@ const SchedulleMembership = () => {
             <Typography
               style={{
                 color: "white",
-                fontSize: mobile ? "12px" : "16px",
+                fontSize: mobile ? "12px" : "12px",
                 textTransform: "uppercase",
+                fontWeight: 500,
               }}
             >
-              + Informação
+              Brevemente
             </Typography>
           </Button>
         </div>

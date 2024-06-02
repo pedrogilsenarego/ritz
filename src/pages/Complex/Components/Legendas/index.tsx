@@ -44,9 +44,7 @@ const Legendas = () => {
               backgroundPosition: "center center",
             }}
           ></div>
-          <div
-            style={{ width: "50%", backgroundColor: "rgba(110, 95, 85, 1)" }}
-          ></div>
+          <div style={{ width: "50%", backgroundColor: "#746052" }}></div>
         </div>
       </>
     );

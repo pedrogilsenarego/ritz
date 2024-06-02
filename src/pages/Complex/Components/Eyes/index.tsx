@@ -45,7 +45,7 @@ const Eyes = () => {
           style={{
             width: mobile ? "100%" : "50%",
             textTransform: "uppercase",
-            fontSize: mobile ? "25px" : "32px",
+            fontSize: mobile ? "25px" : "35px",
             fontWeight: 500,
             margin: mobile ? "20px" : undefined,
             letterSpacing: "2px",
@@ -57,7 +57,7 @@ const Eyes = () => {
               variant="h1"
               style={{
                 textTransform: "uppercase",
-                fontSize: mobile ? "25px" : "32px",
+                fontSize: mobile ? "25px" : "35px",
                 fontWeight: 500,
 
                 letterSpacing: "2px",
@@ -70,7 +70,8 @@ const Eyes = () => {
               style={{
                 fontStyle: "italic",
                 textTransform: "capitalize",
-                fontSize: mobile ? "22px" : "32px",
+                lineHeight: "35px",
+                fontSize: mobile ? "22px" : "45px",
                 letterSpacing: "2px",
               }}
             >
@@ -162,9 +163,9 @@ const Eyes = () => {
           <div
             style={{
               width: "100%",
+
               display: "flex",
-              justifyContent: "end",
-              paddingRight: mobile ? undefined : "200px",
+              justifyContent: "center",
             }}
           >
             <Button
@@ -172,12 +173,12 @@ const Eyes = () => {
                 backgroundColor: "rgba(255, 255, 255, 0.5)",
                 borderRadius: "20px",
 
-                padding: "8px 20px",
+                padding: "6px 24px",
               }}
             >
               <Typography
                 style={{
-                  fontSize: mobile ? "10px" : "16px",
+                  fontSize: mobile ? "10px" : "13px",
                   fontWeight: 500,
                   textTransform: "uppercase",
                 }}
