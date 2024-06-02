@@ -183,7 +183,7 @@ const Complex = () => {
               "Elegância e inovação, onde cada espaço é uma<br/> celebração da estética.",
           }}
         ></Typography>
-        <img src={Logo} alt="" style={{ width: mobile ? "65px" : "89x" }} />
+        <img src={Logo} alt="" style={{ width: mobile ? "65px" : "89px" }} />
       </div>
       <div style={{ marginTop: mobile ? "100px" : "150px" }}>
         <Legendas />
