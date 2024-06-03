@@ -4,11 +4,32 @@ import Cross from "../../assets/cross.png";
 import { ButtonBase, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../translations/i18n";
 import Popup from "../../components/Popup";
+import { Base } from "./components/Base";
+import { Specialty } from "./components/Specialty";
+import { SpecialtyDefined } from "./components/SpecialtyDefined";
+
+export type Modes = "base" | "specialty" | "specialtyDefined";
 
 export const ExpertAdvice = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const [openPopup, setOpenPopup] = useState<boolean>(false);
+
+  const [mode, setMode] = useState<Modes>("base");
+
+  const renderOption = () => {
+    switch (mode) {
+      case "base":
+        return <Base setMode={setMode} />;
+      case "specialty":
+        return <Specialty setMode={setMode} />;
+      case "specialtyDefined":
+        return <SpecialtyDefined setMode={setMode} />;
+      default:
+        return <Base setMode={setMode} />;
+    }
+  };
+
   return (
     <>
       <ButtonBase
@@ -41,7 +62,10 @@ export const ExpertAdvice = () => {
       </ButtonBase>
       <Popup
         openPopup={openPopup}
-        onClose={() => setOpenPopup(false)}
+        onClose={() => {
+          setOpenPopup(false);
+          setMode("base");
+        }}
         paperStyles={{
           width: "85vw",
           padding: "67px 79px",
@@ -105,6 +129,8 @@ export const ExpertAdvice = () => {
               />
             </div>
           </div>
+
+          {renderOption()}
         </div>
       </Popup>
     </>
