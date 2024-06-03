@@ -10,29 +10,25 @@ import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
 import { Filters, Modes } from "../..";
 import LeftArrow from "../../../../assets/leftArrow.png";
-import Refresh from "../../../../assets/refresh.png";
-import { useQuery } from "@tanstack/react-query";
-import { queryKeys } from "../../../../constants/queryKeys";
-import { handleFetchBodyParts } from "../../../../actions/tretaments";
-export const SpecialtyDefined = ({
+import Face from "../../../../assets/image 45.svg";
+import Smile from "../../../../assets/image 43.svg";
+import Bodi from "../../../../assets/image 46.svg";
+import Health from "../../../../assets/image 169.svg";
+export const BodyPart = ({
   setMode,
-  filter,
+  setFilter,
 }: {
   setMode: (mode: Modes) => void;
-  filter: Filters | null;
+  setFilter: (filter: Filters | null) => void;
 }) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-  const { isLoading, data } = useQuery<any, any>(
-    [queryKeys.bodyParts, "2"],
-    handleFetchBodyParts
-  );
-  console.log(data);
   type PropsTile = {
     image: string;
     clinic: string;
+    filter: Filters;
   };
-  const Tile = ({ image, clinic }: PropsTile) => {
+  const Tile = ({ image, clinic, filter }: PropsTile) => {
     const [hover, setHover] = useState<boolean>(false);
     return (
       <div
@@ -45,6 +41,10 @@ export const SpecialtyDefined = ({
         }}
       >
         <div
+          onClick={() => {
+            setFilter(filter);
+            setMode("specialtyDefined");
+          }}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           style={{
@@ -54,7 +54,7 @@ export const SpecialtyDefined = ({
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url(${image})`,
+            backgroundImage: `url(https://stock.adobe.com/br/images/background-with-a-cracked-white-stone-wall/378607193`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             display: "flex",
@@ -84,11 +84,16 @@ export const SpecialtyDefined = ({
             <div
               style={{
                 zIndex: 10,
-                height: "60px",
+                background: "rgba(255, 252, 248, 0.2)",
+                height: "155px",
                 display: "flex",
-                alignItems: "end",
+                flexDirection: "column",
+                padding: "25px",
+                alignItems: "center",
+                justifyContent: "space-between",
               }}
             >
+              <img src={image} alt="" style={{ width: "80px" }} />
               <Typography
                 variant="h1"
                 style={{
@@ -110,46 +115,6 @@ export const SpecialtyDefined = ({
         </div>
       </div>
     );
-  };
-
-  const renderTile = () => {
-    switch (filter) {
-      case "steticCirurgy":
-        return (
-          <Tile
-            clinic={i18n.t("pages.home.cirurgy")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
-          />
-        );
-      case "dental":
-        return (
-          <Tile
-            clinic={i18n.t("pages.home.dental")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
-          />
-        );
-      case "postCirurgy":
-        return (
-          <Tile
-            clinic={i18n.t("pages.home.nonCirurgy")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
-          />
-        );
-      case "preventiveHealth":
-        return (
-          <Tile
-            clinic={i18n.t("pages.home.healthPrevention")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
-          />
-        );
-      default:
-        return (
-          <Tile
-            clinic={i18n.t("pages.home.cirurgy")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
-          />
-        );
-    }
   };
   return (
     <div>
@@ -182,62 +147,62 @@ export const SpecialtyDefined = ({
             color: "white",
           }}
         >
-          especialidades ehtiq
+          zonas de corpo
         </Typography>
       </div>
       <Slide in direction="right" timeout={500}>
         <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
           <Grid item xs={6} md={3}>
-            {renderTile()}
+            <Tile
+              filter="steticCirurgy"
+              clinic={i18n.t("pages.treatments.face")}
+              image={Face}
+            />
           </Grid>
-          <Grid item xs={9}></Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              filter="dental"
+              clinic={i18n.t("pages.treatments.smile")}
+              image={Smile}
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              filter="postCirurgy"
+              clinic={i18n.t("pages.treatments.body")}
+              image={Bodi}
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              filter="preventiveHealth"
+              clinic={i18n.t("pages.treatments.health")}
+              image={Health}
+            />
+          </Grid>
         </Grid>
       </Slide>
-      <div style={{ display: "flex", columnGap: "20px" }}>
-        <div
-          onClick={() => setMode("specialty")}
+      <div
+        onClick={() => setMode("base")}
+        style={{
+          cursor: "pointer",
+          display: "flex",
+          columnGap: "10px",
+          alignItems: "center",
+          marginTop: "26px",
+        }}
+      >
+        <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+        <Typography
           style={{
-            cursor: "pointer",
-            display: "flex",
-            columnGap: "10px",
-            alignItems: "center",
-            marginTop: "26px",
+            fontSize: "11px",
+            fontWeight: 500,
+            color: "rgba(255, 255, 255, 0.7)",
+            lineHeight: "11px",
           }}
         >
-          <img alt="" src={LeftArrow} style={{ width: "8px" }} />
-          <Typography
-            style={{
-              fontSize: "11px",
-              fontWeight: 500,
-              color: "rgba(255, 255, 255, 0.7)",
-              lineHeight: "11px",
-            }}
-          >
-            Passo Anterior
-          </Typography>
-        </div>
-        <div
-          onClick={() => setMode("base")}
-          style={{
-            cursor: "pointer",
-            display: "flex",
-            columnGap: "10px",
-            alignItems: "center",
-            marginTop: "26px",
-          }}
-        >
-          <img alt="" src={Refresh} style={{ width: "16px" }} />
-          <Typography
-            style={{
-              fontSize: "11px",
-              fontWeight: 500,
-              color: "rgba(0, 0, 0, 0.7)",
-              lineHeight: "11px",
-            }}
-          >
-            Recomeçar
-          </Typography>
-        </div>
+          Voltar aos filtros principais
+        </Typography>
       </div>
     </div>
   );

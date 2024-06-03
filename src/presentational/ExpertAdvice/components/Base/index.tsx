@@ -75,7 +75,7 @@ export const Base = ({ setMode }: Props) => {
           <Grid item xs={4}>
             <Option
               title="zonas de</br>corpo"
-              onClick={() => setMode("specialty")}
+              onClick={() => setMode("bodyPart")}
             />
           </Grid>
           <Grid item xs={4}>

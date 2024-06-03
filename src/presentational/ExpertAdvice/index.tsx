@@ -7,8 +7,9 @@ import Popup from "../../components/Popup";
 import { Base } from "./components/Base";
 import { Specialty } from "./components/Specialty";
 import { SpecialtyDefined } from "./components/SpecialtyDefined";
+import { BodyPart } from "./components/BodyPart";
 
-export type Modes = "base" | "specialty" | "specialtyDefined";
+export type Modes = "base" | "specialty" | "specialtyDefined" | "bodyPart";
 export type Filters =
   | "steticCirurgy"
   | "dental"
@@ -31,6 +32,8 @@ export const ExpertAdvice = () => {
         return <Specialty setFilter={setFilter} setMode={setMode} />;
       case "specialtyDefined":
         return <SpecialtyDefined setMode={setMode} filter={filter} />;
+      case "bodyPart":
+        return <BodyPart setFilter={setFilter} setMode={setMode} />;
       default:
         return <Base setMode={setMode} />;
     }
