@@ -1,17 +1,30 @@
-import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Grid,
+  Slide,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useState } from "react";
 import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
-import { Modes } from "../..";
+import { Filters, Modes } from "../..";
 import LeftArrow from "../../../../assets/leftArrow.png";
-export const Specialty = ({ setMode }: { setMode: (mode: Modes) => void }) => {
+export const Specialty = ({
+  setMode,
+  setFilter,
+}: {
+  setMode: (mode: Modes) => void;
+  setFilter: (filter: Filters | null) => void;
+}) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   type PropsTile = {
     image: string;
     clinic: string;
+    filter: Filters;
   };
-  const Tile = ({ image, clinic }: PropsTile) => {
+  const Tile = ({ image, clinic, filter }: PropsTile) => {
     const [hover, setHover] = useState<boolean>(false);
     return (
       <div
@@ -24,6 +37,10 @@ export const Specialty = ({ setMode }: { setMode: (mode: Modes) => void }) => {
         }}
       >
         <div
+          onClick={() => {
+            setFilter(filter);
+            setMode("specialtyDefined");
+          }}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
           style={{
@@ -124,32 +141,38 @@ export const Specialty = ({ setMode }: { setMode: (mode: Modes) => void }) => {
           especialidades ehtiq
         </Typography>
       </div>
-      <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
-        <Grid item xs={6} md={3}>
-          <Tile
-            clinic={i18n.t("pages.home.cirurgy")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
-          />
+      <Slide in direction="right" timeout={500}>
+        <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
+          <Grid item xs={6} md={3}>
+            <Tile
+              filter="steticCirurgy"
+              clinic={i18n.t("pages.home.cirurgy")}
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              filter="dental"
+              clinic={i18n.t("pages.home.dental")}
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              filter="postCirurgy"
+              clinic={i18n.t("pages.home.nonCirurgy")}
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              filter="preventiveHealth"
+              clinic={i18n.t("pages.home.healthPrevention")}
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={6} md={3}>
-          <Tile
-            clinic={i18n.t("pages.home.dental")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
-          />
-        </Grid>
-        <Grid item xs={6} md={3}>
-          <Tile
-            clinic={i18n.t("pages.home.nonCirurgy")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
-          />
-        </Grid>
-        <Grid item xs={6} md={3}>
-          <Tile
-            clinic={i18n.t("pages.home.healthPrevention")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
-          />
-        </Grid>
-      </Grid>
+      </Slide>
       <div
         onClick={() => setMode("base")}
         style={{

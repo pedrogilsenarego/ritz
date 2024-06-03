@@ -1,13 +1,22 @@
-import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Grid,
+  Slide,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useState } from "react";
 import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
-import { Modes } from "../..";
+import { Filters, Modes } from "../..";
 import LeftArrow from "../../../../assets/leftArrow.png";
+import Refresh from "../../../../assets/refresh.png";
 export const SpecialtyDefined = ({
   setMode,
+  filter,
 }: {
   setMode: (mode: Modes) => void;
+  filter: Filters | null;
 }) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -94,6 +103,46 @@ export const SpecialtyDefined = ({
       </div>
     );
   };
+
+  const renderTile = () => {
+    switch (filter) {
+      case "steticCirurgy":
+        return (
+          <Tile
+            clinic={i18n.t("pages.home.cirurgy")}
+            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
+          />
+        );
+      case "dental":
+        return (
+          <Tile
+            clinic={i18n.t("pages.home.dental")}
+            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
+          />
+        );
+      case "postCirurgy":
+        return (
+          <Tile
+            clinic={i18n.t("pages.home.nonCirurgy")}
+            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
+          />
+        );
+      case "preventiveHealth":
+        return (
+          <Tile
+            clinic={i18n.t("pages.home.healthPrevention")}
+            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
+          />
+        );
+      default:
+        return (
+          <Tile
+            clinic={i18n.t("pages.home.cirurgy")}
+            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
+          />
+        );
+    }
+  };
   return (
     <div>
       <div
@@ -128,53 +177,59 @@ export const SpecialtyDefined = ({
           especialidades ehtiq
         </Typography>
       </div>
-      <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
-        <Grid item xs={6} md={3}>
-          <Tile
-            clinic={i18n.t("pages.home.cirurgy")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
-          />
+      <Slide in direction="right" timeout={500}>
+        <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
+          <Grid item xs={6} md={3}>
+            {renderTile()}
+          </Grid>
+          <Grid item xs={9}></Grid>
         </Grid>
-        <Grid item xs={6} md={3}>
-          <Tile
-            clinic={i18n.t("pages.home.dental")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
-          />
-        </Grid>
-        <Grid item xs={6} md={3}>
-          <Tile
-            clinic={i18n.t("pages.home.nonCirurgy")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
-          />
-        </Grid>
-        <Grid item xs={6} md={3}>
-          <Tile
-            clinic={i18n.t("pages.home.healthPrevention")}
-            image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
-          />
-        </Grid>
-      </Grid>
-      <div
-        onClick={() => setMode("base")}
-        style={{
-          cursor: "pointer",
-          display: "flex",
-          columnGap: "10px",
-          alignItems: "center",
-          marginTop: "26px",
-        }}
-      >
-        <img alt="" src={LeftArrow} style={{ width: "8px" }} />
-        <Typography
+      </Slide>
+      <div style={{ display: "flex", columnGap: "20px" }}>
+        <div
+          onClick={() => setMode("specialty")}
           style={{
-            fontSize: "11px",
-            fontWeight: 500,
-            color: "rgba(255, 255, 255, 0.7)",
-            lineHeight: "11px",
+            cursor: "pointer",
+            display: "flex",
+            columnGap: "10px",
+            alignItems: "center",
+            marginTop: "26px",
           }}
         >
-          Voltar aos filtros principais
-        </Typography>
+          <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+          <Typography
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "rgba(255, 255, 255, 0.7)",
+              lineHeight: "11px",
+            }}
+          >
+            Passo Anterior
+          </Typography>
+        </div>
+        <div
+          onClick={() => setMode("base")}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            columnGap: "10px",
+            alignItems: "center",
+            marginTop: "26px",
+          }}
+        >
+          <img alt="" src={Refresh} style={{ width: "16px" }} />
+          <Typography
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "rgba(0, 0, 0, 0.7)",
+              lineHeight: "11px",
+            }}
+          >
+            Recomeçar
+          </Typography>
+        </div>
       </div>
     </div>
   );

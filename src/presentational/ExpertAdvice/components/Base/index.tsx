@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Slide, Typography } from "@mui/material";
 import { useState } from "react";
 import { Modes } from "../..";
 
@@ -64,26 +64,28 @@ export const Base = ({ setMode }: Props) => {
       >
         ESCOLHA UM FILTRO
       </Typography>
-      <Grid container columnSpacing={"20px"} mt={"25px"}>
-        <Grid item xs={4}>
-          <Option
-            title="especialidades</br>ehtiq"
-            onClick={() => setMode("specialty")}
-          />
+      <Slide in direction="right" timeout={500}>
+        <Grid container columnSpacing={"20px"} mt={"25px"}>
+          <Grid item xs={4}>
+            <Option
+              title="especialidades</br>ehtiq"
+              onClick={() => setMode("specialty")}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <Option
+              title="zonas de</br>corpo"
+              onClick={() => setMode("specialty")}
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <Option
+              title="preocupações</br>a-Z"
+              onClick={() => setMode("specialty")}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={4}>
-          <Option
-            title="zonas de</br>corpo"
-            onClick={() => setMode("specialty")}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <Option
-            title="preocupações</br>a-Z"
-            onClick={() => setMode("specialty")}
-          />
-        </Grid>
-      </Grid>
+      </Slide>
     </div>
   );
 };

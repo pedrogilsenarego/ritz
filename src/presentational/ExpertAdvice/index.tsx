@@ -9,6 +9,11 @@ import { Specialty } from "./components/Specialty";
 import { SpecialtyDefined } from "./components/SpecialtyDefined";
 
 export type Modes = "base" | "specialty" | "specialtyDefined";
+export type Filters =
+  | "steticCirurgy"
+  | "dental"
+  | "postCirurgy"
+  | "preventiveHealth";
 
 export const ExpertAdvice = () => {
   const theme = useTheme();
@@ -16,15 +21,16 @@ export const ExpertAdvice = () => {
   const [openPopup, setOpenPopup] = useState<boolean>(false);
 
   const [mode, setMode] = useState<Modes>("base");
+  const [filter, setFilter] = useState<Filters | null>(null);
 
   const renderOption = () => {
     switch (mode) {
       case "base":
         return <Base setMode={setMode} />;
       case "specialty":
-        return <Specialty setMode={setMode} />;
+        return <Specialty setFilter={setFilter} setMode={setMode} />;
       case "specialtyDefined":
-        return <SpecialtyDefined setMode={setMode} />;
+        return <SpecialtyDefined setMode={setMode} filter={filter} />;
       default:
         return <Base setMode={setMode} />;
     }
