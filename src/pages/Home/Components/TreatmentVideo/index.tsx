@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 import { MAX_SCREEN } from "../../../../constants/screen";
+import { ExpertAdvice } from "../../../../presentational/ExpertAdvice";
 
 export const TreatmentVideo = () => {
   const theme = useTheme();
@@ -87,30 +88,7 @@ export const TreatmentVideo = () => {
           muted
           loop
         />
-        <ButtonBase
-          sx={{
-            display: "inline-block",
-            position: "absolute",
-            bottom: mobile ? "50%" : "50%",
-            transform: "translateY(50%)",
-            borderRadius: "30px",
-            padding: "16px 30px",
-            backgroundColor: "rgba(73, 73, 73, 1)",
-            boxShadow: "0px 4px 4.9px 0px rgba(0, 0, 0, 0.25)",
-          }}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              textTransform: "uppercase",
-              fontSize: "14px",
-              lineHeight: "14px",
-              letterSpacing: "1px",
-            }}
-          >
-            {i18n.t("pages.home.exportAdvice")}
-          </Typography>
-        </ButtonBase>
+        <ExpertAdvice />
       </Container>
     </div>
   );
