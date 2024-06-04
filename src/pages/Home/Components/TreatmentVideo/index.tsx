@@ -3,14 +3,27 @@ import { i18n } from "../../../../translations/i18n";
 import { MAX_SCREEN } from "../../../../constants/screen";
 import { ExpertAdvice } from "../../../../presentational/ExpertAdvice";
 import "./index.css";
+import { useEffect, useRef } from "react";
 
 export const TreatmentVideo = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-
+  //const videoRef = useRef<HTMLVideoElement | null>(null);
   const getRandomNumber = () => Math.floor(Math.random() * 4) + 1;
-  const Video = `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.webm`;
-
+  const Video =
+    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+  //const Video = `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.webm`;
+  // useEffect(() => {
+  //   const playVideo = () => {
+  //     if (videoRef.current) {
+  //       videoRef.current.play();
+  //     }
+  //   };
+  //   document.addEventListener("click", playVideo);
+  //   return () => {
+  //     document.removeEventListener("click", playVideo);
+  //   };
+  // }, []);
   return (
     <div
       style={{
@@ -70,7 +83,7 @@ export const TreatmentVideo = () => {
           justifyContent: "center",
         }}
       >
-        <div
+        {/* <div
           style={{
             height: mobile ? "150px" : undefined,
             aspectRatio: mobile ? undefined : 3.89,
@@ -79,12 +92,13 @@ export const TreatmentVideo = () => {
           }}
           dangerouslySetInnerHTML={{
             __html: `<video autoplay loop muted style="border-radius: 5px; width: 100%; height: 100%; object-fit: cover; clip-path: inset(0px);">
-        <source src=${Video} type="video/webm" />
+        <source src=${Video} type="video/webm" preload='auto'/>
     </video>`,
           }}
-        />
+        /> */}
 
-        {/* <video
+        <video
+          //ref={videoRef}
           style={{
             height: mobile ? "150px" : undefined,
             aspectRatio: mobile ? undefined : 3.89,
@@ -93,12 +107,13 @@ export const TreatmentVideo = () => {
             clipPath: "inset(0px)",
             objectFit: "cover",
           }}
-          src={`https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.webm`}
+          src={Video}
           autoPlay
           muted
           playsInline
           loop
-        /> */}
+          controls={false}
+        />
         <ExpertAdvice />
       </Container>
     </div>
