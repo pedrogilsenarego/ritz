@@ -1,19 +1,15 @@
-import {
-  ButtonBase,
-  Container,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 import { MAX_SCREEN } from "../../../../constants/screen";
 import { ExpertAdvice } from "../../../../presentational/ExpertAdvice";
+import "./index.css";
 
 export const TreatmentVideo = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const getRandomNumber = () => Math.floor(Math.random() * 4) + 1;
+  const Video = `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.webm`;
 
   return (
     <div
@@ -74,7 +70,21 @@ export const TreatmentVideo = () => {
           justifyContent: "center",
         }}
       >
-        <video
+        <div
+          style={{
+            height: mobile ? "150px" : undefined,
+            aspectRatio: mobile ? undefined : 3.89,
+            width: mobile ? "99%" : "90%",
+            borderRadius: "5px",
+          }}
+          dangerouslySetInnerHTML={{
+            __html: `<video autoplay loop muted style="border-radius: 5px; width: 100%; height: 100%; object-fit: cover; clip-path: inset(0px);">
+        <source src=${Video} type="video/webm" />
+    </video>`,
+          }}
+        />
+
+        {/* <video
           style={{
             height: mobile ? "150px" : undefined,
             aspectRatio: mobile ? undefined : 3.89,
@@ -86,8 +96,9 @@ export const TreatmentVideo = () => {
           src={`https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.webm`}
           autoPlay
           muted
+          playsInline
           loop
-        />
+        /> */}
         <ExpertAdvice />
       </Container>
     </div>

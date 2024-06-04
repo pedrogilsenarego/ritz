@@ -74,7 +74,7 @@ export const BodyPart = ({
           />
           <div
             style={{
-              padding: mobile ? "0px 6px" : "50px",
+              padding: mobile ? "50px" : "50px",
               display: "flex",
               width: "100%",
               justifyContent: "center",
@@ -285,11 +285,13 @@ export const BodyPart = ({
         <div
           onClick={() => setMode("base")}
           style={{
+            width: "100%",
             cursor: "pointer",
             display: "flex",
             columnGap: "10px",
+            justifyContent: "center",
             alignItems: "center",
-            marginTop: "26px",
+            marginTop: "56px",
           }}
         >
           <img alt="" src={LeftArrow} style={{ width: "8px" }} />

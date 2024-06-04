@@ -1,0 +1,6 @@
+.video_1 {
+    object-fit: "cover";
+    height: 150px;
+    width: 98vw;
+    border: solid 2px black
+}

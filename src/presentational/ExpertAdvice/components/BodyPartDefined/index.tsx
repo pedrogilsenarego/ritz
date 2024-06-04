@@ -78,7 +78,7 @@ export const BodyPartDefined = ({
           />
           <div
             style={{
-              padding: mobile ? "0px 6px" : "50px",
+              padding: mobile ? "50px" : "50px",
               display: "flex",
               width: "100%",
               justifyContent: "center",
@@ -175,13 +175,21 @@ export const BodyPartDefined = ({
       </div>
       <Slide in direction="right" timeout={500}>
         <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
-          <Grid item xs={6} md={3}>
+          <Grid item xs={12}>
             {renderTile()}
           </Grid>
-          <Grid item xs={9}></Grid>
+          <Grid item xs={12}></Grid>
         </Grid>
       </Slide>
-      <div style={{ display: "flex", columnGap: "20px" }}>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          alignItems: "center",
+          flexDirection: "column",
+          rowGap: "20px",
+        }}
+      >
         <div
           onClick={() => setMode("bodyPart")}
           style={{
@@ -211,7 +219,6 @@ export const BodyPartDefined = ({
             display: "flex",
             columnGap: "10px",
             alignItems: "center",
-            marginTop: "26px",
           }}
         >
           <img alt="" src={Refresh} style={{ width: "16px" }} />
