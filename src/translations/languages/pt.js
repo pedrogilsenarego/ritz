@@ -43,7 +43,7 @@ export const content = {
           signatures: "Assinaturas",
           aesthetic: "Estética & Cirúrgica",
           afterCirurgy: "Pós-Cirúrgico & Bem-estar",
-          health: "Saúde Preventiva",
+          health: "Health 360º",
           dental: "Dentária",
           text4:
             "Especializada em Facetas Dentárias trabalhadas à mão, a Unidade Dentária EHTIQ pauta-se por elevados padrões de brio e sensibilidade.",

@@ -81,7 +81,7 @@ export const Base = ({ setMode }: Props) => {
           <Grid item xs={4}>
             <Option
               title="preocupações</br>a-Z"
-              onClick={() => setMode("specialty")}
+              onClick={() => setMode("concerns")}
             />
           </Grid>
         </Grid>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../../assets/Mini_Beige.webp";
+import Logo from "../../assets/LOGO 6.webp";
 import Cross from "../../assets/cross.png";
 import { ButtonBase, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../translations/i18n";
@@ -8,13 +8,25 @@ import { Base } from "./components/Base";
 import { Specialty } from "./components/Specialty";
 import { SpecialtyDefined } from "./components/SpecialtyDefined";
 import { BodyPart } from "./components/BodyPart";
+import { BodyPartDefined } from "./components/BodyPartDefined";
+import { Concerns } from "./components/Concerns";
 
-export type Modes = "base" | "specialty" | "specialtyDefined" | "bodyPart";
+export type Modes =
+  | "base"
+  | "specialty"
+  | "specialtyDefined"
+  | "bodyPart"
+  | "bodyPartDefined"
+  | "concerns";
 export type Filters =
   | "steticCirurgy"
   | "dental"
   | "postCirurgy"
-  | "preventiveHealth";
+  | "preventiveHealth"
+  | "face"
+  | "smile"
+  | "body"
+  | "health";
 
 export const ExpertAdvice = () => {
   const theme = useTheme();
@@ -32,8 +44,12 @@ export const ExpertAdvice = () => {
         return <Specialty setFilter={setFilter} setMode={setMode} />;
       case "specialtyDefined":
         return <SpecialtyDefined setMode={setMode} filter={filter} />;
+      case "bodyPartDefined":
+        return <BodyPartDefined setMode={setMode} filter={filter} />;
       case "bodyPart":
         return <BodyPart setFilter={setFilter} setMode={setMode} />;
+      case "concerns":
+        return <Concerns setFilter={setFilter} setMode={setMode} />;
       default:
         return <Base setMode={setMode} />;
     }
@@ -44,7 +60,6 @@ export const ExpertAdvice = () => {
       <ButtonBase
         onClick={() => {
           setOpenPopup(true);
-          console.log("teste");
         }}
         sx={{
           display: "inline-block",
@@ -125,7 +140,13 @@ export const ExpertAdvice = () => {
               </Typography>
             </div>
             <div
-              style={{ width: "141px", display: "flex", justifyContent: "end" }}
+              onClick={() => setOpenPopup(false)}
+              style={{
+                width: "141px",
+                display: "flex",
+                cursor: "pointer",
+                justifyContent: "end",
+              }}
             >
               {" "}
               <img
@@ -138,8 +159,7 @@ export const ExpertAdvice = () => {
               />
             </div>
           </div>
-
-          {renderOption()}
+          <div style={{ marginTop: "60px" }}>{renderOption()}</div>
         </div>
       </Popup>
     </>

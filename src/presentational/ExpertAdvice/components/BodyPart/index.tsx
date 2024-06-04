@@ -10,10 +10,10 @@ import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
 import { Filters, Modes } from "../..";
 import LeftArrow from "../../../../assets/leftArrow.png";
-import Face from "../../../../assets/image 45.svg";
-import Smile from "../../../../assets/image 43.svg";
-import Bodi from "../../../../assets/image 46.svg";
-import Health from "../../../../assets/image 169.svg";
+import Face from "../../../../assets/ICON Concerns 1.png";
+import Smile from "../../../../assets/ICON Concerns 2.png";
+import Bodi from "../../../../assets/ICON Concerns 3.png";
+import Health from "../../../../assets/ICON Concerns 4.png";
 export const BodyPart = ({
   setMode,
   setFilter,
@@ -43,7 +43,7 @@ export const BodyPart = ({
         <div
           onClick={() => {
             setFilter(filter);
-            setMode("specialtyDefined");
+            setMode("bodyPartDefined");
           }}
           onMouseEnter={() => setHover(true)}
           onMouseLeave={() => setHover(false)}
@@ -74,8 +74,9 @@ export const BodyPart = ({
           />
           <div
             style={{
-              padding: mobile ? "0px 6px" : "0px 10px",
+              padding: mobile ? "0px 6px" : "50px",
               display: "flex",
+              width: "100%",
               justifyContent: "center",
               flexDirection: "column",
               alignItems: "center",
@@ -85,10 +86,11 @@ export const BodyPart = ({
               style={{
                 zIndex: 10,
                 background: "rgba(255, 252, 248, 0.2)",
-                height: "155px",
+                width: "100%",
+                height: "100%",
                 display: "flex",
                 flexDirection: "column",
-                padding: "25px",
+                padding: "20px",
                 alignItems: "center",
                 justifyContent: "space-between",
               }}
@@ -154,28 +156,28 @@ export const BodyPart = ({
         <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
           <Grid item xs={6} md={3}>
             <Tile
-              filter="steticCirurgy"
+              filter="face"
               clinic={i18n.t("pages.treatments.face")}
               image={Face}
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
-              filter="dental"
+              filter="smile"
               clinic={i18n.t("pages.treatments.smile")}
               image={Smile}
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
-              filter="postCirurgy"
+              filter="body"
               clinic={i18n.t("pages.treatments.body")}
               image={Bodi}
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
-              filter="preventiveHealth"
+              filter="health"
               clinic={i18n.t("pages.treatments.health")}
               image={Health}
             />
