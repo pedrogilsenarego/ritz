@@ -1,6 +1,5 @@
 import { useState } from "react";
-import Logo from "../../assets/LOGO 6.webp";
-import Cross from "../../assets/cross.png";
+
 import { ButtonBase, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../translations/i18n";
 import Popup from "../../components/Popup";
@@ -10,6 +9,8 @@ import { SpecialtyDefined } from "./components/SpecialtyDefined";
 import { BodyPart } from "./components/BodyPart";
 import { BodyPartDefined } from "./components/BodyPartDefined";
 import { Concerns } from "./components/Concerns";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 export type Modes =
   | "base"
@@ -91,75 +92,21 @@ export const ExpertAdvice = () => {
           setMode("base");
         }}
         paperStyles={{
-          width: "85vw",
-          padding: "67px 79px",
+          borderRadius: 0,
+          maxHeight: "95vh",
+          overflow: "scroll",
+          width: mobile ? "98vw" : "85vw",
+          padding: mobile ? "30px 10px" : "67px 79px",
           background:
             "linear-gradient(71.43deg, #8A6B64 6.05%, #D7D1CB 64.39%)",
         }}
       >
         <div>
-          <div
-            style={{
-              display: "flex",
-              width: "100%",
-              justifyContent: "space-between",
-            }}
-          >
-            <div>
-              {" "}
-              <img
-                src={Logo}
-                alt=""
-                style={{
-                  width: "141px",
-                }}
-              />
-            </div>
-            <div>
-              <Typography
-                style={{
-                  fontSize: "10px",
-                  fontWeight: 400,
-                  letterSpacing: "1px",
-                  textAlign: "center",
-                  color: "rgba(72, 72, 72, 1)",
-                }}
-              >
-                Pesquisa inteligente
-              </Typography>
-              <Typography
-                variant="h1"
-                style={{
-                  marginTop: "10px",
-                  fontSize: "28px",
-                  fontWeight: 500,
-                  textAlign: "center",
-                }}
-              >
-                EHTIQ EXPERT ADVICE
-              </Typography>
-            </div>
-            <div
-              onClick={() => setOpenPopup(false)}
-              style={{
-                width: "141px",
-                display: "flex",
-                cursor: "pointer",
-                justifyContent: "end",
-              }}
-            >
-              {" "}
-              <img
-                src={Cross}
-                alt=""
-                style={{
-                  width: "20px",
-                  height: "20px",
-                }}
-              />
-            </div>
-          </div>
+          <Header setOpenPopup={setOpenPopup} />
           <div style={{ marginTop: "60px" }}>{renderOption()}</div>
+          <div style={{ marginTop: "59px" }}>
+            <Footer />
+          </div>
         </div>
       </Popup>
     </>

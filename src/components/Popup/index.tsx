@@ -52,7 +52,7 @@ const Popup = ({
         style={{
           padding: "10px",
           height: "auto",
-          overflow: "hidden",
+          overflow: "scroll",
           msOverflowStyle: "none",
           scrollbarWidth: "none",
         }}

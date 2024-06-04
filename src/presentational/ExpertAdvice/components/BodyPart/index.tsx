@@ -118,94 +118,194 @@ export const BodyPart = ({
       </div>
     );
   };
-  return (
-    <div>
-      <div
-        style={{
-          position: "relative",
-          cursor: "Pointer",
-          height: "85px",
-          objectFit: "cover",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
+  const renderLaptop = () => {
+    return (
+      <div>
+        <div
+          style={{
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
 
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
-        }}
-      >
-        {" "}
-        <Typography
-          style={{
-            zIndex: 1000,
-            transition: "all 0.5s ease-in-out",
-            textAlign: "center",
-            fontWeight: 500,
-            textTransform: "uppercase",
-            fontSize: "15px",
-            letterSpacing: "1px",
-            color: "white",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
           }}
         >
-          zonas de corpo
-        </Typography>
-      </div>
-      <Slide in direction="right" timeout={500}>
-        <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
-          <Grid item xs={6} md={3}>
-            <Tile
-              filter="face"
-              clinic={i18n.t("pages.treatments.face")}
-              image={Face}
-            />
+          {" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "15px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+          >
+            zonas de corpo
+          </Typography>
+        </div>
+        <Slide in direction="right" timeout={500}>
+          <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
+            <Grid item xs={6} md={3}>
+              <Tile
+                filter="face"
+                clinic={i18n.t("pages.treatments.face")}
+                image={Face}
+              />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <Tile
+                filter="smile"
+                clinic={i18n.t("pages.treatments.smile")}
+                image={Smile}
+              />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <Tile
+                filter="body"
+                clinic={i18n.t("pages.treatments.body")}
+                image={Bodi}
+              />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <Tile
+                filter="health"
+                clinic={i18n.t("pages.treatments.health")}
+                image={Health}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={6} md={3}>
-            <Tile
-              filter="smile"
-              clinic={i18n.t("pages.treatments.smile")}
-              image={Smile}
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Tile
-              filter="body"
-              clinic={i18n.t("pages.treatments.body")}
-              image={Bodi}
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Tile
-              filter="health"
-              clinic={i18n.t("pages.treatments.health")}
-              image={Health}
-            />
-          </Grid>
-        </Grid>
-      </Slide>
-      <div
-        onClick={() => setMode("base")}
-        style={{
-          cursor: "pointer",
-          display: "flex",
-          columnGap: "10px",
-          alignItems: "center",
-          marginTop: "26px",
-        }}
-      >
-        <img alt="" src={LeftArrow} style={{ width: "8px" }} />
-        <Typography
+        </Slide>
+        <div
+          onClick={() => setMode("base")}
           style={{
-            fontSize: "11px",
-            fontWeight: 500,
-            color: "rgba(255, 255, 255, 0.7)",
-            lineHeight: "11px",
+            cursor: "pointer",
+            display: "flex",
+            columnGap: "10px",
+            alignItems: "center",
+            marginTop: "26px",
           }}
         >
-          Voltar aos filtros principais
-        </Typography>
+          <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+          <Typography
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "rgba(255, 255, 255, 0.7)",
+              lineHeight: "11px",
+            }}
+          >
+            Voltar aos filtros principais
+          </Typography>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
+  const renderMobile = () => {
+    return (
+      <div>
+        <div
+          style={{
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
+          }}
+        >
+          {" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "15px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+          >
+            zonas de corpo
+          </Typography>
+        </div>
+        <Slide in direction="right" timeout={500}>
+          <Grid
+            container
+            mt={"10px"}
+            spacing={mobile ? "10px" : "20px"}
+            padding={"0px 60px"}
+          >
+            <Grid item xs={12}>
+              <Tile
+                filter="face"
+                clinic={i18n.t("pages.treatments.face")}
+                image={Face}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Tile
+                filter="smile"
+                clinic={i18n.t("pages.treatments.smile")}
+                image={Smile}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Tile
+                filter="body"
+                clinic={i18n.t("pages.treatments.body")}
+                image={Bodi}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Tile
+                filter="health"
+                clinic={i18n.t("pages.treatments.health")}
+                image={Health}
+              />
+            </Grid>
+          </Grid>
+        </Slide>
+        <div
+          onClick={() => setMode("base")}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            columnGap: "10px",
+            alignItems: "center",
+            marginTop: "26px",
+          }}
+        >
+          <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+          <Typography
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "rgba(255, 255, 255, 0.7)",
+              lineHeight: "11px",
+            }}
+          >
+            Voltar aos filtros principais
+          </Typography>
+        </div>
+      </div>
+    );
+  };
+  return mobile ? renderMobile() : renderLaptop();
 };

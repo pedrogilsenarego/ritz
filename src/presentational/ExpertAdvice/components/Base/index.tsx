@@ -1,4 +1,10 @@
-import { Grid, Slide, Typography } from "@mui/material";
+import {
+  Grid,
+  Slide,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { useState } from "react";
 import { Modes } from "../..";
 
@@ -7,6 +13,9 @@ type Props = {
 };
 
 export const Base = ({ setMode }: Props) => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const Option = ({ title, onClick }: { title: string; onClick: any }) => {
     const [hover, setHover] = useState<boolean>(false);
     return (
@@ -57,35 +66,71 @@ export const Base = ({ setMode }: Props) => {
       </div>
     );
   };
-  return (
-    <div style={{ marginTop: "80px" }}>
-      <Typography
-        style={{ textAlign: "center", fontWeight: 500, fontSize: "16px" }}
-      >
-        ESCOLHA UM FILTRO
-      </Typography>
-      <Slide in direction="right" timeout={500}>
-        <Grid container columnSpacing={"20px"} mt={"25px"}>
-          <Grid item xs={4}>
-            <Option
-              title="especialidades</br>ehtiq"
-              onClick={() => setMode("specialty")}
-            />
+  const renderLaptop = () => {
+    return (
+      <div style={{ marginTop: "80px" }}>
+        <Typography
+          style={{ textAlign: "center", fontWeight: 500, fontSize: "16px" }}
+        >
+          ESCOLHA UM FILTRO
+        </Typography>
+        <Slide in direction="right" timeout={500}>
+          <Grid container columnSpacing={"20px"} mt={"25px"}>
+            <Grid item xs={4}>
+              <Option
+                title="especialidades</br>ehtiq"
+                onClick={() => setMode("specialty")}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <Option
+                title="zonas de</br>corpo"
+                onClick={() => setMode("bodyPart")}
+              />
+            </Grid>
+            <Grid item xs={4}>
+              <Option
+                title="preocupações</br>a-Z"
+                onClick={() => setMode("concerns")}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Option
-              title="zonas de</br>corpo"
-              onClick={() => setMode("bodyPart")}
-            />
+        </Slide>
+      </div>
+    );
+  };
+  const renderMobile = () => {
+    return (
+      <div style={{ marginTop: "80px" }}>
+        <Typography
+          style={{ textAlign: "center", fontWeight: 500, fontSize: "16px" }}
+        >
+          ESCOLHA UM FILTRO
+        </Typography>
+        <Slide in direction="right" timeout={500}>
+          <Grid container rowSpacing={"20px"} mt={"25px"} padding={"0px 20px"}>
+            <Grid item xs={12}>
+              <Option
+                title="especialidades</br>ehtiq"
+                onClick={() => setMode("specialty")}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Option
+                title="zonas de</br>corpo"
+                onClick={() => setMode("bodyPart")}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Option
+                title="preocupações</br>a-Z"
+                onClick={() => setMode("concerns")}
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Option
-              title="preocupações</br>a-Z"
-              onClick={() => setMode("concerns")}
-            />
-          </Grid>
-        </Grid>
-      </Slide>
-    </div>
-  );
+        </Slide>
+      </div>
+    );
+  };
+  return mobile ? renderMobile() : renderLaptop();
 };

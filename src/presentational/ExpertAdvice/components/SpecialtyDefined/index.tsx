@@ -151,94 +151,201 @@ export const SpecialtyDefined = ({
         );
     }
   };
-  return (
-    <div>
-      <div
-        style={{
-          position: "relative",
-          cursor: "Pointer",
-          height: "85px",
-          objectFit: "cover",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
+  const renderLaptop = () => {
+    return (
+      <div>
+        <div
+          style={{
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
 
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
-        }}
-      >
-        {" "}
-        <Typography
-          style={{
-            zIndex: 1000,
-            transition: "all 0.5s ease-in-out",
-            textAlign: "center",
-            fontWeight: 500,
-            textTransform: "uppercase",
-            fontSize: "15px",
-            letterSpacing: "1px",
-            color: "white",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
           }}
         >
-          especialidades ehtiq
-        </Typography>
-      </div>
-      <Slide in direction="right" timeout={500}>
-        <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
-          <Grid item xs={6} md={3}>
-            {renderTile()}
+          {" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "15px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+          >
+            especialidades ehtiq
+          </Typography>
+        </div>
+        <Slide in direction="right" timeout={500}>
+          <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
+            <Grid item xs={6} md={3}>
+              {renderTile()}
+            </Grid>
+            <Grid item xs={9}></Grid>
           </Grid>
-          <Grid item xs={9}></Grid>
-        </Grid>
-      </Slide>
-      <div style={{ display: "flex", columnGap: "20px" }}>
-        <div
-          onClick={() => setMode("specialty")}
-          style={{
-            cursor: "pointer",
-            display: "flex",
-            columnGap: "10px",
-            alignItems: "center",
-            marginTop: "26px",
-          }}
-        >
-          <img alt="" src={LeftArrow} style={{ width: "8px" }} />
-          <Typography
+        </Slide>
+        <div style={{ display: "flex", columnGap: "20px" }}>
+          <div
+            onClick={() => setMode("specialty")}
             style={{
-              fontSize: "11px",
-              fontWeight: 500,
-              color: "rgba(255, 255, 255, 0.7)",
-              lineHeight: "11px",
+              cursor: "pointer",
+              display: "flex",
+              columnGap: "10px",
+              alignItems: "center",
+              marginTop: "26px",
             }}
           >
-            Passo Anterior
-          </Typography>
-        </div>
-        <div
-          onClick={() => setMode("base")}
-          style={{
-            cursor: "pointer",
-            display: "flex",
-            columnGap: "10px",
-            alignItems: "center",
-            marginTop: "26px",
-          }}
-        >
-          <img alt="" src={Refresh} style={{ width: "16px" }} />
-          <Typography
+            <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+            <Typography
+              style={{
+                fontSize: "11px",
+                fontWeight: 500,
+                color: "rgba(255, 255, 255, 0.7)",
+                lineHeight: "11px",
+              }}
+            >
+              Passo Anterior
+            </Typography>
+          </div>
+          <div
+            onClick={() => setMode("base")}
             style={{
-              fontSize: "11px",
-              fontWeight: 500,
-              color: "rgba(0, 0, 0, 0.7)",
-              lineHeight: "11px",
+              cursor: "pointer",
+              display: "flex",
+              columnGap: "10px",
+              alignItems: "center",
+              marginTop: "26px",
             }}
           >
-            Recomeçar
-          </Typography>
+            <img alt="" src={Refresh} style={{ width: "16px" }} />
+            <Typography
+              style={{
+                fontSize: "11px",
+                fontWeight: 500,
+                color: "rgba(0, 0, 0, 0.7)",
+                lineHeight: "11px",
+              }}
+            >
+              Recomeçar
+            </Typography>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+  const renderMobile = () => {
+    return (
+      <div>
+        <div
+          style={{
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
+          }}
+        >
+          {" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "15px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+          >
+            especialidades ehtiq
+          </Typography>
+        </div>
+        <Slide in direction="right" timeout={500}>
+          <Grid
+            container
+            mt={"10px"}
+            spacing={mobile ? "10px" : "20px"}
+            padding={"0px 60px"}
+          >
+            <Grid item xs={12}>
+              {renderTile()}
+            </Grid>
+            <Grid item xs={12}></Grid>
+          </Grid>
+        </Slide>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            alignItems: "center",
+            flexDirection: "column",
+            rowGap: "20px",
+          }}
+        >
+          <div
+            onClick={() => setMode("specialty")}
+            style={{
+              cursor: "pointer",
+              display: "flex",
+              columnGap: "10px",
+              alignItems: "center",
+              marginTop: "26px",
+            }}
+          >
+            <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+            <Typography
+              style={{
+                fontSize: "11px",
+                fontWeight: 500,
+                color: "rgba(255, 255, 255, 0.7)",
+                lineHeight: "11px",
+              }}
+            >
+              Passo Anterior
+            </Typography>
+          </div>
+          <div
+            onClick={() => setMode("base")}
+            style={{
+              cursor: "pointer",
+              display: "flex",
+              columnGap: "10px",
+              alignItems: "center",
+            }}
+          >
+            <img alt="" src={Refresh} style={{ width: "16px" }} />
+            <Typography
+              style={{
+                fontSize: "11px",
+                fontWeight: 500,
+                color: "rgba(0, 0, 0, 0.7)",
+                lineHeight: "11px",
+              }}
+            >
+              Recomeçar
+            </Typography>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  return mobile ? renderMobile() : renderLaptop();
 };

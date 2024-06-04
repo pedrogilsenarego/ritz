@@ -10,6 +10,7 @@ import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
 import { Filters, Modes } from "../..";
 import LeftArrow from "../../../../assets/leftArrow.png";
+import LeftArrowBlack from "../../../../assets/leftArrowBlack.png";
 export const Specialty = ({
   setMode,
   setFilter,
@@ -107,94 +108,196 @@ export const Specialty = ({
       </div>
     );
   };
-  return (
-    <div>
-      <div
-        style={{
-          position: "relative",
-          cursor: "Pointer",
-          height: "85px",
-          objectFit: "cover",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
+  const renderLaptop = () => {
+    return (
+      <div>
+        <div
+          style={{
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
 
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
-        }}
-      >
-        {" "}
-        <Typography
-          style={{
-            zIndex: 1000,
-            transition: "all 0.5s ease-in-out",
-            textAlign: "center",
-            fontWeight: 500,
-            textTransform: "uppercase",
-            fontSize: "15px",
-            letterSpacing: "1px",
-            color: "white",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
           }}
         >
-          especialidades ehtiq
-        </Typography>
-      </div>
-      <Slide in direction="right" timeout={500}>
-        <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
-          <Grid item xs={6} md={3}>
-            <Tile
-              filter="steticCirurgy"
-              clinic={i18n.t("pages.home.cirurgy")}
-              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
-            />
+          {" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "15px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+          >
+            especialidades ehtiq
+          </Typography>
+        </div>
+        <Slide in direction="right" timeout={500}>
+          <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
+            <Grid item xs={6} md={3}>
+              <Tile
+                filter="steticCirurgy"
+                clinic={i18n.t("pages.home.cirurgy")}
+                image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
+              />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <Tile
+                filter="dental"
+                clinic={i18n.t("pages.home.dental")}
+                image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
+              />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <Tile
+                filter="postCirurgy"
+                clinic={i18n.t("pages.home.nonCirurgy")}
+                image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
+              />
+            </Grid>
+            <Grid item xs={6} md={3}>
+              <Tile
+                filter="preventiveHealth"
+                clinic={i18n.t("pages.home.healthPrevention")}
+                image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={6} md={3}>
-            <Tile
-              filter="dental"
-              clinic={i18n.t("pages.home.dental")}
-              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Tile
-              filter="postCirurgy"
-              clinic={i18n.t("pages.home.nonCirurgy")}
-              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Tile
-              filter="preventiveHealth"
-              clinic={i18n.t("pages.home.healthPrevention")}
-              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
-            />
-          </Grid>
-        </Grid>
-      </Slide>
-      <div
-        onClick={() => setMode("base")}
-        style={{
-          cursor: "pointer",
-          display: "flex",
-          columnGap: "10px",
-          alignItems: "center",
-          marginTop: "26px",
-        }}
-      >
-        <img alt="" src={LeftArrow} style={{ width: "8px" }} />
-        <Typography
+        </Slide>
+        <div
+          onClick={() => setMode("base")}
           style={{
-            fontSize: "11px",
-            fontWeight: 500,
-            color: "rgba(255, 255, 255, 0.7)",
-            lineHeight: "11px",
+            cursor: "pointer",
+            display: "flex",
+            columnGap: "10px",
+            alignItems: "center",
+            marginTop: "26px",
           }}
         >
-          Voltar aos filtros principais
-        </Typography>
+          <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+          <Typography
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "rgba(255, 255, 255, 0.7)",
+              lineHeight: "11px",
+            }}
+          >
+            Voltar aos filtros principais
+          </Typography>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
+  const renderMobile = () => {
+    return (
+      <div>
+        <div
+          style={{
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
+          }}
+        >
+          {" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "13px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+            dangerouslySetInnerHTML={{
+              __html: "especialidades</br> ehtiq",
+            }}
+          ></Typography>
+        </div>
+        <Slide in direction="right" timeout={500}>
+          <Grid
+            container
+            mt={"10px"}
+            spacing={mobile ? "20px" : "20px"}
+            padding={"0px 60px"}
+          >
+            <Grid item xs={12}>
+              <Tile
+                filter="steticCirurgy"
+                clinic={i18n.t("pages.home.cirurgy")}
+                image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Tile
+                filter="dental"
+                clinic={i18n.t("pages.home.dental")}
+                image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Tile
+                filter="postCirurgy"
+                clinic={i18n.t("pages.home.nonCirurgy")}
+                image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <Tile
+                filter="preventiveHealth"
+                clinic={i18n.t("pages.home.healthPrevention")}
+                image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
+              />
+            </Grid>
+          </Grid>
+        </Slide>
+        <div
+          onClick={() => setMode("base")}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            columnGap: "10px",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "26px",
+          }}
+        >
+          <img alt="" src={LeftArrowBlack} style={{ width: "6px" }} />
+          <Typography
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "rgba(0, 0, 0, 0.7)",
+              lineHeight: "8px",
+            }}
+          >
+            Voltar aos filtros principais
+          </Typography>
+        </div>
+      </div>
+    );
+  };
+  return mobile ? renderMobile() : renderLaptop();
 };
