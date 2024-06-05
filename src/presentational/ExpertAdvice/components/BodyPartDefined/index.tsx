@@ -18,6 +18,7 @@ import Face from "../../../../assets/ICON Concerns 1.png";
 import Smile from "../../../../assets/ICON Concerns 2.png";
 import Bodi from "../../../../assets/ICON Concerns 3.png";
 import Health from "../../../../assets/ICON Concerns 4.png";
+import { Organizer } from "../Organizer";
 export const BodyPartDefined = ({
   setMode,
   filter,
@@ -25,13 +26,27 @@ export const BodyPartDefined = ({
   setMode: (mode: Modes) => void;
   filter: Filters | null;
 }) => {
+  const numberFilter = () => {
+    switch (filter) {
+      case "face":
+        return 1;
+      case "smile":
+        return 2;
+      case "body":
+        return 3;
+      case "health":
+        return 4;
+      default:
+        return 1;
+    }
+  };
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const { isLoading, data } = useQuery<any, any>(
-    [queryKeys.bodyParts, "2"],
-    handleFetchBodyParts
+    [queryKeys.bodyParts, numberFilter()],
+    () => handleFetchBodyParts(numberFilter())
   );
-  console.log(data);
+  console.log("1", data);
   type PropsTile = {
     image: string;
     clinic: string;
@@ -139,101 +154,223 @@ export const BodyPartDefined = ({
         return <Tile clinic={i18n.t("pages.treatments.face")} image={Face} />;
     }
   };
-  return (
-    <div>
-      <div
-        style={{
-          position: "relative",
-          cursor: "Pointer",
-          height: "85px",
-          objectFit: "cover",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
-        }}
-      >
-        {" "}
-        <Typography
+  const renderLaptop = () => {
+    return (
+      <div>
+        <div
           style={{
-            zIndex: 1000,
-            transition: "all 0.5s ease-in-out",
-            textAlign: "center",
-            fontWeight: 500,
-            textTransform: "uppercase",
-            fontSize: "15px",
-            letterSpacing: "1px",
-            color: "white",
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp)`,
           }}
         >
-          zonas de corpo
-        </Typography>
-      </div>
-      <Slide in direction="right" timeout={500}>
-        <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
-          <Grid item xs={12}>
-            {renderTile()}
+          <div
+            style={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              background: "rgba(54, 54, 54, 0.5)",
+            }}
+          />{" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "15px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+          >
+            zonas de corpo
+          </Typography>
+        </div>
+        <Slide in direction="right" timeout={500}>
+          <Grid container mt={"10px"} spacing={mobile ? "10px" : "20px"}>
+            <Grid item xs={6} md={3}>
+              {renderTile()}
+            </Grid>
+            <Grid item xs={9}>
+              <Organizer data={data} />
+            </Grid>
           </Grid>
-          <Grid item xs={12}></Grid>
-        </Grid>
-      </Slide>
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          alignItems: "center",
-          flexDirection: "column",
-          rowGap: "20px",
-        }}
-      >
+        </Slide>
         <div
-          onClick={() => setMode("bodyPart")}
           style={{
-            cursor: "pointer",
             display: "flex",
-            columnGap: "10px",
+            width: "100%",
             alignItems: "center",
             marginTop: "26px",
+            columnGap: "20px",
           }}
         >
-          <img alt="" src={LeftArrow} style={{ width: "8px" }} />
-          <Typography
+          <div
+            onClick={() => setMode("bodyPart")}
             style={{
-              fontSize: "11px",
-              fontWeight: 500,
-              color: "rgba(255, 255, 255, 0.7)",
-              lineHeight: "11px",
+              cursor: "pointer",
+              display: "flex",
+              columnGap: "10px",
+              alignItems: "center",
             }}
           >
-            Passo Anterior
-          </Typography>
-        </div>
-        <div
-          onClick={() => setMode("base")}
-          style={{
-            cursor: "pointer",
-            display: "flex",
-            columnGap: "10px",
-            alignItems: "center",
-          }}
-        >
-          <img alt="" src={Refresh} style={{ width: "16px" }} />
-          <Typography
+            <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+            <Typography
+              style={{
+                fontSize: "11px",
+                fontWeight: 500,
+                color: "rgba(255, 255, 255, 0.7)",
+                lineHeight: "11px",
+              }}
+            >
+              Passo Anterior
+            </Typography>
+          </div>
+          <div
+            onClick={() => setMode("base")}
             style={{
-              fontSize: "11px",
-              fontWeight: 500,
-              color: "rgba(0, 0, 0, 0.7)",
-              lineHeight: "11px",
+              cursor: "pointer",
+              display: "flex",
+              columnGap: "10px",
+              alignItems: "center",
             }}
           >
-            Recomeçar
-          </Typography>
+            <img alt="" src={Refresh} style={{ width: "16px" }} />
+            <Typography
+              style={{
+                fontSize: "11px",
+                fontWeight: 500,
+                color: "rgba(0, 0, 0, 0.7)",
+                lineHeight: "11px",
+              }}
+            >
+              Recomeçar
+            </Typography>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  };
+  const renderMobile = () => {
+    return (
+      <div>
+        <div
+          style={{
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp)`,
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              background: "rgba(54, 54, 54, 0.5)",
+            }}
+          />{" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "15px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+          >
+            zonas de corpo
+          </Typography>
+        </div>
+        <Slide in direction="right" timeout={500}>
+          <Grid
+            container
+            mt={"10px"}
+            spacing={mobile ? "10px" : "20px"}
+            padding={"0px 60px"}
+          >
+            <Grid item xs={12}>
+              {renderTile()}
+            </Grid>
+            <Grid item xs={12}></Grid>
+          </Grid>
+        </Slide>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            alignItems: "center",
+            flexDirection: "column",
+            rowGap: "20px",
+          }}
+        >
+          <div
+            onClick={() => setMode("bodyPart")}
+            style={{
+              cursor: "pointer",
+              display: "flex",
+              columnGap: "10px",
+              alignItems: "center",
+              marginTop: "26px",
+            }}
+          >
+            <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+            <Typography
+              style={{
+                fontSize: "11px",
+                fontWeight: 500,
+                color: "rgba(255, 255, 255, 0.7)",
+                lineHeight: "11px",
+              }}
+            >
+              Passo Anterior
+            </Typography>
+          </div>
+          <div
+            onClick={() => setMode("base")}
+            style={{
+              cursor: "pointer",
+              display: "flex",
+              columnGap: "10px",
+              alignItems: "center",
+            }}
+          >
+            <img alt="" src={Refresh} style={{ width: "16px" }} />
+            <Typography
+              style={{
+                fontSize: "11px",
+                fontWeight: 500,
+                color: "rgba(0, 0, 0, 0.7)",
+                lineHeight: "11px",
+              }}
+            >
+              Recomeçar
+            </Typography>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  return mobile ? renderMobile() : renderLaptop();
 };

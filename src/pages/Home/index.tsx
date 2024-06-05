@@ -12,7 +12,26 @@ const Home = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
-      <img
+      <video
+        //ref={videoRef}
+        style={{
+          height: "804px",
+          aspectRatio: mobile ? undefined : 3.89,
+          width: "100%",
+
+          //clipPath: "inset(0px)",
+          objectFit: "cover",
+        }}
+        src={
+          "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/HOME-1-Legendas-PT.webm"
+        }
+        autoPlay
+        muted
+        playsInline
+        loop
+        controls={false}
+      />
+      {/* <img
         src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
         alt=""
         style={{
@@ -20,7 +39,7 @@ const Home = () => {
           width: "100%",
           objectFit: "cover",
         }}
-      />
+      /> */}
       <div
         style={{
           marginTop: mobile ? "80px" : "86px",

@@ -23,11 +23,11 @@ export const SpecialtyDefined = ({
 }) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-  const { isLoading, data } = useQuery<any, any>(
-    [queryKeys.bodyParts, "2"],
-    handleFetchBodyParts
-  );
-  console.log(data);
+  // const { isLoading, data } = useQuery<any, any>(
+  //   [queryKeys.bodyParts, "2"],
+  //   () => handleFetchBodyParts(2)
+  // );
+  // console.log(data);
   type PropsTile = {
     image: string;
     clinic: string;
@@ -167,10 +167,17 @@ export const SpecialtyDefined = ({
 
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp)`,
           }}
         >
-          {" "}
+          <div
+            style={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              background: "rgba(54, 54, 54, 0.5)",
+            }}
+          />{" "}
           <Typography
             style={{
               zIndex: 1000,
@@ -259,10 +266,17 @@ export const SpecialtyDefined = ({
 
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp)`,
           }}
         >
-          {" "}
+          <div
+            style={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              background: "rgba(54, 54, 54, 0.5)",
+            }}
+          />{" "}
           <Typography
             style={{
               zIndex: 1000,

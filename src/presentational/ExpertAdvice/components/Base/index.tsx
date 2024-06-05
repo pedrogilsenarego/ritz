@@ -16,7 +16,15 @@ export const Base = ({ setMode }: Props) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const Option = ({ title, onClick }: { title: string; onClick: any }) => {
+  const Option = ({
+    title,
+    onClick,
+    image,
+  }: {
+    title: string;
+    onClick: any;
+    image: string;
+  }) => {
     const [hover, setHover] = useState<boolean>(false);
     return (
       <div
@@ -35,7 +43,7 @@ export const Base = ({ setMode }: Props) => {
           borderRadius: "5px",
           backgroundPosition: "center center",
           backgroundSize: "cover",
-          backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
+          backgroundImage: `url(${image})`,
         }}
       >
         <div
@@ -78,18 +86,27 @@ export const Base = ({ setMode }: Props) => {
           <Grid container columnSpacing={"20px"} mt={"25px"}>
             <Grid item xs={4}>
               <Option
+                image={
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp"
+                }
                 title="especialidades</br>ehtiq"
                 onClick={() => setMode("specialty")}
               />
             </Grid>
             <Grid item xs={4}>
               <Option
+                image={
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp"
+                }
                 title="zonas de</br>corpo"
                 onClick={() => setMode("bodyPart")}
               />
             </Grid>
             <Grid item xs={4}>
               <Option
+                image={
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp"
+                }
                 title="preocupações</br>a-Z"
                 onClick={() => setMode("concerns")}
               />
@@ -111,18 +128,27 @@ export const Base = ({ setMode }: Props) => {
           <Grid container rowSpacing={"20px"} mt={"25px"} padding={"0px 20px"}>
             <Grid item xs={12}>
               <Option
+                image={
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp"
+                }
                 title="especialidades</br>ehtiq"
                 onClick={() => setMode("specialty")}
               />
             </Grid>
             <Grid item xs={12}>
               <Option
+                image={
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp"
+                }
                 title="zonas de</br>corpo"
                 onClick={() => setMode("bodyPart")}
               />
             </Grid>
             <Grid item xs={12}>
               <Option
+                image={
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp"
+                }
                 title="preocupações</br>a-Z"
                 onClick={() => setMode("concerns")}
               />

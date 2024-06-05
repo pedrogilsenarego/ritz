@@ -10,9 +10,10 @@ export const TreatmentVideo = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   //const videoRef = useRef<HTMLVideoElement | null>(null);
   const getRandomNumber = () => Math.floor(Math.random() * 4) + 1;
-  const Video =
-    "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
-  //const Video = `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.webm`;
+
+  // const Video =
+  //  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
+  const Video = `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.mp4`;
   // useEffect(() => {
   //   const playVideo = () => {
   //     if (videoRef.current) {

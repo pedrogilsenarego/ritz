@@ -13,63 +13,144 @@ export const Concerns = ({
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  return (
-    <div>
-      <div
-        style={{
-          position: "relative",
-          cursor: "Pointer",
-          height: "85px",
-          objectFit: "cover",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
-        }}
-      >
-        {" "}
-        <Typography
+  const renderLaptop = () => {
+    return (
+      <div>
+        <div
           style={{
-            zIndex: 1000,
-            transition: "all 0.5s ease-in-out",
-            textAlign: "center",
-            fontWeight: 500,
-            textTransform: "uppercase",
-            fontSize: "15px",
-            letterSpacing: "1px",
-            color: "white",
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp)`,
           }}
         >
-          preocupações a-z
-        </Typography>
-      </div>
+          <div
+            style={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              background: "rgba(54, 54, 54, 0.5)",
+            }}
+          />{" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "15px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+          >
+            preocupações a-z
+          </Typography>
+        </div>
 
-      <div
-        onClick={() => setMode("base")}
-        style={{
-          cursor: "pointer",
-          display: "flex",
-          columnGap: "10px",
-          alignItems: "center",
-          marginTop: "26px",
-        }}
-      >
-        <img alt="" src={LeftArrow} style={{ width: "8px" }} />
-        <Typography
+        <div
+          onClick={() => setMode("base")}
           style={{
-            fontSize: "11px",
-            fontWeight: 500,
-            color: "rgba(255, 255, 255, 0.7)",
-            lineHeight: "11px",
+            cursor: "pointer",
+            display: "flex",
+            columnGap: "10px",
+            alignItems: "center",
+            marginTop: "26px",
           }}
         >
-          Voltar aos filtros principais
-        </Typography>
+          <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+          <Typography
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "rgba(255, 255, 255, 0.7)",
+              lineHeight: "11px",
+            }}
+          >
+            Voltar aos filtros principais
+          </Typography>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
+
+  const renderMobile = () => {
+    return (
+      <div>
+        <div
+          style={{
+            position: "relative",
+            cursor: "Pointer",
+            height: "85px",
+            objectFit: "cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp)`,
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              background: "rgba(54, 54, 54, 0.5)",
+            }}
+          />{" "}
+          <Typography
+            style={{
+              zIndex: 1000,
+              transition: "all 0.5s ease-in-out",
+              textAlign: "center",
+              fontWeight: 500,
+              textTransform: "uppercase",
+              fontSize: "15px",
+              letterSpacing: "1px",
+              color: "white",
+            }}
+          >
+            preocupações a-z
+          </Typography>
+        </div>
+        <div style={{ padding: "0px 60px" }}>sswdwqwq</div>
+        <div
+          onClick={() => setMode("base")}
+          style={{
+            cursor: "pointer",
+            display: "flex",
+            columnGap: "10px",
+            alignItems: "center",
+            justifyContent: "center",
+            marginTop: "26px",
+          }}
+        >
+          <img alt="" src={LeftArrow} style={{ width: "8px" }} />
+          <Typography
+            style={{
+              fontSize: "11px",
+              fontWeight: 500,
+              color: "rgba(255, 255, 255, 0.7)",
+              lineHeight: "11px",
+            }}
+          >
+            Voltar aos filtros principais
+          </Typography>
+        </div>
+      </div>
+    );
+  };
+
+  return mobile ? renderMobile() : renderLaptop();
 };

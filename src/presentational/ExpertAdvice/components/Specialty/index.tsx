@@ -124,10 +124,17 @@ export const Specialty = ({
 
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp)`,
           }}
         >
-          {" "}
+          <div
+            style={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              background: "rgba(54, 54, 54, 0.5)",
+            }}
+          />{" "}
           <Typography
             style={{
               zIndex: 1000,
@@ -216,10 +223,17 @@ export const Specialty = ({
 
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp)`,
           }}
         >
-          {" "}
+          <div
+            style={{
+              position: "absolute",
+              height: "100%",
+              width: "100%",
+              background: "rgba(54, 54, 54, 0.5)",
+            }}
+          />{" "}
           <Typography
             style={{
               zIndex: 1000,

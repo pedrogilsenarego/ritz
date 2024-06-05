@@ -1,6 +1,6 @@
-export const handleFetchBodyParts = async () => {
+export const handleFetchBodyParts = async (value: number) => {
   const baseUrl = "https://clinicasritz-be-staging.qloudyx.pt";
-  const url = `${baseUrl}/treatments/treatment-body-parts/list?bodypart=1`;
+  const url = `${baseUrl}/treatments/treatment-body-parts/list?bodypart=${value}`;
 
   try {
     const response = await fetch(url, {
