@@ -23,6 +23,7 @@ export const handleFetchBodyParts = async (value: number) => {
     }
 
     console.log("Response body:", body); // Log response body
+    return body;
   } catch (error) {
     console.error("An error occurred:", error);
   }

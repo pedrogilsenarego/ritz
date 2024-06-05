@@ -62,6 +62,7 @@ export const Base = ({ setMode }: Props) => {
             zIndex: 1000,
             transition: "all 0.5s ease-in-out",
             textAlign: "center",
+            textTransform: "capitalize",
             fontWeight: 500,
             fontSize: "15px",
             letterSpacing: "1px",
@@ -78,7 +79,12 @@ export const Base = ({ setMode }: Props) => {
     return (
       <div style={{ marginTop: "80px" }}>
         <Typography
-          style={{ textAlign: "center", fontWeight: 500, fontSize: "16px" }}
+          style={{
+            textAlign: "center",
+            fontWeight: 500,
+            fontSize: "16px",
+            color: "rgba(72, 72, 72, 1)",
+          }}
         >
           ESCOLHA UM FILTRO
         </Typography>

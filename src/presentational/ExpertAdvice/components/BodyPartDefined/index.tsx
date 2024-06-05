@@ -46,7 +46,7 @@ export const BodyPartDefined = ({
     [queryKeys.bodyParts, numberFilter()],
     () => handleFetchBodyParts(numberFilter())
   );
-  console.log("1", data);
+
   type PropsTile = {
     image: string;
     clinic: string;
