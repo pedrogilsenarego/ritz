@@ -2,6 +2,10 @@ import { Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import { Filters, Modes } from "../..";
 import LeftArrow from "../../../../assets/leftArrow.png";
+import { queryKeys } from "../../../../constants/queryKeys";
+import { useQuery } from "@tanstack/react-query";
+import { handleFetchConcerns } from "../../../../actions/tretaments";
+import { Organizer2 } from "../Organizer2";
 
 export const Concerns = ({
   setMode,
@@ -12,6 +16,10 @@ export const Concerns = ({
 }) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const { isLoading, data } = useQuery<any, any>([queryKeys.bodyParts], () =>
+    handleFetchConcerns()
+  );
 
   const renderLaptop = () => {
     return (
@@ -109,22 +117,9 @@ export const Concerns = ({
               background: "rgba(54, 54, 54, 0.5)",
             }}
           />{" "}
-          <Typography
-            style={{
-              zIndex: 1000,
-              transition: "all 0.5s ease-in-out",
-              textAlign: "center",
-              fontWeight: 500,
-              textTransform: "uppercase",
-              fontSize: "15px",
-              letterSpacing: "1px",
-              color: "white",
-            }}
-          >
-            preocupações a-z
-          </Typography>
         </div>
-        <div style={{ padding: "0px 60px" }}>sswdwqwq</div>
+        <Organizer2 data={data} />
+
         <div
           onClick={() => setMode("base")}
           style={{

@@ -233,6 +233,11 @@ export const content = {
           edit: "Edit Information",
         },
       },
+      tags: {
+        concerns: {
+          acne: "Acne",
+        },
+      },
     },
   },
 };

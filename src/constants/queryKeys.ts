@@ -3,4 +3,5 @@ export const queryKeys = {
   userSession: "userSession",
   bodyParts: "body-parts",
   specialty: "specialty",
+  concerns: "concerns",
 };
