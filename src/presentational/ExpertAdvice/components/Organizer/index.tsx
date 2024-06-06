@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Request } from "../../../../actions/generalTypes";
 import { Result } from "../../../../actions/treatments.types";
 
@@ -11,102 +11,138 @@ const chunkData = (data: Result[], size: number): Result[][] => {
 };
 
 export const Organizer = (data: Request<Result>) => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   if (!data || !data.data || !data.data.results) return <></>;
 
   const groups = chunkData(data.data.results, 9);
 
-  return (
-    <>
-      {groups.map((group, groupIndex) => {
-        const subGroup = chunkData(group, 3);
+  const renderMobile = () => {
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          rowGap: "40px",
+          padding: "30px 0px",
+        }}
+      >
+        {data.data.results.map((item, index) => (
+          <Typography
+            key={index}
+            style={{
+              cursor: "pointer",
+              fontSize: "15px",
+              lineHeight: "20px",
+              textAlign: "center",
+              fontWeight: 400,
+              letterSpacing: "1px",
+              textTransform: "capitalize",
+            }}
+          >
+            {item?.treatment?.title_pt || ""}
+          </Typography>
+        ))}
+      </div>
+    );
+  };
 
-        return (
-          <div key={groupIndex}>
-            <Grid container style={{ padding: "30px 0px" }} columnSpacing={4}>
-              {subGroup.map((resultSub, indexsub) => {
-                return (
-                  <Grid
-                    item
-                    xs={4}
-                    key={indexsub}
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      rowGap: "20px",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    {resultSub.map((result, indexT) => {
-                      return (
-                        <div
-                          key={indexT}
-                          style={{
-                            position: "relative",
-                          }}
-                        >
+  const renderLaptop = () => {
+    return (
+      <>
+        {groups.map((group, groupIndex) => {
+          const subGroup = chunkData(group, 3);
+
+          return (
+            <div key={groupIndex}>
+              <Grid container style={{ padding: "30px 0px" }} columnSpacing={4}>
+                {subGroup.map((resultSub, indexsub) => {
+                  return (
+                    <Grid
+                      item
+                      xs={4}
+                      key={indexsub}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        rowGap: "20px",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      {resultSub.map((result, indexT) => {
+                        return (
                           <div
+                            key={indexT}
                             style={{
-                              backgroundColor: "rgba(255, 252, 248, 0.9)",
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                              borderRadius: "5px",
-                              position: "absolute",
-                              height: "100%",
-                              opacity: 0,
-                              width: "100%",
-                              cursor: "pointer",
+                              position: "relative",
                             }}
-                            onMouseEnter={(e) =>
-                              (e.currentTarget.style.opacity = "1")
-                            }
-                            onMouseLeave={(e) =>
-                              (e.currentTarget.style.opacity = "0")
-                            }
                           >
+                            <div
+                              style={{
+                                backgroundColor: "rgba(255, 252, 248, 0.9)",
+                                display: "flex",
+                                justifyContent: "center",
+                                alignItems: "center",
+                                borderRadius: "5px",
+                                position: "absolute",
+                                height: "100%",
+                                opacity: 0,
+                                width: "100%",
+                                cursor: "pointer",
+                              }}
+                              onMouseEnter={(e) =>
+                                (e.currentTarget.style.opacity = "1")
+                              }
+                              onMouseLeave={(e) =>
+                                (e.currentTarget.style.opacity = "0")
+                              }
+                            >
+                              <Typography
+                                style={{
+                                  fontWeight: 400,
+                                  letterSpacing: "1px",
+                                  fontSize: "15px",
+                                  textTransform: "capitalize",
+                                }}
+                              >
+                                Abrir
+                              </Typography>
+                            </div>
                             <Typography
                               style={{
+                                cursor: "pointer",
+                                fontSize: "15px",
+                                lineHeight: "20px",
+                                height: "40px",
+                                display: "inline-block",
+
                                 fontWeight: 400,
                                 letterSpacing: "1px",
-                                fontSize: "15px",
                                 textTransform: "capitalize",
                               }}
                             >
-                              Abrir
+                              {result?.treatment?.title_pt || ""}
                             </Typography>
                           </div>
-                          <Typography
-                            style={{
-                              cursor: "pointer",
-                              fontSize: "15px",
-                              lineHeight: "20px",
-                              height: "40px",
-                              display: "inline-block",
+                        );
+                      })}
+                    </Grid>
+                  );
+                })}
+              </Grid>
+              <div
+                style={{
+                  height: "1px",
+                  width: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.3)",
+                }}
+              />
+            </div>
+          );
+        })}
+      </>
+    );
+  };
 
-                              fontWeight: 400,
-                              letterSpacing: "1px",
-                              textTransform: "capitalize",
-                            }}
-                          >
-                            {result?.treatment?.title_pt || ""}
-                          </Typography>
-                        </div>
-                      );
-                    })}
-                  </Grid>
-                );
-              })}
-            </Grid>
-            <div
-              style={{
-                height: "1px",
-                width: "100%",
-                backgroundColor: "rgba(0, 0, 0, 0.3)",
-              }}
-            />
-          </div>
-        );
-      })}
-    </>
-  );
+  return mobile ? renderMobile() : renderLaptop();
 };

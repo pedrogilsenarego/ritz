@@ -13,7 +13,10 @@ import LeftArrow from "../../../../assets/leftArrow.png";
 import Refresh from "../../../../assets/refresh.png";
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys } from "../../../../constants/queryKeys";
-import { handleFetchBodyParts } from "../../../../actions/tretaments";
+import {
+  handleFetchBodyParts,
+  handleFetchSpecialty,
+} from "../../../../actions/tretaments";
 export const SpecialtyDefined = ({
   setMode,
   filter,
@@ -23,11 +26,25 @@ export const SpecialtyDefined = ({
 }) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-  // const { isLoading, data } = useQuery<any, any>(
-  //   [queryKeys.bodyParts, "2"],
-  //   () => handleFetchBodyParts(2)
-  // );
-  // console.log(data);
+  const numberFilter = () => {
+    switch (filter) {
+      case "steticCirurgy":
+        return 1;
+      case "dental":
+        return 2;
+      case "postCirurgy":
+        return 3;
+      case "preventiveHealth":
+        return 4;
+      default:
+        return 1;
+    }
+  };
+  const { isLoading, data } = useQuery<any, any>(
+    [queryKeys.specialty, numberFilter()],
+    () => handleFetchSpecialty(numberFilter())
+  );
+  console.log(data);
   type PropsTile = {
     image: string;
     clinic: string;
