@@ -31,7 +31,7 @@ export const handleFetchBodyParts = async (value: number) => {
 
 export const handleFetchSpecialty = async (value: number) => {
   const baseUrl = "https://clinicasritz-be-staging.qloudyx.pt";
-  const url = `${baseUrl}/treatments/specialty/list?specialty=${value}`;
+  const url = `${baseUrl}/treatments/treatments/list?speciality=${value}`;
 
   try {
     const response = await fetch(url, {

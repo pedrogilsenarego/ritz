@@ -1,4 +1,4 @@
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import { i18n } from "../../../../translations/i18n";
 
@@ -25,8 +25,6 @@ export const Organizer2 = (data: any) => {
     groupedConcerns[firstLetter].push(concern);
   });
 
-  console.log(groupedConcerns);
-
   const renderMobile = () => {
     return (
       <div
@@ -34,31 +32,111 @@ export const Organizer2 = (data: any) => {
           display: "flex",
           flexDirection: "column",
           rowGap: "40px",
-          padding: "30px 0px",
+          padding: "30px 50px",
         }}
       >
-        {data?.data?.results?.map((item: any, index: any) => (
-          <Typography
-            key={index}
-            style={{
-              cursor: "pointer",
-              fontSize: "15px",
-              lineHeight: "20px",
-              textAlign: "center",
-              fontWeight: 400,
-              letterSpacing: "1px",
-              textTransform: "capitalize",
-            }}
-          >
-            {item?.concern || ""}
-          </Typography>
-        ))}
+        {Object.values(groupedConcerns).map(
+          (concernsGroup: string[], index: number) => (
+            <div
+              key={index}
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                rowGap: "20px",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "10px",
+                  backgroundColor: "rgba(255, 251, 247, 0.5)",
+                }}
+              >
+                <Typography>{concernsGroup[0][0]}</Typography>
+              </div>
+              {concernsGroup.map((concern: string, idx: number) => (
+                <Typography
+                  key={idx}
+                  style={{
+                    cursor: "pointer",
+                    fontSize: "15px",
+                    lineHeight: "20px",
+                    textAlign: "center",
+                    fontWeight: 400,
+                    letterSpacing: "1px",
+                    textTransform: "capitalize",
+                  }}
+                >
+                  {concern}
+                </Typography>
+              ))}
+            </div>
+          )
+        )}
       </div>
     );
   };
 
   const renderLaptop = () => {
-    return <></>;
+    return (
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          rowGap: "40px",
+          padding: "30px 50px",
+        }}
+      >
+        <Grid container spacing={4}>
+          {Object.values(groupedConcerns).map(
+            (concernsGroup: string[], index: number) => (
+              <Grid
+                item
+                xs={4}
+                key={index}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  rowGap: "20px",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    padding: "30px",
+                    backgroundColor: "rgba(255, 251, 247, 0.5)",
+                  }}
+                >
+                  <Typography style={{ textTransform: "uppercase" }}>
+                    {concernsGroup[0][0]}
+                  </Typography>
+                </div>
+                {concernsGroup.map((concern: string, idx: number) => (
+                  <Typography
+                    key={idx}
+                    style={{
+                      cursor: "pointer",
+                      fontSize: "15px",
+                      lineHeight: "20px",
+                      textAlign: "center",
+                      fontWeight: 400,
+                      letterSpacing: "1px",
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {concern}
+                  </Typography>
+                ))}
+              </Grid>
+            )
+          )}
+        </Grid>
+      </div>
+    );
   };
 
   return mobile ? renderMobile() : renderLaptop();

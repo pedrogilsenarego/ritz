@@ -64,6 +64,7 @@ export const Concerns = ({
           </Typography>
         </div>
 
+        <Organizer2 data={data} />
         <div
           onClick={() => setMode("base")}
           style={{

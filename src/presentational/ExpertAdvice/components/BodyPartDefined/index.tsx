@@ -202,7 +202,7 @@ export const BodyPartDefined = ({
               {renderTile()}
             </Grid>
             <Grid item xs={9}>
-              <Organizer data={data} />
+              <Organizer data={data} type="bodyPart" />
             </Grid>
           </Grid>
         </Slide>
@@ -314,7 +314,7 @@ export const BodyPartDefined = ({
               {renderTile()}
             </Grid>
             <Grid item xs={12}>
-              <Organizer data={data} />
+              <Organizer data={data} type="bodyPart" />
             </Grid>
           </Grid>
         </Slide>

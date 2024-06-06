@@ -17,6 +17,7 @@ import {
   handleFetchBodyParts,
   handleFetchSpecialty,
 } from "../../../../actions/tretaments";
+import { Organizer } from "../Organizer";
 export const SpecialtyDefined = ({
   setMode,
   filter,
@@ -44,7 +45,7 @@ export const SpecialtyDefined = ({
     [queryKeys.specialty, numberFilter()],
     () => handleFetchSpecialty(numberFilter())
   );
-  console.log(data);
+
   type PropsTile = {
     image: string;
     clinic: string;
@@ -215,7 +216,9 @@ export const SpecialtyDefined = ({
             <Grid item xs={6} md={3}>
               {renderTile()}
             </Grid>
-            <Grid item xs={9}></Grid>
+            <Grid item xs={9}>
+              <Organizer data={data} type="speciality" />
+            </Grid>
           </Grid>
         </Slide>
         <div style={{ display: "flex", columnGap: "20px" }}>
@@ -319,7 +322,9 @@ export const SpecialtyDefined = ({
             <Grid item xs={12}>
               {renderTile()}
             </Grid>
-            <Grid item xs={12}></Grid>
+            <Grid item xs={12}>
+              <Organizer data={data} type="speciality" />
+            </Grid>
           </Grid>
         </Slide>
         <div

@@ -1,8 +1,7 @@
 import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Request } from "../../../../actions/generalTypes";
-import { Result } from "../../../../actions/treatments.types";
 
-const chunkData = (data: Result[], size: number): Result[][] => {
+const chunkData = (data: any[], size: number): any[][] => {
   const chunks = [];
   for (let i = 0; i < data.length; i += size) {
     chunks.push(data.slice(i, i + size));
@@ -10,12 +9,19 @@ const chunkData = (data: Result[], size: number): Result[][] => {
   return chunks;
 };
 
-export const Organizer = (data: Request<Result>) => {
+export const Organizer = ({
+  data,
+  type,
+}: {
+  data: any;
+  type: "speciality" | "bodyPart";
+}) => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("md"));
-  if (!data || !data.data || !data.data.results) return <></>;
 
-  const groups = chunkData(data.data.results, 9);
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  if (!data || !data || !data.results) return <></>;
+
+  const groups = chunkData(data.results, 9);
 
   const renderMobile = () => {
     return (
@@ -27,7 +33,7 @@ export const Organizer = (data: Request<Result>) => {
           padding: "30px 0px",
         }}
       >
-        {data.data.results.map((item, index) => (
+        {data.results.map((item: any, index: number) => (
           <Typography
             key={index}
             style={{
@@ -40,7 +46,9 @@ export const Organizer = (data: Request<Result>) => {
               textTransform: "capitalize",
             }}
           >
-            {item?.treatment?.title_pt || ""}
+            {type === "speciality"
+              ? item?.title_pt
+              : item?.treatment?.title_pt || ""}
           </Typography>
         ))}
       </div>
@@ -121,7 +129,9 @@ export const Organizer = (data: Request<Result>) => {
                                 textTransform: "capitalize",
                               }}
                             >
-                              {result?.treatment?.title_pt || ""}
+                              {type === "speciality"
+                                ? result?.title_pt
+                                : result?.treatment?.title_pt || ""}
                             </Typography>
                           </div>
                         );
