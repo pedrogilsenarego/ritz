@@ -134,7 +134,7 @@ export const BodyPart = ({
 
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp)`,
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp)`,
           }}
         >
           <div
@@ -233,7 +233,7 @@ export const BodyPart = ({
 
             backgroundPosition: "center center",
             backgroundSize: "cover",
-            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp)`,
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp)`,
           }}
         >
           <div

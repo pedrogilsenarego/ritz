@@ -93,7 +93,7 @@ export const Base = ({ setMode }: Props) => {
             <Grid item xs={4}>
               <Option
                 image={
-                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp"
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp"
                 }
                 title="especialidades</br>ehtiq"
                 onClick={() => setMode("specialty")}
@@ -102,7 +102,7 @@ export const Base = ({ setMode }: Props) => {
             <Grid item xs={4}>
               <Option
                 image={
-                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp"
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp"
                 }
                 title="zonas de</br>corpo"
                 onClick={() => setMode("bodyPart")}
@@ -111,7 +111,7 @@ export const Base = ({ setMode }: Props) => {
             <Grid item xs={4}>
               <Option
                 image={
-                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp"
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp"
                 }
                 title="preocupações</br>a-Z"
                 onClick={() => setMode("concerns")}

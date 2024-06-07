@@ -19,11 +19,11 @@ const Home = () => {
           aspectRatio: mobile ? undefined : 3.89,
           width: "100%",
 
-          //clipPath: "inset(0px)",
+          clipPath: "inset(0px)",
           objectFit: "cover",
         }}
         src={
-          "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/HOME-1-Legendas-PT.webm"
+          "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-1-Legendas-PT.webm"
         }
         autoPlay
         muted
