@@ -37,7 +37,7 @@ const Popup = ({
       fullScreen
       PaperProps={{
         style: {
-          padding: 5,
+          padding: 0,
           borderRadius: "6px",
           height: "auto",
           width: "auto",
@@ -50,7 +50,7 @@ const Popup = ({
       <DialogContent
         dividers={divider}
         style={{
-          padding: "10px",
+          padding: 0,
           height: "auto",
           overflow: "scroll",
           msOverflowStyle: "none",

@@ -17,6 +17,7 @@ import mail from "../../../assets/mail.svg";
 import map from "../../../assets/map.svg";
 import phone from "../../../assets/phone.svg";
 import { MAX_SCREEN } from "../../../constants/screen";
+import { VisitCard } from "../../../presentational/VisitCard";
 
 type Props = {
   isUser?: boolean;
@@ -77,27 +78,7 @@ const Footer = ({ isUser }: Props) => {
                   width: "274px",
                 }}
               />
-              {!isUser && (
-                <Button
-                  style={{
-                    backgroundColor: "rgba(59, 52, 52, 1)",
-                    borderRadius: "30px",
-                    padding: "8px 20px",
-                  }}
-                >
-                  <Typography
-                    style={{
-                      fontSize: "11px",
-                      color: "white",
-                      fontWeight: 500,
-                      textTransform: "uppercase",
-                      lineHeight: "11px",
-                    }}
-                  >
-                    Marcações
-                  </Typography>
-                </Button>
-              )}
+              {!isUser && <VisitCard />}
             </Grid>
 
             <Grid
@@ -352,25 +333,7 @@ const Footer = ({ isUser }: Props) => {
                 width: "100%",
               }}
             >
-              <Button
-                style={{
-                  backgroundColor: "rgba(59, 52, 52, 1)",
-                  borderRadius: "30px",
-                  padding: "6px 20px",
-                }}
-              >
-                <Typography
-                  style={{
-                    color: "white",
-                    fontSize: "11px",
-                    fontWeight: 500,
-                    lineHeight: "11px",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Marcações
-                </Typography>
-              </Button>
+              <VisitCard />
             </Grid>
             <Grid item xs={12} style={{ margin: "20px 50px" }}>
               <div style={{ display: "flex", columnGap: "20px" }}>
