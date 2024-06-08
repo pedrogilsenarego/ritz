@@ -45,7 +45,7 @@ export const VisitCard = () => {
           background: "linear-gradient(180deg, #F9F9F9 0%, #AEB4B7 100%)",
         }}
       >
-        <Content />
+        <Content setOpenPopup={setOpenPopup} />
       </Popup>
     </>
   );
