@@ -4,6 +4,7 @@ import map from "../../../assets/map.svg";
 import phone from "../../../assets/phone.svg";
 import "./index.css";
 import Cross from "../../../assets/cross.png";
+import Logo from "../../../assets/LOGO 6.webp";
 
 export const Content = ({ setOpenPopup }: any) => {
   const theme = useTheme();
@@ -57,6 +58,13 @@ export const Content = ({ setOpenPopup }: any) => {
               height: "100%",
             }}
           >
+            <img
+              src={Logo}
+              alt=""
+              style={{
+                width: "202px",
+              }}
+            />
             <div>
               <Typography
                 variant="h1"

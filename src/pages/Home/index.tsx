@@ -23,7 +23,9 @@ const Home = () => {
           objectFit: "cover",
         }}
         src={
-          "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-1-Legendas-PT.webm"
+          mobile
+            ? "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/HOME-1-Legendas-PT-Mobile.webm"
+            : "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-1-Legendas-PT.webm"
         }
         autoPlay
         muted
