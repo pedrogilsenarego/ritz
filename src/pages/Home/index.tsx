@@ -15,7 +15,7 @@ const Home = () => {
       <video
         //ref={videoRef}
         style={{
-          height: "804px",
+          height: mobile ? "600px" : "804px",
           aspectRatio: mobile ? undefined : 3.89,
           width: "100%",
 

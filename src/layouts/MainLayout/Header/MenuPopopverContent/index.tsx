@@ -181,92 +181,128 @@ const MenuPopopverContent = ({ handleClose }: any) => {
     return (
       <div
         style={{
-          padding: "8px 12px 8px 12px",
-          borderRadius: "2px",
+          background: "rgba(211, 200, 192, 0.95)",
+
+          padding: "10px",
+
           height: "100%",
         }}
       >
         <div
           style={{
             border: "solid 1px black",
-            padding: "10px",
-            borderRadius: "2px",
             height: "100%",
+            overflow: "hidden",
           }}
         >
           <div
             style={{
-              border: "solid 1px rgba(136, 127, 127, 1)",
+              display: "flex",
+              justifyContent: "space-between",
+              width: "100%",
+              padding: "0px 20px",
+              marginTop: "20px",
+              height: "50px",
             }}
           >
-            <div
+            <img
+              onClick={() => handleClose(false)}
+              src={Close}
+              alt=""
+              style={{ width: "25px" }}
+            />
+            <img
+              onClick={() => {
+                navigate(ROUTE_PATHS.HOME);
+                handleClose(false);
+              }}
+              src={Logo}
+              alt="logo"
               style={{
-                display: "flex",
-                justifyContent: "space-between",
-                width: "100%",
-                padding: "0px 20px",
-                marginTop: "20px",
+                width: "120px",
+                cursor: "pointer",
+              }}
+            />
+            <img
+              src={Login}
+              alt="logo"
+              style={{
+                width: "15px",
+                cursor: "pointer",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              overflow: "scroll",
+              paddingBottom: "60px",
+              height: "calc(100% - 50px)",
+            }}
+          >
+            <Typography
+              style={{
+                cursor: "pointer",
+                fontSize: "14px",
+                textAlign: "center",
+                letterSpacing: "1px",
+                textTransform: "uppercase",
+                marginTop: "24px",
+                fontWeight: 500,
+              }}
+              onClick={() => {
+                navigate(ROUTE_PATHS.HOME);
+                handleClose();
               }}
             >
-              <img
-                onClick={() => handleClose(false)}
-                src={Close}
-                alt=""
-                style={{}}
-              />
-              <img
-                onClick={() => {
-                  navigate(ROUTE_PATHS.HOME);
-                  handleClose(false);
-                }}
-                src={Logo}
-                alt="logo"
-                style={{
-                  width: "120px",
-                  cursor: "pointer",
-                }}
-              />
-              <img
-                src={Login}
-                alt="logo"
-                style={{
-                  width: "15px",
-                  cursor: "pointer",
-                }}
-              />
-            </div>
+              EN - ES
+            </Typography>
             <div
               style={{
-                padding: "40px 0px 40px 0px",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                rowGap: "25px",
-                height: "100%",
+                rowGap: "15px",
+                marginTop: "55px",
               }}
             >
+              <Typography
+                style={{
+                  cursor: "pointer",
+                  fontSize: "15px",
+
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  fontWeight:
+                    location.pathname === ROUTE_PATHS.HOME ? "bold" : 400,
+                }}
+                onClick={() => {
+                  navigate(ROUTE_PATHS.HOME);
+                  handleClose();
+                }}
+              >
+                Home
+              </Typography>
+              <div
+                style={{
+                  width: "5px",
+                  height: "5px",
+                  background: "rgba(241, 238, 231, 1)",
+                  borderRadius: "50%",
+                }}
+              />
               {options.map((option, index) => {
                 return (
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      columnGap: "24px",
-                    }}
-                  >
+                  <>
                     <Typography
-                      className={"text"}
                       style={{
                         cursor: "pointer",
                         fontSize: "15px",
-                        fontWeight: 500,
+
                         letterSpacing: "1px",
                         textTransform: "uppercase",
-                        color:
-                          location.pathname === option.link
-                            ? mainColors.secondary[400]
-                            : "inherit",
+                        fontWeight:
+                          location.pathname === ROUTE_PATHS.HOME ? "bold" : 400,
                       }}
                       key={option.name}
                       onClick={() => {
@@ -276,14 +312,25 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                     >
                       {option.name}
                     </Typography>
-                  </div>
+                    {index < options.length - 1 && (
+                      <div
+                        style={{
+                          width: "5px",
+                          height: "5px",
+                          background: "rgba(241, 238, 231, 1)",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    )}
+                  </>
                 );
               })}
               <div
                 style={{
+                  margin: "20px 0px",
                   height: "1px",
-                  backgroundColor: "lightGray",
-                  width: "250px",
+                  backgroundColor: "rgba(0, 0, 0, 0.2)",
+                  width: "180px",
                 }}
               ></div>
               <div
@@ -315,6 +362,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                 </Typography>
                 <Typography
                   style={{
+                    marginTop: "20px",
                     cursor: "pointer",
                     fontSize: "13px",
                     fontWeight: 500,
