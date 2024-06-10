@@ -222,19 +222,22 @@ const Footer = ({ isUser }: Props) => {
                     {i18n.t("footer.ourPolicies")}
                   </Typography>
                   <Typography
-                    style={{ fontSize: "8px", textDecoration: "underline" }}
+                    style={{
+                      fontSize: "8px",
+                      textDecoration: "underline",
+                      textTransform: "uppercase",
+                    }}
                   >
-                    POLITICA DE PRIVACIDADE
+                    {i18n.t("footer.privacyPolicy")}
                   </Typography>
                   <Typography
-                    style={{ fontSize: "8px", textDecoration: "underline" }}
+                    style={{
+                      fontSize: "8px",
+                      textDecoration: "underline",
+                      textTransform: "uppercase",
+                    }}
                   >
-                    POLÍTICA DE COOKIES
-                  </Typography>
-                  <Typography
-                    style={{ fontSize: "8px", textDecoration: "underline" }}
-                  >
-                    POLÍTICA DE E-COMMERCE
+                    {i18n.t("footer.privacyCookies")}
                   </Typography>
                 </div>
               </div>
@@ -456,19 +459,22 @@ const Footer = ({ isUser }: Props) => {
                   {i18n.t("footer.ourPolicies")}
                 </Typography>
                 <Typography
-                  style={{ fontSize: "10px", textDecoration: "underline" }}
+                  style={{
+                    fontSize: "10px",
+                    textDecoration: "underline",
+                    textTransform: "uppercase",
+                  }}
                 >
-                  POLITICA DE PRIVACIDADE
+                  {i18n.t("footer.privacyPolicy")}
                 </Typography>
                 <Typography
-                  style={{ fontSize: "10px", textDecoration: "underline" }}
+                  style={{
+                    fontSize: "10px",
+                    textDecoration: "underline",
+                    textTransform: "uppercase",
+                  }}
                 >
-                  POLÍTICA DE COOKIES
-                </Typography>
-                <Typography
-                  style={{ fontSize: "10px", textDecoration: "underline" }}
-                >
-                  POLÍTICA DE E-COMMERCE
+                  {i18n.t("footer.privacyCookies")}
                 </Typography>
               </div>
             </Grid>

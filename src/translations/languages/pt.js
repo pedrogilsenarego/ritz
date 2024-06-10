@@ -24,6 +24,8 @@ export const content = {
         ourPolicies: "As nossas Políticas",
         registerConcern: "Registar Reclamação",
         copyright: "Copyright 2024. Desenvolvido por LINEA AGENCY.",
+        privacyPolicy: "Privacy Policy",
+        privacyCookies: "Cookie Policy",
       },
       errors: {
         notFound404: "404: Page not found",
