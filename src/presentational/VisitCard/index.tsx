@@ -37,7 +37,7 @@ export const VisitCard = () => {
         }}
         paperStyles={{
           borderRadius: 0,
-          maxHeight: "95vh",
+          maxHeight: "100vh",
 
           overflow: "scroll",
 

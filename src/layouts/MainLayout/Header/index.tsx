@@ -1,18 +1,16 @@
 import {
   Box,
   Container,
-  Divider,
   Grid,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import { BsInstagram } from "react-icons/bs";
 import { VscMenu } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-//import logo from "../../../assets/logo.svg";
+
 import Logo from "../../../assets/EHTIQ_Logo.svg";
 import LogoMobile from "../../../assets/ole.png";
 import SearchIcon from "../../../assets/Icon_Search.svg";
@@ -59,6 +57,7 @@ const Header = () => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   const [mobileDrawer, setMobileDrawer] = useState<boolean>(false);
+  const [lapTopDrawer, setLaptopDrawer] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [anchorElLogin, setAnchorElLogin] = useState<HTMLElement | null>(null);
   const [anchorElMenu, setAnchorElMenu] = useState<HTMLElement | null>(null);
@@ -106,7 +105,7 @@ const Header = () => {
   };
 
   const handleMenu = (e: any) => {
-    handleClickPopoverMenu(e);
+    setLaptopDrawer(true);
   };
 
   const handleScroll = () => {
@@ -170,18 +169,14 @@ const Header = () => {
             >
               <Icons.Menu
                 style={{
-                  cursor: isScrolled ? "default" : "pointer",
+                  cursor: "pointer",
 
                   transition: "opacity ease-in-out 1s",
                 }}
                 size={"30px"}
-                onClick={
-                  isScrolled
-                    ? () => null
-                    : (e) => {
-                        handleMenu(e);
-                      }
-                }
+                onClick={(e) => {
+                  handleMenu(e);
+                }}
               />
               <div>
                 <img
@@ -293,22 +288,14 @@ const Header = () => {
         <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
           <UserPopoverContent handleClose={handleClose} />
         </BasicPopover>
-        <BasicPopover
-          paperStyles={{ borderRadius: 0 }}
-          isOpen={isOpenMenu}
-          anchorEl={anchorElMenu}
-          onClose={handleCloseMenu}
-        >
-          <MenuPopopverContent handleClose={handleClickPopoverMenu} />
-        </BasicPopover>
+
         <DrawerMine
-          minWidth="30vw"
           fullHeight
-          position="right"
-          openDrawer={cartDrawer}
-          setOpenDrawer={setCartDrawer}
+          position="left"
+          openDrawer={lapTopDrawer}
+          setOpenDrawer={setLaptopDrawer}
         >
-          <Cart closeCart={setCartDrawer} />
+          <MenuPopopverContent handleClose={setLaptopDrawer} />
         </DrawerMine>
       </Box>
     );
