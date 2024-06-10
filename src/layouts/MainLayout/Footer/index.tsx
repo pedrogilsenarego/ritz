@@ -18,6 +18,7 @@ import map from "../../../assets/map.svg";
 import phone from "../../../assets/phone.svg";
 import { MAX_SCREEN } from "../../../constants/screen";
 import { VisitCard } from "../../../presentational/VisitCard";
+import { i18n } from "../../../translations/i18n";
 
 type Props = {
   isUser?: boolean;
@@ -137,7 +138,7 @@ const Footer = ({ isUser }: Props) => {
                       textTransform: "uppercase",
                     }}
                   >
-                    Contacte-nos
+                    {i18n.t("footer.contact")}
                   </Typography>
                   <div
                     style={{
@@ -218,7 +219,7 @@ const Footer = ({ isUser }: Props) => {
                       textTransform: "uppercase",
                     }}
                   >
-                    As nossas políticas
+                    {i18n.t("footer.ourPolicies")}
                   </Typography>
                   <Typography
                     style={{ fontSize: "8px", textDecoration: "underline" }}
@@ -283,7 +284,7 @@ const Footer = ({ isUser }: Props) => {
                       fontWeight: 500,
                     }}
                   >
-                    Registar reclamação
+                    {i18n.t("footer.registerConcern")}
                   </Typography>
                 </div>
               </div>
@@ -346,7 +347,7 @@ const Footer = ({ isUser }: Props) => {
                   }}
                 >
                   <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
-                    Contacte-nos
+                    {i18n.t("footer.contact")}
                   </Typography>
                   <div
                     style={{
@@ -452,7 +453,7 @@ const Footer = ({ isUser }: Props) => {
                 }}
               >
                 <Typography style={{ fontSize: "12px", fontWeight: "bold" }}>
-                  As nossas políticas
+                  {i18n.t("footer.ourPolicies")}
                 </Typography>
                 <Typography
                   style={{ fontSize: "10px", textDecoration: "underline" }}
@@ -489,7 +490,7 @@ const Footer = ({ isUser }: Props) => {
                   }}
                 />
                 <Typography style={{ fontSize: "7px", marginTop: "10px" }}>
-                  Registar reclamação
+                  {i18n.t("footer.registerConcern")}
                 </Typography>
 
                 <Typography

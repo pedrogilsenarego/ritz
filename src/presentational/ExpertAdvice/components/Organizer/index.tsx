@@ -1,5 +1,7 @@
 import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Request } from "../../../../actions/generalTypes";
+import { useSelector } from "react-redux";
+import { State } from "../../../../redux/types";
 
 const chunkData = (data: any[], size: number): any[][] => {
   const chunks = [];
@@ -17,6 +19,8 @@ export const Organizer = ({
   type: "speciality" | "bodyPart";
 }) => {
   const theme = useTheme();
+  const lang = useSelector<State, string>((state) => state.general.lang);
+  const title = lang === "PT" ? "title_pt" : "title_en";
 
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   if (!data || !data || !data.results) return <></>;
@@ -47,8 +51,8 @@ export const Organizer = ({
             }}
           >
             {type === "speciality"
-              ? item?.title_pt
-              : item?.treatment?.title_pt || ""}
+              ? item?.[title]
+              : item?.treatment?.[title] || ""}
           </Typography>
         ))}
       </div>
@@ -130,8 +134,8 @@ export const Organizer = ({
                               }}
                             >
                               {type === "speciality"
-                                ? result?.title_pt
-                                : result?.treatment?.title_pt || ""}
+                                ? result?.[title]
+                                : result?.treatment?.[title] || ""}
                             </Typography>
                           </div>
                         );

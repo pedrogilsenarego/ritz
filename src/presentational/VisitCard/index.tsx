@@ -2,6 +2,7 @@ import { useState } from "react";
 import Popup from "../../components/Popup";
 import { Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Content } from "./Content";
+import { i18n } from "../../translations/i18n";
 
 export const VisitCard = () => {
   const theme = useTheme();
@@ -26,7 +27,7 @@ export const VisitCard = () => {
             textTransform: "uppercase",
           }}
         >
-          Marcações
+          {i18n.t("footer.schedulle")}
         </Typography>
       </Button>
       <Popup

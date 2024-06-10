@@ -3,35 +3,27 @@ export const content = {
     translations: {
       header: {
         home: "Home",
-        products: "Products",
-        about: "About the ETHIQ",
-        account: "My account",
-        login: "Login",
-        logout: "Sign Out",
-        admin: "Admin",
-        blog: "Blog",
-        testemonials: "Testemonials",
+        clinic: "The Clinic",
+        treatments: "Treatments",
+        experience: "The Experience",
+        blog: "Blog EHTIQ",
+        about: "About EHTIQ",
         contacts: "Contacts",
         membership: "Membership",
-        clinic: "clinic",
-      },
-      errors: {
-        notFound404: "404: Page not found",
-        backButton: "Back Home",
-      },
-      cookiePopup: {
-        title: "Cookie Settings",
-        accept: "Accept All Cookies",
-        settings: "Cookie Settings",
-        description:
-          "By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage and assist in our marketing efforts. More info",
-      },
-      cookieSettings: {
-        title: "Customize Consent Preferences",
+        privacyPolicy: "Privacy Policy",
+        privacyCookies: "Cookie Policy",
+
+        account: "My account",
+        login: "Logar",
+        logout: "Sign Out",
+        admin: "Admin",
       },
       footer: {
-        registeredBrand: "All intelectual rights are proprietary",
-        schedulle: "",
+        schedulle: "Appointments",
+        contact: "Contact Us",
+        ourPolicies: "Our Policies",
+        registerConcern: "Register Complaint",
+        copyright: "Copyright 2024. Desenvolvido por LINEA AGENCY.",
       },
       cartDrawer: {
         title: "Cart",

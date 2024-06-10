@@ -9,6 +9,7 @@ import Youtue from "../../../../assets/Youtube.svg";
 import Close from "../../../../assets/close.svg";
 import LogoMobile from "../../../../assets/ole.png";
 import Login from "../../../../assets/Log_In.svg";
+import { i18n } from "../../../../translations/i18n";
 const MenuPopopverContent = ({ handleClose }: any) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
               handleClose();
             }}
           >
-            Home
+            {i18n.t("header.home")}
           </Typography>
           <div
             style={{
@@ -121,7 +122,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                 handleClose();
               }}
             >
-              Blog Ehtiq
+              {i18n.t("header.blog")}
             </Typography>
             <Typography
               style={{
@@ -136,7 +137,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
               }}
               onClick={() => navigate(ROUTE_PATHS.BLOG_)}
             >
-              Contactos
+              {i18n.t("header.contacts")}
             </Typography>
             <div
               style={{
@@ -177,7 +178,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                 textTransform: "uppercase",
               }}
             >
-              Políticas de privacidade
+              {i18n.t("header.privacyPolicy")}
             </Typography>
             <Typography
               className={"text"}
@@ -189,7 +190,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                 textTransform: "uppercase",
               }}
             >
-              Políticas de cookies
+              {i18n.t("header.privacyCookies")}
             </Typography>
           </div>
         </div>
@@ -301,7 +302,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                   handleClose();
                 }}
               >
-                Home
+                {i18n.t("header.home")}
               </Typography>
               <div
                 style={{
@@ -379,7 +380,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                     handleClose();
                   }}
                 >
-                  Blog Ehtiq
+                  {i18n.t("header.blog")}
                 </Typography>
                 <Typography
                   style={{
@@ -394,7 +395,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                   }}
                   onClick={() => navigate(ROUTE_PATHS.BLOG_)}
                 >
-                  Contactos
+                  {i18n.t("header.contacts")}
                 </Typography>
                 <div
                   style={{
@@ -435,7 +436,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                     textTransform: "uppercase",
                   }}
                 >
-                  Políticas de privacidade
+                  {i18n.t("header.privacyPolicy")}
                 </Typography>
                 <Typography
                   className={"text"}
@@ -448,7 +449,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                     textTransform: "uppercase",
                   }}
                 >
-                  Políticas de cookies
+                  {i18n.t("header.privacyCookies")}
                 </Typography>
               </div>
             </div>
