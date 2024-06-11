@@ -60,7 +60,7 @@ const ContainerC = () => {
                   fontWeight: 700,
                 }}
               >
-                {i18n.t("pages.home.beutyAndWellBeing")}
+                {i18n.t("pages.home.text1")}
               </Typography>
               <img
                 src={Logo3}
@@ -76,7 +76,7 @@ const ContainerC = () => {
                   lineHeight: "20px",
                 }}
               >
-                {i18n.t("pages.home.beutyText")}
+                {i18n.t("pages.home.text2")}
               </Typography>
             </div>
           </div>
@@ -142,7 +142,7 @@ const ContainerC = () => {
                   fontWeight: 700,
                 }}
               >
-                {i18n.t("pages.home.beutyAndWellBeing")}
+                {i18n.t("pages.home.text1")}
               </Typography>
               <Typography
                 sx={{
@@ -153,7 +153,7 @@ const ContainerC = () => {
                   lineHeight: "25px",
                 }}
               >
-                {i18n.t("pages.home.beutyText")}
+                {i18n.t("pages.home.text2")}
               </Typography>
               <img
                 src={Logo2}

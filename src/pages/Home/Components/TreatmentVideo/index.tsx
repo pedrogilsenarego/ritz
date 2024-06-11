@@ -14,17 +14,7 @@ export const TreatmentVideo = () => {
   // const Video =
   //  "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4";
   const Video = `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-EXPERT-ADVICE-${getRandomNumber()}.mp4`;
-  // useEffect(() => {
-  //   const playVideo = () => {
-  //     if (videoRef.current) {
-  //       videoRef.current.play();
-  //     }
-  //   };
-  //   document.addEventListener("click", playVideo);
-  //   return () => {
-  //     document.removeEventListener("click", playVideo);
-  //   };
-  // }, []);
+
   return (
     <div
       style={{
@@ -61,7 +51,7 @@ export const TreatmentVideo = () => {
           maxWidth: "80%",
         }}
       >
-        {i18n.t("pages.home.inteligentResearch")}
+        {i18n.t("pages.home.box41")}
       </Typography>
       <Typography
         style={{
@@ -73,7 +63,7 @@ export const TreatmentVideo = () => {
           maxWidth: "80%",
         }}
       >
-        {i18n.t("pages.home.correctTreatment")}
+        {i18n.t("pages.home.box42")}
       </Typography>
       <Container
         style={{
@@ -84,20 +74,6 @@ export const TreatmentVideo = () => {
           justifyContent: "center",
         }}
       >
-        {/* <div
-          style={{
-            height: mobile ? "150px" : undefined,
-            aspectRatio: mobile ? undefined : 3.89,
-            width: mobile ? "99%" : "90%",
-            borderRadius: "5px",
-          }}
-          dangerouslySetInnerHTML={{
-            __html: `<video autoplay loop muted style="border-radius: 5px; width: 100%; height: 100%; object-fit: cover; clip-path: inset(0px);">
-        <source src=${Video} type="video/webm" preload='auto'/>
-    </video>`,
-          }}
-        /> */}
-
         <video
           //ref={videoRef}
           style={{

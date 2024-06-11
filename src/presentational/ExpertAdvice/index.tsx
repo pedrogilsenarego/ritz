@@ -82,7 +82,7 @@ export const ExpertAdvice = () => {
             letterSpacing: "1px",
           }}
         >
-          {i18n.t("pages.home.exportAdvice")}
+          {i18n.t("pages.home.button0")}
         </Typography>
       </ButtonBase>
       <Popup

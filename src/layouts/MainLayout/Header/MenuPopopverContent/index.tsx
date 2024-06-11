@@ -6,7 +6,7 @@ import { ROUTE_PATHS } from "../../../../routes/constants";
 import INsta from "../../../../assets/Insta.svg";
 import Face from "../../../../assets/Facebook.svg";
 import Youtue from "../../../../assets/Youtube.svg";
-import Close from "../../../../assets/close.svg";
+import Close from "../../../../assets/simpleCross.png";
 import LogoMobile from "../../../../assets/ole.png";
 import Login from "../../../../assets/Log_In.svg";
 import { i18n } from "../../../../translations/i18n";
@@ -219,6 +219,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
             style={{
               display: "flex",
               justifyContent: "space-between",
+              alignItems: "center",
               width: "100%",
               padding: "0px 20px",
               marginTop: "20px",
@@ -229,7 +230,10 @@ const MenuPopopverContent = ({ handleClose }: any) => {
               onClick={() => handleClose(false)}
               src={Close}
               alt=""
-              style={{ width: "25px" }}
+              style={{
+                width: "20px",
+                height: "20px",
+              }}
             />
             <img
               onClick={() => {
@@ -323,7 +327,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                         letterSpacing: "1px",
                         textTransform: "uppercase",
                         fontWeight:
-                          location.pathname === ROUTE_PATHS.HOME ? "bold" : 400,
+                          location.pathname === option.link ? "bold" : 400,
                       }}
                       key={option.name}
                       onClick={() => {

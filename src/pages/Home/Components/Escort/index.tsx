@@ -59,7 +59,7 @@ const Escort = () => {
                 letterSpacing: "2px",
               }}
             >
-              {i18n.t("pages.home.conciergeServices")}
+              {i18n.t("pages.home.box61")}
             </Typography>
             <Typography
               variant="h1"
@@ -73,7 +73,7 @@ const Escort = () => {
                 letterSpacing: mobile ? "2px" : "1px",
               }}
             >
-              {i18n.t("pages.home.conciergeTitle")}
+              {i18n.t("pages.home.box62")}
               <span
                 style={{
                   fontStyle: "italic",
@@ -82,7 +82,7 @@ const Escort = () => {
                 }}
               >
                 {" "}
-                {i18n.t("pages.home.conciergeTitle2")}{" "}
+                {i18n.t("pages.home.box622")}{" "}
               </span>
             </Typography>
             <Typography
@@ -97,11 +97,11 @@ const Escort = () => {
                 letterSpacing: mobile ? "2px" : "1px",
               }}
             >
-              {i18n.t("pages.home.conciergeTitle3")}
+              {i18n.t("pages.home.box623")}
             </Typography>
             <Typography
               dangerouslySetInnerHTML={{
-                __html: i18n.t("pages.home.conciergeText"),
+                __html: i18n.t("pages.home.box63"),
               }}
               style={{
                 fontSize: mobile ? "12px" : "13px",
@@ -129,7 +129,7 @@ const Escort = () => {
                   letterSpacing: "1px",
                 }}
               >
-                {i18n.t("pages.home.conciergeButton")}
+                {i18n.t("pages.home.button1")}
               </Typography>
             </ButtonBase>
           </div>
@@ -186,7 +186,7 @@ const Escort = () => {
                   letterSpacing: "1px",
                 }}
               >
-                {i18n.t("pages.home.hotel")}
+                {i18n.t("pages.home.icon1")}
               </Typography>
             </Grid>
             <Grid
@@ -225,7 +225,7 @@ const Escort = () => {
                   letterSpacing: "1px",
                 }}
               >
-                {i18n.t("pages.home.travel")}
+                {i18n.t("pages.home.icon2")}
               </Typography>
             </Grid>
             <Grid
@@ -264,7 +264,7 @@ const Escort = () => {
                   letterSpacing: "1px",
                 }}
               >
-                {i18n.t("pages.home.transport")}
+                {i18n.t("pages.home.icon3")}
               </Typography>
             </Grid>
             <Grid
@@ -304,7 +304,7 @@ const Escort = () => {
                   letterSpacing: "1px",
                 }}
               >
-                {i18n.t("pages.home.concierge")}
+                {i18n.t("pages.home.icon4")}
               </Typography>
             </Grid>
           </Grid>
@@ -351,7 +351,7 @@ const Escort = () => {
                 letterSpacing: "2px",
               }}
             >
-              {i18n.t("pages.home.conciergeServices")}
+              {i18n.t("pages.home.box61")}
             </Typography>
             <Typography
               variant="h1"
@@ -365,7 +365,7 @@ const Escort = () => {
                 letterSpacing: mobile ? "2px" : "1px",
               }}
             >
-              {i18n.t("pages.home.conciergeTitle")}
+              {i18n.t("pages.home.box62")}
               <span
                 style={{
                   fontStyle: "italic",
@@ -374,13 +374,13 @@ const Escort = () => {
                 }}
               >
                 {" "}
-                {i18n.t("pages.home.conciergeTitle2")}{" "}
+                {i18n.t("pages.home.box622")}{" "}
               </span>
-              {i18n.t("pages.home.conciergeTitle3")}
+              {i18n.t("pages.home.box623")}
             </Typography>
             <Typography
               dangerouslySetInnerHTML={{
-                __html: i18n.t("pages.home.conciergeText"),
+                __html: i18n.t("pages.home.box63"),
               }}
               style={{
                 fontSize: mobile ? "11px" : "13px",
@@ -407,7 +407,7 @@ const Escort = () => {
                   color: "rgba(0, 0, 0, 0.59)",
                 }}
               >
-                {i18n.t("pages.home.conciergeButton")}
+                {i18n.t("pages.home.button1")}
               </Typography>
             </ButtonBase>
           </div>
@@ -457,7 +457,7 @@ const Escort = () => {
                   color: "rgba(71, 71, 71, 1)",
                 }}
               >
-                {i18n.t("pages.home.hotel")}
+                {i18n.t("pages.home.icon1")}
               </Typography>
             </div>
             <div
@@ -495,7 +495,7 @@ const Escort = () => {
                   color: "rgba(71, 71, 71, 1)",
                 }}
               >
-                {i18n.t("pages.home.travel")}
+                {i18n.t("pages.home.icon2")}
               </Typography>
             </div>
             <div
@@ -532,7 +532,7 @@ const Escort = () => {
                   color: "rgba(71, 71, 71, 1)",
                 }}
               >
-                {i18n.t("pages.home.transport")}
+                {i18n.t("pages.home.icon3")}
               </Typography>
             </div>
             <div
@@ -570,7 +570,7 @@ const Escort = () => {
                   color: "rgba(71, 71, 71, 1)",
                 }}
               >
-                {i18n.t("pages.home.concierge")}
+                {i18n.t("pages.home.icon4")}
               </Typography>
             </div>
           </div>

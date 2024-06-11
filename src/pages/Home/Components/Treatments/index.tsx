@@ -199,28 +199,28 @@ const Treatments = () => {
           <Grid item xs={6} md={3}>
             <Tile
               subtitles={["Tratamentos"]}
-              clinic={i18n.t("pages.home.cirurgy")}
+              clinic={i18n.t("pages.home.box31")}
               image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
               subtitles={["Tratamentos"]}
-              clinic={i18n.t("pages.home.dental")}
+              clinic={i18n.t("pages.home.box32")}
               image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
               subtitles={["Tratamentos"]}
-              clinic={i18n.t("pages.home.nonCirurgy")}
+              clinic={i18n.t("pages.home.box33")}
               image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
               subtitles={["Tratamentos"]}
-              clinic={i18n.t("pages.home.healthPrevention")}
+              clinic={i18n.t("pages.home.box34")}
               image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
             />
           </Grid>

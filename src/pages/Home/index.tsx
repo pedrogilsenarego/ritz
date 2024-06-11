@@ -57,17 +57,7 @@ const Home = () => {
       >
         <Treatments />
       </div>
-      {/* <Container
-        style={{
-          marginTop: mobile ? "10px" : "120px",
-          maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 150px",
-        }}
-      >
-        <div style={{ marginTop: "200px" }}>
-          <Whats />
-        </div>
-      </Container> */}
+
       <div style={{ marginTop: "200px" }}>
         <Container
           style={{

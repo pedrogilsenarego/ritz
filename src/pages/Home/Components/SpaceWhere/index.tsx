@@ -49,7 +49,7 @@ const SpaceWhere = () => {
               fontWeight: 500,
             }}
           >
-            {i18n.t("pages.home.spaceWhere")}
+            {i18n.t("pages.home.box71")}
           </Typography>
           <ButtonNinja
             textStyles={{ color: "rgba(119, 124, 126, 1)" }}
@@ -116,7 +116,7 @@ const SpaceWhere = () => {
               fontWeight: 500,
             }}
           >
-            {i18n.t("pages.home.spaceWhere")}
+            {i18n.t("pages.home.box71")}
           </Typography>
           <Button
             style={{

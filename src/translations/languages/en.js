@@ -27,14 +27,31 @@ export const content = {
         privacyPolicy: "Privacy Policy",
         privacyCookies: "Cookie Policy",
       },
-      cartDrawer: {
-        title: "Cart",
-        totalPrice: "Total Price",
-        clearCart: "Clear Cart",
-        checkout: "Checkout",
-        noProducts: "There aren't any products on the cart",
-      },
+
       pages: {
+        home: {
+          text1: "Fusion of Beauty and Well-being",
+          text2:
+            "A space of sophistication and self-discovery that drives through a horizon of beauty well-being.",
+          box31: "Aesthetic &</br> Surgical",
+          box32: "Dental",
+          box33: "Post-surgical &</br> Wellness",
+          box34: "Preventive Health",
+          box41: "Intelligent Search",
+          box42: "Find the treatments that suit you.",
+          box61: "Concierge Services",
+          box62: "Discover the",
+          box622: "EHTIQ",
+          box623: "Standard",
+          box63:
+            "The Concierge Service is designed to offer maximum convenience, eliminating logistical concerns and optimizing your time.</br>From scheduling appointments to priority access to specialists and treatments, our Concierge team is on hand to ensure your visit is smooth and comfortable.",
+          button1: "Request Concierge",
+          icon1: "Hotel,",
+          icon2: "Travel",
+          icon3: "Transport,",
+          icon4: "Concierge",
+          box71: "Discover Where We Take Care Of you.",
+        },
         admin: {
           sidebar: {
             products: "Products",
@@ -123,34 +140,6 @@ export const content = {
             register: "Register",
           },
         },
-        dna: {
-          theBrand: "The brand",
-          theLogo: "The logo",
-        },
-        myCollection: {
-          edit: "Edit Information",
-        },
-        policies: {
-          termsOfService: "Terms of Service",
-        },
-        shippingPolicies: {
-          shippingPolicies: "Shipping Policies",
-        },
-        refundPolicies: {
-          refundPolicies: "Refund Policies",
-        },
-      },
-      technicalDetails: {
-        description:
-          "CHPTR_Δ is the first BA111OD manufacture watch complication: a unique timepiece that represents time in a revolutionary way.</br></br>Rather than simply rotating a hand around a central axis, the movement was designed to 'roll' a satellite hour wheel around a fixed central hour wheel. When a wheel is rotated around another wheel, the trajectory described by any point on this satellite wheel is a cycloid. There are several types of cycloids: in this BA111OD chapter, the chosen cycloid is a deltoid (with a ratio of 1/3), and as a result, the trajectory described by the tip of the hour hand is... a triangle.</br></br> Created with the help of renowned watchmaker Olivier Mory, CHPTR_Δ's asymmetrical reading of time is a world premiere that promises to captivate and inspire anyone who seeks a new and unique way of reading time.",
-        movement:
-          "Automatic, SW510B, stop second device, power reserve 62 hours, 27 jewels.",
-        functions:
-          "Cam operated chronographe – two push-buttons, hour, minute, small seconde",
-        case: "Stainless steel 904L, diameter 42.50mm, thickness XXXXX, sapphire crystal with anti-reflective coating (on both sides ?), Sapphire crystal case back, Water resistance: to 10 bar (100 m)",
-        strap:
-          "Cuir XXXXXX, Stainless steel 904L pin lock folding clasp, Quick pin release",
-        dial: "Grained with satin stainless steel subdials",
       },
     },
   },
