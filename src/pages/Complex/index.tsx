@@ -4,11 +4,11 @@ import Carousel from "../../components/Carousel";
 
 import { MAX_SCREEN } from "../../constants/screen";
 import SchedulleMembership from "./Components/SchedulleMembership";
-import Team from "./Components/Team";
-import { i18n } from "../../translations/i18n";
+
 import Logo from "../../assets/LogoBeigeClinic.png";
 import Legendas from "./Components/Legendas";
 import Eyes from "./Components/Eyes";
+import { i18n } from "../../translations/i18n";
 
 const Complex = () => {
   const theme = useTheme();
@@ -16,15 +16,23 @@ const Complex = () => {
   const childrenData = [
     {
       link: "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.1.webp",
+      title: i18n.t("pages.clinic.box11"),
+      text: i18n.t("pages.clinic.box12"),
     },
     {
       link: "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.2.webp",
+      title: i18n.t("pages.clinic.box13"),
+      text: i18n.t("pages.clinic.box14"),
     },
     {
       link: "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.3.webp",
+      title: i18n.t("pages.clinic.box15"),
+      text: i18n.t("pages.clinic.box16"),
     },
     {
       link: "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.4.webp",
+      title: i18n.t("pages.clinic.box17"),
+      text: i18n.t("pages.clinic.box18"),
     },
   ];
 
@@ -89,7 +97,7 @@ const Complex = () => {
                         textAlign: "center",
                       }}
                     >
-                      Paixão pelo detalhe
+                      {item.title}
                     </Typography>
                     <Typography
                       variant="h1"
@@ -102,8 +110,7 @@ const Complex = () => {
                         textAlign: "center",
                       }}
                     >
-                      Elementos de arquitetura moderna, tons elegantes e
-                      iluminação quente.
+                      {item.text}
                     </Typography>
                   </div>
                 )}
@@ -136,7 +143,7 @@ const Complex = () => {
                       textAlign: "center",
                     }}
                   >
-                    Paixão pelo detalhe
+                    {item.title}
                   </Typography>
                   <Typography
                     variant="h1"
@@ -149,8 +156,7 @@ const Complex = () => {
                       textAlign: "center",
                     }}
                   >
-                    Elementos de arquitetura moderna, tons elegantes e
-                    iluminação quente.
+                    {item.text}
                   </Typography>
                 </div>
               )}
@@ -179,8 +185,7 @@ const Complex = () => {
             letterSpacing: "2px",
           }}
           dangerouslySetInnerHTML={{
-            __html:
-              "Elegância e inovação, onde cada espaço é uma<br/> celebração da estética.",
+            __html: i18n.t("pages.clinic.box21"),
           }}
         ></Typography>
         <img src={Logo} alt="" style={{ width: mobile ? "65px" : "89px" }} />

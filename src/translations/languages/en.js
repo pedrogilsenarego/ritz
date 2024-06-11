@@ -52,6 +52,39 @@ export const content = {
           icon4: "Concierge",
           box71: "Discover Where We Take Care Of you.",
         },
+        schedulleBox: {
+          box1: "Marcações",
+          box2: "Agende online ou faça a sua marcação com os nossos assistentes.",
+          box3: "Membership",
+          box4: "Explore benefícios exclusivos com o nosso Acesso Membership.",
+          button1: "Abrir Agenda",
+          button2: "Brevemente",
+        },
+        clinic: {
+          box11: "Passion for detail",
+          box12:
+            "Elements of modern architecture, elegant tones and warm lighting.",
+          box13: "The EHTIQ Bar",
+          box14:
+            "Created to provide the best waiting moments in the company of our team.",
+          box15: "Post-surgical & Wellness",
+          box16:
+            "The serenity brought by welcoming elements and high attention to detail.",
+          box17: "Nany Mota Waiting Room",
+          box18:
+            "We know there’s no other space where you’d rather wait for us.",
+          box21:
+            "Elegance and innovation, where each space is</br> a celebration of aesthetic.",
+          box31: "Post-Surgical & Wellness Waiting Room by</br> Nany Mota",
+          box32: "Access to Dental and</br> Post-Surgical Units",
+          box33: "Private areas with premium</br> finishes.",
+          box41: "Eyes On Customization",
+          box42:
+            "At EHTIQ, personalization is the essence of our philosophy. We shape each treatment to reflect your aspirations.",
+          box43:
+            "We believe that beauty is an individual journey, tailored to enhance your uniqueness.",
+          button1: "THE EXPERIENCE",
+        },
         admin: {
           sidebar: {
             products: "Products",

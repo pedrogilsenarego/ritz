@@ -1,4 +1,5 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import { i18n } from "../../../../translations/i18n";
 
 const Legendas = () => {
   const theme = useTheme();
@@ -52,8 +53,7 @@ const Legendas = () => {
                   letterSpacing: "1px",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html:
-                    "Sala de Espera Pós-Cirúrgico & Bem-estar by</br> Nany Mota",
+                  __html: i18n.t("pages.clinic.box31"),
                 }}
               ></Typography>
             </div>
@@ -89,7 +89,7 @@ const Legendas = () => {
                   letterSpacing: "1px",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: "Acesso às Unidades Dentária e</br> Pós-Cirúrgica",
+                  __html: i18n.t("pages.clinic.box32"),
                 }}
               ></Typography>
               <div
@@ -166,7 +166,7 @@ const Legendas = () => {
                   letterSpacing: "1px",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: "Áreas Privativas com os melhores</br> acabamentos",
+                  __html: i18n.t("pages.clinic.box33"),
                 }}
               ></Typography>
             </div>
@@ -242,8 +242,7 @@ const Legendas = () => {
                   letterSpacing: "1px",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html:
-                    "Sala de Espera Pós-Cirúrgico & Bem-estar by Nany Mota",
+                  __html: i18n.t("pages.clinic.box31"),
                 }}
               ></Typography>
             </div>
@@ -289,7 +288,7 @@ const Legendas = () => {
                   letterSpacing: "1px",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: "Acesso às Unidades Dentária e</br> Pós-Cirúrgica",
+                  __html: i18n.t("pages.clinic.box32"),
                 }}
               ></Typography>
               <div
@@ -381,7 +380,7 @@ const Legendas = () => {
                   letterSpacing: "1px",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: "Áreas Privativas com os melhores acabamentos",
+                  __html: i18n.t("pages.clinic.box33"),
                 }}
               ></Typography>
             </div>

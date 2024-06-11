@@ -213,6 +213,39 @@ export const content = {
             },
           },
         },
+        schedulleBox: {
+          box1: "Marcações",
+          box2: "Agende online ou faça a sua marcação com os nossos assistentes.",
+          box3: "Membership",
+          box4: "Explore benefícios exclusivos com o nosso Acesso Membership.",
+          button1: "Abrir Agenda",
+          button2: "Brevemente",
+        },
+        clinic: {
+          box11: "Paixão pelo detalhe",
+          box12:
+            "Elementos de arquitetura moderna, tons elegantes e iluminação quente.",
+          box13: "O Bar EHTIQ",
+          box14:
+            "Criado para proporcionar os melhores momentos de espera na companhia da nossa equipa.",
+          box15: "Pós-cirúrgico & bem-estar",
+          box16:
+            "A serenidade trazida por elementos acolhedores e muita atenção ao detalhe.",
+          box17: "Sala de Espera Nany Mota",
+          box18:
+            "Sabemos que não haverá outro espaço onde queria aguardar por nós.",
+          box21:
+            "Elegância e inovação, onde cada espaço é uma celebração da estética.",
+          box31: "Sala de Espera Pós-Cirúrgico & Bem-estar by</br> Nany Mota",
+          box32: "Acesso às Unidades Dentária e</br> Pós-Cirúrgica",
+          box33: "Áreas Privativas com os melhores</br> acabamentos",
+          box41: "De Olhos Na Personalização",
+          box42:
+            "Na EHTIQ a personalização é a essência da nossa filosofia. Moldamos cada tratamento para refletir as suas aspirações.",
+          box43:
+            "Acreditamos que a beleza é uma jornada individual, feita à sua medida para realçar a sua singularidade.",
+          button1: "A Experiência",
+        },
       },
       tags: {
         concerns: {

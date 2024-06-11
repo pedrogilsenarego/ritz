@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Footer from "./Footer";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,8 @@ const HomepageLayout = ({
   children,
   hasHeader = true,
 }: HomepageLayoutProps) => {
-  const navigate = useNavigate();
+  const Theme = useTheme();
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   return (
     <Box
       style={{
@@ -23,12 +24,10 @@ const HomepageLayout = ({
         justifyContent: "space-between",
       }}
     >
-      {/* <div style={{ display: "flex", gap: "20px" }}>
-        <p onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}>Admin</p>
-      </div> */}
       {hasHeader && <Header />}
 
       <Box
+        pt={mobile ? "72px" : "140px"}
         mb="55px"
         height="100%"
         width="100%"
