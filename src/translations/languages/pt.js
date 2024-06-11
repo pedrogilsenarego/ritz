@@ -120,7 +120,7 @@ export const content = {
           box41: "Pesquisa Inteligente",
           box42: "Encontre os tratamentos indicados para si.",
           box61: "Serviços Concierge",
-          box62: "Descubra o Padrão EHTIQ",
+          box62: "Descubra o",
           box622: "Padrão",
           box623: "EHTIQ",
           box63:
@@ -235,11 +235,13 @@ export const content = {
           box18:
             "Sabemos que não haverá outro espaço onde queria aguardar por nós.",
           box21:
-            "Elegância e inovação, onde cada espaço é uma celebração da estética.",
+            "Elegância e inovação, onde cada espaço é uma</br> celebração da estética.",
           box31: "Sala de Espera Pós-Cirúrgico & Bem-estar by</br> Nany Mota",
           box32: "Acesso às Unidades Dentária e</br> Pós-Cirúrgica",
           box33: "Áreas Privativas com os melhores</br> acabamentos",
-          box41: "De Olhos Na Personalização",
+          box41: "De Olhos",
+          box412: "Na",
+          box413: "Personalização",
           box42:
             "Na EHTIQ a personalização é a essência da nossa filosofia. Moldamos cada tratamento para refletir as suas aspirações.",
           box43:

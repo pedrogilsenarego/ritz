@@ -5,6 +5,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { i18n } from "../../../../translations/i18n";
 
 const SchedulleMembership = () => {
   const theme = useTheme();
@@ -36,7 +37,7 @@ const SchedulleMembership = () => {
               textTransform: "uppercase",
             }}
           >
-            Marcações
+            {i18n.t("pages.schedulleBox.box1")}
           </Typography>
           <Typography
             style={{
@@ -47,7 +48,7 @@ const SchedulleMembership = () => {
               lineHeight: mobile ? "14px" : "23px",
             }}
           >
-            Agende online ou faça a sua marcação com os nossos assistentes.
+            {i18n.t("pages.schedulleBox.box2")}
           </Typography>
           <Button
             sx={{
@@ -64,7 +65,7 @@ const SchedulleMembership = () => {
                 fontWeight: 500,
               }}
             >
-              Abrir agenda
+              {i18n.t("pages.schedulleBox.button1")}
             </Typography>
           </Button>
         </div>
@@ -102,7 +103,7 @@ const SchedulleMembership = () => {
               textTransform: "uppercase",
             }}
           >
-            MemberShip
+            {i18n.t("pages.schedulleBox.box3")}
           </Typography>
           <Typography
             style={{
@@ -113,7 +114,7 @@ const SchedulleMembership = () => {
               lineHeight: mobile ? "14px" : "23px",
             }}
           >
-            Explore benefícios exclusivos com o nosso Acesso Membership.
+            {i18n.t("pages.schedulleBox.box4")}
           </Typography>
           <Button
             sx={{
@@ -130,7 +131,7 @@ const SchedulleMembership = () => {
                 fontWeight: 500,
               }}
             >
-              Brevemente
+              {i18n.t("pages.schedulleBox.button2")}
             </Typography>
           </Button>
         </div>

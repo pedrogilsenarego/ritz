@@ -1,8 +1,11 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Button from "@mui/material/Button";
 import { i18n } from "../../../../translations/i18n";
+import { useSelector } from "react-redux";
+import { State } from "../../../../redux/types";
 
 const Eyes = () => {
+  const lang = useSelector<State, string>((state) => state.general.lang);
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
@@ -51,20 +54,22 @@ const Eyes = () => {
             letterSpacing: "2px",
           }}
         >
-          {i18n.t("pages.complex.eyes", "De olhos")}
+          {i18n.t("pages.clinic.box41")}
           <div style={{ display: "flex", columnGap: "10px" }}>
-            <Typography
-              variant="h1"
-              style={{
-                textTransform: "uppercase",
-                fontSize: mobile ? "25px" : "35px",
-                fontWeight: 500,
+            {lang === "PT" && (
+              <Typography
+                variant="h1"
+                style={{
+                  textTransform: "uppercase",
+                  fontSize: mobile ? "25px" : "35px",
+                  fontWeight: 500,
 
-                letterSpacing: "2px",
-              }}
-            >
-              {i18n.t("pages.complex.in", "Na")}
-            </Typography>
+                  letterSpacing: "2px",
+                }}
+              >
+                {i18n.t("pages.clinic.box412")}
+              </Typography>
+            )}
             <Typography
               variant="h1"
               style={{
@@ -75,7 +80,7 @@ const Eyes = () => {
                 letterSpacing: "2px",
               }}
             >
-              {i18n.t("pages.complex.persona", "Personalização")}
+              {i18n.t("pages.clinic.box413")}
             </Typography>
           </div>
         </Typography>
@@ -96,7 +101,7 @@ const Eyes = () => {
               fontWeight: 400,
             }}
           >
-            {i18n.t("pages.complex.mainText")}
+            {i18n.t("pages.clinic.box42")}
           </Typography>
           {!mobile && (
             <Typography
@@ -109,7 +114,7 @@ const Eyes = () => {
                 fontWeight: 400,
               }}
             >
-              {i18n.t("pages.complex.secondText")}
+              {i18n.t("pages.clinic.box43")}
             </Typography>
           )}
         </div>
@@ -136,8 +141,7 @@ const Eyes = () => {
                 textAlign: "right",
               }}
             >
-              Acreditamos que a beleza é uma jornada individual, feita à sua
-              medida para realçar a sua singularidade.
+              {i18n.t("pages.clinic.box43")}
             </Typography>
             <Button
               style={{
@@ -154,7 +158,7 @@ const Eyes = () => {
                   textTransform: "uppercase",
                 }}
               >
-                {i18n.t("pages.complex.experience")}
+                {i18n.t("pages.clinic.button1")}
               </Typography>
             </Button>
           </div>
@@ -183,7 +187,7 @@ const Eyes = () => {
                   textTransform: "uppercase",
                 }}
               >
-                {i18n.t("pages.complex.experience")}
+                {i18n.t("pages.clinic.button1")}
               </Typography>
             </Button>
           </div>

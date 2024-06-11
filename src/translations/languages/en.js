@@ -53,12 +53,12 @@ export const content = {
           box71: "Discover Where We Take Care Of you.",
         },
         schedulleBox: {
-          box1: "Marcações",
-          box2: "Agende online ou faça a sua marcação com os nossos assistentes.",
+          box1: "Appointments",
+          box2: "Schedule online or make your appointment with our assistants.",
           box3: "Membership",
-          box4: "Explore benefícios exclusivos com o nosso Acesso Membership.",
-          button1: "Abrir Agenda",
-          button2: "Brevemente",
+          box4: "Explore the exclusive benefits with our Membership Access.",
+          button1: "SHEDULE NOW",
+          button2: "Coming Soon",
         },
         clinic: {
           box11: "Passion for detail",
@@ -78,7 +78,9 @@ export const content = {
           box31: "Post-Surgical & Wellness Waiting Room by</br> Nany Mota",
           box32: "Access to Dental and</br> Post-Surgical Units",
           box33: "Private areas with premium</br> finishes.",
-          box41: "Eyes On Customization",
+          box41: "Eyes On",
+          box412: "",
+          box413: "Customization",
           box42:
             "At EHTIQ, personalization is the essence of our philosophy. We shape each treatment to reflect your aspirations.",
           box43:
