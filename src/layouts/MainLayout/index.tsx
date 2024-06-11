@@ -27,7 +27,6 @@ const HomepageLayout = ({
       {hasHeader && <Header />}
 
       <Box
-        pt={mobile ? "72px" : "140px"}
         mb="55px"
         height="100%"
         width="100%"
