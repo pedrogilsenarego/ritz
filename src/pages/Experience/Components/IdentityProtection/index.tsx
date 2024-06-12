@@ -7,6 +7,7 @@ import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
 import icon1M from "../../../../assets/Identity_M_1.png";
 import icon2M from "../../../../assets/Identity_M_2.png";
 import icon3M from "../../../../assets/Identit_M_3.png";
+import { i18n } from "../../../../translations/i18n";
 
 const IdentityProtection = () => {
   const theme = useTheme();
@@ -68,7 +69,7 @@ const IdentityProtection = () => {
               textTransform: "uppercase",
             }}
           >
-            Somos especialistas na
+            {i18n.t("pages.identityBox.box1")}
           </Typography>
           <Typography
             variant="h1"
@@ -80,7 +81,7 @@ const IdentityProtection = () => {
               textTransform: "uppercase",
             }}
           >
-            Proteção de identidade
+            {i18n.t("pages.identityBox.box2")}
           </Typography>
           <div
             style={{
@@ -110,7 +111,7 @@ const IdentityProtection = () => {
                   textTransform: "uppercase",
                 }}
               >
-                Confidencialidade
+                {i18n.t("pages.identityBox.box3")}
               </Typography>
             </div>
             <div
@@ -141,7 +142,7 @@ const IdentityProtection = () => {
                   textTransform: "uppercase",
                 }}
               >
-                Privacidade
+                {i18n.t("pages.identityBox.box4")}
               </Typography>
             </div>
             <div
@@ -172,7 +173,7 @@ const IdentityProtection = () => {
                   textTransform: "uppercase",
                 }}
               >
-                Proteção de dados
+                {i18n.t("pages.identityBox.box5")}
               </Typography>
             </div>
           </div>
@@ -186,10 +187,10 @@ const IdentityProtection = () => {
               color: "rgba(0, 0, 0, 0.8)",
             }}
           >
-            Agenda a sua consulta
+            {i18n.t("pages.identityBox.box6")}
           </Typography>
           <ButtonNinja
-            label="Contactar"
+            label={i18n.t("pages.identityBox.button1")}
             buttonStyles={{ padding: "8px 20px", marginTop: "20px" }}
           ></ButtonNinja>
         </div>
@@ -226,7 +227,7 @@ const IdentityProtection = () => {
               textTransform: "uppercase",
             }}
           >
-            Somos especialistas na
+            {i18n.t("pages.identityBox.box1")}
           </Typography>
           <Typography
             variant="h1"
@@ -238,7 +239,7 @@ const IdentityProtection = () => {
               textTransform: "uppercase",
             }}
           >
-            Proteção de identidade
+            {i18n.t("pages.identityBox.box2")}
           </Typography>
         </div>
         <div
@@ -304,7 +305,7 @@ const IdentityProtection = () => {
                   textTransform: "uppercase",
                 }}
               >
-                Confidencialidade
+                {i18n.t("pages.identityBox.box3")}
               </Typography>
             </div>
             <div
@@ -325,7 +326,7 @@ const IdentityProtection = () => {
                   textTransform: "uppercase",
                 }}
               >
-                Privacidade
+                {i18n.t("pages.identityBox.box4")}
               </Typography>
             </div>
             <div
@@ -346,13 +347,13 @@ const IdentityProtection = () => {
                   textTransform: "uppercase",
                 }}
               >
-                Proteção de dados
+                {i18n.t("pages.identityBox.box5")}
               </Typography>
             </div>
           </div>
 
           <ButtonNinja
-            label="Contactar"
+            label={i18n.t("pages.identityBox.box6")}
             textStyles={{
               color: "rgba(93, 92, 92, 1)",
               textTransform: "uppercase",

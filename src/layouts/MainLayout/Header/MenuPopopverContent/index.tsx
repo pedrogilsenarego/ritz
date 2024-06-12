@@ -46,14 +46,16 @@ const MenuPopopverContent = ({ handleClose }: any) => {
           >
             {i18n.t("header.home")}
           </Typography>
-          <div
-            style={{
-              width: "5px",
-              height: "5px",
-              background: "rgba(221, 212, 197, 1)",
-              borderRadius: "50%",
-            }}
-          />
+          <div>
+            <div
+              style={{
+                width: "5px",
+                height: "5px",
+                background: "rgba(221, 212, 197, 1)",
+                borderRadius: "50%",
+              }}
+            />
+          </div>
           {options.map((option, index) => {
             return (
               <>
@@ -76,26 +78,30 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                   {option.name}
                 </Typography>
                 {index < options.length - 1 && (
-                  <div
-                    style={{
-                      width: "5px",
-                      height: "5px",
-                      background: "rgba(221, 212, 197, 1)",
-                      borderRadius: "50%",
-                    }}
-                  />
+                  <div>
+                    <div
+                      style={{
+                        width: "5px",
+                        height: "5px",
+                        background: "rgba(221, 212, 197, 1)",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </div>
                 )}
               </>
             );
           })}
-          <div
-            style={{
-              margin: "20px 0px",
-              height: "1px",
-              backgroundColor: "lightGray",
-              width: "250px",
-            }}
-          ></div>
+          <div>
+            <div
+              style={{
+                margin: "20px 0px",
+                height: "1px",
+                backgroundColor: "lightGray",
+                width: "250px",
+              }}
+            ></div>
+          </div>
           <div
             style={{
               display: "flex",

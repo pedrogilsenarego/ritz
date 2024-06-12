@@ -29,6 +29,15 @@ export const content = {
       },
 
       pages: {
+        identityBox: {
+          box1: "Specialists in",
+          box2: "Identity Protection",
+          box3: "Confidentiality",
+          box4: "Privacy",
+          box5: "Data Protection",
+          box6: "Schedule your appointment",
+          button1: "Contact",
+        },
         about: {
           box0: "About ehtiq",
           box1: "OUR PROMISSE IS YOUR WELL-BEING",

@@ -29,6 +29,15 @@ export const content = {
       },
 
       pages: {
+        identityBox: {
+          box1: "Somos Especialistas na",
+          box2: "Proteção de Identidade",
+          box3: "Confidencialidade",
+          box4: "Privacidade",
+          box5: "Proteção de Dados",
+          box6: "Agende a sua consulta",
+          button1: "Contactar",
+        },
         about: {
           box0: "Sobre a ehtiq",
           box1: "A NOSSA PROMESSA É O SEU BEM-ESTAR",
