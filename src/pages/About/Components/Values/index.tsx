@@ -6,6 +6,7 @@ import {
   useTheme,
 } from "@mui/material";
 import { MAX_SCREEN } from "../../../../constants/screen";
+import { i18n } from "../../../../translations/i18n";
 
 const Values = () => {
   const theme = useTheme();
@@ -22,9 +23,10 @@ const Values = () => {
             fontWeight: 500,
             textTransform: "uppercase",
           }}
-        >
-          Elevamos os <b>padrões de qualidade</b> nos cuidados de saúde.
-        </Typography>
+          dangerouslySetInnerHTML={{
+            __html: i18n.t("pages.about.box6"),
+          }}
+        ></Typography>
         <Grid
           container
           columnSpacing={"30px"}
@@ -112,7 +114,7 @@ const Values = () => {
                   textAlign: "center",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: "VALORES QUE REPRESENTAM</br> EXCELÊNCIA",
+                  __html: i18n.t("pages.about.box7"),
                 }}
               ></Typography>
 
@@ -140,8 +142,10 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>E</span>
-                  legância
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {i18n.t("pages.about.box8")[0]}
+                  </span>
+                  {i18n.t("pages.about.box8").substring(1)}
                 </Typography>
                 <Typography
                   variant="h1"
@@ -152,8 +156,11 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>H</span>
-                  armonia
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box9")[0]}
+                  </span>
+                  {i18n.t("pages.about.box9").substring(1)}
                 </Typography>
                 <Typography
                   variant="h1"
@@ -164,8 +171,11 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>T</span>
-                  ranquilidade
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box10")[0]}
+                  </span>
+                  {i18n.t("pages.about.box10").substring(1)}
                 </Typography>
                 <Typography
                   variant="h1"
@@ -176,8 +186,11 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>I</span>
-                  novação
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box11")[0]}
+                  </span>
+                  {i18n.t("pages.about.box11").substring(1)}
                 </Typography>
                 <Typography
                   variant="h1"
@@ -188,8 +201,11 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>Q</span>
-                  ualidade
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box12")[0]}
+                  </span>
+                  {i18n.t("pages.about.box12").substring(1)}
                 </Typography>
               </div>
             </div>
@@ -213,7 +229,7 @@ const Values = () => {
             textTransform: "uppercase",
           }}
         >
-          Elevamos os <b>padrões de qualidade</b> nos cuidados de saúde.
+          {i18n.t("pages.about.box6")}
         </Typography>
         <Grid
           container
@@ -285,7 +301,7 @@ const Values = () => {
                   textAlign: "center",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html: "VALORES QUE REPRESENTAM</br> EXCELÊNCIA",
+                  __html: i18n.t("pages.about.box7"),
                 }}
               ></Typography>
 
@@ -313,8 +329,11 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>E</span>
-                  legância
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box8")[0]}
+                  </span>
+                  {i18n.t("pages.about.box8")}
                 </Typography>
                 <Typography
                   variant="h1"
@@ -325,8 +344,11 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>H</span>
-                  armonia
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box9")[0]}
+                  </span>
+                  {i18n.t("pages.about.box9").substring(1)}
                 </Typography>
                 <Typography
                   variant="h1"
@@ -337,8 +359,11 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>T</span>
-                  ranquilidade
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box10")[0]}
+                  </span>
+                  {i18n.t("pages.about.box10").substring(1)}
                 </Typography>
                 <Typography
                   variant="h1"
@@ -349,8 +374,11 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>I</span>
-                  novação
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box11")[0]}
+                  </span>
+                  {i18n.t("pages.about.box11").substring(1)}
                 </Typography>
                 <Typography
                   variant="h1"
@@ -361,8 +389,11 @@ const Values = () => {
                     textTransform: "uppercase",
                   }}
                 >
-                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>Q</span>
-                  ualidade
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box12")[0]}
+                  </span>
+                  {i18n.t("pages.about.box12").substring(1)}
                 </Typography>
               </div>
             </div>

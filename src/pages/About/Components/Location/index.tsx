@@ -1,5 +1,6 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { mainColors } from "../../../../theme/theme";
+import { i18n } from "../../../../translations/i18n";
 
 const Location = () => {
   const theme = useTheme();
@@ -36,7 +37,7 @@ const Location = () => {
                 fontSize: "12px",
               }}
             >
-              Ilustração de @laviebypi
+              {i18n.t("pages.about.box3")}
             </Typography>
           </div>
         </Grid>
@@ -99,8 +100,7 @@ const Location = () => {
                 width: "70%",
               }}
             >
-              Localizada numa das zonas mais NOBRES da cidade de lisboa, a ehtiq
-              surge como um símbolo de excelência aliada à tradição.
+              {i18n.t("pages.about.box4")}
             </Typography>
             <Typography
               style={{
@@ -114,8 +114,7 @@ const Location = () => {
                 width: "70%",
               }}
             >
-              Conheça o espaço projetado para superar as suas expectativas,
-              promovendo a mais alta qualidade em cuidados de saúde.
+              {i18n.t("pages.about.box5")}
             </Typography>
           </Box>
         </Grid>
@@ -189,8 +188,7 @@ const Location = () => {
                   width: mobile ? "100%" : "70%",
                 }}
               >
-                Localizada numa das zonas mais NOBRES da cidade de lisboa, a
-                ehtiq surge como um símbolo de excelência aliada à tradição.
+                {i18n.t("pages.about.box4")}
               </Typography>
             </Box>
           </Grid>
@@ -224,8 +222,7 @@ const Location = () => {
               lineHeight: mobile ? "19px" : "28px",
             }}
           >
-            Conheça o espaço projetado para superar as suas expectativas,
-            promovendo a mais alta qualidade em cuidados de saúde.
+            {i18n.t("pages.about.box5")}
           </Typography>
         </div>
       </div>

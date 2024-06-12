@@ -1,6 +1,7 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "../../../../assets/Mini_Beige.webp";
 import Brand from "../../../../assets/EHTIQ BRANDS-09_2.svg";
+import { i18n } from "../../../../translations/i18n";
 export const WellnessClinic = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -36,8 +37,7 @@ export const WellnessClinic = () => {
                 letterSpacing: "1px",
               }}
               dangerouslySetInnerHTML={{
-                __html:
-                  "Refere-se a algo que é temporário, existindo apenas por um curto período de tempo até mudar ou chegar ao fim.</br></br> Este termo é frequentemente usado para descrever fenómenos, experiências ou condições não permanentes, tal como os humanos.",
+                __html: i18n.t("pages.about.box2"),
               }}
             ></Typography>
             <img
@@ -98,8 +98,7 @@ export const WellnessClinic = () => {
                 letterSpacing: "1px",
               }}
               dangerouslySetInnerHTML={{
-                __html:
-                  "Refere-se a algo que é temporário, existindo apenas por um curto período de tempo até mudar ou chegar ao fim.</br></br> Este termo é frequentemente usado para descrever fenómenos, experiências ou condições não permanentes, tal como os humanos.",
+                __html: i18n.t("pages.about.box2"),
               }}
             ></Typography>
             <img

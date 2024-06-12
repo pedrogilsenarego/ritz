@@ -29,6 +29,27 @@ export const content = {
       },
 
       pages: {
+        about: {
+          box0: "Sobre a ehtiq",
+          box1: "A NOSSA PROMESSA É O SEU BEM-ESTAR",
+          box2: "Refere-se a algo que é temporário, existindo apenas por um curto período de tempo até mudar ou chegar ao fim.</br></br> Este termo é frequentemente usado para descrever fenómenos, experiências ou condições não permanentes, tal como os humanos.",
+          box3: "Ilustração de @laviebypi",
+          box4: "Localizada numa das zonas mais nobres da cidade de lisboa, a EHTIQ surge como um símbolo de excelência aliada à tradição.",
+          box5: "Conheça o espaço projetado para superar as suas expectativas, promovendo a mais alta qualidade em cuidados de saúde.",
+          box6: "Elevamos os <b>padrões de qualidade</b> nos cuidados de saúde.",
+          box7: "VALORES QUE REPRESENTAM EXCELÊNCIA",
+          box8: "Elegância",
+          box9: "Harmonia",
+          box10: "Tranquilidade",
+          box11: "Inovação",
+          box12: "Qualidade",
+          box13: "A Experiência",
+
+          box14:
+            "Entre num universo cuidadosamente criado para proporcionar uma experiência única.</br></br><b>Equipas especializadas, abordagem científica</b> e foco na experiência são os nossos compromissos.",
+
+          button1: "Entrar",
+        },
         complex: {
           title:
             "Elegância e inovação, onde cada espaço é uma celebração da estética.",

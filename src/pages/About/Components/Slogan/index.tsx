@@ -1,5 +1,6 @@
 import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { MAX_SCREEN } from "../../../../constants/screen";
+import { i18n } from "../../../../translations/i18n";
 
 const Slogan = () => {
   const theme = useTheme();
@@ -47,7 +48,7 @@ const Slogan = () => {
                 padding: "40px 35px",
               }}
               dangerouslySetInnerHTML={{
-                __html: "A nossa promessa é</br> o seu Bem-estar",
+                __html: i18n.t("pages.about.box1"),
               }}
             />
           </div>
@@ -91,7 +92,7 @@ const Slogan = () => {
               padding: "20px 20px",
             }}
             dangerouslySetInnerHTML={{
-              __html: "A nossa promessa é</br> o seu Bem-estar",
+              __html: i18n.t("pages.about.box1"),
             }}
           />
         </div>

@@ -29,6 +29,27 @@ export const content = {
       },
 
       pages: {
+        about: {
+          box0: "About ehtiq",
+          box1: "OUR PROMISSE IS YOUR WELL-BEING",
+          box2: "Refers to something that is temporary, existing only for a short period until it changes or ends.</br></br>This term is often used to describe phenomena, experiences, or conditions that are not permanent, just like humans.",
+          box3: "Desing de @laviebypi",
+          box4: "Located in one of the most NOBLE areas of the city of Lisbon, EHTIQ emerges as a symbol of excellence combined with tradition.",
+          box5: "Discover the space designed to exceed your expectations, promoting the highest quality in healthcare.",
+          box6: "We elevate the <b>standards of quality</b> in healthcare.",
+          box7: "VALUES THAT REPRESENT EXCELLENCE",
+          box8: "Elegance",
+          box9: "Harmony",
+          box10: "Tranquility",
+          box11: "Innovation",
+          box12: "Quality",
+          box13: "The experience",
+
+          box14:
+            "Enter a universe carefully created to provide a unique experience.</br></br><b>Specialized teams</b>, scientific approach, and focus on experience are our commitments.",
+
+          button1: "Enter",
+        },
         home: {
           text1: "Fusion of Beauty and Well-being",
           text2:

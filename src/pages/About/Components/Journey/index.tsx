@@ -2,6 +2,7 @@ import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 import { MAX_SCREEN } from "../../../../constants/screen";
 import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
+import { i18n } from "../../../../translations/i18n";
 
 const Journey = () => {
   const theme = useTheme();
@@ -55,7 +56,7 @@ const Journey = () => {
                   textTransform: "uppercase",
                 }}
               >
-                A Experiência
+                {i18n.t("pages.about.box13")}
               </Typography>
               <Typography
                 style={{
@@ -65,8 +66,7 @@ const Journey = () => {
                   textAlign: "center",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html:
-                    "Entre num universo cuidadosamente criado para proporcionar uma experiência única.</br></br> <b>Equipas especializadas, abordagem científica</b> e foco na experiência são os nossos compromissos.",
+                  __html: i18n.t("pages.about.box14"),
                 }}
               ></Typography>
               <ButtonNinja
@@ -79,7 +79,7 @@ const Journey = () => {
                   fontSize: "13px",
                   fontWeight: 500,
                 }}
-                label="entrar"
+                label={i18n.t("pages.about.button1")}
               />
             </div>
           </div>
@@ -142,7 +142,7 @@ const Journey = () => {
                   letterSpacing: "3px",
                 }}
               >
-                A Experiência
+                {i18n.t("pages.about.box13")}
               </Typography>
               <Typography
                 style={{
@@ -152,8 +152,7 @@ const Journey = () => {
                   textAlign: "center",
                 }}
                 dangerouslySetInnerHTML={{
-                  __html:
-                    "Entre num universo cuidadosamente criado para proporcionar uma experiência única.</br></br> <b>Equipas especializadas, abordagem científica</b> e foco na experiência são os nossos compromissos.",
+                  __html: i18n.t("pages.about.box14"),
                 }}
               ></Typography>
               <ButtonNinja
@@ -166,7 +165,7 @@ const Journey = () => {
                   fontSize: "13px",
                   fontWeight: 500,
                 }}
-                label="entrar"
+                label={i18n.t("pages.about.button1")}
               />
             </div>
           </div>

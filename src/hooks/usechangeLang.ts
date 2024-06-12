@@ -10,7 +10,7 @@ const useChangeLang = () => {
     dispatch(updateLang(lng.toUpperCase()));
     i18n.changeLanguage(lng);
     setTimeout(() => {
-      // window.location.reload();
+      window.location.reload();
     }, 200);
   };
 

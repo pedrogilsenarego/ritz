@@ -17,7 +17,7 @@ const About = () => {
 
   return (
     <>
-      <InitialImage text={i18n.t("pages.about.title")} />
+      <InitialImage text={i18n.t("pages.about.box0")} />
       <div style={{ marginTop: mobile ? "-20px" : "-400px" }}>
         <Slogan />
       </div>
