@@ -45,6 +45,7 @@ export const content = {
           box623: "Standard",
           box63:
             "The Concierge Service is designed to offer maximum convenience, eliminating logistical concerns and optimizing your time.</br>From scheduling appointments to priority access to specialists and treatments, our Concierge team is on hand to ensure your visit is smooth and comfortable.",
+          button0: "Expert Advice",
           button1: "Request Concierge",
           icon1: "Hotel,",
           icon2: "Travel",
@@ -86,6 +87,57 @@ export const content = {
           box43:
             "We believe that beauty is an individual journey, tailored to enhance your uniqueness.",
           button1: "THE EXPERIENCE",
+        },
+        treatments: {
+          box01: "Treatments",
+          box0: "Signatures",
+          box1: "Aesthetic & Surgical",
+          box2: "We have combined the best Professionals with the best Technology on the market, to guarantee exceptional results and the highest clinical monitoring.",
+          box3: "HIGH DEFINITION LIPO",
+          box4: "An innovative and exclusive approach, which allows you to highlight muscle contours and emphasize you body’s best details, leaving Conventional Liposuction in the past.",
+          box5: "EHTIQ ELIXIR",
+          box6: "Designed to counteract the signs of time, restoring firmness, elasticity and radiance. A cocktail of powerful ingredients, formulated for diSerent areas of the body.",
+          box7: "EHTIQ AGELESS Neck & Neckline",
+          box8: "The cutting edge of technology associated with the best formulas on the market. An anti-aging protocol with unparalleled results.",
+          box9: "Post-Surgical & Wellness",
+          box10:
+            "Post-operative care performed with Nany Mota® Technique and Personalized Protocols to ensure the well-being of body and mind.",
+          box11: "POST-SURGICAL MASSAGE BY NANY MOTA",
+          box12:
+            "A reference in post-surgical follow-up, with the exclusive Nany Mota® technique.",
+
+          box13: "GLASS SKIN BY HYDRAFACIAL",
+          box14:
+            "The combination of cleansing, exfoliation, extraction, and hydration in a single process, thanks to HydraFacial technology.",
+          box15: "Preventive Health",
+          box16:
+            "The revolution of clinical practice focusing on physical, mental, and emotional balance. We left the interventional concept to give way to longevity.",
+          box17: "HORMONAL REPLACEMENT",
+          box18:
+            "The powerful aid against fatigue, mood changes, and weight gain, achieved with personalized protocols.",
+          box19: "REPOSIÇÃO VITAMÍNICA IV DRIPS",
+          box20:
+            "Achieved with essential nutrients that flow directly into the bloodstream, revitalizing your body from the inside out.",
+          box21: "Dental",
+
+          box22:
+            "Specializing in hand-crafted Dental Veneers, the EHTIQ Dental Unit is characterized by high standards of excellence and sensitivity.",
+          box23: "NEXT-GENERATION VENEERS",
+          box24:
+            "Thin layers of ceramic or composite resin, hand-crafted for a beyond-natural effect.",
+          box25: "INVISIBLE ORTHODONTICS",
+          box26:
+            "Invisible aligners that ensure comfort and maintain the aesthetics of your smile throughout the process.",
+          box27: "Service Selection",
+          box28: "EHTIQ Full Range",
+          box29: "BY SPECIALTY",
+          box30: "BY BODY PARTS",
+        },
+        body: {
+          box1: "Face",
+          box2: "Smile",
+          box3: "Body",
+          box4: "Health 360º",
         },
         admin: {
           sidebar: {

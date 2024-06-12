@@ -17,7 +17,7 @@ const Treatments = () => {
     return (
       <>
         <div style={{ marginTop: mobile ? "120px" : "0px" }}>
-          <InitialImage text={i18n.t("pages.treatments.treatments")} />
+          <InitialImage text={i18n.t("pages.treatments.box01")} />
         </div>
         <div style={{ marginTop: mobile ? "120px" : "0px" }}>
           <InitialSection />

@@ -29,71 +29,6 @@ export const content = {
       },
 
       pages: {
-        treatments: {
-          treatments: "Tratamentos",
-          signatures: "Assinaturas",
-          aesthetic: "Estética & Cirúrgica",
-          afterCirurgy: "Pós-Cirúrgico & Bem-estar",
-          health: "Health 360º",
-          dental: "Dentária",
-          text4:
-            "Especializada em Facetas Dentárias trabalhadas à mão, a Unidade Dentária EHTIQ pauta-se por elevados padrões de brio e sensibilidade.",
-          text3:
-            "A revolução da prática clínica com foco no equilíbrio físico, mental e emocional. Deixámos o conceito interventivo para dar lugar à longevidade.",
-          text2:
-            "Cuidados pós-operatórios executados com a Técnica Nany Mota® e Protocolos Personalizados para garantir o bem-estar do corpo e da mente.",
-          text1:
-            "Aliámos os melhores Profissionais à melhor Tecnologia do mercado, para garantir resultados excecionais e o mais elevado acompanhamento clínico.",
-          image1: {
-            title: "LIPO DE ALTA DEFINIÇÃO",
-            text: "Uma abordagem inovadora e exclusiva, que permite realçar contornos musculares e evidenciar os seus melhores detalhes, deixando a Lipoaspiração Convencial no passado.",
-          },
-          image2: {
-            title: "EHTIQ ELIXIR",
-            text: "Concebido para contrariar os sinais do tempo, devolvendo a firmeza, elasticidade e brilho. Um cocktail de poderosos ingredientes, formulado para diferentes zonas de corpo.",
-          },
-          image3: {
-            title: "EHTIQ AGELESS Neck & Neckline",
-            text: "A vanguarda da tecnologia associada às melhores fórmulas do mercado. Um protocolo anti-envelhecimento com resultados inigualáveis. ",
-          },
-          image4: {
-            title: "Massagem Pós-cirúrgica by Nany Mota",
-            text: "Uma referência no acompanhamento pós-cirúrgico, com técnica exclusiva Nany Mota®.",
-          },
-          image5: {
-            title: "Glass Skin by HydraFacial",
-            text: "A combinação de limpeza, exfoliação, extração e hidratação num único processo, graças à tecnologia HydraFacial.",
-          },
-          image6: {
-            title: "Reposição Hormonal",
-            text: "O poderoso auxílio contra a fadiga, mudanças de humor e ganho de peso, conseguido com protocolos personalizados,",
-          },
-          image7: {
-            title: "Reposição Vitamínica IV Drips",
-            text: "Conseguida com nutrientes essenciais que fluem diretamente no sistema sanguíneo, revitalizando o seu corpo de dentro para fora.",
-          },
-          image8: {
-            title: "FACETAS de Última Geração",
-            text: "Finas lâminas de cerâmica ou resina composta, elaboradas à mão para um efeito além do natural.",
-          },
-          image9: {
-            title: "ORTONDÔNTIA INVISÍVEL",
-            text: "Alinhadores impercetíveis que garantem conforto e mantém a estética do seu sorriso durante todo o processo.",
-          },
-          smartReserach: "pesquisa inteligente",
-          findTheCorrectTreatments: "ENCONTRE OS TRATAMENTOS INDICADOS PARA SI",
-          selectServices: "SELEção de Serviços",
-          completeRange: "Gama Completa EHTIQ",
-          bySpecialty: "POR ESPECIALIDADE",
-          byBody: "POR Zonas de corpo",
-          face: "rosto",
-          smile: "sorriso",
-          body: "corpo",
-          helth: "health 360º",
-          cirurgy: "Estética & cirúrgica",
-          postCirurgy: "pós-cirúrgico & bem-estar",
-          prevention: "SAÚDE PREVENTIVA",
-        },
         complex: {
           title:
             "Elegância e inovação, onde cada espaço é uma celebração da estética.",
@@ -125,6 +60,7 @@ export const content = {
           box623: "EHTIQ",
           box63:
             "O Serviço de Concierge é projetado para oferecer conveniência máxima, eliminando as preocupações logísticas e otimizando o seu tempo.</br> Do agendamento de consultas ao acesso prioritário a especialistas e tratamentos, a nossa equipa Concierge está à disposição para garantir que a sua visita seja tranquila e confortável.",
+          button0: "Expert Advice",
           button1: "Solicitar Concierge",
           icon1: "Hotel",
           icon2: "Viagem",
@@ -247,6 +183,55 @@ export const content = {
           box43:
             "Acreditamos que a beleza é uma jornada individual, feita à sua medida para realçar a sua singularidade.",
           button1: "A Experiência",
+        },
+        treatments: {
+          box01: "Tratamentos",
+          box0: "Assinatura",
+          box1: "Estética & Cirúrgica",
+          box2: "Aliámos os melhores Profissionais à melhor Tecnologia do mercado, para garantir resultados excecionais e o mais elevado acompanhamento clínico.",
+          box3: "LIPO DE ALTA DEFINIÇÃO",
+          box4: "Uma abordagem inovadora e exclusiva, que permite realçar contornos musculares e evidenciar os seus melhores detalhes, deixando a Lipoaspiração Convencional no passado.",
+          box5: "EHTIQ ELIXIR",
+          box6: "Concebido para contrariar os sinais do tempo, devolvendo a firmeza, elasticidade e brilho. Um cocktail de poderosos ingredientes, formulado para diferentes zonas de corpo.",
+          box7: "EHTIQ AGELESS Neck & Neckline",
+          box8: "A vanguarda da tecnologia associada às melhores fórmulas do mercado. Um protocolo anti-envelhecimento com resultados inigualáveis.",
+          box9: "Pós-Cirúrgico & Bem-estar",
+          box10:
+            "Cuidados pós-operatórios executados com a Técnica Nany Mota® e Protocolos Personalizados para garantir o bem-estar do corpo e da mente.",
+          box11: "MASSAGEM PÓS-CIRÚRGICA BY NANY MOTA",
+          box12:
+            "Uma referência no acompanhamento pós-cirúrgico, com técnica exclusiva Nany Mota®.",
+          box13: "GLASS SKIN BY HYDRAFACIAL",
+          box14:
+            "A combinação de limpeza, exfoliação, extração e hidratação num único processo, graças à tecnologia HydraFacial.",
+          box15: "Saúde Preventiva",
+          box16:
+            "A revolução da prática clínica com foco no equilíbrio físico, mental e emocional. Deixámos o conceito interventivo para dar lugar à longevidade.",
+          box17: "REPOSIÇÃO HORMONAL",
+          box18:
+            "O poderoso auxílio contra a fadiga, mudanças de humor e ganho de peso, conseguido com protocolos personalizados.",
+          box19: "REPOSIÇÃO VITAMÍNICA IV DRIPS",
+          box20:
+            "Conseguida com nutrientes essenciais que fluem diretamente no sistema sanguíneo, revitalizando o seu corpo de dentro para fora.",
+          box21: "Dentária",
+          box22:
+            "Especializada em Facetas Dentárias trabalhadas à mão, a Unidade Dentária EHTIQ pauta-se por elevados padrões de brio e sensibilidade.",
+          box23: "FACETAS DE ÚLTIMA GERAÇÃO",
+          box24:
+            "Finas lâminas de cerâmica ou resina composta, elaboradas à mão para um efeito além do natural.",
+          box25: "ORTONDÔNTIA INVISÍVEL",
+          box26:
+            "Alinhadores impercetíveis que garantem conforto e mantém a estética do seu sorriso durante todo o processo.",
+          box27: "Seleção de Serviços",
+          box28: "Gama Completa EHTIQ",
+          box29: "POR ESPECIALIDADE",
+          box30: "POR ZONAS DE CORPO",
+        },
+        body: {
+          box1: "Rosto",
+          box2: "Sorriso",
+          box3: "Corpo",
+          box4: "Health 360º",
         },
       },
       tags: {

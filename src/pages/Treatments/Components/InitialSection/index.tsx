@@ -101,7 +101,7 @@ const InitialSection = () => {
               textTransform: "uppercase",
             }}
           >
-            {i18n.t("pages.treatments.signatures")}
+            {i18n.t("pages.treatments.box0")}
           </Typography>
           <Typography
             variant="h1"
@@ -143,8 +143,8 @@ const InitialSection = () => {
         }}
       >
         <TitleElement
-          title={i18n.t("pages.treatments.aesthetic")}
-          text={i18n.t("pages.treatments.text1")}
+          title={i18n.t("pages.treatments.box1")}
+          text={i18n.t("pages.treatments.box2")}
         />
         <div
           style={{
@@ -164,18 +164,18 @@ const InitialSection = () => {
               }}
             >
               <ImageElement
-                title={i18n.t("pages.treatments.image1.title")}
-                text={i18n.t("pages.treatments.image1.text")}
+                title={i18n.t("pages.treatments.box3")}
+                text={i18n.t("pages.treatments.box4")}
                 srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-1.1.webp"
               />
               <ImageElement
-                title={i18n.t("pages.treatments.image2.title")}
-                text={i18n.t("pages.treatments.image2.text")}
+                title={i18n.t("pages.treatments.box5")}
+                text={i18n.t("pages.treatments.box6")}
                 srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-1.2.webp"
               />
               <ImageElement
-                title={i18n.t("pages.treatments.image3.title")}
-                text={i18n.t("pages.treatments.image3.text")}
+                title={i18n.t("pages.treatments.box7")}
+                text={i18n.t("pages.treatments.box8")}
                 srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-1.3.webp"
               />
             </div>
@@ -183,8 +183,8 @@ const InitialSection = () => {
         </div>
         <div style={{ marginTop: "200px" }} />
         <TitleElement
-          title={i18n.t("pages.treatments.afterCirurgy")}
-          text={i18n.t("pages.treatments.text2")}
+          title={i18n.t("pages.treatments.box9")}
+          text={i18n.t("pages.treatments.box10")}
         />
         <div
           style={{
@@ -204,13 +204,13 @@ const InitialSection = () => {
               }}
             >
               <ImageElement
-                title={i18n.t("pages.treatments.image4.title")}
-                text={i18n.t("pages.treatments.image4.text")}
+                title={i18n.t("pages.treatments.box11")}
+                text={i18n.t("pages.treatments.box12")}
                 srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-2.1.webp"
               />
               <ImageElement
-                title={i18n.t("pages.treatments.image5.title")}
-                text={i18n.t("pages.treatments.image5.text")}
+                title={i18n.t("pages.treatments.box13")}
+                text={i18n.t("pages.treatments.box14")}
                 srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-2.2.webp"
               />
             </div>
@@ -219,8 +219,8 @@ const InitialSection = () => {
         <div style={{ marginTop: "450px" }} />
         <TitleElement
           alignCenter
-          title={i18n.t("pages.treatments.health")}
-          text={i18n.t("pages.treatments.text3")}
+          title={i18n.t("pages.treatments.box15")}
+          text={i18n.t("pages.treatments.box16")}
         />
         <div
           style={{
@@ -240,14 +240,14 @@ const InitialSection = () => {
             >
               <ImageElement
                 alignRight
-                title={i18n.t("pages.treatments.image6.title")}
-                text={i18n.t("pages.treatments.image6.text")}
+                title={i18n.t("pages.treatments.box17")}
+                text={i18n.t("pages.treatments.box18")}
                 srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-3.1.webp"
               />
               <ImageElement
                 alignRight
-                title={i18n.t("pages.treatments.image7.title")}
-                text={i18n.t("pages.treatments.image7.text")}
+                title={i18n.t("pages.treatments.box19")}
+                text={i18n.t("pages.treatments.box20")}
                 srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-3.2.webp"
               />
             </div>
@@ -257,8 +257,8 @@ const InitialSection = () => {
         <div style={{ marginTop: "200px" }} />
         <TitleElement
           alignCenter
-          title={i18n.t("pages.treatments.dental")}
-          text={i18n.t("pages.treatments.text4")}
+          title={i18n.t("pages.treatments.box21")}
+          text={i18n.t("pages.treatments.box22")}
         />
         <div
           style={{
@@ -278,14 +278,14 @@ const InitialSection = () => {
             >
               <ImageElement
                 alignRight
-                title={i18n.t("pages.treatments.image8.title")}
-                text={i18n.t("pages.treatments.image8.text")}
+                title={i18n.t("pages.treatments.box23")}
+                text={i18n.t("pages.treatments.box24")}
                 srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-4.1.webp"
               />
               <ImageElement
                 alignRight
-                title={i18n.t("pages.treatments.image9.title")}
-                text={i18n.t("pages.treatments.image9.text")}
+                title={i18n.t("pages.treatments.box25")}
+                text={i18n.t("pages.treatments.box26")}
                 srcImage="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-4.2.webp"
               />
             </div>

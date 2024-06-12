@@ -13,10 +13,7 @@ import LeftArrow from "../../../../assets/leftArrow.png";
 import Refresh from "../../../../assets/refresh.png";
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys } from "../../../../constants/queryKeys";
-import {
-  handleFetchBodyParts,
-  handleFetchSpecialty,
-} from "../../../../actions/tretaments";
+import { handleFetchSpecialty } from "../../../../actions/tretaments";
 import { Organizer } from "../Organizer";
 export const SpecialtyDefined = ({
   setMode,

@@ -41,7 +41,7 @@ export const TreatmentSelection = () => {
               color: "rgba(98, 98, 98, 1)",
             }}
           >
-            {i18n.t("pages.treatments.selectServices")}
+            {i18n.t("pages.treatments.box27")}
           </Typography>
           <Typography
             variant="h1"
@@ -52,17 +52,15 @@ export const TreatmentSelection = () => {
               fontSize: "40px",
             }}
           >
-            {i18n.t("pages.treatments.completeRange")}
+            {i18n.t("pages.treatments.box28")}
           </Typography>
           <div style={{ marginTop: "100px" }}>
-            <CustomizedAccordions
-              title={i18n.t("pages.treatments.bySpecialty")}
-            >
+            <CustomizedAccordions title={i18n.t("pages.treatments.box29")}>
               <Specialty />
             </CustomizedAccordions>
           </div>
           <div style={{ marginTop: "100px" }}>
-            <CustomizedAccordions title={i18n.t("pages.treatments.byBody")}>
+            <CustomizedAccordions title={i18n.t("pages.treatments.box30")}>
               <Body />
             </CustomizedAccordions>
           </div>
