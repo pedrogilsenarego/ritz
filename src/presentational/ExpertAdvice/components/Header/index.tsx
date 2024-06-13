@@ -1,6 +1,7 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "../../../../assets/LOGO 6.webp";
 import Cross from "../../../../assets/cross.png";
+import { i18n } from "../../../../translations/i18n";
 type Props = {
   setOpenPopup: (s: boolean) => void;
 };
@@ -38,7 +39,7 @@ export const Header = ({ setOpenPopup }: Props) => {
               textTransform: "uppercase",
             }}
           >
-            Pesquisa inteligente
+            {i18n.t("expertAdvice.box0")}
           </Typography>
           <Typography
             variant="h1"
@@ -115,7 +116,7 @@ export const Header = ({ setOpenPopup }: Props) => {
               textTransform: "uppercase",
             }}
           >
-            Pesquisa inteligente
+            {i18n.t("expertAdvice.box0")}
           </Typography>
           <Typography
             variant="h1"

@@ -132,35 +132,35 @@ export const SpecialtyDefined = ({
       case "steticCirurgy":
         return (
           <Tile
-            clinic={i18n.t("pages.home.cirurgy")}
+            clinic={i18n.t("pages.home.box31")}
             image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
           />
         );
       case "dental":
         return (
           <Tile
-            clinic={i18n.t("pages.home.dental")}
+            clinic={i18n.t("pages.home.box32")}
             image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
           />
         );
       case "postCirurgy":
         return (
           <Tile
-            clinic={i18n.t("pages.home.nonCirurgy")}
+            clinic={i18n.t("pages.home.box33")}
             image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
           />
         );
       case "preventiveHealth":
         return (
           <Tile
-            clinic={i18n.t("pages.home.healthPrevention")}
+            clinic={i18n.t("pages.home.box34")}
             image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
           />
         );
       default:
         return (
           <Tile
-            clinic={i18n.t("pages.home.cirurgy")}
+            clinic={i18n.t("pages.home.box31")}
             image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
           />
         );
@@ -205,7 +205,7 @@ export const SpecialtyDefined = ({
               color: "white",
             }}
           >
-            especialidades ehtiq
+            {i18n.t("expertAdvice.box21")}
           </Typography>
         </div>
         <Slide in direction="right" timeout={500}>
@@ -238,7 +238,7 @@ export const SpecialtyDefined = ({
                 lineHeight: "11px",
               }}
             >
-              Passo Anterior
+              {i18n.t("expertAdvice.box5")}
             </Typography>
           </div>
           <div
@@ -260,7 +260,7 @@ export const SpecialtyDefined = ({
                 lineHeight: "11px",
               }}
             >
-              Recomeçar
+              {i18n.t("expertAdvice.box6")}
             </Typography>
           </div>
         </div>

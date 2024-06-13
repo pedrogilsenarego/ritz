@@ -147,7 +147,7 @@ export const Specialty = ({
               color: "white",
             }}
           >
-            especialidades ehtiq
+            {i18n.t("expertAdvice.box21")}
           </Typography>
         </div>
         <Slide in direction="right" timeout={500}>
@@ -155,28 +155,28 @@ export const Specialty = ({
             <Grid item xs={6} md={3}>
               <Tile
                 filter="steticCirurgy"
-                clinic={i18n.t("pages.home.cirurgy")}
+                clinic={i18n.t("pages.home.box31")}
                 image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
               />
             </Grid>
             <Grid item xs={6} md={3}>
               <Tile
                 filter="dental"
-                clinic={i18n.t("pages.home.dental")}
+                clinic={i18n.t("pages.home.box32")}
                 image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
               />
             </Grid>
             <Grid item xs={6} md={3}>
               <Tile
                 filter="postCirurgy"
-                clinic={i18n.t("pages.home.nonCirurgy")}
+                clinic={i18n.t("pages.home.box33")}
                 image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
               />
             </Grid>
             <Grid item xs={6} md={3}>
               <Tile
                 filter="preventiveHealth"
-                clinic={i18n.t("pages.home.healthPrevention")}
+                clinic={i18n.t("pages.home.box34")}
                 image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
               />
             </Grid>
@@ -201,7 +201,7 @@ export const Specialty = ({
               lineHeight: "11px",
             }}
           >
-            Voltar aos filtros principais
+            {i18n.t("expertAdvice.box5")}
           </Typography>
         </div>
       </div>
@@ -246,7 +246,7 @@ export const Specialty = ({
               color: "white",
             }}
             dangerouslySetInnerHTML={{
-              __html: "especialidades</br> ehtiq",
+              __html: i18n.t("expertAdvice.box2"),
             }}
           ></Typography>
         </div>
@@ -260,28 +260,28 @@ export const Specialty = ({
             <Grid item xs={12}>
               <Tile
                 filter="steticCirurgy"
-                clinic={i18n.t("pages.home.cirurgy")}
+                clinic={i18n.t("pages.home.box31")}
                 image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
               />
             </Grid>
             <Grid item xs={12}>
               <Tile
                 filter="dental"
-                clinic={i18n.t("pages.home.dental")}
+                clinic={i18n.t("pages.home.box32")}
                 image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
               />
             </Grid>
             <Grid item xs={12}>
               <Tile
                 filter="postCirurgy"
-                clinic={i18n.t("pages.home.nonCirurgy")}
+                clinic={i18n.t("pages.home.box33")}
                 image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
               />
             </Grid>
             <Grid item xs={12}>
               <Tile
                 filter="preventiveHealth"
-                clinic={i18n.t("pages.home.healthPrevention")}
+                clinic={i18n.t("pages.home.box34")}
                 image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
               />
             </Grid>
@@ -307,7 +307,7 @@ export const Specialty = ({
               lineHeight: "8px",
             }}
           >
-            Voltar aos filtros principais
+            {i18n.t("expertAdvice.box5")}
           </Typography>
         </div>
       </div>

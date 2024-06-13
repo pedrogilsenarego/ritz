@@ -27,10 +27,29 @@ export const content = {
         privacyPolicy: "Privacy Policy",
         privacyCookies: "Cookie Policy",
       },
-
+      expertAdvice: {
+        box0: "Smart search",
+        box1: "Choose a filter",
+        box2: "EHTIQ</br> Specialties",
+        box21: "EHTIQ Specialties",
+        box3: "Body</br> Parts",
+        box31: "Body Parts",
+        box4: "Concerns</br> A-Z",
+        box41: "Concerns A-Z",
+        box5: "Return to main filters",
+        box6: "Restart",
+      },
+      visitCard: {
+        box1: "Find us",
+        box11: "Contact us",
+        box2: "Book",
+        box3: "A brilliant encounter",
+        box4: "Contact us to schedule your appointment</br>See you soon",
+      },
       pages: {
         identityBox: {
           box1: "Specialists in",
+
           box2: "Identity Protection",
           box3: "Confidentiality",
           box4: "Privacy",

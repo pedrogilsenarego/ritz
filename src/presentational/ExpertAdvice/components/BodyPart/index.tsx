@@ -157,7 +157,7 @@ export const BodyPart = ({
               color: "white",
             }}
           >
-            zonas de corpo
+            {i18n.t("expertAdvice.box31")}
           </Typography>
         </div>
         <Slide in direction="right" timeout={500}>
@@ -165,28 +165,28 @@ export const BodyPart = ({
             <Grid item xs={6} md={3}>
               <Tile
                 filter="face"
-                clinic={i18n.t("pages.treatments.face")}
+                clinic={i18n.t("pages.body.box1")}
                 image={Face}
               />
             </Grid>
             <Grid item xs={6} md={3}>
               <Tile
                 filter="smile"
-                clinic={i18n.t("pages.treatments.smile")}
+                clinic={i18n.t("pages.body.box2")}
                 image={Smile}
               />
             </Grid>
             <Grid item xs={6} md={3}>
               <Tile
                 filter="body"
-                clinic={i18n.t("pages.treatments.body")}
+                clinic={i18n.t("pages.body.box3")}
                 image={Bodi}
               />
             </Grid>
             <Grid item xs={6} md={3}>
               <Tile
                 filter="health"
-                clinic={i18n.t("pages.treatments.health")}
+                clinic={i18n.t("pages.body.box4")}
                 image={Health}
               />
             </Grid>
@@ -211,7 +211,7 @@ export const BodyPart = ({
               lineHeight: "11px",
             }}
           >
-            Voltar aos filtros principais
+            {i18n.t("expertAdvice.box5")}
           </Typography>
         </div>
       </div>
@@ -256,7 +256,7 @@ export const BodyPart = ({
               color: "white",
             }}
           >
-            zonas de corpo
+            {i18n.t("expertAdvice.box31")}
           </Typography>
         </div>
         <Slide in direction="right" timeout={500}>
@@ -269,28 +269,28 @@ export const BodyPart = ({
             <Grid item xs={12}>
               <Tile
                 filter="face"
-                clinic={i18n.t("pages.treatments.face")}
+                clinic={i18n.t("pages.body.box1")}
                 image={Face}
               />
             </Grid>
             <Grid item xs={12}>
               <Tile
                 filter="smile"
-                clinic={i18n.t("pages.treatments.smile")}
+                clinic={i18n.t("pages.body.box2")}
                 image={Smile}
               />
             </Grid>
             <Grid item xs={12}>
               <Tile
                 filter="body"
-                clinic={i18n.t("pages.treatments.body")}
+                clinic={i18n.t("pages.body.box3")}
                 image={Bodi}
               />
             </Grid>
             <Grid item xs={12}>
               <Tile
                 filter="health"
-                clinic={i18n.t("pages.treatments.health")}
+                clinic={i18n.t("pages.body.box4")}
                 image={Health}
               />
             </Grid>
@@ -317,7 +317,7 @@ export const BodyPart = ({
               lineHeight: "11px",
             }}
           >
-            Voltar aos filtros principais
+            {i18n.t("expertAdvice.box5")}
           </Typography>
         </div>
       </div>

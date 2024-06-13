@@ -5,6 +5,7 @@ import phone from "../../../assets/phone.svg";
 import "./index.css";
 import Cross from "../../../assets/cross.png";
 import Logo from "../../../assets/LOGO 4.webp";
+import { i18n } from "../../../translations/i18n";
 
 export const Content = ({ setOpenPopup }: any) => {
   const theme = useTheme();
@@ -70,7 +71,7 @@ export const Content = ({ setOpenPopup }: any) => {
                 variant="h1"
                 style={{ fontSize: "20px", fontWeight: 500 }}
               >
-                Localize-nos
+                {i18n.t("visitCard.box1")}
               </Typography>
               <div
                 style={{
@@ -106,7 +107,7 @@ export const Content = ({ setOpenPopup }: any) => {
                 variant="h1"
                 style={{ fontSize: "20px", fontWeight: 500 }}
               >
-                Contacte-nos
+                {i18n.t("visitCard.box11")}
               </Typography>
               <div
                 style={{
@@ -171,10 +172,10 @@ export const Content = ({ setOpenPopup }: any) => {
                 textAlign: "center",
               }}
             >
-              Reserve
+              {i18n.t("visitCard.box2")}
             </Typography>
             <Typography variant="h1" style={{ fontSize: "28px" }}>
-              Um encontro brilhante
+              {i18n.t("visitCard.box3")}
             </Typography>
           </div>
           <Typography
@@ -184,8 +185,7 @@ export const Content = ({ setOpenPopup }: any) => {
               textAlign: "center",
             }}
             dangerouslySetInnerHTML={{
-              __html:
-                "Contacte-nos para reservar a sua marcação.</br>Até breve",
+              __html: i18n.t("visitCard.box4"),
             }}
           ></Typography>
           <div
@@ -238,10 +238,10 @@ export const Content = ({ setOpenPopup }: any) => {
                 textAlign: "center",
               }}
             >
-              Reserve
+              {i18n.t("visitCard.box2")}
             </Typography>
             <Typography variant="h1" style={{ fontSize: "28px" }}>
-              Um encontro brilhante
+              {i18n.t("visitCard.box3")}
             </Typography>
           </div>
           <Typography
@@ -251,8 +251,7 @@ export const Content = ({ setOpenPopup }: any) => {
               textAlign: "center",
             }}
             dangerouslySetInnerHTML={{
-              __html:
-                "Contacte-nos para reservar a sua marcação.</br>Até breve",
+              __html: i18n.t("visitCard.box3"),
             }}
           ></Typography>
         </div>
@@ -292,7 +291,7 @@ export const Content = ({ setOpenPopup }: any) => {
                 variant="h1"
                 style={{ fontSize: "20px", fontWeight: 500 }}
               >
-                Localize-nos
+                {i18n.t("visitCard.box1")}
               </Typography>
               <div
                 style={{
@@ -328,7 +327,7 @@ export const Content = ({ setOpenPopup }: any) => {
                 variant="h1"
                 style={{ fontSize: "20px", fontWeight: 500 }}
               >
-                Contacte-nos
+                {i18n.t("visitCard.box11")}
               </Typography>
               <div
                 style={{

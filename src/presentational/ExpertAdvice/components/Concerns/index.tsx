@@ -6,6 +6,7 @@ import { queryKeys } from "../../../../constants/queryKeys";
 import { useQuery } from "@tanstack/react-query";
 import { handleFetchConcerns } from "../../../../actions/tretaments";
 import { Organizer2 } from "../Organizer2";
+import { i18n } from "../../../../translations/i18n";
 
 export const Concerns = ({
   setMode,
@@ -20,6 +21,8 @@ export const Concerns = ({
   const { isLoading, data } = useQuery<any, any>([queryKeys.bodyParts], () =>
     handleFetchConcerns()
   );
+
+  console.log(data);
 
   const renderLaptop = () => {
     return (
@@ -60,7 +63,7 @@ export const Concerns = ({
               color: "white",
             }}
           >
-            preocupações a-z
+            {i18n.t("expertAdvice.box41")}
           </Typography>
         </div>
 
@@ -84,7 +87,7 @@ export const Concerns = ({
               lineHeight: "11px",
             }}
           >
-            Voltar aos filtros principais
+            {i18n.t("expertAdvice.box5")}
           </Typography>
         </div>
       </div>
@@ -141,7 +144,7 @@ export const Concerns = ({
               lineHeight: "11px",
             }}
           >
-            Voltar aos filtros principais
+            {i18n.t("expertAdvice.box5")}
           </Typography>
         </div>
       </div>

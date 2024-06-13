@@ -7,6 +7,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import { Modes } from "../..";
+import { i18n } from "../../../../translations/i18n";
 
 type Props = {
   setMode: (mode: Modes) => void;
@@ -86,7 +87,7 @@ export const Base = ({ setMode }: Props) => {
             color: "rgba(72, 72, 72, 1)",
           }}
         >
-          ESCOLHA UM FILTRO
+          {i18n.t("expertAdvice.box1")}
         </Typography>
         <Slide in direction="right" timeout={500}>
           <Grid container columnSpacing={"20px"} mt={"25px"}>
@@ -95,7 +96,7 @@ export const Base = ({ setMode }: Props) => {
                 image={
                   "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp"
                 }
-                title="especialidades</br>ehtiq"
+                title={i18n.t("expertAdvice.box2")}
                 onClick={() => setMode("specialty")}
               />
             </Grid>
@@ -104,7 +105,7 @@ export const Base = ({ setMode }: Props) => {
                 image={
                   "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp"
                 }
-                title="zonas de</br>corpo"
+                title={i18n.t("expertAdvice.box3")}
                 onClick={() => setMode("bodyPart")}
               />
             </Grid>
@@ -113,7 +114,7 @@ export const Base = ({ setMode }: Props) => {
                 image={
                   "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp"
                 }
-                title="preocupações</br>a-Z"
+                title={i18n.t("expertAdvice.box4")}
                 onClick={() => setMode("concerns")}
               />
             </Grid>
@@ -128,7 +129,7 @@ export const Base = ({ setMode }: Props) => {
         <Typography
           style={{ textAlign: "center", fontWeight: 500, fontSize: "16px" }}
         >
-          ESCOLHA UM FILTRO
+          {i18n.t("expertAdvice.box1")}
         </Typography>
         <Slide in direction="right" timeout={500}>
           <Grid container rowSpacing={"20px"} mt={"25px"} padding={"0px 20px"}>
@@ -137,7 +138,7 @@ export const Base = ({ setMode }: Props) => {
                 image={
                   "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp"
                 }
-                title="especialidades</br>ehtiq"
+                title={i18n.t("expertAdvice.box2")}
                 onClick={() => setMode("specialty")}
               />
             </Grid>
@@ -146,7 +147,7 @@ export const Base = ({ setMode }: Props) => {
                 image={
                   "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp"
                 }
-                title="zonas de</br>corpo"
+                title={i18n.t("expertAdvice.box3")}
                 onClick={() => setMode("bodyPart")}
               />
             </Grid>
@@ -155,7 +156,7 @@ export const Base = ({ setMode }: Props) => {
                 image={
                   "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp"
                 }
-                title="preocupações</br>a-Z"
+                title={i18n.t("expertAdvice.box4")}
                 onClick={() => setMode("concerns")}
               />
             </Grid>

@@ -68,6 +68,7 @@ const Location = () => {
             <Typography
               variant="h1"
               style={{
+                fontFamily: "'Playfair Display', serif",
                 display: "flex",
                 columnGap: "10px",
                 fontSize: mobile ? "16px" : "49px",
@@ -79,7 +80,8 @@ const Location = () => {
               Castilho{" "}
               <span
                 style={{
-                  marginTop: "6px",
+                  fontFamily: "'Playfair Display', serif",
+                  marginTop: "-8px",
                   marginLeft: "8px",
                   fontSize: 60,
                   letterSpacing: "5px",
@@ -158,8 +160,8 @@ const Location = () => {
               }}
             >
               <Typography
-                variant="h1"
                 style={{
+                  fontFamily: "'Playfair Display', serif",
                   display: "flex",
                   columnGap: "10px",
                   fontSize: mobile ? "30px" : "49px",
@@ -171,6 +173,7 @@ const Location = () => {
                 Castilho{" "}
                 <span
                   style={{
+                    fontFamily: "'Playfair Display', serif",
                     fontSize: mobile ? "40px" : "60px",
                     letterSpacing: "5px",
                   }}

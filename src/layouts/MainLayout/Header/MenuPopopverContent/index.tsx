@@ -28,6 +28,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
             rowGap: "20px",
             padding: "80px 80px 20px 80px",
             height: "100%",
+            overflow: "scroll",
           }}
         >
           <Typography

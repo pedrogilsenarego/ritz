@@ -141,17 +141,15 @@ export const BodyPartDefined = ({
   const renderTile = () => {
     switch (filter) {
       case "face":
-        return <Tile clinic={i18n.t("pages.treatments.face")} image={Face} />;
+        return <Tile clinic={i18n.t("pages.body.box1")} image={Face} />;
       case "smile":
-        return <Tile clinic={i18n.t("pages.treatments.smile")} image={Smile} />;
+        return <Tile clinic={i18n.t("pages.body.box2")} image={Smile} />;
       case "body":
-        return <Tile clinic={i18n.t("pages.treatments.body")} image={Bodi} />;
+        return <Tile clinic={i18n.t("pages.body.box3")} image={Bodi} />;
       case "health":
-        return (
-          <Tile clinic={i18n.t("pages.treatments.health")} image={Health} />
-        );
+        return <Tile clinic={i18n.t("pages.body.box4")} image={Health} />;
       default:
-        return <Tile clinic={i18n.t("pages.treatments.face")} image={Face} />;
+        return <Tile clinic={i18n.t("pages.body.box1")} image={Face} />;
     }
   };
   const renderLaptop = () => {
@@ -193,7 +191,7 @@ export const BodyPartDefined = ({
               color: "white",
             }}
           >
-            zonas de corpo
+            {i18n.t("expertAdvice.box31")}
           </Typography>
         </div>
         <Slide in direction="right" timeout={500}>
@@ -233,7 +231,7 @@ export const BodyPartDefined = ({
                 lineHeight: "11px",
               }}
             >
-              Passo Anterior
+              {i18n.t("expertAdvice.box5")}
             </Typography>
           </div>
           <div
@@ -254,7 +252,7 @@ export const BodyPartDefined = ({
                 lineHeight: "11px",
               }}
             >
-              Recomeçar
+              {i18n.t("expertAdvice.box6")}
             </Typography>
           </div>
         </div>
@@ -300,7 +298,7 @@ export const BodyPartDefined = ({
               color: "white",
             }}
           >
-            zonas de corpo
+            {i18n.t("expertAdvice.box31")}
           </Typography>
         </div>
         <Slide in direction="right" timeout={500}>
@@ -346,7 +344,7 @@ export const BodyPartDefined = ({
                 lineHeight: "11px",
               }}
             >
-              Passo Anterior
+              {i18n.t("expertAdvice.box5")}
             </Typography>
           </div>
           <div
@@ -367,7 +365,7 @@ export const BodyPartDefined = ({
                 lineHeight: "11px",
               }}
             >
-              Recomeçar
+              {i18n.t("expertAdvice.box6")}
             </Typography>
           </div>
         </div>
