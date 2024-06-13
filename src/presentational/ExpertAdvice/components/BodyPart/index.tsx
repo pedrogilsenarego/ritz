@@ -54,7 +54,7 @@ export const BodyPart = ({
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url(https://stock.adobe.com/br/images/background-with-a-cracked-white-stone-wall/378607193`,
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/EXPERT-ADVICE-FASE-3.webp)`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             display: "flex",
