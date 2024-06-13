@@ -277,6 +277,85 @@ export const content = {
           },
         },
       },
+      tags: {
+        concerns: {
+          acne: "Acne",
+
+          antiaging: "Anti-Aging",
+
+          bigEars: "Protruding Ears",
+
+          bodyAssimetry: "Body Asymmetry",
+
+          breastLoose: "Sagging Chest",
+
+          breastUneven: "Disproportionate Chest",
+
+          bruxism: "Bruxism",
+
+          cavities: "Cavities",
+
+          cellulite: "Celulite",
+
+          darkCircles: "Dark Circles",
+
+          dilatedPores: "Dilated Pores",
+
+          excessSweat: "Excessive Sweating",
+
+          extraHair: "Excess Hair",
+
+          extraSkin: "Excess Skin",
+
+          fisicalStress: "Stress Físico",
+
+          flacid: "Flaccidity",
+
+          foodIssues: "Food Intolerances",
+
+          general: "General Clinic",
+
+          genvivalSmile: "Gummy Smile",
+
+          intimeZone: "Intimate Area Discomfort",
+
+          localizedFat: "Localized Fat",
+
+          lowFacialVolume: "Loss of Facial Volume",
+
+          lowImmunity: "Low Immunity",
+
+          lowVitamin: "Vitamin Deficiency",
+
+          noseBreathing: "Nasal Breathing Didiculty",
+
+          obstreticConcerns: "Obstetric Follow-up",
+
+          oxidaitionStress: "Oxidative Stress",
+
+          pediatricConcerns: "Pediatric Follow-up",
+
+          postintervention: "Post-surgical Recovery",
+
+          redeness: "Rosacea",
+
+          scars: "Scars",
+
+          skincare: "Skin “Quality",
+
+          smileAssimetry: "Dental Asymmetry",
+
+          spots: "Spots",
+
+          stretchMarks: "Stretch Marks",
+
+          teethColor: "Dental Tonality",
+
+          vains: "Varicose Veins",
+
+          wrinkles: "Wrinkles",
+        },
+      },
     },
   },
 };

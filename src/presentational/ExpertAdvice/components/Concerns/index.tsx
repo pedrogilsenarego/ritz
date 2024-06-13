@@ -22,8 +22,6 @@ export const Concerns = ({
     handleFetchConcerns()
   );
 
-  console.log(data);
-
   const renderLaptop = () => {
     return (
       <div>

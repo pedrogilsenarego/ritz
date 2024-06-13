@@ -285,44 +285,79 @@ export const content = {
       tags: {
         concerns: {
           acne: "Acne",
-          antiaging: "Anti- Envelhecimento",
-          bigEars: "Orelhas de Abano",
+
+          antiaging: "Anti-envelhecimento",
+          bigEars: "Orelhas Proeminentes",
+
           bodyAssimetry: "Assimetria Corporal",
+
           breastLoose: "Peito Descaído",
+
           breastUneven: "Peito Desproportional",
+
           bruxism: "Bruxismo",
+
           cavities: "Cáries",
+
           cellulite: "Celulite",
+
           darkCircles: "Olheiras",
+
           dilatedPores: "Poros Dilatados",
+
           excessSweat: "Sudorese Excessiva",
+
           extraHair: "Excesso de Pelos",
+
           extraSkin: "Excesso de Pele",
+
           fisicalStress: "Stress Físico",
+
           flacid: "Flacidez",
-          foodIssues: "Intolerâncias alimentares",
+
+          foodIssues: "Intolerâncias Alimentares",
+
           general: "Clínica Geral",
-          gengivalSmile: "Sorriso Gengival",
-          intimeZone: "",
-          localizedFat: "",
-          lowFacialVolume: "",
-          lowImmunity: "",
-          lowVitamin: "",
-          noseBreathing: "",
-          obstreticConcerns: "",
-          oxidationStress: "",
-          palsingTeeth: "",
-          pediatricConcerns: "",
-          postIntervention: "",
-          redeness: "",
-          scars: "",
-          skinCare: "",
-          smileAssimetry: "",
-          spots: "",
-          stretchMarks: "",
-          teethColor: "",
-          vains: "",
-          wrinkes: "",
+
+          genvivalSmile: "Sorriso Gengival",
+
+          intimeZone: "Desconforto Zona Íntima ",
+
+          localizedFat: "Gordura Localizada",
+
+          lowFacialVolume: "Perda de Volume Facial",
+
+          lowImmunity: "Baixa Imunidade",
+
+          lowVitamin: "Carência Vitamínica",
+
+          noseBreathing: "Dificuldade Respiratória Nasal",
+
+          obstreticConcerns: "Acompanhamento Obstétrico",
+
+          oxidaitionStress: "Stress Oxidativo",
+
+          pediatricConcerns: "Acompanhamento Pediátrico",
+
+          postintervention: "Recuperação Pós-operatória",
+
+          redeness: "Rosácea",
+
+          scars: "Cicatrizes",
+
+          skincare: "Qualidade da Pele",
+
+          smileAssimetry: "Assimetria Dentária",
+
+          spots: "Manchas",
+
+          stretchMarks: "Estrias",
+
+          teethColor: "Tonalidade Dentária Indesejada",
+
+          vains: "Varizes",
+
+          wrinkles: "Rugas",
         },
       },
     },
