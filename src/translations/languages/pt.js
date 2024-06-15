@@ -275,6 +275,26 @@ export const content = {
           box29: "POR ESPECIALIDADE",
           box30: "POR ZONAS DE CORPO",
         },
+        experience: {
+          box0: "A experiência",
+          box1: "ACOMPANHAMOS A SUA</br> <i>EXPERIÊNCIA</i>",
+          box2: "Valorizamos cada momento. O nosso compromisso é o seu conforto, garantindo que cada passo seja uma expressão de cuidado e excelência.",
+          box3: "Valorizamos cada momento.</br> O nosso compromisso é o seu conforto, garantindo que cada passo seja uma expressão de cuidado e excelência.",
+          box4: "Uma Recepção sem igual",
+          box5: "Só somos desconhecidos uma vez. Esperamos por si à entrada do edifício, para que entre acompanhado no nosso piso.",
+          box6: "Uma receção sem perguntas nem constrangimentos.",
+          box7: "Avaliação & Diagnóstico",
+          box8: "Apreciamos o que faz de si único.",
+          box9: " Desenhamos Planos de Tratamento personalizados, com base em diagnósticos de alta precisão.",
+          box10: "Sessões de tratamento",
+          box11: "Estamos na vanguarda da Tecnologia, juntamente consigo.",
+          box12:
+            "Utilizamos Tecnologias Avançadas, que garantem resultados excecionais.",
+          box13: "Acompanhamento personalizado",
+          box14: "Todas as relações têm um fim... menos a nossa.",
+          box15:
+            "Conheça a Assistente Pessoal encarregue por si. Do suporte clínico à mensagem de conforto. Somos seus quando precisar de nós.",
+        },
         body: {
           box1: "Rosto",
           box2: "Sorriso",
