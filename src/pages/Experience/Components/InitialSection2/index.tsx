@@ -449,21 +449,32 @@ const InitialSection2 = () => {
           display: "flex",
           flexDirection: "column",
           rowGap: "50px",
-          margin: "0px 10px",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <img
-            alt=""
-            style={{ height: "86px", objectFit: "cover", width: "100%" }}
-            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.1.webp"
-          />
+          <div style={{ padding: "0px 35px", position: "relative" }}>
+            <img
+              alt=""
+              style={{ height: "187px", objectFit: "cover", width: "100%" }}
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.1.webp"
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "-20px",
+                right: "0px",
+                background: "rgba(191, 168, 155, 0.4)",
+                height: "100%",
+                width: "80%",
+              }}
+            />
+          </div>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "end",
-              padding: "30px 0px",
+              padding: "20px 35px",
             }}
           >
             <Typography
@@ -471,34 +482,37 @@ const InitialSection2 = () => {
               style={{
                 display: "flex",
                 columnGap: "10px",
-                marginBottom: "0px",
+
                 alignItems: "end",
                 fontStyle: "italic",
                 fontSize: "40px",
                 padding: "0px",
 
                 lineHeight: "40px",
-                color: "lightgrey",
+                color: "rgba(0, 0, 0, 0.2)                ",
               }}
             >
               1
               <Typography
                 style={{
                   fontSize: "13px",
+                  marginBottom: "5px",
                   fontStyle: "normal",
                   letterSpacing: "1px",
                   fontWeight: 500,
                   textTransform: "uppercase",
                 }}
               >
-                Uma Recepção sem igual
+                {i18n.t("pages.experience.box4")}
               </Typography>
             </Typography>
 
             <div
               style={{
-                borderLeft: "1px solid black",
+                borderLeft: "1px solid rgba(0, 0, 0, 0.4)",
                 paddingLeft: "10px",
+                paddingTop: "10px",
+                paddingBottom: "10px",
                 marginLeft: "10px",
                 marginTop: "20px",
               }}
@@ -510,8 +524,7 @@ const InitialSection2 = () => {
                   lineHeight: "15px",
                 }}
               >
-                Só somos desconhecidos uma vez. Esperamos por si à entrada do
-                edifício, para que entre acompanhado no nosso piso.
+                {i18n.t("pages.experience.box5")}
               </Typography>
               <Typography
                 style={{
@@ -522,23 +535,35 @@ const InitialSection2 = () => {
                   lineHeight: "15px",
                 }}
               >
-                Uma receção sem perguntas nem constrangimentos.
+                {i18n.t("pages.experience.box6")}
               </Typography>
             </div>
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <img
-            alt=""
-            style={{ height: "86px", objectFit: "cover", width: "100%" }}
-            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.2.webp"
-          />
+          <div style={{ padding: "0px 35px", position: "relative" }}>
+            <img
+              alt=""
+              style={{ height: "187px", objectFit: "cover", width: "100%" }}
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.2.webp"
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "-20px",
+                right: "0px",
+                background: "rgba(191, 168, 155, 0.4)",
+                height: "100%",
+                width: "80%",
+              }}
+            />
+          </div>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "end",
-              padding: "30px 0px",
+              padding: "20px 35px",
             }}
           >
             <Typography
@@ -546,34 +571,37 @@ const InitialSection2 = () => {
               style={{
                 display: "flex",
                 columnGap: "10px",
-                marginBottom: "0px",
+
                 alignItems: "end",
                 fontStyle: "italic",
                 fontSize: "40px",
                 padding: "0px",
 
                 lineHeight: "40px",
-                color: "lightgrey",
+                color: "rgba(0, 0, 0, 0.2)                ",
               }}
             >
               2
               <Typography
                 style={{
                   fontSize: "13px",
+                  marginBottom: "5px",
                   fontStyle: "normal",
                   letterSpacing: "1px",
                   fontWeight: 500,
                   textTransform: "uppercase",
                 }}
               >
-                Avaliação e diagnóstico
+                {i18n.t("pages.experience.box7")}
               </Typography>
             </Typography>
 
             <div
               style={{
-                borderLeft: "1px solid black",
+                borderLeft: "1px solid rgba(0, 0, 0, 0.4)",
                 paddingLeft: "10px",
+                paddingTop: "10px",
+                paddingBottom: "10px",
                 marginLeft: "10px",
                 marginTop: "20px",
               }}
@@ -585,7 +613,7 @@ const InitialSection2 = () => {
                   lineHeight: "15px",
                 }}
               >
-                Apreciamos o que faz de si único.
+                {i18n.t("pages.experience.box8")}
               </Typography>
               <Typography
                 style={{
@@ -596,24 +624,35 @@ const InitialSection2 = () => {
                   lineHeight: "15px",
                 }}
               >
-                Desenhamos Planos de Tratamento personalizados, com base em
-                diagnósticos de alta precisão.
+                {i18n.t("pages.experience.box9")}
               </Typography>
             </div>
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <img
-            alt=""
-            style={{ height: "86px", objectFit: "cover", width: "100%" }}
-            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.3.webp"
-          />
+          <div style={{ padding: "0px 35px", position: "relative" }}>
+            <img
+              alt=""
+              style={{ height: "187px", objectFit: "cover", width: "100%" }}
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.3.webp"
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "-20px",
+                right: "0px",
+                background: "rgba(191, 168, 155, 0.4)",
+                height: "100%",
+                width: "80%",
+              }}
+            />
+          </div>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "end",
-              padding: "30px 0px",
+              padding: "20px 35px",
             }}
           >
             <Typography
@@ -621,34 +660,37 @@ const InitialSection2 = () => {
               style={{
                 display: "flex",
                 columnGap: "10px",
-                marginBottom: "0px",
+
                 alignItems: "end",
                 fontStyle: "italic",
                 fontSize: "40px",
                 padding: "0px",
 
                 lineHeight: "40px",
-                color: "lightgrey",
+                color: "rgba(0, 0, 0, 0.2)                ",
               }}
             >
               3
               <Typography
                 style={{
                   fontSize: "13px",
+                  marginBottom: "5px",
                   fontStyle: "normal",
                   letterSpacing: "1px",
                   fontWeight: 500,
                   textTransform: "uppercase",
                 }}
               >
-                Sessões de tratamento
+                {i18n.t("pages.experience.box10")}
               </Typography>
             </Typography>
 
             <div
               style={{
-                borderLeft: "1px solid black",
+                borderLeft: "1px solid rgba(0, 0, 0, 0.4)",
                 paddingLeft: "10px",
+                paddingTop: "10px",
+                paddingBottom: "10px",
                 marginLeft: "10px",
                 marginTop: "20px",
               }}
@@ -660,7 +702,7 @@ const InitialSection2 = () => {
                   lineHeight: "15px",
                 }}
               >
-                Estamos na vanguarda da Tecnologia, juntamente consigo.
+                {i18n.t("pages.experience.box11")}
               </Typography>
               <Typography
                 style={{
@@ -671,24 +713,35 @@ const InitialSection2 = () => {
                   lineHeight: "15px",
                 }}
               >
-                Utilizamos Tecnologias Avançadas, que garantem resultados
-                excecionais.
+                {i18n.t("pages.experience.box12")}
               </Typography>
             </div>
           </div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <img
-            alt=""
-            style={{ height: "86px", objectFit: "cover", width: "100%" }}
-            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.4.webp"
-          />
+          <div style={{ padding: "0px 35px", position: "relative" }}>
+            <img
+              alt=""
+              style={{ height: "187px", objectFit: "cover", width: "100%" }}
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-EXPERIENCIA-1.4.webp"
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: "-20px",
+                right: "0px",
+                background: "rgba(191, 168, 155, 0.4)",
+                height: "100%",
+                width: "80%",
+              }}
+            />
+          </div>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "end",
-              padding: "30px 0px",
+              padding: "20px 35px",
             }}
           >
             <Typography
@@ -696,34 +749,37 @@ const InitialSection2 = () => {
               style={{
                 display: "flex",
                 columnGap: "10px",
-                marginBottom: "0px",
+
                 alignItems: "end",
                 fontStyle: "italic",
                 fontSize: "40px",
                 padding: "0px",
 
                 lineHeight: "40px",
-                color: "lightgrey",
+                color: "rgba(0, 0, 0, 0.2)                ",
               }}
             >
               4
               <Typography
                 style={{
                   fontSize: "13px",
+                  marginBottom: "5px",
                   fontStyle: "normal",
                   letterSpacing: "1px",
                   fontWeight: 500,
                   textTransform: "uppercase",
                 }}
               >
-                Acompanhamento personalizado
+                {i18n.t("pages.experience.box13")}
               </Typography>
             </Typography>
 
             <div
               style={{
-                borderLeft: "1px solid black",
+                borderLeft: "1px solid rgba(0, 0, 0, 0.4)",
                 paddingLeft: "10px",
+                paddingTop: "10px",
+                paddingBottom: "10px",
                 marginLeft: "10px",
                 marginTop: "20px",
               }}
@@ -735,7 +791,7 @@ const InitialSection2 = () => {
                   lineHeight: "15px",
                 }}
               >
-                Todas as relações têm um fim... menos a nossa.
+                {i18n.t("pages.experience.box14")}
               </Typography>
               <Typography
                 style={{
@@ -746,9 +802,7 @@ const InitialSection2 = () => {
                   lineHeight: "15px",
                 }}
               >
-                Conheça a Assistente Pessoal encarregue por si, entre e após
-                Sessões. Do suporte clínico à mensagem de conforto. Somos seus
-                quando precisar de nós.
+                {i18n.t("pages.experience.box15")}
               </Typography>
             </div>
           </div>

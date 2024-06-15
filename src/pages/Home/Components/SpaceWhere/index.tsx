@@ -58,7 +58,7 @@ const SpaceWhere = () => {
               backgroundColor: "transparent",
               border: "solid 2px rgba(119, 124, 126, 1)",
             }}
-            label={i18n.t("pages.home.ctaSpaceWhere")}
+            label={i18n.t("pages.home.button2")}
           ></ButtonNinja>
         </div>
       </div>
@@ -131,7 +131,7 @@ const SpaceWhere = () => {
                 fontSize: mobile ? "12px" : "15px",
               }}
             >
-              {i18n.t("pages.home.ctaSpaceWhere")}
+              {i18n.t("pages.home.button2")}
             </Typography>
           </Button>
         </div>

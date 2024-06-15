@@ -110,6 +110,7 @@ export const content = {
             "O Serviço de Concierge é projetado para oferecer conveniência máxima, eliminando as preocupações logísticas e otimizando o seu tempo.</br> Do agendamento de consultas ao acesso prioritário a especialistas e tratamentos, a nossa equipa Concierge está à disposição para garantir que a sua visita seja tranquila e confortável.",
           button0: "Expert Advice",
           button1: "Solicitar Concierge",
+          button2: "A Clínica",
           icon1: "Hotel",
           icon2: "Viagem",
           icon3: "Transporte",
@@ -280,6 +281,9 @@ export const content = {
           box1: "ACOMPANHAMOS A SUA</br> <i>EXPERIÊNCIA</i>",
           box2: "Valorizamos cada momento. O nosso compromisso é o seu conforto, garantindo que cada passo seja uma expressão de cuidado e excelência.",
           box3: "Valorizamos cada momento.</br> O nosso compromisso é o seu conforto, garantindo que cada passo seja uma expressão de cuidado e excelência.",
+          box31:
+            "Valorizamos cada momento.</br></br> O nosso compromisso é o seu conforto, garantindo que cada passo seja uma expressão de cuidado e excelência.",
+
           box4: "Uma Recepção sem igual",
           box5: "Só somos desconhecidos uma vez. Esperamos por si à entrada do edifício, para que entre acompanhado no nosso piso.",
           box6: "Uma receção sem perguntas nem constrangimentos.",

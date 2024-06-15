@@ -96,6 +96,7 @@ export const content = {
             "The Concierge Service is designed to offer maximum convenience, eliminating logistical concerns and optimizing your time.</br>From scheduling appointments to priority access to specialists and treatments, our Concierge team is on hand to ensure your visit is smooth and comfortable.",
           button0: "Expert Advice",
           button1: "Request Concierge",
+          button2: "The Clinic",
           icon1: "Hotel,",
           icon2: "Travel",
           icon3: "Transport,",
@@ -187,6 +188,29 @@ export const content = {
           box2: "Smile",
           box3: "Body",
           box4: "Health 360º",
+        },
+        experience: {
+          box0: "The experience",
+          box1: "WE ACCOMPANY</br> YOUR <i>EXPERIENCE</i>",
+          box2: "We value every moment. Our commitment is your comfort, ensuring that every step is an expression of care and excellence.",
+          box3: "We value every moment.</br> Our commitment is your comfort, ensuring that every step is an expression of care and excellence.",
+          box31:
+            "We value every moment.</br></br> Our commitment is your comfort, ensuring that every step is an expression of care and excellence.",
+
+          box4: "An Unmatched Reception",
+          box5: "Strangers? Just once. We will wait for you at the entrance of the building, so that you can enter our floor accompanied.",
+          box6: "A reception without questions or constraints.",
+          box7: "Evaluation & Diagnosis",
+          box8: "Appreciating what makes you unique,",
+          box9: "we design Personalized Treatment Plans based on high-precision diagnostics.",
+          box10: "Treatment Sessions",
+          box11: "Together at the forefront of Technology,",
+          box12:
+            "mastering Advanced Technologies that guarantee exceptional results.",
+          box13: "Personalized Assistance",
+          box14: "All relationships have an end... except ours. ",
+          box15:
+            "Meet the Personal Assistant compromised with your comfort. From clinical support to a comforting message, we are yours when you need us.",
         },
         admin: {
           sidebar: {

@@ -1,6 +1,5 @@
-import { Container, useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 
-import { MAX_SCREEN } from "../../constants/screen";
 import Escort from "../Home/Components/Escort";
 import SpaceWhere from "../Home/Components/SpaceWhere";
 import IdentityProtection from "./Components/IdentityProtection";
@@ -15,7 +14,7 @@ const Experience = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
-      <div style={{ marginTop: mobile ? "120px" : "0px" }}>
+      <div>
         <InitialImage text={i18n.t("pages.experience.box0")} />
       </div>
 
@@ -28,13 +27,13 @@ const Experience = () => {
       >
         <InitialSection2 />
       </div>
-      <div style={{ marginTop: mobile ? "150px" : "300px" }}>
+      <div style={{ marginTop: mobile ? "250px" : "300px" }}>
         <IdentityProtection />
       </div>
-      <div style={{ marginTop: mobile ? "250px" : "200px" }}>
+      <div style={{ marginTop: mobile ? "200px" : "200px" }}>
         <Escort />
       </div>
-      <div style={{ marginTop: mobile ? "100px" : "0px" }}>
+      <div style={{ marginTop: mobile ? "50px" : "0px" }}>
         <SpaceWhere />
       </div>
       <div style={{ marginTop: mobile ? "100px" : "200px" }}>
