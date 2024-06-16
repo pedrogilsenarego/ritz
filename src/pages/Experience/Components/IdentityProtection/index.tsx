@@ -64,7 +64,7 @@ const IdentityProtection = () => {
           <Typography
             style={{
               marginTop: "80px",
-              fontSize: mobile ? "10px" : "18px",
+              fontSize: mobile ? "10px" : "15px",
               letterSpacing: "1px",
               textTransform: "uppercase",
             }}
@@ -74,7 +74,7 @@ const IdentityProtection = () => {
           <Typography
             variant="h1"
             style={{
-              marginTop: "30px",
+              marginTop: "13px",
               fontSize: mobile ? "20px" : "35px",
               fontWeight: 700,
               letterSpacing: "2px",
@@ -86,12 +86,14 @@ const IdentityProtection = () => {
           <div
             style={{
               display: "flex",
+
+              padding: "0px 30px",
               marginTop: "50px",
               rowGap: mobile ? "30px" : undefined,
               flexDirection: mobile ? "column" : "row",
               alignItems: mobile ? "center" : undefined,
               justifyContent: mobile ? "center" : "space-between",
-              width: mobile ? "100%" : "50%",
+              width: mobile ? "100%" : "60%",
             }}
           >
             <div
@@ -100,6 +102,7 @@ const IdentityProtection = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 rowGap: "30px",
+                width: "33.3%",
               }}
             >
               <img src={Shield} alt="" />
@@ -120,6 +123,7 @@ const IdentityProtection = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 rowGap: "30px",
+                width: "33.3%",
               }}
             >
               <div
@@ -151,6 +155,7 @@ const IdentityProtection = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 rowGap: "30px",
+                width: "33.3%",
               }}
             >
               <div
@@ -353,7 +358,7 @@ const IdentityProtection = () => {
           </div>
 
           <ButtonNinja
-            label={i18n.t("pages.identityBox.box6")}
+            label={i18n.t("pages.identityBox.button1")}
             textStyles={{
               color: "rgba(93, 92, 92, 1)",
               textTransform: "uppercase",

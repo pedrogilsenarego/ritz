@@ -58,7 +58,7 @@ export const content = {
         },
         about: {
           box0: "Sobre a ehtiq",
-          box1: "A NOSSA PROMESSA É O SEU BEM-ESTAR",
+          box1: "A NOSSA PROMESSA É</br> O SEU BEM-ESTAR",
           box2: "Refere-se a algo que é temporário, existindo apenas por um curto período de tempo até mudar ou chegar ao fim.</br></br> Este termo é frequentemente usado para descrever fenómenos, experiências ou condições não permanentes, tal como os humanos.",
           box3: "Ilustração de @laviebypi",
           box4: "Localizada numa das zonas mais nobres da cidade de lisboa, a EHTIQ surge como um símbolo de excelência aliada à tradição.",
@@ -73,7 +73,7 @@ export const content = {
           box13: "A Experiência",
 
           box14:
-            "Entre num universo cuidadosamente criado para proporcionar uma experiência única.</br></br><b>Equipas especializadas, abordagem científica</b> e foco na experiência são os nossos compromissos.",
+            "Entre num universo cuidadosamente criado para proporcionar uma experiência única.</br></br><b class='custom-bold'>Equipas especializadas, abordagem científica</b> e foco na experiência são os nossos compromissos.",
 
           button1: "Entrar",
         },

@@ -59,7 +59,7 @@ export const content = {
         },
         about: {
           box0: "About ehtiq",
-          box1: "OUR PROMISSE IS YOUR WELL-BEING",
+          box1: "OUR PROMISSE IS</br> YOUR WELL-BEING",
           box2: "Refers to something that is temporary, existing only for a short period until it changes or ends.</br></br>This term is often used to describe phenomena, experiences, or conditions that are not permanent, just like humans.",
           box3: "Desing de @laviebypi",
           box4: "Located in one of the most NOBLE areas of the city of Lisbon, EHTIQ emerges as a symbol of excellence combined with tradition.",
@@ -74,7 +74,7 @@ export const content = {
           box13: "The experience",
 
           box14:
-            "Enter a universe carefully created to provide a unique experience.</br></br><b>Specialized teams</b>, scientific approach, and focus on experience are our commitments.",
+            "Enter a universe carefully created to provide a unique experience.</br></br><b class='custom-bold'>Specialized teams</b>, scientific approach, and focus on experience are our commitments.",
 
           button1: "Enter",
         },

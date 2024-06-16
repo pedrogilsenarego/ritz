@@ -1,6 +1,6 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "../../../../assets/LOGO 3.webp";
-import Logo2 from "../../../../assets/LOGO 2.webp";
+import Logo2 from "../../../../assets/LOGO 1.webp";
 
 const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
   const Theme = useTheme();
@@ -27,6 +27,7 @@ const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
             alt=""
             width={"86px"}
             style={{
+              opacity: 0.3,
               position: "absolute",
               bottom: 0,
               transform: "translateY(50%)",
@@ -72,6 +73,7 @@ const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
             alt=""
             width={"86px"}
             style={{
+              opacity: 0.3,
               position: "absolute",
               bottom: 0,
               transform: "translateY(50%)",
@@ -82,7 +84,7 @@ const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
         <Typography
           variant="h1"
           style={{
-            marginBottom: "0px",
+            marginBottom: "5px",
             fontSize: "35px",
             textTransform: "uppercase",
             color: "rgba(95, 95, 95, 1)",

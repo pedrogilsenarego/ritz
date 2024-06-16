@@ -79,7 +79,7 @@ const Values = () => {
           <div
             style={{
               position: "absolute",
-              width: "calc(50% - (50% - 300px))",
+              width: "calc(50% - (50% - 20%))",
               height: "40px",
               backgroundColor: "rgba(57, 57, 57, 1)",
               right: 0,
@@ -89,13 +89,14 @@ const Values = () => {
           <Container
             style={{
               maxWidth: MAX_SCREEN,
-              padding: "0px 300px",
+              padding: "0px 20%",
               marginTop: "-40px",
             }}
           >
             <div
               style={{
-                padding: mobile ? "0px" : "70px 135px",
+                padding: mobile ? "0px" : "70px 0px",
+
                 height: "940px",
                 backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.3.webp`,
                 backgroundSize: "cover",
@@ -106,6 +107,7 @@ const Values = () => {
                 variant="h1"
                 style={{
                   textTransform: "uppercase",
+
                   color: "rgba(255, 255, 255, 0.8)",
                   fontSize: mobile ? "19px" : "40px",
                   letterSpacing: "4px",
@@ -120,15 +122,16 @@ const Values = () => {
 
               <div
                 style={{
+                  margin: mobile ? "0px" : "0px 135px",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "end",
                   rowGap: "30px",
-                  marginTop: "20px",
+                  marginTop: mobile ? "20px" : "20px",
                   backgroundColor: mobile ? undefined : "lightgray",
                   height: "814px",
                   padding: "100px 60px",
-                  backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.2.webp`,
+                  backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.6.webp`,
                   backgroundSize: "cover",
                   backgroundPosition: "center center",
                 }}
@@ -228,9 +231,10 @@ const Values = () => {
             fontWeight: 500,
             textTransform: "uppercase",
           }}
-        >
-          {i18n.t("pages.about.box6")}
-        </Typography>
+          dangerouslySetInnerHTML={{
+            __html: i18n.t("pages.about.box6"),
+          }}
+        ></Typography>
         <Grid
           container
           columnSpacing={"10px"}

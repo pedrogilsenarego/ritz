@@ -1,6 +1,6 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "../../../../assets/Mini_Beige.webp";
-import Brand from "../../../../assets/EHTIQ BRANDS-09_2.svg";
+import Brand from "../../../../assets/LOGO 5.webp";
 import { i18n } from "../../../../translations/i18n";
 export const WellnessClinic = () => {
   const theme = useTheme();

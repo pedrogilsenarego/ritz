@@ -56,13 +56,14 @@ const Location = () => {
           <Box
             style={{
               display: "flex",
+
               flexDirection: "column",
               alignItems: mobile ? "center" : "start",
-              justifyContent: "end",
-              paddingBottom: "50px",
+              justifyContent: mobile ? "end" : "center",
+
               height: "500px",
               rowGap: "20px",
-              width: "70%",
+              width: "80%",
             }}
           >
             <Typography
@@ -93,13 +94,13 @@ const Location = () => {
             </Typography>
             <Typography
               style={{
+                marginTop: mobile ? undefined : "20px",
                 textAlign: mobile ? "center" : undefined,
                 fontSize: mobile ? "13px" : "16px",
                 color: mainColors.primary[400],
                 textTransform: "uppercase",
                 letterSpacing: "1px",
                 lineHeight: "30px",
-                width: "70%",
               }}
             >
               {i18n.t("pages.about.box4")}
@@ -113,7 +114,6 @@ const Location = () => {
                 marginLeft: "20px",
                 letterSpacing: "1px",
                 lineHeight: "28px",
-                width: "70%",
               }}
             >
               {i18n.t("pages.about.box5")}
@@ -163,11 +163,11 @@ const Location = () => {
                 style={{
                   fontFamily: "'Playfair Display', serif",
                   display: "flex",
-                  columnGap: "10px",
+                  columnGap: "5px",
                   fontSize: mobile ? "30px" : "49px",
                   textTransform: "uppercase",
                   letterSpacing: "4px",
-                  fontWeight: 700,
+                  fontWeight: 600,
                 }}
               >
                 Castilho{" "}
@@ -176,6 +176,8 @@ const Location = () => {
                     fontFamily: "'Playfair Display', serif",
                     fontSize: mobile ? "40px" : "60px",
                     letterSpacing: "5px",
+                    fontWeight: 400,
+                    marginTop: "-11px",
                   }}
                 >
                   77

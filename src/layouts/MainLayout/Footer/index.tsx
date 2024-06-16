@@ -299,7 +299,12 @@ const Footer = ({ isUser }: Props) => {
   };
   const renderMobile = () => {
     return (
-      <Box style={{ backgroundColor: "white" }}>
+      <Box
+        style={{
+          backgroundColor: "white",
+          borderTop: "solid 25px rgba(231, 221, 207, 0.77",
+        }}
+      >
         <Container maxWidth="lg">
           <Grid
             container

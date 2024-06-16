@@ -3,6 +3,7 @@ import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { MAX_SCREEN } from "../../../../constants/screen";
 import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
 import { i18n } from "../../../../translations/i18n";
+import "./index.css";
 
 const Journey = () => {
   const theme = useTheme();

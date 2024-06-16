@@ -15,7 +15,7 @@ const Experience = () => {
   return (
     <>
       <div>
-        <InitialImage text={i18n.t("pages.experience.box0")} />
+        <InitialImage text={i18n.t("pages.experience.box0")} logo />
       </div>
 
       <InitialImage1 />
