@@ -1,4 +1,4 @@
-import { Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Button from "../../../../components/Ui/Button";
 import Shield from "../../../../assets/Group 73.svg";
 import Search from "../../../../assets/search_off.svg";
@@ -83,17 +83,17 @@ const IdentityProtection = () => {
           >
             {i18n.t("pages.identityBox.box2")}
           </Typography>
-          <div
+          <Container
             style={{
               display: "flex",
-
+              maxWidth: 1000,
               padding: "0px 30px",
               marginTop: "50px",
               rowGap: mobile ? "30px" : undefined,
               flexDirection: mobile ? "column" : "row",
               alignItems: mobile ? "center" : undefined,
               justifyContent: mobile ? "center" : "space-between",
-              width: mobile ? "100%" : "60%",
+              width: mobile ? "100%" : "100%",
             }}
           >
             <div
@@ -181,7 +181,7 @@ const IdentityProtection = () => {
                 {i18n.t("pages.identityBox.box5")}
               </Typography>
             </div>
-          </div>
+          </Container>
           <Typography
             style={{
               marginTop: "70px",
