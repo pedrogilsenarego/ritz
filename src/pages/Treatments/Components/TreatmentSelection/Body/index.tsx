@@ -18,7 +18,7 @@ export const Body = () => {
     [queryKeys.bodyParts, selected + 1],
     () => handleFetchBodyParts(selected + 1)
   );
-  console.log(data);
+
   const ButtonLogo = ({
     icon,
     title,
