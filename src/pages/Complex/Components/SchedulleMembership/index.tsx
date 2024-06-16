@@ -60,7 +60,7 @@ const SchedulleMembership = () => {
             <Typography
               style={{
                 color: "white",
-                fontSize: mobile ? "12px" : "12px",
+                fontSize: mobile ? "10px" : "12px",
                 textTransform: "uppercase",
                 fontWeight: 500,
               }}
@@ -126,7 +126,7 @@ const SchedulleMembership = () => {
             <Typography
               style={{
                 color: "white",
-                fontSize: mobile ? "12px" : "12px",
+                fontSize: mobile ? "10px" : "12px",
                 textTransform: "uppercase",
                 fontWeight: 500,
               }}

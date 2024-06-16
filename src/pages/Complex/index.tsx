@@ -80,7 +80,7 @@ const Complex = () => {
                       width: "376px",
                       right: 0,
                       bottom: mobile ? "-150px" : "50px",
-                      padding: "40px",
+                      padding: "30px",
                       flexDirection: "column",
                       justifyContent: "center",
                       alignItems: "center",
@@ -92,7 +92,7 @@ const Complex = () => {
                         fontSize: mobile ? "14px" : "13px",
                         textTransform: "uppercase",
                         letterSpacing: "1px",
-                        fontWeight: 700,
+                        fontWeight: 500,
 
                         textAlign: "center",
                       }}
@@ -103,7 +103,6 @@ const Complex = () => {
                       variant="h1"
                       style={{
                         fontSize: mobile ? "15px" : "16px",
-                        textTransform: mobile ? "capitalize" : "uppercase",
 
                         letterSpacing: mobile ? "1px" : "2px",
                         lineHeight: mobile ? "20px" : "21px",
@@ -126,7 +125,7 @@ const Complex = () => {
                     width: "100%",
                     right: 0,
                     bottom: mobile ? "-150px" : "50px",
-                    padding: "40px",
+                    padding: "30px",
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
@@ -138,7 +137,7 @@ const Complex = () => {
                       fontSize: mobile ? "14px" : "13px",
                       textTransform: "uppercase",
                       letterSpacing: "1px",
-                      fontWeight: 700,
+                      fontWeight: 500,
 
                       textAlign: "center",
                     }}
@@ -149,7 +148,6 @@ const Complex = () => {
                     variant="h1"
                     style={{
                       fontSize: mobile ? "15px" : "16px",
-                      textTransform: mobile ? "capitalize" : "uppercase",
 
                       letterSpacing: mobile ? "1px" : "2px",
                       lineHeight: mobile ? "20px" : "21px",

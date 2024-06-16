@@ -55,12 +55,12 @@ export const TreatmentVideo = () => {
       </Typography>
       <Typography
         style={{
-          fontSize: mobile ? "9px" : "19px",
+          fontSize: mobile ? "12px" : "19px",
           letterSpacing: "1px",
           textTransform: "uppercase",
           fontWeight: 500,
           textAlign: mobile ? "center" : "left",
-          maxWidth: "80%",
+          maxWidth: "88%",
         }}
       >
         {i18n.t("pages.home.box42")}

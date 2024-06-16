@@ -36,6 +36,7 @@ export interface ICarouselProps {
   dragThreshold?: number;
   orientation?: "horizontal" | "vertical";
   onItemClick?: (item: ClickedItem) => void;
+  onChange?: (index: number) => void;
   children: Array<React.ReactNode>;
 }
 
@@ -60,6 +61,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     dragThreshold = 150,
     orientation = "horizontal",
     onItemClick,
+    onChange,
     children,
   } = props;
   const [current, setCurrent] = useState(direction === 1 ? 1 : children.length);
@@ -278,8 +280,14 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     leftRef.current = leftRef.current - offset;
     if (Math.abs(absOffset) >= dragThreshold) {
       setCurrent(current - Math.abs(offset) / offset);
+      if (onChange) {
+        onChange(current - Math.abs(offset) / offset);
+      }
     } else {
       go(current);
+      if (onChange) {
+        onChange(current);
+      }
     }
     setTouched(false);
     mouseDownClientXRef.current = -1;

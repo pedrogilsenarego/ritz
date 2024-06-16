@@ -29,7 +29,7 @@ export const Specialty = () => {
           alignItems: "end",
           justifyContent: "center",
           width: "100%",
-          aspectRatio: 0.75,
+          height: "317px",
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
           backgroundPosition: "center center",
@@ -114,7 +114,7 @@ export const Specialty = () => {
           }
         />
       </div>
-      <Grid container mt={"95px"} columnSpacing={2} rowSpacing={6}>
+      <Grid container mt={"30px"} columnSpacing={2} rowSpacing={6}>
         {data?.results?.map((item: any, index: number) => {
           return (
             <Grid key={index} item xs={6}>

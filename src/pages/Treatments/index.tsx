@@ -3,7 +3,7 @@ import InitialImage from "./Components/InitialImage";
 import InitialSection from "./Components/InitialSection";
 import SchedulleMembership from "../Complex/Components/SchedulleMembership";
 import { TreatmentSelection } from "./Components/TreatmentSelection";
-import { MobileInitial } from "./Components/MobileInitial";
+
 import { MobileFirst } from "./Components/MobileFirst";
 import { MobileTreatmentSelection } from "./Components/MobileTratmentSelection";
 import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
@@ -17,7 +17,7 @@ const Treatments = () => {
     return (
       <>
         <div style={{ marginTop: mobile ? "120px" : "0px" }}>
-          <InitialImage text={i18n.t("pages.treatments.box01")} />
+          <InitialImage logo text={i18n.t("pages.treatments.box01")} />
         </div>
         <div style={{ marginTop: mobile ? "120px" : "0px" }}>
           <InitialSection />
@@ -38,14 +38,14 @@ const Treatments = () => {
   const renderMobile = () => {
     return (
       <>
-        <MobileInitial />
+        <InitialImage logo text={i18n.t("pages.treatments.box01")} />
         <div style={{ marginTop: "150px" }}>
           <MobileFirst />
         </div>
-        <div style={{ marginTop: "240px" }}>
+        <div style={{ marginTop: "140px" }}>
           <TreatmentVideo />
         </div>
-        <div style={{ marginTop: "340px" }}>
+        <div style={{ marginTop: "240px" }}>
           <MobileTreatmentSelection />
         </div>
         <div style={{ marginTop: "80px" }}>

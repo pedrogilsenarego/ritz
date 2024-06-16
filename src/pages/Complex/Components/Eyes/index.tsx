@@ -12,6 +12,7 @@ const Eyes = () => {
     <div
       style={{
         width: "100%",
+
         position: "relative",
         height: mobile ? "796px" : "600px",
         display: "flex",
@@ -35,7 +36,7 @@ const Eyes = () => {
         style={{
           marginTop: mobile ? undefined : "-15px",
           maxWidth: mobile ? 450 : undefined,
-          width: mobile ? "100%" : "70%",
+          width: mobile ? "100%" : "100%",
           display: "flex",
           flexDirection: "column",
           rowGap: "50px",
@@ -148,7 +149,7 @@ const Eyes = () => {
                 backgroundColor: "rgba(255, 255, 255, 0.5)",
                 borderRadius: "20px",
                 marginTop: "20px",
-                padding: "8px 20px",
+                padding: "10px 30px",
               }}
             >
               <Typography

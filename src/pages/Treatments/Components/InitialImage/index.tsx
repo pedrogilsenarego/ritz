@@ -1,7 +1,8 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import Logo from "../../../../assets/LOGO 3.png";
+import Logo from "../../../../assets/LOGO 3.webp";
+import Logo2 from "../../../../assets/LOGO 2.webp";
 
-const InitialImage = ({ text }: { text: string }) => {
+const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   const renderLaptop = () => {
@@ -15,14 +16,28 @@ const InitialImage = ({ text }: { text: string }) => {
           alignItems: "center",
           width: "100%",
           paddingBottom: "92px",
+          position: "relative",
           background:
             "linear-gradient(180deg, rgba(87, 64, 46, 0.5) 0%, rgba(191, 169, 152, 0.5) 100%)",
         }}
       >
+        {logo && (
+          <img
+            src={Logo2}
+            alt=""
+            width={"86px"}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              transform: "translateY(50%)",
+              zIndex: 1000,
+            }}
+          />
+        )}
         <Typography
           variant="h1"
           style={{
-            marginBottom: "40px",
+            marginBottom: "0px",
             fontSize: "60px",
             textTransform: "uppercase",
             color: "rgba(95, 95, 95, 1)",
@@ -41,6 +56,7 @@ const InitialImage = ({ text }: { text: string }) => {
         style={{
           height: "600px",
           display: "flex",
+          position: "relative",
           flexDirection: "column",
           justifyContent: "flex-end",
           alignItems: "center",
@@ -50,10 +66,23 @@ const InitialImage = ({ text }: { text: string }) => {
             "linear-gradient(180deg, rgba(87, 64, 46, 0.5) 0%, rgba(191, 169, 152, 0.5) 100%)",
         }}
       >
+        {logo && (
+          <img
+            src={Logo2}
+            alt=""
+            width={"86px"}
+            style={{
+              position: "absolute",
+              bottom: 0,
+              transform: "translateY(50%)",
+              zIndex: 1000,
+            }}
+          />
+        )}
         <Typography
           variant="h1"
           style={{
-            marginBottom: "40px",
+            marginBottom: "0px",
             fontSize: "35px",
             textTransform: "uppercase",
             color: "rgba(95, 95, 95, 1)",

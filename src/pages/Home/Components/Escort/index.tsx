@@ -358,9 +358,10 @@ const Escort = () => {
               style={{
                 maxWidth: mobile ? undefined : "40%",
                 marginTop: "20px",
+
                 color: "rgba(39, 39, 39, 1)",
                 textTransform: "uppercase",
-                fontWeight: "bold",
+                fontWeight: 500,
                 fontSize: mobile ? "28px" : "35px",
                 letterSpacing: mobile ? "2px" : "1px",
               }}

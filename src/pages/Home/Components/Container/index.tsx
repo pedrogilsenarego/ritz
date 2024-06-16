@@ -1,5 +1,5 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import Logo from "../../../../assets/LOGO 3.png";
+import Logo from "../../../../assets/LOGO 3.webp";
 import Logo2 from "../../../../assets/EHTIQ BRANDS-12.svg";
 
 import Logo3 from "../../../../assets/EHTIQ BRANDS-11_GQ.png";

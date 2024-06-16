@@ -276,13 +276,13 @@ const Footer = ({ isUser }: Props) => {
                     src={LivroReclamações}
                     alt=""
                     style={{
-                      width: "70px",
+                      width: "105px",
                     }}
                   />
                   <Typography
                     style={{
                       textTransform: "uppercase",
-                      fontSize: "5px",
+                      fontSize: "7px",
                       marginTop: "0px",
                       fontWeight: 500,
                     }}
@@ -510,7 +510,7 @@ const Footer = ({ isUser }: Props) => {
                   }}
                   dangerouslySetInnerHTML={{
                     __html:
-                      "@Copyright 2024</br> develop by <u>Linea Agency</u>",
+                      "@Copyright 2024</br> developed by <u>Linea Agency</u>",
                   }}
                 ></Typography>
               </div>
