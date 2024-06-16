@@ -41,7 +41,7 @@ export const WellnessClinic = () => {
               }}
             ></Typography>
             <img
-              style={{ marginTop: "60px", marginLeft: "14px" }}
+              style={{ marginTop: "65px", width: "150px" }}
               src={Brand}
               alt=""
             />

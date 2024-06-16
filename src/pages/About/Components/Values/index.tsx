@@ -79,7 +79,7 @@ const Values = () => {
           <div
             style={{
               position: "absolute",
-              width: "calc(50% - (50% - 20%))",
+              width: "calc(50% - (50%))",
               height: "40px",
               backgroundColor: "rgba(57, 57, 57, 1)",
               right: 0,
@@ -88,8 +88,8 @@ const Values = () => {
           />
           <Container
             style={{
-              maxWidth: MAX_SCREEN,
-              padding: "0px 20%",
+              maxWidth: 1000,
+              // padding: "0px 20%",
               marginTop: "-40px",
             }}
           >
