@@ -89,6 +89,7 @@ export const Header = ({ setOpenPopup }: Props) => {
         <div
           onClick={() => setOpenPopup(false)}
           style={{
+            marginTop: "30px",
             width: "100%",
             display: "flex",
             cursor: "pointer",

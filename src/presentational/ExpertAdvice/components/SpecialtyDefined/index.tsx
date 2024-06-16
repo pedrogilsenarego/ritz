@@ -48,7 +48,6 @@ export const SpecialtyDefined = ({
     clinic: string;
   };
   const Tile = ({ image, clinic }: PropsTile) => {
-    const [hover, setHover] = useState<boolean>(false);
     return (
       <div
         style={{
@@ -60,8 +59,6 @@ export const SpecialtyDefined = ({
         }}
       >
         <div
-          onMouseEnter={() => setHover(true)}
-          onMouseLeave={() => setHover(false)}
           style={{
             position: "absolute",
             borderRadius: mobile ? "5px" : "0px",
@@ -82,9 +79,7 @@ export const SpecialtyDefined = ({
               position: "absolute",
               width: "100%",
               height: "262px",
-              backgroundColor: hover
-                ? "rgba(54, 54, 54, 0.5)"
-                : "rgba(255, 252, 248, 0.7)",
+              backgroundColor: "rgba(54, 54, 54, 0.5)",
             }}
           />
           <div
@@ -113,7 +108,7 @@ export const SpecialtyDefined = ({
                   lineHeight: mobile ? "20px" : "20px",
                   letterSpacing: "3px",
                   textAlign: "center",
-                  color: hover ? Colors.white[400] : "black",
+                  color: Colors.white[400],
                   transition: "all 0.5s ease-in-out",
                 }}
                 dangerouslySetInnerHTML={{
