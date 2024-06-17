@@ -14,11 +14,14 @@ import ValetM from "../../../../assets/Concierge_Icon-4_M.png";
 import Buffet from "../../../../assets/Concierge_Icon-1.png";
 import BuffetM from "../../../../assets/Concierge_Icon-1_M.png";
 import { i18n } from "../../../../translations/i18n";
+import { useSelector } from "react-redux";
+import { State } from "../../../../redux/types";
 
 const Escort = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const iconTextSize = mobile ? "7px" : "12px";
+  const lang = useSelector<State, string>((state) => state.general.lang);
 
   const renderLaptop = () => {
     return (
@@ -51,54 +54,99 @@ const Escort = () => {
           }}
         >
           <div>
-            <Typography
-              style={{
-                textTransform: "uppercase",
-                color: "rgba(0, 0, 0, 0.6)",
-                fontSize: mobile ? "8px" : "11px",
-                letterSpacing: "2px",
-              }}
-            >
-              {i18n.t("pages.home.box61")}
-            </Typography>
-            <Typography
-              variant="h1"
-              style={{
-                maxWidth: mobile ? undefined : "100%",
-                marginTop: "20px",
-                textTransform: "uppercase",
-                color: "rgba(39, 39, 39, 1)",
-                fontWeight: 500,
-                fontSize: mobile ? "28px" : "35px",
-                letterSpacing: mobile ? "2px" : "1px",
-              }}
-            >
-              {i18n.t("pages.home.box62")}
-              <span
-                style={{
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  textTransform: "capitalize",
-                }}
-              >
-                {" "}
-                {i18n.t("pages.home.box622")}{" "}
-              </span>
-            </Typography>
-            <Typography
-              variant="h1"
-              style={{
-                maxWidth: mobile ? undefined : "100%",
+            {lang === "PT" ? (
+              <>
+                <Typography
+                  style={{
+                    textTransform: "uppercase",
+                    color: "rgba(0, 0, 0, 0.6)",
+                    fontSize: mobile ? "8px" : "11px",
+                    letterSpacing: "2px",
+                  }}
+                >
+                  {i18n.t("pages.home.box61")}
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    maxWidth: mobile ? undefined : "100%",
+                    marginTop: "20px",
+                    textTransform: "uppercase",
+                    color: "rgba(39, 39, 39, 1)",
+                    fontWeight: 500,
+                    fontSize: mobile ? "28px" : "35px",
+                    letterSpacing: mobile ? "2px" : "1px",
+                  }}
+                >
+                  {i18n.t("pages.home.box62")}
+                  <span
+                    style={{
+                      fontStyle: "italic",
+                      fontWeight: 400,
+                      textTransform: "capitalize",
+                    }}
+                  >
+                    {" "}
+                    {i18n.t("pages.home.box622")}{" "}
+                  </span>
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    maxWidth: mobile ? undefined : "100%",
 
-                textTransform: "uppercase",
-                color: "rgba(39, 39, 39, 1)",
-                fontWeight: 500,
-                fontSize: mobile ? "28px" : "35px",
-                letterSpacing: mobile ? "2px" : "1px",
-              }}
-            >
-              {i18n.t("pages.home.box623")}
-            </Typography>
+                    textTransform: "uppercase",
+                    color: "rgba(39, 39, 39, 1)",
+                    fontWeight: 500,
+                    fontSize: mobile ? "28px" : "35px",
+                    letterSpacing: mobile ? "2px" : "1px",
+                  }}
+                >
+                  {i18n.t("pages.home.box623")}
+                </Typography>
+              </>
+            ) : (
+              <>
+                <Typography
+                  style={{
+                    textTransform: "uppercase",
+                    color: "rgba(0, 0, 0, 0.6)",
+                    fontSize: mobile ? "8px" : "11px",
+                    letterSpacing: "2px",
+                  }}
+                >
+                  {i18n.t("pages.home.box61")}
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    maxWidth: mobile ? undefined : "100%",
+                    marginTop: "20px",
+                    textTransform: "uppercase",
+                    color: "rgba(39, 39, 39, 1)",
+                    fontWeight: 500,
+                    fontSize: mobile ? "28px" : "35px",
+                    letterSpacing: mobile ? "2px" : "1px",
+                  }}
+                >
+                  {i18n.t("pages.home.box62")} {i18n.t("pages.home.box622")}
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    maxWidth: mobile ? undefined : "100%",
+                    fontStyle: "italic",
+                    textTransform: "uppercase",
+                    color: "rgba(39, 39, 39, 1)",
+                    fontWeight: 500,
+                    fontSize: mobile ? "28px" : "35px",
+                    letterSpacing: mobile ? "2px" : "1px",
+                  }}
+                >
+                  {i18n.t("pages.home.box623")}
+                </Typography>
+              </>
+            )}
             <Typography
               dangerouslySetInnerHTML={{
                 __html: i18n.t("pages.home.box63"),

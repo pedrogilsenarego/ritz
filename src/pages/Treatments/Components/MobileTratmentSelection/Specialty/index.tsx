@@ -46,15 +46,6 @@ export const Specialty = () => {
         >
           <div
             style={{
-              backgroundColor:
-                selected === index ? "transparent" : "rgba(181, 174, 166, 0.4)",
-              width: "100%",
-              height: "100%",
-              position: "absolute",
-            }}
-          />
-          <div
-            style={{
               width: "60%",
               marginBottom: "50%",
               display: "flex",
