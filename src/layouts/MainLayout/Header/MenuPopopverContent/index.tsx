@@ -10,12 +10,18 @@ import Close from "../../../../assets/simpleCross.png";
 import LogoMobile from "../../../../assets/ole.png";
 import Login from "../../../../assets/Log_In.svg";
 import { i18n } from "../../../../translations/i18n";
+
+import { LANG } from "../../../../constants/lang";
+import { useSelector } from "react-redux";
+import { State } from "../../../../redux/types";
+import useChangeLang from "../../../../hooks/usechangeLang";
 const MenuPopopverContent = ({ handleClose }: any) => {
   const location = useLocation();
   const navigate = useNavigate();
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-
+  const lang = useSelector<State, string>((state) => state.general.lang);
+  const { changeLanguage } = useChangeLang();
   const renderLaptop = () => {
     return (
       <div style={{ padding: "12px", height: "100vh" }}>
@@ -271,23 +277,87 @@ const MenuPopopverContent = ({ handleClose }: any) => {
               height: "calc(100% - 50px)",
             }}
           >
-            <Typography
+            <div
               style={{
-                cursor: "pointer",
-                fontSize: "14px",
-                textAlign: "center",
-                letterSpacing: "1px",
-                textTransform: "uppercase",
-                marginTop: "24px",
-                fontWeight: 500,
-              }}
-              onClick={() => {
-                navigate(ROUTE_PATHS.HOME);
-                handleClose();
+                display: "flex",
+                justifyContent: "center",
+                columnGap: "10px",
+                alignItems: "center",
               }}
             >
-              EN - ES
-            </Typography>
+              <Typography
+                style={{
+                  cursor: "pointer",
+                  fontSize: "14px",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  marginTop: "24px",
+                  fontWeight: lang === "PT" ? 700 : 500,
+                }}
+                onClick={() => {
+                  changeLanguage(LANG.pt);
+                }}
+              >
+                PT
+              </Typography>
+              <Typography
+                style={{
+                  cursor: "pointer",
+                  fontSize: "14px",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  marginTop: "24px",
+                }}
+              >
+                -
+              </Typography>
+              <Typography
+                style={{
+                  cursor: "pointer",
+                  fontSize: "14px",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  marginTop: "24px",
+                  fontWeight: lang === "EN" ? 700 : 500,
+                }}
+                onClick={() => {
+                  changeLanguage(LANG.en);
+                }}
+              >
+                EN
+              </Typography>
+              <Typography
+                style={{
+                  cursor: "pointer",
+                  fontSize: "14px",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  marginTop: "24px",
+                }}
+              >
+                -
+              </Typography>
+              <Typography
+                style={{
+                  cursor: "pointer",
+                  fontSize: "14px",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                  marginTop: "24px",
+                  fontWeight: lang === "ES" ? 700 : 500,
+                }}
+                onClick={() => {
+                  changeLanguage(LANG.es);
+                }}
+              >
+                ES
+              </Typography>
+            </div>
             <div
               style={{
                 display: "flex",
@@ -432,8 +502,8 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                 <div
                   style={{
                     height: "1px",
-                    backgroundColor: "lightGray",
-                    width: "250px",
+                    backgroundColor: "rgba(0, 0, 0, 0.2)",
+                    width: "180px",
                   }}
                 ></div>
                 <Typography

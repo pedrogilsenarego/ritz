@@ -101,7 +101,7 @@ export const content = {
           icon2: "Travel",
           icon3: "Transport,",
           icon4: "Concierge",
-          box71: "Discover Where We Take Care Of you.",
+          box71: "Discover Where We Take Care Of you",
         },
         schedulleBox: {
           box1: "Appointments",

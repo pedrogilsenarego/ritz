@@ -286,7 +286,7 @@ const Values = () => {
           >
             <div
               style={{
-                padding: "50px 30px",
+                padding: "30px 30px",
                 height: "375px",
                 backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.3.webp`,
                 backgroundSize: "cover",
@@ -315,7 +315,7 @@ const Values = () => {
                   flexDirection: "column",
                   justifyContent: "end",
                   rowGap: "20px",
-                  marginTop: "-8px",
+                  marginTop: "10px",
 
                   height: "343px",
                   padding: "30px 20px",

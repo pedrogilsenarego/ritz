@@ -71,6 +71,7 @@ const Slogan = () => {
       >
         <div
           style={{
+            zIndex: 10,
             width: "100%",
             height: "294px",
             display: "flex",
