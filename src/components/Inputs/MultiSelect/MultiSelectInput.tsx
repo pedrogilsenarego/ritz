@@ -18,13 +18,7 @@ import { styled } from "@mui/system";
 import React, { useState } from "react";
 import Tooltip from "../../Tooltip/Tooltip";
 
-import {
-  Control,
-  UseFormSetValue,
-  get,
-  useController,
-  useForm,
-} from "react-hook-form";
+import { Control, Controller, get, useForm } from "react-hook-form";
 import { Colors } from "../../../theme/theme";
 import Button from "../../Ui/Button";
 import * as Styled from "./styles";
@@ -32,12 +26,10 @@ import * as Styled from "./styles";
 interface MultiSelectProps<T> {
   label: string;
   items: T[];
-  setValue: UseFormSetValue<any>;
   name: string;
-  defaultValue?: T;
+  defaultValue?: T[];
   keyRef?: string;
   valueRef?: string;
-  multiple?: boolean;
   chips?: boolean;
   disabled?: boolean;
   disableDefaultLabel?: boolean;
@@ -67,12 +59,11 @@ const ChipItem = styled(Chip)(() => ({
 const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
   label,
   name,
-  defaultValue,
+  defaultValue = [],
   items,
   keyRef = "title",
   valueRef = "value",
   chips = false,
-  setValue,
   disabled,
   disableDefaultLabel = false,
   showInputInfo = false,
@@ -80,64 +71,10 @@ const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
   control,
 }) => {
   const labelID = `select_${name}`;
-  const {
-    formState: { errors },
-  } = useController({ name, control });
-  const error = get(errors, name, "");
-  const [values, setValues] = useState(defaultValue || []);
 
   const getItemValue = (value: number | string) => {
     const found = items.find((ele) => ele[valueRef] === value);
     return found ? found[keyRef] : value;
-  };
-
-  const handleDelete = (value: any) => {
-    if (values) {
-      const newValues = values.filter((v: any) => v !== value);
-      setValues(newValues);
-      setValue(name, newValues);
-    }
-  };
-
-  const valueIsChecked = (value: any, item: any) => {
-    if (!value) {
-      return false;
-    }
-    return value.includes(item);
-  };
-
-  const renderInputSelectedValues = (selected: any) => {
-    if (chips) {
-      return (
-        <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-          {selected.map((v: any) => (
-            <ChipItem
-              key={v}
-              label={getItemValue(v)}
-              onMouseDown={(event) => event.stopPropagation()}
-              deleteIcon={
-                <CloseIcon style={{ color: Colors.blackish[40005] }} />
-              }
-              onDelete={() => handleDelete(v)}
-            />
-          ))}
-        </Box>
-      );
-    }
-    return selected.map((v: number | string) => getItemValue(v)).join(", ");
-  };
-
-  const handleChange = (key: any) => {
-    const add = !values.includes(key);
-
-    let newValue: string[];
-    if (add) {
-      newValue = [...values, key];
-    } else {
-      newValue = values.filter((v: any) => v !== key);
-    }
-    setValues(newValue);
-    setValue(name, newValue);
   };
 
   const [open, setOpen] = useState<boolean>(false);
@@ -182,76 +119,121 @@ const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
           {label}
         </InputLabel>
       )}
-      <>
-        <Styled.Select
-          id={name}
-          fullWidth
-          readOnly
-          label={disableDefaultLabel ? undefined : label}
-          labelId={labelID}
-          variant="outlined"
-          value={values || ""}
-          onClick={handleClick}
-          renderValue={renderInputSelectedValues}
-          defaultValue={defaultValue || ""}
-          data-testid={name}
-        />
-        <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-          <MenuList>
-            {items.map((item) => (
-              <MenuItem
-                onClick={() => handleChange(item[valueRef])}
-                sx={{ width: "200px" }}
-                key={item[keyRef]}
-                value={item[keyRef]}
-              >
-                {
-                  // if chips are enabled, display also checkbox on the list
-                  chips ? (
-                    <>
-                      <Checkbox
-                        sx={{
-                          padding: "0px 5px 0px 0px",
-                          color: Colors.grey,
-                          "&.Mui-checked": {
-                            color: Colors.blackish,
-                          },
-                        }}
-                        checked={valueIsChecked(values, item.value)}
-                      />
-                      <ListItemText primary={item[keyRef]} />
-                    </>
-                  ) : (
-                    item[valueRef]
-                  )
-                }
-              </MenuItem>
-            ))}
-          </MenuList>
-          <Divider />
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "10px",
-            }}
-          >
-            <Button onClick={() => setOpen(false)}>Close</Button>
-          </div>
-        </Menu>
-      </>
+      <Controller
+        name={name}
+        control={control}
+        defaultValue={defaultValue}
+        render={({ field: { onChange, value }, fieldState: { error } }) => {
+          const handleDelete = (valueToDelete: any) => {
+            const newValues = value.filter((v: any) => v !== valueToDelete);
+            onChange(newValues);
+          };
 
-      {error && (
-        <Box
-          ml="5px"
-          mt="5px"
-          fontWeight="500"
-          fontSize="14px"
-          color="error.main"
-        >
-          {error}
-        </Box>
-      )}
+          const valueIsChecked = (item: any) => {
+            return value.includes(item[valueRef]);
+          };
+
+          const renderInputSelectedValues = (selected: any) => {
+            if (chips) {
+              return (
+                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                  {selected.map((v: any) => (
+                    <ChipItem
+                      key={v}
+                      label={getItemValue(v)}
+                      onMouseDown={(event) => event.stopPropagation()}
+                      deleteIcon={
+                        <CloseIcon style={{ color: Colors.blackish[40005] }} />
+                      }
+                      onDelete={() => handleDelete(v)}
+                    />
+                  ))}
+                </Box>
+              );
+            }
+            return selected
+              .map((v: number | string) => getItemValue(v))
+              .join(", ");
+          };
+
+          const handleChange = (key: any) => {
+            const add = !value.includes(key);
+            const newValue = add
+              ? [...value, key]
+              : value.filter((v: any) => v !== key);
+            onChange(newValue);
+          };
+
+          return (
+            <>
+              <Styled.Select
+                id={name}
+                fullWidth
+                readOnly
+                label={disableDefaultLabel ? undefined : label}
+                labelId={labelID}
+                variant="outlined"
+                value={value || ""}
+                onClick={handleClick}
+                renderValue={renderInputSelectedValues}
+                data-testid={name}
+              />
+              <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+                <MenuList>
+                  {items.map((item) => (
+                    <MenuItem
+                      onClick={() => handleChange(item[valueRef])}
+                      sx={{ width: "200px" }}
+                      key={item[keyRef]}
+                      value={item[keyRef]}
+                    >
+                      {chips ? (
+                        <>
+                          <Checkbox
+                            sx={{
+                              padding: "0px 5px 0px 0px",
+                              color: Colors.grey,
+                              "&.Mui-checked": {
+                                color: Colors.blackish,
+                              },
+                            }}
+                            checked={valueIsChecked(item)}
+                          />
+                          <ListItemText primary={item[keyRef]} />
+                        </>
+                      ) : (
+                        item[valueRef]
+                      )}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+                <Divider />
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "10px",
+                  }}
+                >
+                  <Button onClick={() => setOpen(false)}>Close</Button>
+                </div>
+              </Menu>
+
+              {error && (
+                <Box
+                  ml="5px"
+                  mt="5px"
+                  fontWeight="500"
+                  fontSize="14px"
+                  color="error.main"
+                >
+                  {error.message}
+                </Box>
+              )}
+            </>
+          );
+        }}
+      />
     </FormControl>
   );
 };

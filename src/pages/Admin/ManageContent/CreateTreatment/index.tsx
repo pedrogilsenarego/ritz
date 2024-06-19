@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import ControlledFormInputEditor from "../../../../components/Inputs/ControlledInputEditor";
 import ControlledSelect from "../../../../components/Inputs/ControlledSelect";
 import Loader from "../../../../components/Loader";
@@ -11,11 +11,9 @@ import ButtonBlue from "../../../../components/Ui/ButtonBlue";
 import Internet from "../../../../assets/internet.svg";
 import Eye from "../../../../assets/eye.svg";
 import FileUploaderAdmin from "../../../../components/Inputs/FileUploaderAdmin";
-import {
-  MultiControlInput,
-  MultiControlInputLabel,
-} from "../../../../components/Inputs/MultiControlledInput";
+
 import { ControlledListDoubleInput } from "../../../../components/Inputs/ControlledListDoubleInput";
+import MultiSelectInput from "../../../../components/Inputs/MultiSelect/MultiSelectInput";
 
 interface Props {
   edit?: boolean;
@@ -31,6 +29,7 @@ const CreateTreatment = ({ edit = false }: Props) => {
     setValue,
     setError,
     watch,
+    listConcerns,
     isCreatingProduct,
     isEditingProduct,
     isLoadingProduct,
@@ -113,14 +112,43 @@ const CreateTreatment = ({ edit = false }: Props) => {
                         inputPlaceholder="Escreva Subtítulo"
                       />
                     </Grid>
-                    <Grid item xs={12}>
-                      <ControlledFormInput
-                        label="specialty"
+                    <Grid item xs={4}>
+                      <Typography>Especialidade</Typography>
+                      <ControlledSelect
                         control={control}
                         name="specialty"
-                        inputPlaceholder="Escreva Especialidade"
+                        options={[
+                          { value: "1", label: "Estética e cirurgia" },
+                          { value: "2", label: "Dentária" },
+                          { value: "3", label: "Pós Cirurgia e Bem estar" },
+                          { value: "4", label: "Saude Preventiva" },
+                        ]}
                       />
                     </Grid>
+                    <Grid item xs={4}>
+                      <MultiSelectInput
+                        chips
+                        items={[
+                          { title: "Face", value: "1" },
+                          { title: "Smile", value: "2" },
+                          { title: "Body", value: "3" },
+                          { title: "Health 360", value: "4" },
+                        ]}
+                        control={control}
+                        label="Partes corpo"
+                        name="bodyPart"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <MultiSelectInput
+                        chips
+                        items={listConcerns}
+                        control={control}
+                        label="Preocupações"
+                        name="concerns"
+                      />
+                    </Grid>
+
                     <Grid item xs={4}>
                       <ControlledFormInput
                         label="Tempo Procedimento PT"

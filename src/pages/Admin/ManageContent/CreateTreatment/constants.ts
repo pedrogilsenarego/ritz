@@ -8,6 +8,8 @@ export const defaultValues = {
   subtitle_es: "",
 
   specialty: "",
+  bodyPart: [],
+  concerns: [],
 
   tprocediment_pt: "",
   tprocediment_en: "",
