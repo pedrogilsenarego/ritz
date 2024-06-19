@@ -65,19 +65,51 @@ const CreateTreatment = ({ edit = false }: Props) => {
               <Grid container spacing={"80px"}>
                 <Grid item xs={12}>
                   <Grid container spacing={2}>
-                    <Grid item xs={12}>
+                    <Grid item xs={4}>
                       <ControlledFormInput
-                        label="Título"
+                        label="Título PT"
                         control={control}
-                        name="title"
+                        name="title_pt"
                         inputPlaceholder="Escreva o Título"
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={4}>
                       <ControlledFormInput
-                        label="SubTítulo"
+                        label="Título EN"
                         control={control}
-                        name="subtitle"
+                        name="title_en"
+                        inputPlaceholder="Escreva o Título"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="Título ES"
+                        control={control}
+                        name="title_es"
+                        inputPlaceholder="Escreva o Título"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="SubTítulo PT"
+                        control={control}
+                        name="subtitle_pt"
+                        inputPlaceholder="Escreva Subtítulo"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="SubTítulo EN"
+                        control={control}
+                        name="subtitle_en"
+                        inputPlaceholder="Escreva Subtítulo"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="SubTítulo ES"
+                        control={control}
+                        name="subtitle_es"
                         inputPlaceholder="Escreva Subtítulo"
                       />
                     </Grid>
@@ -89,35 +121,99 @@ const CreateTreatment = ({ edit = false }: Props) => {
                         inputPlaceholder="Escreva Especialidade"
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={4}>
                       <ControlledFormInput
-                        label="Tempo Procedimento"
+                        label="Tempo Procedimento PT"
                         control={control}
-                        name="tprocediment"
+                        name="tprocediment_pt"
                         inputPlaceholder="T procedimento"
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={4}>
                       <ControlledFormInput
-                        label="Tempo Recuperação"
+                        label="Tempo Procedimento EN"
                         control={control}
-                        name="trecuperation"
+                        name="tprocediment_en"
+                        inputPlaceholder="T procedimento"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="Tempo Procedimento ES"
+                        control={control}
+                        name="tprocediment_es"
+                        inputPlaceholder="T procedimento"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="Tempo Recuperação PT"
+                        control={control}
+                        name="trecuperation_pt"
                         inputPlaceholder="T recuperação"
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={4}>
                       <ControlledFormInput
-                        label="Anestesia"
+                        label="Tempo Recuperação EN"
                         control={control}
-                        name="anesthetic"
+                        name="trecuperation_en"
+                        inputPlaceholder="T recuperação"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="Tempo Recuperação ES"
+                        control={control}
+                        name="trecuperation_es"
+                        inputPlaceholder="T recuperação"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="Anestesia PT"
+                        control={control}
+                        name="anesthetic_pt"
                         inputPlaceholder="anestesia"
                       />
                     </Grid>
-                    <Grid item xs={12}>
+                    <Grid item xs={4}>
                       <ControlledFormInput
-                        label="Results"
+                        label="Anestesia EN"
                         control={control}
-                        name="results"
+                        name="anesthetic_en"
+                        inputPlaceholder="anestesia"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="Anestesia ES"
+                        control={control}
+                        name="anesthetic_es"
+                        inputPlaceholder="anestesia"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="Results PT"
+                        control={control}
+                        name="results_pt"
+                        inputPlaceholder="Resultados"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="Results EN"
+                        control={control}
+                        name="results_en"
+                        inputPlaceholder="Resultados"
+                      />
+                    </Grid>
+                    <Grid item xs={4}>
+                      <ControlledFormInput
+                        label="Results ES"
+                        control={control}
+                        name="results_es"
                         inputPlaceholder="Resultados"
                       />
                     </Grid>
@@ -176,11 +272,33 @@ const CreateTreatment = ({ edit = false }: Props) => {
                         </div>
                       </div>
                     </Grid>
-                    <Grid item xs={12} style={{ marginTop: "40px" }}>
+                    <Grid item xs={4} style={{ marginTop: "40px" }}>
                       <ControlledFormInputEditor
                         control={control}
-                        name="mainText"
-                        label="Texto principal"
+                        name="mainText_pt"
+                        label="Texto  PT"
+                        inputPlaceholder={i18n.t(
+                          "pages.admin.createProducts.form.maintextPT",
+                          "Main text PT"
+                        )}
+                      />
+                    </Grid>
+                    <Grid item xs={4} style={{ marginTop: "40px" }}>
+                      <ControlledFormInputEditor
+                        control={control}
+                        name="mainText_en"
+                        label="Texto principal EN"
+                        inputPlaceholder={i18n.t(
+                          "pages.admin.createProducts.form.maintextPT",
+                          "Main text PT"
+                        )}
+                      />
+                    </Grid>
+                    <Grid item xs={4} style={{ marginTop: "40px" }}>
+                      <ControlledFormInputEditor
+                        control={control}
+                        name="mainText_es"
+                        label="Texto principal ES"
                         inputPlaceholder={i18n.t(
                           "pages.admin.createProducts.form.maintextPT",
                           "Main text PT"
