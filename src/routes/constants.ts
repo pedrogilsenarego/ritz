@@ -17,6 +17,7 @@ export const ROUTE_PATHS = {
 
   ADMIN_MANAGE_CONTENT_BLOG: "/admin/manage-content/blog",
   ADMIN_MANAGE_CONTENT_BLOG_CREATE_NEW: "/admin/manage-content/blog/create-new",
+  ADMIN_MANAGE_CONTENT_TREATMENTS: "/admin/manage-content/treatment",
   ADMIN_MANAGE_CONTENT_TREATMENT_CREATE_NEW:
     "/admin/manage-content/treatment/create-new",
   USER_HOME: "/user",

@@ -4,4 +4,5 @@ export const queryKeys = {
   bodyParts: "body-parts",
   specialty: "specialty",
   concerns: "concerns",
+  treatments: "treatments",
 };

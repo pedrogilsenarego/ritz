@@ -35,7 +35,6 @@ const Button = ({ icon, label, paths, ...props }: Props) => {
         onMouseLeave={() => setHover(false)}
         display="flex"
         columnGap={1}
-        alignItems="center"
         padding="16px 20px"
         style={{
           backgroundColor:
@@ -85,33 +84,52 @@ const Button = ({ icon, label, paths, ...props }: Props) => {
         <div
           style={{
             display: "flex",
+            padding: "0px 40px",
             flexDirection: "column",
             rowGap: "10px",
-            alignItems: "end",
           }}
         >
           {paths.map((pathY, index) => {
             return (
-              <p
-                key={index}
-                onClick={() => navigate(pathY.path)}
+              <div
                 style={{
-                  cursor: "pointer",
-                  fontSize: "12px",
-                  lineHeight: "14px",
-                  textShadow:
-                    hover || location.pathname === pathY.path
-                      ? "0px 0px 16px white"
-                      : "none",
-
-                  color:
-                    hover || location.pathname === pathY.path
-                      ? "white"
-                      : "rgba(255, 255, 255, 0.56)",
+                  display: "flex",
+                  columnGap: "10px",
+                  alignItems: "center",
                 }}
               >
-                {pathY.label}
-              </p>
+                <div
+                  style={{
+                    width: "5px",
+                    height: "5px",
+                    borderRadius: "2px",
+                    backgroundColor:
+                      hover || location.pathname === pathY.path
+                        ? "white"
+                        : "rgba(255, 255, 255, 0.56)",
+                  }}
+                />
+                <p
+                  key={index}
+                  onClick={() => navigate(pathY.path)}
+                  style={{
+                    cursor: "pointer",
+                    fontSize: "12px",
+                    lineHeight: "14px",
+                    textShadow:
+                      hover || location.pathname === pathY.path
+                        ? "0px 0px 16px white"
+                        : "none",
+
+                    color:
+                      hover || location.pathname === pathY.path
+                        ? "white"
+                        : "rgba(255, 255, 255, 0.56)",
+                  }}
+                >
+                  {pathY.label}
+                </p>
+              </div>
             );
           })}
         </div>

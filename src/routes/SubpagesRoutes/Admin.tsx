@@ -21,6 +21,14 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENTS,
+    component: (
+      <AdminLayout>
+        <RoutesI.AdminManagePIT />
+      </AdminLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG,
     component: (
       <AdminLayout>

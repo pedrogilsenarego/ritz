@@ -20,12 +20,11 @@ type Props = {
 
 const useCreateProduct = ({ edit = false }: Props) => {
   const navigate = useNavigate();
-  const createNewTreatment = useCreateNewTreatment();
+  const { createNewTreatment } = useCreateNewTreatment();
   const { id } = useParams<Record<string, string | undefined>>();
   const { isLoading, data } = useQuery<any, any>([queryKeys.bodyParts], () =>
     handleFetchConcerns()
   );
-  console.log(data);
 
   const listConcerns = data
     ? data?.results?.map((concern: any) => ({

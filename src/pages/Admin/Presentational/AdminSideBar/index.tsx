@@ -71,12 +71,12 @@ const AdminSideBar = () => {
             icon={<img src={Manage} style={{ height: "24px" }} alt="" />}
             paths={[
               {
-                path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG,
-                label: "Manage Blog",
+                path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENTS,
+                label: "PIT",
               },
               {
                 path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG,
-                label: "Manage PIT",
+                label: "BLOG",
               },
             ]}
           />

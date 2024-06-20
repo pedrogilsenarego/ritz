@@ -23,13 +23,16 @@ export const RoutesI = {
   ),
 
   AdminManageContent: lazyWithRetryAndLoader(
-    () => import("../pages/Admin/ManageContent")
+    () => import("../pages/Admin/ManageBlog")
+  ),
+  AdminManagePIT: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManagePIT")
   ),
   AdminManageContentCreate: lazyWithRetryAndLoader(
-    () => import("../pages/Admin/ManageContent/CreateBlog")
+    () => import("../pages/Admin/ManageBlog/CreateBlog")
   ),
   AdminManageContentNewTreatment: lazyWithRetryAndLoader(
-    () => import("../pages/Admin/ManageContent/CreateTreatment")
+    () => import("../pages/Admin/ManagePIT/CreateTreatment")
   ),
   AdminHome: lazyWithRetryAndLoader(() => import("../pages/Admin/Home")),
   UserHome: lazyWithRetryAndLoader(() => import("../pages/User/Home")),
