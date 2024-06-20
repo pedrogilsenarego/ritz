@@ -24,7 +24,7 @@ const ManageContent = () => {
           label="Novo Tratamento"
           icon={Edit}
           onClick={() =>
-            navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_NEW_TREATMENT)
+            navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENT_CREATE_NEW)
           }
         />
       </div>
@@ -130,7 +130,9 @@ const ManageContent = () => {
           <ButtonBlue
             label="NOVA PÁGINA"
             icon={Edit}
-            onClick={() => navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_CREATE)}
+            onClick={() =>
+              navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG_CREATE_NEW)
+            }
           />
 
           <div

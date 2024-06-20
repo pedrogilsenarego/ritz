@@ -21,7 +21,7 @@ export const adminPages = [
     ),
   },
   {
-    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT,
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG,
     component: (
       <AdminLayout>
         <RoutesI.AdminManageContent />
@@ -29,7 +29,7 @@ export const adminPages = [
     ),
   },
   {
-    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_CREATE,
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG_CREATE_NEW,
     component: (
       <AdminLayout>
         <RoutesI.AdminManageContentCreate />
@@ -37,7 +37,7 @@ export const adminPages = [
     ),
   },
   {
-    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_NEW_TREATMENT,
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENT_CREATE_NEW,
     component: (
       <AdminLayout>
         <RoutesI.AdminManageContentNewTreatment />

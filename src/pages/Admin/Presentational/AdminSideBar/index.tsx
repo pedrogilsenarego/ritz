@@ -61,42 +61,55 @@ const AdminSideBar = () => {
           <Button
             label={"Performance"}
             icon={<img src={Status} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_DASHBOARD}
+            paths={[
+              { path: ROUTE_PATHS.ADMIN_MANAGE_DASHBOARD, label: "Dashboard" },
+            ]}
           />
 
           <Button
             label={i18n.t("Gestão Conteúdos")}
             icon={<img src={Manage} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_CONTENT}
+            paths={[
+              {
+                path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG,
+                label: "Manage Blog",
+              },
+              {
+                path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG,
+                label: "Manage PIT",
+              },
+            ]}
           />
 
           <Button
             label={i18n.t("Utilizadores")}
             icon={<img src={Settings} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_USERS}
+            paths={[{ path: ROUTE_PATHS.ADMIN_MANAGE_USERS, label: "Users" }]}
           />
 
           <Button
             label={i18n.t("Clientes")}
             icon={<img src={UserIcon} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.ADMIN_MANAGE_CLIENTS}
+            paths={[
+              { path: ROUTE_PATHS.ADMIN_MANAGE_CLIENTS, label: "Clients" },
+            ]}
           />
 
           <Button
             label={i18n.t("Agenda")}
             icon={<img src={Callendar} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.HOME}
+            paths={[{ path: ROUTE_PATHS.HOME, label: "Agenda" }]}
           />
           <Button
             label={i18n.t("EXPERT ADVICE")}
             icon={<img src={Scope} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.HOME}
+            paths={[{ path: ROUTE_PATHS.HOME, label: "Expert Advice" }]}
           />
 
           <Button
             label={i18n.t("Live-Chat")}
             icon={<img src={Chat} style={{ height: "24px" }} alt="" />}
-            path={ROUTE_PATHS.HOME}
+            paths={[{ path: ROUTE_PATHS.HOME, label: "Live-chat" }]}
           />
         </Box>
       </Box>
