@@ -19,7 +19,8 @@ const GeneralPage = ({ children, title, subTitle }: Props) => {
         height: "100%",
 
         borderRadius: "30px",
-        boxShadow: "0px 4px 4px 0px #0000001A",
+        boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+
         padding: "50px 60px 50px 60px",
       }}
     >

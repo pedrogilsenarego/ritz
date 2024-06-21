@@ -35,6 +35,7 @@ const User = () => {
               color: "rgba(255, 255, 255, 0.32)",
               letterSpacing: "0.5px",
               fontWeight: 500,
+              whiteSpace: "nowrap",
               textShadow: "0px 0px 16px 0px rgba(255, 255, 255, 1)",
             }}
           >

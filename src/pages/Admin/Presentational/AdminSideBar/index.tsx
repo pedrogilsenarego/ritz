@@ -25,12 +25,18 @@ const AdminSideBar = () => {
       style={{
         justifyContent: "space-between",
         height: "100vh",
-        backgroundColor: "rgba(15, 9, 12, 0.7)",
-        borderRadius: "0px 20px 20px 0px",
-        padding: "40px 30px 40px 30px",
+        background: "rgba(15, 9, 12, 0.85)",
+
+        borderRadius: "0px 10px 10px 0px",
+        padding: "40px 20px 40px 20px",
+        transition: "all 0.5s ease-in-out",
       }}
     >
-      <Box>
+      <Box
+        style={{
+          transition: "all 0.5s ease-in-out",
+        }}
+      >
         <Box
           style={{ display: "flex", justifyContent: "end", cursor: "pointer" }}
         >
@@ -44,7 +50,12 @@ const AdminSideBar = () => {
         <User />
 
         <Box
-          style={{ display: "flex", flexDirection: "column", rowGap: "7px" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            rowGap: "7px",
+            transition: "all 0.5s ease-in-out",
+          }}
         >
           <p
             style={{

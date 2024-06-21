@@ -9,7 +9,8 @@ const AdminLayout = (props: any) => {
       style={{
         display: "flex",
         background:
-          "linear-gradient(180deg, #FFFAF9 0%, #E6DFDD 51%, #E3E8EB 100%)",
+          "linear-gradient(180deg, rgba(220, 209, 200, 0.3) 0%, rgba(104, 60, 29, 0.3) 100%)",
+
         position: "relative",
       }}
     >
