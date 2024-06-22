@@ -9,7 +9,7 @@ import Chat from "../../../../assets/device-message.svg";
 import EhtiqLogo from "../../../../assets/EHTIQ BRANDS-09.svg";
 
 import { ROUTE_PATHS } from "../../../../routes/constants";
-import Close from "../../../../assets/Frame 407.svg";
+import Close from "../../../../assets/Power.png";
 import { i18n } from "../../../../translations/i18n";
 import Button from "./Button";
 import User from "./User";
@@ -23,7 +23,7 @@ const AdminSideBar = () => {
       flexDirection="column"
       rowGap={2}
       style={{
-        justifyContent: "space-between",
+        justifyContent: "center",
         height: "100vh",
         background: "rgba(15, 9, 12, 0.85)",
 
@@ -35,31 +35,24 @@ const AdminSideBar = () => {
       <Box
         style={{
           transition: "all 0.5s ease-in-out",
+          display: "flex",
+          flexDirection: "column",
+          rowGap: "40px",
         }}
       >
-        <Box
-          style={{ display: "flex", justifyContent: "end", cursor: "pointer" }}
-        >
-          <img
-            onClick={() => navigate(ROUTE_PATHS.HOME)}
-            src={Close}
-            style={{ height: "50px", cursor: "pointer" }}
-            alt=""
-          />
-        </Box>
         <User />
 
         <Box
           style={{
             display: "flex",
             flexDirection: "column",
-            rowGap: "7px",
+
             transition: "all 0.5s ease-in-out",
           }}
         >
           <p
             style={{
-              marginTop: "30px",
+              marginBottom: "10px",
               marginLeft: "20px",
               textTransform: "capitalize",
               fontSize: "11px",
@@ -123,8 +116,28 @@ const AdminSideBar = () => {
             paths={[{ path: ROUTE_PATHS.HOME, label: "Live-chat" }]}
           />
         </Box>
+        <Box
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <img src={EhtiqLogo} style={{ height: "89px" }} alt="" />
+          <Box
+            onClick={() => navigate(ROUTE_PATHS.HOME)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              cursor: "pointer",
+              columnGap: "6px",
+            }}
+          >
+            <img src={Close} style={{ height: "24px" }} alt="" />
+            <p style={{ color: "#C3C3C3", fontSize: "12px" }}>Logout</p>
+          </Box>
+        </Box>
       </Box>
-      <img src={EhtiqLogo} style={{ height: "89px" }} alt="" />
     </Box>
   );
 };

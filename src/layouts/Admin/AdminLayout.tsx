@@ -24,28 +24,34 @@ const AdminLayout = (props: any) => {
             height: "100%",
           }}
         >
-          <img
-            src={Logo}
-            alt=""
-            style={{
-              width: "503px",
-              position: "absolute",
-              left: "50%",
-              top: "25%",
-              transform: "translateX(-50%)",
-            }}
-          />
-          <img
-            src={Logo2}
-            alt=""
-            style={{
-              width: "457px",
-              position: "absolute",
-              left: "50%",
-              top: "45.5%",
-              transform: "translateX(-200px)",
-            }}
-          />
+          {props.logo && (
+            <>
+              {" "}
+              <img
+                src={Logo}
+                alt=""
+                style={{
+                  width: "503px",
+                  position: "absolute",
+                  left: "50%",
+                  top: "25%",
+                  transform: "translateX(-50%)",
+                }}
+              />
+              <img
+                src={Logo2}
+                alt=""
+                style={{
+                  width: "457px",
+                  position: "absolute",
+                  left: "50%",
+                  top: "45.5%",
+                  transform: "translateX(-200px)",
+                }}
+              />
+            </>
+          )}
+
           <p
             style={{
               position: "absolute",
@@ -72,7 +78,7 @@ const AdminLayout = (props: any) => {
             height: "100%",
 
             width: "100%",
-            padding: "50px 60px 60px 0px",
+            padding: "27px 60px 60px 0px",
           }}
         >
           {props.children}

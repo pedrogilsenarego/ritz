@@ -7,7 +7,7 @@ export const adminPages = [
   {
     path: ROUTE_PATHS.ADMIN_HOME,
     component: (
-      <AdminLayout>
+      <AdminLayout logo>
         <RoutesI.AdminHome />
       </AdminLayout>
     ),

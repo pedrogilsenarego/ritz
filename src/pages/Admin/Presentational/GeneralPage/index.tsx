@@ -14,14 +14,14 @@ const GeneralPage = ({ children, title, subTitle }: Props) => {
   return (
     <div
       style={{
-        backgroundColor: "#EEECEC",
+        backgroundColor: "rgba(255, 255, 255, 0.25)",
         width: "100%",
         height: "100%",
 
-        borderRadius: "30px",
+        borderRadius: "5px",
         boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
 
-        padding: "50px 60px 50px 60px",
+        padding: "50px 35px 43px 35px",
       }}
     >
       <div style={{ position: "relative" }}>
@@ -60,7 +60,7 @@ const GeneralPage = ({ children, title, subTitle }: Props) => {
         <div
           style={{
             height: "2px",
-            width: "95%",
+            width: "calc(100% - 30px)",
             backgroundColor: "#00000080",
             marginTop: "20px",
           }}
@@ -68,10 +68,9 @@ const GeneralPage = ({ children, title, subTitle }: Props) => {
       </div>
       <div
         style={{
-          paddingLeft: "60px",
-          paddingRight: "80px",
-          paddingTop: "100px",
-          height: "85%",
+          paddingTop: "43px",
+          height: "calc(100% - 70px)",
+          paddingBottom: "43px",
         }}
         className="custom-scrollbar"
       >
