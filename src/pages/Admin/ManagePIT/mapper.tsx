@@ -1,15 +1,12 @@
 import { Icons } from "../../../components/Icons";
 import { i18n } from "../../../translations/i18n";
-import { Product, ProductMapped } from "../../../types/product";
 
-const mapProducts = (product: Product, index: number): ProductMapped => {
+const mapProducts = (product: any, index: number): any => {
   return {
     id: index,
-    model: product.model,
-    movement: product.movement,
-    thumbnail: product.thumbnail,
-    price: product.price || 0,
-    sku: product.sku,
+    name: product.title_pt,
+    speciality: product.speciality,
+    createdDate: "",
     actions: [
       {
         buttonType: "icon",
@@ -24,9 +21,9 @@ const mapProducts = (product: Product, index: number): ProductMapped => {
       },
       {
         buttonType: "icon",
-        event: "delete",
+        event: "block",
         icon: (
-          <Icons.Delete
+          <Icons.Block
             size="20px"
             style={{ cursor: "pointer", marginBottom: "-4px" }}
           />
@@ -57,8 +54,8 @@ const mapProducts = (product: Product, index: number): ProductMapped => {
   };
 };
 
-export const mapProductsData = (productsData: Product[]) => {
-  return productsData.map((product: Product, index: number) =>
+export const mapProductsData = (productsData: any[]) => {
+  return productsData?.map((product: any, index: number) =>
     mapProducts(product, index)
   );
 };

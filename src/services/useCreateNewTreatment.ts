@@ -29,6 +29,7 @@ export const useCreateNewTreatment = () => {
       }
 
       console.log("Response body:", body); // Log response body
+      return body;
     } catch (error) {
       console.error("An error occurred:", error);
     }
