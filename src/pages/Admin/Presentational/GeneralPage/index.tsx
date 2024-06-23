@@ -3,6 +3,7 @@ import Close from "../../../../assets/close.svg";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import ButtonBlue from "../../../../components/Ui/ButtonBlue";
+import { CSSProperties } from "react";
 
 type Props = {
   children: React.ReactNode;
@@ -10,8 +11,10 @@ type Props = {
   subTitle: string;
   topButtons?: {
     label: string;
-    onClick: () => void;
+    onClick?: () => void;
     icon?: string | undefined;
+    type?: "button" | "submit" | "reset" | undefined;
+    styles?: CSSProperties;
   }[];
 };
 
@@ -72,13 +75,15 @@ const GeneralPage = ({ children, title, subTitle, topButtons }: Props) => {
             {title}
           </p>
           {topButtons && (
-            <div>
+            <div style={{ display: "flex", columnGap: "10px" }}>
               {topButtons.map((button) => {
                 return (
                   <ButtonBlue
+                    type={button.type}
                     label={button.label}
                     onClick={button.onClick}
                     icon={button.icon}
+                    styles={button.styles}
                   />
                 );
               })}

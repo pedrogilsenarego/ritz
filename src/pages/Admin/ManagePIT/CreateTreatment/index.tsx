@@ -43,7 +43,14 @@ const CreateTreatment = ({ edit = false }: Props) => {
       onSubmit={handleSubmit(onSubmit)}
       style={{ height: "100%" }}
     >
-      <GeneralPage title="Novo tratamento" subTitle="Tratamentos">
+      <GeneralPage
+        title="PIT - Novo tratamento"
+        subTitle="Tratamentos"
+        topButtons={[
+          { label: "Preview", styles: { backgroundColor: "white" } },
+          { label: "Publicar", icon: Internet, type: "submit" },
+        ]}
+      >
         {isCreatingProduct || isEditingProduct || (isLoadingProduct && edit) ? (
           <Loader
             customMessage={
@@ -336,28 +343,6 @@ const CreateTreatment = ({ edit = false }: Props) => {
                   </Grid>
                 </Grid>
               </Grid>
-            </Box>
-            <Box
-              style={{
-                display: "flex",
-                justifyContent: "end",
-                columnGap: "30px",
-              }}
-            >
-              <div>
-                <ButtonBlue
-                  label="Pre-visualizar"
-                  icon={Eye}
-                  styles={{ backgroundColor: "white" }}
-                />
-              </div>
-              <div>
-                <ButtonBlue
-                  type="submit"
-                  label="Publicar"
-                  icon={Internet}
-                ></ButtonBlue>
-              </div>
             </Box>
           </Box>
         )}
