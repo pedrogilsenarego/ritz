@@ -42,7 +42,7 @@ const Complex = () => {
         <Carousel
           navButton={mobile ? false : false}
           width={"100%"}
-          height={mobile ? "auto" : `778px`}
+          height={mobile ? "705px" : `778px`}
           pauseDuration={3000}
           slideDuration={1000}
           direction={1}
@@ -51,11 +51,12 @@ const Complex = () => {
           tweenAnime="ease"
           dotsActivedColor="rgba(120, 100, 78, 1)"
           dotsColor="rgba(217, 217, 217, 1)"
+          dotYOffset={10}
           dragThreshold={mobile ? 10 : undefined}
           onItemClick={(item) => console.log(item)}
         >
           {childrenData.map((item, index) => (
-            <>
+            <div>
               <div
                 draggable={false}
                 key={item.link}
@@ -115,50 +116,59 @@ const Complex = () => {
                 )}
               </div>
               {mobile && (
-                <div
-                  style={{
-                    backgroundColor: mobile
-                      ? "rgba(155, 129, 109, 0.4)"
-                      : "rgba(248, 247, 247, 0.6)",
-                    display: "flex",
-                    position: mobile ? "unset" : "absolute",
-                    width: "100%",
-                    right: 0,
-                    bottom: mobile ? "-150px" : "50px",
-                    padding: "30px",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    rowGap: "20px",
-                  }}
-                >
-                  <Typography
+                <>
+                  <div
                     style={{
-                      fontSize: mobile ? "14px" : "13px",
-                      textTransform: "uppercase",
-                      letterSpacing: "1px",
-                      fontWeight: 500,
+                      backgroundColor: "rgba(155, 129, 109, 0.4)",
 
-                      textAlign: "center",
+                      display: "flex",
+                      position: "unset",
+                      height: "149px",
+                      width: "100%",
+                      right: 0,
+                      bottom: "-150px",
+                      padding: "30px",
+                      flexDirection: "column",
+                      justifyContent: "start",
+                      alignItems: "center",
+                      rowGap: "20px",
                     }}
                   >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    variant="h1"
-                    style={{
-                      fontSize: mobile ? "15px" : "16px",
+                    <Typography
+                      style={{
+                        fontSize: mobile ? "14px" : "13px",
+                        textTransform: "uppercase",
+                        letterSpacing: "1px",
+                        fontWeight: 500,
 
-                      letterSpacing: mobile ? "1px" : "2px",
-                      lineHeight: mobile ? "20px" : "21px",
-                      textAlign: "center",
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                    <Typography
+                      variant="h1"
+                      style={{
+                        fontSize: mobile ? "15px" : "16px",
+
+                        letterSpacing: mobile ? "1px" : "2px",
+                        lineHeight: mobile ? "20px" : "21px",
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.text}
+                    </Typography>
+                  </div>
+                  <div
+                    style={{
+                      height: "30px",
+                      width: "100%",
+                      backgroundColor: "transparent",
                     }}
-                  >
-                    {item.text}
-                  </Typography>
-                </div>
+                  />
+                </>
               )}
-            </>
+            </div>
           ))}
         </Carousel>
       </div>

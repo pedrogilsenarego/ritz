@@ -11,6 +11,7 @@ import { State } from "../../../../../redux/types";
 export const Specialty = () => {
   const [selected, setSelected] = useState(0);
   const lang = useSelector<State, string>((state) => state.general.lang);
+  console.log(selected);
   const ImageElement = ({
     title,
     index,
@@ -38,7 +39,7 @@ export const Specialty = () => {
             alignItems: "end",
             justifyContent: "center",
             width: "100%",
-            aspectRatio: 0.75,
+            height: "263px",
             backgroundImage: `url(${image})`,
             backgroundSize: "cover",
             backgroundPosition: "center center",
@@ -82,8 +83,8 @@ export const Specialty = () => {
     );
   };
   const { isLoading, data } = useQuery<any, any>(
-    [queryKeys.specialty, selected + 1],
-    () => handleFetchSpecialty(selected + 1)
+    [queryKeys.specialty, selected],
+    () => handleFetchSpecialty(selected)
   );
   return (
     <div>
@@ -100,6 +101,7 @@ export const Specialty = () => {
           tweenAnime="ease"
           dotsActivedColor="rgba(120, 100, 78, 1)"
           dotsColor="rgba(217, 217, 217, 1)"
+          dotYOffset={10}
           dragThreshold={10}
           onChange={(index) => setSelected(index)}
           onItemClick={(item) => console.log(item)}

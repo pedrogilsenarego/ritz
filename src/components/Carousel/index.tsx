@@ -32,6 +32,7 @@ export interface ICarouselProps {
   dotsColor?: string;
   dotsActivedColor?: string;
   dotsLocation?: "top" | "bottom" | "left" | "right";
+  dotYOffset?: number;
   draggable?: boolean;
   dragThreshold?: number;
   orientation?: "horizontal" | "vertical";
@@ -57,6 +58,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     dotsColor = "#ffffff",
     dotsActivedColor = "#1677ff",
     dotsLocation = "bottom",
+    dotYOffset,
     draggable = true,
     dragThreshold = 150,
     orientation = "horizontal",
@@ -460,7 +462,9 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
               className={isDotActive(index) ? "active" : ""}
               onClick={() => handleDotClick(index)}
               style={{
-                //transform: "translateY(10px)",
+                transform: dotYOffset
+                  ? `translateY(${dotYOffset}px)`
+                  : undefined,
                 backgroundColor: isDotActive(index)
                   ? dotsActivedColor
                   : dotsColor,

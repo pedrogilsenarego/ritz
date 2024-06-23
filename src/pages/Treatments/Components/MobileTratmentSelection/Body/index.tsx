@@ -16,8 +16,8 @@ export const Body = () => {
   const lang = useSelector<State, string>((state) => state.general.lang);
   const [selected, setSelected] = useState(0);
   const { isLoading, data } = useQuery<any, any>(
-    [queryKeys.bodyParts, selected + 1],
-    () => handleFetchBodyParts(selected + 1)
+    [queryKeys.bodyParts, selected],
+    () => handleFetchBodyParts(selected)
   );
   const ButtonLogo = ({ icon, title }: { icon: string; title: string }) => {
     return (
@@ -66,17 +66,24 @@ export const Body = () => {
     );
   };
   return (
-    <div>
+    <div
+      style={{
+        width: "100%",
+        marginTop: "35px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
       <div
         style={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          marginTop: "35px",
 
-          width: "100%",
+          width: "80%",
           height: "235px",
-          objectFit: "cover",
+          objectFit: "contain",
           backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-8-Mobile.webp)`,
           backgroundPosition: "center",
           backgroundSize: "cover",
@@ -85,7 +92,7 @@ export const Body = () => {
         <Carousel
           navButton={false}
           width={"100%"}
-          height={`286px`}
+          height={`276px`}
           pauseDuration={3000}
           slideDuration={1000}
           direction={1}
@@ -94,6 +101,7 @@ export const Body = () => {
           tweenAnime="ease"
           dotsActivedColor="rgba(120, 100, 78, 1)"
           dotsColor="rgba(217, 217, 217, 1)"
+          dotYOffset={10}
           dragThreshold={10}
           onChange={(index) => setSelected(index)}
           onItemClick={(item) => console.log(item)}

@@ -136,7 +136,7 @@ export const Base = ({ setMode }: Props) => {
             <Grid item xs={12}>
               <Option
                 image={
-                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp"
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-1.webp"
                 }
                 title={i18n.t("expertAdvice.box2")}
                 onClick={() => setMode("specialty")}
@@ -145,7 +145,7 @@ export const Base = ({ setMode }: Props) => {
             <Grid item xs={12}>
               <Option
                 image={
-                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp"
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-2.webp"
                 }
                 title={i18n.t("expertAdvice.box3")}
                 onClick={() => setMode("bodyPart")}
@@ -154,7 +154,7 @@ export const Base = ({ setMode }: Props) => {
             <Grid item xs={12}>
               <Option
                 image={
-                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS_EHTIC_DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp"
+                  "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FILTRO-1-3.webp"
                 }
                 title={i18n.t("expertAdvice.box4")}
                 onClick={() => setMode("concerns")}
