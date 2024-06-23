@@ -17,7 +17,7 @@ const mapProducts = (product: any, index: number): any => {
             style={{ cursor: "pointer", marginBottom: "-4px" }}
           />
         ),
-        label: "Edit",
+        label: "Editar",
       },
       {
         buttonType: "icon",
@@ -28,10 +28,7 @@ const mapProducts = (product: any, index: number): any => {
             style={{ cursor: "pointer", marginBottom: "-4px" }}
           />
         ),
-        label: i18n.t(
-          "pages.admin.manageProducts.list.actionsHints.delete.tooltip",
-          "Delete this product"
-        ),
+        label: "Desactivar",
         confirmationButtonLabel: i18n.t(
           "pages.admin.manageProducts.list.actionsHints.delete.confirm",
           "Confirm"

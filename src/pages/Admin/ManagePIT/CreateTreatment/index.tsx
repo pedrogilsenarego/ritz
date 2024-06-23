@@ -38,28 +38,28 @@ const CreateTreatment = ({ edit = false }: Props) => {
     setTouchedImages,
   } = useCreateProduct({ edit });
   return (
-    <GeneralPage title="Novo tratamento" subTitle="Tratamentos">
-      {isCreatingProduct || isEditingProduct || (isLoadingProduct && edit) ? (
-        <Loader
-          customMessage={
-            isCreatingProduct
-              ? i18n.t(
-                  "pages.admin.createBlog.isCreatingProduct",
-                  "The entry is being created"
-                )
-              : i18n.t(
-                  "pages.admin.createBlog.isLoadingProduct",
-                  "The entry is being fetched"
-                )
-          }
-        />
-      ) : (
-        <Box className={classes.root}>
-          <form
-            className={classes.form}
-            id="createBlog-form"
-            onSubmit={handleSubmit(onSubmit)}
-          >
+    <form
+      id="createBlog-form"
+      onSubmit={handleSubmit(onSubmit)}
+      style={{ height: "100%" }}
+    >
+      <GeneralPage title="Novo tratamento" subTitle="Tratamentos">
+        {isCreatingProduct || isEditingProduct || (isLoadingProduct && edit) ? (
+          <Loader
+            customMessage={
+              isCreatingProduct
+                ? i18n.t(
+                    "pages.admin.createBlog.isCreatingProduct",
+                    "The entry is being created"
+                  )
+                : i18n.t(
+                    "pages.admin.createBlog.isLoadingProduct",
+                    "The entry is being fetched"
+                  )
+            }
+          />
+        ) : (
+          <Box className={classes.form}>
             <Box className={classes.inputBox}>
               <Grid container spacing={"80px"}>
                 <Grid item xs={12}>
@@ -359,10 +359,10 @@ const CreateTreatment = ({ edit = false }: Props) => {
                 ></ButtonBlue>
               </div>
             </Box>
-          </form>
-        </Box>
-      )}
-    </GeneralPage>
+          </Box>
+        )}
+      </GeneralPage>
+    </form>
   );
 };
 

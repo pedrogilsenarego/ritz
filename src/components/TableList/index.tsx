@@ -190,7 +190,15 @@ const TableList = <T extends BaseProps>({
 
   return (
     <Styled.TableContainer>
-      <Table aria-label="sticky table" size="small">
+      <Table
+        aria-label="sticky table"
+        size="small"
+        style={{
+          borderTopLeftRadius: "8px",
+          borderTopRightRadius: "8px",
+          overflow: "hidden",
+        }}
+      >
         <TableHead>
           <TableRow>{columns.map((column) => renderHeadCell(column))}</TableRow>
         </TableHead>

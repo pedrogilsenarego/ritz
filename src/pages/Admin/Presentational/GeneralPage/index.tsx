@@ -2,14 +2,20 @@ import "./index.css";
 import Close from "../../../../assets/close.svg";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
+import ButtonBlue from "../../../../components/Ui/ButtonBlue";
 
 type Props = {
   children: React.ReactNode;
   title: string;
   subTitle: string;
+  topButtons?: {
+    label: string;
+    onClick: () => void;
+    icon?: string | undefined;
+  }[];
 };
 
-const GeneralPage = ({ children, title, subTitle }: Props) => {
+const GeneralPage = ({ children, title, subTitle, topButtons }: Props) => {
   const navigate = useNavigate();
   return (
     <div
@@ -17,25 +23,25 @@ const GeneralPage = ({ children, title, subTitle }: Props) => {
         backgroundColor: "rgba(255, 255, 255, 0.25)",
         width: "100%",
         height: "100%",
-
         borderRadius: "5px",
         boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
-
+        position: "relative",
         padding: "50px 35px 43px 35px",
       }}
     >
-      <div style={{ position: "relative" }}>
-        <img
-          onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}
-          src={Close}
-          alt=""
-          style={{
-            width: "31px",
-            position: "absolute",
-            right: 0,
-            cursor: "pointer",
-          }}
-        />
+      <img
+        onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}
+        src={Close}
+        alt=""
+        style={{
+          width: "31px",
+          position: "absolute",
+          right: 40,
+          top: 30,
+          cursor: "pointer",
+        }}
+      />
+      <div style={{ width: "calc(100% - 30px)" }}>
         <p
           style={{
             fontSize: "16px",
@@ -46,23 +52,45 @@ const GeneralPage = ({ children, title, subTitle }: Props) => {
         >
           {subTitle}
         </p>
-        <p
-          style={{
-            marginTop: "10px",
-            textTransform: "uppercase",
-            fontWeight: 500,
-            fontSize: "32px",
-            color: "black",
-          }}
-        >
-          {title}
-        </p>
         <div
           style={{
-            height: "2px",
-            width: "calc(100% - 30px)",
-            backgroundColor: "#00000080",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+
             marginTop: "20px",
+          }}
+        >
+          <p
+            style={{
+              fontWeight: 500,
+              fontSize: "32px",
+              lineHeight: "32px",
+              color: "black",
+            }}
+          >
+            {title}
+          </p>
+          {topButtons && (
+            <div>
+              {topButtons.map((button) => {
+                return (
+                  <ButtonBlue
+                    label={button.label}
+                    onClick={button.onClick}
+                    icon={button.icon}
+                  />
+                );
+              })}
+            </div>
+          )}
+        </div>
+        <div
+          style={{
+            height: "1px",
+
+            backgroundColor: "#00000080",
+            marginTop: "10px",
           }}
         />
       </div>

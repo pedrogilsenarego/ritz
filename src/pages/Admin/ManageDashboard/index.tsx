@@ -30,7 +30,7 @@ const ManageDashboard = () => {
       <div
         style={{
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "10px",
           padding: "30px 30px 20px 30px",
           display: "flex",
           height: "100%",
@@ -202,7 +202,7 @@ const ManageDashboard = () => {
       <div
         style={{
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "10px",
           paddingBottom: "30px",
           display: "flex",
           height: "100%",
@@ -277,7 +277,7 @@ const ManageDashboard = () => {
       <div
         style={{
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "10px",
           height: "100%",
           flexDirection: "column",
 
@@ -381,7 +381,7 @@ const ManageDashboard = () => {
       <div
         style={{
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "10px",
           padding: "30px 30px 20px 30px",
           display: "flex",
           height: "100%",
@@ -445,7 +445,7 @@ const ManageDashboard = () => {
     <GeneralPage title="Dashboard Analítico" subTitle="Performance">
       <Grid
         container
-        columnSpacing={"20px"}
+        columnSpacing={"10px"}
         style={{
           height: "100%",
           overflowY: "scroll",
@@ -477,7 +477,7 @@ const ManageDashboard = () => {
             container
             columnSpacing={"10px"}
             style={{
-              marginTop: "30px",
+              marginTop: "10px",
             }}
           >
             <Grid item xs={4}>
@@ -513,7 +513,7 @@ const ManageDashboard = () => {
           </div>
           <div>
             <PanelCarousel
-              panelStyles={{ marginTop: "20px" }}
+              panelStyles={{ marginTop: "10px" }}
               title="Report Mensal"
             />
           </div>

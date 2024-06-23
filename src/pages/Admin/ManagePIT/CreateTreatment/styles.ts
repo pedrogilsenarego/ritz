@@ -3,7 +3,6 @@ import { makeStyles } from "@mui/styles";
 //interface Props extends CSSProperties {}
 
 const useStyles = makeStyles({
-  root: {},
   form: {
     display: "flex",
     flexDirection: "column",
