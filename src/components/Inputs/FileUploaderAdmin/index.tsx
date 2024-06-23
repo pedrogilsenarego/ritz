@@ -196,7 +196,7 @@ const FileUploaderAdmin = ({
                 letterSpacing: "1px",
               }}
             >
-              Fazer Upload
+              Upload
             </p>
             <img src={Upload} alt="" />
           </div>
