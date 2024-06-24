@@ -9,6 +9,7 @@ import {
   InputLabel,
   ListItemText,
   Menu,
+  Select,
   MenuItem as MuiMenuItem,
   MenuList as MuiMenuList,
   Typography,
@@ -17,14 +18,13 @@ import Icon from "@mui/material/Icon";
 import { styled } from "@mui/system";
 import React, { useState } from "react";
 import Tooltip from "../../Tooltip/Tooltip";
-
+import { Colors, mainColors } from "../../../theme/theme";
 import { Control, Controller, get, useForm } from "react-hook-form";
-import { Colors } from "../../../theme/theme";
 import Button from "../../Ui/Button";
-import * as Styled from "./styles";
+import DownArrow from "../../../assets/arrow-down-01-round.svg";
 
 interface MultiSelectProps<T> {
-  label: string;
+  label?: string;
   items: T[];
   name: string;
   defaultValue?: T[];
@@ -92,33 +92,8 @@ const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
 
   return (
     <FormControl fullWidth disabled={disabled}>
-      {label && disableDefaultLabel && (
-        <Box sx={{ color: "black" }}>
-          <Typography
-            variant="body1"
-            sx={{ fontSize: "16px", display: "inline" }}
-          >
-            {label}
-          </Typography>
-          {showInputInfo && (
-            <Tooltip title={inputInfo}>
-              <Icon
-                sx={{
-                  color: "primary.main",
-                  margin: "0 0 -6px 5px",
-                }}
-              >
-                info
-              </Icon>
-            </Tooltip>
-          )}
-        </Box>
-      )}
-      {!disableDefaultLabel && (
-        <InputLabel id={labelID} htmlFor={name}>
-          {label}
-        </InputLabel>
-      )}
+      <InputLabel>{label}</InputLabel>
+
       <Controller
         name={name}
         control={control}
@@ -166,17 +141,47 @@ const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
 
           return (
             <>
-              <Styled.Select
+              <Select
                 id={name}
                 fullWidth
                 readOnly
-                label={disableDefaultLabel ? undefined : label}
-                labelId={labelID}
                 variant="outlined"
                 value={value || ""}
                 onClick={handleClick}
                 renderValue={renderInputSelectedValues}
-                data-testid={name}
+                IconComponent={() => (
+                  <img src={DownArrow} alt="" style={{ marginRight: "10px" }} />
+                )}
+                inputProps={{
+                  sx: {
+                    fontSize: "14px",
+                    margin: 0,
+                    lineHeight: "29px",
+                    fontFamily: "Inter",
+                  },
+                }}
+                sx={{
+                  color: "white",
+                  width: "100%",
+                  backgroundColor: "rgba(0, 0, 0, 0.8)",
+                  borderRadius: "10px",
+                  height: "29px",
+                  padding: "0px",
+                  "& .MuiSvgIcon-root": {
+                    color: mainColors.primary[400],
+                  },
+                  ".MuiOutlinedInput-notchedOutline": {
+                    borderColor: "transparent",
+                  },
+                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "transparent",
+                  },
+                  "&:hover .MuiOutlinedInput-notchedOutline": {
+                    borderColor: "transparent",
+                  },
+                  "& .MuiSelect-outlined": {},
+                  "&.Mui-selected": { color: "#ffffff" },
+                }}
               />
               <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                 <MenuList>

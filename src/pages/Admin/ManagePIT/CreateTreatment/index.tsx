@@ -390,6 +390,7 @@ const CreateTreatment = ({ edit = false }: Props) => {
                           />
                         </Grid>
                         <Grid item xs={12}>
+                          <Typography>Partes Corpo</Typography>
                           <MultiSelectInput
                             chips
                             items={[
@@ -399,16 +400,15 @@ const CreateTreatment = ({ edit = false }: Props) => {
                               { title: "Health 360", value: 4 },
                             ]}
                             control={control}
-                            label="Partes corpo"
                             name="bodyPart"
                           />
                         </Grid>
                         <Grid item xs={12}>
+                          <Typography>Preocupações</Typography>
                           <MultiSelectInput
                             chips
                             items={listConcerns}
                             control={control}
-                            label="Preocupações"
                             name="concerns"
                           />
                         </Grid>

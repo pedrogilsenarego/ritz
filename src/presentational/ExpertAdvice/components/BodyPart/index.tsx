@@ -54,7 +54,7 @@ export const BodyPart = ({
             left: 0,
             right: 0,
             bottom: 0,
-            backgroundImage: `url(https://ehtiq-be.qloudyx.pt/media/EXPERT-ADVICE-FASE-3.webp)`,
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/EXPERT-ADVICE-FASE-3.webp)`,
             backgroundPosition: "center",
             backgroundSize: "cover",
             display: "flex",
