@@ -4,6 +4,7 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { Control, get, useController } from "react-hook-form";
 import useStyles from "./styles";
+import Delete from "../../../assets/delete_outline.png";
 import { LanguageContainer } from "../../../pages/Admin/Presentational/LanguageContainer";
 
 const ControlledFAQInput = ({
@@ -22,6 +23,7 @@ const ControlledFAQInput = ({
   const [answer_en, setA_en] = useState<string>("");
   const [question_es, setQ_es] = useState<string>("");
   const [answer_es, setA_es] = useState<string>("");
+  const [lang, setLang] = useState<"PT" | "EN" | "ES">("PT");
   const error = get(formState.errors, name, "");
   const classes = useStyles();
 
@@ -198,6 +200,9 @@ const ControlledFAQInput = ({
     <div>
       <div style={{ display: "flex", flexDirection: "column", rowGap: "10px" }}>
         <LanguageContainer
+          onChange={(lang: "EN" | "PT" | "ES") => {
+            setLang(lang);
+          }}
           childrenEN={<ENFields />}
           childrenES={<ESFields />}
           childrenPT={<PTFields />}
@@ -224,7 +229,7 @@ const ControlledFAQInput = ({
           display: "flex",
           flexDirection: "column",
           rowGap: "5px",
-          marginTop: "10px",
+          marginTop: "20px",
           backgroundColor: "white",
           borderRadius: "20px",
         }}
@@ -242,21 +247,49 @@ const ControlledFAQInput = ({
             index: number
           ) => {
             return (
-              <div key={index} style={{ display: "flex", width: "100%" }}>
-                <div style={{ width: "100" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      columnGap: "10px",
-                      border: "solid 2px lightGray",
-                      borderRadius: "6px",
-                      padding: "5px",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <p>Q:{item.question_pt}</p>
-                    <p>A:{item.answer_pt}</p>
+              <div
+                key={index}
+                style={{
+                  display: "flex",
+                  width: "100%",
+                  overflow: "hidden",
+                }}
+              >
+                {lang === "PT" && (
+                  <div style={{ width: "100%" }}>
+                    <div
+                      style={{
+                        padding: "10px 20px",
+                        display: "flex",
+                        width: "100%",
+                        justifyContent: "space-between",
+                        borderBottom: "solid 1px rgba(0, 0, 0, 0.50)",
+                      }}
+                    >
+                      <p style={{ fontSize: "17px", fontWeight: 600 }}>
+                        {item.question_pt}?
+                      </p>
+                      <div
+                        onClick={() => handleDelete(index)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <img src={Delete} alt="" style={{ width: "24px" }} />
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        padding: "10px 20px 20px 20px",
+                        borderBottom:
+                          index < field.value.length - 1
+                            ? "dashed 1px rgba(0, 0, 0, 0.50)"
+                            : "none",
+                      }}
+                    >
+                      <p dangerouslySetInnerHTML={{ __html: item.answer_pt }} />
+                    </div>
                   </div>
+                )}
+                {lang === "EN" && (
                   <div
                     style={{
                       display: "flex",
@@ -270,6 +303,8 @@ const ControlledFAQInput = ({
                     <p>Q:{item.question_en}</p>
                     <p>A:{item.answer_en}</p>
                   </div>
+                )}
+                {lang === "ES" && (
                   <div
                     style={{
                       display: "flex",
@@ -283,13 +318,7 @@ const ControlledFAQInput = ({
                     <p>Q:{item.question_es}</p>
                     <p>A:{item.answer_es}</p>
                   </div>
-                </div>
-                <div
-                  onClick={() => handleDelete(index)}
-                  style={{ backgroundColor: "red", cursor: "pointer" }}
-                >
-                  <p style={{ color: "white" }}>Delete</p>
-                </div>
+                )}
               </div>
             );
           }
