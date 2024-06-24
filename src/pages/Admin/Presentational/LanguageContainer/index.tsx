@@ -1,0 +1,68 @@
+import { useState } from "react";
+
+type Props = {
+  childrenPT: React.ReactNode;
+  childrenEN: React.ReactNode;
+  childrenES: React.ReactNode;
+};
+
+export const LanguageContainer: React.FC<Props> = ({
+  childrenPT,
+  childrenEN,
+  childrenES,
+}) => {
+  const [lang, setLang] = useState<"PT" | "EN" | "ES">("PT");
+  const renderChildren = () => {
+    if (lang === "PT") return childrenPT;
+    if (lang === "EN") return childrenEN;
+    if (lang === "ES") return childrenES;
+  };
+  return (
+    <div>
+      <div style={{ width: "100%", display: "flex", justifyContent: "end" }}>
+        <div style={{ display: "flex" }}>
+          <div
+            style={{
+              padding: "10px",
+              backgroundColor: lang === "PT" ? "rgba(0, 0, 0, 0.80)" : "white",
+              borderTopLeftRadius: "6px",
+
+              cursor: "pointer",
+              borderBottomLeftRadius: "6px",
+              color: lang === "PT" ? "white" : "rgba(0, 0, 0, 0.80)",
+            }}
+            onClick={() => setLang("PT")}
+          >
+            <p style={{ fontWeight: 500 }}>PT</p>
+          </div>
+
+          <div
+            style={{
+              padding: "10px",
+              cursor: "pointer",
+              backgroundColor: lang === "EN" ? "rgba(0, 0, 0, 0.80)" : "white",
+              color: lang === "EN" ? "white" : "rgba(0, 0, 0, 0.80)",
+            }}
+            onClick={() => setLang("EN")}
+          >
+            <p style={{ fontWeight: 500 }}>EN</p>
+          </div>
+          <div
+            style={{
+              padding: "10px",
+              cursor: "pointer",
+              backgroundColor: lang === "ES" ? "rgba(0, 0, 0, 0.80)" : "white",
+              color: lang === "ES" ? "white" : "rgba(0, 0, 0, 0.80)",
+              borderTopRightRadius: "6px",
+              borderBottomRightRadius: "6px",
+            }}
+            onClick={() => setLang("ES")}
+          >
+            <p style={{ fontWeight: 500 }}>ES</p>
+          </div>
+        </div>
+      </div>
+      {renderChildren()}
+    </div>
+  );
+};

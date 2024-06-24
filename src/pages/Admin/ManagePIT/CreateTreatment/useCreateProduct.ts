@@ -88,7 +88,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
 
   const onSubmit = async (formData: any) => {
     console.log(formData);
-    createProduct(formData);
+    //createProduct(formData);
     return;
   };
 

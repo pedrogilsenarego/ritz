@@ -19,7 +19,7 @@ export interface BaseReactHookFormProps {
   control?: Control<any, any>;
   setValue?: UseFormSetValue<any>;
   label?: string;
-  options: { value: string; label: string }[];
+  options: { value: string | number; label: string }[];
 }
 
 export interface BaseProps extends FormControlProps, BaseReactHookFormProps {}

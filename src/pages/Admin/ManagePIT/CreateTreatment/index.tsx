@@ -12,10 +12,11 @@ import Internet from "../../../../assets/internet.svg";
 import ArrowLeft from "../../../../assets/arrowLeft.png";
 import FileUploaderAdmin from "../../../../components/Inputs/FileUploaderAdmin";
 
-import { ControlledListDoubleInput } from "../../../../components/Inputs/ControlledListDoubleInput";
+import { ControlledFAQInput } from "../../../../components/Inputs/ControlledFAQInput";
 import MultiSelectInput from "../../../../components/Inputs/MultiSelect/MultiSelectInput";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
+import { LanguageContainer } from "../../Presentational/LanguageContainer";
 
 interface Props {
   edit?: boolean;
@@ -39,6 +40,283 @@ const CreateTreatment = ({ edit = false }: Props) => {
     imagesValue,
     setTouchedImages,
   } = useCreateProduct({ edit });
+
+  const PTFields = () => {
+    return (
+      <Grid container spacing={2} style={{ marginTop: "10px" }}>
+        <Grid item xs={12}>
+          <Typography
+            style={{
+              color: "#848484",
+              fontFamily: "Inter",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "20px",
+            }}
+          >
+            DESCRIÇÃO DE TRATAMENTO
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H1 | Título"
+            control={control}
+            name="title_pt"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H2 | Subtítulo"
+            control={control}
+            name="subtitle_pt"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <ControlledFormInputEditor
+            control={control}
+            name="mainText_pt"
+            label="Corpo Único"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+        <Grid item xs={12} style={{ marginTop: "20px" }}>
+          <Typography
+            style={{
+              color: "#848484",
+              fontFamily: "Inter",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "20px",
+            }}
+          >
+            GUIA DE TRATAMENTO
+          </Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Tempo Procedimento "
+            control={control}
+            name="tprocediment_pt"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Tempo Recuperação"
+            control={control}
+            name="trecuperation_pt"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Anestesia"
+            control={control}
+            name="anesthetic_pt"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Resultados"
+            control={control}
+            name="results_pt"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+      </Grid>
+    );
+  };
+  const ENFields = () => {
+    return (
+      <Grid container spacing={2} style={{ marginTop: "10px" }}>
+        <Grid item xs={12}>
+          <Typography
+            style={{
+              color: "#848484",
+              fontFamily: "Inter",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "20px",
+            }}
+          >
+            DESCRIÇÃO DE TRATAMENTO
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H1 | Título"
+            control={control}
+            name="title_en"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H2 | Subtítulo"
+            control={control}
+            name="subtitle_en"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <ControlledFormInputEditor
+            control={control}
+            name="mainText_en"
+            label="Corpo Único"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+        <Grid item xs={12} style={{ marginTop: "20px" }}>
+          <Typography
+            style={{
+              color: "#848484",
+              fontFamily: "Inter",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "20px",
+            }}
+          >
+            GUIA DE TRATAMENTO
+          </Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Tempo Procedimento "
+            control={control}
+            name="tprocediment_en"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Tempo Recuperação"
+            control={control}
+            name="trecuperation_en"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Anestesia"
+            control={control}
+            name="anesthetic_en"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Resultados"
+            control={control}
+            name="results_en"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+      </Grid>
+    );
+  };
+  const ESFields = () => {
+    return (
+      <Grid container spacing={2} style={{ marginTop: "10px" }}>
+        <Grid item xs={12}>
+          <Typography
+            style={{
+              color: "#848484",
+              fontFamily: "Inter",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "20px",
+            }}
+          >
+            DESCRIÇÃO DE TRATAMENTO
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H1 | Título"
+            control={control}
+            name="title_es"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H2 | Subtítulo"
+            control={control}
+            name="subtitle_es"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <ControlledFormInputEditor
+            control={control}
+            name="mainText_es"
+            label="Corpo Único"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+        <Grid item xs={12} style={{ marginTop: "20px" }}>
+          <Typography
+            style={{
+              color: "#848484",
+              fontFamily: "Inter",
+              fontSize: "14px",
+              fontWeight: 500,
+              lineHeight: "20px",
+            }}
+          >
+            GUIA DE TRATAMENTO
+          </Typography>
+        </Grid>
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Tempo Procedimento "
+            control={control}
+            name="tprocediment_es"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Tempo Recuperação"
+            control={control}
+            name="trecuperation_es"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Anestesia"
+            control={control}
+            name="anesthetic_es"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+
+        <Grid item xs={6}>
+          <ControlledFormInput
+            label="Resultados"
+            control={control}
+            name="results_es"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+      </Grid>
+    );
+  };
   return (
     <form
       id="createBlog-form"
@@ -69,33 +347,33 @@ const CreateTreatment = ({ edit = false }: Props) => {
           />
         ) : (
           <Box className={classes.form}>
-            <div
-              onClick={() =>
-                navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENTS)
-              }
-              style={{
-                display: "flex",
-                columnGap: "10px",
-                alignItems: "center",
-                cursor: "pointer",
-              }}
-            >
-              <img src={ArrowLeft} alt="" style={{ width: "20px" }} />
-              <Typography
-                style={{
-                  fontFamily: "Inter",
-                  fontSize: "14px",
-                  fontWeight: 400,
-                  textDecoration: "underline",
-                }}
-              >
-                voltar
-              </Typography>
-            </div>
             <Box className={classes.inputBox}>
               <Grid container columnSpacing={"40px"}>
                 <Grid item xs={5}>
-                  <Grid container spacing={"80px"}>
+                  <div
+                    onClick={() =>
+                      navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENTS)
+                    }
+                    style={{
+                      display: "flex",
+                      columnGap: "10px",
+                      alignItems: "center",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <img src={ArrowLeft} alt="" style={{ width: "20px" }} />
+                    <Typography
+                      style={{
+                        fontFamily: "Inter",
+                        fontSize: "14px",
+                        fontWeight: 400,
+                        textDecoration: "underline",
+                      }}
+                    >
+                      voltar
+                    </Typography>
+                  </div>
+                  <Grid container style={{ marginTop: "20px" }}>
                     <Grid item xs={12}>
                       <Grid container spacing={2}>
                         <Grid item xs={12}>
@@ -104,10 +382,10 @@ const CreateTreatment = ({ edit = false }: Props) => {
                             control={control}
                             name="specialty"
                             options={[
-                              { value: "1", label: "Estética e cirurgia" },
-                              { value: "2", label: "Dentária" },
-                              { value: "3", label: "Pós Cirurgia e Bem estar" },
-                              { value: "4", label: "Saude Preventiva" },
+                              { value: 1, label: "Estética e cirurgia" },
+                              { value: 2, label: "Dentária" },
+                              { value: 3, label: "Pós Cirurgia e Bem estar" },
+                              { value: 4, label: "Saude Preventiva" },
                             ]}
                           />
                         </Grid>
@@ -115,10 +393,10 @@ const CreateTreatment = ({ edit = false }: Props) => {
                           <MultiSelectInput
                             chips
                             items={[
-                              { title: "Face", value: "1" },
-                              { title: "Smile", value: "2" },
-                              { title: "Body", value: "3" },
-                              { title: "Health 360", value: "4" },
+                              { title: "Face", value: 1 },
+                              { title: "Smile", value: 2 },
+                              { title: "Body", value: 3 },
+                              { title: "Health 360", value: 4 },
                             ]}
                             control={control}
                             label="Partes corpo"
@@ -165,283 +443,20 @@ const CreateTreatment = ({ edit = false }: Props) => {
                   </Grid>
                 </Grid>
                 <Grid item xs={7}>
-                  <Grid container spacing={"80px"}>
-                    <Grid item xs={12}>
-                      <Grid container spacing={2}>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Título PT"
-                            control={control}
-                            name="title_pt"
-                            inputPlaceholder="Escreva o Título"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Título EN"
-                            control={control}
-                            name="title_en"
-                            inputPlaceholder="Escreva o Título"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Título ES"
-                            control={control}
-                            name="title_es"
-                            inputPlaceholder="Escreva o Título"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="SubTítulo PT"
-                            control={control}
-                            name="subtitle_pt"
-                            inputPlaceholder="Escreva Subtítulo"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="SubTítulo EN"
-                            control={control}
-                            name="subtitle_en"
-                            inputPlaceholder="Escreva Subtítulo"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="SubTítulo ES"
-                            control={control}
-                            name="subtitle_es"
-                            inputPlaceholder="Escreva Subtítulo"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <Typography>Especialidade</Typography>
-                          <ControlledSelect
-                            control={control}
-                            name="specialty"
-                            options={[
-                              { value: "1", label: "Estética e cirurgia" },
-                              { value: "2", label: "Dentária" },
-                              { value: "3", label: "Pós Cirurgia e Bem estar" },
-                              { value: "4", label: "Saude Preventiva" },
-                            ]}
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <MultiSelectInput
-                            chips
-                            items={[
-                              { title: "Face", value: "1" },
-                              { title: "Smile", value: "2" },
-                              { title: "Body", value: "3" },
-                              { title: "Health 360", value: "4" },
-                            ]}
-                            control={control}
-                            label="Partes corpo"
-                            name="bodyPart"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <MultiSelectInput
-                            chips
-                            items={listConcerns}
-                            control={control}
-                            label="Preocupações"
-                            name="concerns"
-                          />
-                        </Grid>
-
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Tempo Procedimento PT"
-                            control={control}
-                            name="tprocediment_pt"
-                            inputPlaceholder="T procedimento"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Tempo Procedimento EN"
-                            control={control}
-                            name="tprocediment_en"
-                            inputPlaceholder="T procedimento"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Tempo Procedimento ES"
-                            control={control}
-                            name="tprocediment_es"
-                            inputPlaceholder="T procedimento"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Tempo Recuperação PT"
-                            control={control}
-                            name="trecuperation_pt"
-                            inputPlaceholder="T recuperação"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Tempo Recuperação EN"
-                            control={control}
-                            name="trecuperation_en"
-                            inputPlaceholder="T recuperação"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Tempo Recuperação ES"
-                            control={control}
-                            name="trecuperation_es"
-                            inputPlaceholder="T recuperação"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Anestesia PT"
-                            control={control}
-                            name="anesthetic_pt"
-                            inputPlaceholder="anestesia"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Anestesia EN"
-                            control={control}
-                            name="anesthetic_en"
-                            inputPlaceholder="anestesia"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Anestesia ES"
-                            control={control}
-                            name="anesthetic_es"
-                            inputPlaceholder="anestesia"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Results PT"
-                            control={control}
-                            name="results_pt"
-                            inputPlaceholder="Resultados"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Results EN"
-                            control={control}
-                            name="results_en"
-                            inputPlaceholder="Resultados"
-                          />
-                        </Grid>
-                        <Grid item xs={4}>
-                          <ControlledFormInput
-                            label="Results ES"
-                            control={control}
-                            name="results_es"
-                            inputPlaceholder="Resultados"
-                          />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <ControlledListDoubleInput
-                            control={control}
-                            name="listFAQ"
-                            label="Adicionar FAQ"
-                          />
-                        </Grid>
-                        <Grid item xs={12} style={{ marginTop: "40px" }}>
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "end",
-                              columnGap: "10px",
-                              width: "70%",
-                            }}
-                          >
-                            <div style={{ width: "25%" }}>
-                              <FileUploaderAdmin
-                                name="topImage"
-                                hasLabel
-                                loading={imagesLoader}
-                                touched={setTouchedImages}
-                                value={imagesValue || undefined}
-                                control={control}
-                                setValue={setValue}
-                                setError={setError}
-                                fieldTitle={"ImagemTopo"}
-                              />
-                            </div>
-                          </div>
-                        </Grid>
-                        <Grid item xs={12} style={{ marginTop: "40px" }}>
-                          <div
-                            style={{
-                              display: "flex",
-                              alignItems: "end",
-                              columnGap: "10px",
-                              width: "70%",
-                            }}
-                          >
-                            <div style={{ width: "25%" }}>
-                              <FileUploaderAdmin
-                                name="mainImage"
-                                hasLabel
-                                loading={imagesLoader}
-                                touched={setTouchedImages}
-                                value={imagesValue || undefined}
-                                control={control}
-                                setValue={setValue}
-                                setError={setError}
-                                fieldTitle={"ImagemPrincipal"}
-                              />
-                            </div>
-                          </div>
-                        </Grid>
-                        <Grid item xs={4} style={{ marginTop: "40px" }}>
-                          <ControlledFormInputEditor
-                            control={control}
-                            name="mainText_pt"
-                            label="Texto  PT"
-                            inputPlaceholder={i18n.t(
-                              "pages.admin.createProducts.form.maintextPT",
-                              "Main text PT"
-                            )}
-                          />
-                        </Grid>
-                        <Grid item xs={4} style={{ marginTop: "40px" }}>
-                          <ControlledFormInputEditor
-                            control={control}
-                            name="mainText_en"
-                            label="Texto principal EN"
-                            inputPlaceholder={i18n.t(
-                              "pages.admin.createProducts.form.maintextPT",
-                              "Main text PT"
-                            )}
-                          />
-                        </Grid>
-                        <Grid item xs={4} style={{ marginTop: "40px" }}>
-                          <ControlledFormInputEditor
-                            control={control}
-                            name="mainText_es"
-                            label="Texto principal ES"
-                            inputPlaceholder={i18n.t(
-                              "pages.admin.createProducts.form.maintextPT",
-                              "Main text PT"
-                            )}
-                          />
-                        </Grid>
-                      </Grid>
-                    </Grid>
-                  </Grid>
+                  <LanguageContainer
+                    childrenEN={<ENFields />}
+                    childrenES={<ESFields />}
+                    childrenPT={<PTFields />}
+                  />
                 </Grid>
               </Grid>
+              <Box>
+                <ControlledFAQInput
+                  control={control}
+                  name="listFAQ"
+                  label="FAQ de tratamento"
+                />
+              </Box>
             </Box>
           </Box>
         )}

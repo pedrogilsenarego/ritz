@@ -32,79 +32,79 @@ const fileSize = (max: number, unit = "MB"): Yup.TestConfig<any> => ({
 
 export const FORM_VALIDATION = Yup.object().shape({
   title_pt: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   title_en: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   title_es: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
 
   subtitle_pt: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   subtitle_en: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   subtitle_es: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
 
   specialty: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   bodyPart: Yup.array().optional(),
   concerns: Yup.array().optional(),
 
   tprocediment_pt: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   tprocediment_en: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   tprocediment_es: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
 
   trecuperation_pt: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   trecuperation_en: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   trecuperation_es: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
 
   anesthetic_pt: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   anesthetic_en: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   anesthetic_es: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
 
   results_pt: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   results_en: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   results_es: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
 
   mainText_pt: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   mainText_en: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   mainText_es: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
 
   listFAQ: Yup.array(),
