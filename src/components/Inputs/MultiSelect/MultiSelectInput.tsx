@@ -22,6 +22,8 @@ import { Colors, mainColors } from "../../../theme/theme";
 import { Control, Controller, get, useForm } from "react-hook-form";
 import Button from "../../Ui/Button";
 import DownArrow from "../../../assets/arrow-down-01-round.svg";
+import { ButtonNinja } from "../../Ui/ButtonNinja";
+import ButtonBlue from "../../Ui/ButtonBlue";
 
 interface MultiSelectProps<T> {
   label?: string;
@@ -40,6 +42,9 @@ interface MultiSelectProps<T> {
 
 const MenuItem = styled(MuiMenuItem)(() => ({
   background: "white",
+  fontFamily: "Inter",
+  fontSize: "10px",
+  fontWeight: 500,
 }));
 
 const MenuList = styled(MuiMenuList)(() => ({
@@ -48,12 +53,13 @@ const MenuList = styled(MuiMenuList)(() => ({
 }));
 
 const ChipItem = styled(Chip)(() => ({
-  backgroundColor: "#ffffff",
-  border: `1px solid ${Colors.redish[400]}`,
+  border: `1px solid ${Colors.white[400]}`,
   boxSizing: "border-box",
-  borderRadius: "4px",
+  padding: "0px",
+  borderRadius: "8px",
+  fontSize: "10px",
   marginRight: "5px",
-  color: Colors.redish[400],
+  color: Colors.white[400],
 }));
 
 const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
@@ -114,11 +120,16 @@ const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
                 <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                   {selected.map((v: any) => (
                     <ChipItem
+                      size="small"
+                      sx={{ padding: 0 }}
                       key={v}
                       label={getItemValue(v)}
                       onMouseDown={(event) => event.stopPropagation()}
                       deleteIcon={
-                        <CloseIcon style={{ color: Colors.blackish[40005] }} />
+                        <CloseIcon
+                          fontSize={"small"}
+                          style={{ color: Colors.white[400] }}
+                        />
                       }
                       onDelete={() => handleDelete(v)}
                     />
@@ -183,7 +194,18 @@ const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
                   "&.Mui-selected": { color: "#ffffff" },
                 }}
               />
-              <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+              <Menu
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                PaperProps={{
+                  sx: {
+                    marginTop: "10px",
+                    borderRadius: "10px",
+                    backgroundColor: "white",
+                  },
+                }}
+              >
                 <MenuList>
                   {items.map((item) => (
                     <MenuItem
@@ -204,7 +226,15 @@ const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
                             }}
                             checked={valueIsChecked(item)}
                           />
-                          <ListItemText primary={item[keyRef]} />
+                          <p
+                            style={{
+                              fontFamily: "Inter",
+                              fontSize: "10px",
+                              fontWeight: 500,
+                            }}
+                          >
+                            {item[keyRef]}
+                          </p>
                         </>
                       ) : (
                         item[valueRef]
@@ -220,7 +250,7 @@ const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
                     marginTop: "10px",
                   }}
                 >
-                  <Button onClick={() => setOpen(false)}>Close</Button>
+                  <ButtonBlue label="Close" onClick={() => setOpen(false)} />
                 </div>
               </Menu>
 

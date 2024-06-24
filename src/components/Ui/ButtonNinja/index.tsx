@@ -6,15 +6,18 @@ type Props = {
   label: string;
   textStyles?: CSSProperties;
   buttonStyles?: CSSProperties;
+  onClick?: () => void;
 };
 
 export const ButtonNinja: React.FC<Props> = ({
   label,
   textStyles,
   buttonStyles,
+  onClick,
 }) => {
   return (
     <Button
+      onClick={onClick}
       style={{
         padding: "15px 35px",
         borderRadius: "30px",
