@@ -53,7 +53,6 @@ const MenuList = styled(MuiMenuList)(() => ({
 }));
 
 const ChipItem = styled(Chip)(() => ({
-  border: `1px solid ${Colors.white[400]}`,
   boxSizing: "border-box",
   padding: "0px",
   borderRadius: "8px",

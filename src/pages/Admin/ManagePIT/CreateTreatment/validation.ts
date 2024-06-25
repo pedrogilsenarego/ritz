@@ -109,6 +109,13 @@ export const FORM_VALIDATION = Yup.object().shape({
 
   listFAQ: Yup.array(),
 
+  topImageAlt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  mainImageAlt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+
   topImage: Yup.mixed()
     .required(
       `${i18n.t("pages.admin.createProducts.form.required", "Required")}`

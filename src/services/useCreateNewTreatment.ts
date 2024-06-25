@@ -38,15 +38,19 @@ export const useCreateNewTreatment = () => {
     const url = `${BASE_URL}/treatments/treatments/register/`;
     const accessToken = getCookie("access");
 
+    const newData = new FormData();
+
+    Object.keys(data).map((key) => newData.append(key, data[key]));
+
     try {
       const response = await fetch(url, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          //"Content-Type": "application/json",
           authorization: `Token ${accessToken}`,
         },
         credentials: "include",
-        body: JSON.stringify(data),
+        body: newData,
       });
 
       const body = await response.json(); // Parse response body as JSON

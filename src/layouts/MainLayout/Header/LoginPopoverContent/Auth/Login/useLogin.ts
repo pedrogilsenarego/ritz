@@ -29,6 +29,7 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
 
   const loginUser = async ({ email, password }: Login) => {
     const baseUrl = BASE_URL;
+
     const url = `${baseUrl}/login/`;
     //const email = "marco.rocha@qloudyx.pt";
     //const password = "a123456b";

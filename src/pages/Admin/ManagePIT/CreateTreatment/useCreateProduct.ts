@@ -2,26 +2,26 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import { queryIdentifiers } from "../../../../services/constants";
 import { productsServices } from "../../../../services/products.services";
 
-import { defaultValues } from "./constants";
+import { defaultValues, defaultValuesEdit } from "./constants";
 import { FORM_VALIDATION } from "./validation";
 import { queryKeys } from "../../../../constants/queryKeys";
 import { handleFetchConcerns } from "../../../../actions/tretaments";
-import { i18n } from "../../../../translations/i18n";
+
 import { useCreateNewTreatment } from "../../../../services/useCreateNewTreatment";
 
-type Props = {
-  edit?: boolean;
-};
-
-const useCreateProduct = ({ edit = false }: Props) => {
+const useCreateProduct = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const treatment = location?.state?.treatment || null;
+  console.log(treatment);
   const { createNewTreatment } = useCreateNewTreatment();
-  const { id } = useParams<Record<string, string | undefined>>();
+
   const { isLoading, data } = useQuery<any, any>([queryKeys.bodyParts], () =>
     handleFetchConcerns()
   );
@@ -33,28 +33,10 @@ const useCreateProduct = ({ edit = false }: Props) => {
       }))
     : [];
 
-  const [imagesLoader, setImagesLoader] = useState<boolean>(false);
-  const [imagesValue, setImagesValue] = useState<any>(undefined);
-  const [touchedImages, setTouchedImages] = useState<boolean>(false);
-
-  const [edited, setEdited] = useState<boolean>(false);
-
-  const documentID = id || "";
-
-  const { isLoading: isLoadingProduct, data: productData } = useQuery<
-    [string, string]
-  >(
-    [queryIdentifiers.PRODUCT, documentID],
-    () => productsServices.getProduct(documentID),
-    {
-      enabled: edit && !!documentID,
-    }
-  );
-
   const { reset, control, handleSubmit, setValue, setError, watch, formState } =
     useForm({
       resolver: yupResolver(FORM_VALIDATION),
-      defaultValues: defaultValues,
+      defaultValues: treatment ? defaultValuesEdit(treatment) : defaultValues,
     });
 
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
@@ -67,8 +49,8 @@ const useCreateProduct = ({ edit = false }: Props) => {
         console.log("error", error);
       },
       onSettled: () => {
-        reset();
-        navigate(ROUTE_PATHS.ADMIN);
+        //reset();
+        // navigate(ROUTE_PATHS.ADMIN);
       },
     }
   );
@@ -88,7 +70,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
 
   const onSubmit = async (formData: any) => {
     console.log(formData);
-    //createProduct(formData);
+    createProduct(formData);
     return;
   };
 
@@ -99,13 +81,11 @@ const useCreateProduct = ({ edit = false }: Props) => {
     setValue,
     isCreatingProduct,
     isEditingProduct,
-    isLoadingProduct,
+
     setError,
     listConcerns,
-    imagesLoader,
-    imagesValue,
+
     watch,
-    setTouchedImages,
   };
 };
 

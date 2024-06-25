@@ -168,9 +168,7 @@ const FileUploaderAdmin = ({
   return (
     <div>
       <Box display="flex" justifyContent="start">
-        <p style={{ fontSize: "12px", fontFamily: "Inter", fontWeight: 500 }}>
-          {fieldTitle}
-        </p>
+        <p style={{ fontSize: "12px", fontWeight: 500 }}>{fieldTitle}</p>
       </Box>
       {loading ? (
         <Loader customMessage="Getting Images" />
@@ -179,11 +177,14 @@ const FileUploaderAdmin = ({
           <div
             style={{
               backgroundColor: "white",
-              height: "28px",
+              height: "36px",
+              width: "100%",
               borderRadius: "5px",
               padding: "8px",
               marginTop: "10px",
-              display: "inline-flex",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
               columnGap: "10px",
             }}
             onClick={handleClick}

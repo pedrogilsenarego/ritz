@@ -17,12 +17,9 @@ import MultiSelectInput from "../../../../components/Inputs/MultiSelect/MultiSel
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import { LanguageContainer } from "../../Presentational/LanguageContainer";
+import InfoCircle from "../../../../assets/info-circle.png";
 
-interface Props {
-  edit?: boolean;
-}
-
-const CreateTreatment = ({ edit = false }: Props) => {
+const CreateTreatment = () => {
   const classes = useStyles();
   const navigate = useNavigate();
   const {
@@ -35,11 +32,7 @@ const CreateTreatment = ({ edit = false }: Props) => {
     listConcerns,
     isCreatingProduct,
     isEditingProduct,
-    isLoadingProduct,
-    imagesLoader,
-    imagesValue,
-    setTouchedImages,
-  } = useCreateProduct({ edit });
+  } = useCreateProduct();
 
   const PTFields = () => {
     return (
@@ -331,7 +324,7 @@ const CreateTreatment = ({ edit = false }: Props) => {
           { label: "Publicar", icon: Internet, type: "submit" },
         ]}
       >
-        {isCreatingProduct || isEditingProduct || (isLoadingProduct && edit) ? (
+        {isCreatingProduct || isEditingProduct ? (
           <Loader
             customMessage={
               isCreatingProduct
@@ -373,72 +366,111 @@ const CreateTreatment = ({ edit = false }: Props) => {
                       voltar
                     </Typography>
                   </div>
-                  <Grid container style={{ marginTop: "20px" }}>
+
+                  <Grid container spacing={2} style={{ marginTop: "20px" }}>
                     <Grid item xs={12}>
-                      <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                          <Typography>Especialidade</Typography>
-                          <ControlledSelect
-                            control={control}
-                            name="specialty"
-                            options={[
-                              { value: 1, label: "Estética e cirurgia" },
-                              { value: 2, label: "Dentária" },
-                              { value: 3, label: "Pós Cirurgia e Bem estar" },
-                              { value: 4, label: "Saude Preventiva" },
-                            ]}
-                          />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Typography>Partes Corpo</Typography>
-                          <MultiSelectInput
-                            chips
-                            items={[
-                              { title: "Face", value: 1 },
-                              { title: "Smile", value: 2 },
-                              { title: "Body", value: 3 },
-                              { title: "Health 360", value: 4 },
-                            ]}
-                            control={control}
-                            name="bodyPart"
-                          />
-                        </Grid>
-                        <Grid item xs={12}>
-                          <Typography>Preocupações</Typography>
-                          <MultiSelectInput
-                            chips
-                            items={listConcerns}
-                            control={control}
-                            name="concerns"
-                          />
-                        </Grid>
-                        <Grid item xs={12} style={{ marginTop: "40px" }}>
-                          <FileUploaderAdmin
-                            name="topImage"
-                            hasLabel
-                            loading={imagesLoader}
-                            touched={setTouchedImages}
-                            value={imagesValue || undefined}
-                            control={control}
-                            setValue={setValue}
-                            setError={setError}
-                            fieldTitle={"ImagemTopo"}
-                          />
-                        </Grid>
-                        <Grid item xs={12} style={{ marginTop: "40px" }}>
-                          <FileUploaderAdmin
-                            name="mainImage"
-                            hasLabel
-                            loading={imagesLoader}
-                            touched={setTouchedImages}
-                            value={imagesValue || undefined}
-                            control={control}
-                            setValue={setValue}
-                            setError={setError}
-                            fieldTitle={"ImagemPrincipal"}
-                          />
-                        </Grid>
-                      </Grid>
+                      <Typography>Especialidade</Typography>
+                      <ControlledSelect
+                        control={control}
+                        name="specialty"
+                        options={[
+                          { value: 1, label: "Estética e cirurgia" },
+                          { value: 2, label: "Dentária" },
+                          { value: 3, label: "Pós Cirurgia e Bem estar" },
+                          { value: 4, label: "Saude Preventiva" },
+                        ]}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Typography>Partes Corpo</Typography>
+                      <MultiSelectInput
+                        chips
+                        items={[
+                          { title: "Face", value: 1 },
+                          { title: "Smile", value: 2 },
+                          { title: "Body", value: 3 },
+                          { title: "Health 360", value: 4 },
+                        ]}
+                        control={control}
+                        name="bodyPart"
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Typography>Preocupações</Typography>
+                      <MultiSelectInput
+                        chips
+                        items={listConcerns}
+                        control={control}
+                        name="concerns"
+                      />
+                    </Grid>
+                    <Grid item xs={4} style={{ marginTop: "40px" }}>
+                      <FileUploaderAdmin
+                        name="topImage"
+                        hasLabel
+                        control={control}
+                        setValue={setValue}
+                        setError={setError}
+                        fieldTitle={"Imagem de Capa"}
+                      />
+                    </Grid>
+                    <Grid
+                      item
+                      xs={8}
+                      style={{ paddingTop: "40px", marginTop: "40px" }}
+                    >
+                      <ControlledFormInput
+                        control={control}
+                        name="topImageAlt"
+                        inputPlaceholder="Alt text"
+                      />
+                    </Grid>
+                    <Grid item xs={12} style={{ marginTop: "-10px" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          columnGap: "5px",
+                        }}
+                      >
+                        <img src={InfoCircle} alt="" />
+                        <p style={{ color: "#848484", fontSize: "10px" }}>
+                          Nomeie corretamente a sua imagem antes de fazer o
+                          upload.
+                        </p>
+                      </div>
+                    </Grid>
+                    <Grid item xs={4}>
+                      <FileUploaderAdmin
+                        name="mainImage"
+                        hasLabel
+                        control={control}
+                        setValue={setValue}
+                        setError={setError}
+                        fieldTitle={"Imagem de Corpo"}
+                      />
+                    </Grid>
+                    <Grid item xs={8} style={{ paddingTop: "40px" }}>
+                      <ControlledFormInput
+                        control={control}
+                        name="mainImageAlt"
+                        inputPlaceholder="Alt text"
+                      />
+                    </Grid>
+                    <Grid item xs={12} style={{ marginTop: "-10px" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          columnGap: "5px",
+                        }}
+                      >
+                        <img src={InfoCircle} alt="" />
+                        <p style={{ color: "#848484", fontSize: "10px" }}>
+                          Nomeie corretamente a sua imagem antes de fazer o
+                          upload.
+                        </p>
+                      </div>
                     </Grid>
                   </Grid>
                 </Grid>
