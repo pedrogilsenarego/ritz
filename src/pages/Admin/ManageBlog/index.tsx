@@ -1,32 +1,49 @@
 import { useNavigate } from "react-router-dom";
-import Quotes from "../../../assets/quote-up-square.svg";
-import useStyles from "./styles";
 import useManageProducts from "./useManageProducts";
 import Eye from "../../../assets/eye.svg";
 import SquareEdit from "../../../assets/dashboard-square-edit.svg";
 import ControlledFormInput from "../../../components/Inputs/ControlledInputAdmin";
 import { useForm } from "react-hook-form";
-import Edit from "../../../assets/Component 1.svg";
 import GeneralPage from "../Presentational/GeneralPage";
-import ButtonBlue from "../../../components/Ui/ButtonBlue";
 import { ROUTE_PATHS } from "../../../routes/constants";
+import Plus from "../../../assets/plus.svg";
+import TableList from "../../../components/TableList";
+import { tableColumns } from "./constants";
+import { mapProductsData } from "./mapper";
 
 const ManageContent = () => {
-  const classes = useStyles();
-  const {} = useManageProducts();
+  const { isLoading, data, handleAction } = useManageProducts();
   const navigate = useNavigate();
   const { reset, control, handleSubmit } = useForm<any>({});
 
   return (
-    <GeneralPage title="BLOG EHTIQ" subTitle="Gestão Conteúdos">
-      <div>
-        <ButtonBlue
-          label="Novo Tratamento"
-          icon={Edit}
-          onClick={() =>
-            navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENT_CREATE_NEW)
-          }
-        />
+    <GeneralPage
+      title="BLOG EHTIQ"
+      subTitle="Gestão Conteúdos"
+      topButtons={[
+        {
+          icon: Plus,
+          label: "Nova",
+          onClick: () =>
+            navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG_CREATE_NEW),
+        },
+      ]}
+    >
+      <div style={{ maxWidth: "800px" }}>
+        <form>
+          <ControlledFormInput
+            type="search"
+            control={control}
+            name="search"
+            inputPlaceholder="Encontrar páginas"
+            style={{
+              width: "100%",
+              padding: "20px 3px",
+              borderRadius: "15px",
+              background: "red",
+            }}
+          />
+        </form>
       </div>
       <div
         style={{
@@ -36,88 +53,13 @@ const ManageContent = () => {
         }}
       >
         <div style={{ width: "70%" }}>
-          <div>
-            <form>
-              <ControlledFormInput
-                type="search"
-                control={control}
-                name="search"
-                inputPlaceholder="Encontrar páginas"
-                style={{
-                  width: "100%",
-                  padding: "20px 3px",
-                  borderRadius: "15px",
-                  background: "red",
-                }}
-              />
-            </form>
-          </div>
-          <div
-            style={{
-              backgroundColor: "white",
-              borderRadius: "10px",
-              padding: "30px",
-              width: "100%",
-              marginTop: "50px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                gap: "90px",
-              }}
-            >
-              <div style={{ width: "100%" }}>
-                <p style={{ fontSize: "12px", fontWeight: 600 }}>
-                  Últimas Publicações
-                </p>{" "}
-                <div
-                  style={{
-                    paddingLeft: "15px",
-                    marginTop: "30px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    width: "100%",
-                  }}
-                >
-                  <div style={{ display: "flex", gap: "15px" }}>
-                    <img alt="" src={Quotes} style={{ height: "24px" }} />
-                    <p
-                      style={{
-                        fontSize: "14px",
-                        textDecoration: "underline",
-                        fontWeight: 400,
-                      }}
-                    >
-                      os 5 benefícios escondidos do ácido hialorónico.
-                    </p>
-                  </div>
-                  <div
-                    style={{
-                      width: "12px",
-                      height: "12px",
-                      backgroundColor: "lightGreen",
-                      borderRadius: "50%",
-                    }}
-                  />
-                </div>
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                }}
-              >
-                <p style={{ fontSize: "12px", fontWeight: 600 }}>Publicado</p>
-                <div style={{ marginTop: "30px" }}>
-                  <p style={{ fontSize: "12px" }}>27/01</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <TableList
+            loading={isLoading}
+            columns={tableColumns}
+            rows={mapProductsData(data?.results || [])}
+            onAction={handleAction}
+            pagination={{ page: 1, numberPages: data?.count || 0 }}
+          />
         </div>
         <div
           style={{
@@ -127,14 +69,6 @@ const ManageContent = () => {
             gap: "20px",
           }}
         >
-          <ButtonBlue
-            label="NOVA PÁGINA"
-            icon={Edit}
-            onClick={() =>
-              navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG_CREATE_NEW)
-            }
-          />
-
           <div
             style={{
               padding: "30px",

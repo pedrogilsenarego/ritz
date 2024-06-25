@@ -1,15 +1,18 @@
 import { Icons } from "../../../components/Icons";
 import { i18n } from "../../../translations/i18n";
-import { Product, ProductMapped } from "../../../types/product";
+import { Blog } from "./types";
+import { format } from "date-fns";
 
-const mapProducts = (product: Product, index: number): ProductMapped => {
+const formatDate = (date: Date) => {
+  return format(new Date(date), "dd/MM/yyyy");
+};
+
+const mapProducts = (product: Blog, index: number): any => {
   return {
     id: index,
-    model: product.model,
-    movement: product.movement,
-    thumbnail: product.thumbnail,
-    price: product.price || 0,
-    sku: product.sku,
+    name: product.title_pt,
+    createdDate: formatDate(product.created_on),
+
     actions: [
       {
         buttonType: "icon",
@@ -20,21 +23,18 @@ const mapProducts = (product: Product, index: number): ProductMapped => {
             style={{ cursor: "pointer", marginBottom: "-4px" }}
           />
         ),
-        label: "Edit",
+        label: "Editar",
       },
       {
         buttonType: "icon",
-        event: "delete",
+        event: "block",
         icon: (
-          <Icons.Delete
+          <Icons.Block
             size="20px"
             style={{ cursor: "pointer", marginBottom: "-4px" }}
           />
         ),
-        label: i18n.t(
-          "pages.admin.manageProducts.list.actionsHints.delete.tooltip",
-          "Delete this product"
-        ),
+        label: "Desactivar",
         confirmationButtonLabel: i18n.t(
           "pages.admin.manageProducts.list.actionsHints.delete.confirm",
           "Confirm"
@@ -57,8 +57,8 @@ const mapProducts = (product: Product, index: number): ProductMapped => {
   };
 };
 
-export const mapProductsData = (productsData: Product[]) => {
-  return productsData.map((product: Product, index: number) =>
+export const mapProductsData = (blogs: Blog[]) => {
+  return blogs?.map((product: Blog, index: number) =>
     mapProducts(product, index)
   );
 };
