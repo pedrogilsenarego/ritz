@@ -10,6 +10,7 @@ import Plus from "../../../assets/plus.svg";
 import TableList from "../../../components/TableList";
 import { tableColumns } from "./constants";
 import { mapProductsData } from "./mapper";
+import { AdminCard } from "../../../components/Atoms/AdminCard";
 
 const ManageContent = () => {
   const { isLoading, data, handleAction } = useManageProducts();
@@ -49,7 +50,8 @@ const ManageContent = () => {
         style={{
           width: "100%",
           display: "flex",
-          gap: "30px",
+          gap: "20px",
+          marginTop: "30px",
         }}
       >
         <div style={{ width: "70%" }}>
@@ -69,15 +71,7 @@ const ManageContent = () => {
             gap: "20px",
           }}
         >
-          <div
-            style={{
-              padding: "30px",
-              borderRadius: "20px",
-
-              backgroundColor: "white",
-              marginTop: "32px",
-            }}
-          >
+          <AdminCard>
             <p
               style={{
                 fontSize: "13px",
@@ -104,7 +98,7 @@ const ManageContent = () => {
                   lineHeight: "50px",
                 }}
               >
-                42
+                {data?.count}
               </p>
               <div
                 style={{
@@ -124,29 +118,10 @@ const ManageContent = () => {
                 >
                   Páginas
                 </p>
-                <div
-                  style={{
-                    display: "flex",
-                    backgroundColor: "white",
-                    borderRadius: "20px",
-                    gap: "3px",
-                    padding: "2px 10px",
-                    cursor: "pointer",
-                  }}
-                >
-                  <img src={Eye} alt="" style={{ width: "16px" }} />
-                  <p style={{ fontSize: "9px" }}>VER TODAS</p>
-                </div>
               </div>
             </div>
-          </div>
-          <div
-            style={{
-              padding: "30px",
-              borderRadius: "20px",
-              backgroundColor: "white",
-            }}
-          >
+          </AdminCard>
+          <AdminCard>
             <div style={{ display: "flex", justifyContent: "space-between" }}>
               <p
                 style={{
@@ -157,12 +132,6 @@ const ManageContent = () => {
               >
                 Etiquetas
               </p>
-              <div
-                style={{ display: "flex", alignItems: "center", gap: "8px" }}
-              >
-                <img src={SquareEdit} alt="" style={{ width: "16px" }} />
-                <p style={{ fontSize: "10px" }}>Editar</p>
-              </div>
             </div>
             <div
               style={{
@@ -269,7 +238,7 @@ const ManageContent = () => {
                 Estética
               </p>
             </div>
-          </div>
+          </AdminCard>
         </div>
       </div>
     </GeneralPage>

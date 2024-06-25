@@ -31,11 +31,11 @@ const ManageContent = () => {
       title="Páginas Individuais de Tratamento"
       subTitle="Gestão Conteúdos"
     >
-      <div style={{ marginTop: "0px" }}>
-        <div style={{ width: "80%", padding: "10px" }}>
+      <div>
+        <div style={{ maxWidth: "800px" }}>
           <Search />
         </div>
-        <div style={{ marginTop: "20px" }}>
+        <div style={{ marginTop: "30px" }}>
           <TableList
             loading={isLoading}
             columns={tableColumns}
