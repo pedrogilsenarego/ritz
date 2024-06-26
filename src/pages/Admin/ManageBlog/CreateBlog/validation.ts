@@ -15,7 +15,6 @@ const onlySpecifiTypes = (fileFormats: string[]): Yup.TestConfig<any> => ({
 const fileSize = (max: number, unit = "MB"): Yup.TestConfig<any> => ({
   name: "fileSize",
   message: (fileList: any | undefined) => {
-    console.log(fileList);
     if (!fileList || fileList.value.length === 0) {
       // Handle case when no file is provided
       return "Please select a file";
@@ -31,28 +30,34 @@ const fileSize = (max: number, unit = "MB"): Yup.TestConfig<any> => ({
 });
 
 export const FORM_VALIDATION = Yup.object().shape({
-  titlePT: Yup.string().required(
+  title_pt: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
   ),
-  titleEN: Yup.string().required(
+  title_en: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")} EN`
   ),
-  titleES: Yup.string().required(
+  title_es: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")} ES`
   ),
-  subtitlePT: Yup.string().required(
+  subtitle_pt: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   altImage: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  subtitleEN: Yup.string().required(
+  subtitle_en: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  mainTextPT: Yup.string().required(
+  subtitle_es: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  mainTextEN: Yup.string().required(
+  mainText_pt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  mainText_en: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  mainText_es: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
 

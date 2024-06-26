@@ -1,29 +1,18 @@
 import { Box, Grid } from "@mui/material";
-
 import ControlledFormInputEditor from "../../../../components/Inputs/ControlledInputEditor";
 import ControlledSelect from "../../../../components/Inputs/ControlledSelect";
-
 import Loader from "../../../../components/Loader";
-
 import { i18n } from "../../../../translations/i18n";
 import useStyles from "./styles";
 import useCreateProduct from "./useCreateProduct";
 import GeneralPage from "../../Presentational/GeneralPage";
 import ControlledFormInput from "../../../../components/Inputs/ControlledInputAdmin";
-import ButtonBlue from "../../../../components/Ui/ButtonBlue";
 import Internet from "../../../../assets/internet.svg";
-import Eye from "../../../../assets/eye.svg";
 import FileUploaderAdmin from "../../../../components/Inputs/FileUploaderAdmin";
-import {
-  MultiControlInput,
-  MultiControlInputLabel,
-} from "../../../../components/Inputs/MultiControlledInput";
+import InfoCircle from "../../../../assets/info-circle.png";
+import { LanguageContainer } from "../../Presentational/LanguageContainer";
 
-interface Props {
-  edit?: boolean;
-}
-
-const CreateBlog = ({ edit = false }: Props) => {
+const CreateBlog = () => {
   const classes = useStyles();
 
   const {
@@ -33,164 +22,204 @@ const CreateBlog = ({ edit = false }: Props) => {
     setValue,
     setError,
     watch,
-    isCreatingProduct,
-    isEditingProduct,
-    isLoadingProduct,
-    imagesLoader,
-    imagesValue,
-    setTouchedImages,
-  } = useCreateProduct({ edit });
+    isSubmitting,
+  } = useCreateProduct();
+
+  const PTFields = () => {
+    return (
+      <Grid container spacing={2} style={{ marginTop: "10px" }}>
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H1 | Título"
+            control={control}
+            name="title_pt"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H2 | Subtítulo"
+            control={control}
+            name="subtitle_pt"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <ControlledFormInputEditor
+            control={control}
+            name="mainText_pt"
+            label="Corpo Único"
+            inputPlaceholder="Escreva em Português"
+          />
+        </Grid>
+      </Grid>
+    );
+  };
+  const ENFields = () => {
+    return (
+      <Grid container spacing={2} style={{ marginTop: "10px" }}>
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H1 | Título"
+            control={control}
+            name="title_en"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H2 | Subtítulo"
+            control={control}
+            name="subtitle_en"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <ControlledFormInputEditor
+            control={control}
+            name="mainText_en"
+            label="Corpo Único"
+            inputPlaceholder="Escreva em Inglês"
+          />
+        </Grid>
+      </Grid>
+    );
+  };
+  const ESFields = () => {
+    return (
+      <Grid container spacing={2} style={{ marginTop: "10px" }}>
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H1 | Título"
+            control={control}
+            name="title_es"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+
+        <Grid item xs={12}>
+          <ControlledFormInput
+            label="H2 | Subtítulo"
+            control={control}
+            name="subtitle_es"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+        <Grid item xs={12}>
+          <ControlledFormInputEditor
+            control={control}
+            name="mainText_es"
+            label="Corpo Único"
+            inputPlaceholder="Escreva em Espanhol"
+          />
+        </Grid>
+      </Grid>
+    );
+  };
   return (
-    <GeneralPage title="Nova Publicação" subTitle="Blog EHTIQ">
-      {isCreatingProduct || isEditingProduct || (isLoadingProduct && edit) ? (
-        <Loader
-          customMessage={
-            isCreatingProduct
-              ? i18n.t(
-                  "pages.admin.createBlog.isCreatingProduct",
-                  "The entry is being created"
-                )
-              : i18n.t(
-                  "pages.admin.createBlog.isLoadingProduct",
-                  "The entry is being fetched"
-                )
-          }
-        />
-      ) : (
-        <Box className={classes.root}>
-          <form
-            className={classes.form}
-            id="createBlog-form"
-            onSubmit={handleSubmit(onSubmit)}
-          >
+    <form
+      className={classes.form}
+      id="createBlog-form"
+      onSubmit={handleSubmit(onSubmit)}
+      style={{ height: "100%" }}
+    >
+      <GeneralPage
+        title="Nova Publicação"
+        subTitle="Blog EHTIQ"
+        topButtons={[
+          { label: "Preview", styles: { backgroundColor: "white" } },
+          { label: "Publicar", icon: Internet, type: "submit" },
+        ]}
+      >
+        {isSubmitting ? (
+          <Loader
+            customMessage={i18n.t(
+              "pages.admin.createBlog.isCreatingProduct",
+              "The entry is being created"
+            )}
+          />
+        ) : (
+          <Box className={classes.root}>
             <Box className={classes.inputBox}>
               <Grid container spacing={"80px"}>
-                <Grid item xs={8}>
+                <Grid item xs={5}>
                   <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                      <MultiControlInput
-                        miniLabels={["PT", "EN", "ES"]}
-                        names={["titlePT", "titleEN", "titleES"]}
+                    <Grid item xs={12} marginTop={"30px"}>
+                      <ControlledSelect
                         control={control}
-                        placeholders={[
-                          "Escreva em Português",
-                          "Escreva em Inglês",
-                          "Escreva em Espanhol",
+                        name="template"
+                        options={[
+                          { value: "1", label: "1 -  Capa > Corpo" },
+                          { value: "2", label: "2 -  Corpo > Imagem > Corpo" },
                         ]}
-                        watch={watch}
-                      >
-                        <MultiControlInputLabel>
-                          H1|Título
-                        </MultiControlInputLabel>
-                      </MultiControlInput>
-                    </Grid>
-                    <Grid item xs={12}>
-                      <ControlledFormInput
-                        label="H2|Subtítulo"
-                        control={control}
-                        name="subtitlePT"
-                        inputPlaceholder="Escreva em Português"
+                        defaultLabel={"Template"}
                       />
                     </Grid>
-                    <Grid item xs={12} style={{ marginTop: "40px" }}>
+                    <Grid item xs={12} style={{ marginTop: "20px" }}>
+                      <ControlledSelect
+                        balls
+                        control={control}
+                        name="tag"
+                        options={[
+                          { value: "1", label: "ESTÉTICA" },
+                          { value: "2", label: "CIRÚRGICO" },
+                        ]}
+                        defaultLabel={"Template"}
+                      />
+                    </Grid>
+                    <Grid item xs={4} style={{ marginTop: "40px" }}>
+                      <FileUploaderAdmin
+                        name="images"
+                        hasLabel
+                        control={control}
+                        setValue={setValue}
+                        setError={setError}
+                        fieldTitle={"Imagem de Capa"}
+                      />
+                    </Grid>
+                    <Grid
+                      item
+                      xs={8}
+                      style={{ paddingTop: "40px", marginTop: "40px" }}
+                    >
+                      <ControlledFormInput
+                        control={control}
+                        name="altImage"
+                        inputPlaceholder="Alt text"
+                      />
+                    </Grid>
+                    <Grid item xs={12} style={{ marginTop: "-10px" }}>
                       <div
                         style={{
                           display: "flex",
-                          alignItems: "end",
-                          columnGap: "10px",
-                          width: "70%",
+                          alignItems: "center",
+                          columnGap: "5px",
                         }}
                       >
-                        <div style={{ width: "25%" }}>
-                          <FileUploaderAdmin
-                            name="images"
-                            hasLabel
-                            loading={imagesLoader}
-                            touched={setTouchedImages}
-                            value={imagesValue || undefined}
-                            control={control}
-                            setValue={setValue}
-                            setError={setError}
-                            fieldTitle={"Imagem Única"}
-                          />
-                        </div>
-                        <div style={{ width: "50%" }}>
-                          <ControlledFormInput
-                            label=""
-                            control={control}
-                            name="altImage"
-                            inputPlaceholder="Alt text"
-                          />
-                        </div>
+                        <img src={InfoCircle} alt="" />
+                        <p style={{ color: "#848484", fontSize: "10px" }}>
+                          Nomeie corretamente a sua imagem antes de fazer o
+                          upload.
+                        </p>
                       </div>
-                    </Grid>
-
-                    <Grid item xs={12} style={{ marginTop: "40px" }}>
-                      <ControlledFormInputEditor
-                        control={control}
-                        name="mainTextPT"
-                        label="Corpo Único"
-                        inputPlaceholder={i18n.t(
-                          "pages.admin.createProducts.form.maintextPT",
-                          "Main text PT"
-                        )}
-                      />
                     </Grid>
                   </Grid>
                 </Grid>
-                <Grid item xs={4}>
-                  <Grid item xs={12} marginTop={"30px"}>
-                    <ControlledSelect
-                      control={control}
-                      name="template"
-                      options={[
-                        { value: "1", label: "1 -  Capa > Corpo" },
-                        { value: "2", label: "2 -  Corpo > Imagem > Corpo" },
-                      ]}
-                      defaultLabel={"Template"}
-                    />
-                  </Grid>
-                  <Grid item xs={12} style={{ marginTop: "20px" }}>
-                    <ControlledSelect
-                      balls
-                      control={control}
-                      name="tag"
-                      options={[
-                        { value: "1", label: "ESTÉTICA" },
-                        { value: "2", label: "CIRÚRGICO" },
-                      ]}
-                      defaultLabel={"Template"}
-                    />
-                  </Grid>
+                <Grid item xs={7}>
+                  <LanguageContainer
+                    childrenEN={<ENFields />}
+                    childrenES={<ESFields />}
+                    childrenPT={<PTFields />}
+                  />
                 </Grid>
               </Grid>
             </Box>
-            <Box
-              style={{
-                display: "flex",
-                justifyContent: "end",
-                columnGap: "30px",
-              }}
-            >
-              <div>
-                <ButtonBlue
-                  label="Pre-visualizar"
-                  icon={Eye}
-                  styles={{ backgroundColor: "white" }}
-                />
-              </div>
-              <div>
-                <ButtonBlue
-                  type="submit"
-                  label="Publicar"
-                  icon={Internet}
-                ></ButtonBlue>
-              </div>
-            </Box>
-          </form>
-        </Box>
-      )}
-    </GeneralPage>
+          </Box>
+        )}
+      </GeneralPage>
+    </form>
   );
 };
 

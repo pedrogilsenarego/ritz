@@ -47,10 +47,10 @@ const FormControlComp = (props: BaseProps) => {
           <div style={{ display: "flex", width: "100%" }}>
             <p
               style={{
-                fontSize: "12px",
-                fontWeight: 500,
-                fontFamily: "Inter",
-                marginBottom: "10px",
+                fontSize: "14px",
+                textTransform: "capitalize",
+                fontWeight: "500",
+                marginLeft: "6px",
               }}
             >
               {label}
@@ -65,7 +65,7 @@ const FormControlComp = (props: BaseProps) => {
           </Tooltip>
         )}
       </Box>
-      {children}
+      <Box mt="10px">{children}</Box>
       <p
         style={{
           fontFamily: "Inter",

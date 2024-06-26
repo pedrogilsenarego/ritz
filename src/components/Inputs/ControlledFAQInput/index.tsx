@@ -1,5 +1,5 @@
-import { FormHelperText, Grid, TextField, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { TextField, Typography } from "@mui/material";
+import { useCallback, useState } from "react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { Control, get, useController } from "react-hook-form";
@@ -55,8 +55,15 @@ const ControlledFAQInput = ({
     field.onChange(updatedList);
   };
 
-  const PTFields = () => {
-    return (
+  const renderFields = useCallback(
+    (
+      question: string,
+      answer: string,
+      setQ: (value: string) => void,
+      setA: (value: string) => void,
+      placeholder: string,
+      answerLabel: string
+    ) => (
       <div>
         <Typography
           style={{
@@ -80,11 +87,10 @@ const ControlledFAQInput = ({
             backgroundColor: "white",
             width: "100%",
           }}
-          value={question_pt}
-          onChange={(e) => setQ_pt(e.currentTarget.value)}
+          value={question}
+          onChange={(e) => setQ(e.currentTarget.value)}
           id={name}
-          //disabled={isSubmitting}
-          placeholder={"Pergunta PT"}
+          placeholder={placeholder}
           InputProps={{
             sx: {
               paddingRight: 0,
@@ -93,108 +99,30 @@ const ControlledFAQInput = ({
             },
           }}
         />
-        <p>Resposta PT</p>
-        <CKEditor
-          editor={ClassicEditor}
-          data={answer_pt}
-          onChange={(event, editor) => setA_pt(editor.getData())}
-        />
-      </div>
-    );
-  };
-  const ENFields = () => {
-    return (
-      <div>
-        <Typography
-          style={{
-            marginLeft: "5px",
-            marginBottom: "10px",
-            color: "#848484",
-            fontFamily: "Inter",
-            fontSize: "14px",
-            fontWeight: 500,
-            lineHeight: "20px",
-          }}
-        >
-          {label}
-        </Typography>
-        <TextField
-          variant="outlined"
-          className={classes().root}
-          style={{
-            borderRadius: "10px",
-            backgroundColor: "white",
-            width: "100%",
-          }}
-          value={question_en}
-          onChange={(e) => setQ_en(e.currentTarget.value)}
-          id={name}
-          //disabled={isSubmitting}
-          placeholder={"Pergunta EN"}
-          InputProps={{
-            sx: {
-              paddingRight: 0,
-              fontFamily: "Inter",
-              fontSize: "12px",
-            },
-          }}
-        />
-        <p>Resposta En</p>
-        <CKEditor
-          editor={ClassicEditor}
-          data={answer_en}
-          onChange={(event, editor) => setA_en(editor.getData())}
-        />
-      </div>
-    );
-  };
 
-  const ESFields = () => {
-    return (
-      <div>
-        <Typography
-          style={{
-            marginLeft: "5px",
-            marginBottom: "10px",
-            color: "#848484",
-            fontFamily: "Inter",
-            fontSize: "14px",
-            fontWeight: 500,
-            lineHeight: "20px",
-          }}
-        >
-          {label}
-        </Typography>
-        <TextField
-          variant="outlined"
-          className={classes().root}
-          style={{
-            borderRadius: "10px",
-            backgroundColor: "white",
-            width: "100%",
-          }}
-          value={question_es}
-          onChange={(e) => setQ_es(e.currentTarget.value)}
-          id={name}
-          //disabled={isSubmitting}
-          placeholder={"Pergunta ES"}
-          InputProps={{
-            sx: {
-              paddingRight: 0,
-              fontFamily: "Inter",
-              fontSize: "12px",
-            },
-          }}
-        />
-        <p>Resposta ES</p>
-        <CKEditor
-          editor={ClassicEditor}
-          data={answer_es}
-          onChange={(event, editor) => setA_es(editor.getData())}
-        />
+        <div style={{ display: "flex", width: "100%" }}>
+          <p
+            style={{
+              fontSize: "14px",
+              textTransform: "capitalize",
+              fontWeight: "500",
+              marginLeft: "6px",
+            }}
+          >
+            {answerLabel}
+          </p>
+        </div>
+        <div style={{ marginTop: "10px" }}>
+          <CKEditor
+            editor={ClassicEditor}
+            data={answer}
+            onChange={(event, editor) => setA(editor.getData())}
+          />
+        </div>
       </div>
-    );
-  };
+    ),
+    [label, name, classes]
+  );
 
   return (
     <div>
@@ -203,9 +131,30 @@ const ControlledFAQInput = ({
           onChange={(lang: "EN" | "PT" | "ES") => {
             setLang(lang);
           }}
-          childrenEN={<ENFields />}
-          childrenES={<ESFields />}
-          childrenPT={<PTFields />}
+          childrenEN={renderFields(
+            question_en,
+            answer_en,
+            setQ_en,
+            setA_en,
+            "Pergunta EN",
+            "resposta em Inglês"
+          )}
+          childrenES={renderFields(
+            question_es,
+            answer_es,
+            setQ_es,
+            setA_es,
+            "Pergunta ES",
+            "resposta em Espanhol"
+          )}
+          childrenPT={renderFields(
+            question_pt,
+            answer_pt,
+            setQ_pt,
+            setA_pt,
+            "Pergunta PT",
+            "resposta em Português"
+          )}
         />
         <div style={{ width: "100%", display: "flex", justifyContent: "end" }}>
           <div
@@ -290,33 +239,71 @@ const ControlledFAQInput = ({
                   </div>
                 )}
                 {lang === "EN" && (
-                  <div
-                    style={{
-                      display: "flex",
-                      columnGap: "10px",
-                      border: "solid 2px lightGray",
-                      borderRadius: "6px",
-                      padding: "5px",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <p>Q:{item.question_en}</p>
-                    <p>A:{item.answer_en}</p>
+                  <div style={{ width: "100%" }}>
+                    <div
+                      style={{
+                        padding: "10px 20px",
+                        display: "flex",
+                        width: "100%",
+                        justifyContent: "space-between",
+                        borderBottom: "solid 1px rgba(0, 0, 0, 0.50)",
+                      }}
+                    >
+                      <p style={{ fontSize: "17px", fontWeight: 600 }}>
+                        {item.question_en}?
+                      </p>
+                      <div
+                        onClick={() => handleDelete(index)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <img src={Delete} alt="" style={{ width: "24px" }} />
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        padding: "10px 20px 20px 20px",
+                        borderBottom:
+                          index < field.value.length - 1
+                            ? "dashed 1px rgba(0, 0, 0, 0.50)"
+                            : "none",
+                      }}
+                    >
+                      <p dangerouslySetInnerHTML={{ __html: item.answer_en }} />
+                    </div>
                   </div>
                 )}
                 {lang === "ES" && (
-                  <div
-                    style={{
-                      display: "flex",
-                      columnGap: "10px",
-                      border: "solid 2px lightGray",
-                      borderRadius: "6px",
-                      padding: "5px",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <p>Q:{item.question_es}</p>
-                    <p>A:{item.answer_es}</p>
+                  <div style={{ width: "100%" }}>
+                    <div
+                      style={{
+                        padding: "10px 20px",
+                        display: "flex",
+                        width: "100%",
+                        justifyContent: "space-between",
+                        borderBottom: "solid 1px rgba(0, 0, 0, 0.50)",
+                      }}
+                    >
+                      <p style={{ fontSize: "17px", fontWeight: 600 }}>
+                        {item.question_es}?
+                      </p>
+                      <div
+                        onClick={() => handleDelete(index)}
+                        style={{ cursor: "pointer" }}
+                      >
+                        <img src={Delete} alt="" style={{ width: "24px" }} />
+                      </div>
+                    </div>
+                    <div
+                      style={{
+                        padding: "10px 20px 20px 20px",
+                        borderBottom:
+                          index < field.value.length - 1
+                            ? "dashed 1px rgba(0, 0, 0, 0.50)"
+                            : "none",
+                      }}
+                    >
+                      <p dangerouslySetInnerHTML={{ __html: item.answer_es }} />
+                    </div>
                   </div>
                 )}
               </div>

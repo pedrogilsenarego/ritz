@@ -1,14 +1,16 @@
 export const defaultValues = {
-  titlePT: "",
-  titleEN: "",
-  titleES: "",
-  subtitlePT: "",
-  subtitleEN: "",
+  title_pt: "",
+  title_en: "",
+  title_es: "",
+  subtitle_pt: "",
+  subtitle_en: "",
+  subtitle_es: "",
   images: [],
   altImage: "",
   template: "1",
-  mainTextPT: "",
-  mainTextEN: "",
+  mainText_pt: "",
+  mainText_en: "",
+  mainText_es: "",
   tag: "1",
 };
 
