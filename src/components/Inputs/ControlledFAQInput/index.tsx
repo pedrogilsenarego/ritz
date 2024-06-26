@@ -1,5 +1,5 @@
 import { TextField, Typography } from "@mui/material";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import { Control, get, useController } from "react-hook-form";
@@ -26,6 +26,7 @@ const ControlledFAQInput = ({
   const [lang, setLang] = useState<"PT" | "EN" | "ES">("PT");
   const error = get(formState.errors, name, "");
   const classes = useStyles();
+  const langChangeRef = useRef(false); // To track language changes
 
   const handleAdd = () => {
     field.onChange([
@@ -116,7 +117,11 @@ const ControlledFAQInput = ({
           <CKEditor
             editor={ClassicEditor}
             data={answer}
-            onChange={(event, editor) => setA(editor.getData())}
+            onChange={(event, editor) => {
+              if (!langChangeRef.current) {
+                setA(editor.getData());
+              }
+            }}
           />
         </div>
       </div>
@@ -129,7 +134,11 @@ const ControlledFAQInput = ({
       <div style={{ display: "flex", flexDirection: "column", rowGap: "10px" }}>
         <LanguageContainer
           onChange={(lang: "EN" | "PT" | "ES") => {
+            langChangeRef.current = true;
             setLang(lang);
+            setTimeout(() => {
+              langChangeRef.current = false;
+            }, 10);
           }}
           childrenEN={renderFields(
             question_en,
