@@ -40,9 +40,27 @@ export const useCreateNewTreatment = () => {
 
     const newData = new FormData();
 
-    Object.keys(data).map((key) => newData.append(key, data[key]));
+    Object.keys(data).forEach((key) => {
+      const value = data[key];
+      if (value instanceof FileList) {
+        // If the value is a FileList, append each file individually
+        Array.from(value).forEach((file) => {
+          newData.append(key, file);
+        });
+      } else if (value instanceof File) {
+        // Append files directly
+        newData.append(key, value);
+      } else if (typeof value === "object" && value !== null) {
+        // Append nested objects as JSON string
+        newData.append(key, JSON.stringify(value));
+      } else {
+        // Append primitive types directly
+        newData.append(key, value);
+      }
+    });
 
     try {
+      console.log("send", newData);
       const response = await fetch(url, {
         method: "POST",
         headers: {

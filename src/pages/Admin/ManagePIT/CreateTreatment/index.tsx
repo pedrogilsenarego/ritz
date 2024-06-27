@@ -324,7 +324,7 @@ const CreateTreatment = () => {
           { label: "Publicar", icon: Internet, type: "submit" },
         ]}
       >
-        {isCreatingProduct || isEditingProduct ? (
+        {isEditingProduct ? (
           <Loader
             customMessage={
               isCreatingProduct
@@ -372,7 +372,7 @@ const CreateTreatment = () => {
                       <Typography>Especialidade</Typography>
                       <ControlledSelect
                         control={control}
-                        name="specialty"
+                        name="speciality"
                         options={[
                           { value: 1, label: "Estética e cirurgia" },
                           { value: 2, label: "Dentária" },

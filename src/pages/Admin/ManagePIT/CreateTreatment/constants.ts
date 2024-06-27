@@ -9,7 +9,7 @@ export const defaultValues = {
   subtitle_en: "",
   subtitle_es: "",
 
-  specialty: "",
+  speciality: "",
   bodyPart: [],
   concerns: [],
 
@@ -50,7 +50,7 @@ export const defaultValuesEdit = (treatment: Treatment) => ({
   subtitle_en: treatment.subtitle_en || "",
   subtitle_es: treatment.subtitle_es || "",
 
-  specialty: `${treatment.speciality || 1}`,
+  speciality: `${treatment.speciality || 1}`,
   bodyPart: treatment.bodyParts.map((bodyPart) => bodyPart.id) || [],
   concerns: treatment.concerns.map((concern) => concern.id) || [],
 

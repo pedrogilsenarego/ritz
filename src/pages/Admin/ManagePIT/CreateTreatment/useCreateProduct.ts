@@ -19,7 +19,7 @@ const useCreateProduct = () => {
   const location = useLocation();
 
   const treatment = location?.state?.treatment || null;
-  console.log(treatment);
+
   const { createNewTreatment } = useCreateNewTreatment();
 
   const { isLoading, data } = useQuery<any, any>([queryKeys.bodyParts], () =>
