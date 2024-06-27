@@ -10,7 +10,11 @@ import { productsServices } from "../../../../services/products.services";
 import { defaultValues, defaultValuesEdit } from "./constants";
 import { FORM_VALIDATION } from "./validation";
 import { queryKeys } from "../../../../constants/queryKeys";
-import { handleFetchConcerns } from "../../../../actions/tretaments";
+import {
+  handleFetchBodyParts,
+  handleFetchConcerns,
+  handleFetchSpecialties,
+} from "../../../../actions/tretaments";
 
 import { useCreateNewTreatment } from "../../../../services/useCreateNewTreatment";
 
@@ -22,7 +26,31 @@ const useCreateProduct = () => {
 
   const { createNewTreatment } = useCreateNewTreatment();
 
-  const { isLoading, data } = useQuery<any, any>([queryKeys.bodyParts], () =>
+  const { isLoading: isLoadingBodyparts, data: dataBodyparts } = useQuery<
+    any,
+    any
+  >([queryKeys.bodyParts], () => handleFetchBodyParts());
+
+  const listBodyparts = dataBodyparts
+    ? dataBodyparts?.results?.map((concern: any) => ({
+        title: concern.bodypart,
+        value: concern.id,
+      }))
+    : [];
+
+  const { isLoading: isLoadingSpecialty, data: dataSpecialty } = useQuery<
+    any,
+    any
+  >([queryKeys.specialties], () => handleFetchSpecialties());
+
+  const listSpeciality = dataSpecialty
+    ? dataSpecialty?.results?.map((concern: any) => ({
+        label: concern.speciality,
+        value: concern.id,
+      }))
+    : [];
+
+  const { isLoading, data } = useQuery<any, any>([queryKeys.concerns], () =>
     handleFetchConcerns()
   );
 
@@ -81,9 +109,11 @@ const useCreateProduct = () => {
     setValue,
     isCreatingProduct,
     isEditingProduct,
-
+    dataSpecialty,
+    listBodyparts,
     setError,
     listConcerns,
+    listSpeciality,
 
     watch,
   };

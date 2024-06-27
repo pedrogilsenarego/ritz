@@ -9,14 +9,14 @@ import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys } from "../../../../../constants/queryKeys";
 import { useState } from "react";
-import { handleFetchBodyParts } from "../../../../../actions/tretaments";
+import { handleFetchBodyPart } from "../../../../../actions/tretaments";
 
 export const Body = () => {
   const lang = useSelector<State, string>((state) => state.general.lang);
   const [selected, setSelected] = useState(0);
   const { isLoading, data } = useQuery<any, any>(
-    [queryKeys.bodyParts, selected + 1],
-    () => handleFetchBodyParts(selected + 1)
+    [queryKeys.bodyPart, selected + 1],
+    () => handleFetchBodyPart(selected + 1)
   );
 
   const ButtonLogo = ({

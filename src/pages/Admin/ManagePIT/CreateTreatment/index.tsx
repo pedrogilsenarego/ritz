@@ -32,6 +32,8 @@ const CreateTreatment = () => {
     listConcerns,
     isCreatingProduct,
     isEditingProduct,
+    listSpeciality,
+    listBodyparts,
   } = useCreateProduct();
 
   const PTFields = () => {
@@ -373,24 +375,14 @@ const CreateTreatment = () => {
                       <ControlledSelect
                         control={control}
                         name="speciality"
-                        options={[
-                          { value: 1, label: "Estética e cirurgia" },
-                          { value: 2, label: "Dentária" },
-                          { value: 3, label: "Pós Cirurgia e Bem estar" },
-                          { value: 4, label: "Saude Preventiva" },
-                        ]}
+                        options={listSpeciality}
                       />
                     </Grid>
                     <Grid item xs={12}>
                       <Typography>Partes Corpo</Typography>
                       <MultiSelectInput
                         chips
-                        items={[
-                          { title: "Face", value: 1 },
-                          { title: "Smile", value: 2 },
-                          { title: "Body", value: 3 },
-                          { title: "Health 360", value: 4 },
-                        ]}
+                        items={listBodyparts}
                         control={control}
                         name="bodyPart"
                       />
@@ -401,7 +393,7 @@ const CreateTreatment = () => {
                         chips
                         items={listConcerns}
                         control={control}
-                        name="concerns"
+                        name="concern"
                       />
                     </Grid>
                     <Grid item xs={4} style={{ marginTop: "40px" }}>

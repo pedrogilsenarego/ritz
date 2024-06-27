@@ -13,7 +13,7 @@ import LeftArrow from "../../../../assets/leftArrow.png";
 import Refresh from "../../../../assets/refresh.png";
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys } from "../../../../constants/queryKeys";
-import { handleFetchBodyParts } from "../../../../actions/tretaments";
+import { handleFetchBodyPart } from "../../../../actions/tretaments";
 import Face from "../../../../assets/ICON Concerns 1.png";
 import Smile from "../../../../assets/ICON Concerns 2.png";
 import Bodi from "../../../../assets/ICON Concerns 3.png";
@@ -43,8 +43,8 @@ export const BodyPartDefined = ({
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const { isLoading, data } = useQuery<any, any>(
-    [queryKeys.bodyParts, numberFilter()],
-    () => handleFetchBodyParts(numberFilter())
+    [queryKeys.bodyPart, numberFilter()],
+    () => handleFetchBodyPart(numberFilter())
   );
 
   type PropsTile = {

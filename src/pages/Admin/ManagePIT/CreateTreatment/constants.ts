@@ -11,7 +11,7 @@ export const defaultValues = {
 
   speciality: "",
   bodyPart: [],
-  concerns: [],
+  concern: [],
 
   tprocediment_pt: "",
   tprocediment_en: "",
@@ -52,7 +52,7 @@ export const defaultValuesEdit = (treatment: Treatment) => ({
 
   speciality: `${treatment.speciality || 1}`,
   bodyPart: treatment.bodyParts.map((bodyPart) => bodyPart.id) || [],
-  concerns: treatment.concerns.map((concern) => concern.id) || [],
+  concern: treatment.concerns.map((concern) => concern.id) || [],
 
   tprocediment_pt: treatment.tprocediment_pt || "",
   tprocediment_en: treatment.tprocediment_en || "",

@@ -55,7 +55,7 @@ export const FORM_VALIDATION = Yup.object().shape({
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
   bodyPart: Yup.array().optional(),
-  concerns: Yup.array().optional(),
+  concern: Yup.array().optional(),
 
   tprocediment_pt: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`

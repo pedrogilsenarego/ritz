@@ -5,7 +5,7 @@ const mapProducts = (product: any, index: number): any => {
   return {
     id: index,
     name: product.title_pt,
-    speciality: product.speciality,
+    speciality: product?.speciality?.speciality_pt || "",
     createdDate: "",
     actions: [
       {
