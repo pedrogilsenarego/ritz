@@ -7,5 +7,6 @@ export const queryKeys = {
   specialty: "specialty",
   concerns: "concerns",
   treatments: "treatments",
+  treatment: "treatment",
   blogs: "blogs",
 };

@@ -4,25 +4,23 @@ import Description from "./Components/Description";
 import FAQ from "./Components/FAQ";
 import { MAX_SCREEN } from "../../constants/screen";
 import { useNavigate, useParams } from "react-router-dom";
-import { Content, listPages } from "./types";
+import { Content } from "./types";
 import { ROUTE_PATHS } from "../../routes/constants";
 import { useEffect } from "react";
+import { useQuery } from "@tanstack/react-query";
+import { handleFetchTreatment } from "../../actions/tretaments";
+import { queryKeys } from "../../constants/queryKeys";
 
 const TreatmentID = () => {
   const params = useParams();
-  const navigate = useNavigate();
-  const content = listPages.includes(params?.id || "")
-    ? require(`./${params.id}`)
-    : null;
-
-  useEffect(() => {
-    if (!content) navigate(ROUTE_PATHS.HOME);
-  }, [content]);
-
-  const data = content?.content as Content;
 
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const { isLoading, data } = useQuery<any, any>(
+    [queryKeys.treatment, params.id],
+    () => handleFetchTreatment(params?.id || "")
+  );
+  console.log(data);
   return (
     <>
       <div
@@ -67,9 +65,9 @@ const TreatmentID = () => {
         <div>
           <Description data={data} />
         </div>
-        <div style={{ marginTop: "150px" }}>
+        {/* <div style={{ marginTop: "150px" }}>
           <FAQ data={data} />
-        </div>
+        </div> */}
       </Container>
     </>
   );

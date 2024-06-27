@@ -13,5 +13,3 @@ export type Content = {
     results: string;
   };
 };
-
-export const listPages = ["harmonização-facial"];

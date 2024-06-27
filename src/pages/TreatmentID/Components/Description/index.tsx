@@ -3,14 +3,14 @@ import Clock from "../../../../assets/clock-03.svg";
 import Vaccine from "../../../../assets/vaccine.svg";
 import StarFace from "../../../../assets/star-face.svg";
 import { Content } from "../../types";
+import { useSelector } from "react-redux";
+import { State } from "../../../../redux/types";
 
-const Description = ({ data }: { data: Content }) => {
+const Description = ({ data }: { data: any }) => {
   const theme = useTheme();
+  const lang = useSelector<State, string>((state) => state.general.lang);
 
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-  const htmlString =
-    data?.mainText ||
-    "Consiste num conjunto de técnicas que visam realçar e equilibrar os traços faciais de forma natural e completamente  personalizada.</br> Este tratamento envolve uma combinação cuidadosa  de diferentes procedimentos estéticos para criar <b>uma aparência  mais simétrica, harmoniosa e jovem.</b></br></br> Aqui poderão ser utilizadas  técnicas de preenchimento - <b>com ácido hialurónico ou toxina  botulínica, fios de PDO, bem como outros procedimentos</b> estéticos  avançados, para alcançar resultados excecionais!</br></br> Esta abordagem  holística permite não apenas melhorar a estética facial, mas  também preservar a individualidade e a autenticidade de cada  pessoa.";
   return (
     <Grid
       container
@@ -49,7 +49,7 @@ const Description = ({ data }: { data: Content }) => {
                   lineHeight: "30px",
                   textAlign: "justify",
                 }}
-                dangerouslySetInnerHTML={{ __html: htmlString }}
+                dangerouslySetInnerHTML={{ __html: data[`mainText_${lang}`] }}
               ></Typography>
             </div>
             {data.guideTreatments && (

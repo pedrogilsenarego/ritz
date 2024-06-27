@@ -326,7 +326,7 @@ const CreateTreatment = () => {
           { label: "Publicar", icon: Internet, type: "submit" },
         ]}
       >
-        {isEditingProduct ? (
+        {isCreatingProduct || isEditingProduct ? (
           <Loader
             customMessage={
               isCreatingProduct
