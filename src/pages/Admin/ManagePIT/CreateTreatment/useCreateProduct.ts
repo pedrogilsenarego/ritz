@@ -23,8 +23,9 @@ const useCreateProduct = () => {
   const location = useLocation();
 
   const treatment = location?.state?.treatment || null;
+  console.log(treatment);
 
-  const { createNewTreatment } = useCreateNewTreatment();
+  const { createNewTreatment, editTreatment } = useCreateNewTreatment();
 
   const { isLoading: isLoadingBodyparts, data: dataBodyparts } = useQuery<
     any,
@@ -77,28 +78,30 @@ const useCreateProduct = () => {
         console.log("error", error);
       },
       onSettled: () => {
-        //reset();
-        // navigate(ROUTE_PATHS.ADMIN);
+        reset();
+        navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENTS);
       },
     }
   );
 
   const { mutate: editProduct, isLoading: isEditingProduct } = useMutation(
-    productsServices.editProduct,
+    editTreatment,
     {
       onError: (error: any) => {
         console.log("error", error);
       },
       onSettled: () => {
-        reset();
-        navigate(ROUTE_PATHS.ADMIN);
+        // reset();
+        // navigate(OUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENTS);
       },
     }
   );
 
   const onSubmit = async (formData: any) => {
     console.log(formData);
-    createProduct(formData);
+    if (treatment) {
+      editProduct({ data: formData, treatmentId: treatment.id });
+    } else createProduct(formData);
     return;
   };
 
