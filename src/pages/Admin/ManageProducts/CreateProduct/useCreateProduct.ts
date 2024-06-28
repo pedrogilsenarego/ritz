@@ -7,7 +7,7 @@ import { ROUTE_PATHS } from "../../../../routes/constants";
 import { queryIdentifiers } from "../../../../services/constants";
 import { productsServices } from "../../../../services/products.services";
 import { getObjectDifferences } from "../../../../utils/compareObjects";
-import { handleConvertStringIntoFile } from "../../../../utils/imagesHelpers";
+
 import { defaultValues, defaultValues1 } from "./constants";
 import { FORM_VALIDATION } from "./validation";
 
@@ -54,36 +54,7 @@ const useCreateProduct = ({ edit = false }: Props) => {
     }
   }, [edit, productData]);
 
-  useEffect(() => {
-    if (!isLoadingProduct && edit) {
-      if (initialValues.thumbnail.length > 0)
-        handleConvertStringIntoFile(
-          initialValues.thumbnail,
-          setThumbnailLoader,
-          setThumbnailValue
-        );
-      if (initialValues.specialThumbnail.length > 0)
-        handleConvertStringIntoFile(
-          initialValues.specialThumbnail,
-          setSpecialThumbnailLoader,
-          setSpecialThumbnailValue
-        );
-      if (initialValues.images.length > 0)
-        handleConvertStringIntoFile(
-          initialValues.images,
-          setImagesLoader,
-          setImagesValue
-        );
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    isLoadingProduct,
-    initialValues.thumbnail,
-    initialValues.specialThumbnail,
-    initialValues.images,
-  ]);
-
-  const { reset, control, handleSubmit, setValue, setError } = useForm({
+  const { reset, control, handleSubmit, setValue, setError, watch } = useForm({
     resolver: yupResolver(FORM_VALIDATION),
     defaultValues: initialValues,
   });

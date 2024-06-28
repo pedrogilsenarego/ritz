@@ -1,6 +1,6 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
@@ -17,13 +17,14 @@ import {
 } from "../../../../actions/tretaments";
 
 import { useCreateNewTreatment } from "../../../../services/useCreateNewTreatment";
+import { useSelector } from "react-redux";
+import { State } from "../../../../redux/types";
 
 const useCreateProduct = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const treatment = location?.state?.treatment || null;
-  console.log(treatment);
 
   const { createNewTreatment, editTreatment } = useCreateNewTreatment();
 
@@ -34,7 +35,7 @@ const useCreateProduct = () => {
 
   const listBodyparts = dataBodyparts
     ? dataBodyparts?.results?.map((concern: any) => ({
-        title: concern.bodypart,
+        title: concern.bodypart_pt,
         value: concern.id,
       }))
     : [];
@@ -46,7 +47,7 @@ const useCreateProduct = () => {
 
   const listSpeciality = dataSpecialty
     ? dataSpecialty?.results?.map((concern: any) => ({
-        label: concern.speciality,
+        label: concern.speciality_pt,
         value: concern.id,
       }))
     : [];
@@ -57,17 +58,31 @@ const useCreateProduct = () => {
 
   const listConcerns = data
     ? data?.results?.map((concern: any) => ({
-        title: concern.concern,
+        title: concern.concern_pt,
         value: concern.id,
       }))
     : [];
 
+  useEffect(() => {
+    const loadDefaultValues = async () => {
+      if (treatment) {
+        const defaultValues = await defaultValuesEdit(treatment);
+
+        reset(defaultValues); // Use reset to update form values
+      }
+    };
+
+    loadDefaultValues();
+  }, [treatment]);
+
   const { reset, control, handleSubmit, setValue, setError, watch, formState } =
     useForm({
       resolver: yupResolver(FORM_VALIDATION),
-      defaultValues: treatment ? defaultValuesEdit(treatment) : defaultValues,
+      defaultValues: defaultValues,
     });
-
+  useEffect(() => {
+    console.log(watch("topImage"));
+  }, [formState]);
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
     createNewTreatment,
     {

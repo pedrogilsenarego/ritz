@@ -116,7 +116,14 @@ const MultiSelectInput: React.FunctionComponent<MultiSelectProps<any>> = ({
           const renderInputSelectedValues = (selected: any) => {
             if (chips) {
               return (
-                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                <Box
+                  sx={{
+                    display: "flex",
+
+                    gap: 0.5,
+                    overflow: "hidden",
+                  }}
+                >
                   {selected.map((v: any) => (
                     <ChipItem
                       size="small"
