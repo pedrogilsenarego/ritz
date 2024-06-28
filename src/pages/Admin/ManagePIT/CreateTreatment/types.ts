@@ -31,7 +31,9 @@ export type Treatment = {
 
   mainImageAlt: string;
 
-  speciality: string;
+  listFAQ: any[];
+
+  speciality: { id: number };
   bodyParts: { id: number }[];
   concerns: { id: number }[];
 };

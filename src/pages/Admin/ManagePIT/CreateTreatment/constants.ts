@@ -50,7 +50,7 @@ export const defaultValuesEdit = (treatment: Treatment) => ({
   subtitle_en: treatment.subtitle_en || "",
   subtitle_es: treatment.subtitle_es || "",
 
-  speciality: `${treatment.speciality || 1}`,
+  speciality: `${treatment.speciality.id || 1}`,
   bodyPart: treatment.bodyParts.map((bodyPart) => bodyPart.id) || [],
   concern: treatment.concerns.map((concern) => concern.id) || [],
 
@@ -74,7 +74,7 @@ export const defaultValuesEdit = (treatment: Treatment) => ({
   mainText_en: treatment.mainText_en || "",
   mainText_es: treatment.mainText_es || "",
 
-  listFAQ: [],
+  listFAQ: treatment.listFAQ || [],
 
   topImage: [],
   topImageAlt: treatment.topImageAlt || "",
