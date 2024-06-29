@@ -120,7 +120,7 @@ export const FORM_VALIDATION = Yup.object().shape({
     .required(
       `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
     )
-    .test(fileSize(0.5))
+    .test(fileSize(2))
     .test(
       onlySpecifiTypes([
         //"image/jpeg",
@@ -135,7 +135,7 @@ export const FORM_VALIDATION = Yup.object().shape({
     .required(
       `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
     )
-    .test(fileSize(0.5))
+    .test(fileSize(2))
     .test(
       onlySpecifiTypes([
         //"image/jpeg",

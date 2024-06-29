@@ -225,7 +225,7 @@ const ControlledFAQInput = ({
                       }}
                     >
                       <p style={{ fontSize: "17px", fontWeight: 600 }}>
-                        {item.question_pt}?
+                        {item.question_pt}
                       </p>
                       <div
                         onClick={() => handleDelete(index)}
@@ -259,7 +259,7 @@ const ControlledFAQInput = ({
                       }}
                     >
                       <p style={{ fontSize: "17px", fontWeight: 600 }}>
-                        {item.question_en}?
+                        {item.question_en}
                       </p>
                       <div
                         onClick={() => handleDelete(index)}
@@ -293,7 +293,7 @@ const ControlledFAQInput = ({
                       }}
                     >
                       <p style={{ fontSize: "17px", fontWeight: 600 }}>
-                        {item.question_es}?
+                        {item.question_es}
                       </p>
                       <div
                         onClick={() => handleDelete(index)}
