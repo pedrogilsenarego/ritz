@@ -9,4 +9,5 @@ export const queryKeys = {
   treatments: "treatments",
   treatment: "treatment",
   blogs: "blogs",
+  dashboardMonthReport: "dasboard-month-report",
 };

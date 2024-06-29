@@ -7,8 +7,11 @@ import FileImage from "../../../assets/file_flat.svg";
 import Download from "../../../assets/download-04.svg";
 import Chart from "../../../assets/icon_chart_bar.svg";
 import TwoLevelChartPie from "../../../components/Charts/TwoLevelChartPie";
+import { useDashboard } from "./useDasboard";
 
 const ManageDashboard = () => {
+  const { data } = useDashboard();
+  console.log(data);
   const Panel = ({
     title,
     subtitle,
