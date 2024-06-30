@@ -10,17 +10,20 @@ import { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { handleFetchTreatment } from "../../actions/tretaments";
 import { queryKeys } from "../../constants/queryKeys";
+import { Treatment } from "../Admin/ManagePIT/CreateTreatment/types";
+import { useSelector } from "react-redux";
+import { State } from "../../redux/types";
 
 const TreatmentID = () => {
   const params = useParams();
-
+  const lang = useSelector<State, string>((state) => state.general.lang);
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const { isLoading, data } = useQuery<any, any>(
     [queryKeys.treatment, params.id],
     () => handleFetchTreatment(params?.id || "")
   );
-  console.log(data);
+
   return (
     <>
       <div
@@ -32,7 +35,7 @@ const TreatmentID = () => {
           padding: "30px 0px",
           backgroundPosition: "center center",
           backgroundSize: "cover",
-          backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
+          backgroundImage: `url(${data?.topImage})`,
         }}
       >
         <Container
@@ -51,7 +54,7 @@ const TreatmentID = () => {
               fontWeight: 500,
             }}
           >
-            {data?.title}
+            {data?.[`title_${lang.toLowerCase()}`]}
           </Typography>
         </Container>
       </div>
@@ -65,9 +68,9 @@ const TreatmentID = () => {
         <div>
           <Description data={data} />
         </div>
-        {/* <div style={{ marginTop: "150px" }}>
+        <div style={{ marginTop: "150px" }}>
           <FAQ data={data} />
-        </div> */}
+        </div>
       </Container>
     </>
   );

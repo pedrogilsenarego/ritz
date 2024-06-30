@@ -1,14 +1,16 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import FAQI from "../../../../assets/faq.svg";
 import { useState } from "react";
-import { Content } from "../../types";
+import { useSelector } from "react-redux";
+import { State } from "../../../../redux/types";
 
-const FAQ = ({ data }: { data: Content }) => {
+const FAQ = ({ data }: { data: any }) => {
   const theme = useTheme();
-
+  const lang = useSelector<State, string>((state) => state.general.lang);
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-  const MoreInfo = ({ q, a }: { q: string; a: string }) => {
+  const MoreInfo = ({ each }: { each: any }) => {
     const [open, setOpen] = useState<boolean>(false);
+
     return (
       <div>
         <div
@@ -25,7 +27,7 @@ const FAQ = ({ data }: { data: Content }) => {
           <Typography
             style={{ fontSize: "17px", fontWeight: 600, letterSpacing: "1px" }}
           >
-            {q}
+            {each?.[`question_${lang.toLowerCase()}`]}
           </Typography>
           <p style={{ fontSize: "30px" }}>+</p>
         </div>
@@ -33,14 +35,16 @@ const FAQ = ({ data }: { data: Content }) => {
           <div style={{ width: "80%", padding: "20px 0px 0px 10px" }}>
             <Typography
               style={{ fontSize: "15px", fontWeight: 400 }}
-              dangerouslySetInnerHTML={{ __html: a }}
+              dangerouslySetInnerHTML={{
+                __html: each?.[`answer_${lang.toLowerCase()}`],
+              }}
             />
           </div>
         )}
       </div>
     );
   };
-  if (!data?.faq?.length || data?.faq?.length < 0) return <></>;
+  if (!data?.listFAQ?.length || data?.lisFAQ?.length < 0) return <></>;
   return (
     <div
       style={{
@@ -65,8 +69,8 @@ const FAQ = ({ data }: { data: Content }) => {
           PERGUNTAS FREQUENTES
         </Typography>
       </div>
-      {data?.faq?.map((each, index) => (
-        <MoreInfo key={index} q={each.q} a={each.a} />
+      {data?.listFAQ?.map((each: any, index: number) => (
+        <MoreInfo key={index} each={each} />
       ))}
     </div>
   );

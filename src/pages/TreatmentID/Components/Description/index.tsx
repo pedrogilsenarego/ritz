@@ -2,9 +2,10 @@ import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Clock from "../../../../assets/clock-03.svg";
 import Vaccine from "../../../../assets/vaccine.svg";
 import StarFace from "../../../../assets/star-face.svg";
-import { Content } from "../../types";
+
 import { useSelector } from "react-redux";
 import { State } from "../../../../redux/types";
+import { Treatment } from "../../../Admin/ManagePIT/CreateTreatment/types";
 
 const Description = ({ data }: { data: any }) => {
   const theme = useTheme();
@@ -40,7 +41,7 @@ const Description = ({ data }: { data: any }) => {
                   textTransform: "uppercase",
                 }}
               >
-                {data?.subtitle}
+                {data?.[`subtitle_${lang.toLowerCase()}`]}
               </Typography>
               <Typography
                 style={{
@@ -49,188 +50,189 @@ const Description = ({ data }: { data: any }) => {
                   lineHeight: "30px",
                   textAlign: "justify",
                 }}
-                dangerouslySetInnerHTML={{ __html: data[`mainText_${lang}`] }}
+                dangerouslySetInnerHTML={{
+                  __html: data?.[`mainText_${lang.toLowerCase()}`],
+                }}
               ></Typography>
             </div>
-            {data.guideTreatments && (
+
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                style={{
+                  fontSize: "18px",
+                  fontWeight: 500,
+                  textTransform: "uppercase",
+                }}
+              >
+                Guia de Tratamento
+              </Typography>
+              <div
+                style={{
+                  marginTop: "10px",
+                  width: "100%",
+                  height: "6px",
+                  background:
+                    "linear-gradient(90deg, #FFFFFE 1%, #E7DBD4 15.5%, #D2C1B8 50.5%, #E8DCD6 85.5%, #FFFDFC 100%)",
+                }}
+              />
               <div
                 style={{
                   width: "100%",
+                  marginTop: "60px",
+                  borderBottom: "solid 1px black",
                   display: "flex",
-                  alignItems: "center",
-                  flexDirection: "column",
                 }}
               >
-                <Typography
-                  style={{
-                    fontSize: "18px",
-                    fontWeight: 500,
-                    textTransform: "uppercase",
-                  }}
-                >
-                  Guia de Tratamento
-                </Typography>
                 <div
                   style={{
-                    marginTop: "10px",
-                    width: "100%",
-                    height: "6px",
-                    background:
-                      "linear-gradient(90deg, #FFFFFE 1%, #E7DBD4 15.5%, #D2C1B8 50.5%, #E8DCD6 85.5%, #FFFDFC 100%)",
-                  }}
-                />
-                <div
-                  style={{
-                    width: "100%",
-                    marginTop: "60px",
-                    borderBottom: "solid 1px black",
+                    width: "50%",
+                    padding: "10px 15px 20px 15px",
+                    borderRight: "solid 1px black",
                     display: "flex",
+                    columnGap: "20px",
+                    justifyContent: "center",
                   }}
                 >
-                  <div
-                    style={{
-                      width: "50%",
-                      padding: "10px 15px 20px 15px",
-                      borderRight: "solid 1px black",
-                      display: "flex",
-                      columnGap: "20px",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <div>
-                      <Typography
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: 500,
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        Tempo de procedimento
-                      </Typography>
-                      <Typography
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: 400,
-                          textTransform: "uppercase",
-                          marginTop: "20px",
-                        }}
-                      >
-                        {data.guideTreatments.tprocediment}
-                      </Typography>
-                    </div>
-                    <img src={Clock} alt="" />
+                  <div>
+                    <Typography
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 500,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Tempo de procedimento
+                    </Typography>
+                    <Typography
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 400,
+                        textTransform: "uppercase",
+                        marginTop: "20px",
+                      }}
+                    >
+                      {data?.[`tprocediment_${lang.toLowerCase()}`]}
+                    </Typography>
                   </div>
-                  <div
-                    style={{
-                      width: "50%",
-                      padding: "10px 15px 20px 15px",
-                      borderLeft: "solid 1px black",
-                      display: "flex",
-                      columnGap: "20px",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <div>
-                      <Typography
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: 500,
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        Tempo de Recuperação
-                      </Typography>
-                      <Typography
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: 400,
-                          textTransform: "uppercase",
-                          marginTop: "20px",
-                        }}
-                      >
-                        {data.guideTreatments.trecuperation}
-                      </Typography>
-                    </div>
-                    <img src={Clock} alt="" />
-                  </div>
+                  <img src={Clock} alt="" />
                 </div>
                 <div
                   style={{
-                    width: "100%",
-
-                    borderTop: "solid 1px black",
+                    width: "50%",
+                    padding: "10px 15px 20px 15px",
+                    borderLeft: "solid 1px black",
                     display: "flex",
+                    columnGap: "20px",
+                    justifyContent: "center",
                   }}
                 >
-                  <div
-                    style={{
-                      width: "50%",
-                      padding: "10px 15px 20px 15px",
-                      borderRight: "solid 1px black",
-                      display: "flex",
-                      columnGap: "20px",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <div>
-                      <Typography
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: 500,
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        Anestesia
-                      </Typography>
-                      <Typography
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: 400,
-                          textTransform: "uppercase",
-                          marginTop: "20px",
-                        }}
-                      >
-                        {data.guideTreatments.anesthetic}
-                      </Typography>
-                    </div>
-                    <img src={Vaccine} alt="" />
+                  <div>
+                    <Typography
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 500,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Tempo de Recuperação
+                    </Typography>
+                    <Typography
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 400,
+                        textTransform: "uppercase",
+                        marginTop: "20px",
+                      }}
+                    >
+                      {data?.[`trecuperation_${lang.toLowerCase()}`]}
+                    </Typography>
                   </div>
-                  <div
-                    style={{
-                      width: "50%",
-                      padding: "10px 15px 20px 15px",
-                      borderLeft: "solid 1px black",
-                      display: "flex",
-                      columnGap: "20px",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <div>
-                      <Typography
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: 500,
-                          textTransform: "uppercase",
-                        }}
-                      >
-                        Resultados
-                      </Typography>
-                      <Typography
-                        style={{
-                          fontSize: "12px",
-                          fontWeight: 400,
-                          textTransform: "uppercase",
-                          marginTop: "20px",
-                        }}
-                      >
-                        {data.guideTreatments.results}
-                      </Typography>
-                    </div>
-                    <img src={StarFace} alt="" />
-                  </div>
+                  <img src={Clock} alt="" />
                 </div>
               </div>
-            )}
+              <div
+                style={{
+                  width: "100%",
+
+                  borderTop: "solid 1px black",
+                  display: "flex",
+                }}
+              >
+                <div
+                  style={{
+                    width: "50%",
+                    padding: "10px 15px 20px 15px",
+                    borderRight: "solid 1px black",
+                    display: "flex",
+                    columnGap: "20px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <div>
+                    <Typography
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 500,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Anestesia
+                    </Typography>
+                    <Typography
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 400,
+                        textTransform: "uppercase",
+                        marginTop: "20px",
+                      }}
+                    >
+                      {data?.[`anesthetic_${lang.toLowerCase()}`]}
+                    </Typography>
+                  </div>
+                  <img src={Vaccine} alt="" />
+                </div>
+                <div
+                  style={{
+                    width: "50%",
+                    padding: "10px 15px 20px 15px",
+                    borderLeft: "solid 1px black",
+                    display: "flex",
+                    columnGap: "20px",
+                    justifyContent: "center",
+                  }}
+                >
+                  <div>
+                    <Typography
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 500,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      Resultados
+                    </Typography>
+                    <Typography
+                      style={{
+                        fontSize: "12px",
+                        fontWeight: 400,
+                        textTransform: "uppercase",
+                        marginTop: "20px",
+                      }}
+                    >
+                      {data?.[`results_${lang.toLowerCase()}`]}
+                    </Typography>
+                  </div>
+                  <img src={StarFace} alt="" />
+                </div>
+              </div>
+            </div>
           </div>
         </Grid>
       )}
@@ -245,14 +247,14 @@ const Description = ({ data }: { data: any }) => {
           }}
         >
           <img
-            alt=""
+            alt={data?.mainImageAlt || ""}
             style={{
               height: "462px",
               width: "392px",
               objectFit: "cover",
               borderRadius: "5px",
             }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src={data?.mainImage || ""}
           />
           <div
             style={{
@@ -277,7 +279,7 @@ const Description = ({ data }: { data: any }) => {
             <Typography
               style={{ color: "rgba(79, 83, 145, 1", fontWeight: 500 }}
             >
-              {data.specialty}
+              {data?.speciality[`speciality_${lang.toLowerCase()}`]}
             </Typography>
             <div
               style={{
@@ -312,8 +314,7 @@ const Description = ({ data }: { data: any }) => {
                 Descrição
               </Typography>
               <Typography style={{ fontSize: mobile ? "11px" : "16px" }}>
-                Descrição Descrição Descrição Descrição Descrição Descrição
-                Descrição Descrição Descrição Descrição Descrição Descrição
+                {data?.[`mainText${lang.toLowerCase()}`]}
               </Typography>
             </div>
           </div>
