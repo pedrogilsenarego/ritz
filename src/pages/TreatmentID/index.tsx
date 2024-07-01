@@ -3,26 +3,29 @@ import Description from "./Components/Description";
 
 import FAQ from "./Components/FAQ";
 import { MAX_SCREEN } from "../../constants/screen";
-import { useNavigate, useParams } from "react-router-dom";
-import { Content } from "./types";
-import { ROUTE_PATHS } from "../../routes/constants";
-import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import { useQuery } from "@tanstack/react-query";
 import { handleFetchTreatment } from "../../actions/tretaments";
 import { queryKeys } from "../../constants/queryKeys";
-import { Treatment } from "../Admin/ManagePIT/CreateTreatment/types";
+
 import { useSelector } from "react-redux";
 import { State } from "../../redux/types";
 
 const TreatmentID = () => {
   const params = useParams();
+
   const lang = useSelector<State, string>((state) => state.general.lang);
   const theme = useTheme();
+  const previewState = useSelector<State, any>((state) => state.admin.preview);
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-  const { isLoading, data } = useQuery<any, any>(
+  const { isLoading, data: queryData } = useQuery<any, any>(
     [queryKeys.treatment, params.id],
-    () => handleFetchTreatment(params?.id || "")
+    () => handleFetchTreatment(params?.id || ""),
+    { enabled: params?.id !== "preview" }
   );
+
+  const data = params?.id === "preview" ? previewState : queryData;
 
   return (
     <>

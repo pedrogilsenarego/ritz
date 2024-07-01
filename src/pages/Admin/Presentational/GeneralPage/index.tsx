@@ -11,7 +11,7 @@ type Props = {
   subTitle: string;
   topButtons?: {
     label: string;
-    onClick?: () => void;
+    onClick?: (e: any) => any;
     icon?: string | undefined;
     type?: "button" | "submit" | "reset" | undefined;
     styles?: CSSProperties;
@@ -81,7 +81,9 @@ const GeneralPage = ({ children, title, subTitle, topButtons }: Props) => {
                   <ButtonBlue
                     type={button.type}
                     label={button.label}
-                    onClick={button.onClick}
+                    onClick={(e: any) => {
+                      if (button.onClick) button.onClick(e);
+                    }}
                     icon={button.icon}
                     styles={button.styles}
                   />

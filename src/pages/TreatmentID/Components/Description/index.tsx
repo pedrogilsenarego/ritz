@@ -41,7 +41,7 @@ const Description = ({ data }: { data: any }) => {
                   textTransform: "uppercase",
                 }}
               >
-                {data?.[`subtitle_${lang.toLowerCase()}`]}
+                {data?.[`subtitle_${lang.toLowerCase()}`] || ""}
               </Typography>
               <Typography
                 style={{
@@ -279,7 +279,7 @@ const Description = ({ data }: { data: any }) => {
             <Typography
               style={{ color: "rgba(79, 83, 145, 1", fontWeight: 500 }}
             >
-              {data?.speciality[`speciality_${lang.toLowerCase()}`]}
+              {data?.speciality?.[`speciality_${lang.toLowerCase()}`] || ""}
             </Typography>
             <div
               style={{

@@ -44,13 +44,6 @@ export const defaultValues = {
 
 // Modified defaultValuesEdit function
 export const defaultValuesEdit = async (treatment: Treatment): Promise<any> => {
-  const topImageFile = treatment.topImage
-    ? [await fetchImageAsFileList(treatment.topImage, "topImage")]
-    : [];
-  const mainImageFile = treatment.mainImage
-    ? [await fetchImageAsFileList(treatment.mainImage, "mainImage")]
-    : [];
-
   return {
     title_pt: treatment.title_pt || "",
     title_en: treatment.title_en || "",
@@ -86,9 +79,9 @@ export const defaultValuesEdit = async (treatment: Treatment): Promise<any> => {
 
     listFAQ: treatment.listFAQ || [],
 
-    topImage: topImageFile,
+    topImage: treatment.topImage,
     topImageAlt: treatment.topImageAlt || "",
-    mainImage: mainImageFile,
+    mainImage: treatment.mainImage,
     mainImageAlt: treatment.mainImageAlt || "",
   };
 };

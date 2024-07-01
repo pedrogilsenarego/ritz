@@ -15,7 +15,6 @@ const onlySpecifiTypes = (fileFormats: string[]): Yup.TestConfig<any> => ({
 const fileSize = (max: number, unit = "MB"): Yup.TestConfig<any> => ({
   name: "fileSize",
   message: (fileList: any | undefined) => {
-    console.log(fileList);
     if (!fileList || fileList.value.length === 0) {
       // Handle case when no file is provided
       return "Please select a file";
@@ -146,4 +145,95 @@ export const FORM_VALIDATION = Yup.object().shape({
         "image/webp",
       ])
     ),
+});
+
+export const FORM_VALIDATION_EDIT = Yup.object().shape({
+  title_pt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  title_en: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  title_es: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+
+  subtitle_pt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  subtitle_en: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  subtitle_es: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+
+  speciality: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  bodyPart: Yup.array().optional(),
+  concern: Yup.array().optional(),
+
+  tprocediment_pt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  tprocediment_en: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  tprocediment_es: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+
+  trecuperation_pt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  trecuperation_en: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  trecuperation_es: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+
+  anesthetic_pt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  anesthetic_en: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  anesthetic_es: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+
+  results_pt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  results_en: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  results_es: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+
+  mainText_pt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  mainText_en: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  mainText_es: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+
+  listFAQ: Yup.array(),
+
+  topImageAlt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+  mainImageAlt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
+  ),
+
+  topImage: Yup.mixed(),
+
+  mainImage: Yup.mixed(),
 });

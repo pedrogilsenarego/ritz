@@ -34,6 +34,7 @@ const CreateTreatment = () => {
     isEditingProduct,
     listSpeciality,
     listBodyparts,
+    handlePreview,
   } = useCreateProduct();
 
   const PTFields = () => {
@@ -314,7 +315,7 @@ const CreateTreatment = () => {
   };
   return (
     <form
-      id="createBlog-form"
+      id="createPIT-form"
       onSubmit={handleSubmit(onSubmit)}
       style={{ height: "100%" }}
     >
@@ -322,7 +323,12 @@ const CreateTreatment = () => {
         title="PIT - Novo tratamento"
         subTitle="Tratamentos"
         topButtons={[
-          { label: "Preview", styles: { backgroundColor: "white" } },
+          {
+            label: "Preview",
+            styles: { backgroundColor: "white" },
+            onClick: (e) => handlePreview(e),
+            type: "button",
+          },
           { label: "Publicar", icon: Internet, type: "submit" },
         ]}
       >

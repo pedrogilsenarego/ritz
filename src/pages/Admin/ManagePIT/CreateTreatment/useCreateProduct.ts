@@ -2,13 +2,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
-import { queryIdentifiers } from "../../../../services/constants";
-import { productsServices } from "../../../../services/products.services";
 
 import { defaultValues, defaultValuesEdit } from "./constants";
-import { FORM_VALIDATION } from "./validation";
+import { FORM_VALIDATION, FORM_VALIDATION_EDIT } from "./validation";
 import { queryKeys } from "../../../../constants/queryKeys";
 import {
   handleFetchBodyParts,
@@ -17,13 +15,13 @@ import {
 } from "../../../../actions/tretaments";
 
 import { useCreateNewTreatment } from "../../../../services/useCreateNewTreatment";
-import { useSelector } from "react-redux";
-import { State } from "../../../../redux/types";
+import { useDispatch } from "react-redux";
+import { updatePreviewState } from "../../../../redux/admin/actions";
 
 const useCreateProduct = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
+  const dispatch = useDispatch();
   const treatment = location?.state?.treatment || null;
 
   const { createNewTreatment, editTreatment } = useCreateNewTreatment();
@@ -75,14 +73,11 @@ const useCreateProduct = () => {
     loadDefaultValues();
   }, [treatment]);
 
-  const { reset, control, handleSubmit, setValue, setError, watch, formState } =
-    useForm({
-      resolver: yupResolver(FORM_VALIDATION),
-      defaultValues: defaultValues,
-    });
-  useEffect(() => {
-    console.log(watch("topImage"));
-  }, [formState]);
+  const { reset, control, handleSubmit, setValue, setError, watch } = useForm({
+    resolver: yupResolver(treatment ? FORM_VALIDATION_EDIT : FORM_VALIDATION),
+    defaultValues: defaultValues,
+  });
+
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
     createNewTreatment,
     {
@@ -106,8 +101,9 @@ const useCreateProduct = () => {
         console.log("error", error);
       },
       onSettled: () => {
-        // reset();
-        // navigate(OUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENTS);
+        console.log("here");
+        reset();
+        navigate(ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENTS);
       },
     }
   );
@@ -118,6 +114,50 @@ const useCreateProduct = () => {
       editProduct({ data: formData, treatmentId: treatment.id });
     } else createProduct(formData);
     return;
+  };
+
+  useEffect(() => {});
+
+  const handlePreview = async (e: any) => {
+    e.preventDefault();
+    const formData = { ...watch() };
+
+    const updatedFormData = await prepareFormData(formData); // Prepare the form data (including converting images)
+
+    dispatch(updatePreviewState(updatedFormData)); // Dispatch the action with updated form data
+
+    const url = ROUTE_PATHS.TREATMENT_ID.replace(":id", "preview");
+    window.open(url, "_blank", "noreferrer");
+  };
+
+  const prepareFormData = async (formData: any) => {
+    const updatedFormData = { ...formData }; // Clone the form data
+
+    // Convert topImage if it's a FileList to a URL
+    if (updatedFormData.topImage instanceof FileList) {
+      updatedFormData.topImage = await convertFileListToUrl(
+        updatedFormData.topImage
+      );
+    }
+
+    // Convert mainImage if it's a FileList to a URL
+    if (updatedFormData.mainImage instanceof FileList) {
+      updatedFormData.mainImage = await convertFileListToUrl(
+        updatedFormData.mainImage
+      );
+    }
+
+    return updatedFormData;
+  };
+
+  const convertFileListToUrl = async (
+    fileList: FileList
+  ): Promise<string | undefined> => {
+    if (fileList.length === 0) return undefined; // Handle empty FileList
+
+    const file = fileList[0]; // Get the first file from the FileList
+    const imageUrl = URL.createObjectURL(file); // Create URL for the file
+    return imageUrl;
   };
 
   return {
@@ -132,7 +172,7 @@ const useCreateProduct = () => {
     setError,
     listConcerns,
     listSpeciality,
-
+    handlePreview,
     watch,
   };
 };
