@@ -73,10 +73,11 @@ const useCreateProduct = () => {
     loadDefaultValues();
   }, [treatment]);
 
-  const { reset, control, handleSubmit, setValue, setError, watch } = useForm({
-    resolver: yupResolver(treatment ? FORM_VALIDATION_EDIT : FORM_VALIDATION),
-    defaultValues: defaultValues,
-  });
+  const { reset, control, handleSubmit, setValue, setError, watch, getValues } =
+    useForm({
+      resolver: yupResolver(treatment ? FORM_VALIDATION_EDIT : FORM_VALIDATION),
+      defaultValues: defaultValues,
+    });
 
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
     createNewTreatment,
@@ -120,9 +121,8 @@ const useCreateProduct = () => {
 
   const handlePreview = async (e: any) => {
     e.preventDefault();
-    const formData = { ...watch() };
 
-    const updatedFormData = await prepareFormData(formData); // Prepare the form data (including converting images)
+    const updatedFormData = await prepareFormData(getValues()); // Prepare the form data (including converting images)
 
     dispatch(updatePreviewState(updatedFormData)); // Dispatch the action with updated form data
 
