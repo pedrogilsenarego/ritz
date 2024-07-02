@@ -3,7 +3,7 @@ import { BASE_URL } from "../services/constants";
 
 export const useDashBoardActions = () => {
   const { getCookie } = useCookies();
-  const getMonthReport = async () => {
+  const getMonthReports = async () => {
     const url = `${BASE_URL}/dashboard/monthlyreports/latest`;
     const accessToken = getCookie("access");
 
@@ -35,5 +35,5 @@ export const useDashBoardActions = () => {
     }
   };
 
-  return { getMonthReport };
+  return { getMonthReports };
 };

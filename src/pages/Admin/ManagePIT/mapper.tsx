@@ -10,6 +10,17 @@ const mapProducts = (product: any, index: number): any => {
     actions: [
       {
         buttonType: "icon",
+        event: "visit",
+        icon: (
+          <Icons.Info
+            size="20px"
+            style={{ cursor: "pointer", marginBottom: "-4px" }}
+          />
+        ),
+        label: "Visitar",
+      },
+      {
+        buttonType: "icon",
         event: "edit",
         icon: (
           <Icons.Edit

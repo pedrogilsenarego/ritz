@@ -11,7 +11,7 @@ import { useDashboard } from "./useDasboard";
 
 const ManageDashboard = () => {
   const { data } = useDashboard();
-  console.log(data);
+
   const Panel = ({
     title,
     subtitle,
@@ -140,7 +140,7 @@ const ManageDashboard = () => {
       </div>
     );
   };
-  const Link = () => {
+  const Link = ({ link }: { link: any }) => {
     return (
       <div style={{ display: "flex", padding: "0px 30px 10px 30px" }}>
         <div style={{ width: "60%" }}>
@@ -152,7 +152,7 @@ const ManageDashboard = () => {
               textDecoration: "underline",
             }}
           >
-            www.ehtiq.com/blog/os-5-beneficios-do-aci ...
+            {link?.url || ""}
           </p>
         </div>
         <div
@@ -169,7 +169,7 @@ const ManageDashboard = () => {
               fontWeight: 400,
             }}
           >
-            341
+            {link?.trafego || 0}
           </p>
         </div>
         <div
@@ -186,7 +186,7 @@ const ManageDashboard = () => {
               fontWeight: 400,
             }}
           >
-            2
+            {link?.keywords || 0}
           </p>
         </div>
       </div>
@@ -255,10 +255,9 @@ const ManageDashboard = () => {
             marginBottom: "30px",
           }}
         />
-        <Link />
-        <Link />
-        <Link />
-        <Link />
+        {data?.rankingURL?.map((link: any, index: number) => {
+          return <Link link={link} key={index} />;
+        })}
       </div>
     );
   };
@@ -375,10 +374,22 @@ const ManageDashboard = () => {
     panelStyles?: CSSProperties;
     entries?: { title: string; value: number }[];
   }) => {
-    const data = [
-      { name: "PT", value: 50, color: "rgba(0, 180, 216, 1)" },
-      { name: "UK", value: 25, color: "rgba(0, 119, 182, 1)" },
-      { name: "ES", value: 25, color: "rgba(3, 4, 94, 1)" },
+    const dataa = [
+      {
+        name: "PT",
+        value: data?.trafegoGeoPT || 0,
+        color: "rgba(0, 180, 216, 1)",
+      },
+      {
+        name: "UK",
+        value: data?.trafegoGeoUK || 0,
+        color: "rgba(0, 119, 182, 1)",
+      },
+      {
+        name: "ES",
+        value: data?.trafegoGeoES || 0,
+        color: "rgba(3, 4, 94, 1)",
+      },
     ];
     return (
       <div
@@ -417,10 +428,10 @@ const ManageDashboard = () => {
         )}
 
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <TwoLevelChartPie data={data} />
+          <TwoLevelChartPie data={dataa} />
         </div>
         <div style={{ display: "flex", justifyContent: "space-between  " }}>
-          {data.map((item, index) => (
+          {dataa.map((item, index) => (
             <div
               key={index}
               style={{
@@ -460,7 +471,7 @@ const ManageDashboard = () => {
               <Panel
                 title="Tráfego Orgânico"
                 subtitle="Mês Corrente"
-                value={42}
+                value={data?.trafegoOrganico || 0}
                 percentage={10}
               />
             </Grid>
@@ -468,12 +479,15 @@ const ManageDashboard = () => {
               <Panel
                 title="Tráfego Pago"
                 subtitle="Mês Corrente"
-                value={0}
+                value={data?.trafegoPago || 0}
                 percentage={-2}
               />
             </Grid>
             <Grid item xs={4}>
-              <Panel title="Distribuição Orgânica" />
+              <Panel
+                title="Distribuição Orgânica"
+                value={data?.distribuicaoOrganica || 0}
+              />
             </Grid>
           </Grid>
           <Grid
@@ -502,15 +516,15 @@ const ManageDashboard = () => {
             <Panel
               panelStyles={{ padding: "30px 30px 20px 30px" }}
               entries={[
-                { title: "Links Externos", value: 12 },
-                { title: "Links Internos", value: 10 },
+                { title: "Links Externos", value: data?.linksExternos || 0 },
+                { title: "Links Internos", value: data?.linksInternos || 0 },
               ]}
             />
             <Panel
               panelStyles={{ padding: "30px 30px 20px 30px" }}
               entries={[
-                { title: "Total Páginas", value: 24 },
-                { title: "Indexadas", value: 10 },
+                { title: "Total Páginas", value: data?.totalPaginas || 0 },
+                { title: "Indexadas", value: data?.indexadas || 0 },
               ]}
             />
           </div>

@@ -14,6 +14,12 @@ const useManageProducts = () => {
 
   const handleAction = async (type: string, id: number, value?: any) => {
     switch (type) {
+      case "visit": {
+        const treatment = data.results[id];
+
+        navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", treatment.id));
+        break;
+      }
       case "edit": {
         const treatment = data.results[id];
 
