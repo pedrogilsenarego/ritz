@@ -363,9 +363,10 @@ const IdentityProtection = () => {
               color: "rgba(93, 92, 92, 1)",
               textTransform: "uppercase",
               fontSize: "12px",
+              lineHeight: "10px",
             }}
             buttonStyles={{
-              padding: "8px 20px",
+              padding: "12px 32px",
               marginTop: "100px",
               backgroundColor: "transparent",
               border: "1px solid rgba(0, 0, 0, 0.8)",

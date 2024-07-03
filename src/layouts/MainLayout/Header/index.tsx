@@ -197,7 +197,7 @@ const Header = () => {
             >
               <img
                 onClick={() => navigate(ROUTE_PATHS.HOME)}
-                src={Logo}
+                src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-7.webp`}
                 alt="logo"
                 style={{
                   width: "155px",
@@ -325,7 +325,7 @@ const Header = () => {
           />
           <img
             onClick={() => navigate(ROUTE_PATHS.HOME)}
-            src={LogoMobile}
+            src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-7.webp`}
             alt="logo"
             style={{
               width: "123px",

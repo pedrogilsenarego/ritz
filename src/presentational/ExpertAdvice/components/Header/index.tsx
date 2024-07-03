@@ -2,6 +2,7 @@ import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "../../../../assets/LOGO 6.webp";
 import Cross from "../../../../assets/cross.png";
 import { i18n } from "../../../../translations/i18n";
+import { BASE_URL } from "../../../../services/constants";
 type Props = {
   setOpenPopup: (s: boolean) => void;
 };
@@ -21,7 +22,7 @@ export const Header = ({ setOpenPopup }: Props) => {
         <div>
           {" "}
           <img
-            src={Logo}
+            src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-5.webp`}
             alt=""
             style={{
               width: "141px",

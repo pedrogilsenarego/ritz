@@ -64,7 +64,7 @@ export const content = {
           box4: "Localizada numa das zonas mais nobres da cidade de lisboa, a EHTIQ surge como um símbolo de excelência aliada à tradição.",
           box5: "Conheça o espaço projetado para superar as suas expectativas, promovendo a mais alta qualidade em cuidados de saúde.",
           box6: "Elevamos os <b>padrões de qualidade</b> nos cuidados de saúde.",
-          box7: "VALORES QUE REPRESENTAM EXCELÊNCIA",
+          box7: "VALORES QUE REPRESENTAM</br> EXCELÊNCIA",
           box8: "Elegância",
           box9: "Harmonia",
           box10: "Tranquilidade",

@@ -29,7 +29,7 @@ const Location = () => {
               backgroundPosition: "center center",
             }}
           >
-            <Typography
+            {/* <Typography
               style={{
                 position: "absolute",
                 bottom: "-22px",
@@ -38,7 +38,7 @@ const Location = () => {
               }}
             >
               {i18n.t("pages.about.box3")}
-            </Typography>
+            </Typography> */}
           </div>
         </Grid>
         <Grid
@@ -198,7 +198,7 @@ const Location = () => {
             </Box>
           </Grid>
         </Grid>
-        <div style={{ paddingLeft: "48px", zIndex: -10 }}>
+        <div style={{ zIndex: -10 }}>
           <img
             src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-3.webp"
             alt=""

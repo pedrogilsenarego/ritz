@@ -10,7 +10,7 @@ import TwoLevelChartPie from "../../../components/Charts/TwoLevelChartPie";
 import { useDashboard } from "./useDasboard";
 
 const ManageDashboard = () => {
-  const { data } = useDashboard();
+  const { data, dataDashboardMonthReportList } = useDashboard();
 
   const Panel = ({
     title,

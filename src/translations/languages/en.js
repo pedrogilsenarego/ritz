@@ -65,7 +65,7 @@ export const content = {
           box4: "Located in one of the most NOBLE areas of the city of Lisbon, EHTIQ emerges as a symbol of excellence combined with tradition.",
           box5: "Discover the space designed to exceed your expectations, promoting the highest quality in healthcare.",
           box6: "We elevate the <b>standards of quality</b> in healthcare.",
-          box7: "VALUES THAT REPRESENT EXCELLENCE",
+          box7: "VALUES THAT REPRESENT</br> EXCELLENCE",
           box8: "Elegance",
           box9: "Harmony",
           box10: "Tranquility",
@@ -74,7 +74,7 @@ export const content = {
           box13: "The experience",
 
           box14:
-            "Enter a universe carefully created to provide a unique experience.</br></br><b class='custom-bold'>Specialized teams</b>, scientific approach, and focus on experience are our commitments.",
+            "Enter a universe carefully created to provide a unique experience.</br></br><b class='custom-bold'>Specialized teams, scientific approach</b>, and focus on experience are our commitments.",
 
           button1: "Enter",
         },

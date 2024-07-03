@@ -19,6 +19,7 @@ import phone from "../../../assets/phone.svg";
 import { MAX_SCREEN } from "../../../constants/screen";
 import { VisitCard } from "../../../presentational/VisitCard";
 import { i18n } from "../../../translations/i18n";
+import { BASE_URL } from "../../../services/constants";
 
 type Props = {
   isUser?: boolean;
@@ -73,7 +74,7 @@ const Footer = ({ isUser }: Props) => {
               }}
             >
               <img
-                src={mainLogo}
+                src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-4.webp`}
                 alt=""
                 style={{
                   width: "274px",
@@ -326,7 +327,7 @@ const Footer = ({ isUser }: Props) => {
               }}
             >
               <img
-                src={mainLogo}
+                src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-4.webp`}
                 alt=""
                 style={{
                   height: 40,

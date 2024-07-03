@@ -1,6 +1,7 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "../../../../assets/LOGO 3.webp";
 import Logo2 from "../../../../assets/LOGO 1.webp";
+import { BASE_URL } from "../../../../services/constants";
 
 const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
   const Theme = useTheme();
@@ -23,7 +24,7 @@ const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
       >
         {logo && (
           <img
-            src={Logo2}
+            src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-1.webp`}
             alt=""
             width={"86px"}
             style={{
@@ -69,7 +70,7 @@ const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
       >
         {logo && (
           <img
-            src={Logo2}
+            src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-1.webp`}
             alt=""
             width={"86px"}
             style={{

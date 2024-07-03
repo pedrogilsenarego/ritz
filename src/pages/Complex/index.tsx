@@ -9,6 +9,7 @@ import Logo from "../../assets/LogoBeigeClinic.png";
 import Legendas from "./Components/Legendas";
 import Eyes from "./Components/Eyes";
 import { i18n } from "../../translations/i18n";
+import { BASE_URL } from "../../services/constants";
 
 const Complex = () => {
   const theme = useTheme();
@@ -196,7 +197,11 @@ const Complex = () => {
             __html: i18n.t("pages.clinic.box21"),
           }}
         ></Typography>
-        <img src={Logo} alt="" style={{ width: mobile ? "65px" : "89px" }} />
+        <img
+          src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-2.webp`}
+          alt=""
+          style={{ width: mobile ? "65px" : "89px" }}
+        />
       </div>
       <div style={{ marginTop: mobile ? "100px" : "150px" }}>
         <Legendas />

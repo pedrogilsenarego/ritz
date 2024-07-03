@@ -2,6 +2,7 @@ import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import Logo from "../../../../assets/Mini_Beige.webp";
 import Brand from "../../../../assets/LOGO 5.webp";
 import { i18n } from "../../../../translations/i18n";
+import { BASE_URL } from "../../../../services/constants";
 export const WellnessClinic = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
@@ -23,7 +24,11 @@ export const WellnessClinic = () => {
           }}
         >
           <div style={{ position: "absolute", top: 80, left: 70 }}>
-            <img src={Logo} alt="" style={{ width: "77px" }} />
+            <img
+              src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-2.webp`}
+              alt=""
+              style={{ width: "77px" }}
+            />
             <Typography
               variant="h1"
               style={{
@@ -42,7 +47,7 @@ export const WellnessClinic = () => {
             ></Typography>
             <img
               style={{ marginTop: "65px", width: "150px" }}
-              src={Brand}
+              src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-9.webp`}
               alt=""
             />
           </div>
@@ -84,7 +89,11 @@ export const WellnessClinic = () => {
           }}
         >
           <div style={{ position: "absolute", top: 30, left: 20 }}>
-            <img src={Logo} alt="" style={{ width: "43px" }} />
+            <img
+              src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-2.webp`}
+              alt=""
+              style={{ width: "43px" }}
+            />
             <Typography
               variant="h1"
               style={{
@@ -103,7 +112,7 @@ export const WellnessClinic = () => {
             ></Typography>
             <img
               style={{ marginTop: "20px", marginLeft: "4px", width: "115px" }}
-              src={Brand}
+              src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-9.webp`}
               alt=""
             />
           </div>

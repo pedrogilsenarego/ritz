@@ -4,6 +4,7 @@ import Logo2 from "../../../../assets/EHTIQ BRANDS-12.svg";
 
 import Logo3 from "../../../../assets/EHTIQ BRANDS-11_GQ.png";
 import { i18n } from "../../../../translations/i18n";
+import { BASE_URL } from "../../../../services/constants";
 
 const ContainerC = () => {
   const theme = useTheme();
@@ -15,7 +16,11 @@ const ContainerC = () => {
         <div
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
-          <img src={Logo} alt="" style={{ width: "322px" }} />
+          <img
+            src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-3.webp`}
+            alt=""
+            style={{ width: "322px" }}
+          />
         </div>
         <div
           style={{
