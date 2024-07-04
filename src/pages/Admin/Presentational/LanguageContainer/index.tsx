@@ -5,12 +5,18 @@ type Props = {
   childrenEN: React.ReactNode;
   childrenES: React.ReactNode;
   onChange?: (lang: "PT" | "EN" | "ES") => void;
+  errorEn?: boolean;
+  errorEs?: boolean;
+  errorPt?: boolean;
 };
 
 export const LanguageContainer: React.FC<Props> = ({
   childrenPT,
   childrenEN,
   childrenES,
+  errorEn,
+  errorPt,
+  errorEs,
   onChange,
 }) => {
   const [lang, setLang] = useState<"PT" | "EN" | "ES">("PT");
@@ -31,7 +37,11 @@ export const LanguageContainer: React.FC<Props> = ({
 
               cursor: "pointer",
               borderBottomLeftRadius: "6px",
-              color: lang === "PT" ? "white" : "rgba(0, 0, 0, 0.80)",
+              color: errorPt
+                ? "red"
+                : lang === "PT"
+                ? "white"
+                : "rgba(0, 0, 0, 0.80)",
             }}
             onClick={() => {
               setLang("PT");
@@ -46,7 +56,11 @@ export const LanguageContainer: React.FC<Props> = ({
               padding: "10px",
               cursor: "pointer",
               backgroundColor: lang === "EN" ? "rgba(0, 0, 0, 0.80)" : "white",
-              color: lang === "EN" ? "white" : "rgba(0, 0, 0, 0.80)",
+              color: errorEn
+                ? "red"
+                : lang === "EN"
+                ? "white"
+                : "rgba(0, 0, 0, 0.80)",
             }}
             onClick={() => {
               setLang("EN");
@@ -60,7 +74,11 @@ export const LanguageContainer: React.FC<Props> = ({
               padding: "10px",
               cursor: "pointer",
               backgroundColor: lang === "ES" ? "rgba(0, 0, 0, 0.80)" : "white",
-              color: lang === "ES" ? "white" : "rgba(0, 0, 0, 0.80)",
+              color: errorEs
+                ? "red"
+                : lang === "ES"
+                ? "white"
+                : "rgba(0, 0, 0, 0.80)",
               borderTopRightRadius: "6px",
               borderBottomRightRadius: "6px",
             }}

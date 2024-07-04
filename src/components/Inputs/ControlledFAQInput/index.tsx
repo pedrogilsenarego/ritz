@@ -18,17 +18,40 @@ const ControlledFAQInput = ({
 }) => {
   const { formState, field } = useController({ name, control });
   const [question_pt, setQ_pt] = useState<string>("");
+  const [ptError, setPtError] = useState(false);
   const [answer_pt, setA_pt] = useState<string>("");
   const [question_en, setQ_en] = useState<string>("");
+  const [enError, setEnError] = useState(false);
   const [answer_en, setA_en] = useState<string>("");
   const [question_es, setQ_es] = useState<string>("");
   const [answer_es, setA_es] = useState<string>("");
+  const [esError, setEsError] = useState(false);
   const [lang, setLang] = useState<"PT" | "EN" | "ES">("PT");
   const error = get(formState.errors, name, "");
   const classes = useStyles();
   const langChangeRef = useRef(false); // To track language changes
 
   const handleAdd = () => {
+    if (question_en === "" || answer_en === "") {
+      setEnError(true);
+    }
+    if (question_es === "" || answer_es === "") {
+      setEsError(true);
+    }
+    if (question_pt === "" || answer_pt === "") {
+      setPtError(true);
+    }
+    if (
+      question_en === "" ||
+      answer_en === "" ||
+      question_es === "" ||
+      answer_es === "" ||
+      question_pt === "" ||
+      answer_pt === ""
+    ) {
+      return;
+    }
+
     field.onChange([
       ...field.value,
       {
@@ -63,7 +86,8 @@ const ControlledFAQInput = ({
       setQ: (value: string) => void,
       setA: (value: string) => void,
       placeholder: string,
-      answerLabel: string
+      answerLabel: string,
+      setError: (value: boolean) => void
     ) => (
       <div>
         <Typography
@@ -89,7 +113,10 @@ const ControlledFAQInput = ({
             width: "100%",
           }}
           value={question}
-          onChange={(e) => setQ(e.currentTarget.value)}
+          onChange={(e) => {
+            setQ(e.currentTarget.value);
+            setError(false);
+          }}
           id={name}
           placeholder={placeholder}
           InputProps={{
@@ -133,6 +160,9 @@ const ControlledFAQInput = ({
     <div>
       <div style={{ display: "flex", flexDirection: "column", rowGap: "10px" }}>
         <LanguageContainer
+          errorEn={enError}
+          errorPt={ptError}
+          errorEs={esError}
           onChange={(lang: "EN" | "PT" | "ES") => {
             langChangeRef.current = true;
             setLang(lang);
@@ -146,7 +176,8 @@ const ControlledFAQInput = ({
             setQ_en,
             setA_en,
             "Pergunta EN",
-            "resposta em Inglês"
+            "resposta em Inglês",
+            setEnError
           )}
           childrenES={renderFields(
             question_es,
@@ -154,7 +185,8 @@ const ControlledFAQInput = ({
             setQ_es,
             setA_es,
             "Pergunta ES",
-            "resposta em Espanhol"
+            "resposta em Espanhol",
+            setEsError
           )}
           childrenPT={renderFields(
             question_pt,
@@ -162,9 +194,16 @@ const ControlledFAQInput = ({
             setQ_pt,
             setA_pt,
             "Pergunta PT",
-            "resposta em Português"
+            "resposta em Português",
+            setPtError
           )}
         />
+        {(ptError || enError || esError) && (
+          <p style={{ color: "red" }}>
+            Para adicionar um FAQ é preciso ter pergunta e resposta em todas as
+            línguas
+          </p>
+        )}
         <div style={{ width: "100%", display: "flex", justifyContent: "end" }}>
           <div
             onClick={handleAdd}
