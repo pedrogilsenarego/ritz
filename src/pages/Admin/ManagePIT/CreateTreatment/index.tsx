@@ -28,7 +28,7 @@ const CreateTreatment = () => {
     control,
     setValue,
     setError,
-    watch,
+
     listConcerns,
     isCreatingProduct,
     isEditingProduct,
@@ -36,6 +36,10 @@ const CreateTreatment = () => {
     listBodyparts,
     treatment,
     handlePreview,
+
+    errorEn,
+    errorPt,
+    errorEs,
   } = useCreateProduct();
 
   const PTFields = () => {
@@ -477,6 +481,9 @@ const CreateTreatment = () => {
                 </Grid>
                 <Grid item xs={7}>
                   <LanguageContainer
+                    errorEn={errorEn}
+                    errorPt={errorPt}
+                    errorEs={errorEs}
                     childrenEN={<ENFields />}
                     childrenES={<ESFields />}
                     childrenPT={<PTFields />}

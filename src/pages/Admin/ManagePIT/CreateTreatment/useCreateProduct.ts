@@ -73,11 +73,37 @@ const useCreateProduct = () => {
     loadDefaultValues();
   }, [treatment]);
 
-  const { reset, control, handleSubmit, setValue, setError, watch, getValues } =
-    useForm({
-      resolver: yupResolver(treatment ? FORM_VALIDATION_EDIT : FORM_VALIDATION),
-      defaultValues: defaultValues,
-    });
+  const {
+    reset,
+    control,
+    handleSubmit,
+    setValue,
+    setError,
+    watch,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(treatment ? FORM_VALIDATION_EDIT : FORM_VALIDATION),
+    defaultValues: defaultValues,
+  });
+
+  const getLanguageErrors = (errors: any, lang: string) => {
+    const fields = [
+      "title",
+      "subtitle",
+      "anesthetic",
+      "mainText",
+      "results",
+      "tprocediment",
+      "trecuperation",
+    ];
+
+    return fields.some((field) => !!errors[`${field}_${lang}`]);
+  };
+
+  const errorEn = getLanguageErrors(errors, "en");
+  const errorPt = getLanguageErrors(errors, "pt");
+  const errorEs = getLanguageErrors(errors, "es");
 
   const { mutate: createProduct, isLoading: isCreatingProduct } = useMutation(
     createNewTreatment,
@@ -175,6 +201,9 @@ const useCreateProduct = () => {
     handlePreview,
     watch,
     treatment,
+    errorEn,
+    errorPt,
+    errorEs,
   };
 };
 
