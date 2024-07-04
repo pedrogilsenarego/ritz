@@ -7,6 +7,9 @@ import { resolve } from "path";
 export type UserQuery = {
   Data: {
     imagem: string;
+    username: string;
+    email: string;
+    is_admin: boolean;
   };
 };
 
@@ -49,6 +52,8 @@ const useUser = () => {
     queryKey: [queryKeys.user],
     queryFn: handleFetchUser,
     enabled: !!email,
+    staleTime: 300000, // 5 minutes in milliseconds
+    cacheTime: 300000, // 5 minutes in milliseconds
   });
 
   return userQuery;

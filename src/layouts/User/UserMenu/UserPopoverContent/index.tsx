@@ -10,14 +10,20 @@ import Check from "../../../../assets/tick-02-white.svg";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import useCookies from "../../../../hooks/useCookies";
+import useUser from "../../../../hooks/useUser";
+import { BASE_URL, queryIdentifiers } from "../../../../services/constants";
+import { useQueryClient } from "@tanstack/react-query";
+import { queryKeys } from "../../../../constants/queryKeys";
 
 const UserPopoverContent = ({ handleClose }: any) => {
   const [mode, setMode] = useState<"normal" | "edit">("normal");
   const navigate = useNavigate();
+  const user = useUser();
   const theme = useTheme();
   const { removeCookie } = useCookies();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const { reset, control, handleSubmit } = useForm<any>({});
+
   const handleLogout = () => {
     navigate(ROUTE_PATHS.HOME);
     removeCookie("email");
@@ -43,13 +49,15 @@ const UserPopoverContent = ({ handleClose }: any) => {
         <p style={{ fontSize: "12px", textTransform: "uppercase" }}>
           Área reservada
         </p>
-        <p style={{ fontSize: "18px", fontWeight: 600 }}>Josefina Vicente</p>
+        <p style={{ fontSize: "18px", fontWeight: 600 }}>
+          {user.data?.Data.username}
+        </p>
         <img
           alt=""
-          src="https://letstryai.com/wp-content/uploads/2023/11/stable-diffusion-avatar-prompt-example-6.jpg"
+          src={`${BASE_URL}${user.data?.Data.imagem}`}
           style={{ height: "75px", aspectRatio: 1, borderRadius: "50%" }}
         />
-        <p style={{ fontSize: "13px" }}>jvicente@gmail.com</p>
+        <p style={{ fontSize: "13px" }}> {user.data?.Data.email}</p>
         <div
           onClick={(e) => {
             e.stopPropagation();
@@ -64,6 +72,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
           style={{
             display: "flex",
             flexDirection: "column",
+            rowGap: 2,
             alignItems: "center",
             borderTop: "2px solid lightGray",
             borderBottom: "1px solid lightGray",
@@ -72,6 +81,14 @@ const UserPopoverContent = ({ handleClose }: any) => {
           }}
         >
           <p style={{ fontWeight: 600, fontSize: "14px" }}>Website EHTIQ</p>
+          {user.data?.Data.is_admin && (
+            <p
+              onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}
+              style={{ fontWeight: 600, fontSize: "14px" }}
+            >
+              Admin
+            </p>
+          )}
         </Box>
         <p
           onClick={handleLogout}
