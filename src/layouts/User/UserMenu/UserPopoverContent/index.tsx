@@ -29,6 +29,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
     removeCookie("email");
     removeCookie("access");
     removeCookie("refresh");
+    user.remove();
   };
   const Normal = () => {
     return (
