@@ -174,6 +174,7 @@ const useCreateProduct = () => {
     listSpeciality,
     handlePreview,
     watch,
+    treatment,
   };
 };
 

@@ -34,6 +34,7 @@ const CreateTreatment = () => {
     isEditingProduct,
     listSpeciality,
     listBodyparts,
+    treatment,
     handlePreview,
   } = useCreateProduct();
 
@@ -404,6 +405,7 @@ const CreateTreatment = () => {
                     </Grid>
                     <Grid item xs={4} style={{ marginTop: "40px" }}>
                       <FileUploaderAdmin
+                        forceValidated={!!treatment}
                         name="topImage"
                         hasLabel
                         control={control}
@@ -440,6 +442,7 @@ const CreateTreatment = () => {
                     </Grid>
                     <Grid item xs={4}>
                       <FileUploaderAdmin
+                        forceValidated={!!treatment}
                         name="mainImage"
                         hasLabel
                         control={control}

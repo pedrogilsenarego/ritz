@@ -2,45 +2,63 @@ import GeneralPage from "../../Presentational/GeneralPage";
 import User from "../../../../assets/Pic.svg";
 import { Grid } from "@mui/material";
 import ControlledFormInput from "../../../../components/Inputs/ControlledInputAdmin";
-import { useForm } from "react-hook-form";
+
 import Tick from "../../../../assets/tick-02.svg";
 import ControlledSelect from "../../../../components/Inputs/ControlledSelect";
+import { useCreateUser } from "./useCreateUser";
 
 const CreateUser = () => {
-  const { reset, control, handleSubmit } = useForm<any>({});
+  const { reset, control, handleSubmit, onSubmit } = useCreateUser();
   return (
-    <GeneralPage title="Novo Utilizador" subTitle="Staff Interno">
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
+    <form
+      id="createUser-form"
+      onSubmit={handleSubmit(onSubmit)}
+      style={{ height: "100%" }}
+    >
+      <GeneralPage
+        title="Novo Utilizador"
+        subTitle="Staff Interno"
+        topButtons={[
+          {
+            icon: Tick,
+            label: "Guardar",
+            type: "submit",
+          },
+        ]}
       >
         <div
-          style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
         >
-          <img alt="" src={User} style={{ width: "58px" }} />
           <div
-            style={{
-              cursor: "pointer",
-              backgroundColor: "#515151",
-              borderRadius: "20px",
-              padding: "6px 20px",
-            }}
+            style={{ display: "flex", alignItems: "center", columnGap: "20px" }}
           >
-            <p style={{ fontWeight: 500, color: "white" }}>Editar Fotografia</p>
+            <img alt="" src={User} style={{ width: "58px" }} />
+            <div
+              style={{
+                cursor: "pointer",
+                backgroundColor: "#515151",
+                borderRadius: "20px",
+                padding: "6px 20px",
+              }}
+            >
+              <p style={{ fontWeight: 500, color: "white" }}>
+                Editar Fotografia
+              </p>
+            </div>
+            <div
+              style={{ width: "2px", height: "30px", backgroundColor: "black" }}
+            ></div>
+            <p style={{ fontWeight: 600, fontSize: "24px" }}>Nome...</p>
           </div>
-          <div
-            style={{ width: "2px", height: "30px", backgroundColor: "black" }}
-          ></div>
-          <p style={{ fontWeight: 600, fontSize: "24px" }}>Nome...</p>
+          <div>
+            <p>Utilizador desde 5/03/2024</p>
+          </div>
         </div>
-        <div>
-          <p>Utilizador desde 5/03/2024</p>
-        </div>
-      </div>
-      <form style={{ marginTop: "60px", padding: "0px 20px" }}>
+
         <Grid container columnSpacing={"150px"}>
           <Grid
             item
@@ -51,7 +69,7 @@ const CreateUser = () => {
             <ControlledFormInput
               label="Nome"
               control={control}
-              name="name"
+              name="username"
               type="default"
               inputPlaceholder="Nome"
             />
@@ -124,27 +142,10 @@ const CreateUser = () => {
               name="observations"
               inputPlaceholder="Apenas visíveis para acessos administrativos."
             />
-            <div
-              style={{ width: "100%", display: "flex", justifyContent: "end" }}
-            >
-              <div
-                style={{
-                  backgroundColor: "#93C0D9",
-                  borderRadius: "15px",
-                  padding: "10px 20px",
-                  display: "flex",
-                  gap: "10px",
-                  cursor: "pointer",
-                }}
-              >
-                <p style={{ fontSize: "15px" }}>Guardar</p>
-                <img src={Tick} alt="" style={{ width: "20px" }} />
-              </div>
-            </div>
           </Grid>
         </Grid>
-      </form>
-    </GeneralPage>
+      </GeneralPage>
+    </form>
   );
 };
 
