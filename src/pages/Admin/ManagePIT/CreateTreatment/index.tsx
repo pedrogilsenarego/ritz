@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import { LanguageContainer } from "../../Presentational/LanguageContainer";
 import InfoCircle from "../../../../assets/info-circle.png";
+import CustomTextField from "../../../../components/Inputs/RichTextMine";
 
 const CreateTreatment = () => {
   const classes = useStyles();
@@ -355,6 +356,9 @@ const CreateTreatment = () => {
           <Box className={classes.form}>
             <Box className={classes.inputBox}>
               <Grid container columnSpacing={"40px"}>
+                <Grid item xs={12}>
+                  <CustomTextField />
+                </Grid>
                 <Grid item xs={5}>
                   <div
                     onClick={() =>

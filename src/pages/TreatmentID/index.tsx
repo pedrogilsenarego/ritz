@@ -29,43 +29,55 @@ const TreatmentID = () => {
 
   return (
     <>
-      <div
-        style={{
-          width: "100%",
-          height: "350px",
-          display: "flex",
-          alignItems: "end",
-          padding: "30px 0px",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundImage: `url(${data?.topImage})`,
-        }}
-      >
-        <Container
+      <div style={{ position: "relative" }}>
+        <div
           style={{
-            marginTop: mobile ? "100px" : "200px",
-            maxWidth: MAX_SCREEN,
-            padding: mobile ? undefined : "0px 190px",
+            width: "100%",
+            height: "350px",
+            display: "flex",
+            alignItems: "end",
+            padding: "30px 0px",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            opacity: 0.5,
+            backgroundImage: `url(${data?.topImage})`,
+          }}
+        ></div>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            height: "100%",
+            width: "100%",
           }}
         >
-          <Typography
-            variant="h1"
+          <Container
             style={{
-              textTransform: "uppercase",
-              fontSize: "35px",
-              letterSpacing: "3px",
-              fontWeight: 500,
+              marginTop: mobile ? "100px" : "270px",
+              maxWidth: MAX_SCREEN,
+              padding: mobile ? undefined : "0px 150px",
             }}
           >
-            {data?.[`title_${lang.toLowerCase()}`]}
-          </Typography>
-        </Container>
+            <Typography
+              variant="h1"
+              style={{
+                textTransform: "uppercase",
+                fontSize: "35px",
+                letterSpacing: "3px",
+                fontWeight: 500,
+              }}
+            >
+              {data?.[`title_${lang.toLowerCase()}`]}
+            </Typography>
+          </Container>
+        </div>
       </div>
       <Container
         style={{
           marginTop: mobile ? "100px" : "0px",
           maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 190px",
+          padding: mobile ? undefined : "0px 150px",
         }}
       >
         <div>

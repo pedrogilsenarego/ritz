@@ -5,7 +5,6 @@ import StarFace from "../../../../assets/star-face.svg";
 
 import { useSelector } from "react-redux";
 import { State } from "../../../../redux/types";
-import { Treatment } from "../../../Admin/ManagePIT/CreateTreatment/types";
 
 const Description = ({ data }: { data: any }) => {
   const theme = useTheme();
@@ -16,6 +15,7 @@ const Description = ({ data }: { data: any }) => {
     <Grid
       container
       rowSpacing={mobile ? "50px" : "0px"}
+      columnSpacing={mobile ? "0px" : "50px"}
       style={{ marginTop: "200px" }}
     >
       {!mobile && (
@@ -93,11 +93,11 @@ const Description = ({ data }: { data: any }) => {
                 <div
                   style={{
                     width: "50%",
-                    padding: "10px 15px 20px 15px",
+                    padding: "10px 30px 30px 30px",
                     borderRight: "solid 1px black",
                     display: "flex",
                     columnGap: "20px",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                   }}
                 >
                   <div>
@@ -121,16 +121,20 @@ const Description = ({ data }: { data: any }) => {
                       {data?.[`tprocediment_${lang.toLowerCase()}`]}
                     </Typography>
                   </div>
-                  <img src={Clock} alt="" />
+                  <img
+                    src={Clock}
+                    alt=""
+                    style={{ height: "50px", width: "50px" }}
+                  />
                 </div>
                 <div
                   style={{
                     width: "50%",
-                    padding: "10px 15px 20px 15px",
+                    padding: "10px 30px 30px 30px",
                     borderLeft: "solid 1px black",
                     display: "flex",
                     columnGap: "20px",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                   }}
                 >
                   <div>
@@ -168,11 +172,11 @@ const Description = ({ data }: { data: any }) => {
                 <div
                   style={{
                     width: "50%",
-                    padding: "10px 15px 20px 15px",
+                    padding: "30px 30px 10px 30px",
                     borderRight: "solid 1px black",
                     display: "flex",
                     columnGap: "20px",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                   }}
                 >
                   <div>
@@ -196,16 +200,20 @@ const Description = ({ data }: { data: any }) => {
                       {data?.[`anesthetic_${lang.toLowerCase()}`]}
                     </Typography>
                   </div>
-                  <img src={Vaccine} alt="" />
+                  <img
+                    src={Vaccine}
+                    alt=""
+                    style={{ height: "50px", width: "50px" }}
+                  />
                 </div>
                 <div
                   style={{
                     width: "50%",
-                    padding: "10px 15px 20px 15px",
+                    padding: "30px 30px 10px 30px",
                     borderLeft: "solid 1px black",
                     display: "flex",
                     columnGap: "20px",
-                    justifyContent: "center",
+                    justifyContent: "space-between",
                   }}
                 >
                   <div>
@@ -229,7 +237,11 @@ const Description = ({ data }: { data: any }) => {
                       {data?.[`results_${lang.toLowerCase()}`]}
                     </Typography>
                   </div>
-                  <img src={StarFace} alt="" />
+                  <img
+                    src={StarFace}
+                    alt=""
+                    style={{ height: "50px", width: "50px" }}
+                  />
                 </div>
               </div>
             </div>
@@ -246,16 +258,48 @@ const Description = ({ data }: { data: any }) => {
             flexDirection: "column",
           }}
         >
-          <img
-            alt={data?.mainImageAlt || ""}
+          <div
             style={{
+              position: "relative",
+
               height: "462px",
-              width: "392px",
-              objectFit: "cover",
-              borderRadius: "5px",
+              width: "100%",
+              padding: "15px",
             }}
-            src={data?.mainImage || ""}
-          />
+          >
+            <div
+              style={{
+                position: "absolute",
+                borderTop: "solid 1px black",
+                right: 0,
+                top: 0,
+                width: "50px",
+                height: "50px",
+                borderRight: "solid 1px black",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                borderBottom: "solid 1px black",
+                left: 0,
+                bottom: 0,
+                width: "50px",
+                height: "50px",
+                borderLeft: "solid 1px black",
+              }}
+            />
+            <img
+              alt={data?.mainImageAlt || ""}
+              style={{
+                height: "100%",
+                width: "100%",
+                objectFit: "cover",
+                borderRadius: "5px",
+              }}
+              src={data?.mainImage || ""}
+            />
+          </div>
           <div
             style={{
               marginTop: "30px",
@@ -270,7 +314,9 @@ const Description = ({ data }: { data: any }) => {
             <p
               style={{
                 fontSize: "15px",
-
+                fontFamily: "'Playfair Display', serif",
+                fontWeight: 500,
+                letterSpacing: "1.5px",
                 textTransform: "uppercase",
               }}
             >
@@ -286,7 +332,7 @@ const Description = ({ data }: { data: any }) => {
                 marginTop: "50px",
                 borderRadius: "20px",
                 cursor: "pointer",
-                padding: "5px 20px",
+                padding: "8px 20px",
                 background:
                   "linear-gradient(91.7deg, #D6CDC8 3.52%, #CDB3A5 98.02%)",
               }}

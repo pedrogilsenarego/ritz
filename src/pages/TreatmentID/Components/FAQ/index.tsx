@@ -22,6 +22,7 @@ const FAQ = ({ data }: { data: any }) => {
             borderBottom: "solid 2px black",
             alignItems: "center",
             paddingBottom: "10px",
+            paddingLeft: "10px",
           }}
         >
           <Typography
@@ -56,11 +57,12 @@ const FAQ = ({ data }: { data: any }) => {
           "linear-gradient(119.76deg, #FFFDFA 12.16%, rgba(239, 239, 250, 0.872865) 28.7%, #EAF0F9 66.13%, #FFFBF7 99.2%)",
       }}
     >
-      <div style={{ display: "flex", columnGap: "10px", alignItems: "end" }}>
-        <img src={FAQI} alt="" />
+      <div style={{ display: "flex", columnGap: "0px", alignItems: "end" }}>
+        <img src={FAQI} alt="" style={{ height: "69px", width: "69px" }} />
         <Typography
           variant="h1"
           style={{
+            marginLeft: "-8px",
             fontSize: mobile ? "15px" : "25px",
             fontWeight: 500,
             letterSpacing: "2px",
