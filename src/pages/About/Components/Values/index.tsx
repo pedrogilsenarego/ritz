@@ -79,13 +79,31 @@ const Values = () => {
           <div
             style={{
               position: "absolute",
-              width: "calc(50% - (50%))",
+              width: "calc(50% - 500px)",
               height: "40px",
               backgroundColor: "rgba(57, 57, 57, 1)",
               right: 0,
               top: 0,
             }}
           />
+          <Typography
+            variant="h1"
+            style={{
+              textTransform: "uppercase",
+              position: "absolute",
+              color: "rgba(255, 255, 255, 0.8)",
+              fontSize: mobile ? "19px" : "40px",
+              letterSpacing: "4px",
+              lineHeight: "55px",
+              top: "70px",
+              left: 0,
+              right: 0,
+              textAlign: "center",
+            }}
+            dangerouslySetInnerHTML={{
+              __html: i18n.t("pages.about.box7"),
+            }}
+          ></Typography>
           <Container
             style={{
               maxWidth: 1000,
@@ -108,7 +126,7 @@ const Values = () => {
                 style={{
                   textTransform: "uppercase",
 
-                  color: "rgba(255, 255, 255, 0.8)",
+                  color: "transparent",
                   fontSize: mobile ? "19px" : "40px",
                   letterSpacing: "4px",
                   lineHeight: "55px",

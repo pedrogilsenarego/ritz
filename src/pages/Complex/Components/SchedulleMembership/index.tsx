@@ -41,7 +41,7 @@ const SchedulleMembership = () => {
           </Typography>
           <Typography
             style={{
-              maxWidth: "80%",
+              maxWidth: "55%",
               textAlign: "center",
               fontSize: mobile ? "12px" : "13px",
               letterSpacing: "1px",
@@ -107,7 +107,7 @@ const SchedulleMembership = () => {
           </Typography>
           <Typography
             style={{
-              maxWidth: "80%",
+              maxWidth: "55%",
               textAlign: "center",
               fontSize: mobile ? "12px" : "13px",
               letterSpacing: "1px",

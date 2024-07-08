@@ -19,27 +19,15 @@ const Location = () => {
             alignItems: "center",
           }}
         >
-          <div
+          <img
+            src={
+              "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-3.webp"
+            }
+            alt=""
             style={{
-              position: "relative",
-              height: "500px",
               width: "100%",
-              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-3.webp)`,
-              backgroundSize: "cover",
-              backgroundPosition: "center center",
             }}
-          >
-            {/* <Typography
-              style={{
-                position: "absolute",
-                bottom: "-22px",
-                right: 0,
-                fontSize: "12px",
-              }}
-            >
-              {i18n.t("pages.about.box3")}
-            </Typography> */}
-          </div>
+          />
         </Grid>
         <Grid
           item

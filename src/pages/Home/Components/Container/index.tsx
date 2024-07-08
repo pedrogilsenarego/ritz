@@ -106,7 +106,11 @@ const ContainerC = () => {
         <div
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
         >
-          <img src={Logo} alt="" style={{ width: "676px" }} />
+          <img
+            src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-3.webp`}
+            alt=""
+            style={{ width: "676px" }}
+          />
         </div>
         <div
           style={{

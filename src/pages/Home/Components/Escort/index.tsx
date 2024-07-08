@@ -136,7 +136,7 @@ const Escort = () => {
                   style={{
                     maxWidth: mobile ? undefined : "100%",
                     fontStyle: "italic",
-                    textTransform: "uppercase",
+
                     color: "rgba(39, 39, 39, 1)",
                     fontWeight: 500,
                     fontSize: mobile ? "28px" : "35px",
@@ -390,77 +390,148 @@ const Escort = () => {
             }}
             src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-CONCIERGE-70_.webp"
           />
-          <div style={{ padding: "40px" }}>
-            <Typography
-              style={{
-                textTransform: "uppercase",
-                color: "rgba(0, 0, 0, 0.6)",
-                fontSize: mobile ? "8px" : "11px",
-                letterSpacing: "2px",
-              }}
-            >
-              {i18n.t("pages.home.box61")}
-            </Typography>
-            <Typography
-              variant="h1"
-              style={{
-                maxWidth: mobile ? undefined : "40%",
-                marginTop: "20px",
-
-                color: "rgba(39, 39, 39, 1)",
-                textTransform: "uppercase",
-                fontWeight: 500,
-                fontSize: mobile ? "28px" : "35px",
-                letterSpacing: mobile ? "2px" : "1px",
-              }}
-            >
-              {i18n.t("pages.home.box62")}
-              <span
-                style={{
-                  fontStyle: "italic",
-                  fontWeight: 400,
-                  textTransform: "capitalize",
-                }}
-              >
-                {" "}
-                {i18n.t("pages.home.box622")}{" "}
-              </span>
-              {i18n.t("pages.home.box623")}
-            </Typography>
-            <Typography
-              dangerouslySetInnerHTML={{
-                __html: i18n.t("pages.home.box63"),
-              }}
-              style={{
-                fontSize: mobile ? "11px" : "13px",
-                textAlign: "justify",
-                lineHeight: "25px",
-                fontWeight: "400",
-                marginTop: "40px",
-              }}
-            />
-            <ButtonBase
-              sx={{
-                marginTop: "40px",
-                borderRadius: "30px",
-                padding: "10px 30px",
-                backgroundColor: "rgba(255, 255, 255, 0.4)",
-              }}
-            >
+          {lang === "PT" ? (
+            <div style={{ padding: "40px" }}>
               <Typography
-                sx={{
+                style={{
                   textTransform: "uppercase",
-                  fontSize: "10px",
-                  lineHeight: "14px",
-                  letterSpacing: "1px",
-                  color: "rgba(0, 0, 0, 0.59)",
+                  color: "rgba(0, 0, 0, 0.6)",
+                  fontSize: mobile ? "8px" : "11px",
+                  letterSpacing: "2px",
                 }}
               >
-                {i18n.t("pages.home.button1")}
+                {i18n.t("pages.home.box61")}
               </Typography>
-            </ButtonBase>
-          </div>
+              <Typography
+                variant="h1"
+                style={{
+                  maxWidth: mobile ? undefined : "40%",
+                  marginTop: "20px",
 
+                  color: "rgba(39, 39, 39, 1)",
+                  textTransform: "uppercase",
+                  fontWeight: 500,
+                  fontSize: mobile ? "28px" : "35px",
+                  letterSpacing: mobile ? "2px" : "1px",
+                }}
+              >
+                {i18n.t("pages.home.box62")}
+                <span
+                  style={{
+                    fontStyle: "italic",
+                    fontWeight: 400,
+                    textTransform: "capitalize",
+                  }}
+                >
+                  {" "}
+                  {i18n.t("pages.home.box622")}{" "}
+                </span>
+                {i18n.t("pages.home.box623")}
+              </Typography>
+              <Typography
+                dangerouslySetInnerHTML={{
+                  __html: i18n.t("pages.home.box63"),
+                }}
+                style={{
+                  fontSize: mobile ? "11px" : "13px",
+                  textAlign: "justify",
+                  lineHeight: "25px",
+                  fontWeight: "400",
+                  marginTop: "40px",
+                }}
+              />
+              <ButtonBase
+                sx={{
+                  marginTop: "40px",
+                  borderRadius: "30px",
+                  padding: "10px 30px",
+                  backgroundColor: "rgba(255, 255, 255, 0.4)",
+                }}
+              >
+                <Typography
+                  sx={{
+                    textTransform: "uppercase",
+                    fontSize: "10px",
+                    lineHeight: "14px",
+                    letterSpacing: "1px",
+                    color: "rgba(0, 0, 0, 0.59)",
+                  }}
+                >
+                  {i18n.t("pages.home.button1")}
+                </Typography>
+              </ButtonBase>
+            </div>
+          ) : (
+            <div style={{ padding: "40px" }}>
+              <Typography
+                style={{
+                  textTransform: "uppercase",
+                  color: "rgba(0, 0, 0, 0.6)",
+                  fontSize: mobile ? "8px" : "11px",
+                  letterSpacing: "2px",
+                }}
+              >
+                {i18n.t("pages.home.box61")}
+              </Typography>
+              <Typography
+                variant="h1"
+                style={{
+                  maxWidth: mobile ? undefined : "40%",
+                  marginTop: "20px",
+
+                  color: "rgba(39, 39, 39, 1)",
+                  textTransform: "uppercase",
+                  fontWeight: 500,
+                  fontSize: mobile ? "28px" : "35px",
+                  letterSpacing: mobile ? "2px" : "1px",
+                }}
+              >
+                {i18n.t("pages.home.box62")}
+                <span> {i18n.t("pages.home.box622")} </span>
+                <span
+                  style={{
+                    fontStyle: "italic",
+                    fontWeight: 400,
+                    textTransform: "capitalize",
+                  }}
+                >
+                  {i18n.t("pages.home.box623")}
+                </span>
+              </Typography>
+              <Typography
+                dangerouslySetInnerHTML={{
+                  __html: i18n.t("pages.home.box63"),
+                }}
+                style={{
+                  fontSize: mobile ? "11px" : "13px",
+                  textAlign: "justify",
+                  lineHeight: "25px",
+                  fontWeight: "400",
+                  marginTop: "40px",
+                }}
+              />
+              <ButtonBase
+                sx={{
+                  marginTop: "40px",
+                  borderRadius: "30px",
+                  padding: "10px 30px",
+                  backgroundColor: "rgba(255, 255, 255, 0.4)",
+                }}
+              >
+                <Typography
+                  sx={{
+                    textTransform: "uppercase",
+                    fontSize: "10px",
+                    lineHeight: "14px",
+                    letterSpacing: "1px",
+                    color: "rgba(0, 0, 0, 0.59)",
+                  }}
+                >
+                  {i18n.t("pages.home.button1")}
+                </Typography>
+              </ButtonBase>
+            </div>
+          )}
           <div
             style={{
               display: "flex",

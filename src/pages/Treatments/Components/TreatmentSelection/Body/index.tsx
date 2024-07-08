@@ -73,29 +73,45 @@ export const Body = () => {
           alignItems: "center",
           justifyContent: "center",
           marginTop: "35px",
-          padding: "0px 116px",
+          padding: "40px 116px",
           width: "100%",
-          height: "235px",
+
           objectFit: "cover",
           backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-8.webp)`,
           backgroundPosition: "center",
           backgroundSize: "cover",
         }}
       >
-        <div style={{ display: "flex", columnGap: "73px" }}>
-          <ButtonLogo icon={Face} title={i18n.t("pages.body.box1")} index={0} />
-          <ButtonLogo
-            icon={Smile}
-            title={i18n.t("pages.body.box2")}
-            index={1}
-          />
-          <ButtonLogo icon={Bodi} title={i18n.t("pages.body.box3")} index={2} />
-          <ButtonLogo
-            icon={Health}
-            title={i18n.t("pages.body.box4")}
-            index={3}
-          />
-        </div>
+        <Grid container columnSpacing="10px" style={{ display: "flex" }}>
+          <Grid item xs={6} xl={3}>
+            <ButtonLogo
+              icon={Face}
+              title={i18n.t("pages.body.box1")}
+              index={0}
+            />
+          </Grid>
+          <Grid item xs={6} xl={3}>
+            <ButtonLogo
+              icon={Smile}
+              title={i18n.t("pages.body.box2")}
+              index={1}
+            />
+          </Grid>
+          <Grid item xs={6} xl={3}>
+            <ButtonLogo
+              icon={Bodi}
+              title={i18n.t("pages.body.box3")}
+              index={2}
+            />
+          </Grid>
+          <Grid item xs={6} xl={3}>
+            <ButtonLogo
+              icon={Health}
+              title={i18n.t("pages.body.box4")}
+              index={3}
+            />
+          </Grid>
+        </Grid>
       </div>
       <Grid container mt={"95px"} columnSpacing={2} rowSpacing={6}>
         {data?.results?.map((item: any, index: number) => {

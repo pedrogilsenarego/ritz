@@ -4,8 +4,6 @@ import Carousel from "../../components/Carousel";
 
 import { MAX_SCREEN } from "../../constants/screen";
 import SchedulleMembership from "./Components/SchedulleMembership";
-
-import Logo from "../../assets/LogoBeigeClinic.png";
 import Legendas from "./Components/Legendas";
 import Eyes from "./Components/Eyes";
 import { i18n } from "../../translations/i18n";
@@ -16,22 +14,22 @@ const Complex = () => {
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const childrenData = [
     {
-      link: "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.1.webp",
+      link: `${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.1.webp`,
       title: i18n.t("pages.clinic.box11"),
       text: i18n.t("pages.clinic.box12"),
     },
     {
-      link: "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.2.webp",
+      link: `${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.2.webp`,
       title: i18n.t("pages.clinic.box13"),
       text: i18n.t("pages.clinic.box14"),
     },
     {
-      link: "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.3.webp",
+      link: `${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.3.webp`,
       title: i18n.t("pages.clinic.box15"),
       text: i18n.t("pages.clinic.box16"),
     },
     {
-      link: "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.4.webp",
+      link: `${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/A-CLINICA-1.4.webp`,
       title: i18n.t("pages.clinic.box17"),
       text: i18n.t("pages.clinic.box18"),
     },
@@ -56,121 +54,122 @@ const Complex = () => {
           dragThreshold={mobile ? 10 : undefined}
           onItemClick={(item) => console.log(item)}
         >
-          {childrenData.map((item, index) => (
-            <div>
-              <div
-                draggable={false}
-                key={item.link}
-                style={{
-                  backgroundImage: `url(${item.link})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center center",
-                  height: mobile ? "526px" : `100%`,
-                  objectFit: "cover",
-                  width: "100%",
-                  position: "relative",
-                }}
-              >
-                {!mobile && (
-                  <div
-                    style={{
-                      backgroundColor: mobile
-                        ? "rgba(155, 129, 109, 0.4)"
-                        : "rgba(248, 247, 247, 0.6)",
-                      display: "flex",
-                      position: mobile ? "unset" : "absolute",
-                      width: "376px",
-                      right: 0,
-                      bottom: mobile ? "-150px" : "50px",
-                      padding: "30px",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                      alignItems: "center",
-                      rowGap: "20px",
-                    }}
-                  >
-                    <Typography
+          {childrenData.map((item, index) => {
+            return (
+              <div key={index} style={{ height: "100%" }}>
+                <div
+                  draggable={false}
+                  style={{
+                    backgroundImage: `url(${item.link})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center center",
+                    height: mobile ? "526px" : `100%`,
+                    objectFit: "cover",
+                    width: "100%",
+                    position: "relative",
+                  }}
+                >
+                  {!mobile && (
+                    <div
                       style={{
-                        fontSize: mobile ? "14px" : "13px",
-                        textTransform: "uppercase",
-                        letterSpacing: "1px",
-                        fontWeight: 500,
-
-                        textAlign: "center",
+                        backgroundColor: mobile
+                          ? "rgba(155, 129, 109, 0.4)"
+                          : "rgba(248, 247, 247, 0.6)",
+                        display: "flex",
+                        position: mobile ? "unset" : "absolute",
+                        width: "376px",
+                        right: 0,
+                        bottom: mobile ? "-150px" : "50px",
+                        padding: "30px",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        rowGap: "20px",
                       }}
                     >
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      variant="h1"
-                      style={{
-                        fontSize: mobile ? "15px" : "16px",
+                      <Typography
+                        style={{
+                          fontSize: mobile ? "14px" : "13px",
+                          textTransform: "uppercase",
+                          letterSpacing: "1px",
+                          fontWeight: 500,
 
-                        letterSpacing: mobile ? "1px" : "2px",
-                        lineHeight: mobile ? "20px" : "21px",
-                        textAlign: "center",
+                          textAlign: "center",
+                        }}
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        variant="h1"
+                        style={{
+                          fontSize: mobile ? "15px" : "16px",
+
+                          letterSpacing: mobile ? "1px" : "2px",
+                          lineHeight: mobile ? "20px" : "21px",
+                          textAlign: "center",
+                        }}
+                      >
+                        {item.text}
+                      </Typography>
+                    </div>
+                  )}
+                </div>
+                {mobile && (
+                  <>
+                    <div
+                      style={{
+                        backgroundColor: "rgba(155, 129, 109, 0.4)",
+
+                        display: "flex",
+                        position: "unset",
+                        height: "149px",
+                        width: "100%",
+                        right: 0,
+                        bottom: "-150px",
+                        padding: "30px",
+                        flexDirection: "column",
+                        justifyContent: "start",
+                        alignItems: "center",
+                        rowGap: "20px",
                       }}
                     >
-                      {item.text}
-                    </Typography>
-                  </div>
+                      <Typography
+                        style={{
+                          fontSize: mobile ? "14px" : "13px",
+                          textTransform: "uppercase",
+                          letterSpacing: "1px",
+                          fontWeight: 500,
+
+                          textAlign: "center",
+                        }}
+                      >
+                        {item.title}
+                      </Typography>
+                      <Typography
+                        variant="h1"
+                        style={{
+                          fontSize: mobile ? "15px" : "16px",
+
+                          letterSpacing: mobile ? "1px" : "2px",
+                          lineHeight: mobile ? "20px" : "21px",
+                          textAlign: "center",
+                        }}
+                      >
+                        {item.text}
+                      </Typography>
+                    </div>
+                    <div
+                      style={{
+                        height: "30px",
+                        width: "100%",
+                        backgroundColor: "transparent",
+                      }}
+                    />
+                  </>
                 )}
               </div>
-              {mobile && (
-                <>
-                  <div
-                    style={{
-                      backgroundColor: "rgba(155, 129, 109, 0.4)",
-
-                      display: "flex",
-                      position: "unset",
-                      height: "149px",
-                      width: "100%",
-                      right: 0,
-                      bottom: "-150px",
-                      padding: "30px",
-                      flexDirection: "column",
-                      justifyContent: "start",
-                      alignItems: "center",
-                      rowGap: "20px",
-                    }}
-                  >
-                    <Typography
-                      style={{
-                        fontSize: mobile ? "14px" : "13px",
-                        textTransform: "uppercase",
-                        letterSpacing: "1px",
-                        fontWeight: 500,
-
-                        textAlign: "center",
-                      }}
-                    >
-                      {item.title}
-                    </Typography>
-                    <Typography
-                      variant="h1"
-                      style={{
-                        fontSize: mobile ? "15px" : "16px",
-
-                        letterSpacing: mobile ? "1px" : "2px",
-                        lineHeight: mobile ? "20px" : "21px",
-                        textAlign: "center",
-                      }}
-                    >
-                      {item.text}
-                    </Typography>
-                  </div>
-                  <div
-                    style={{
-                      height: "30px",
-                      width: "100%",
-                      backgroundColor: "transparent",
-                    }}
-                  />
-                </>
-              )}
-            </div>
-          ))}
+            );
+          })}
         </Carousel>
       </div>
       <div

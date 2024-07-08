@@ -256,23 +256,32 @@ const Header = () => {
           >
             {options.map((option, index) => {
               return (
-                <div key={index} style={{}}>
-                  <Typography
-                    className={"text"}
+                <div key={index} style={{ flex: 1, textAlign: "center" }}>
+                  <div
                     style={{
-                      cursor: !isScrolled ? undefined : "pointer",
-                      fontSize: "14px",
-                      fontWeight: location.pathname === option.link ? 600 : 500,
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
+                      display: "flex",
+
+                      justifyContent: "center",
                     }}
-                    key={option.name}
-                    onClick={
-                      !isScrolled ? () => null : () => navigate(option.link)
-                    }
                   >
-                    {option.name}
-                  </Typography>
+                    <Typography
+                      className={"text"}
+                      style={{
+                        cursor: !isScrolled ? undefined : "pointer",
+                        fontSize: "14px",
+                        fontWeight:
+                          location.pathname === option.link ? 600 : 500,
+                        letterSpacing: "1px",
+                        textTransform: "uppercase",
+                      }}
+                      key={option.name}
+                      onClick={
+                        !isScrolled ? () => null : () => navigate(option.link)
+                      }
+                    >
+                      {option.name}
+                    </Typography>
+                  </div>
                 </div>
               );
             })}

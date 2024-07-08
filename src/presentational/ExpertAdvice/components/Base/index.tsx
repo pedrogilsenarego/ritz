@@ -127,7 +127,12 @@ export const Base = ({ setMode }: Props) => {
     return (
       <div style={{ marginTop: "80px" }}>
         <Typography
-          style={{ textAlign: "center", fontWeight: 500, fontSize: "16px" }}
+          style={{
+            textAlign: "center",
+            fontWeight: 500,
+            fontSize: "16px",
+            textTransform: "uppercase",
+          }}
         >
           {i18n.t("expertAdvice.box1")}
         </Typography>

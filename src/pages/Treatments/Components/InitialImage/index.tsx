@@ -47,7 +47,11 @@ const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
         >
           {text}
         </Typography>
-        <img src={Logo} alt="" width={"309px"} />
+        <img
+          src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-3.webp`}
+          alt=""
+          width={"309px"}
+        />
       </div>
     );
   };
@@ -93,7 +97,11 @@ const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
         >
           {text}
         </Typography>
-        <img src={Logo} alt="" width="251px" />
+        <img
+          src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-3.webp`}
+          alt=""
+          width="251px"
+        />
       </div>
     );
   };
