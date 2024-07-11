@@ -357,7 +357,11 @@ const CreateTreatment = () => {
             <Box className={classes.inputBox}>
               <Grid container columnSpacing={"40px"}>
                 <Grid item xs={12}>
-                  <CustomTextField />
+                  <CustomTextField
+                    name="mainText_pt"
+                    control={control}
+                    setValue={setValue}
+                  />
                 </Grid>
                 <Grid item xs={5}>
                   <div
