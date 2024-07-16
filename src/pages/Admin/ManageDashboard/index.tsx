@@ -10,7 +10,7 @@ import TwoLevelChartPie from "../../../components/Charts/TwoLevelChartPie";
 import { useDashboard } from "./useDasboard";
 
 const ManageDashboard = () => {
-  const { data, dataDashboardMonthReportList } = useDashboard();
+  const { data } = useDashboard();
 
   const Panel = ({
     title,
@@ -270,11 +270,15 @@ const ManageDashboard = () => {
 
     panelStyles?: CSSProperties;
   }) => {
-    const pdfs = [
-      { month: "Janeiro" },
-      { month: "Fevereiro" },
-      { month: "Março" },
-    ];
+    if (!data?.report) return <></>;
+    const handleOpenReport = (index: number) => {
+      const filePath = data?.report[index]?.file_path;
+      if (filePath) {
+        window.open(filePath, "_blank");
+      } else {
+        console.error("File path is invalid");
+      }
+    };
     return (
       <div
         style={{
@@ -313,7 +317,7 @@ const ManageDashboard = () => {
             autoPlay={false}
             tweenAnime="ease"
           >
-            {pdfs.map((item, index) => (
+            {data?.report?.map((item: any, index: any) => (
               <div
                 draggable={false}
                 key={index}
@@ -338,7 +342,8 @@ const ManageDashboard = () => {
                     columnGap: "4px",
                   }}
                 >
-                  <p style={{ fontSize: "12px" }}>{item.month}</p>
+                  <p style={{ fontSize: "12px" }}>{item?.month}</p>
+                  <p style={{ fontSize: "12px" }}>{item?.year}</p>
                   <div
                     style={{
                       backgroundColor: "rgba(75, 173, 204, 0.32)",
@@ -347,7 +352,11 @@ const ManageDashboard = () => {
                       display: "flex",
                     }}
                   >
-                    <img src={Download} alt="" />
+                    <img
+                      src={Download}
+                      alt=""
+                      onClick={() => handleOpenReport(index)}
+                    />
                   </div>
                 </div>
               </div>
