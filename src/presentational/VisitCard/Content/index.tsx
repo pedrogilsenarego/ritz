@@ -4,8 +4,9 @@ import map from "../../../assets/map.svg";
 import phone from "../../../assets/phone.svg";
 import "./index.css";
 import Cross from "../../../assets/cross.png";
-import Logo from "../../../assets/LOGO 4.webp";
+
 import { i18n } from "../../../translations/i18n";
+import { BASE_URL } from "../../../services/constants";
 
 export const Content = ({ setOpenPopup }: any) => {
   const theme = useTheme();
@@ -60,10 +61,11 @@ export const Content = ({ setOpenPopup }: any) => {
             }}
           >
             <img
-              src={Logo}
+              src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-4.webp`}
               alt=""
               style={{
                 width: "202px",
+                marginLeft: "10px",
               }}
             />
             <div>
@@ -230,17 +232,26 @@ export const Content = ({ setOpenPopup }: any) => {
               height: "20px",
             }}
           />
-          <div style={{ height: "100%", marginTop: "20px" }}>
+          <div
+            style={{
+              height: "100%",
+              marginTop: "120px",
+            }}
+          >
             <Typography
               style={{
                 textTransform: "uppercase",
-                fontSize: "11px",
+                fontSize: "10px",
                 textAlign: "center",
+                color: "#484848",
               }}
             >
               {i18n.t("visitCard.box2")}
             </Typography>
-            <Typography variant="h1" style={{ fontSize: "28px" }}>
+            <Typography
+              variant="h1"
+              style={{ fontSize: "24px", fontWeight: 500 }}
+            >
               {i18n.t("visitCard.box3")}
             </Typography>
           </div>
@@ -251,10 +262,25 @@ export const Content = ({ setOpenPopup }: any) => {
               textAlign: "center",
             }}
             dangerouslySetInnerHTML={{
-              __html: i18n.t("visitCard.box3"),
+              __html: i18n.t("visitCard.box4"),
             }}
           ></Typography>
+          <div
+            style={{
+              height: "1px",
+              width: "50%",
+              backgroundColor: "#687479",
+              marginBottom: "150px",
+            }}
+          />
         </div>
+        <div
+          style={{
+            height: "11px",
+            background:
+              "linear-gradient(90deg, #CCD1D3 0%, #F9F9F9 54%, #CED2D4 100%)",
+          }}
+        />
         <div
           style={{
             backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/CARTAO-MARCAÇAO.webp)`,
@@ -271,7 +297,7 @@ export const Content = ({ setOpenPopup }: any) => {
               background: "rgba(249, 249, 249, 0.9)",
               borderRadius: "10px",
               boxShadow: "0px 2px 5px 0px rgba(0, 0, 0, 0.25)",
-              padding: "40px 30px",
+              padding: "40px 56px",
               display: "flex",
               justifyContent: "center",
               flexDirection: "column",
@@ -280,9 +306,10 @@ export const Content = ({ setOpenPopup }: any) => {
             }}
           >
             <img
-              src={Logo}
+              src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-4.webp`}
               alt=""
               style={{
+                marginLeft: "10px",
                 width: "202px",
               }}
             />
