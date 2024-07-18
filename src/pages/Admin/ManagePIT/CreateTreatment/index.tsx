@@ -19,6 +19,7 @@ import { ROUTE_PATHS } from "../../../../routes/constants";
 import { LanguageContainer } from "../../Presentational/LanguageContainer";
 import InfoCircle from "../../../../assets/info-circle.png";
 import CustomTextField from "../../../../components/Inputs/RichTextMine";
+import Tiptap from "../../../../components/Inputs/RichTextMine2";
 
 const CreateTreatment = () => {
   const classes = useStyles();
@@ -357,11 +358,12 @@ const CreateTreatment = () => {
             <Box className={classes.inputBox}>
               <Grid container columnSpacing={"40px"}>
                 <Grid item xs={12}>
-                  <CustomTextField
+                  {/* <CustomTextField
                     name="mainText_pt"
                     control={control}
                     setValue={setValue}
-                  />
+                  /> */}
+                  <Tiptap />
                 </Grid>
                 <Grid item xs={5}>
                   <div

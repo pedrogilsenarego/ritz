@@ -1,0 +1,47 @@
+.ProseMirror {
+    background-color: white;
+    padding: 20px;
+    min-height: 100px;
+    width: 100%;
+    border-radius: 20px;
+    font-size: 13px;
+    border: none;
+    outline: none; /* Remove default outline */
+}
+
+.ProseMirror:focus {
+    border: none; /* Remove border on focus */
+    outline: none; /* Remove outline on focus */
+}
+
+.bubble-menu {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 16px;
+    box-shadow: 1px 2px 2px #00000066;
+    display: flex;
+    cursor:pointer;
+    padding: 4px;
+  
+    button {
+        border: 2px solid black;
+        padding:2px 4px;
+        border-radius:10px;
+
+        margin:0px 5px;
+        cursor:pointer;
+      background-color: unset;
+  
+      &:hover {
+        background-color: lightblue;
+      }
+  
+      &.is-active {
+        font-weight: 800;
+  
+        &:hover {
+          background-color: lightgrey;
+        }
+      }
+    }
+  }
