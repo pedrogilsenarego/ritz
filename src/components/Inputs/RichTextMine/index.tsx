@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from "react";
-import { Box, Button } from "@mui/material";
+import React, { useRef, useEffect, useState } from "react";
+import { Box, Button, Typography } from "@mui/material";
 import { Control, Controller, UseFormSetValue } from "react-hook-form";
 
 type CustomTextFieldProps = {
@@ -13,36 +13,40 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
   control,
   setValue,
 }) => {
-  const editorRef = useRef<HTMLDivElement>(null);
+  const [textValue, setTextValue] = useState<string>("");
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  const formatText = (
-    command: string,
-    value: string | undefined = undefined
-  ) => {
-    document.execCommand(command, false, value);
-    editorRef.current?.focus();
-  };
+  const formatText = (command: string, value?: string) => {
+    const textarea = textareaRef.current;
+    if (textarea) {
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const selectedText = textValue.substring(start, end);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
-    if (e.key === "Enter") {
-      document.execCommand("insertLineBreak");
-      e.preventDefault();
+      let newText = textValue;
+      if (command === "bold") {
+        newText =
+          textValue.substring(0, start) +
+          `<b>${selectedText}</b>` +
+          textValue.substring(end);
+      } else if (command === "italic") {
+        newText =
+          textValue.substring(0, start) +
+          `<i>${selectedText}</i>` +
+          textValue.substring(end);
+      }
+
+      setTextValue(newText);
+      setValue(name, newText);
+      textarea.focus();
     }
   };
 
-  useEffect(() => {
-    const handleInput = () => {
-      const formattedText = editorRef.current?.innerHTML;
-      setValue(name, formattedText);
-    };
-
-    const editor = editorRef.current;
-    editor?.addEventListener("input", handleInput);
-
-    return () => {
-      editor?.removeEventListener("input", handleInput);
-    };
-  }, [name, setValue]);
+  const handleInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const newValue = e.target.value;
+    setTextValue(newValue);
+    setValue(name, newValue);
+  };
 
   return (
     <Box>
@@ -67,22 +71,39 @@ const CustomTextField: React.FC<CustomTextFieldProps> = ({
         control={control}
         defaultValue=""
         render={({ field }) => (
-          <Box
-            contentEditable
-            ref={editorRef}
-            onKeyDown={handleKeyDown}
+          <textarea
+            ref={textareaRef}
+            value={textValue}
+            onChange={handleInputChange}
             style={{
+              width: "100%",
               padding: "20px",
               minHeight: "100px",
               outline: "none",
               borderRadius: "20px",
               backgroundColor: "white",
               fontSize: "13px",
+              whiteSpace: "pre-wrap",
+              overflowWrap: "break-word",
             }}
-            dangerouslySetInnerHTML={{ __html: field.value }}
-          ></Box>
+          />
         )}
       />
+      <Box mt={1}>
+        <Typography
+          style={{
+            padding: "20px",
+            minHeight: "100px",
+            outline: "none",
+            borderRadius: "20px",
+            backgroundColor: "white",
+            fontSize: "13px",
+            whiteSpace: "pre-wrap",
+            overflowWrap: "break-word",
+          }}
+          dangerouslySetInnerHTML={{ __html: textValue }}
+        />
+      </Box>
     </Box>
   );
 };

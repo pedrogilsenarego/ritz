@@ -1,6 +1,5 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import Logo from "../../../../assets/LOGO 3.webp";
-import Logo2 from "../../../../assets/LOGO 1.webp";
+
 import { BASE_URL } from "../../../../services/constants";
 
 const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
