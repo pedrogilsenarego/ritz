@@ -6,10 +6,13 @@ import { queryKeys } from "../../../../../constants/queryKeys";
 import { handleFetchSpecialty } from "../../../../../actions/tretaments";
 import { useSelector } from "react-redux";
 import { State } from "../../../../../redux/types";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../../../routes/constants";
 
 export const Specialty = () => {
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(1);
   const lang = useSelector<State, string>((state) => state.general.lang);
+  const navigate = useNavigate();
   const ImageElement = ({
     title,
     index,
@@ -119,6 +122,9 @@ export const Specialty = () => {
           return (
             <Grid key={index} item xs={6}>
               <Typography
+                onClick={() =>
+                  navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id))
+                }
                 style={{
                   cursor: "pointer",
                   fontSize: "20px",

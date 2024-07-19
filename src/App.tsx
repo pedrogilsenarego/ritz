@@ -6,13 +6,10 @@ import { BrowserRouter } from "react-router-dom";
 import CookiePolicy from "./components/CookiePopup";
 import AppRoutes from "./routes";
 import { theme } from "./theme/theme";
-import { useEffect } from "react";
 
 function App() {
   const queryClient = new QueryClient();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+
   return (
     <BrowserRouter>
       <LocalizationProvider dateAdapter={AdapterDateFns}>

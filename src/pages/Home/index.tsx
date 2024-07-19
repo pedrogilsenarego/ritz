@@ -5,7 +5,6 @@ import ContainerC from "./Components/Container";
 import Escort from "./Components/Escort";
 import SpaceWhere from "./Components/SpaceWhere";
 import Treatments from "./Components/Treatments";
-import Whats from "./Components/Whats";
 
 const Home = () => {
   const theme = useTheme();

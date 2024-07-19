@@ -4,10 +4,13 @@ import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
 import plus from "../../../../assets/Group 9.svg";
 import { TreatmentVideo } from "../TreatmentVideo";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../../routes/constants";
 
 const Treatments = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const navigate = useNavigate();
 
   type PropsTile = {
     image: string;
@@ -116,6 +119,13 @@ const Treatments = () => {
               {subtitles.map((title, index) => {
                 return (
                   <Typography
+                    onClick={
+                      mobile
+                        ? () => {
+                            if (hover) navigate(ROUTE_PATHS.TREATMENTS);
+                          }
+                        : () => navigate(ROUTE_PATHS.TREATMENTS)
+                    }
                     style={{
                       color: "white",
                       position: "absolute",

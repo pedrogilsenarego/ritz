@@ -11,10 +11,13 @@ import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { queryKeys } from "../../../../../constants/queryKeys";
 import { handleFetchBodyPart } from "../../../../../actions/tretaments";
+import { ROUTE_PATHS } from "../../../../../routes/constants";
+import { useNavigate } from "react-router-dom";
 
 export const Body = () => {
   const lang = useSelector<State, string>((state) => state.general.lang);
-  const [selected, setSelected] = useState(0);
+  const [selected, setSelected] = useState(1);
+  const navigate = useNavigate();
   const { isLoading, data } = useQuery<any, any>(
     [queryKeys.bodyPart, selected],
     () => handleFetchBodyPart(selected)
@@ -117,6 +120,9 @@ export const Body = () => {
           return (
             <Grid key={index} item xs={12}>
               <Typography
+                onClick={() =>
+                  navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id))
+                }
                 style={{
                   cursor: "pointer",
                   fontSize: "15px",

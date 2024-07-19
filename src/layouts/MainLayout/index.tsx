@@ -1,8 +1,8 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Footer from "./Footer";
 import Header from "./Header";
-import { useNavigate } from "react-router-dom";
-import { ROUTE_PATHS } from "../../routes/constants";
+
+import useScrollToTop from "../../utils/useScrollTop";
 interface HomepageLayoutProps {
   children: React.ReactNode;
   hasHeader?: boolean;
@@ -13,6 +13,7 @@ const HomepageLayout = ({
   hasHeader = true,
 }: HomepageLayoutProps) => {
   const Theme = useTheme();
+  useScrollToTop();
   const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   return (
     <Box

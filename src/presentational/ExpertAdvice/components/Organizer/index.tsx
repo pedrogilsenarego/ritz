@@ -2,6 +2,8 @@ import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Request } from "../../../../actions/generalTypes";
 import { useSelector } from "react-redux";
 import { State } from "../../../../redux/types";
+import { ROUTE_PATHS } from "../../../../routes/constants";
+import { useNavigate } from "react-router-dom";
 
 const chunkData = (data: any[], size: number): any[][] => {
   const chunks = [];
@@ -19,6 +21,7 @@ export const Organizer = ({
   type: "speciality" | "bodyPart";
 }) => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const lang = useSelector<State, string>((state) => state.general.lang);
   const title = lang === "PT" ? "title_pt" : "title_en";
 
@@ -39,6 +42,9 @@ export const Organizer = ({
       >
         {data.results.map((item: any, index: number) => (
           <Typography
+            onClick={() =>
+              navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id))
+            }
             key={index}
             style={{
               cursor: "pointer",
@@ -90,6 +96,14 @@ export const Organizer = ({
                             }}
                           >
                             <div
+                              onClick={() =>
+                                navigate(
+                                  ROUTE_PATHS.TREATMENT_ID.replace(
+                                    ":id",
+                                    result.id
+                                  )
+                                )
+                              }
                               style={{
                                 backgroundColor: "rgba(255, 252, 248, 0.9)",
                                 display: "flex",

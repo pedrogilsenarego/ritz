@@ -1,10 +1,13 @@
 import { Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../../routes/constants";
 
 const SpaceWhere = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const navigate = useNavigate();
   const renderLaptop = () => {
     return (
       <div
@@ -52,6 +55,7 @@ const SpaceWhere = () => {
             {i18n.t("pages.home.box71")}
           </Typography>
           <ButtonNinja
+            onClick={() => navigate(ROUTE_PATHS.COMPLEX)}
             textStyles={{ color: "rgba(119, 124, 126, 1)" }}
             buttonStyles={{
               padding: "8px 20px",
@@ -119,6 +123,7 @@ const SpaceWhere = () => {
             {i18n.t("pages.home.box71")}
           </Typography>
           <Button
+            onClick={() => navigate(ROUTE_PATHS.COMPLEX)}
             style={{
               border: "solid 2px rgba(119, 124, 126, 1)",
               padding: "5px 30px",
