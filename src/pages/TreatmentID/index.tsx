@@ -11,6 +11,7 @@ import { queryKeys } from "../../constants/queryKeys";
 
 import { useSelector } from "react-redux";
 import { State } from "../../redux/types";
+import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
 
 const TreatmentID = () => {
   const params = useParams();
@@ -85,6 +86,14 @@ const TreatmentID = () => {
         </div>
         <div style={{ marginTop: "150px" }}>
           <FAQ data={data} />
+        </div>
+        <div
+          style={{
+            marginTop: mobile ? "150px" : "195px",
+            marginBottom: "200px",
+          }}
+        >
+          <TreatmentVideo />
         </div>
       </Container>
     </>

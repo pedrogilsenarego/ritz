@@ -98,7 +98,7 @@ export const content = {
             "Um espaço de sofisticação e auto-descoberta que o leva a viajar num horizonte de beleza e bem-estar.",
           box31: "Estética &</br> Cirúrgica",
           box32: "Dentária",
-          box33: "Pós-Cirúrgico</br> & Bem-estar",
+          box33: "Pós-Cirúrgica</br> & Bem-estar",
           box34: "Saúde Preventiva",
           box41: "Pesquisa Inteligente",
           box42: "Encontre os tratamentos indicados para si.",
