@@ -25,7 +25,9 @@ const SchedulleMembership = () => {
             padding: "50px 0px",
             borderRight: mobile ? undefined : "solid 1px rgba(0, 0, 0, 0.7)",
             display: "flex",
+            height: "100%",
             flexDirection: "column",
+            justifyContent: "space-between",
             alignItems: "center",
             rowGap: mobile ? "40px" : "60px",
           }}
@@ -89,10 +91,12 @@ const SchedulleMembership = () => {
         <div
           style={{
             padding: "50px 0px",
+            height: "100%",
             borderLeft: mobile ? undefined : "solid 0px rgba(0, 0, 0, 0.7)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "space-between",
             rowGap: mobile ? "40px" : "60px",
           }}
         >

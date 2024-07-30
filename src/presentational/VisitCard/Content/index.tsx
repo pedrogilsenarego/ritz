@@ -18,7 +18,7 @@ export const Content = ({ setOpenPopup }: any) => {
         style={{
           display: "flex",
           minWidth: "60vw",
-          minHeight: "50vh",
+
           position: "relative",
         }}
       >

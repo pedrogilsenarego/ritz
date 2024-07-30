@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 
 const InitialSection = () => {
@@ -132,13 +132,14 @@ const InitialSection = () => {
   };
   return (
     <Grid container height="100%" width="100%" style={{ position: "relative" }}>
-      <div
+      <Container
+        maxWidth="lg"
         style={{
           marginTop: "151px",
           position: "absolute",
           left: "50%",
           width: "100%",
-          padding: "0px 200px",
+          //padding: "0px 200px",
           transform: "translateX(-50%)",
         }}
       >
@@ -181,7 +182,7 @@ const InitialSection = () => {
             </div>
           </div>
         </div>
-        <div style={{ marginTop: "200px" }} />
+        <div style={{ marginTop: "120px" }} />
         <TitleElement
           title={i18n.t("pages.treatments.box9")}
           text={i18n.t("pages.treatments.box10")}
@@ -216,7 +217,7 @@ const InitialSection = () => {
             </div>
           </div>
         </div>
-        <div style={{ marginTop: "450px" }} />
+        <div style={{ marginTop: "420px" }} />
         <TitleElement
           alignCenter
           title={i18n.t("pages.treatments.box15")}
@@ -292,7 +293,7 @@ const InitialSection = () => {
             <div style={{ width: "50%" }} />
           </div>
         </div>
-      </div>
+      </Container>
       <Grid item xs={12} md={6}>
         <img
           alt=""
