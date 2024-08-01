@@ -10,7 +10,7 @@ export const Button = (props: ExtendedButtonProps) => {
   return (
     <ButtonBase
       style={{
-        backgroundColor:
+        background:
           "linear-gradient(90deg, #FFF 0%, rgba(255, 255, 255, 0.69) 100%)",
         borderRadius: "15px",
         padding: "10px 15px",

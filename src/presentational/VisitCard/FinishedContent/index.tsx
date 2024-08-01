@@ -8,17 +8,25 @@ import Cross from "../../../assets/cross.png";
 import { i18n } from "../../../translations/i18n";
 import { BASE_URL } from "../../../services/constants";
 import { FirstScreen } from "./FirstScreen";
+import { useState } from "react";
+import { SecondScreen } from "./SecondScreen";
+
+export type Screen = "first" | "second";
+export type Mode = "professional" | "speciality" | "concern";
 
 export const FinishedContent = ({ setOpenPopup }: any) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const [screen, setScreen] = useState<Screen>("first");
+  const [mode, setMode] = useState<Mode>("professional");
 
   const renderLaptop = () => {
     return (
       <div
         style={{
           display: "flex",
-          minWidth: "60vw",
+          width: "65vw",
 
           position: "relative",
         }}
@@ -157,7 +165,11 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
           </div>
         </div>
         <div style={{ padding: "58px", width: "100%" }}>
-          <FirstScreen />
+          {screen === "first" ? (
+            <FirstScreen setMode={setMode} setScreen={setScreen} />
+          ) : (
+            <SecondScreen mode={mode} setScreen={setScreen} />
+          )}
         </div>
       </div>
     );
@@ -193,7 +205,7 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
               height: "20px",
             }}
           />
-          <FirstScreen />
+          <FirstScreen setMode={setMode} setScreen={setScreen} />
         </div>
         <div
           style={{

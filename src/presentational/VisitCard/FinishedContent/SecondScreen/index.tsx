@@ -1,14 +1,15 @@
 import { Divider, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 import { Button } from "../Button";
-import { Mode, Screen } from "..";
+import LeftArrow from "../../../../assets/leftArrow.svg";
+import { Screen } from "..";
 
 type Props = {
+  mode: "professional" | "speciality" | "concern";
   setScreen: (screen: Screen) => void;
-  setMode: (mode: Mode) => void;
 };
 
-export const FirstScreen = (props: Props) => {
+export const SecondScreen = (props: Props) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const LaptopRender = () => {
@@ -41,7 +42,7 @@ export const FirstScreen = (props: Props) => {
               fontWeight: 500,
             }}
           >
-            Estamos ansiosos por conhecê-lo.
+            Vamos categorizar a sua marcação.
           </Typography>
         </div>
         <div>
@@ -52,79 +53,53 @@ export const FirstScreen = (props: Props) => {
               fontWeight: 500,
             }}
           >
-            Comece por categorizar a sua consulta.
-          </Typography>
-          <Typography
-            style={{
-              fontSize: "11px",
-              fontWeight: 400,
-            }}
-          >
-            Usaremos a sua filtragem para apresentar disponibilidades de
-            marcação.
+            Selecione o Profissional de Interesse:
           </Typography>
         </div>
         <div
-          style={{ display: "flex", flexDirection: "column", rowGap: "38px" }}
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
         >
-          <Typography
-            style={{
-              color: "#484848",
-              fontSize: "13px",
-              textAlign: "center",
-              fontWeight: 500,
-            }}
+          <div
+            style={{ width: "35%", display: "flex", justifyContent: "center" }}
           >
-            Quero filtrar por:
-          </Typography>
-          <div style={{ display: "flex", justifyContent: "space-around" }}>
-            <Button
-              onClick={() => {
-                props.setScreen("second");
-                props.setMode("professional");
-              }}
-            >
-              Profissional
-            </Button>
-            <Button
-              onClick={() => {
-                props.setScreen("second");
-                props.setMode("speciality");
-              }}
-            >
-              Especialidade
-            </Button>
-            <Button
-              onClick={() => {
-                props.setScreen("second");
-                props.setMode("concern");
-              }}
-            >
-              Preocupação
-            </Button>
+            <Button>Profissional</Button>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Divider style={{ width: "70%" }} />
-          </div>
-        </div>
-        <div
-          style={{ display: "flex", columnGap: "20px", alignItems: "center" }}
-        >
-          <Typography style={{ fontSize: "11px", fontWeight: 500 }}>
-            Quero agendar
-          </Typography>
-          <Button
-            textStyle={{ color: "white", fontSize: "10px" }}
-            style={{
-              padding: "6px 20px",
-              borderRadius: "15px",
 
-              background:
-                "linear-gradient(90deg, rgba(46, 45, 45, 0.80)0%, rgba(120, 120, 120, 0.50)100%)",
-            }}
+          <div style={{ width: "65%", display: "flex", columnGap: "20px" }}>
+            <div
+              style={{ height: "100px", width: "1px", background: "#687479" }}
+            />
+            <div
+              style={{
+                background: "rgba(255, 255, 255, 0.30)",
+                padding: "20px",
+                width: "220px",
+                borderRadius: "10px",
+              }}
+            >
+              dioehdoiw
+            </div>
+          </div>
+        </div>
+        <div
+          onClick={() => props.setScreen("first")}
+          style={{
+            display: "flex",
+            columnGap: "20px",
+            alignItems: "center",
+            cursor: "pointer",
+          }}
+        >
+          <img alt="" src={LeftArrow} style={{ width: "10px" }} />
+          <Typography
+            style={{ fontSize: "11px", fontWeight: 500, color: "#484848" }}
           >
-            Consultoria Online
-          </Button>
+            Voltar às opções de filtragem
+          </Typography>
         </div>
       </div>
     );
