@@ -1,8 +1,9 @@
-import { Divider, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 import { Button } from "../Button";
 import LeftArrow from "../../../../assets/leftArrow.svg";
 import { Screen } from "..";
+import { Professional } from "./Professional";
 
 type Props = {
   mode: "professional" | "speciality" | "concern";
@@ -69,7 +70,14 @@ export const SecondScreen = (props: Props) => {
             <Button>Profissional</Button>
           </div>
 
-          <div style={{ width: "65%", display: "flex", columnGap: "20px" }}>
+          <div
+            style={{
+              width: "65%",
+              display: "flex",
+              columnGap: "20px",
+              alignItems: "center",
+            }}
+          >
             <div
               style={{ height: "100px", width: "1px", background: "#687479" }}
             />
@@ -77,11 +85,11 @@ export const SecondScreen = (props: Props) => {
               style={{
                 background: "rgba(255, 255, 255, 0.30)",
                 padding: "20px",
-                width: "220px",
+
                 borderRadius: "10px",
               }}
             >
-              dioehdoiw
+              <Professional />
             </div>
           </div>
         </div>

@@ -73,7 +73,7 @@ export const handleFetchSpecialties = async () => {
     });
 
     const body = await response.json(); // Parse response body as JSON
-
+    console.log(body, "response");
     if (response.ok) {
       // Handle successful login
 

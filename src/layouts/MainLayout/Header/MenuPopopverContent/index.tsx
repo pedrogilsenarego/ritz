@@ -1,7 +1,6 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { options } from "../constants";
 import { useLocation, useNavigate } from "react-router-dom";
-import { mainColors } from "../../../../theme/theme";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import INsta from "../../../../assets/Insta.svg";
 import Face from "../../../../assets/Facebook.svg";
@@ -10,7 +9,6 @@ import Close from "../../../../assets/simpleCross.png";
 import LogoMobile from "../../../../assets/ole.png";
 import Login from "../../../../assets/Log_In.svg";
 import { i18n } from "../../../../translations/i18n";
-
 import { LANG } from "../../../../constants/lang";
 import { useSelector } from "react-redux";
 import { State } from "../../../../redux/types";
@@ -128,14 +126,11 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                 style={{
                   cursor: "pointer",
                   fontSize: "16px",
-                  fontWeight: 500,
+                  fontWeight:
+                    location.pathname === ROUTE_PATHS.BLOG_ ? 500 : 400,
                   textAlign: "center",
                   letterSpacing: "1px",
                   textTransform: "uppercase",
-                  color:
-                    location.pathname === ROUTE_PATHS.BLOG_
-                      ? mainColors.secondary[400]
-                      : "inherit",
                 }}
                 onClick={() => {
                   navigate(ROUTE_PATHS.BLOG_);
@@ -463,14 +458,11 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                     style={{
                       cursor: "pointer",
                       fontSize: "15px",
-                      fontWeight: 500,
+                      fontWeight:
+                        location.pathname === ROUTE_PATHS.BLOG_ ? "bold" : 400,
                       textAlign: "center",
                       letterSpacing: "1px",
                       textTransform: "uppercase",
-                      color:
-                        location.pathname === ROUTE_PATHS.BLOG_
-                          ? mainColors.secondary[400]
-                          : "inherit",
                     }}
                     onClick={() => {
                       navigate(ROUTE_PATHS.BLOG_);
