@@ -10,8 +10,9 @@ import { BASE_URL } from "../../../services/constants";
 import { FirstScreen } from "./FirstScreen";
 import { useState } from "react";
 import { SecondScreen } from "./SecondScreen";
+import { ThirdScreen } from "./ThirdScreen";
 
-export type Screen = "first" | "second";
+export type Screen = "first" | "second" | "third";
 export type Mode = "professional" | "speciality" | "concern";
 
 export const FinishedContent = ({ setOpenPopup }: any) => {
@@ -167,8 +168,10 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
         <div style={{ padding: "58px", width: "100%" }}>
           {screen === "first" ? (
             <FirstScreen setMode={setMode} setScreen={setScreen} />
-          ) : (
+          ) : screen === "second" ? (
             <SecondScreen mode={mode} setScreen={setScreen} />
+          ) : (
+            <ThirdScreen />
           )}
         </div>
       </div>

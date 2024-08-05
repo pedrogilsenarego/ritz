@@ -4,6 +4,7 @@ import { Button } from "../Button";
 import LeftArrow from "../../../../assets/leftArrow.svg";
 import { Screen } from "..";
 import { Professional } from "./Professional";
+import { Speciality } from "./Speciality";
 
 type Props = {
   mode: "professional" | "speciality" | "concern";
@@ -67,7 +68,7 @@ export const SecondScreen = (props: Props) => {
           <div
             style={{ width: "35%", display: "flex", justifyContent: "center" }}
           >
-            <Button>Profissional</Button>
+            <Button>{props.mode}</Button>
           </div>
 
           <div
@@ -85,11 +86,15 @@ export const SecondScreen = (props: Props) => {
               style={{
                 background: "rgba(255, 255, 255, 0.30)",
                 padding: "20px",
-
+                height: "150px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                overflow: "hidden",
                 borderRadius: "10px",
               }}
             >
-              <Professional />
+              <Speciality setScreen={props.setScreen} />
             </div>
           </div>
         </div>
