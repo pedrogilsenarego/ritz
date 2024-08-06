@@ -21,6 +21,7 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
 
   const [screen, setScreen] = useState<Screen>("first");
   const [mode, setMode] = useState<Mode>("professional");
+  const [treatment, setTreatment] = useState<number | undefined>(undefined);
 
   const renderLaptop = () => {
     return (
@@ -169,9 +170,13 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
           {screen === "first" ? (
             <FirstScreen setMode={setMode} setScreen={setScreen} />
           ) : screen === "second" ? (
-            <SecondScreen mode={mode} setScreen={setScreen} />
+            <SecondScreen
+              mode={mode}
+              setScreen={setScreen}
+              setTreatment={setTreatment}
+            />
           ) : (
-            <ThirdScreen />
+            <ThirdScreen treatment={treatment} setScreen={setScreen} />
           )}
         </div>
       </div>

@@ -9,6 +9,7 @@ import { Speciality } from "./Speciality";
 type Props = {
   mode: "professional" | "speciality" | "concern";
   setScreen: (screen: Screen) => void;
+  setTreatment: (treatment: number) => void;
 };
 
 export const SecondScreen = (props: Props) => {
@@ -94,7 +95,10 @@ export const SecondScreen = (props: Props) => {
                 borderRadius: "10px",
               }}
             >
-              <Speciality setScreen={props.setScreen} />
+              <Speciality
+                setScreen={props.setScreen}
+                setTreatment={props.setTreatment}
+              />
             </div>
           </div>
         </div>

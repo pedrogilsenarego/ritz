@@ -11,6 +11,7 @@ type Props = {
 export const FirstScreen = (props: Props) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+
   const LaptopRender = () => {
     return (
       <div

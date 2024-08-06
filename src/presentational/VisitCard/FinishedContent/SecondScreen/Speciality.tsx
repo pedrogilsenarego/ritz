@@ -13,6 +13,7 @@ import { Screen } from "..";
 
 type Props = {
   setScreen: (screen: Screen) => void;
+  setTreatment: (treatment: number) => void;
 };
 
 export const Speciality = (props: Props) => {
@@ -76,7 +77,10 @@ export const Speciality = (props: Props) => {
             {specilityDefined?.results?.map((result: any, index: number) => {
               return (
                 <Typography
-                  onClick={() => props.setScreen("third")}
+                  onClick={() => {
+                    props.setScreen("third");
+                    props.setTreatment(result.id);
+                  }}
                   key={index}
                   style={{
                     cursor: "pointer",
