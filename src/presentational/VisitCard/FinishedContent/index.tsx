@@ -11,8 +11,9 @@ import { FirstScreen } from "./FirstScreen";
 import { useState } from "react";
 import { SecondScreen } from "./SecondScreen";
 import { ThirdScreen } from "./ThirdScreen";
+import { ForthScreen } from "./ForthScreen";
 
-export type Screen = "first" | "second" | "third";
+export type Screen = "first" | "second" | "third" | "forth";
 export type Mode = "professional" | "speciality" | "concern";
 
 export const FinishedContent = ({ setOpenPopup }: any) => {
@@ -23,12 +24,33 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
   const [mode, setMode] = useState<Mode>("professional");
   const [treatment, setTreatment] = useState<number | undefined>(undefined);
 
+  const renderScreenComponent = () => {
+    switch (screen) {
+      case "first":
+        return <FirstScreen setMode={setMode} setScreen={setScreen} />;
+      case "second":
+        return (
+          <SecondScreen
+            mode={mode}
+            setScreen={setScreen}
+            setTreatment={setTreatment}
+          />
+        );
+      case "third":
+        return <ThirdScreen treatment={treatment} setScreen={setScreen} />;
+      case "forth":
+        return <ForthScreen treatment={treatment} setScreen={setScreen} />;
+      default:
+        return null;
+    }
+  };
+
   const renderLaptop = () => {
     return (
       <div
         style={{
           display: "flex",
-          width: "65vw",
+          width: "75vw",
 
           position: "relative",
         }}
@@ -167,17 +189,7 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
           </div>
         </div>
         <div style={{ padding: "58px", width: "100%" }}>
-          {screen === "first" ? (
-            <FirstScreen setMode={setMode} setScreen={setScreen} />
-          ) : screen === "second" ? (
-            <SecondScreen
-              mode={mode}
-              setScreen={setScreen}
-              setTreatment={setTreatment}
-            />
-          ) : (
-            <ThirdScreen treatment={treatment} setScreen={setScreen} />
-          )}
+          {renderScreenComponent()}
         </div>
       </div>
     );

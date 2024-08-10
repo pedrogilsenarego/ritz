@@ -19,7 +19,7 @@ export const ThirdScreen = (props: Props) => {
     [queryKeys.treatment, props.treatment],
     () => handleFetchTreatment(props.treatment?.toString() || "")
   );
-  console.log(queryData);
+
   return (
     <div
       style={{
@@ -85,6 +85,7 @@ export const ThirdScreen = (props: Props) => {
           Escolha entre as datas disponíveis:
         </Typography>
       </div>
+      <Button onClick={() => props.setScreen("forth")}>Avancar</Button>
       <div
         onClick={() => props.setScreen("second")}
         style={{
