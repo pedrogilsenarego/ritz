@@ -48,7 +48,7 @@ export const Speciality = (props: Props) => {
               style={{
                 width: "7px",
                 height: "7px",
-                backgroundColor: "purple",
+                backgroundColor: data.results?.[filter - 1].colour,
               }}
             />
             <Typography
@@ -113,7 +113,7 @@ export const Speciality = (props: Props) => {
                 style={{
                   width: "7px",
                   height: "7px",
-                  backgroundColor: "purple",
+                  backgroundColor: result.colour,
                 }}
               />
               <Typography

@@ -5,6 +5,7 @@ import LeftArrow from "../../../../assets/leftArrow.svg";
 import { Screen } from "..";
 import { Professional } from "./Professional";
 import { Speciality } from "./Speciality";
+import { Concern } from "./Concern";
 
 type Props = {
   mode: "professional" | "speciality" | "concern";
@@ -95,10 +96,17 @@ export const SecondScreen = (props: Props) => {
                 borderRadius: "10px",
               }}
             >
-              <Speciality
-                setScreen={props.setScreen}
-                setTreatment={props.setTreatment}
-              />
+              {props.mode === "speciality" ? (
+                <Speciality
+                  setScreen={props.setScreen}
+                  setTreatment={props.setTreatment}
+                />
+              ) : (
+                <Concern
+                  setScreen={props.setScreen}
+                  setTreatment={props.setTreatment}
+                />
+              )}
             </div>
           </div>
         </div>

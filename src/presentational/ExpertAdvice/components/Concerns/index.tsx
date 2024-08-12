@@ -18,7 +18,7 @@ export const Concerns = ({
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  const { isLoading, data } = useQuery<any, any>([queryKeys.bodyPart], () =>
+  const { isLoading, data } = useQuery<any, any>([queryKeys.concerns], () =>
     handleFetchConcerns()
   );
 
