@@ -376,6 +376,37 @@ export const content = {
           register: "Register",
         },
       },
+
+      visitCardFinal: {
+        personalAppointments: "In-Person Appointments",
+        startHint: "Start by categorizing your consultation.",
+        secondHint:
+          "We will use your filtering to present scheduling availabilities.",
+        filterBy: "I want to filter by:",
+        profissional: "Professional",
+        speciality: "Specialty",
+        concern: "Concern",
+        startOnlineAppointment: "I wish to schedule an online appointment",
+        categorizeAppointments: "Let's categorize your appointment.",
+        selectProfessional: "Select the Professional of Interest",
+        selectSpeciality: "Select the Specialty of Interest",
+        selectConcern: "Select a Concerns Of Interest",
+        backButton: "Return to Filter Options",
+
+        bestPerson: "The best hour for the best person.",
+        chooseDate: "Choose from the available dates:",
+        showMoreDates: "Show other dates",
+        confirmationLogin: "Confirmation and Log-In.",
+        consultInfo:
+          "You can check your appointment and all documents shared by our specialists in your Reserved Area.",
+        backOptions: "Return to availability options",
+        confirm: "Confirm",
+        sessionStarted: "Logged-In.",
+        hello: "Hello, {{ name }}!",
+        changeAccount: "Change Account",
+        apointmentDone: "Appointment made!",
+        privateArea: "RESERVED AREA",
+      },
     },
   },
 };
