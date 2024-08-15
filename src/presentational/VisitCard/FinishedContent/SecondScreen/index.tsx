@@ -37,7 +37,7 @@ export const SecondScreen = (props: Props) => {
               textTransform: "uppercase",
             }}
           >
-            Marcações Presenciais
+            {i18n.t("visitCardFinal.personalAppointments")}
           </Typography>
           <Typography
             variant="h1"
@@ -46,7 +46,7 @@ export const SecondScreen = (props: Props) => {
               fontWeight: 500,
             }}
           >
-            Vamos categorizar a sua marcação.
+            {i18n.t("visitCardFinal.categorizeAppointments")}
           </Typography>
         </div>
         <div>
@@ -57,7 +57,11 @@ export const SecondScreen = (props: Props) => {
               fontWeight: 500,
             }}
           >
-            Selecione o Profissional de Interesse:
+            {props.mode === "professional"
+              ? i18n.t("visitCardFinal.selectProfessional")
+              : props.mode === "speciality"
+              ? i18n.t("visitCardFinal.selectSpeciality")
+              : i18n.t("visitCardFinal.selectConcern")}
           </Typography>
         </div>
         <div
@@ -70,7 +74,7 @@ export const SecondScreen = (props: Props) => {
           <div
             style={{ width: "35%", display: "flex", justifyContent: "center" }}
           >
-            <Button>{props.mode}</Button>
+            <Button>{i18n.t(`visitCardFinal.${props.mode}`)}</Button>
           </div>
 
           <div
@@ -123,7 +127,7 @@ export const SecondScreen = (props: Props) => {
           <Typography
             style={{ fontSize: "11px", fontWeight: 500, color: "#484848" }}
           >
-            Voltar às opções de filtragem
+            {i18n.t(`visitCardFinal.backButton`)}
           </Typography>
         </div>
       </div>

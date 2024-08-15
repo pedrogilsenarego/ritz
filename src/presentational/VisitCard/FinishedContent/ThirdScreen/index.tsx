@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { State } from "../../../../redux/types";
 import LeftArrow from "../../../../assets/leftArrow.svg";
 import { Screen } from "..";
+import { i18n } from "../../../../translations/i18n";
 
 type Props = {
   treatment: number | undefined;
@@ -40,7 +41,7 @@ export const ThirdScreen = (props: Props) => {
             textTransform: "uppercase",
           }}
         >
-          Marcações Presenciais
+          {i18n.t(`visitCardFinal.personalAppointments`)}
         </Typography>
         <Typography
           variant="h1"
@@ -49,7 +50,7 @@ export const ThirdScreen = (props: Props) => {
             fontWeight: 500,
           }}
         >
-          A melhor hora para melhor pessoa.
+          {i18n.t(`visitCardFinal.bestPerson`)}
         </Typography>
       </div>
       <div style={{ display: "flex", columnGap: "8px", alignItems: "center" }}>
@@ -82,10 +83,12 @@ export const ThirdScreen = (props: Props) => {
             fontWeight: 500,
           }}
         >
-          Escolha entre as datas disponíveis:
+          {i18n.t(`visitCardFinal.chooseDate`)}
         </Typography>
       </div>
-      <Button onClick={() => props.setScreen("forth")}>Avancar</Button>
+      <Button onClick={() => props.setScreen("forth")}>
+        Temporario avancar
+      </Button>
       <div
         onClick={() => props.setScreen("second")}
         style={{
@@ -99,7 +102,7 @@ export const ThirdScreen = (props: Props) => {
         <Typography
           style={{ fontSize: "11px", fontWeight: 500, color: "#484848" }}
         >
-          Voltar às opções de filtragem
+          {i18n.t(`visitCardFinal.backButton`)}
         </Typography>
       </div>
     </div>

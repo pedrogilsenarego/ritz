@@ -426,7 +426,7 @@ export const content = {
         secondHint:
           "Usaremos a sua filtragem para apresentar disponibilidades de marcação.",
         filterBy: "Quero filtrar por:",
-        profissional: "Profissional",
+        professional: "Profissional",
         speciality: "Especialidade",
         concern: "Preocupação",
         startOnlineAppointment: "Quero agendar consulta online",
@@ -447,7 +447,7 @@ export const content = {
         hello: "Olá, {{ name }}!",
         changeAccount: "Alterar Conta",
         apointmentDone: "Marcação efetuada!",
-        privateArea: "ÁREA RESERVADA",
+        privateArea: "Área Reservada",
       },
     },
   },

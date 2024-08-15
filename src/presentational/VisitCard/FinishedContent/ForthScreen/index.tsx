@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 import { queryKeys } from "../../../../constants/queryKeys";
 import { Screen } from "..";
 import LeftArrow from "../../../../assets/leftArrow.svg";
+import { i18n } from "../../../../translations/i18n";
 
 type Props = {
   treatment: number | undefined;
@@ -38,7 +39,7 @@ export const ForthScreen = (props: Props) => {
               textTransform: "uppercase",
             }}
           >
-            Marcações Presenciais
+            {i18n.t(`visitCardFinal.personalAppointments`)}
           </Typography>
           <Typography
             variant="h1"
@@ -47,7 +48,7 @@ export const ForthScreen = (props: Props) => {
               fontWeight: 500,
             }}
           >
-            Confirmação e Log-In.
+            {i18n.t(`visitCardFinal.confirmationLogin`)}
           </Typography>
         </div>
 
@@ -123,8 +124,7 @@ export const ForthScreen = (props: Props) => {
               marginTop: "40px",
             }}
           >
-            Poderá consultar a sua marcação e todos os documentos partilhados
-            pelos nossos especialistas na sua
+            {i18n.t(`visitCardFinal.consultInfo`)}
           </Typography>
           <Typography
             style={{
@@ -136,7 +136,7 @@ export const ForthScreen = (props: Props) => {
               letterSpacing: "1px",
             }}
           >
-            <b>Área Reservada.</b>
+            <b> {i18n.t(`visitCardFinal.privateArea`)}</b>
           </Typography>
         </div>
         <div
@@ -152,7 +152,7 @@ export const ForthScreen = (props: Props) => {
           <Typography
             style={{ fontSize: "11px", fontWeight: 500, color: "#484848" }}
           >
-            Voltar às opções de filtragem
+            {i18n.t(`visitCardFinal.backOptions`)}
           </Typography>
         </div>
       </div>

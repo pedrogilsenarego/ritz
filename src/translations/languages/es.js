@@ -739,7 +739,7 @@ export const content = {
 
       filterBy: "Quiero filtrar por:",
 
-      profissional: "Tratamientos",
+      professional: "Tratamientos",
 
       speciality: "Especialidade",
 
@@ -780,7 +780,7 @@ export const content = {
 
       apointmentDone: "¡Reserva efectuada!",
 
-      privateArea: "ÁREA RESERVADA",
+      privateArea: "Área Reservada",
     },
   },
 };

@@ -383,7 +383,7 @@ export const content = {
         secondHint:
           "We will use your filtering to present scheduling availabilities.",
         filterBy: "I want to filter by:",
-        profissional: "Professional",
+        professional: "Professional",
         speciality: "Specialty",
         concern: "Concern",
         startOnlineAppointment: "I wish to schedule an online appointment",
@@ -405,7 +405,7 @@ export const content = {
         hello: "Hello, {{ name }}!",
         changeAccount: "Change Account",
         apointmentDone: "Appointment made!",
-        privateArea: "RESERVED AREA",
+        privateArea: "Reserved Area",
       },
     },
   },

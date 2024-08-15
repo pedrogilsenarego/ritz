@@ -33,7 +33,7 @@ export const FirstScreen = (props: Props) => {
               textTransform: "uppercase",
             }}
           >
-            Marcações Presenciais
+            {i18n.t("visitCardFinal.personalAppointments")}
           </Typography>
           <Typography
             variant="h1"
@@ -53,7 +53,7 @@ export const FirstScreen = (props: Props) => {
               fontWeight: 500,
             }}
           >
-            Comece por categorizar a sua consulta.
+            {i18n.t("visitCardFinal.startHint")}
           </Typography>
           <Typography
             style={{
@@ -61,8 +61,7 @@ export const FirstScreen = (props: Props) => {
               fontWeight: 400,
             }}
           >
-            Usaremos a sua filtragem para apresentar disponibilidades de
-            marcação.
+            {i18n.t("visitCardFinal.secondHint")}
           </Typography>
         </div>
         <div
@@ -76,7 +75,7 @@ export const FirstScreen = (props: Props) => {
               fontWeight: 500,
             }}
           >
-            Quero filtrar por:
+            {i18n.t("visitCardFinal.filterBy")}
           </Typography>
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             <Button
@@ -85,7 +84,7 @@ export const FirstScreen = (props: Props) => {
                 props.setMode("professional");
               }}
             >
-              Profissional
+              {i18n.t("visitCardFinal.professional")}
             </Button>
             <Button
               onClick={() => {
@@ -93,7 +92,7 @@ export const FirstScreen = (props: Props) => {
                 props.setMode("speciality");
               }}
             >
-              Especialidade
+              {i18n.t("visitCardFinal.speciality")}
             </Button>
             <Button
               onClick={() => {
@@ -101,7 +100,7 @@ export const FirstScreen = (props: Props) => {
                 props.setMode("concern");
               }}
             >
-              Preocupação
+              {i18n.t("visitCardFinal.concern")}
             </Button>
           </div>
           <div style={{ display: "flex", justifyContent: "center" }}>
