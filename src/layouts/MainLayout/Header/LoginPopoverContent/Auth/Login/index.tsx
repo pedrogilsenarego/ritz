@@ -44,7 +44,7 @@ const Login = ({ setMode, handleClose }: Props) => {
               fontFamily: "Inter",
             }}
           >
-            Área de cliente
+            {i18n.t("auth.login.clientArea")}
           </p>
 
           <form
@@ -58,7 +58,7 @@ const Login = ({ setMode, handleClose }: Props) => {
                   <ControlledFormInput
                     control={control}
                     name="email"
-                    inputPlaceholder={i18n.t("pages.auth.login.email", "Email")}
+                    inputPlaceholder={i18n.t("auth.login.email", "Email")}
                   />
                 </Grid>
                 <Grid item xs={12}>
@@ -66,10 +66,7 @@ const Login = ({ setMode, handleClose }: Props) => {
                     control={control}
                     type="password"
                     name="password"
-                    inputPlaceholder={i18n.t(
-                      "pages.auth.login.password",
-                      "Password"
-                    )}
+                    inputPlaceholder={i18n.t("auth.login.password", "Password")}
                   />
                   <p
                     style={{
@@ -84,7 +81,7 @@ const Login = ({ setMode, handleClose }: Props) => {
                     }}
                     onClick={() => navigate(ROUTE_PATHS.RECOVER_PASSWORD)}
                   >
-                    Recuperar password
+                    {i18n.t("auth.login.passwordRecover")}
                   </p>
                 </Grid>
               </Grid>
@@ -127,7 +124,7 @@ const Login = ({ setMode, handleClose }: Props) => {
                     borderBottom: "solid 2px gray",
                   }}
                 >
-                  Iniciar sessão
+                  {i18n.t("auth.login.startSession")}
                 </p>
               </button>
             )}
@@ -160,11 +157,11 @@ const Login = ({ setMode, handleClose }: Props) => {
               textTransform: "uppercase",
             }}
           >
-            Ainda não é cliente ehtiq?
+            {i18n.t("auth.login.notClient")}
           </p>
           <ButtonBlue
             onClick={() => setMode("register")}
-            label=" Criar conta"
+            label={i18n.t("auth.login.createAccount")}
             textStyles={{
               color: Colors.blackish[400],
               textTransform: "uppercase",

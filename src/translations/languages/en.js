@@ -348,11 +348,13 @@ export const content = {
       },
       auth: {
         login: {
-          clientArea: "ÁREA DE CLIENTE",
+          clientArea: "CLIENT AREA",
           email: "Email",
           password: "Password",
-          passwordRecover: "Recuperar password",
-          startSession: "Iniciar Sessão",
+          passwordRecover: "Recover password",
+          notClient: "Not an EHTIQ client yet?",
+          startSession: "Log In",
+          createAccount: "Create account",
         },
         recoverPassword: {
           welcome: "Recover here your password",
@@ -361,8 +363,13 @@ export const content = {
           loaderMessage: "Sending an e-mail",
         },
         register: {
+          newAccount: "NEW ACCOUNT",
+          mandatoryData: "Mandatory",
+          optionalData: "Optional",
           loaderMessage: "Creating new user",
           phone: "Phone",
+          upload: "Upload",
+          photo: "Profile Picture",
           username: "Username*",
           fullName: "Full Name",
           birthday: "Birthday",

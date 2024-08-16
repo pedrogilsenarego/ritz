@@ -69,18 +69,6 @@ export const content = {
         box6: "Reempezar",
       },
 
-      visitCard: {
-        box1: "Encuéntranos",
-
-        box11: "Contáctenos",
-
-        box2: "Reserva",
-
-        box3: "Un momento brillante",
-
-        box4: "Contáctanos para reservar tu cita </br> Nos vemos pronto",
-      },
-
       pages: {
         identityBox: {
           box1: "Somos Especialistas En",
@@ -601,186 +589,184 @@ export const content = {
           wrinkles: "Rugas",
         },
       },
-    },
+      auth: {
+        login: {
+          clientArea: "AREA CLIENTES",
 
-    auth: {
-      login: {
-        clientArea: "AREA CLIENTES",
+          email: "Correo electrónico",
 
-        email: "Correo electrónico",
+          password: "Contraseña",
 
-        password: "Contraseña",
+          passwordRecover: "Recuperar contraseña",
 
-        passwordRecover: "Recuperar contraseña",
+          startSession: "Conectarse",
 
-        startSession: "Conectarse",
+          notClient: "¿Aún no es cliente de EHTIQ?",
 
-        notClient: "¿Aún no es cliente de EHTIQ?",
+          createAccount: "Crear cuenta",
+        },
 
-        createAccount: "Crear cuenta",
+        recoverPassword: {
+          recoverPassword: "Recuperar contraseña",
+
+          insertEmail: "Introducir correo electrónico",
+
+          insertEmailInput:
+            "Introduzca la dirección de correo electrónico asociada a su cuenta",
+
+          sentCode: "Enviar código",
+
+          startSession: "Conectarse",
+
+          validateEmail: "Validar correo electrónico",
+
+          insertEmailCode:
+            "Introduzca el código que ha recibido por correo electrónico",
+
+          proceed: "Siguiente",
+
+          newPassword: "Nueva contraseña",
+
+          definePassword: "Establecer contraseña",
+
+          confirmPassword: "Confirmar contraseña",
+
+          recover: "Recuperar",
+        },
+
+        register: {
+          newAccount: "NUEVA CUENTA",
+
+          mandatoryData: "Datos obligatorios",
+
+          name: "Nombre y apellidos",
+
+          email: "Dirección de correo electrónico",
+
+          password: "Establezca su contraseña",
+
+          confirmPassword: "Confirme su contraseña",
+
+          optionalData: "Información opcional",
+
+          telephone: "Número de teléfono",
+
+          photo: "Foto de perfil",
+
+          upload: "Cargar",
+
+          register: "?",
+        },
+      },
+      privateArea: {
+        clientArea: "Área Clientes",
+
+        documents: "Documentos:",
+
+        acceptance: "Consentimentos",
+
+        otherDocuments: "Outros Documentos",
+
+        myAppointments: "Minhas Marcações:",
+
+        nextAppointment: "Próxima Marcação",
+
+        previousAppointments: "Marcações Anteriores",
+
+        assinatura: "Membership:",
+
+        notMember: "Ainda não é membro EHTIQ",
+
+        settings: {
+          privateArea: "ÁREA RESERVADA",
+
+          welcome: "Bienvenida",
+
+          closeSession: "Cerrar sesión",
+
+          editAccount: "Editar cuenta",
+
+          website: "Website EHTIQ",
+
+          personalData: "Datos personales",
+
+          completeName: "Nombre y apellidos",
+
+          taxData: "Datos Fiscales",
+
+          address: "Dirección",
+
+          taxNumber: "NIF/ DNI",
+
+          save: "Guardar",
+        },
       },
 
-      recoverPassword: {
-        recoverPassword: "Recuperar contraseña",
+      visitCard: {
+        box1: "Encuéntranos",
 
-        insertEmail: "Introducir correo electrónico",
+        box11: "Contáctenos",
 
-        insertEmailInput:
-          "Introduzca la dirección de correo electrónico asociada a su cuenta",
+        box2: "Reserve",
 
-        sentCode: "Enviar código",
+        box3: "Un momento brillante",
 
-        startSession: "Conectarse",
-
-        validateEmail: "Validar correo electrónico",
-
-        insertEmailCode:
-          "Introduzca el código que ha recibido por correo electrónico",
-
-        proceed: "Siguiente",
-
-        newPassword: "Nueva contraseña",
-
-        definePassword: "Establecer contraseña",
-
-        confirmPassword: "Confirmar contraseña",
-
-        recover: "Recuperar",
+        box4: "Contáctanos para reservar tu cita </br> Nos vemos pronto",
       },
 
-      register: {
-        newAccount: "NUEVA CUENTA",
+      visitCardFinal: {
+        personalAppointments: "Citas Presenciales",
 
-        mandatoryData: "Datos obligatorios",
+        startHint: "Empiece por clasificar su cita.",
 
-        name: "Nombre y apellidos",
+        secondHint:
+          "Utilizaremos tu filtro para mostrar la disponibilidad de citas.",
 
-        email: "Dirección de correo electrónico",
+        filterBy: "Quiero filtrar por:",
 
-        password: "Establezca su contraseña",
+        professional: "Tratamientos",
 
-        confirmPassword: "Confirme su contraseña",
+        speciality: "Especialidade",
 
-        optionalData: "Información opcional",
+        concern: "Preocupaciones",
 
-        telephone: "Número de teléfono",
+        startOnlineAppointment: "Quiero pedir cita online",
 
-        photo: "Foto de perfil",
+        categorizeAppointments: "Vamos a clasificar su cita",
 
-        upload: "Cargar",
+        selectProfessional: "Seleccione el Profesional de Interés",
 
-        register: "?",
+        selectSpeciality: "Seleccione la Especialidad de Interés",
+
+        selectConcern: "Seleccione la Preocupación de Interés:",
+
+        backButton: "Volver a Opciones de filtrado",
+
+        bestPerson: " El mejor momento para la mejor persona.",
+
+        chooseDate: "Elija entre las fechas disponibles:",
+
+        showMoreDates: "Mostrar otros horarios",
+
+        confirmationLogin: "Confirmación e inicio de sesión.",
+
+        consultInfo:
+          "Puede consultar su reserva y todos los documentos compartidos por nuestros expertos en su Área Reservada.",
+
+        backOptions: "Volver a las opciones de disponibilidad",
+
+        confirm: "Confirmación",
+
+        sessionStarted: "Sesión iniciada.",
+
+        hello: "¡Hola,  {{ name }}!",
+
+        changeAccount: "Cambiar cuenta",
+
+        apointmentDone: "¡Reserva efectuada!",
+
+        privateArea: "Área Reservada",
       },
-    },
-
-    privateArea: {
-      clientArea: "Área Clientes",
-
-      documents: "Documentos:",
-
-      acceptance: "Consentimentos",
-
-      otherDocuments: "Outros Documentos",
-
-      myAppointments: "Minhas Marcações:",
-
-      nextAppointment: "Próxima Marcação",
-
-      previousAppointments: "Marcações Anteriores",
-
-      assinatura: "Membership:",
-
-      notMember: "Ainda não é membro EHTIQ",
-
-      settings: {
-        privateArea: "ÁREA RESERVADA",
-
-        welcome: "Bienvenida",
-
-        closeSession: "Cerrar sesión",
-
-        editAccount: "Editar cuenta",
-
-        website: "Website EHTIQ",
-
-        personalData: "Datos personales",
-
-        completeName: "Nombre y apellidos",
-
-        taxData: "Datos Fiscales",
-
-        address: "Dirección",
-
-        taxNumber: "NIF/ DNI",
-
-        save: "Guardar",
-      },
-    },
-
-    visitCard: {
-      box1: "Encuéntranos",
-
-      box11: "Contáctenos",
-
-      box2: "Reserve",
-
-      box3: "Un momento brillante",
-
-      box4: "Contáctanos para reservar tu cita </br> Nos vemos pronto",
-    },
-
-    visitCardFinal: {
-      personalAppointments: "Citas Presenciales",
-
-      startHint: "Empiece por clasificar su cita.",
-
-      secondHint:
-        "Utilizaremos tu filtro para mostrar la disponibilidad de citas.",
-
-      filterBy: "Quiero filtrar por:",
-
-      professional: "Tratamientos",
-
-      speciality: "Especialidade",
-
-      concern: "Preocupaciones",
-
-      startOnlineAppointment: "Quiero pedir cita online",
-
-      categorizeAppointments: "Vamos a clasificar su cita",
-
-      selectProfessional: "Seleccione el Profesional de Interés",
-
-      selectSpeciality: "Seleccione la Especialidad de Interés",
-
-      selectConcern: "Seleccione la Preocupación de Interés:",
-
-      backButton: "Volver a Opciones de filtrado",
-
-      bestPerson: " El mejor momento para la mejor persona.",
-
-      chooseDate: "Elija entre las fechas disponibles:",
-
-      showMoreDates: "Mostrar otros horarios",
-
-      confirmationLogin: "Confirmación e inicio de sesión.",
-
-      consultInfo:
-        "Puede consultar su reserva y todos los documentos compartidos por nuestros expertos en su Área Reservada.",
-
-      backOptions: "Volver a las opciones de disponibilidad",
-
-      confirm: "Confirmación",
-
-      sessionStarted: "Sesión iniciada.",
-
-      hello: "¡Hola,  {{ name }}!",
-
-      changeAccount: "Cambiar cuenta",
-
-      apointmentDone: "¡Reserva efectuada!",
-
-      privateArea: "Área Reservada",
     },
   },
 };

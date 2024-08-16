@@ -383,7 +383,7 @@ export const content = {
           password: "Defina a sua password",
           confirmPassword: "Confirme a sua password",
           optionalData: "Dados facultativos",
-          telephone: "Telefone",
+          phone: "Telefone",
           photo: "Fotografia de Perfil",
           upload: "Carregar",
           register: "Registarme",

@@ -30,7 +30,7 @@ const Register = ({ setMode, handleClose }: Props) => {
       {isRegistering ? (
         <Loader
           customMessage={i18n.t(
-            "pages.auth.register.loaderMessage",
+            "auth.register.loaderMessage",
             "Creating new user"
           )}
         />
@@ -65,7 +65,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                   letterSpacing: "1px",
                 }}
               >
-                Iníciar sessão
+                {i18n.t("auth.login.startSession")}
               </p>
             </div>
             <p
@@ -77,7 +77,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                 fontFamily: "Inter",
               }}
             >
-              Nova Conta
+              {i18n.t("auth.register.newAccount")}
             </p>
 
             <Grid container spacing={2}>
@@ -91,7 +91,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                     textTransform: "uppercase",
                   }}
                 >
-                  Dados obrigtórios
+                  {i18n.t("auth.register.mandatoryData")}
                 </p>
               </Grid>
               <Grid item xs={12}>
@@ -108,10 +108,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                 <ControlledFormInput
                   control={control}
                   name="email"
-                  inputPlaceholder={i18n.t(
-                    "pages.auth.register.email",
-                    "E-mail"
-                  )}
+                  inputPlaceholder={i18n.t("pages.register.email", "E-mail")}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -120,7 +117,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                   type="password"
                   name="password"
                   inputPlaceholder={i18n.t(
-                    "pages.auth.register.password",
+                    "pages.register.password",
                     "Password"
                   )}
                 />
@@ -131,7 +128,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                   type="password"
                   name="confirmPassword"
                   inputPlaceholder={i18n.t(
-                    "pages.auth.register.confirmPassword",
+                    "pages.register.confirmPassword",
                     "Confirm password"
                   )}
                 />
@@ -154,7 +151,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                     textTransform: "uppercase",
                   }}
                 >
-                  Dados facultativos
+                  {i18n.t("auth.register.optionalData")}
                 </p>
               </Grid>
               <Grid
@@ -174,7 +171,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                     fontFamily: "Inter",
                   }}
                 >
-                  Telefone
+                  {i18n.t("auth.register.phone")}
                 </p>
                 <div style={{ display: "flex", columnGap: "5px" }}>
                   <div style={{ width: "100px" }}>
@@ -187,10 +184,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                   <ControlledFormInput
                     control={control}
                     name="phone"
-                    inputPlaceholder={i18n.t(
-                      "pages.auth.register.phone",
-                      "Phone"
-                    )}
+                    inputPlaceholder={i18n.t("pages.register.phone", "Phone")}
                   />
                 </div>
               </Grid>
@@ -210,10 +204,10 @@ const Register = ({ setMode, handleClose }: Props) => {
                     fontFamily: "Inter",
                   }}
                 >
-                  Fotografia de Perfil
+                  {i18n.t("auth.register.photo")}
                 </p>
                 <ButtonBlue
-                  label="Carregar"
+                  label={i18n.t("auth.register.upload")}
                   textStyles={{ color: "white" }}
                   styles={{ backgroundColor: "rgba(81, 81, 81, 1)" }}
                 />
@@ -231,7 +225,7 @@ const Register = ({ setMode, handleClose }: Props) => {
             }}
           >
             <ButtonBlue
-              label="Registar-me"
+              label={i18n.t("auth.register.register")}
               textStyles={{
                 textTransform: "uppercase",
                 fontFamily: "Inter",
