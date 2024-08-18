@@ -15,7 +15,7 @@ export type UserQuery = {
 
 const useUser = () => {
   const { getCookie } = useCookies();
-  const email = getCookie("email_user");
+  const email = getCookie("email");
 
   const handleFetchUser = async () => {
     const baseUrl = BASE_URL;
@@ -23,6 +23,7 @@ const useUser = () => {
     const accessToken = getCookie("access");
 
     try {
+      if (!email) return;
       const response = await fetch(url, {
         method: "POST",
         headers: {

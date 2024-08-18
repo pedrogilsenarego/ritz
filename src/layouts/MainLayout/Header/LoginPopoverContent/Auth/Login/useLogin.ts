@@ -50,6 +50,7 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
         // Handle successful login
 
         setCookie("email", email);
+        console.log("setting email");
         setCookie("access", body.access);
         setCookie("refresh", body.refresh);
       } else {
