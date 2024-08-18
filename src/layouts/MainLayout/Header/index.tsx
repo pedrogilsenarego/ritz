@@ -8,46 +8,40 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { VscMenu } from "react-icons/vsc";
-import { useSelector } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
 
-import Logo from "../../../assets/EHTIQ_Logo.svg";
-import LogoMobile from "../../../assets/ole.png";
+import { useNavigate } from "react-router-dom";
+
 import SearchIcon from "../../../assets/Icon_Search.svg";
 import Login from "../../../assets/Log_In.svg";
 import DrawerMine from "../../../components/Drawer";
 import { Icons } from "../../../components/Icons";
-import UncontrolledSelect from "../../../components/Inputs/UncontroledSelect";
+
 import BasicPopover from "../../../components/Popover";
-import Button from "../../../components/Ui/Button";
+
 import { MAX_SCREEN } from "../../../constants/screen";
-import { useSignOut } from "../../../hooks/useLogout";
-import { State } from "../../../redux/types";
+
 import { ROUTE_PATHS } from "../../../routes/constants";
-import { Colors, mainColors } from "../../../theme/theme";
+import { mainColors } from "../../../theme/theme";
 
 import Cart from "./Cart";
 import LoginPopoverContent from "./LoginPopoverContent";
 import UserPopoverContent from "./UserPopoverContent";
-import { langOptions, options } from "./constants";
+import { options } from "./constants";
 
 import "./index.css";
-import useStyles from "./styles";
+
 import useHeader from "./useHeader";
 import MenuPopopverContent from "./MenuPopopverContent";
-import useCookies from "../../../hooks/useCookies";
+
 import useUser from "../../../hooks/useUser";
 import { BASE_URL } from "../../../services/constants";
 import { Lang } from "./Lang";
 
 const Header = () => {
-  const classes = useStyles();
   const {
-    totalCartItems,
     cartDrawer,
     setCartDrawer,
-    lang,
-    changeLanguage,
+
     location,
   } = useHeader();
   const navigate = useNavigate();
@@ -60,25 +54,14 @@ const Header = () => {
   const [lapTopDrawer, setLaptopDrawer] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [anchorElLogin, setAnchorElLogin] = useState<HTMLElement | null>(null);
-  const [anchorElMenu, setAnchorElMenu] = useState<HTMLElement | null>(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
 
-  const { getCookie } = useCookies();
-  const accessUser = getCookie("access");
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleClickPopoverLogin = (event: React.MouseEvent<HTMLElement>) => {
     if (anchorElLogin) {
       setAnchorElLogin(null);
     } else {
       setAnchorElLogin(event.currentTarget);
-    }
-  };
-
-  const handleClickPopoverMenu = (event: React.MouseEvent<HTMLElement>) => {
-    if (anchorElMenu) {
-      setAnchorElMenu(null);
-    } else {
-      setAnchorElMenu(event.currentTarget);
     }
   };
 
@@ -90,15 +73,9 @@ const Header = () => {
     setAnchorElLogin(null);
   };
 
-  const handleCloseMenu = () => {
-    setAnchorElMenu(null);
-  };
-
   const isOpen = Boolean(anchorEl);
 
   const isOpenLogin = Boolean(anchorElLogin);
-
-  const isOpenMenu = Boolean(anchorElMenu);
 
   const handleLogin = (e: any) => {
     handleClickPopoverLogin(e);
@@ -217,25 +194,29 @@ const Header = () => {
             >
               <Lang />
               <div>
-                <img
-                  onClick={
-                    accessUser
-                      ? () => navigate(ROUTE_PATHS.USER_HOME)
-                      : (e) => {
-                          handleLogin(e);
-                        }
-                  }
-                  src={
-                    userQuery?.data?.Data?.imagem
-                      ? `${BASE_URL}${userQuery?.data?.Data?.imagem}`
-                      : Login
-                  }
-                  alt="logo"
-                  style={{
-                    width: "19px",
-                    cursor: "pointer",
-                  }}
-                />
+                {userQuery.data && !userQuery.isLoading ? (
+                  <img
+                    onClick={() => navigate(ROUTE_PATHS.USER_HOME)}
+                    src={`${BASE_URL}${userQuery?.data?.Data?.imagem}`}
+                    alt="logo"
+                    style={{
+                      width: "19px",
+                      cursor: "pointer",
+                    }}
+                  />
+                ) : (
+                  <img
+                    onClick={(e) => {
+                      handleLogin(e);
+                    }}
+                    src={Login}
+                    alt="logo"
+                    style={{
+                      width: "19px",
+                      cursor: "pointer",
+                    }}
+                  />
+                )}
               </div>
             </Grid>
           </Grid>

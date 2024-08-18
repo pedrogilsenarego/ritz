@@ -14,6 +14,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import useCookies from "../../../../../../hooks/useCookies";
 import { useState } from "react";
 import { BASE_URL } from "../../../../../../services/constants";
+import useUser from "../../../../../../hooks/useUser";
 
 const useLogin = ({ handleClose }: { handleClose: () => void }) => {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
     defaultValues,
   });
   const { setCookie } = useCookies();
-
+  const user = useUser();
   const loginUser = async ({ email, password }: Login) => {
     const baseUrl = BASE_URL;
 
@@ -47,16 +48,18 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
 
       if (response.ok) {
         // Handle successful login
+
         setCookie("email", email);
         setCookie("access", body.access);
         setCookie("refresh", body.refresh);
-        handleClose();
       } else {
         setError(body.detail);
       }
     } catch (error: any) {
       setError(error.detail);
       console.error("An error occurred:", error);
+    } finally {
+      handleClose();
     }
   };
 
@@ -66,7 +69,9 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
       onError: (error: any) => {
         setError(error.detail);
       },
-      onSuccess: (data: any) => {},
+      onSuccess: (data: any) => {
+        user.refetch();
+      },
       onSettled: () => {},
     }
   );

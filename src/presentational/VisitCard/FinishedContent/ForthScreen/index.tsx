@@ -9,6 +9,11 @@ import { queryKeys } from "../../../../constants/queryKeys";
 import { Screen } from "..";
 import LeftArrow from "../../../../assets/leftArrow.svg";
 import { i18n } from "../../../../translations/i18n";
+import useCookies from "../../../../hooks/useCookies";
+import { UserLogged } from "./UserLogged";
+import useUser from "../../../../hooks/useUser";
+import ButtonBlue from "../../../../components/Ui/ButtonBlue";
+import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
 
 type Props = {
   treatment: number | undefined;
@@ -17,12 +22,23 @@ type Props = {
 
 export const ForthScreen = (props: Props) => {
   const lang = useSelector<State, string>((state) => state.general.lang);
+  const { removeCookie } = useCookies();
+
   const { isLoading, data: queryData } = useQuery<any, any>(
     [queryKeys.treatment, props.treatment],
     () => handleFetchTreatment(props.treatment?.toString() || "")
   );
+  const user = useUser();
+
+  const handleLogout = () => {
+    removeCookie("email");
+    removeCookie("access");
+    removeCookie("refresh");
+    user.remove();
+    user.refetch();
+  };
   return (
-    <div style={{ display: "flex", columnGap: "40px" }}>
+    <div style={{ display: "flex", columnGap: "40px", height: "100%" }}>
       <div
         style={{
           width: "45%",
@@ -113,31 +129,50 @@ export const ForthScreen = (props: Props) => {
               }}
             ></Button>
           </div>
-          <Typography
-            style={{
-              fontSize: "10px",
-              lineHeight: "20px",
-              color: "#484848",
-              fontWeight: 400,
-              textAlign: "center",
-              letterSpacing: "1px",
-              marginTop: "40px",
-            }}
-          >
-            {i18n.t(`visitCardFinal.consultInfo`)}
-          </Typography>
-          <Typography
-            style={{
-              fontSize: "10px",
-              lineHeight: "20px",
-              fontWeight: 400,
-              color: "#484848",
-              textAlign: "center",
-              letterSpacing: "1px",
-            }}
-          >
-            <b> {i18n.t(`visitCardFinal.privateArea`)}</b>
-          </Typography>
+          {user.data && !user.isLoading ? (
+            <div
+              style={{
+                marginTop: "40px",
+                display: "flex",
+                justifyContent: "center",
+                width: "100%",
+              }}
+            >
+              <ButtonNinja
+                buttonStyles={{ padding: "10px 20px" }}
+                textStyles={{ fontSize: "10px" }}
+                label={i18n.t(`visitCardFinal.confirm`)}
+              ></ButtonNinja>
+            </div>
+          ) : (
+            <>
+              <Typography
+                style={{
+                  fontSize: "10px",
+                  lineHeight: "20px",
+                  color: "#484848",
+                  fontWeight: 400,
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  marginTop: "40px",
+                }}
+              >
+                {i18n.t(`visitCardFinal.consultInfo`)}
+              </Typography>
+              <Typography
+                style={{
+                  fontSize: "10px",
+                  lineHeight: "20px",
+                  fontWeight: 400,
+                  color: "#484848",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                }}
+              >
+                <b> {i18n.t(`visitCardFinal.privateArea`)}</b>
+              </Typography>
+            </>
+          )}
         </div>
         <div
           onClick={() => props.setScreen("third")}
@@ -156,15 +191,26 @@ export const ForthScreen = (props: Props) => {
           </Typography>
         </div>
       </div>
-
       <div
         style={{
-          borderRadius: "10px",
-          backgroundColor: "rgba(255, 255, 255, 0.50)",
-          overflow: "hidden",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
         }}
       >
-        <LoginPopoverContent />
+        {user.data && !user.isLoading ? (
+          <UserLogged handleLogout={handleLogout} />
+        ) : (
+          <div
+            style={{
+              borderRadius: "10px",
+              backgroundColor: "rgba(255, 255, 255, 0.50)",
+              overflow: "hidden",
+            }}
+          >
+            <LoginPopoverContent handleClose={() => {}} />
+          </div>
+        )}
       </div>
     </div>
   );

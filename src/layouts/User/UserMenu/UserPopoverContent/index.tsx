@@ -30,6 +30,7 @@ const UserPopoverContent = ({ handleClose }: any) => {
     removeCookie("access");
     removeCookie("refresh");
     user.remove();
+    user.refetch();
   };
   const Normal = () => {
     return (

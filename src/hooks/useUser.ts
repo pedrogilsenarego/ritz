@@ -15,7 +15,8 @@ export type UserQuery = {
 
 const useUser = () => {
   const { getCookie } = useCookies();
-  const email = getCookie("email");
+  const email = getCookie("email_user");
+
   const handleFetchUser = async () => {
     const baseUrl = BASE_URL;
     const url = `${baseUrl}/user-info/`;
