@@ -20,9 +20,11 @@ type Props = {
 };
 
 const Register = ({ setMode, handleClose }: Props) => {
-  const { handleSubmit, onSubmit, control, isRegistering } = useRegister({
-    handleClose,
-  });
+  const { handleSubmit, onSubmit, control, isRegistering, error } = useRegister(
+    {
+      handleClose,
+    }
+  );
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
@@ -213,6 +215,13 @@ const Register = ({ setMode, handleClose }: Props) => {
                 />
               </Grid>
             </Grid>
+            {error && (
+              <p
+                style={{ textAlign: "center", marginTop: "20px", color: "red" }}
+              >
+                {error}
+              </p>
+            )}
           </Box>
           <div
             style={{

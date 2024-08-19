@@ -19,10 +19,10 @@ import useUser from "../../../../../../hooks/useUser";
 const useLogin = ({ handleClose }: { handleClose: () => void }) => {
   const navigate = useNavigate();
   const theme = useTheme();
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-  const dispatch = useDispatch();
-  const { reset, control, handleSubmit } = useForm<CreateProductSchemaType>({
+
+  const { control, handleSubmit } = useForm<CreateProductSchemaType>({
     resolver: zodResolver(CreateProductSchema),
     defaultValues,
   });
@@ -30,10 +30,7 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
   const user = useUser();
   const loginUser = async ({ email, password }: Login) => {
     const baseUrl = BASE_URL;
-
     const url = `${baseUrl}/login/`;
-    //const email = "marco.rocha@qloudyx.pt";
-    //const password = "a123456b";
 
     try {
       const response = await fetch(url, {
@@ -44,23 +41,18 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
         body: JSON.stringify({ email, password }),
       });
 
-      const body = await response.json(); // Parse response body as JSON
+      const body = await response.json();
 
-      if (response.ok) {
-        // Handle successful login
-
-        setCookie("email", email);
-        console.log("setting email");
-        setCookie("access", body.access);
-        setCookie("refresh", body.refresh);
-      } else {
-        setError(body.detail);
+      if (!response.ok) {
+        throw new Error(
+          body.detail ||
+            "Login failed. Please check your credentials and try again."
+        );
       }
+
+      return { body, email };
     } catch (error: any) {
-      setError(error.detail);
-      console.error("An error occurred:", error);
-    } finally {
-      handleClose();
+      throw error;
     }
   };
 
@@ -68,10 +60,15 @@ const useLogin = ({ handleClose }: { handleClose: () => void }) => {
     loginUser,
     {
       onError: (error: any) => {
-        setError(error.detail);
+        console.log(error);
+        setError(error.message);
       },
       onSuccess: (data: any) => {
+        setCookie("email", data.email);
+        setCookie("access", data.body.access);
+        setCookie("refresh", data.body.refresh);
         user.refetch();
+        handleClose();
       },
       onSettled: () => {},
     }

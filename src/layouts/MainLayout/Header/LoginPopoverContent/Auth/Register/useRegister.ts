@@ -1,20 +1,15 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { ROUTE_PATHS } from "../../../../../../routes/constants";
-import { userServices } from "../../../../../../services/user.services";
 import { CreateUser } from "../../../../../../types/user";
 import { defaultValues } from "./constants";
 import { CreateUserSchema, CreateUserSchemaType } from "./validation";
 import { useState } from "react";
-import useCookies from "../../../../../../hooks/useCookies";
 import { BASE_URL } from "../../../../../../services/constants";
 
 const useRegister = ({ handleClose }: { handleClose: () => void }) => {
-  const navigate = useNavigate();
   const [error, setError] = useState(null);
-  const { setCookie } = useCookies();
+
   const { reset, control, handleSubmit } = useForm<CreateUserSchemaType>({
     resolver: zodResolver(CreateUserSchema),
     defaultValues,
@@ -23,8 +18,6 @@ const useRegister = ({ handleClose }: { handleClose: () => void }) => {
   const registerUser = async (data: any) => {
     const baseUrl = BASE_URL;
     const url = `${baseUrl}/clients/register/`;
-    //const email = "marco.rocha@qloudyx.pt";
-    //const password = "a123456b";
 
     try {
       const response = await fetch(url, {
@@ -40,18 +33,14 @@ const useRegister = ({ handleClose }: { handleClose: () => void }) => {
         }),
       });
 
-      const body = await response.json(); // Parse response body as JSON
-      console.log(body);
-      if (response.ok) {
-        // setCookie("access", body.access);
-        // setCookie("refresh", body.refresh);
-        // handleClose();
-      } else {
-        setError(body.detail);
+      const body = await response.json();
+      if (!response.ok) {
+        throw new Error(body.email || "Something went wrong");
       }
+
+      return { body };
     } catch (error: any) {
-      setError(error.detail);
-      console.error("An error occurred:", error);
+      throw error;
     }
   };
 
@@ -59,11 +48,13 @@ const useRegister = ({ handleClose }: { handleClose: () => void }) => {
     registerUser,
     {
       onError: (error: any) => {
-        console.log("error", error);
+        console.log(error.message);
+        setError(error?.message);
       },
-      onSettled: () => {
+      onSettled: () => {},
+      onSuccess: () => {
+        handleClose();
         reset();
-        navigate(ROUTE_PATHS.HOME);
       },
     }
   );
@@ -76,7 +67,6 @@ const useRegister = ({ handleClose }: { handleClose: () => void }) => {
       phoneFinal: `${formData.prePhone}${formData.phone}`,
     };
 
-    console.log(newData);
     createUser(newData as CreateUser);
   };
   return {
@@ -84,6 +74,7 @@ const useRegister = ({ handleClose }: { handleClose: () => void }) => {
     onSubmit,
     control,
     isRegistering,
+    error,
   };
 };
 
