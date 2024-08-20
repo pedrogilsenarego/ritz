@@ -12,8 +12,9 @@ import { useState } from "react";
 import { SecondScreen } from "./SecondScreen";
 import { ThirdScreen } from "./ThirdScreen";
 import { ForthScreen } from "./ForthScreen";
+import { FifthScreen } from "./FifthScreen";
 
-export type Screen = "first" | "second" | "third" | "forth";
+export type Screen = "first" | "second" | "third" | "forth" | "fifth";
 export type Mode = "professional" | "speciality" | "concern";
 
 export const FinishedContent = ({ setOpenPopup }: any) => {
@@ -40,6 +41,8 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
         return <ThirdScreen treatment={treatment} setScreen={setScreen} />;
       case "forth":
         return <ForthScreen treatment={treatment} setScreen={setScreen} />;
+      case "fifth":
+        return <FifthScreen />;
       default:
         return null;
     }

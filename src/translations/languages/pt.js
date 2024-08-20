@@ -443,6 +443,7 @@ export const content = {
           "Poderá consultar a sua marcação e todos os documentos partilhados pelos nossos especialistas na sua Área Reservada.",
         backOptions: "Voltar às opções de disponibilidade",
         confirm: "Confirmar",
+        yourCard: "O seu Cartão de Marcação.",
         sessionStarted: "Sessão Iniciada.",
         hello: "Olá, {{ name }}!",
         changeAccount: "Alterar Conta",

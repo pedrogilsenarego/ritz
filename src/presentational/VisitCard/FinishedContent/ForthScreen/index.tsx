@@ -139,6 +139,7 @@ export const ForthScreen = (props: Props) => {
               }}
             >
               <ButtonNinja
+                onClick={() => props.setScreen("fifth")}
                 buttonStyles={{ padding: "10px 20px" }}
                 textStyles={{ fontSize: "10px" }}
                 label={i18n.t(`visitCardFinal.confirm`)}
