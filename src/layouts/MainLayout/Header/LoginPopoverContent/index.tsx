@@ -10,7 +10,7 @@ import RecoverPassword from "./Auth/RecoverPassword";
 import Register from "./Auth/Register";
 import { useMediaQuery, useTheme } from "@mui/material";
 
-const LoginPopoverContent = ({ handleClose }: any) => {
+const LoginPopoverContent = ({ handleClose, visitCard }: any) => {
   const navigate = useNavigate();
   const currentUser = useSelector<State, CurrentUser | null>(
     (state) => state.user.currentUser
@@ -24,9 +24,21 @@ const LoginPopoverContent = ({ handleClose }: any) => {
   const render = () => {
     switch (mode) {
       case "login":
-        return <Login setMode={setMode} handleClose={handleClose} />;
+        return (
+          <Login
+            visitCard={visitCard}
+            setMode={setMode}
+            handleClose={handleClose}
+          />
+        );
       case "register":
-        return <Register setMode={setMode} handleClose={handleClose} />;
+        return (
+          <Register
+            visitCard={visitCard}
+            setMode={setMode}
+            handleClose={handleClose}
+          />
+        );
       case "recover":
         return <RecoverPassword />;
       default:
@@ -36,14 +48,8 @@ const LoginPopoverContent = ({ handleClose }: any) => {
 
   return (
     <div
-      //onMouseLeave={handleClose}
       style={{
-        display: "flex",
-        flexDirection: "column",
-        rowGap: "12px",
-        width: mobile ? "auto" : "400px",
-        justifyContent: "end",
-        alignItems: "end",
+        width: mobile ? "auto" : visitCard ? "325px" : "400px",
       }}
     >
       {render()}

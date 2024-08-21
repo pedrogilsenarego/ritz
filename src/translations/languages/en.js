@@ -348,7 +348,7 @@ export const content = {
       },
       auth: {
         login: {
-          clientArea: "CLIENT AREA",
+          clientArea: "client area",
           email: "Email",
           password: "Password",
           passwordRecover: "Recover password",
@@ -363,7 +363,7 @@ export const content = {
           loaderMessage: "Sending an e-mail",
         },
         register: {
-          newAccount: "NEW ACCOUNT",
+          newAccount: "new account",
           mandatoryData: "Mandatory",
           optionalData: "Optional",
           loaderMessage: "Creating new user",
@@ -405,7 +405,7 @@ export const content = {
         showMoreDates: "Show other dates",
         confirmationLogin: "Confirmation and Log-In.",
         consultInfo:
-          "You can check your appointment and all documents shared by our specialists in your Reserved Area.",
+          "You can check your appointment and all documents shared by our specialists in your",
         backOptions: "Return to availability options",
         confirm: "Confirm",
         sessionStarted: "Logged-In.",

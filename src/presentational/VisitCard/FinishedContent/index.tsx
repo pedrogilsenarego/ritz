@@ -53,8 +53,8 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
       <div
         style={{
           display: "flex",
-          width: "75vw",
-
+          width: "1140px",
+          minHeight: "516px",
           position: "relative",
         }}
       >

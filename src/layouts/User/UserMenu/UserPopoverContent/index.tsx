@@ -2,7 +2,7 @@ import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Close from "../../../../assets/close.svg";
 import Settings from "../../../../assets/setting-01.svg";
 import { useState } from "react";
-import Button from "../../../../components/Ui/Button";
+
 import ButtonBlue from "../../../../components/Ui/ButtonBlue";
 import ControlledFormInput from "../../../../components/Inputs/ControlledInputAdmin";
 import { useForm } from "react-hook-form";
@@ -11,18 +11,22 @@ import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import useCookies from "../../../../hooks/useCookies";
 import useUser from "../../../../hooks/useUser";
-import { BASE_URL, queryIdentifiers } from "../../../../services/constants";
-import { useQueryClient } from "@tanstack/react-query";
-import { queryKeys } from "../../../../constants/queryKeys";
+import { BASE_URL } from "../../../../services/constants";
+import { i18n } from "../../../../translations/i18n";
 
-const UserPopoverContent = ({ handleClose }: any) => {
+type Props = {
+  home?: boolean;
+  handleClose: () => void;
+};
+
+const UserPopoverContent = ({ handleClose, home }: Props) => {
   const [mode, setMode] = useState<"normal" | "edit">("normal");
   const navigate = useNavigate();
   const user = useUser();
   const theme = useTheme();
   const { removeCookie } = useCookies();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
-  const { reset, control, handleSubmit } = useForm<any>({});
+  const { control } = useForm<any>({});
 
   const handleLogout = () => {
     navigate(ROUTE_PATHS.HOME);
@@ -60,16 +64,18 @@ const UserPopoverContent = ({ handleClose }: any) => {
           style={{ height: "75px", aspectRatio: 1, borderRadius: "50%" }}
         />
         <p style={{ fontSize: "13px" }}> {user.data?.Data.email}</p>
-        <div
-          onClick={(e) => {
-            e.stopPropagation();
-            setMode("edit");
-          }}
-          style={{ display: "flex", columnGap: "5px", alignItems: "center" }}
-        >
-          <img alt="" src={Settings} style={{ height: "13px" }} />
-          <p style={{ fontSize: "11px" }}>Editar conta</p>
-        </div>
+        {!home && (
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              setMode("edit");
+            }}
+            style={{ display: "flex", columnGap: "5px", alignItems: "center" }}
+          >
+            <img alt="" src={Settings} style={{ height: "13px" }} />
+            <p style={{ fontSize: "11px" }}>Editar conta</p>
+          </div>
+        )}
         <Box
           style={{
             display: "flex",
@@ -82,7 +88,16 @@ const UserPopoverContent = ({ handleClose }: any) => {
             marginTop: "20px",
           }}
         >
-          <p style={{ fontWeight: 600, fontSize: "14px" }}>Website EHTIQ</p>
+          <p
+            onClick={
+              home
+                ? () => navigate(ROUTE_PATHS.USER_HOME)
+                : () => navigate(ROUTE_PATHS.HOME)
+            }
+            style={{ fontWeight: 600, fontSize: "14px" }}
+          >
+            {home ? i18n.t("privateArea.clientArea") : "Website EHTIQ"}
+          </p>
           {user.data?.Data.is_admin && (
             <p
               onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}

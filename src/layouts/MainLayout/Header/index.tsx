@@ -25,7 +25,7 @@ import { mainColors } from "../../../theme/theme";
 
 import Cart from "./Cart";
 import LoginPopoverContent from "./LoginPopoverContent";
-import UserPopoverContent from "./UserPopoverContent";
+
 import { options } from "./constants";
 
 import "./index.css";
@@ -36,6 +36,7 @@ import MenuPopopverContent from "./MenuPopopverContent";
 import useUser from "../../../hooks/useUser";
 import { BASE_URL } from "../../../services/constants";
 import { Lang } from "./Lang";
+import UserPopoverContent from "../../User/UserMenu/UserPopoverContent";
 
 const Header = () => {
   const {
@@ -56,6 +57,16 @@ const Header = () => {
   const [anchorElLogin, setAnchorElLogin] = useState<HTMLElement | null>(null);
 
   const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleClickPopover = (event: React.MouseEvent<HTMLElement>) => {
+    if (anchorEl) {
+      event.preventDefault();
+      event.stopPropagation();
+      setAnchorEl(null);
+    } else {
+      setAnchorEl(event.currentTarget);
+    }
+  };
 
   const handleClickPopoverLogin = (event: React.MouseEvent<HTMLElement>) => {
     if (anchorElLogin) {
@@ -196,7 +207,7 @@ const Header = () => {
               <div>
                 {userQuery.data && !userQuery.isLoading ? (
                   <img
-                    onClick={() => navigate(ROUTE_PATHS.USER_HOME)}
+                    onClick={(e) => handleClickPopover(e)}
                     src={`${BASE_URL}${userQuery?.data?.Data?.imagem}`}
                     alt="logo"
                     style={{
@@ -276,7 +287,7 @@ const Header = () => {
           <LoginPopoverContent handleClose={handleCloseLogin} />
         </BasicPopover>
         <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
-          <UserPopoverContent handleClose={handleClose} />
+          <UserPopoverContent home handleClose={handleClose} />
         </BasicPopover>
 
         <DrawerMine

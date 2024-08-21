@@ -591,7 +591,7 @@ export const content = {
       },
       auth: {
         login: {
-          clientArea: "AREA CLIENTES",
+          clientArea: "area clientes",
 
           email: "Correo electrónico",
 
@@ -635,7 +635,7 @@ export const content = {
         },
 
         register: {
-          newAccount: "NUEVA CUENTA",
+          newAccount: "nueva cuenta",
 
           mandatoryData: "Datos obligatorios",
 
@@ -655,7 +655,7 @@ export const content = {
 
           upload: "Cargar",
 
-          register: "?",
+          register: "Registro",
         },
       },
       privateArea: {
@@ -751,7 +751,7 @@ export const content = {
         confirmationLogin: "Confirmación e inicio de sesión.",
 
         consultInfo:
-          "Puede consultar su reserva y todos los documentos compartidos por nuestros expertos en su Área Reservada.",
+          "Puede consultar su reserva y todos los documentos compartidos por nuestros expertos en su",
 
         backOptions: "Volver a las opciones de disponibilidad",
 

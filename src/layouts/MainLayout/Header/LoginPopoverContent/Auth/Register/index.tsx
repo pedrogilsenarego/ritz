@@ -17,9 +17,10 @@ import ButtonBlue from "../../../../../../components/Ui/ButtonBlue";
 type Props = {
   setMode: (mode: "login") => void;
   handleClose: () => void;
+  visitCard?: boolean;
 };
 
-const Register = ({ setMode, handleClose }: Props) => {
+const Register = ({ setMode, handleClose, visitCard }: Props) => {
   const { handleSubmit, onSubmit, control, isRegistering, error } = useRegister(
     {
       handleClose,
@@ -40,7 +41,11 @@ const Register = ({ setMode, handleClose }: Props) => {
         <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: "10px" }}>
           <Box
             style={{
-              padding: mobile ? "80px 40px 40px 40px" : "80px 70px 40px 70px",
+              padding: mobile
+                ? "80px 40px 40px 40px"
+                : visitCard
+                ? "70px 40px 40px 40px"
+                : "80px 40px 40px 40px",
               position: "relative",
             }}
           >
@@ -54,6 +59,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                 alignItems: "center",
                 justifyContent: "center",
                 columnGap: "10px",
+                cursor: "pointer",
               }}
             >
               <Icons.LeftArrow />
@@ -72,11 +78,12 @@ const Register = ({ setMode, handleClose }: Props) => {
             </div>
             <p
               style={{
-                fontSize: "20px",
+                fontSize: visitCard ? "15px" : "20px",
                 fontWeight: 600,
                 textAlign: "center",
                 letterSpacing: "1px",
                 fontFamily: "Inter",
+                textTransform: "capitalize",
               }}
             >
               {i18n.t("auth.register.newAccount")}
@@ -91,6 +98,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                     fontWeight: 400,
                     fontFamily: "Inter",
                     textTransform: "uppercase",
+                    textAlign: "center",
                   }}
                 >
                   {i18n.t("auth.register.mandatoryData")}
@@ -151,6 +159,7 @@ const Register = ({ setMode, handleClose }: Props) => {
                     fontWeight: 400,
                     fontFamily: "Inter",
                     textTransform: "uppercase",
+                    textAlign: "center",
                   }}
                 >
                   {i18n.t("auth.register.optionalData")}
@@ -227,7 +236,7 @@ const Register = ({ setMode, handleClose }: Props) => {
             style={{
               display: "flex",
               flexDirection: "column",
-              padding: "40px",
+              padding: visitCard ? "20px" : "40px",
               rowGap: "20px",
               alignItems: "center",
               background: "rgba(237, 233, 225, 1)",

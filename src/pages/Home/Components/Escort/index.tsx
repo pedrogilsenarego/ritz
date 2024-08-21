@@ -54,7 +54,7 @@ const Escort = () => {
           }}
         >
           <div>
-            {lang === "PT" ? (
+            {lang === "PT" || lang === "ES" ? (
               <>
                 <Typography
                   style={{

@@ -1,15 +1,16 @@
 import { Container, useMediaQuery, useTheme } from "@mui/material";
-
 import { MAX_SCREEN } from "../../constants/screen";
 import ContainerC from "./Components/Container";
 import Escort from "./Components/Escort";
 import SpaceWhere from "./Components/SpaceWhere";
 import Treatments from "./Components/Treatments";
-import Collections from "../../components/Teste";
+import { State } from "../../redux/types";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const lang = useSelector<State, string>((state) => state.general.lang);
   return (
     <>
       <video
@@ -24,8 +25,8 @@ const Home = () => {
         }}
         src={
           mobile
-            ? "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/HOME-1-Legendas-PT-Mobile.webm"
-            : "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-1-Legendas-PT.webm"
+            ? `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/HOME-1-Legendas-${lang}-Mobile.webm`
+            : `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-1-Legendas-${lang}.webm`
         }
         autoPlay
         muted

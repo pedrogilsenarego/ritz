@@ -353,7 +353,7 @@ export const content = {
       },
       auth: {
         login: {
-          clientArea: "ÁREA DE CLIENTE",
+          clientArea: "área de cliente",
           email: "Email",
           password: "Password",
           passwordRecover: "Recuperar password",
@@ -376,7 +376,7 @@ export const content = {
           recover: "Recuperar",
         },
         register: {
-          newAccount: "NOVA CONTA",
+          newAccount: "nova conta",
           mandatoryData: "Dados obrigatórios",
           name: "Nome e Apelido",
           email: "E-mail",
@@ -440,7 +440,7 @@ export const content = {
         showMoreDates: "Mostrar outros horários",
         confirmationLogin: " Confirmação e Log-In.",
         consultInfo:
-          "Poderá consultar a sua marcação e todos os documentos partilhados pelos nossos especialistas na sua Área Reservada.",
+          "Poderá consultar a sua marcação e todos os documentos partilhados pelos nossos especialistas na sua",
         backOptions: "Voltar às opções de disponibilidade",
         confirm: "Confirmar",
         yourCard: "O seu Cartão de Marcação.",

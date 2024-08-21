@@ -38,10 +38,10 @@ export const ForthScreen = (props: Props) => {
     user.refetch();
   };
   return (
-    <div style={{ display: "flex", columnGap: "40px", height: "100%" }}>
+    <div style={{ display: "flex", columnGap: "20px", height: "100%" }}>
       <div
         style={{
-          width: "45%",
+          width: "55%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
@@ -159,18 +159,20 @@ export const ForthScreen = (props: Props) => {
                 }}
               >
                 {i18n.t(`visitCardFinal.consultInfo`)}
-              </Typography>
-              <Typography
-                style={{
-                  fontSize: "10px",
-                  lineHeight: "20px",
-                  fontWeight: 400,
-                  color: "#484848",
-                  textAlign: "center",
-                  letterSpacing: "1px",
-                }}
-              >
-                <b> {i18n.t(`visitCardFinal.privateArea`)}</b>
+                <b
+                  style={{
+                    fontSize: "10px",
+                    lineHeight: "20px",
+
+                    color: "#484848",
+                    textAlign: "center",
+                    letterSpacing: "1px",
+                  }}
+                >
+                  {" "}
+                  {i18n.t(`visitCardFinal.privateArea`)}
+                </b>
+                .
               </Typography>
             </>
           )}
@@ -204,12 +206,25 @@ export const ForthScreen = (props: Props) => {
         ) : (
           <div
             style={{
-              borderRadius: "10px",
-              backgroundColor: "rgba(255, 255, 255, 0.50)",
-              overflow: "hidden",
+              display: "flex",
+
+              flexDirection: "column",
+              justifyContent: "end",
+              height: "100%",
             }}
           >
-            <LoginPopoverContent handleClose={() => {}} />
+            <div
+              style={{
+                borderRadius: "10px",
+                backgroundColor: "rgba(255, 255, 255, 0.50)",
+
+                display: "flex",
+                maxHeight: "340px",
+                overflow: "scroll",
+              }}
+            >
+              <LoginPopoverContent visitCard handleClose={() => {}} />
+            </div>
           </div>
         )}
       </div>

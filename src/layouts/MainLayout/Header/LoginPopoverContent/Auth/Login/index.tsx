@@ -13,9 +13,10 @@ import ButtonBlue from "../../../../../../components/Ui/ButtonBlue";
 type Props = {
   setMode: (mode: "register") => void;
   handleClose: () => void;
+  visitCard?: boolean;
 };
 
-const Login = ({ setMode, handleClose }: Props) => {
+const Login = ({ setMode, handleClose, visitCard }: Props) => {
   const {
     handleSubmit,
     onSubmit,
@@ -32,28 +33,33 @@ const Login = ({ setMode, handleClose }: Props) => {
       <div>
         <Box
           style={{
-            padding: mobile ? "80px 40px 40px 40px" : "80px 70px 40px 70px",
+            padding: mobile
+              ? "80px 40px 40px 40px"
+              : visitCard
+              ? "32px 40px 40px 40px"
+              : "80px 40px 40px 40px",
           }}
         >
           <p
             style={{
-              fontSize: "20px",
+              fontSize: visitCard ? "15px" : "20px",
               fontWeight: 600,
               textAlign: "center",
               letterSpacing: "1px",
               fontFamily: "Inter",
+              textTransform: "capitalize",
             }}
           >
             {i18n.t("auth.login.clientArea")}
           </p>
 
           <form
-            style={{ marginTop: "40px" }}
+            style={{ marginTop: "30px" }}
             id="login-in"
             onSubmit={handleSubmit(onSubmit)}
           >
             <Box>
-              <Grid container spacing={4}>
+              <Grid container spacing={visitCard ? 2 : 4}>
                 <Grid item xs={12}>
                   <ControlledFormInput
                     control={control}
@@ -73,7 +79,7 @@ const Login = ({ setMode, handleClose }: Props) => {
                       marginTop: "12px",
                       marginLeft: "12px",
                       fontFamily: "Inter",
-                      fontSize: "8px",
+                      fontSize: "7px",
                       fontWeight: 400,
                       letterSpacing: "1px",
                       textDecoration: "underline",
@@ -102,7 +108,7 @@ const Login = ({ setMode, handleClose }: Props) => {
                 type="submit"
                 //onClick={() => handleSubmit(onSubmit)}
                 style={{
-                  marginTop: "60px",
+                  marginTop: visitCard ? "20px" : "60px",
                   display: "flex",
                   flexDirection: "column",
                   rowGap: "15px",
@@ -116,7 +122,7 @@ const Login = ({ setMode, handleClose }: Props) => {
                 <p
                   style={{
                     fontFamily: "Inter",
-                    fontSize: "15px",
+                    fontSize: visitCard ? "12px" : "15px",
                     fontWeight: 600,
                     cursor: "pointer",
                     textTransform: "uppercase",
@@ -140,19 +146,20 @@ const Login = ({ setMode, handleClose }: Props) => {
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            padding: "40px",
+            flexDirection: visitCard ? "row" : "column",
+            padding: visitCard ? "20px" : "40px",
+            columnGap: "6px",
+            justifyContent: "center",
             rowGap: "20px",
             alignItems: "center",
             background: "rgba(237, 233, 225, 1)",
           }}
         >
           <p
-            //onClick={() => navigate(ROUTE_PATHS.REGISTER)}
             style={{
               color: "black",
               cursor: "pointer",
-              fontSize: "11px",
+              fontSize: visitCard ? "8px" : "11px",
               fontWeight: 500,
               textTransform: "uppercase",
             }}
@@ -166,7 +173,7 @@ const Login = ({ setMode, handleClose }: Props) => {
               color: Colors.blackish[400],
               textTransform: "uppercase",
               fontFamily: "Inter",
-              fontSize: "13px",
+              fontSize: visitCard ? "10px" : "13px",
               fontWeight: 500,
             }}
             styles={{
