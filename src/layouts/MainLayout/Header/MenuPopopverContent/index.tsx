@@ -27,17 +27,22 @@ const MenuPopopverContent = ({ handleClose }: any) => {
           style={{
             border: "solid 1px black",
             display: "flex",
-            justifyContent: "center",
+
             flexDirection: "column",
-            padding: "0px 80px 0px 80px",
+
             height: "100%",
             overflow: "scroll",
           }}
         >
           <Box
             style={{
+              padding: "40px 0px",
               display: "flex",
+
+              flexGrow: 1,
               flexDirection: "column",
+              justifyContent: "center",
+
               alignItems: "center",
               rowGap: "20px",
             }}
