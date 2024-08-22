@@ -216,7 +216,7 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
             flexDirection: "column",
             rowGap: "25px",
 
-            padding: "50px 15px",
+            padding: "50px 15px 30px 15px",
           }}
         >
           <img

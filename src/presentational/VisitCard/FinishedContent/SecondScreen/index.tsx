@@ -136,47 +136,114 @@ export const SecondScreen = (props: Props) => {
   const MobileRender = () => {
     return (
       <>
-        <div
-          style={{
-            height: "100%",
-            marginTop: "120px",
-          }}
-        >
+        <div>
           <Typography
             style={{
-              textTransform: "uppercase",
-              fontSize: "10px",
-              textAlign: "center",
               color: "#484848",
+              fontSize: "10px",
+              textTransform: "uppercase",
+              textAlign: "center",
             }}
           >
-            {i18n.t("visitCard.box2")}
+            {i18n.t("visitCardFinal.personalAppointments")}
           </Typography>
           <Typography
             variant="h1"
-            style={{ fontSize: "24px", fontWeight: 500 }}
+            style={{
+              fontSize: "22px",
+              fontWeight: 500,
+              textAlign: "center",
+            }}
           >
-            {i18n.t("visitCard.box3")}
+            {i18n.t("visitCardFinal.categorizeAppointments")}
           </Typography>
         </div>
-        <Typography
-          style={{
-            fontSize: "11px",
-
-            textAlign: "center",
-          }}
-          dangerouslySetInnerHTML={{
-            __html: i18n.t("visitCard.box4"),
-          }}
-        ></Typography>
+        <div style={{ marginTop: "42px" }}>
+          <Typography
+            style={{
+              color: "#484848",
+              fontSize: "13px",
+              fontWeight: 500,
+            }}
+          >
+            {props.mode === "professional"
+              ? i18n.t("visitCardFinal.selectProfessional")
+              : props.mode === "speciality"
+              ? i18n.t("visitCardFinal.selectSpeciality")
+              : i18n.t("visitCardFinal.selectConcern")}
+          </Typography>
+        </div>
         <div
           style={{
-            height: "1px",
-            width: "50%",
-            backgroundColor: "#687479",
-            marginBottom: "150px",
+            display: "flex",
+            marginTop: "31px",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
-        />
+        >
+          <div
+            style={{ width: "35%", display: "flex", justifyContent: "center" }}
+          >
+            <Button>{i18n.t(`visitCardFinal.${props.mode}`)}</Button>
+          </div>
+
+          <div
+            style={{
+              marginTop: "22px",
+              width: "65%",
+              display: "flex",
+              flexDirection: "column",
+              rowGap: "22px",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{ width: "100%", height: "1px", background: "#687479" }}
+            />
+            <div
+              style={{
+                background: "rgba(255, 255, 255, 0.30)",
+                padding: "20px",
+                height: "150px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                overflow: "hidden",
+                borderRadius: "10px",
+              }}
+            >
+              {props.mode === "speciality" ? (
+                <Speciality
+                  setScreen={props.setScreen}
+                  setTreatment={props.setTreatment}
+                />
+              ) : (
+                <Concern
+                  setScreen={props.setScreen}
+                  setTreatment={props.setTreatment}
+                />
+              )}
+            </div>
+          </div>
+        </div>
+        <div
+          onClick={() => props.setScreen("first")}
+          style={{
+            display: "flex",
+            columnGap: "20px",
+            alignItems: "center",
+            cursor: "pointer",
+            marginTop: "42px",
+          }}
+        >
+          <img alt="" src={LeftArrow} style={{ width: "10px" }} />
+          <Typography
+            style={{ fontSize: "11px", fontWeight: 500, color: "#484848" }}
+          >
+            {i18n.t(`visitCardFinal.backButton`)}
+          </Typography>
+        </div>
       </>
     );
   };
