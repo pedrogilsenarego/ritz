@@ -215,8 +215,8 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
             alignItems: "center",
             flexDirection: "column",
             rowGap: "25px",
-            height: "100%",
-            padding: "50px 30px",
+
+            padding: "50px 15px",
           }}
         >
           <img
@@ -228,7 +228,7 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
               height: "20px",
             }}
           />
-          <FirstScreen setMode={setMode} setScreen={setScreen} />
+          <div style={{ marginTop: "20px" }}>{renderScreenComponent()}</div>
         </div>
         <div
           style={{
