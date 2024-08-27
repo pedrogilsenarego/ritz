@@ -34,7 +34,7 @@ const Login = ({ setMode, handleClose, visitCard }: Props) => {
         <Box
           style={{
             padding: mobile
-              ? "80px 40px 40px 40px"
+              ? "40px 40px 40px 40px"
               : visitCard
               ? "32px 40px 40px 40px"
               : "80px 40px 40px 40px",

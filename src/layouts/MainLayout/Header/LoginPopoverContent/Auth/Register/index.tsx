@@ -42,7 +42,7 @@ const Register = ({ setMode, handleClose, visitCard }: Props) => {
           <Box
             style={{
               padding: mobile
-                ? "80px 40px 40px 40px"
+                ? "40px 40px 40px 40px"
                 : visitCard
                 ? "70px 40px 40px 40px"
                 : "80px 40px 40px 40px",
