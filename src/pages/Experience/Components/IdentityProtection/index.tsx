@@ -8,6 +8,7 @@ import icon1M from "../../../../assets/Identity_M_1.png";
 import icon2M from "../../../../assets/Identity_M_2.png";
 import icon3M from "../../../../assets/Identit_M_3.png";
 import { i18n } from "../../../../translations/i18n";
+import { VisitCard } from "../../../../presentational/VisitCard";
 
 const IdentityProtection = () => {
   const theme = useTheme();
@@ -194,10 +195,14 @@ const IdentityProtection = () => {
           >
             {i18n.t("pages.identityBox.box6")}
           </Typography>
-          <ButtonNinja
-            label={i18n.t("pages.identityBox.button1")}
-            buttonStyles={{ padding: "8px 20px", marginTop: "20px" }}
-          ></ButtonNinja>
+          <VisitCard
+            customButton={
+              <ButtonNinja
+                label={i18n.t("pages.identityBox.button1")}
+                buttonStyles={{ padding: "8px 20px", marginTop: "20px" }}
+              ></ButtonNinja>
+            }
+          />
         </div>
       </div>
     );
@@ -356,23 +361,26 @@ const IdentityProtection = () => {
               </Typography>
             </div>
           </div>
-
-          <ButtonNinja
-            label={i18n.t("pages.identityBox.button1")}
-            textStyles={{
-              color: "rgba(93, 92, 92, 1)",
-              textTransform: "uppercase",
-              fontSize: "12px",
-              lineHeight: "10px",
-            }}
-            buttonStyles={{
-              padding: "12px 32px",
-              marginTop: "100px",
-              backgroundColor: "transparent",
-              border: "1px solid rgba(0, 0, 0, 0.8)",
-              boxShadow: "0px 4px 4.9px 0px rgba(0, 0, 0, 0.25)",
-            }}
-          ></ButtonNinja>
+          <VisitCard
+            customButton={
+              <ButtonNinja
+                label={i18n.t("pages.identityBox.button1")}
+                textStyles={{
+                  color: "rgba(93, 92, 92, 1)",
+                  textTransform: "uppercase",
+                  fontSize: "12px",
+                  lineHeight: "10px",
+                }}
+                buttonStyles={{
+                  padding: "12px 32px",
+                  marginTop: "100px",
+                  backgroundColor: "transparent",
+                  border: "1px solid rgba(0, 0, 0, 0.8)",
+                  boxShadow: "0px 4px 4.9px 0px rgba(0, 0, 0, 0.25)",
+                }}
+              ></ButtonNinja>
+            }
+          />
         </div>
       </div>
     );

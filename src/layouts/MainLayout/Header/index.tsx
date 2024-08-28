@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Grid,
   Typography,
@@ -38,6 +39,8 @@ import { BASE_URL } from "../../../services/constants";
 import { Lang } from "./Lang";
 import UserPopoverContent from "../../User/UserMenu/UserPopoverContent";
 import { devMode } from "../../../constants/devConfig";
+import { VisitCard } from "../../../presentational/VisitCard";
+import { i18n } from "../../../translations/i18n";
 
 const Header = () => {
   const {
@@ -205,7 +208,7 @@ const Header = () => {
               }}
             >
               <Lang />
-              {devMode && (
+              {devMode ? (
                 <div>
                   {userQuery.data && !userQuery.isLoading ? (
                     <img
@@ -231,6 +234,29 @@ const Header = () => {
                     />
                   )}
                 </div>
+              ) : (
+                <VisitCard
+                  customButton={
+                    <Button
+                      sx={{
+                        backgroundColor: "rgba(69, 69, 69, 1)",
+                        padding: "8px 20px",
+                        borderRadius: "30px",
+                      }}
+                    >
+                      <Typography
+                        style={{
+                          color: "white",
+                          fontSize: mobile ? "10px" : "10px",
+                          textTransform: "uppercase",
+                          fontWeight: 500,
+                        }}
+                      >
+                        {i18n.t("pages.schedulleBox.button1")}
+                      </Typography>
+                    </Button>
+                  }
+                />
               )}
             </Grid>
           </Grid>
@@ -349,7 +375,28 @@ const Header = () => {
               }}
             />
           ) : (
-            <div style={{ width: "18px", height: "18px" }} />
+            <VisitCard
+              customButton={
+                <Button
+                  sx={{
+                    backgroundColor: "rgba(69, 69, 69, 1)",
+                    padding: "5px 8px",
+                    borderRadius: "30px",
+                  }}
+                >
+                  <Typography
+                    style={{
+                      color: "white",
+                      fontSize: mobile ? "7px" : "12px",
+                      textTransform: "uppercase",
+                      fontWeight: 500,
+                    }}
+                  >
+                    {i18n.t("pages.schedulleBox.button1")}
+                  </Typography>
+                </Button>
+              }
+            />
           )}
         </Box>
         <DrawerMine

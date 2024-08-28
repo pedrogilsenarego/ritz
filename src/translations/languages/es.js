@@ -43,9 +43,9 @@ export const content = {
 
         copyright: "Copyright 2024. Desenrrolado por LINEA AGENCY.",
 
-        privacyPolicy: "Política de Privacidad",
+        privacyPolicy: "Privacidad e Cookies",
 
-        privacyCookies: "Política de Cookies",
+        privacyCookies: "Condiciones de Uso",
       },
 
       expertAdvice: {
@@ -463,11 +463,11 @@ export const content = {
         },
 
         experience: {
-          box0: "La “Experiencia",
+          box0: "La Experiencia",
 
           box1: "ACOMPAÑAMOS TU</br> <i> EXPERIENCIA</i>",
 
-          box2: "Valoramos cada momento.</br> Nuestro compromiso es con tu comodidad, garantizando que cada paso sea una expresión de cuidado y excelencia.",
+          box2: "Valoramos cada momento. Nuestro compromiso es con tu comodidad, garantizando que cada paso sea una expresión de cuidado y excelencia.",
 
           box3: "",
 
@@ -477,7 +477,7 @@ export const content = {
 
           box5: "Ven a conoceros, te esperamos en el edificio, para que puedas pasar acompañado a nuestra clínica.",
 
-          box6: "Una bienvenida sin preguntas ni limitaciones..",
+          box6: "Una bienvenida sin preguntas ni limitaciones.",
 
           box7: "Evaluación y Diagnóstico",
 

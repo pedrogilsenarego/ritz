@@ -16,6 +16,7 @@ import BuffetM from "../../../../assets/Concierge_Icon-1_M.png";
 import { i18n } from "../../../../translations/i18n";
 import { useSelector } from "react-redux";
 import { State } from "../../../../redux/types";
+import { VisitCard } from "../../../../presentational/VisitCard";
 
 const Escort = () => {
   const theme = useTheme();
@@ -159,27 +160,31 @@ const Escort = () => {
                 marginTop: "40px",
               }}
             />
-            <ButtonBase
-              sx={{
-                marginTop: "40px",
-                borderRadius: "30px",
-                padding: "10px 30px",
-                backgroundColor: "rgba(255, 255, 255, 0.4)",
-              }}
-            >
-              <Typography
-                sx={{
-                  color: "black",
-                  textTransform: "uppercase",
-                  fontSize: "10px",
-                  fontWeight: 500,
-                  lineHeight: "14px",
-                  letterSpacing: "1px",
-                }}
-              >
-                {i18n.t("pages.home.button1")}
-              </Typography>
-            </ButtonBase>
+            <VisitCard
+              customButton={
+                <ButtonBase
+                  sx={{
+                    marginTop: "40px",
+                    borderRadius: "30px",
+                    padding: "10px 30px",
+                    backgroundColor: "rgba(255, 255, 255, 0.4)",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: "black",
+                      textTransform: "uppercase",
+                      fontSize: "10px",
+                      fontWeight: 500,
+                      lineHeight: "14px",
+                      letterSpacing: "1px",
+                    }}
+                  >
+                    {i18n.t("pages.home.button1")}
+                  </Typography>
+                </ButtonBase>
+              }
+            />
           </div>
 
           <Grid
@@ -510,26 +515,30 @@ const Escort = () => {
                   marginTop: "40px",
                 }}
               />
-              <ButtonBase
-                sx={{
-                  marginTop: "40px",
-                  borderRadius: "30px",
-                  padding: "10px 30px",
-                  backgroundColor: "rgba(255, 255, 255, 0.4)",
-                }}
-              >
-                <Typography
-                  sx={{
-                    textTransform: "uppercase",
-                    fontSize: "10px",
-                    lineHeight: "14px",
-                    letterSpacing: "1px",
-                    color: "rgba(0, 0, 0, 0.59)",
-                  }}
-                >
-                  {i18n.t("pages.home.button1")}
-                </Typography>
-              </ButtonBase>
+              <VisitCard
+                customButton={
+                  <ButtonBase
+                    sx={{
+                      marginTop: "40px",
+                      borderRadius: "30px",
+                      padding: "10px 30px",
+                      backgroundColor: "rgba(255, 255, 255, 0.4)",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        textTransform: "uppercase",
+                        fontSize: "10px",
+                        lineHeight: "14px",
+                        letterSpacing: "1px",
+                        color: "rgba(0, 0, 0, 0.59)",
+                      }}
+                    >
+                      {i18n.t("pages.home.button1")}
+                    </Typography>
+                  </ButtonBase>
+                }
+              />
             </div>
           )}
           <div

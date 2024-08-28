@@ -3,10 +3,13 @@ import Button from "@mui/material/Button";
 import { i18n } from "../../../../translations/i18n";
 import { useSelector } from "react-redux";
 import { State } from "../../../../redux/types";
+import { ROUTE_PATHS } from "../../../../routes/constants";
+import { useNavigate } from "react-router-dom";
 
 const Eyes = () => {
   const lang = useSelector<State, string>((state) => state.general.lang);
   const theme = useTheme();
+  const navigate = useNavigate();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div
@@ -145,6 +148,7 @@ const Eyes = () => {
               {i18n.t("pages.clinic.box43")}
             </Typography>
             <Button
+              onClick={() => navigate(ROUTE_PATHS.YOUR_EXPERIENCE)}
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.5)",
                 borderRadius: "20px",
@@ -174,6 +178,7 @@ const Eyes = () => {
             }}
           >
             <Button
+              onClick={() => navigate(ROUTE_PATHS.YOUR_EXPERIENCE)}
               style={{
                 backgroundColor: "rgba(255, 255, 255, 0.5)",
                 borderRadius: "20px",

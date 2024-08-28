@@ -25,8 +25,8 @@ export const content = {
         ourPolicies: "As nossas Políticas",
         registerConcern: "Registar Reclamação",
         copyright: "Copyright 2024. Desenvolvido por LINEA AGENCY.",
-        privacyPolicy: "Política de Privacidade",
-        privacyCookies: "POLÍTICA DE COOKIEs",
+        privacyPolicy: "Privacidade e Cookies",
+        privacyCookies: "Termos de Utilização",
       },
       expertAdvice: {
         box0: "Pesquisa inteligente",
