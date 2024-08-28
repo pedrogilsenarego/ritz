@@ -1,6 +1,7 @@
 export const content = {
   es: {
     translations: {
+      comingSoon: "Próximamente",
       header: {
         home: "Inicio",
 

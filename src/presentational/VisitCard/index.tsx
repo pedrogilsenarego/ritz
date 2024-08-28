@@ -51,7 +51,7 @@ export const VisitCard = () => {
         {devMode ? (
           <FinishedContent setOpenPopup={setOpenPopup} />
         ) : (
-          <Content />
+          <Content setOpenPopup={setOpenPopup} />
         )}
       </Popup>
     </>

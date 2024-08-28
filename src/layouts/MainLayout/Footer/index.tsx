@@ -261,6 +261,9 @@ const Footer = ({ isUser }: Props) => {
                   justifyContent: "end",
                   height: "100%",
                 }}
+                onClick={() =>
+                  window.open("https://www.lineaagency.com/", "_blank")
+                }
               >
                 <Typography
                   style={{
@@ -278,7 +281,14 @@ const Footer = ({ isUser }: Props) => {
                     flexDirection: "column",
                     alignItems: "end",
                     rowGap: "10px",
+                    cursor: "pointer",
                   }}
+                  onClick={() =>
+                    window.open(
+                      "https://www.livroreclamacoes.pt/Inicio/",
+                      "_blank"
+                    )
+                  }
                 >
                   <img
                     src={LivroReclamações}
@@ -287,16 +297,6 @@ const Footer = ({ isUser }: Props) => {
                       width: "105px",
                     }}
                   />
-                  <Typography
-                    style={{
-                      textTransform: "uppercase",
-                      fontSize: "7px",
-                      marginTop: "0px",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {i18n.t("footer.registerConcern")}
-                  </Typography>
                 </div>
               </div>
             </Grid>
@@ -526,6 +526,12 @@ const Footer = ({ isUser }: Props) => {
                   height: "100%",
                   justifyContent: "space-around",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://www.livroreclamacoes.pt/Inicio/",
+                    "_blank"
+                  )
+                }
               >
                 <img
                   src={LivroReclamações}
@@ -534,11 +540,11 @@ const Footer = ({ isUser }: Props) => {
                     height: 38,
                   }}
                 />
-                <Typography style={{ fontSize: "7px", marginTop: "10px" }}>
-                  {i18n.t("footer.registerConcern")}
-                </Typography>
 
                 <Typography
+                  onClick={() =>
+                    window.open("https://www.lineaagency.com/", "_blank")
+                  }
                   style={{
                     fontSize: "7px",
                     marginTop: "20px",

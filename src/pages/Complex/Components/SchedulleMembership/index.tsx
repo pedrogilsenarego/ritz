@@ -6,10 +6,13 @@ import {
   useTheme,
 } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
+import { ROUTE_PATHS } from "../../../../routes/constants";
+import { useNavigate } from "react-router-dom";
 
 const SchedulleMembership = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const navigate = useNavigate();
 
   return (
     <Grid
@@ -126,6 +129,7 @@ const SchedulleMembership = () => {
               padding: "10px 30px",
               borderRadius: "30px",
             }}
+            onClick={() => navigate(ROUTE_PATHS.MEMBERSHIP)}
           >
             <Typography
               style={{
