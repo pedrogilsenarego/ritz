@@ -130,7 +130,6 @@ export const Specialty = () => {
                   fontSize: "20px",
                   fontWeight: 400,
                   paddingLeft: "10px",
-                  textDecoration: "underline",
                 }}
               >
                 {lang === "EN" ? item.title_en : item.title_pt}

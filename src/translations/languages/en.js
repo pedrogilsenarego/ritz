@@ -108,7 +108,7 @@ export const content = {
           box2: "Schedule online or make your appointment with our assistants.",
           box3: "Membership",
           box4: "Explore the exclusive benefits with our Membership Access.",
-          button1: "SHEDULE NOW",
+          button1: "SCHEDULE NOW",
           button2: "Coming Soon",
         },
         clinic: {

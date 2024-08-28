@@ -28,21 +28,6 @@ type Props = {
 const Footer = ({ isUser }: Props) => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("md"));
-  const handleInstagram = () => {
-    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    if (isMobile) {
-      window.location.href = "instagram://user?username=thesecretwatchproject";
-      setTimeout(() => {
-        window.location.href =
-          "https://instagram.com/thesecretwatchproject?igshid=OGQ5ZDc2ODk2ZA==";
-      }, 1000);
-    } else {
-      window.open(
-        "https://instagram.com/thesecretwatchproject?igshid=OGQ5ZDc2ODk2ZA==",
-        "_blank"
-      );
-    }
-  };
 
   const renderLaptop = () => {
     return (
@@ -104,6 +89,12 @@ const Footer = ({ isUser }: Props) => {
                   {" "}
                   <img
                     src={Instagram}
+                    onClick={() =>
+                      window.open(
+                        "https://www.instagram.com/ehtiqtheclinic?igsh=bzZscTRrZHhpeDRv",
+                        "_blank"
+                      )
+                    }
                     alt=""
                     style={{
                       width: "23px",
@@ -112,11 +103,23 @@ const Footer = ({ isUser }: Props) => {
                   <img
                     src={Facebook}
                     alt=""
+                    onClick={() =>
+                      window.open(
+                        "https://www.facebook.com/profile.php?id=61560907463237",
+                        "_blank"
+                      )
+                    }
                     style={{
                       width: "23px",
                     }}
                   />
                   <img
+                    onClick={() =>
+                      window.open(
+                        "https://youtube.com/@ehtiq?feature=shared",
+                        "_blank"
+                      )
+                    }
                     src={Youtube}
                     alt=""
                     style={{
@@ -164,10 +167,14 @@ const Footer = ({ isUser }: Props) => {
                     ></Typography>
                   </div>
                   <div
+                    onClick={() =>
+                      (window.location.href = "mailto:INFO@EHTIQ.COM")
+                    } // This will open the email client
                     style={{
                       display: "flex",
                       alignItems: "start",
                       columnGap: "4px",
+                      cursor: "pointer",
                     }}
                   >
                     <img
@@ -379,6 +386,9 @@ const Footer = ({ isUser }: Props) => {
                     </Typography>
                   </div>
                   <div
+                    onClick={() =>
+                      (window.location.href = "mailto:INFO@EHTIQ.COM")
+                    } // This will open the email client
                     style={{
                       display: "flex",
                       alignItems: "start",
@@ -412,11 +422,16 @@ const Footer = ({ isUser }: Props) => {
                         height: 12,
                       }}
                     />
-                    <Typography
-                      style={{ fontSize: "8px", textDecoration: "underline" }}
+                    <a
+                      href="tel:+351215909009"
+                      style={{ textDecoration: "none" }}
                     >
-                      +351 215 909 009
-                    </Typography>
+                      <Typography
+                        style={{ fontSize: "8px", textDecoration: "underline" }}
+                      >
+                        +351 215 909 009
+                      </Typography>
+                    </a>
                   </div>
                 </div>
                 <div
@@ -428,6 +443,12 @@ const Footer = ({ isUser }: Props) => {
                 >
                   {" "}
                   <img
+                    onClick={() =>
+                      window.open(
+                        "instagram://user?username=ehtiqtheclinic", // This deep link should open the Instagram profile.
+                        "_blank"
+                      )
+                    }
                     src={Instagram}
                     alt=""
                     style={{
@@ -435,6 +456,12 @@ const Footer = ({ isUser }: Props) => {
                     }}
                   />
                   <img
+                    onClick={() =>
+                      window.open(
+                        "fb://profile/61560907463237", // This is a deep link for Facebook.
+                        "_blank"
+                      )
+                    }
                     src={Facebook}
                     alt=""
                     style={{
@@ -442,6 +469,12 @@ const Footer = ({ isUser }: Props) => {
                     }}
                   />
                   <img
+                    onClick={() =>
+                      window.open(
+                        "vnd.youtube://user/ehtiq", // This deep link should open the YouTube channel.
+                        "_blank"
+                      )
+                    }
                     src={Youtube}
                     alt=""
                     style={{

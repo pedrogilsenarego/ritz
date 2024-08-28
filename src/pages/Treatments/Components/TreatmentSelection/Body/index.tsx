@@ -129,7 +129,6 @@ export const Body = () => {
                   fontSize: "20px",
                   fontWeight: 400,
                   paddingLeft: "10px",
-                  textDecoration: "underline",
                 }}
               >
                 {lang === "EN"
