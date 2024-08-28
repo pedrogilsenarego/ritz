@@ -13,6 +13,7 @@ import { LANG } from "../../../../constants/lang";
 import { useSelector } from "react-redux";
 import { State } from "../../../../redux/types";
 import useChangeLang from "../../../../hooks/usechangeLang";
+import { devMode } from "../../../../constants/devConfig";
 const MenuPopopverContent = ({ handleClose }: any) => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -126,24 +127,26 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                 rowGap: "20px",
               }}
             >
-              <Typography
-                className={"text"}
-                style={{
-                  cursor: "pointer",
-                  fontSize: "16px",
-                  fontWeight:
-                    location.pathname === ROUTE_PATHS.BLOG_ ? 500 : 400,
-                  textAlign: "center",
-                  letterSpacing: "1px",
-                  textTransform: "uppercase",
-                }}
-                onClick={() => {
-                  navigate(ROUTE_PATHS.BLOG_);
-                  handleClose();
-                }}
-              >
-                {i18n.t("header.blog")}
-              </Typography>
+              {devMode && (
+                <Typography
+                  className={"text"}
+                  style={{
+                    cursor: "pointer",
+                    fontSize: "16px",
+                    fontWeight:
+                      location.pathname === ROUTE_PATHS.BLOG_ ? 500 : 400,
+                    textAlign: "center",
+                    letterSpacing: "1px",
+                    textTransform: "uppercase",
+                  }}
+                  onClick={() => {
+                    navigate(ROUTE_PATHS.BLOG_);
+                    handleClose();
+                  }}
+                >
+                  {i18n.t("header.blog")}
+                </Typography>
+              )}
               <Typography
                 style={{
                   marginTop: "30px",
@@ -159,6 +162,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
               >
                 {i18n.t("header.contacts")}
               </Typography>
+
               <div
                 style={{
                   display: "flex",
@@ -167,9 +171,36 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                   justifyContent: "space-between",
                 }}
               >
-                <img src={INsta} alt="" />
-                <img src={Face} alt="" />
-                <img src={Youtue} alt="" />
+                <img
+                  onClick={() =>
+                    window.open(
+                      "https://www.instagram.com/ehtiqtheclinic?igsh=bzZscTRrZHhpeDRv",
+                      "_blank"
+                    )
+                  }
+                  src={INsta}
+                  alt=""
+                />
+                <img
+                  onClick={() =>
+                    window.open(
+                      "https://www.facebook.com/profile.php?id=61560907463237",
+                      "_blank"
+                    )
+                  }
+                  src={Face}
+                  alt=""
+                />
+                <img
+                  src={Youtue}
+                  onClick={() =>
+                    window.open(
+                      "https://youtube.com/@ehtiq?feature=shared",
+                      "_blank"
+                    )
+                  }
+                  alt=""
+                />
               </div>
             </div>
             <div
@@ -458,24 +489,28 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                     rowGap: "20px",
                   }}
                 >
-                  <Typography
-                    className={"text"}
-                    style={{
-                      cursor: "pointer",
-                      fontSize: "15px",
-                      fontWeight:
-                        location.pathname === ROUTE_PATHS.BLOG_ ? "bold" : 400,
-                      textAlign: "center",
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
-                    }}
-                    onClick={() => {
-                      navigate(ROUTE_PATHS.BLOG_);
-                      handleClose();
-                    }}
-                  >
-                    {i18n.t("header.blog")}
-                  </Typography>
+                  {devMode && (
+                    <Typography
+                      className={"text"}
+                      style={{
+                        cursor: "pointer",
+                        fontSize: "15px",
+                        fontWeight:
+                          location.pathname === ROUTE_PATHS.BLOG_
+                            ? "bold"
+                            : 400,
+                        textAlign: "center",
+                        letterSpacing: "1px",
+                        textTransform: "uppercase",
+                      }}
+                      onClick={() => {
+                        navigate(ROUTE_PATHS.BLOG_);
+                        handleClose();
+                      }}
+                    >
+                      {i18n.t("header.blog")}
+                    </Typography>
+                  )}
                   <Typography
                     style={{
                       marginTop: "20px",
@@ -491,6 +526,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                   >
                     {i18n.t("header.contacts")}
                   </Typography>
+
                   <div
                     style={{
                       display: "flex",
@@ -499,9 +535,36 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                       justifyContent: "space-between",
                     }}
                   >
-                    <img src={INsta} alt="" />
-                    <img src={Face} alt="" />
-                    <img src={Youtue} alt="" />
+                    <img
+                      onClick={() =>
+                        window.open(
+                          "instagram://user?username=ehtiqtheclinic", // This deep link should open the Instagram profile.
+                          "_blank"
+                        )
+                      }
+                      src={INsta}
+                      alt=""
+                    />
+                    <img
+                      onClick={() =>
+                        window.open(
+                          "fb://profile/61560907463237", // This is a deep link for Facebook.
+                          "_blank"
+                        )
+                      }
+                      src={Face}
+                      alt=""
+                    />
+                    <img
+                      src={Youtue}
+                      onClick={() =>
+                        window.open(
+                          "vnd.youtube://user/ehtiq", // This deep link should open the YouTube channel.
+                          "_blank"
+                        )
+                      }
+                      alt=""
+                    />
                   </div>
                 </div>
                 <div

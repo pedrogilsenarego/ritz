@@ -4,6 +4,7 @@ import { Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Content } from "./Content";
 import { i18n } from "../../translations/i18n";
 import { FinishedContent } from "./FinishedContent";
+import { devMode } from "../../constants/devConfig";
 
 export const VisitCard = () => {
   const theme = useTheme();
@@ -47,7 +48,11 @@ export const VisitCard = () => {
           background: "linear-gradient(180deg, #F9F9F9 0%, #AEB4B7 100%)",
         }}
       >
-        <FinishedContent setOpenPopup={setOpenPopup} />
+        {devMode ? (
+          <FinishedContent setOpenPopup={setOpenPopup} />
+        ) : (
+          <Content />
+        )}
       </Popup>
     </>
   );

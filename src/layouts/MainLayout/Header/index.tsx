@@ -37,6 +37,7 @@ import useUser from "../../../hooks/useUser";
 import { BASE_URL } from "../../../services/constants";
 import { Lang } from "./Lang";
 import UserPopoverContent from "../../User/UserMenu/UserPopoverContent";
+import { devMode } from "../../../constants/devConfig";
 
 const Header = () => {
   const {
@@ -204,31 +205,33 @@ const Header = () => {
               }}
             >
               <Lang />
-              <div>
-                {userQuery.data && !userQuery.isLoading ? (
-                  <img
-                    onClick={(e) => handleClickPopover(e)}
-                    src={`${BASE_URL}${userQuery?.data?.Data?.imagem}`}
-                    alt="logo"
-                    style={{
-                      width: "19px",
-                      cursor: "pointer",
-                    }}
-                  />
-                ) : (
-                  <img
-                    onClick={(e) => {
-                      handleLogin(e);
-                    }}
-                    src={Login}
-                    alt="logo"
-                    style={{
-                      width: "19px",
-                      cursor: "pointer",
-                    }}
-                  />
-                )}
-              </div>
+              {devMode && (
+                <div>
+                  {userQuery.data && !userQuery.isLoading ? (
+                    <img
+                      onClick={(e) => handleClickPopover(e)}
+                      src={`${BASE_URL}${userQuery?.data?.Data?.imagem}`}
+                      alt="logo"
+                      style={{
+                        width: "19px",
+                        cursor: "pointer",
+                      }}
+                    />
+                  ) : (
+                    <img
+                      onClick={(e) => {
+                        handleLogin(e);
+                      }}
+                      src={Login}
+                      alt="logo"
+                      style={{
+                        width: "19px",
+                        cursor: "pointer",
+                      }}
+                    />
+                  )}
+                </div>
+              )}
             </Grid>
           </Grid>
 
@@ -333,17 +336,21 @@ const Header = () => {
               cursor: "pointer",
             }}
           />
-          <img
-            onClick={(e) => {
-              handleLogin(e);
-            }}
-            src={Login}
-            alt="logo"
-            style={{
-              width: "18px",
-              cursor: "pointer",
-            }}
-          />
+          {devMode ? (
+            <img
+              onClick={(e) => {
+                handleLogin(e);
+              }}
+              src={Login}
+              alt="logo"
+              style={{
+                width: "18px",
+                cursor: "pointer",
+              }}
+            />
+          ) : (
+            <div style={{ width: "18px", height: "18px" }} />
+          )}
         </Box>
         <DrawerMine
           fullWidth
