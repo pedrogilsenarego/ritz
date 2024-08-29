@@ -59,9 +59,7 @@ export const RoutesI = {
   ShippingPolicies: lazyWithRetryAndLoader(
     () => import("../pages/ShippingPolicies")
   ),
-  RefundPolicies: lazyWithRetryAndLoader(
-    () => import("../pages/RefundPolicies")
-  ),
+
   Experience: lazyWithRetryAndLoader(() => import("../pages/Experience")),
   Complex: lazyWithRetryAndLoader(() => import("../pages/Complex")),
   Blog: lazyWithRetryAndLoader(() => import("../pages/Blog")),

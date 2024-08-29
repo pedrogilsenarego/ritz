@@ -99,7 +99,7 @@ const Treatments = () => {
               style={{
                 zIndex: 10,
                 height: "1px",
-                width: "40%",
+                width: "50px",
                 backgroundColor: "white",
                 marginTop: "10px",
                 transform: hover ? "translateY(-40px)" : "none",

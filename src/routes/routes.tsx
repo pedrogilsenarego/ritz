@@ -154,7 +154,7 @@ export const routes: AppRoute[] = [
     ),
   },
   {
-    path: ROUTE_PATHS.POLICIES,
+    path: ROUTE_PATHS.PRIVACY_POLICY,
     component: (
       <MainLayout>
         <RoutesI.Policies />
@@ -166,14 +166,6 @@ export const routes: AppRoute[] = [
     component: (
       <MainLayout>
         <RoutesI.ShippingPolicies />
-      </MainLayout>
-    ),
-  },
-  {
-    path: ROUTE_PATHS.REFUND_POLICIE,
-    component: (
-      <MainLayout>
-        <RoutesI.RefundPolicies />
       </MainLayout>
     ),
   },

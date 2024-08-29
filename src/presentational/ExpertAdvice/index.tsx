@@ -91,19 +91,37 @@ export const ExpertAdvice = () => {
           setOpenPopup(false);
           setMode("base");
         }}
+        contentStyles={{
+          overflow: "none",
+          height: "100%",
+        }}
         paperStyles={{
           borderRadius: 0,
           maxHeight: "95vh",
-          overflow: "scroll",
+
+          //overflow: "scroll",
           width: mobile ? "98vw" : "85vw",
           padding: mobile ? "30px 10px" : "67px 79px",
           background:
             "linear-gradient(71.43deg, #8A6B64 6.05%, #D7D1CB 64.39%)",
         }}
       >
-        <div>
+        <div
+          style={{
+            maxHeight: mobile ? undefined : "calc(95vh - 134px)",
+          }}
+        >
           <Header setOpenPopup={setOpenPopup} />
-          <div style={{ marginTop: "60px" }}>{renderOption()}</div>
+          <div
+            style={{
+              marginTop: "60px",
+
+              maxHeight: mobile ? undefined : "calc(95vh - 295px)",
+              overflow: "scroll",
+            }}
+          >
+            {renderOption()}
+          </div>
           <div style={{ marginTop: "59px" }}>
             <Footer />
           </div>

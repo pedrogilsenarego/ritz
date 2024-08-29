@@ -13,6 +13,7 @@ interface Props {
   needConfirmation?: NeedConfirmation;
   onClose?: () => void;
   paperStyles?: CSSProperties;
+  contentStyles?: CSSProperties;
   titleProps?: CSSProperties;
 }
 
@@ -26,6 +27,7 @@ const Popup = ({
   divider,
   actions,
   needConfirmation,
+  contentStyles,
   onClose,
   titleProps,
 }: Props) => {
@@ -55,9 +57,9 @@ const Popup = ({
           overflow: "scroll",
           msOverflowStyle: "none",
           scrollbarWidth: "none",
+          ...contentStyles,
         }}
       >
-        {" "}
         {children}
       </DialogContent>
     </Dialog>

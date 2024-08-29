@@ -27,9 +27,10 @@ export const ROUTE_PATHS = {
   LOGIN: "/auth/login",
   REGISTER: "/auth/register",
   PRIVACY_POLICY: "/privacy-policy",
+  UTILIZATION_TERMS: "/utilization-terms",
   BUY_SUCCESS: "/success",
   RECOVER_PASSWORD: "/recover-password",
-  POLICIES: "/terms-of-service",
+
   SHIPPING_POLICIES: "/shipping-policies",
   REFUND_POLICIE: "/refund-policies",
   MEMBERSHIP: "/membership",

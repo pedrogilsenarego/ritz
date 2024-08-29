@@ -20,6 +20,8 @@ import { MAX_SCREEN } from "../../../constants/screen";
 import { VisitCard } from "../../../presentational/VisitCard";
 import { i18n } from "../../../translations/i18n";
 import { BASE_URL } from "../../../services/constants";
+import { ROUTE_PATHS } from "../../../routes/constants";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
   isUser?: boolean;
@@ -28,6 +30,7 @@ type Props = {
 const Footer = ({ isUser }: Props) => {
   const Theme = useTheme();
   const mobile = useMediaQuery(Theme.breakpoints.down("md"));
+  const navigate = useNavigate();
 
   const renderLaptop = () => {
     return (
@@ -230,10 +233,12 @@ const Footer = ({ isUser }: Props) => {
                     {i18n.t("footer.ourPolicies")}
                   </Typography>
                   <Typography
+                    onClick={() => navigate(ROUTE_PATHS.PRIVACY_POLICY)}
                     style={{
                       fontSize: "8px",
                       textDecoration: "underline",
                       textTransform: "uppercase",
+                      cursor: "pointer",
                     }}
                   >
                     {i18n.t("footer.privacyPolicy")}
@@ -498,10 +503,12 @@ const Footer = ({ isUser }: Props) => {
                   {i18n.t("footer.ourPolicies")}
                 </Typography>
                 <Typography
+                  onClick={() => navigate(ROUTE_PATHS.PRIVACY_POLICY)}
                   style={{
                     fontSize: "10px",
                     textDecoration: "underline",
                     textTransform: "uppercase",
+                    cursor: "pointer",
                   }}
                 >
                   {i18n.t("footer.privacyPolicy")}

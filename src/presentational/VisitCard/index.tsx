@@ -22,7 +22,6 @@ export const VisitCard = (props: Props) => {
   return (
     <>
       {props.customButton ? (
-        // Clone the custom button and add onClick functionality
         cloneElement(props.customButton as ReactElement, {
           onClick: handleButtonClick,
         })
