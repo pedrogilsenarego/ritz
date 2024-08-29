@@ -42,6 +42,7 @@ export const Base = ({ setMode }: Props) => {
           alignItems: "center",
           width: "100%",
           borderRadius: "5px",
+
           backgroundPosition: "center center",
           backgroundSize: "cover",
           backgroundImage: `url(${image})`,
@@ -49,6 +50,7 @@ export const Base = ({ setMode }: Props) => {
       >
         <div
           style={{
+            borderRadius: "5px",
             opacity: hover ? 1 : 0,
             transition: "all 0.5s ease-in-out",
             position: "absolute",

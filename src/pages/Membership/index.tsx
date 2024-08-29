@@ -19,14 +19,14 @@ const Membership = () => {
       ) : (
         <div
           style={{
-            minHeight: "80vh",
+            flexGrow: 1,
             display: "flex",
+            height: "40vh",
             justifyContent: "center",
-            alignItems: "center",
-            paddingTop: "80px",
+            alignItems: "end",
           }}
         >
-          <Typography style={{ fontSize: "24px", fontWeight: 800 }}>
+          <Typography style={{ fontSize: "24px", fontWeight: 500 }}>
             {i18n.t("comingSoon")}
           </Typography>
         </div>

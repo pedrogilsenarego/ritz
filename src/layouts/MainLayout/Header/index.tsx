@@ -252,7 +252,7 @@ const Header = () => {
                           fontWeight: 500,
                         }}
                       >
-                        {i18n.t("pages.schedulleBox.button1")}
+                        {i18n.t("footer.schedulle")}
                       </Typography>
                     </Button>
                   }
@@ -392,7 +392,7 @@ const Header = () => {
                       fontWeight: 500,
                     }}
                   >
-                    {i18n.t("pages.schedulleBox.button1")}
+                    {i18n.t("footer.schedulle")}
                   </Typography>
                 </Button>
               }

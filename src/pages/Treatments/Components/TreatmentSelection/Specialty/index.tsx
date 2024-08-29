@@ -73,7 +73,7 @@ export const Specialty = () => {
             }}
           ></Typography>
           <div
-            style={{ height: "2px", width: "75px", backgroundColor: "white" }}
+            style={{ height: "2px", width: "50px", backgroundColor: "white" }}
           />
         </div>
       </div>

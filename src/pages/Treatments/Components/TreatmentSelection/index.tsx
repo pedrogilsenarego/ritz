@@ -54,12 +54,12 @@ export const TreatmentSelection = () => {
           >
             {i18n.t("pages.treatments.box28")}
           </Typography>
-          <div style={{ marginTop: "100px" }}>
+          <div style={{ marginTop: "50px" }}>
             <CustomizedAccordions title={i18n.t("pages.treatments.box29")}>
               <Specialty />
             </CustomizedAccordions>
           </div>
-          <div style={{ marginTop: "100px" }}>
+          <div style={{ marginTop: "50px" }}>
             <CustomizedAccordions title={i18n.t("pages.treatments.box30")}>
               <Body />
             </CustomizedAccordions>

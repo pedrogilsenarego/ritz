@@ -2,15 +2,21 @@ import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../../../translations/i18n";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { State } from "../../../../redux/types";
 
 export const Organizer2 = (data: any) => {
   const theme = useTheme();
   const navigate = useNavigate();
+  const lang = useSelector<State, string>((state) => state.general.lang);
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   if (!data || !data.data || !data.data.results) return <></>;
 
+  const titleMatch =
+    lang === "PT" ? "concern_pt" : lang === "ES" ? "concern_es" : "concern_en";
+
   const translatedConcerns = data?.data?.results?.map((concern: any) => ({
-    title: i18n.t(`tags.concerns.${concern.concern}`),
+    title: concern?.[titleMatch] || "",
     id: concern.id,
   }));
 

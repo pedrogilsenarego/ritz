@@ -108,6 +108,7 @@ export const ExpertAdvice = () => {
       >
         <div
           style={{
+            border: "solid 1px transparent",
             maxHeight: mobile ? undefined : "calc(95vh - 134px)",
           }}
         >
@@ -115,8 +116,8 @@ export const ExpertAdvice = () => {
           <div
             style={{
               marginTop: "60px",
-
-              maxHeight: mobile ? undefined : "calc(95vh - 295px)",
+              border: "solid 1px transparent",
+              maxHeight: mobile ? undefined : "calc(95vh - 290px)",
               overflow: "scroll",
             }}
           >

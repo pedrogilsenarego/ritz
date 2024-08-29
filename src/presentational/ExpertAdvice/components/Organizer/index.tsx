@@ -23,7 +23,8 @@ export const Organizer = ({
   const theme = useTheme();
   const navigate = useNavigate();
   const lang = useSelector<State, string>((state) => state.general.lang);
-  const title = lang === "PT" ? "title_pt" : "title_en";
+  const title =
+    lang === "PT" ? "title_pt" : lang === "ES" ? "title_es" : "title_en";
 
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   if (!data || !data || !data.results) return <></>;

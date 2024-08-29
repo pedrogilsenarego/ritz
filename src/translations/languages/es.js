@@ -63,7 +63,7 @@ export const content = {
 
         box4: "Preocupaciones</br> A-Z",
 
-        box41: "PreocupacionesA-Z",
+        box41: "Preocupaciones A-Z",
 
         box5: "Volver a filtros principales",
 
