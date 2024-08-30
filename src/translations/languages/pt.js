@@ -273,6 +273,51 @@ export const content = {
           box3: "Corpo",
           box4: "Health 360º",
         },
+        privacyPolicy: {
+          title: "Política de Privacidade",
+          subtitle1: "Compromisso com a Proteção de Dados e Privacidade",
+          text1:
+            "A EHTIQ e elementos internos com ela diretamente relacionados, assumem o compromisso de sigilo e confidencialidade no tratamento de dados pessoais dos quais é responsável, e de acordo com a presente Política de Privacidade.",
+          subtitle2: "Entidade Responsável e Contacto",
+          text2:
+            "A Elevate Plures Investments, Lda, com sede em Avenida Duque de Loulé, 24 - 7o Esq. - 1050-090 Lisboa, pessoa coletiva no 516677373, e detentora da marca EHTIQ, é a entidade responsável pelo tratamento dos dados pessoais contidos e geridos em www.ehtiq.com e suas subpáginas (doravante designada por área digital EHTIQ ou plataforma), pela própria ou aplicações informatizadas nela contidas, através dos quais os Utilizadores têm acesso remoto aos seus serviços e produtos, sejam eles apresentados, comercializados ou prestados, em qualquer momento, através da sua plataforma.</br></br> Qualquer esclarecimento ou pedido relacionado com a presente Política de Privacidade, poderá ser enviado para info@ehtiq.com, acompanhado de um contacto direto, nome e apelido, e/ou outro dado pessoal de relevância para o assunto descrito.",
+          subtitle3: "Dados Pessoais Tratados",
+          text3:
+            "A EHTIQ declara tratar os seguintes e principais dados pessoais, entre outros que se venham a mostrar necessários e sejam legitimamente recolhidos:</br></br>- Nome completo;</br></br>- Email;</br></br>- Data de nascimento;</br></br>- Número contribuinte;</br></br>- No de identificação civil;</br></br>- Estado civil;</br></br>- Sexo;</br></br>- Naturalidade;</br></br>- Morada (endereço, código-postal, cidade, país);</br></br>- Redes sociais públicas",
+          subtitle4: "Finalidade do Tratamento",
+          text4:
+            "Os dados pessoais tratados na área digital EHTIQ, destinam-se à:</br></br>- Disponibilização de informação diretamente ao utilizador;</br></br>- Gestão considerada necessária para efeitos de comunicação interna e/ou comunicação com o devido utilizador;</br></br>- Prestação de serviços apoiada por fornecedores, cujo tratamento de dados e garantias de confidencialidade estejam devidamente expressas e aparentem ser rigorosamente cumpridas;</br></br>- Ações de divulgação de informação ou promocionais, com finalidades comerciais ou de marketing, nomeadamente a divulgação de novos produtos e serviços, por comunicação direta, sempre que esta seja consentida.",
+          subtitle5: "Responsabilidade do Utilizador",
+          text5:
+            "É da exclusiva responsabilidade do Utilizador, zelar pelo segredo das suas credenciais de acesso à plataforma, não os partilhando com terceiros, devendo, ainda, manter e conservar os dispositivos de acesso em condições de segurança e seguir as práticas aconselhadas pelos fabricantes e/ou operadoras, nomeadamente quanto à instalação e atualização dos necessários aplicativos de segurança, tais como, entre outras, aplicações de antivírus.",
+
+          subtitle6: "Consentimento Expresso",
+          text6:
+            "A disponibilização livre, específica e informada dos dados pessoais pelo respetivo titular implica o conhecimento e aceitação desta Política e consubstancia uma autorização expressa para o seu tratamento, de acordo com as práticas acima definidas.",
+          title2: "Política de Privacidade",
+          subtitle7: "Utilização de Cookies",
+          text7:
+            "A área <a>www.ehtiq.com</a> e suas subpáginas utilizam cookies para melhorar a experiência de utilizador. Explicamos abaixo como o fazemos.",
+          subtitle8: "O que são Cookies?",
+          text8:
+            "Cookies são ficheiros de pequenas dimensões que são armazenados no seu computador ou dispositivo móvel, através do seu browser (navegador de Internet). Os mesmos permitem monitorizar parte da sua atividade numa determinada plataforma, de forma a otimizar a sua experiência de utilização.</br></br>A sua utilização no espaço web é usual e não prejudica o seu hardware ou software.",
+          subtitle9: "Finalidade dos nossos Cookies",
+          text9:
+            "Os nossos cookies recolhem informação genérica, nomeadamente a forma como o utilizador chegaram ao nosso site, país de onde acedem, entre outros, retendo apenas informação relacionada com as suas preferências e padrões de utilização. Os Cookies que utilizamos pertencem a duas categorias:</br></br><b>Permanentes</b> – Armazenados ao nível do browser nos seus equipamentos de acesso (PC, mobile e tablet) e que são utilizados sempre que faz uma nova visita à área digital EHTIQ.</br></br><b>Cookies de sessão</b> – Temporários e que permanecem no arquivo de cookies do seu browser até sair da área digital EHTIQ. A informação obtida por estes cookies serve para analisar padrões de tráfego na web, permitindo-nos identificar problemas e fornecer uma melhor experiência de navegação.",
+          subtitle10: "Gestão de Cookies Pelo Utilizador",
+          text10:
+            "A qualquer momento, o utilizador pode verificar quais os cookies que tem no seu computador, eliminá-los ou bloquear-lhes acesso. Tudo isto é feito diretamente no seu navegador da internet. Se bloquear os nossos cookies, pode ter dificuldade em aceder a algumas zonas do site.",
+          title3: "Termos de Utilização",
+          subtitle11: "1 . Concordância com as Políticas",
+          text11:
+            "Ao utilizar a presente área digital EHTIQ, o utilizador concorda com as Políticas de Privacidade e Políticas de Cookies nela comunicadas.",
+          subtitle12: "2 . Condições de Utilização",
+          text12:
+            "Compromete-se o visitante e/ou utilizador da área digital EHTIQ ao uso adequado e lícito da sua plataforma, bem como dos conteúdos e serviços, de acordo com os Termos de Utilização presentes, não podendo:</br></br>a) Fazer um uso não autorizado ou fraudulento da plataforma para fins ilícitos, lesivos dos direitos e interesses de terceiros, ou em qualquer circunstância impeçam sua a normal utilização;</br></br>b) Aceder ou tentar aceder a recursos ou áreas restritas do website, sem cumprir as condições exigidas para o dito acesso;</br></br>c) Provocar danos nos sistemas físicos ou lógicos da plataforma;</br></br>d) Introduzir ou difundir a plataforma na rede vírus informáticos ou quaisquer outros sistemas físicos ou lógicos que sejam suscetíveis de provocar danos na mesma;</br></br>e) Tentar aceder, utilizar e/ou manipular os dados contidos em ehtiq.com, em terceiros, ou outros utilizadores;</br></br>f) Copiar, distribuir, e/ou permitir o acesso público através de qualquer modalidade de comunicação pública, o conteúdo digital e logístico disponibilizado na plataforma de ehtiq.com;</br></br>i) Transmitir, difundir ou colocar à disposição de terceiros, conteúdo escrito, fotográfico, de som e/ou imagem, resultante da interação com a equipa técnica e clínica EHTIQ.",
+          subtitle13: "3 . Compatibilidade com Diversos Dispositivos",
+          text13:
+            "A plataforma EHTIQ é desenvolvida com o propósito de corresponder e se ajustar a diversos tamanhos de ecrã fixo e dispositivos móveis, não se comprometendo a desenvolver conteúdos que se ajustem a todos os dispositivos existentes no mercado.",
+        },
       },
       tags: {
         concerns: {

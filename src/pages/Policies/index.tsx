@@ -2,36 +2,115 @@ import { Box, Typography } from "@mui/material";
 import { i18n } from "../../translations/i18n";
 
 const Policies = () => {
-  return (
-    <Box
-      style={{ display: "flex", justifyContent: "center", margin: "0px 20px" }}
-    >
-      <Box style={{ marginTop: "100px", maxWidth: "500px" }}>
+  const Entry = ({ subtitle, text }: { subtitle: string; text: string }) => {
+    return (
+      <Box>
         <Typography
           style={{
-            fontSize: "35px",
-            fontWeight: 800,
             textAlign: "center",
-            lineHeight: "49px",
+            fontWeight: 800,
+            marginTop: "90px",
           }}
         >
-          {i18n.t("pages.policies.termsOfService")}
+          {subtitle}
         </Typography>
         <Typography
+          dangerouslySetInnerHTML={{ __html: text }}
           style={{
-            textAlign: "center",
+            textAlign: "start",
             marginTop: "20px",
           }}
-        >
-          BA111OD may revise these Terms & conditions of use from time to time.
-          The Terms & Conditions in force at the time of purchase will apply to
-          the contract between you and BA111OD. You should therefore
-          occasionally visit this page to review the then current terms to which
-          you are bound. If you have any further questions do not hesitate to
-          contact us. We wish you an exciting experience with your new BA111OD
-          product.
-        </Typography>
+        />
       </Box>
+    );
+  };
+  return (
+    <Box style={{ padding: "300px 20vw" }}>
+      <Typography
+        style={{
+          fontSize: "30px",
+          fontWeight: 800,
+          textAlign: "center",
+          lineHeight: "49px",
+        }}
+      >
+        {i18n.t("pages.privacyPolicy.title")}
+      </Typography>
+
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle1")}
+        text={i18n.t("pages.privacyPolicy.text1")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle2")}
+        text={i18n.t("pages.privacyPolicy.text2")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle3")}
+        text={i18n.t("pages.privacyPolicy.text3")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle4")}
+        text={i18n.t("pages.privacyPolicy.text4")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle5")}
+        text={i18n.t("pages.privacyPolicy.text5")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle6")}
+        text={i18n.t("pages.privacyPolicy.text6")}
+      />
+      <Typography
+        style={{
+          marginTop: "200px",
+          fontSize: "30px",
+          fontWeight: 800,
+          textAlign: "center",
+          lineHeight: "49px",
+        }}
+      >
+        {i18n.t("pages.privacyPolicy.title2")}
+      </Typography>
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle7")}
+        text={i18n.t("pages.privacyPolicy.text7")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle8")}
+        text={i18n.t("pages.privacyPolicy.text8")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle9")}
+        text={i18n.t("pages.privacyPolicy.text9")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle10")}
+        text={i18n.t("pages.privacyPolicy.text10")}
+      />
+      <Typography
+        style={{
+          marginTop: "200px",
+          fontSize: "30px",
+          fontWeight: 800,
+          textAlign: "center",
+          lineHeight: "49px",
+        }}
+      >
+        {i18n.t("pages.privacyPolicy.title3")}
+      </Typography>
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle11")}
+        text={i18n.t("pages.privacyPolicy.text11")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle12")}
+        text={i18n.t("pages.privacyPolicy.text12")}
+      />
+      <Entry
+        subtitle={i18n.t("pages.privacyPolicy.subtitle13")}
+        text={i18n.t("pages.privacyPolicy.text13")}
+      />
     </Box>
   );
 };
