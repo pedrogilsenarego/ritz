@@ -162,10 +162,10 @@ export const routes: AppRoute[] = [
     ),
   },
   {
-    path: ROUTE_PATHS.SHIPPING_POLICIES,
+    path: ROUTE_PATHS.TERMS_OF_SERVICE,
     component: (
       <MainLayout>
-        <RoutesI.ShippingPolicies />
+        <RoutesI.TermsOfService />
       </MainLayout>
     ),
   },

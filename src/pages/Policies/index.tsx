@@ -88,29 +88,6 @@ const Policies = () => {
         subtitle={i18n.t("pages.privacyPolicy.subtitle10")}
         text={i18n.t("pages.privacyPolicy.text10")}
       />
-      <Typography
-        style={{
-          marginTop: "200px",
-          fontSize: "30px",
-          fontWeight: 800,
-          textAlign: "center",
-          lineHeight: "49px",
-        }}
-      >
-        {i18n.t("pages.privacyPolicy.title3")}
-      </Typography>
-      <Entry
-        subtitle={i18n.t("pages.privacyPolicy.subtitle11")}
-        text={i18n.t("pages.privacyPolicy.text11")}
-      />
-      <Entry
-        subtitle={i18n.t("pages.privacyPolicy.subtitle12")}
-        text={i18n.t("pages.privacyPolicy.text12")}
-      />
-      <Entry
-        subtitle={i18n.t("pages.privacyPolicy.subtitle13")}
-        text={i18n.t("pages.privacyPolicy.text13")}
-      />
     </Box>
   );
 };

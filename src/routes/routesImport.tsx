@@ -56,9 +56,7 @@ export const RoutesI = {
     () => import("../pages/Auth/RecoverPassword")
   ),
   Policies: lazyWithRetryAndLoader(() => import("../pages/Policies")),
-  ShippingPolicies: lazyWithRetryAndLoader(
-    () => import("../pages/ShippingPolicies")
-  ),
+  TermsOfService: lazyWithRetryAndLoader(() => import("../pages/TermsOfUse")),
 
   Experience: lazyWithRetryAndLoader(() => import("../pages/Experience")),
   Complex: lazyWithRetryAndLoader(() => import("../pages/Complex")),

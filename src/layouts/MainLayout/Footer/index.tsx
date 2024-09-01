@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Container,
   Grid,
   Typography,
@@ -11,7 +10,6 @@ import {
 import Facebook from "../../../assets/Facebook.svg";
 import Instagram from "../../../assets/Insta.svg";
 import LivroReclamações from "../../../assets/Footer_Icon_Reclamações.png";
-import mainLogo from "../../../assets/Logo_Footer.webp";
 import Youtube from "../../../assets/Youtube.svg";
 import mail from "../../../assets/mail.svg";
 import map from "../../../assets/map.svg";
@@ -244,10 +242,12 @@ const Footer = ({ isUser }: Props) => {
                     {i18n.t("footer.privacyPolicy")}
                   </Typography>
                   <Typography
+                    onClick={() => navigate(ROUTE_PATHS.TERMS_OF_SERVICE)}
                     style={{
                       fontSize: "8px",
                       textDecoration: "underline",
                       textTransform: "uppercase",
+                      cursor: "pointer",
                     }}
                   >
                     {i18n.t("footer.privacyCookies")}
@@ -514,6 +514,7 @@ const Footer = ({ isUser }: Props) => {
                   {i18n.t("footer.privacyPolicy")}
                 </Typography>
                 <Typography
+                  onClick={() => navigate(ROUTE_PATHS.TERMS_OF_SERVICE)}
                   style={{
                     fontSize: "10px",
                     textDecoration: "underline",

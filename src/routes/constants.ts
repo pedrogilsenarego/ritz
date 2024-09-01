@@ -31,7 +31,7 @@ export const ROUTE_PATHS = {
   BUY_SUCCESS: "/success",
   RECOVER_PASSWORD: "/recover-password",
 
-  SHIPPING_POLICIES: "/shipping-policies",
+  TERMS_OF_SERVICE: "/terms-of-service",
   REFUND_POLICIE: "/refund-policies",
   MEMBERSHIP: "/membership",
   BLOG_: "/blog",
