@@ -87,7 +87,7 @@ export default function CustomizedAccordions({
             >
               {title}
             </Typography>
-            <Typography style={{ fontSize: "30px", fontWeight: 500 }}>
+            <Typography style={{ fontSize: "30px", fontWeight: 200 }}>
               {expanded ? "-" : "+"}
             </Typography>
           </div>

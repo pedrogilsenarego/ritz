@@ -21,12 +21,18 @@ const Membership = () => {
           style={{
             flexGrow: 1,
             display: "flex",
-            height: "40vh",
+            height: "120vh",
+            paddingTop: "120px",
+            paddingBottom: "300px",
+            marginBottom: "-300px",
             justifyContent: "center",
-            alignItems: "end",
+            alignItems: "center",
+            backgroundColor: "#454545",
           }}
         >
-          <Typography style={{ fontSize: "24px", fontWeight: 500 }}>
+          <Typography
+            style={{ fontSize: "24px", fontWeight: 500, color: "white" }}
+          >
             {i18n.t("comingSoon")}
           </Typography>
         </div>

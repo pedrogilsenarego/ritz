@@ -4,9 +4,12 @@ import { MAX_SCREEN } from "../../../../constants/screen";
 import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
 import { i18n } from "../../../../translations/i18n";
 import "./index.css";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../../routes/constants";
 
 const Journey = () => {
   const theme = useTheme();
+  const navigate = useNavigate();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const renderLaptop = () => {
     return (
@@ -71,6 +74,7 @@ const Journey = () => {
                 }}
               ></Typography>
               <ButtonNinja
+                onClick={() => navigate(ROUTE_PATHS.YOUR_EXPERIENCE)}
                 buttonStyles={{
                   backgroundColor: "rgba(255, 255, 255, 0.5)",
                   padding: "10px 50px",
@@ -157,6 +161,7 @@ const Journey = () => {
                 }}
               ></Typography>
               <ButtonNinja
+                onClick={() => navigate(ROUTE_PATHS.YOUR_EXPERIENCE)}
                 buttonStyles={{
                   backgroundColor: "rgba(255, 255, 255, 0.5)",
                   padding: "10px 50px",

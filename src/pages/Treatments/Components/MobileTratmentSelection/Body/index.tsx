@@ -13,6 +13,7 @@ import { queryKeys } from "../../../../../constants/queryKeys";
 import { handleFetchBodyPart } from "../../../../../actions/tretaments";
 import { ROUTE_PATHS } from "../../../../../routes/constants";
 import { useNavigate } from "react-router-dom";
+import { devMode } from "../../../../../constants/devConfig";
 
 export const Body = () => {
   const lang = useSelector<State, string>((state) => state.general.lang);
@@ -120,8 +121,13 @@ export const Body = () => {
           return (
             <Grid key={index} item xs={12}>
               <Typography
-                onClick={() =>
-                  navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id))
+                onClick={
+                  devMode
+                    ? () =>
+                        navigate(
+                          ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id)
+                        )
+                    : undefined
                 }
                 style={{
                   cursor: "pointer",

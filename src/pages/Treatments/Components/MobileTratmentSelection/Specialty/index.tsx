@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { State } from "../../../../../redux/types";
 import { ROUTE_PATHS } from "../../../../../routes/constants";
 import { useNavigate } from "react-router-dom";
+import { devMode } from "../../../../../constants/devConfig";
 
 export const Specialty = () => {
   const [selected, setSelected] = useState(1);
@@ -144,8 +145,13 @@ export const Specialty = () => {
           return (
             <Grid key={index} item xs={12}>
               <Typography
-                onClick={() =>
-                  navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id))
+                onClick={
+                  devMode
+                    ? () =>
+                        navigate(
+                          ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id)
+                        )
+                    : undefined
                 }
                 style={{
                   cursor: "pointer",

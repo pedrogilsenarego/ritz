@@ -38,6 +38,7 @@ const Escort = () => {
           style={{
             width: mobile ? "100%" : "50%",
             aspectRatio: 1,
+
             zIndex: 1,
             objectFit: "cover",
           }}
@@ -224,11 +225,9 @@ const Escort = () => {
                 <img
                   src={Buffet}
                   alt=""
-                  style={
-                    {
-                      // height: iconSize,
-                    }
-                  }
+                  style={{
+                    opacity: 0.6,
+                  }}
                   width="31px"
                 />
               </div>
@@ -268,6 +267,7 @@ const Escort = () => {
                   alt=""
                   style={{
                     width: "35px",
+                    opacity: 0.6,
                   }}
                 />
               </div>
@@ -307,6 +307,7 @@ const Escort = () => {
                   alt=""
                   style={{
                     width: "35px",
+                    opacity: 0.6,
                   }}
                 />
               </div>
@@ -347,6 +348,7 @@ const Escort = () => {
                   alt=""
                   style={{
                     width: "35px",
+                    opacity: 0.6,
                   }}
                 />
               </div>

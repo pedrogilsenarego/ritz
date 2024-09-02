@@ -124,6 +124,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
               style={{
                 display: "flex",
                 flexDirection: "column",
+
                 rowGap: "20px",
               }}
             >
@@ -147,27 +148,13 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                   {i18n.t("header.blog")}
                 </Typography>
               )}
-              <Typography
-                style={{
-                  marginTop: "30px",
-                  cursor: "pointer",
-                  fontSize: "14px",
-                  fontWeight: 400,
-                  letterSpacing: "1px",
-                  textAlign: "center",
-                  textTransform: "uppercase",
-                  color: "rgba(0, 0, 0, 0.7)",
-                }}
-                onClick={() => navigate(ROUTE_PATHS.BLOG_)}
-              >
-                {i18n.t("header.contacts")}
-              </Typography>
 
               <div
                 style={{
                   display: "flex",
                   rowGap: "10px",
-                  width: "100%",
+                  columnGap: "20px",
+
                   justifyContent: "space-between",
                 }}
               >
@@ -269,6 +256,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
         >
           <div
             style={{
+              marginTop: "30px",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -511,26 +499,13 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                       {i18n.t("header.blog")}
                     </Typography>
                   )}
-                  <Typography
-                    style={{
-                      marginTop: "20px",
-                      cursor: "pointer",
-                      fontSize: "13px",
-                      fontWeight: 500,
-                      textAlign: "center",
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
-                      color: "rgba(0, 0, 0, 0.7)",
-                    }}
-                    onClick={() => navigate(ROUTE_PATHS.BLOG_)}
-                  >
-                    {i18n.t("header.contacts")}
-                  </Typography>
 
                   <div
                     style={{
                       display: "flex",
                       rowGap: "10px",
+                      columnGap: "20px",
+                      marginBottom: "20px",
                       width: "100%",
                       justifyContent: "space-between",
                     }}

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { VscMenu } from "react-icons/vsc";
-
+import Mobile from "../../../assets/mobile.png";
 import { useNavigate } from "react-router-dom";
 
 import SearchIcon from "../../../assets/Icon_Search.svg";
@@ -244,16 +244,11 @@ const Header = () => {
                         borderRadius: "30px",
                       }}
                     >
-                      <Typography
-                        style={{
-                          color: "white",
-                          fontSize: mobile ? "10px" : "10px",
-                          textTransform: "uppercase",
-                          fontWeight: 500,
-                        }}
-                      >
-                        {i18n.t("footer.schedulle")}
-                      </Typography>
+                      <img
+                        src={Mobile}
+                        alt=""
+                        style={{ height: "18px", width: "18px" }}
+                      />
                     </Button>
                   }
                 />
@@ -384,16 +379,11 @@ const Header = () => {
                     borderRadius: "30px",
                   }}
                 >
-                  <Typography
-                    style={{
-                      color: "white",
-                      fontSize: mobile ? "7px" : "12px",
-                      textTransform: "uppercase",
-                      fontWeight: 500,
-                    }}
-                  >
-                    {i18n.t("footer.schedulle")}
-                  </Typography>
+                  <img
+                    src={Mobile}
+                    alt=""
+                    style={{ height: "18px", width: "18px" }}
+                  />
                 </Button>
               }
             />

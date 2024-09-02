@@ -223,7 +223,7 @@ const Complex = () => {
           {/* <Team /> */}
         </div>
       </Container>
-      <div style={{ marginTop: "200px" }}>
+      <div style={{ marginTop: mobile ? "100px" : "200px" }}>
         <SchedulleMembership />
       </div>
     </>
