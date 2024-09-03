@@ -712,7 +712,7 @@ export const content = {
 
         box3: "Un momento brillante",
 
-        box4: "Contáctanos para reservar tu cita </br> Nos vemos pronto",
+        box4: "Contáctanos para reservar tu cita </br> Nos vemos pronto.",
       },
 
       visitCardFinal: {

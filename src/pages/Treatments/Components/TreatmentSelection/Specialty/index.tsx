@@ -73,9 +73,9 @@ export const Specialty = () => {
               __html: title,
             }}
           ></Typography>
-          <div
+          {/* <div
             style={{ height: "2px", width: "50px", backgroundColor: "white" }}
-          />
+          /> */}
         </div>
       </div>
     );

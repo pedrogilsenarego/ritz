@@ -19,7 +19,7 @@ const Eyes = () => {
         position: "relative",
         height: mobile ? "796px" : "600px",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: mobile ? "center" : "start",
         alignItems: "center",
       }}
     >
@@ -39,7 +39,7 @@ const Eyes = () => {
         style={{
           marginTop: mobile ? undefined : "-15px",
           maxWidth: mobile ? 450 : undefined,
-          width: mobile ? "100%" : "100%",
+          width: mobile ? "100%" : "calc(100% - 250px)",
           display: "flex",
           flexDirection: "column",
           rowGap: "50px",
@@ -111,7 +111,7 @@ const Eyes = () => {
             <Typography
               style={{
                 marginTop: "20px",
-                marginLeft: "20px",
+                marginLeft: "50px",
                 fontSize: mobile ? "10px" : "12px",
                 letterSpacing: "1px",
                 lineHeight: "25px",

@@ -136,9 +136,12 @@ const ContainerC = () => {
           >
             <div
               style={{
-                width: "420px",
+                width: "480px",
                 textAlign: "center",
                 marginBottom: "80px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
               }}
             >
               <Typography
@@ -155,6 +158,7 @@ const ContainerC = () => {
               </Typography>
               <Typography
                 sx={{
+                  width: "420px",
                   marginTop: "80px",
                   fontSize: "13px",
                   letterSpacing: "1px",

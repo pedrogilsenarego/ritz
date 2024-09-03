@@ -127,9 +127,11 @@ const Treatments = () => {
                         : () => navigate(ROUTE_PATHS.TREATMENTS)
                     }
                     style={{
+                      fontSize: mobile ? "12px" : "16px",
                       color: "white",
                       position: "absolute",
                       textAlign: "center",
+                      textTransform: "uppercase",
                       textDecoration: "underline",
                       transform: `translateY(${index * 38 - 40}px)`,
                       opacity: hover ? 1 : 0,
@@ -188,12 +190,12 @@ const Treatments = () => {
           <Typography
             variant="h1"
             style={{
-              fontSize: "80px",
+              fontSize: "60px",
               letterSpacing: "8px",
               color: "rgba(202, 202, 202, 1)",
             }}
           >
-            EHTIQ <i>Blend</i>
+            EHTIQ <i>blend</i>
           </Typography>
         )}
       </div>
@@ -201,35 +203,35 @@ const Treatments = () => {
         style={{
           padding: mobile ? "20px 20px 80px 20px" : "50px 5% 100px 5%",
           justifyContent: "center",
-          marginTop: mobile ? "20px" : "20px",
+          marginTop: mobile ? "20px" : "50px",
           position: "relative",
         }}
       >
         <Grid container spacing={mobile ? "10px" : "20px"}>
           <Grid item xs={6} md={3}>
             <Tile
-              subtitles={["Tratamentos"]}
+              subtitles={[i18n.t("header.treatments")]}
               clinic={i18n.t("pages.home.box31")}
               image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
-              subtitles={["Tratamentos"]}
+              subtitles={[i18n.t("header.treatments")]}
               clinic={i18n.t("pages.home.box32")}
               image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
-              subtitles={["Tratamentos"]}
+              subtitles={[i18n.t("header.treatments")]}
               clinic={i18n.t("pages.home.box33")}
               image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
             />
           </Grid>
           <Grid item xs={6} md={3}>
             <Tile
-              subtitles={["Tratamentos"]}
+              subtitles={[i18n.t("header.treatments")]}
               clinic={i18n.t("pages.home.box34")}
               image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
             />

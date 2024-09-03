@@ -170,30 +170,35 @@ const Header = () => {
                   handleMenu(e);
                 }}
               />
-              <div>
-                <img
-                  src={SearchIcon}
-                  alt="logo"
-                  style={{
-                    width: "21px",
-                    cursor: "pointer",
-                    marginBottom: "-6px",
-                  }}
-                />
-              </div>
+              {devMode && (
+                <div>
+                  <img
+                    src={SearchIcon}
+                    alt="logo"
+                    style={{
+                      width: "21px",
+                      cursor: "pointer",
+                      marginBottom: "-6px",
+                    }}
+                  />
+                </div>
+              )}
             </Grid>
             <Grid
+              onClick={() => navigate(ROUTE_PATHS.HOME)}
               item
               xs={4}
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                cursor: "pointer",
+              }}
             >
               <img
-                onClick={() => navigate(ROUTE_PATHS.HOME)}
                 src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-7.webp`}
                 alt="logo"
                 style={{
                   width: "155px",
-                  cursor: "pointer",
                 }}
               />
             </Grid>
@@ -207,6 +212,23 @@ const Header = () => {
                 columnGap: "30px",
               }}
             >
+              {!devMode && (
+                <VisitCard
+                  customButton={
+                    <Button
+                      sx={{
+                        backgroundColor: "rgba(69, 69, 69, 1)",
+                        padding: "8px 20px",
+                        borderRadius: "30px",
+                      }}
+                    >
+                      <Typography style={{ color: "white" }}>
+                        {i18n.t("footer.schedulle")}
+                      </Typography>
+                    </Button>
+                  }
+                />
+              )}
               <Lang />
               {devMode ? (
                 <div>
@@ -235,23 +257,7 @@ const Header = () => {
                   )}
                 </div>
               ) : (
-                <VisitCard
-                  customButton={
-                    <Button
-                      sx={{
-                        backgroundColor: "rgba(69, 69, 69, 1)",
-                        padding: "8px 20px",
-                        borderRadius: "30px",
-                      }}
-                    >
-                      <img
-                        src={Mobile}
-                        alt=""
-                        style={{ height: "18px", width: "18px" }}
-                      />
-                    </Button>
-                  }
-                />
+                <></>
               )}
             </Grid>
           </Grid>

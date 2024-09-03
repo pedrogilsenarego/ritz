@@ -464,7 +464,7 @@ export const content = {
         box11: "Contacte-nos",
         box2: "Reserve",
         box3: "Um encontro brilhante",
-        box4: "Contacte-nos para reservar a sua marcação</br>Até breve",
+        box4: "Contacte-nos para reservar a sua marcação</br>Até breve.",
       },
       visitCardFinal: {
         personalAppointments: " Marcações Presenciais",

@@ -1,13 +1,16 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { i18n } from "../../translations/i18n";
 
 const Policies = () => {
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const Entry = ({ subtitle, text }: { subtitle: string; text: string }) => {
     return (
       <Box>
         <Typography
           style={{
-            textAlign: "center",
+            fontSize: mobile ? "14px" : undefined,
+            textAlign: "start",
             fontWeight: 800,
             marginTop: "90px",
           }}
@@ -17,6 +20,7 @@ const Policies = () => {
         <Typography
           dangerouslySetInnerHTML={{ __html: text }}
           style={{
+            fontSize: mobile ? "14px" : undefined,
             textAlign: "start",
             marginTop: "20px",
           }}
@@ -25,12 +29,12 @@ const Policies = () => {
     );
   };
   return (
-    <Box style={{ padding: "300px 20vw" }}>
+    <Box style={{ padding: mobile ? "150px 10vw" : "300px 20vw" }}>
       <Typography
         style={{
-          fontSize: "30px",
+          fontSize: mobile ? "20px" : "30px",
           fontWeight: 800,
-          textAlign: "center",
+          textAlign: "start",
           lineHeight: "49px",
         }}
       >
@@ -64,9 +68,9 @@ const Policies = () => {
       <Typography
         style={{
           marginTop: "200px",
-          fontSize: "30px",
+          fontSize: mobile ? "20px" : "30px",
           fontWeight: 800,
-          textAlign: "center",
+          textAlign: "start",
           lineHeight: "49px",
         }}
       >

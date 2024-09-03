@@ -112,6 +112,7 @@ export const Content = ({ setOpenPopup }: any) => {
                 {i18n.t("visitCard.box11")}
               </Typography>
               <div
+                onClick={() => (window.location.href = "mailto:INFO@EHTIQ.COM")}
                 style={{
                   display: "flex",
                   alignItems: "start",
@@ -170,13 +171,17 @@ export const Content = ({ setOpenPopup }: any) => {
             <Typography
               style={{
                 textTransform: "uppercase",
-                fontSize: "11px",
+                fontSize: "10px",
                 textAlign: "center",
+                fontWeight: 400,
               }}
             >
               {i18n.t("visitCard.box2")}
             </Typography>
-            <Typography variant="h1" style={{ fontSize: "28px" }}>
+            <Typography
+              variant="h1"
+              style={{ fontSize: "28px", fontWeight: 500 }}
+            >
               {i18n.t("visitCard.box3")}
             </Typography>
           </div>
@@ -228,6 +233,7 @@ export const Content = ({ setOpenPopup }: any) => {
             src={Cross}
             alt=""
             style={{
+              marginTop: "30px",
               width: "20px",
               height: "20px",
             }}
@@ -235,7 +241,7 @@ export const Content = ({ setOpenPopup }: any) => {
           <div
             style={{
               height: "100%",
-              marginTop: "120px",
+              marginTop: "94px",
             }}
           >
             <Typography
@@ -270,7 +276,7 @@ export const Content = ({ setOpenPopup }: any) => {
               height: "1px",
               width: "50%",
               backgroundColor: "#687479",
-              marginBottom: "150px",
+              marginBottom: "94px",
             }}
           />
         </div>
@@ -357,6 +363,7 @@ export const Content = ({ setOpenPopup }: any) => {
                 {i18n.t("visitCard.box11")}
               </Typography>
               <div
+                onClick={() => (window.location.href = "mailto:INFO@EHTIQ.COM")}
                 style={{
                   display: "flex",
                   alignItems: "start",
@@ -377,26 +384,28 @@ export const Content = ({ setOpenPopup }: any) => {
                   INFO@EHTIQ.COM
                 </Typography>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "start",
-                  columnGap: "4px",
-                }}
-              >
-                <img
-                  src={phone}
-                  alt=""
+              <a href="tel:+351215909009" style={{ textDecoration: "none" }}>
+                <div
                   style={{
-                    height: 12,
+                    display: "flex",
+                    alignItems: "start",
+                    columnGap: "4px",
                   }}
-                />
-                <Typography
-                  style={{ fontSize: "11px", textDecoration: "underline" }}
                 >
-                  +351 215 909 009
-                </Typography>
-              </div>
+                  <img
+                    src={phone}
+                    alt=""
+                    style={{
+                      height: 12,
+                    }}
+                  />
+                  <Typography
+                    style={{ fontSize: "11px", textDecoration: "underline" }}
+                  >
+                    +351 215 909 009
+                  </Typography>
+                </div>
+              </a>
             </div>
           </div>
         </div>
