@@ -68,8 +68,8 @@ export const Header = ({ setOpenPopup }: Props) => {
             src={Cross}
             alt=""
             style={{
-              width: "20px",
-              height: "20px",
+              width: "40px",
+              height: "40px",
             }}
           />
         </div>
@@ -102,8 +102,8 @@ export const Header = ({ setOpenPopup }: Props) => {
             src={Cross}
             alt=""
             style={{
-              width: "20px",
-              height: "20px",
+              width: "40px",
+              height: "40px",
             }}
           />
         </div>

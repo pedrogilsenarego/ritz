@@ -43,9 +43,9 @@ export const Organizer = ({
       >
         {data.results.map((item: any, index: number) => (
           <Typography
-            onClick={() =>
-              navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id))
-            }
+            // onClick={() =>
+            //   navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id))
+            // }
             key={index}
             style={{
               cursor: "pointer",
@@ -97,14 +97,14 @@ export const Organizer = ({
                             }}
                           >
                             <div
-                              onClick={() =>
-                                navigate(
-                                  ROUTE_PATHS.TREATMENT_ID.replace(
-                                    ":id",
-                                    result.id
-                                  )
-                                )
-                              }
+                              // onClick={() =>
+                              //   navigate(
+                              //     ROUTE_PATHS.TREATMENT_ID.replace(
+                              //       ":id",
+                              //       result.id
+                              //     )
+                              //   )
+                              // }
                               style={{
                                 backgroundColor: "rgba(255, 252, 248, 0.9)",
                                 display: "flex",
