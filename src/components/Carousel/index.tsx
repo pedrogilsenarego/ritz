@@ -331,7 +331,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     if (!draggable) return;
     if (slidingRef.current) return;
     if (timer.current) clearTimeout(timer.current);
-    //setTouched(true);
+    setTouched(true);
     const touch = e.touches[0];
     mouseDownClientXRef.current =
       orientation === "vertical" ? touch.clientY : touch.clientX;
@@ -362,6 +362,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
   };
 
   const handleTouchEnd = (e: any) => {
+    setTouched(false);
     if (!draggable) return;
     if (mouseMoveClientXRef.current === 0) {
       mouseDownClientXRef.current = -1;
