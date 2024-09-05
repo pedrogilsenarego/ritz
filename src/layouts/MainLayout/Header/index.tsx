@@ -198,6 +198,7 @@ const Header = () => {
                 src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-7.webp`}
                 alt="logo"
                 style={{
+                  objectFit: "contain",
                   width: "155px",
                 }}
               />
@@ -219,10 +220,20 @@ const Header = () => {
                       sx={{
                         backgroundColor: "rgba(69, 69, 69, 1)",
                         padding: "8px 20px",
+
                         borderRadius: "30px",
                       }}
                     >
-                      <Typography style={{ color: "white" }}>
+                      <Typography
+                        style={{
+                          color: "#FEFEFE",
+                          textTransform: "uppercase",
+                          fontSize: "11px",
+                          fontWeight: 500,
+                          letterSpacing: "1px",
+                          lineHeight: "14px",
+                        }}
+                      >
                         {i18n.t("footer.schedulle")}
                       </Typography>
                     </Button>
@@ -342,18 +353,20 @@ const Header = () => {
             zIndex: 1000,
             position: "fixed",
             justifyContent: "space-between",
-            padding: "15px 35px",
+            padding: "15px 20px",
 
             width: "100%",
             background:
               "linear-gradient(90deg, rgba(220, 207, 190, 0.7) 0%, #DCCFBE 39.5%, #DCCFBE 61.5%, rgba(224, 211, 193, 0.7) 100%)",
           }}
         >
-          <VscMenu
-            size="20px"
-            color={mainColors.primary[400]}
-            onClick={() => setMobileDrawer(true)}
-          />
+          <Box width={"15%"}>
+            <VscMenu
+              size="20px"
+              color={mainColors.primary[400]}
+              onClick={() => setMobileDrawer(true)}
+            />
+          </Box>
           <img
             onClick={() => navigate(ROUTE_PATHS.HOME)}
             src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-7.webp`}
@@ -380,15 +393,16 @@ const Header = () => {
               customButton={
                 <Button
                   sx={{
+                    width: "15%",
                     backgroundColor: "rgba(69, 69, 69, 1)",
-                    padding: "5px 8px",
+                    padding: "8px 0px",
                     borderRadius: "30px",
                   }}
                 >
                   <img
                     src={Mobile}
                     alt=""
-                    style={{ height: "18px", width: "18px" }}
+                    style={{ height: "15px", width: "15px" }}
                   />
                 </Button>
               }

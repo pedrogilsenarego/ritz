@@ -51,8 +51,9 @@ const Treatments = () => {
           <div
             style={{
               position: "absolute",
+              top: "25%",
               width: "100%",
-              height: "100%",
+              height: "50%",
               borderRadius: mobile ? "5px" : "0px",
               transition: "all ease-in-out 0.5s",
               backgroundColor: !hover
