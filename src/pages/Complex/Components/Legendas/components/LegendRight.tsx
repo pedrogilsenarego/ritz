@@ -35,7 +35,8 @@ export const LegendRight = (props: Props) => {
               inView ? `${TEXT_SPEED}s` : "0s"
             } ease-in-out ${inView ? `${TEXT_DELAY}s` : "0s"}`,
             color: props.color,
-            marginLeft: "20px",
+            marginRight: "20px",
+            textAlign: "end",
             fontSize: "18px",
             lineHeight: "20px",
             letterSpacing: "1px",
@@ -98,7 +99,8 @@ export const LegendRight = (props: Props) => {
               variant="h1"
               style={{
                 color: props.color,
-                marginLeft: "10px",
+
+                textAlign: "right",
                 marginRight: "10px",
                 fontSize: "15px",
                 opacity: inView ? 1 : 0,
