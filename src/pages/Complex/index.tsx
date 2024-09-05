@@ -45,7 +45,7 @@ const Complex = () => {
             height: "140px",
             right: 0,
             bottom: mobile ? "40px" : "50px",
-            width: "376px",
+            width: mobile ? "100%" : "376px",
             backgroundColor: mobile
               ? "rgba(155, 129, 109, 0.4)"
               : "rgba(248, 247, 247, 0.6)",

@@ -335,6 +335,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     const touch = e.touches[0];
     mouseDownClientXRef.current =
       orientation === "vertical" ? touch.clientY : touch.clientX;
+    setTouched(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
