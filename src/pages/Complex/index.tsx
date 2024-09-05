@@ -37,7 +37,21 @@ const Complex = () => {
 
   return (
     <>
-      <div style={{ marginTop: mobile ? "0px" : "0px" }}>
+      <div style={{ marginTop: mobile ? "0px" : "0px", position: "relative" }}>
+        <div
+          style={{
+            position: "absolute",
+
+            height: "140px",
+            right: 0,
+            bottom: mobile ? "-150px" : "50px",
+            width: "376px",
+            backgroundColor: mobile
+              ? "rgba(155, 129, 109, 0.4)"
+              : "rgba(248, 247, 247, 0.6)",
+            zIndex: 1000,
+          }}
+        />
         <Carousel
           navButton={mobile ? false : false}
           width={"100%"}
@@ -72,9 +86,7 @@ const Complex = () => {
                   {!mobile && (
                     <div
                       style={{
-                        backgroundColor: mobile
-                          ? "rgba(155, 129, 109, 0.4)"
-                          : "rgba(248, 247, 247, 0.6)",
+                        backgroundColor: "transparent",
                         display: "flex",
                         position: mobile ? "unset" : "absolute",
                         width: "376px",
@@ -85,6 +97,7 @@ const Complex = () => {
                         justifyContent: "center",
                         alignItems: "center",
                         rowGap: "20px",
+                        zIndex: 1100,
                       }}
                     >
                       <Typography
