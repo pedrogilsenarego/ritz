@@ -106,10 +106,64 @@ const Legendas = () => {
               backgroundPosition: "center center",
             }}
           ></div>
-          <LegendRight
-            color="rgba(113, 120, 75, 1)"
-            label={i18n.t("pages.clinic.box32")}
-          />
+          <LegendRight color="rgba(113, 120, 75, 1)" label={i18n.t("pages.clinic.box32")}/>
+          <div
+            style={{
+              width: "100%",
+              height: "150px",
+              display: "flex",
+              paddingTop: "20px",
+              justifyContent: "end",
+              backgroundColor: "rgba(216, 204, 191, 1)",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+
+                height: "fit-content",
+              }}
+            >
+              <Typography
+                variant="h1"
+                style={{
+                  color: "rgba(113, 120, 75, 1)",
+                  marginLeft: "10px",
+                  marginRight: "10px",
+                  fontSize: "15px",
+
+                  letterSpacing: "1px",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: i18n.t("pages.clinic.box32"),
+                }}
+              ></Typography>
+              <div
+                style={{
+                  display: "flex",
+                  paddingTop: "6px",
+                  alignItems: "center",
+                  height: "fit-content",
+                }}
+              >
+                <div
+                  style={{
+                    height: "6px",
+                    width: "6px",
+                    borderRadius: "3px",
+                    backgroundColor: "rgba(113, 120, 75, 1)",
+                  }}
+                />
+                <div
+                  style={{
+                    height: "1px",
+                    backgroundColor: "rgba(113, 120, 75, 1)",
+                    width: "100px",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
         <div
           style={{ display: "flex", width: "100%", flexDirection: "column" }}

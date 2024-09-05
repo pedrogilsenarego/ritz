@@ -1,5 +1,6 @@
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useInView } from "react-intersection-observer";
+import { LINE_SPEED, TEXT_DELAY, TEXT_SPEED } from "./constants";
 
 type Props = {
   color: string;
@@ -32,7 +33,7 @@ export const Legend = (props: Props) => {
             height: "1px",
             backgroundColor: props.color,
             width: !inView ? 0 : "171px",
-            transition: "width 0.7s ease-in-out",
+            transition: `width ${LINE_SPEED}s ease-in-out`,
           }}
         />
         <div
@@ -47,9 +48,9 @@ export const Legend = (props: Props) => {
           variant="h1"
           style={{
             opacity: inView ? 1 : 0,
-            transition: `opacity ${inView ? "2s" : "0s"} ease-in-out ${
-              inView ? "0.5s" : "0s"
-            }`,
+            transition: `opacity ${
+              inView ? `${TEXT_SPEED}s` : "0s"
+            } ease-in-out ${inView ? `${TEXT_DELAY}s` : "0s"}`,
             color: props.color,
             marginLeft: "20px",
             fontSize: "18px",
@@ -94,7 +95,7 @@ export const Legend = (props: Props) => {
                 height: "1px",
                 backgroundColor: props.color,
                 width: !inView ? 0 : "100px",
-                transition: "width 0.7s ease-in-out",
+                transition: `width ${LINE_SPEED}s ease-in-out`,
               }}
             />
             <div
@@ -114,9 +115,9 @@ export const Legend = (props: Props) => {
               marginRight: "10px",
               fontSize: "15px",
               opacity: inView ? 1 : 0,
-              transition: `opacity ${inView ? "2s" : "0s"} ease-in-out ${
-                inView ? "0.5s" : "0s"
-              }`,
+              transition: `opacity ${
+                inView ? `${TEXT_SPEED}s` : "0s"
+              } ease-in-out ${inView ? `${TEXT_DELAY}s` : "0s"}`,
               letterSpacing: "1px",
             }}
             dangerouslySetInnerHTML={{
