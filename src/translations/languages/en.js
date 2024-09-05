@@ -128,6 +128,7 @@ export const content = {
           box21:
             "Elegance and innovation, where each space is</br> a celebration of aesthetic.",
           box31: "Post-Surgical & Wellness Waiting Room by</br> Nany Mota",
+          box312: "Post-Surgical & Wellness Waiting Room by Nany Mota",
           box32: "Access to Dental and</br> Post-Surgical Units",
           box33: "Private areas with premium finishes.",
           box41: "Eyes On",

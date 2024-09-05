@@ -190,6 +190,7 @@ export const content = {
           box21:
             "Elegância e inovação, onde cada espaço é uma</br> celebração da estética.",
           box31: "Sala de Espera Pós-Cirúrgico & Bem-estar by</br> Nany Mota",
+          box312: "Sala de Espera Pós-Cirúrgico & Bem-estar by Nany Mota",
           box32: "Acesso às Unidades Dentária e</br> Pós-Cirúrgica",
           box33: "Áreas Privativas com os melhores acabamentos",
           box41: "De Olhos",

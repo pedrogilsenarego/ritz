@@ -91,7 +91,7 @@ const Legendas = () => {
           ></div>
           <Legend
             color="rgba(200, 187, 161, 1)"
-            label={i18n.t("pages.clinic.box31")}
+            label={i18n.t("pages.clinic.box312")}
           />
         </div>
         <div
@@ -106,7 +106,10 @@ const Legendas = () => {
               backgroundPosition: "center center",
             }}
           ></div>
-          <LegendRight color="rgba(113, 120, 75, 1)" label={i18n.t("pages.clinic.box32")}/>
+          <LegendRight
+            color="rgba(113, 120, 75, 1)"
+            label={i18n.t("pages.clinic.box32")}
+          />
           <div
             style={{
               width: "100%",

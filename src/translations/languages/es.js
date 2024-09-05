@@ -367,6 +367,7 @@ export const content = {
 
           box31:
             "Sala de espera Postquirúrgica y de Bienestar by </br> Nany Mota",
+          box312: "Sala de espera Postquirúrgica y de Bienestar by Nany Mota",
 
           box32: "Acceso a las Unidades Dental y </br> Postquirúrgica",
 
