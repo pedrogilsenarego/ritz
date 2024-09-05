@@ -44,7 +44,7 @@ const Complex = () => {
 
             height: "140px",
             right: 0,
-            bottom: mobile ? "-150px" : "50px",
+            bottom: mobile ? "40px" : "50px",
             width: "376px",
             backgroundColor: mobile
               ? "rgba(155, 129, 109, 0.4)"
@@ -91,12 +91,15 @@ const Complex = () => {
                         position: mobile ? "unset" : "absolute",
                         width: "376px",
                         right: 0,
+                        height: "140px",
+
                         bottom: mobile ? "-150px" : "50px",
-                        padding: "30px",
+                        padding: "20px",
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
-                        rowGap: "20px",
+
+                        rowGap: "10px",
                         zIndex: 1100,
                       }}
                     >
@@ -131,19 +134,19 @@ const Complex = () => {
                   <>
                     <div
                       style={{
-                        backgroundColor: "rgba(155, 129, 109, 0.4)",
+                        backgroundColor: "transparent",
 
                         display: "flex",
                         position: "unset",
-                        height: "149px",
+                        height: "140px",
                         width: "100%",
                         right: 0,
                         bottom: "-150px",
-                        padding: "30px",
+                        padding: "20px",
                         flexDirection: "column",
                         justifyContent: "start",
                         alignItems: "center",
-                        rowGap: "20px",
+                        rowGap: "10px",
                       }}
                     >
                       <Typography

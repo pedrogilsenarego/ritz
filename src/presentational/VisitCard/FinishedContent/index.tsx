@@ -67,8 +67,8 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
             top: 30,
             cursor: "pointer",
             right: 40,
-            width: "20px",
-            height: "20px",
+            width: "40px",
+            height: "40px",
           }}
         />
         <div
@@ -224,8 +224,8 @@ export const FinishedContent = ({ setOpenPopup }: any) => {
             src={Cross}
             alt=""
             style={{
-              width: "20px",
-              height: "20px",
+              width: "40px",
+              height: "40px",
             }}
           />
           <div style={{ marginTop: "20px" }}>{renderScreenComponent()}</div>

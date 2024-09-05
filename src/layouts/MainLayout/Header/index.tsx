@@ -190,6 +190,7 @@ const Header = () => {
               xs={4}
               style={{
                 display: "flex",
+                zIndex: 1000,
                 justifyContent: "center",
                 cursor: "pointer",
               }}

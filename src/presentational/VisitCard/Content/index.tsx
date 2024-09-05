@@ -31,8 +31,8 @@ export const Content = ({ setOpenPopup }: any) => {
             top: 30,
             cursor: "pointer",
             right: 40,
-            width: "20px",
-            height: "20px",
+            width: "40px",
+            height: "40px",
           }}
         />
         <div
@@ -234,8 +234,8 @@ export const Content = ({ setOpenPopup }: any) => {
             alt=""
             style={{
               marginTop: "30px",
-              width: "20px",
-              height: "20px",
+              width: "40px",
+              height: "40px",
             }}
           />
           <div
