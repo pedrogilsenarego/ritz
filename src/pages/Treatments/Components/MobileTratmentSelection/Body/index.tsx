@@ -51,6 +51,8 @@ export const Body = () => {
               height: "127px",
               borderRadius: "50%",
               backgroundColor: "rgba(255, 255, 255, 0.15)",
+              backdropFilter: "blur(8px)", // Apply blur to the background
+              WebkitBackdropFilter: "blur(8px)", // Safari support
             }}
           >
             <img src={icon} alt="" />
@@ -86,7 +88,7 @@ export const Body = () => {
           justifyContent: "center",
 
           width: "80%",
-          height: "235px",
+          aspectRatio: 1.2,
           objectFit: "contain",
           backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-8-Mobile.webp)`,
           backgroundPosition: "center",
@@ -111,8 +113,8 @@ export const Body = () => {
           onItemClick={(item) => console.log(item)}
         >
           <ButtonLogo icon={Face} title={i18n.t("pages.body.box1")} />
-          <ButtonLogo icon={Smile} title={i18n.t("pages.body.box2")} />
-          <ButtonLogo icon={Bodi} title={i18n.t("pages.body.box3")} />
+          <ButtonLogo icon={Bodi} title={i18n.t("pages.body.box2")} />
+          <ButtonLogo icon={Smile} title={i18n.t("pages.body.box3")} />
           <ButtonLogo icon={Health} title={i18n.t("pages.body.box4")} />
         </Carousel>
       </div>

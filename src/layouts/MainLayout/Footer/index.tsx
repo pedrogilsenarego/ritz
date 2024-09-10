@@ -98,6 +98,7 @@ const Footer = ({ isUser }: Props) => {
                     }
                     alt=""
                     style={{
+                      cursor: "pointer",
                       width: "23px",
                     }}
                   />
@@ -111,6 +112,7 @@ const Footer = ({ isUser }: Props) => {
                       )
                     }
                     style={{
+                      cursor: "pointer",
                       width: "23px",
                     }}
                   />
@@ -124,6 +126,7 @@ const Footer = ({ isUser }: Props) => {
                     src={Youtube}
                     alt=""
                     style={{
+                      cursor: "pointer",
                       width: "23px",
                     }}
                   />
@@ -265,6 +268,7 @@ const Footer = ({ isUser }: Props) => {
                   rowGap: "10px",
                   justifyContent: "end",
                   height: "100%",
+                  cursor: "pointer",
                 }}
                 onClick={() =>
                   window.open("https://www.lineaagency.com/", "_blank")

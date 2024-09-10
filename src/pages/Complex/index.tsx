@@ -64,7 +64,7 @@ const Complex = () => {
           tweenAnime="ease"
           dotsActivedColor="rgba(120, 100, 78, 1)"
           dotsColor="rgba(217, 217, 217, 1)"
-          dotYOffset={10}
+          dotYOffset={-10}
           dragThreshold={mobile ? 10 : undefined}
           onItemClick={(item) => console.log(item)}
         >

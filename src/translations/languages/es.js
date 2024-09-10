@@ -92,7 +92,7 @@ export const content = {
 
           box1: "Nuestra promesa</br> de bienestar",
 
-          box2: "Se refiere a algo que es temporal, que sólo existe durante un breve período de tiempo hasta que cambia o llega a su fin.</br></br> Este término se utiliza a menudo para describir fenómenos, experiencias o condiciones, como los seres humanos.",
+          box2: "La eterna búsqueda humana del bienestar es una misión que abarca la historia de nuestra existencia.</br></br>Es la búsqueda de un estado óptimo de salud y bienestar, no sólo físico, sino también emocional y espiritual.",
 
           box3: "",
 

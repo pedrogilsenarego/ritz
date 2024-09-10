@@ -115,7 +115,7 @@ export const ExpertAdvice = () => {
           <Header setOpenPopup={setOpenPopup} />
           <div
             style={{
-              marginTop: "60px",
+              marginTop: "50px",
               border: "solid 1px transparent",
               maxHeight: mobile ? undefined : "calc(95vh - 290px)",
               overflow: "scroll",

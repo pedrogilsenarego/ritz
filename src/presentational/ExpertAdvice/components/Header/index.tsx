@@ -83,7 +83,7 @@ export const Header = ({ setOpenPopup }: Props) => {
           display: "flex",
           flexDirection: "column",
           width: "100%",
-          rowGap: "100px",
+          rowGap: "40px",
           justifyContent: "space-between",
         }}
       >
@@ -104,6 +104,7 @@ export const Header = ({ setOpenPopup }: Props) => {
             style={{
               width: "40px",
               height: "40px",
+              aspectRatio: 1,
             }}
           />
         </div>

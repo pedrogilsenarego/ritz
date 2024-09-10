@@ -127,7 +127,7 @@ export const Base = ({ setMode }: Props) => {
   };
   const renderMobile = () => {
     return (
-      <div style={{ marginTop: "80px" }}>
+      <div style={{ marginTop: "40px" }}>
         <Typography
           style={{
             textAlign: "center",

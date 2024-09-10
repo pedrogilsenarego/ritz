@@ -100,6 +100,7 @@ export default function CustomizedAccordions({
         <AccordionDetails
           style={{
             padding: 0,
+            borderTop: "none",
           }}
         >
           {children}

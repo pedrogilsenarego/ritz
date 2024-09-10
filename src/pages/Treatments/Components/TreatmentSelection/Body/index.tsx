@@ -52,6 +52,8 @@ export const Body = () => {
             height: "127px",
             borderRadius: "50%",
             backgroundColor: "rgba(255, 255, 255, 0.15)",
+            backdropFilter: "blur(8px)", // Apply blur to the background
+            WebkitBackdropFilter: "blur(8px)", // Safari support
           }}
         >
           <img src={icon} alt="" />
@@ -96,14 +98,14 @@ export const Body = () => {
           </Grid>
           <Grid item xs={6} xl={3}>
             <ButtonLogo
-              icon={Smile}
+              icon={Bodi}
               title={i18n.t("pages.body.box2")}
               index={1}
             />
           </Grid>
           <Grid item xs={6} xl={3}>
             <ButtonLogo
-              icon={Bodi}
+              icon={Smile}
               title={i18n.t("pages.body.box3")}
               index={2}
             />
@@ -117,7 +119,7 @@ export const Body = () => {
           </Grid>
         </Grid>
       </div>
-      <Grid container mt={"95px"} columnSpacing={2} rowSpacing={6}>
+      <Grid container mt={"30px"} columnSpacing={2} rowSpacing={6}>
         {data?.results?.map((item: any, index: number) => {
           return (
             <Grid key={index} item xs={6}>

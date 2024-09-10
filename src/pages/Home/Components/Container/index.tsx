@@ -42,14 +42,14 @@ const ContainerC = () => {
               height: "100%",
               display: "flex",
               justifyContent: "center",
-              alignItems: "end",
+              alignItems: "start",
             }}
           >
             <div
               style={{
                 width: "420px",
                 textAlign: "center",
-                marginBottom: "30px",
+                marginTop: "230px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",

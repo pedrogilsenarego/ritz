@@ -51,7 +51,7 @@ const Home = () => {
         <Treatments />
       </div>
 
-      <div style={{ marginTop: "200px" }}>
+      <div style={{ marginTop: "150px" }}>
         <Container
           style={{
             marginTop: mobile ? "50px" : "130px",
