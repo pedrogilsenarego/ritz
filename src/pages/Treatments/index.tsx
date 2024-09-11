@@ -16,7 +16,7 @@ const Treatments = () => {
   const renderLaptop = () => {
     return (
       <>
-        <div style={{ marginTop: mobile ? "120px" : "0px" }}>
+        <div style={{ marginTop: mobile ? "121px" : "0px" }}>
           <InitialImage logo text={i18n.t("pages.treatments.box01")} />
         </div>
         <div style={{ marginTop: mobile ? "120px" : "0px" }}>
