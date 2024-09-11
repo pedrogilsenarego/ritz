@@ -261,7 +261,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
               justifyContent: "space-between",
               alignItems: "center",
               width: "100%",
-              padding: "0px 20px",
+              padding: "0px 32px",
 
               height: "50px",
             }}
@@ -292,6 +292,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
               src={Login}
               alt="logo"
               style={{
+                opacity: devMode ? 1 : 0,
                 width: "15px",
                 cursor: "pointer",
               }}
@@ -317,7 +318,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                   justifyContent: "center",
                   columnGap: "10px",
                   alignItems: "center",
-                  marginTop: "50px",
+                  marginTop: "0px",
                 }}
               >
                 <Typography
@@ -547,6 +548,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                     display: "flex",
                     flexDirection: "column",
                     rowGap: "15px",
+
                     alignItems: "center",
                   }}
                 >
@@ -560,6 +562,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                   <Typography
                     className={"text"}
                     style={{
+                      marginTop: "30px",
                       cursor: "pointer",
                       fontSize: "10px",
                       fontWeight: 500,

@@ -411,6 +411,7 @@ const Header = () => {
           )}
         </Box>
         <DrawerMine
+          clearBackground
           fullWidth
           fullHeight
           position="left"
