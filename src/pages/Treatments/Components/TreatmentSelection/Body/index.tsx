@@ -1,8 +1,8 @@
 import { Grid, Typography } from "@mui/material";
-import Face from "../../../../../assets/image 45.svg";
-import Smile from "../../../../../assets/image 43.svg";
-import Bodi from "../../../../../assets/image 46.svg";
-import Health from "../../../../../assets/image 169.svg";
+import Face from "../../../../../assets/ICON Concerns 1.png";
+import Smile from "../../../../../assets/ICON Concerns 2.png";
+import Bodi from "../../../../../assets/ICON Concerns 3.png";
+import Health from "../../../../../assets/ICON Concerns 4.png";
 import { i18n } from "../../../../../translations/i18n";
 import { State } from "../../../../../redux/types";
 import { useSelector } from "react-redux";
@@ -56,7 +56,11 @@ export const Body = () => {
             WebkitBackdropFilter: "blur(8px)", // Safari support
           }}
         >
-          <img src={icon} alt="" />
+          <img
+            src={icon}
+            alt=""
+            style={{ height: "50%", objectFit: "contain" }}
+          />
         </div>
         <Typography
           style={{
@@ -77,40 +81,40 @@ export const Body = () => {
         style={{
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
+          justifyContent: "space-between",
           marginTop: "35px",
-          padding: "40px 116px",
+          padding: "40px 35px",
           width: "100%",
-
+          backgroundColor: "#D9D1C8",
           objectFit: "cover",
-          backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-8.webp)`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
+          // backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-8.webp)`,
+          // backgroundPosition: "center",
+          // backgroundSize: "cover",
         }}
       >
         <Grid container columnSpacing="10px" style={{ display: "flex" }}>
-          <Grid item xs={6} xl={3}>
+          <Grid item xs={6} lg={3}>
             <ButtonLogo
               icon={Face}
               title={i18n.t("pages.body.box1")}
               index={0}
             />
           </Grid>
-          <Grid item xs={6} xl={3}>
+          <Grid item xs={6} lg={3}>
             <ButtonLogo
               icon={Bodi}
               title={i18n.t("pages.body.box2")}
               index={1}
             />
           </Grid>
-          <Grid item xs={6} xl={3}>
+          <Grid item xs={6} lg={3}>
             <ButtonLogo
               icon={Smile}
               title={i18n.t("pages.body.box3")}
               index={2}
             />
           </Grid>
-          <Grid item xs={6} xl={3}>
+          <Grid item xs={6} lg={3}>
             <ButtonLogo
               icon={Health}
               title={i18n.t("pages.body.box4")}
@@ -119,7 +123,7 @@ export const Body = () => {
           </Grid>
         </Grid>
       </div>
-      <Grid container mt={"30px"} columnSpacing={2} rowSpacing={6}>
+      <Grid container mt={"30px"} columnSpacing={2} rowSpacing={3}>
         {data?.results?.map((item: any, index: number) => {
           return (
             <Grid key={index} item xs={6}>
@@ -134,9 +138,10 @@ export const Body = () => {
                 }
                 style={{
                   cursor: "pointer",
-                  fontSize: "20px",
+                  fontSize: "17px",
                   fontWeight: 400,
                   paddingLeft: "10px",
+                  textDecoration: "underline",
                 }}
               >
                 {lang === "EN"

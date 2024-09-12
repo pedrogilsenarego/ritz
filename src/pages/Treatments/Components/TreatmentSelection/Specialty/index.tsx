@@ -118,7 +118,7 @@ export const Specialty = () => {
           }
         />
       </div>
-      <Grid container mt={"30px"} columnSpacing={2} rowSpacing={6}>
+      <Grid container mt={"30px"} columnSpacing={2} rowSpacing={3}>
         {data?.results?.map((item: any, index: number) => {
           return (
             <Grid key={index} item xs={6}>
@@ -133,9 +133,10 @@ export const Specialty = () => {
                 }
                 style={{
                   cursor: "pointer",
-                  fontSize: "20px",
+                  fontSize: "17px",
                   fontWeight: 400,
                   paddingLeft: "10px",
+                  textDecoration: "underline",
                 }}
               >
                 {lang === "EN" ? item.title_en : item.title_pt}

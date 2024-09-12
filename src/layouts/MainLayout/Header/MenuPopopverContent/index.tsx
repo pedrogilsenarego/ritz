@@ -23,7 +23,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
   const { changeLanguage } = useChangeLang();
   const renderLaptop = () => {
     return (
-      <div style={{ padding: "12px", height: "100vh" }}>
+      <div style={{ padding: "12px", height: "100vh", background: "white" }}>
         <div
           style={{
             border: "solid 1px black",

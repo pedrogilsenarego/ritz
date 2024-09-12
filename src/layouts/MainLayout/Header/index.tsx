@@ -348,14 +348,13 @@ const Header = () => {
     return (
       <>
         <Box
-          display="flex"
           alignItems="center"
           style={{
             zIndex: 1000,
             position: "fixed",
             justifyContent: "space-between",
             padding: "15px 20px",
-
+            display: mobileDrawer ? "none" : "flex",
             width: "100%",
             background:
               "linear-gradient(90deg, rgba(220, 207, 190, 0.7) 0%, #DCCFBE 39.5%, #DCCFBE 61.5%, rgba(224, 211, 193, 0.7) 100%)",

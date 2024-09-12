@@ -1,8 +1,8 @@
 import { Grid, Typography } from "@mui/material";
-import Face from "../../../../../assets/image 45.svg";
-import Smile from "../../../../../assets/image 43.svg";
-import Bodi from "../../../../../assets/image 46.svg";
-import Health from "../../../../../assets/image 169.svg";
+import Face from "../../../../../assets/ICON Concerns 1.png";
+import Smile from "../../../../../assets/ICON Concerns 2.png";
+import Bodi from "../../../../../assets/ICON Concerns 3.png";
+import Health from "../../../../../assets/ICON Concerns 4.png";
 import { i18n } from "../../../../../translations/i18n";
 import Carousel from "../../../../../components/Carousel";
 import { useSelector } from "react-redux";
@@ -55,7 +55,11 @@ export const Body = () => {
               WebkitBackdropFilter: "blur(8px)", // Safari support
             }}
           >
-            <img src={icon} alt="" />
+            <img
+              src={icon}
+              alt=""
+              style={{ height: "50%", objectFit: "contain" }}
+            />
           </div>
           <Typography
             style={{
@@ -90,9 +94,10 @@ export const Body = () => {
           width: "80%",
           aspectRatio: 1.2,
           objectFit: "contain",
-          backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-8-Mobile.webp)`,
-          backgroundPosition: "center",
-          backgroundSize: "cover",
+          backgroundColor: "#D9D1C8",
+          // backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-8-Mobile.webp)`,
+          // backgroundPosition: "center",
+          // backgroundSize: "cover",
         }}
       >
         <Carousel
