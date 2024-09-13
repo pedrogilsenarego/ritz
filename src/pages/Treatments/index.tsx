@@ -28,7 +28,7 @@ const Treatments = () => {
         <div style={{ marginTop: "300px" }}>
           <TreatmentSelection />
         </div>
-        <div style={{ marginTop: "150px" }}>
+        <div style={{ marginTop: "80px" }}>
           <SchedulleMembership />
         </div>
       </>

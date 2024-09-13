@@ -241,7 +241,9 @@ const Header = () => {
                   }
                 />
               )}
-              <Lang />
+              <div style={{ zIndex: 1000 }}>
+                <Lang />
+              </div>
               {devMode ? (
                 <div>
                   {userQuery.data && !userQuery.isLoading ? (

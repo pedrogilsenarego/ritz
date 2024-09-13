@@ -151,7 +151,7 @@ const InitialSection = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            marginTop: "120px",
+            marginTop: "calc(min(8vw, 120px))",
           }}
         >
           <div style={{ display: "flex" }}>
@@ -182,7 +182,7 @@ const InitialSection = () => {
             </div>
           </div>
         </div>
-        <div style={{ marginTop: "120px" }} />
+        <div style={{ marginTop: "calc(min(10vw, 120px))" }} />
         <TitleElement
           title={i18n.t("pages.treatments.box9")}
           text={i18n.t("pages.treatments.box10")}
@@ -191,7 +191,7 @@ const InitialSection = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            marginTop: "120px",
+            marginTop: "calc(min(10vw, 120px))",
           }}
         >
           <div style={{ display: "flex" }}>
@@ -227,7 +227,7 @@ const InitialSection = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            marginTop: "120px",
+            marginTop: "calc(min(10vw, 120px))",
           }}
         >
           <div style={{ display: "flex" }}>
@@ -265,7 +265,7 @@ const InitialSection = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            marginTop: "100px",
+            marginTop: "calc(min(10vw, 120px))",
           }}
         >
           <div style={{ display: "flex" }}>

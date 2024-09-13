@@ -54,7 +54,7 @@ const Treatments = () => {
               top: "25%",
               width: "100%",
               height: "50%",
-              borderRadius: mobile ? "5px" : "0px",
+              borderRadius: "0px",
               transition: "all ease-in-out 0.5s",
               backgroundColor: !hover
                 ? "rgba(181, 174, 166, 0.4)"
@@ -109,7 +109,7 @@ const Treatments = () => {
             />
             <div
               style={{
-                marginTop: "40px",
+                marginTop: mobile ? "10px" : "40px",
                 display: "flex",
                 flexDirection: "column",
 
@@ -128,7 +128,7 @@ const Treatments = () => {
                         : () => navigate(ROUTE_PATHS.TREATMENTS)
                     }
                     style={{
-                      fontSize: mobile ? "12px" : "16px",
+                      fontSize: mobile ? "12px" : "12px",
                       color: "white",
                       position: "absolute",
                       textAlign: "center",

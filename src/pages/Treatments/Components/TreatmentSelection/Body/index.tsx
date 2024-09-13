@@ -93,28 +93,28 @@ export const Body = () => {
         }}
       >
         <Grid container columnSpacing="10px" style={{ display: "flex" }}>
-          <Grid item xs={6} lg={3}>
+          <Grid item xs={6} md={3}>
             <ButtonLogo
               icon={Face}
               title={i18n.t("pages.body.box1")}
               index={0}
             />
           </Grid>
-          <Grid item xs={6} lg={3}>
+          <Grid item xs={6} md={3}>
             <ButtonLogo
               icon={Bodi}
               title={i18n.t("pages.body.box2")}
               index={1}
             />
           </Grid>
-          <Grid item xs={6} lg={3}>
+          <Grid item xs={6} md={3}>
             <ButtonLogo
               icon={Smile}
               title={i18n.t("pages.body.box3")}
               index={2}
             />
           </Grid>
-          <Grid item xs={6} lg={3}>
+          <Grid item xs={6} md={3}>
             <ButtonLogo
               icon={Health}
               title={i18n.t("pages.body.box4")}

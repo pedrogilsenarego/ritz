@@ -15,6 +15,7 @@ export const TreatmentSelection = () => {
         style={{
           width: "100%",
           height: "563px",
+
           objectFit: "cover",
         }}
         src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-6.webp"
@@ -23,13 +24,13 @@ export const TreatmentSelection = () => {
         style={{
           transform: "translateY(-100px)",
           maxWidth: MAX_SCREEN,
-          padding: mobile ? "0px" : "0px 150px",
+          padding: mobile ? "0px" : "0px 10vw",
         }}
       >
         <div
           style={{
             backgroundColor: "rgba(228, 219, 213, 0.9)",
-            padding: "148px 125px",
+            padding: "148px 85px",
           }}
         >
           <Typography

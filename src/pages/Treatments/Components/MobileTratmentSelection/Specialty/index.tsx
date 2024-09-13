@@ -13,6 +13,7 @@ import { devMode } from "../../../../../constants/devConfig";
 
 export const Specialty = () => {
   const [selected, setSelected] = useState(1);
+
   const lang = useSelector<State, string>((state) => state.general.lang);
   const navigate = useNavigate();
 
@@ -90,6 +91,11 @@ export const Specialty = () => {
     [queryKeys.specialty, selected],
     () => handleFetchSpecialty(selected)
   );
+
+  const handleCarouselChange = (index: number) => {
+    const adjustedIndex = index % 4 === 0 ? 4 : index % 4;
+    setSelected(adjustedIndex);
+  };
   return (
     <div>
       <div style={{ display: "flex", columnGap: "20px", marginTop: "30px" }}>
@@ -107,7 +113,7 @@ export const Specialty = () => {
           dotsColor="rgba(217, 217, 217, 1)"
           dotYOffset={10}
           dragThreshold={10}
-          onChange={(index) => setSelected(index)}
+          onChange={handleCarouselChange}
           onItemClick={(item) => console.log(item)}
         >
           <ImageElement

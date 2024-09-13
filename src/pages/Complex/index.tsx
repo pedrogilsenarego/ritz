@@ -62,7 +62,9 @@ const Complex = () => {
           autoPlay={mobile ? false : true}
           pauseOnHover={true}
           tweenAnime="ease"
-          dotsActivedColor={mobile ? "#000000CC" : "rgba(120, 100, 78, 1)"}
+          dotsActivedColor={
+            mobile ? "rgba(120, 100, 78, 1)" : "rgba(120, 100, 78, 1)"
+          }
           dotsColor="rgba(217, 217, 217, 1)"
           dotYOffset={mobile ? -180 : -10}
           dragThreshold={mobile ? 10 : undefined}

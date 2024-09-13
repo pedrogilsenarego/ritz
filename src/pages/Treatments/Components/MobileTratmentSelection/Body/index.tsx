@@ -23,6 +23,10 @@ export const Body = () => {
     [queryKeys.bodyPart, selected],
     () => handleFetchBodyPart(selected)
   );
+  const handleCarouselChange = (index: number) => {
+    const adjustedIndex = index % 4 === 0 ? 4 : index % 4;
+    setSelected(adjustedIndex);
+  };
   const ButtonLogo = ({ icon, title }: { icon: string; title: string }) => {
     return (
       <div
@@ -115,7 +119,7 @@ export const Body = () => {
           dotsColor="rgba(217, 217, 217, 1)"
           dotYOffset={10}
           dragThreshold={10}
-          onChange={(index) => setSelected(index)}
+          onChange={handleCarouselChange}
           onItemClick={(item) => console.log(item)}
         >
           <div style={{ width: "100%", height: "100%" }}>

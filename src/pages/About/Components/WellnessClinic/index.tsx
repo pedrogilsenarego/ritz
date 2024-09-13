@@ -37,9 +37,9 @@ export const WellnessClinic = () => {
                 maxWidth: "40%",
                 color: "rgba(236, 234, 229, 1)",
                 fontSize: "15px",
-
+                fontWeight: 500,
                 lineHeight: "18px",
-                letterSpacing: "1px",
+                letterSpacing: "0.9px",
               }}
               dangerouslySetInnerHTML={{
                 __html: i18n.t("pages.about.box2"),
