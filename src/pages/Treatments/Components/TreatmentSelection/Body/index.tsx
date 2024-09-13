@@ -67,7 +67,7 @@ export const Body = () => {
             fontSize: "15px",
             color: "white",
             textTransform: "uppercase",
-            fontWeight: 400,
+            fontWeight: selected === index ? 700 : 300,
           }}
         >
           {title}

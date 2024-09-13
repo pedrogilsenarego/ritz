@@ -28,9 +28,10 @@ export const Body = () => {
       <div
         style={{
           display: "flex",
-          height: "100%",
+          height: "90%",
           alignItems: "center",
           justifyContent: "center",
+          backgroundColor: "#D9D1C8",
         }}
       >
         <div
@@ -49,6 +50,7 @@ export const Body = () => {
               alignItems: "center",
               width: "127px",
               height: "127px",
+
               borderRadius: "50%",
               backgroundColor: "rgba(255, 255, 255, 0.15)",
               backdropFilter: "blur(8px)", // Apply blur to the background
@@ -90,11 +92,10 @@ export const Body = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-
           width: "80%",
           aspectRatio: 1.2,
           objectFit: "contain",
-          backgroundColor: "#D9D1C8",
+
           // backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/TRATAMENTOS-8-Mobile.webp)`,
           // backgroundPosition: "center",
           // backgroundSize: "cover",
@@ -110,14 +111,17 @@ export const Body = () => {
           autoPlay={false}
           pauseOnHover={true}
           tweenAnime="ease"
-          dotsActivedColor="rgba(120, 100, 78, 1)"
+          dotsActivedColor="#454545"
           dotsColor="rgba(217, 217, 217, 1)"
           dotYOffset={10}
           dragThreshold={10}
           onChange={(index) => setSelected(index)}
           onItemClick={(item) => console.log(item)}
         >
-          <ButtonLogo icon={Face} title={i18n.t("pages.body.box1")} />
+          <div style={{ width: "100%", height: "100%" }}>
+            <ButtonLogo icon={Face} title={i18n.t("pages.body.box1")} />
+            <div style={{ height: "100px" }} />
+          </div>
           <ButtonLogo icon={Bodi} title={i18n.t("pages.body.box2")} />
           <ButtonLogo icon={Smile} title={i18n.t("pages.body.box3")} />
           <ButtonLogo icon={Health} title={i18n.t("pages.body.box4")} />
