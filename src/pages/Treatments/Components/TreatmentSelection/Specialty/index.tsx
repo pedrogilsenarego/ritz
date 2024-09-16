@@ -10,8 +10,12 @@ import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../../routes/constants";
 import { devMode } from "../../../../../constants/devConfig";
 
-export const Specialty = () => {
-  const [selected, setSelected] = useState(1);
+type Props = {
+  openIndex?: number;
+};
+
+export const Specialty = ({ openIndex }: Props) => {
+  const [selected, setSelected] = useState(openIndex ? openIndex - 1 : 0);
   const lang = useSelector<State, string>((state) => state.general.lang);
   const navigate = useNavigate();
   const ImageElement = ({

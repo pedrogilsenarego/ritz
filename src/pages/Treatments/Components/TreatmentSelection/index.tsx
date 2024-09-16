@@ -4,9 +4,26 @@ import CustomizedAccordions from "../../../../components/Accordion";
 import { Specialty } from "./Specialty";
 import { MAX_SCREEN } from "../../../../constants/screen";
 import { Body } from "./Body";
+import { useLocation } from "react-router-dom";
+import { useEffect, useRef } from "react";
 
 export const TreatmentSelection = () => {
   const theme = useTheme();
+  const location = useLocation();
+  const specializationIndex = location.state?.specializationIndex;
+  const containerRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (
+      specializationIndex !== null &&
+      specializationIndex !== undefined &&
+      containerRef.current
+    ) {
+      setTimeout(() => {
+        containerRef.current?.scrollIntoView({ behavior: "smooth" });
+      }, 500);
+    }
+  }, [specializationIndex]);
+
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div>
@@ -21,6 +38,7 @@ export const TreatmentSelection = () => {
         src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/TRATAMENTOS-6.webp"
       />
       <Container
+        ref={containerRef}
         style={{
           transform: "translateY(-100px)",
           maxWidth: MAX_SCREEN,
@@ -56,8 +74,11 @@ export const TreatmentSelection = () => {
             {i18n.t("pages.treatments.box28")}
           </Typography>
           <div style={{ marginTop: "50px" }}>
-            <CustomizedAccordions title={i18n.t("pages.treatments.box29")}>
-              <Specialty />
+            <CustomizedAccordions
+              open={!!specializationIndex}
+              title={i18n.t("pages.treatments.box29")}
+            >
+              <Specialty openIndex={specializationIndex} />
             </CustomizedAccordions>
           </div>
           <div style={{ marginTop: "50px" }}>

@@ -39,6 +39,7 @@ export interface ICarouselProps {
   onItemClick?: (item: ClickedItem) => void;
   onChange?: (index: number) => void;
   children: Array<React.ReactNode>;
+  initialIndex?: number;
 }
 
 const Carousel: React.FC<ICarouselProps> = (props) => {
@@ -65,8 +66,15 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     onItemClick,
     onChange,
     children,
+    initialIndex,
   } = props;
-  const [current, setCurrent] = useState(direction === 1 ? 1 : children.length);
+
+  const [current, setCurrent] = useState(
+    initialIndex || direction === 1 ? 1 : children.length
+  );
+  useEffect(() => {
+    if (initialIndex) setCurrent(initialIndex);
+  }, [initialIndex]);
 
   const [touched, setTouched] = useState(false);
   const absPerWidthRef = useRef(0);

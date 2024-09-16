@@ -13,8 +13,10 @@ import Toggle from "../Ui/Toggle";
 type Props = {
   title: string;
   children: React.ReactNode;
+  open?: boolean;
+
   toggle?: {
-    onToggle: () => void;
+    onToggle?: () => void;
     signal: boolean;
   };
 };
@@ -40,8 +42,11 @@ export default function CustomizedAccordions({
   title,
   children,
   toggle,
+  open,
 }: Props) {
-  const [expanded, setExpanded] = React.useState<string | false>(false);
+  const [expanded, setExpanded] = React.useState<string | false>(
+    open ? "panel1" : false
+  );
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const handleChange =

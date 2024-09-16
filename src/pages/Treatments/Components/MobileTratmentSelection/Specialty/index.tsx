@@ -11,9 +11,12 @@ import { ROUTE_PATHS } from "../../../../../routes/constants";
 import { useNavigate } from "react-router-dom";
 import { devMode } from "../../../../../constants/devConfig";
 
-export const Specialty = () => {
-  const [selected, setSelected] = useState(1);
+type Props = {
+  openIndex?: number;
+};
 
+export const Specialty = ({ openIndex }: Props) => {
+  const [selected, setSelected] = useState(0);
   const lang = useSelector<State, string>((state) => state.general.lang);
   const navigate = useNavigate();
 
@@ -115,6 +118,7 @@ export const Specialty = () => {
           dragThreshold={10}
           onChange={handleCarouselChange}
           onItemClick={(item) => console.log(item)}
+          initialIndex={openIndex}
         >
           <ImageElement
             title={i18n.t("pages.home.box31")}
