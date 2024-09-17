@@ -3,9 +3,9 @@ import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
-import CookiePolicy from "./components/CookiePopup";
 import AppRoutes from "./routes";
 import { theme } from "./theme/theme";
+import Scroll from "./presentational/Scroll";
 
 function App() {
   const queryClient = new QueryClient();
@@ -17,7 +17,10 @@ function App() {
           <ThemeProvider theme={theme}>
             <QueryClientProvider client={queryClient}>
               {/* <CookiePolicy /> */}
-              <AppRoutes />
+              <div style={{ height: "100vh" }}>
+                <Scroll />
+                <AppRoutes />
+              </div>
             </QueryClientProvider>
           </ThemeProvider>
         </StyledEngineProvider>

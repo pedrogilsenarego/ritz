@@ -6,14 +6,26 @@
   ;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 
 *::-webkit-scrollbar {
   width: none ;
   display: none ;
+}
+
+.scrollbar-track{
+  background-color: transparent !important;
+}
+
+.scrollbar-track-y{
+  width:12px !important;
+}
+
+
+.scrollbar-thumb{
+  width:12px !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
 }
 
 body {
@@ -34,7 +46,7 @@ body {
   -ms-user-select: none;
   user-select: none;
   background-color: rgba(248, 247, 247, 1);
-  scroll-behavior: smooth;
+ 
 }
 
 code {

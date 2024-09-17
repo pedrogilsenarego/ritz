@@ -50,8 +50,8 @@ const Home = () => {
           onClick={toggleMute}
           style={{
             position: "absolute",
-            bottom: "36px",
-            left: "16px",
+            bottom: mobile ? "16px" : "36px",
+            left: mobile ? "10px" : "16px",
             color: "white",
           }}
         >
