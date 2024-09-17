@@ -45,7 +45,7 @@ export const content = {
         box11: "Contact us",
         box2: "Book",
         box3: "A brilliant encounter",
-        box4: "Contact us to schedule your appointment.</br>See you soon.",
+        box4: "Contact us to schedule your appointment.</br>See you soon",
       },
       pages: {
         identityBox: {
