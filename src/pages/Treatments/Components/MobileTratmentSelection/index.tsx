@@ -19,7 +19,12 @@ export const MobileTreatmentSelection = () => {
       containerRef.current
     ) {
       setTimeout(() => {
-        containerRef.current?.scrollIntoView({ behavior: "smooth" });
+        containerRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center", // or "end" to scroll further down
+          inline: "nearest", // optional for horizontal scrolling
+        });
+
         setUsedIndex(specializationIndex);
       }, 500);
     }

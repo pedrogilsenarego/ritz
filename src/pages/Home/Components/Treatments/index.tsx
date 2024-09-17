@@ -42,7 +42,7 @@ const Treatments = () => {
             bottom: 0,
             backgroundImage: `url(${image})`,
             backgroundPosition: "center",
-            backgroundSize: "cover",
+            backgroundSize: "101%",
             display: "flex",
             justifyContent: "center",
             transition: "transform 0.5s",

@@ -6,6 +6,11 @@
   ;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 *::-webkit-scrollbar {
   width: none ;
   display: none ;
@@ -29,6 +34,7 @@ body {
   -ms-user-select: none;
   user-select: none;
   background-color: rgba(248, 247, 247, 1);
+  scroll-behavior: smooth;
 }
 
 code {

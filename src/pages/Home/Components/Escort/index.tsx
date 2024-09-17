@@ -42,7 +42,7 @@ const Escort = () => {
             zIndex: 1,
             objectFit: "cover",
           }}
-          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-CONCIERGE-70_.webp"
+          src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-CONCIERGE-70.webp"
         />
         <div
           style={{
@@ -395,7 +395,7 @@ const Escort = () => {
               marginTop: "30px",
               objectFit: "cover",
             }}
-            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-CONCIERGE-70_.webp"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/BOX-CONCIERGE-70.webp"
           />
           {lang === "PT" ? (
             <div style={{ padding: "40px" }}>

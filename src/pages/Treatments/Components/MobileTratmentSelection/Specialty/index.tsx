@@ -36,6 +36,8 @@ export const Specialty = ({ openIndex }: Props) => {
           display: "flex",
           justifyContent: "center",
           padding: "0px 40px",
+          height: "263px",
+          overflow: "hidden",
         }}
       >
         <div
@@ -47,10 +49,11 @@ export const Specialty = ({ openIndex }: Props) => {
             alignItems: "end",
             justifyContent: "center",
             width: "100%",
-            height: "263px",
+            height: "100%",
             backgroundImage: `url(${image})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
+            backgroundSize: "101%",
+            backgroundPosition: "center", // Ensure image is centered
+            backgroundRepeat: "no-repeat", // Prevent image from repeating
           }}
         >
           <div

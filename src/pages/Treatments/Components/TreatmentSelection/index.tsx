@@ -19,7 +19,11 @@ export const TreatmentSelection = () => {
       containerRef.current
     ) {
       setTimeout(() => {
-        containerRef.current?.scrollIntoView({ behavior: "smooth" });
+        containerRef.current?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+          inline: "nearest",
+        });
       }, 500);
     }
   }, [specializationIndex]);
