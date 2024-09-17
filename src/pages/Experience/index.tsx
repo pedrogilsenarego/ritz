@@ -1,4 +1,4 @@
-import { useMediaQuery, useTheme } from "@mui/material";
+import { Container, useMediaQuery, useTheme } from "@mui/material";
 
 import Escort from "../Home/Components/Escort";
 import SpaceWhere from "../Home/Components/SpaceWhere";
@@ -8,6 +8,7 @@ import InitialImage1 from "./Components/InitialImage";
 import InitialImage from "../Treatments/Components/InitialImage";
 import { i18n } from "../../translations/i18n";
 import SchedulleMembership from "../Complex/Components/SchedulleMembership";
+import { MAX_SCREEN } from "../../constants/screen";
 
 const Experience = () => {
   const theme = useTheme();
@@ -31,7 +32,15 @@ const Experience = () => {
         <IdentityProtection />
       </div>
       <div style={{ marginTop: mobile ? "200px" : "200px" }}>
-        <Escort />
+        <Container
+          style={{
+            marginTop: mobile ? "50px" : "130px",
+            maxWidth: MAX_SCREEN,
+            padding: mobile ? "0px" : "0px 150px",
+          }}
+        >
+          <Escort />
+        </Container>
       </div>
       <div style={{ marginTop: mobile ? "50px" : "0px" }}>
         <SpaceWhere />
