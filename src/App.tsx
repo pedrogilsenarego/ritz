@@ -17,10 +17,10 @@ function App() {
           <ThemeProvider theme={theme}>
             <QueryClientProvider client={queryClient}>
               {/* <CookiePolicy /> */}
-              <div style={{ height: "100vh" }}>
-                <Scroll />
-                <AppRoutes />
-              </div>
+              {/* <div style={{ height: "100vh" }}>
+                <Scroll /> */}
+              <AppRoutes />
+              {/* </div> */}
             </QueryClientProvider>
           </ThemeProvider>
         </StyledEngineProvider>
