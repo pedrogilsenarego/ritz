@@ -208,11 +208,16 @@ const Footer = ({ isUser }: Props) => {
                         height: 12,
                       }}
                     />
-                    <Typography
-                      style={{ fontSize: "8px", textDecoration: "underline" }}
+                    <a
+                      href="tel:+351215909009"
+                      style={{ textDecoration: "none" }}
                     >
-                      +351 215 909 009
-                    </Typography>
+                      <Typography
+                        style={{ fontSize: "8px", textDecoration: "underline" }}
+                      >
+                        +351 215 909 009
+                      </Typography>
+                    </a>
                   </div>
                 </div>
                 <div

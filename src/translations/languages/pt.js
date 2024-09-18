@@ -181,16 +181,16 @@ export const content = {
           box13: "O Bar EHTIQ",
           box14:
             "Criado para proporcionar os melhores momentos de espera na companhia da nossa equipa.",
-          box15: "Pós-cirúrgico & bem-estar",
+          box15: "Pós-cirúrgica & bem-estar",
           box16:
             "A serenidade trazida por elementos acolhedores e muita atenção ao detalhe.",
           box17: "Sala de Espera Nany Mota",
           box18:
-            "Sabemos que não haverá outro espaço onde queria aguardar por nós.",
+            "Sabemos que não haverá outro espaço onde queira aguardar por nós.",
           box21:
             "Elegância e inovação, onde cada espaço é uma</br> celebração da estética.",
-          box31: "Sala de Espera Pós-Cirúrgico & Bem-estar by</br> Nany Mota",
-          box312: "Sala de Espera Pós-Cirúrgico & Bem-estar by Nany Mota",
+          box31: "Sala de Espera Pós-Cirúrgica & Bem-estar by</br> Nany Mota",
+          box312: "Sala de Espera Pós-Cirúrgica & Bem-estar by Nany Mota",
           box32: "Acesso às Unidades Dentária e</br> Pós-Cirúrgica",
           box33: "Áreas Privativas com os melhores acabamentos",
           box41: "De Olhos",
@@ -204,7 +204,7 @@ export const content = {
         },
         treatments: {
           box01: "Tratamentos",
-          box0: "Assinatura",
+          box0: "Assinaturas",
           box1: "Estética & Cirúrgica",
           box2: "Aliámos os melhores Profissionais à melhor Tecnologia do mercado, para garantir resultados excecionais e o mais elevado acompanhamento clínico.",
           box3: "LIPO DE ALTA DEFINIÇÃO",
@@ -213,7 +213,7 @@ export const content = {
           box6: "Concebido para contrariar os sinais do tempo, devolvendo a firmeza, elasticidade e brilho. Um cocktail de poderosos ingredientes, formulado para diferentes zonas de corpo.",
           box7: "EHTIQ AGELESS Neck & Neckline",
           box8: "A vanguarda da tecnologia associada às melhores fórmulas do mercado. Um protocolo anti-envelhecimento com resultados inigualáveis.",
-          box9: "Pós-Cirúrgico & Bem-estar",
+          box9: "Pós-Cirúrgica & Bem-estar",
           box10:
             "Cuidados pós-operatórios executados com a Técnica Nany Mota® e Protocolos Personalizados para garantir o bem-estar do corpo e da mente.",
           box11: "MASSAGEM PÓS-CIRÚRGICA BY NANY MOTA",
@@ -253,7 +253,7 @@ export const content = {
           box31:
             "Valorizamos cada momento.</br></br> O nosso compromisso é o seu conforto, garantindo que cada passo seja uma expressão de cuidado e excelência.",
 
-          box4: "Uma Recepção sem igual",
+          box4: "Uma Receção sem igual",
           box5: "Só somos desconhecidos uma vez. Esperamos por si à entrada do edifício, para que entre acompanhado no nosso piso.",
           box6: "Uma receção sem perguntas nem constrangimentos.",
           box7: "Avaliação & Diagnóstico",
