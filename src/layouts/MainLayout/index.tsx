@@ -19,7 +19,7 @@ const HomepageLayout = ({
     <Box
       style={{
         minHeight: "100vh",
-
+        scrollBehavior: "smooth",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",

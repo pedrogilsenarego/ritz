@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes";
 import { theme } from "./theme/theme";
-import Scroll from "./presentational/Scroll";
 
 function App() {
   const queryClient = new QueryClient();
