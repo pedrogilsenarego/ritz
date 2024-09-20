@@ -240,7 +240,7 @@ export const Content = ({ setOpenPopup }: any) => {
           <div
             style={{
               height: "100%",
-              marginTop: "94px",
+              marginTop: "54px",
             }}
           >
             <Typography
@@ -275,7 +275,7 @@ export const Content = ({ setOpenPopup }: any) => {
               height: "1px",
               width: "50%",
               backgroundColor: "#687479",
-              marginBottom: "94px",
+              marginBottom: "24px",
             }}
           />
         </div>
