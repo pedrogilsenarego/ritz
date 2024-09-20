@@ -224,7 +224,7 @@ export const Content = ({ setOpenPopup }: any) => {
             flexDirection: "column",
             rowGap: "25px",
             height: "100%",
-            padding: "30px 30px 50px 30px",
+            padding: "50px 30px",
           }}
         >
           <img
@@ -232,7 +232,7 @@ export const Content = ({ setOpenPopup }: any) => {
             src={Cross}
             alt=""
             style={{
-              marginTop: "00px",
+              marginTop: "20px",
               width: "40px",
               height: "40px",
             }}
