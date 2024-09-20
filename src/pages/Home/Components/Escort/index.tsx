@@ -447,26 +447,30 @@ const Escort = () => {
                   marginTop: "40px",
                 }}
               />
-              <ButtonBase
-                sx={{
-                  marginTop: "40px",
-                  borderRadius: "30px",
-                  padding: "10px 30px",
-                  backgroundColor: "rgba(255, 255, 255, 0.4)",
-                }}
-              >
-                <Typography
-                  sx={{
-                    textTransform: "uppercase",
-                    fontSize: "10px",
-                    lineHeight: "14px",
-                    letterSpacing: "1px",
-                    color: "rgba(0, 0, 0, 0.59)",
-                  }}
-                >
-                  {i18n.t("pages.home.button1")}
-                </Typography>
-              </ButtonBase>
+              <VisitCard
+                customButton={
+                  <ButtonBase
+                    sx={{
+                      marginTop: "40px",
+                      borderRadius: "30px",
+                      padding: "10px 30px",
+                      backgroundColor: "rgba(255, 255, 255, 0.4)",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        textTransform: "uppercase",
+                        fontSize: "10px",
+                        lineHeight: "14px",
+                        letterSpacing: "1px",
+                        color: "rgba(0, 0, 0, 0.59)",
+                      }}
+                    >
+                      {i18n.t("pages.home.button1")}
+                    </Typography>
+                  </ButtonBase>
+                }
+              />
             </div>
           ) : (
             <div style={{ padding: "40px" }}>

@@ -4,7 +4,6 @@ import map from "../../../assets/map.svg";
 import phone from "../../../assets/phone.svg";
 import "./index.css";
 import Cross from "../../../assets/cross.png";
-
 import { i18n } from "../../../translations/i18n";
 import { BASE_URL } from "../../../services/constants";
 
