@@ -117,6 +117,7 @@ export const Content = ({ setOpenPopup }: any) => {
                   alignItems: "start",
                   columnGap: "4px",
                   marginTop: "20px",
+                  cursor: "pointer",
                 }}
               >
                 <img
@@ -132,26 +133,33 @@ export const Content = ({ setOpenPopup }: any) => {
                   INFO@EHTIQ.COM
                 </Typography>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "start",
-                  columnGap: "4px",
-                }}
-              >
-                <img
-                  src={phone}
-                  alt=""
+              <a href="tel:+351215909009" style={{ textDecoration: "none" }}>
+                <div
                   style={{
-                    height: 12,
+                    display: "flex",
+                    alignItems: "start",
+                    columnGap: "4px",
                   }}
-                />
-                <Typography
-                  style={{ fontSize: "11px", textDecoration: "underline" }}
                 >
-                  +351 215 909 009
-                </Typography>
-              </div>
+                  <img
+                    src={phone}
+                    alt=""
+                    style={{
+                      height: 12,
+                    }}
+                  />
+
+                  <Typography
+                    style={{
+                      fontSize: "11px",
+                      textDecoration: "underline",
+                      cursor: "pointer",
+                    }}
+                  >
+                    +351 215 909 009
+                  </Typography>
+                </div>
+              </a>
             </div>
           </div>
         </div>
