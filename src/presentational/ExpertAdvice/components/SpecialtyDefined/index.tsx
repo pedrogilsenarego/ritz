@@ -165,6 +165,7 @@ export const SpecialtyDefined = ({
     return (
       <div>
         <div
+          onClick={() => setMode("specialty")}
           style={{
             position: "relative",
             cursor: "Pointer",
@@ -266,6 +267,7 @@ export const SpecialtyDefined = ({
     return (
       <div>
         <div
+          onClick={() => setMode("specialty")}
           style={{
             position: "relative",
             cursor: "Pointer",

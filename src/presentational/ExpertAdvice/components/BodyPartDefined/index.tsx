@@ -151,6 +151,7 @@ export const BodyPartDefined = ({
     return (
       <div>
         <div
+          onClick={() => setMode("bodyPart")}
           style={{
             position: "relative",
             cursor: "Pointer",
@@ -258,6 +259,7 @@ export const BodyPartDefined = ({
     return (
       <div>
         <div
+          onClick={() => setMode("bodyPart")}
           style={{
             position: "relative",
             cursor: "Pointer",

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { State } from "../../../../redux/types";
 import { ROUTE_PATHS } from "../../../../routes/constants";
 import { useNavigate } from "react-router-dom";
+import { devMode } from "../../../../constants/devConfig";
 
 const chunkData = (data: any[], size: number): any[][] => {
   const chunks = [];
@@ -96,48 +97,50 @@ export const Organizer = ({
                               position: "relative",
                             }}
                           >
-                            <div
-                              // onClick={() =>
-                              //   navigate(
-                              //     ROUTE_PATHS.TREATMENT_ID.replace(
-                              //       ":id",
-                              //       result.id
-                              //     )
-                              //   )
-                              // }
-                              style={{
-                                backgroundColor: "rgba(255, 252, 248, 0.9)",
-                                display: "flex",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                borderRadius: "5px",
-                                position: "absolute",
-                                height: "100%",
-                                opacity: 0,
-                                width: "100%",
-                                cursor: "pointer",
-                              }}
-                              onMouseEnter={(e) =>
-                                (e.currentTarget.style.opacity = "1")
-                              }
-                              onMouseLeave={(e) =>
-                                (e.currentTarget.style.opacity = "0")
-                              }
-                            >
-                              <Typography
+                            {devMode && (
+                              <div
+                                // onClick={() =>
+                                //   navigate(
+                                //     ROUTE_PATHS.TREATMENT_ID.replace(
+                                //       ":id",
+                                //       result.id
+                                //     )
+                                //   )
+                                // }
                                 style={{
-                                  fontWeight: 400,
-                                  letterSpacing: "1px",
-                                  fontSize: "15px",
-                                  textTransform: "capitalize",
+                                  backgroundColor: "rgba(255, 252, 248, 0.9)",
+                                  display: "flex",
+                                  justifyContent: "center",
+                                  alignItems: "center",
+                                  borderRadius: "5px",
+                                  position: "absolute",
+                                  height: "100%",
+                                  opacity: 0,
+                                  width: "100%",
+                                  cursor: "pointer",
                                 }}
+                                onMouseEnter={(e) =>
+                                  (e.currentTarget.style.opacity = "1")
+                                }
+                                onMouseLeave={(e) =>
+                                  (e.currentTarget.style.opacity = "0")
+                                }
                               >
-                                Abrir
-                              </Typography>
-                            </div>
+                                <Typography
+                                  style={{
+                                    fontWeight: 400,
+                                    letterSpacing: "1px",
+                                    fontSize: "15px",
+                                    textTransform: "capitalize",
+                                  }}
+                                >
+                                  Abrir
+                                </Typography>
+                              </div>
+                            )}
                             <Typography
                               style={{
-                                cursor: "pointer",
+                                cursor: devMode ? "pointer" : "default",
                                 fontSize: "15px",
                                 lineHeight: "20px",
                                 height: "40px",

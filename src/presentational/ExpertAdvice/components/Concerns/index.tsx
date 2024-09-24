@@ -26,6 +26,7 @@ export const Concerns = ({
     return (
       <div>
         <div
+          // onClick={() => setMode("base")}
           style={{
             position: "relative",
             cursor: "Pointer",
@@ -96,6 +97,7 @@ export const Concerns = ({
     return (
       <div>
         <div
+          //onClick={() => setMode("base")}
           style={{
             position: "relative",
             cursor: "Pointer",
