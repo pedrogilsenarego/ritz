@@ -395,9 +395,11 @@ const Footer = ({ isUser }: Props) => {
                     />
                     <Typography
                       style={{ fontSize: "8px", textDecoration: "underline" }}
-                    >
-                      RUA CASTILHO, 77 - PISO 21070-050 LISBOA - PORTUGAL
-                    </Typography>
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          "RUA CASTILHO, 77 - PISO 2</br>1070-050 LISBOA - PORTUGAL",
+                      }}
+                    />
                   </div>
                   <div
                     onClick={() =>
