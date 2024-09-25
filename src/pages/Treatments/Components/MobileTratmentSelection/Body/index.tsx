@@ -126,8 +126,8 @@ export const Body = () => {
             <ButtonLogo icon={Face} title={i18n.t("pages.body.box1")} />
             <div style={{ height: "100px" }} />
           </div>
-          <ButtonLogo icon={Bodi} title={i18n.t("pages.body.box2")} />
-          <ButtonLogo icon={Smile} title={i18n.t("pages.body.box3")} />
+          <ButtonLogo icon={Smile} title={i18n.t("pages.body.box2")} />
+          <ButtonLogo icon={Bodi} title={i18n.t("pages.body.box3")} />
           <ButtonLogo icon={Health} title={i18n.t("pages.body.box4")} />
         </Carousel>
       </div>
