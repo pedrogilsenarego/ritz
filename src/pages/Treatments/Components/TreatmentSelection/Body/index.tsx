@@ -109,7 +109,7 @@ export const Body = () => {
           </Grid>
           <Grid item xs={6} md={3}>
             <ButtonLogo
-              icon={Smile}
+              icon={Bodi}
               title={i18n.t("pages.body.box3")}
               index={2}
             />
