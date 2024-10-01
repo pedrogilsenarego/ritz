@@ -10,7 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { VscMenu } from "react-icons/vsc";
 import Mobile from "../../../assets/mobile.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 import SearchIcon from "../../../assets/Icon_Search.svg";
 import Login from "../../../assets/Log_In.svg";
@@ -244,7 +244,7 @@ const Header = () => {
               <div style={{ zIndex: 1000 }}>
                 <Lang />
               </div>
-              {devMode ? (
+              {devMode || location.pathname === "/admin" ? (
                 <div>
                   {userQuery.data && !userQuery.isLoading ? (
                     <img
