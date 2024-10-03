@@ -44,7 +44,8 @@ const Team = () => {
             textAlign: "center",
           }}
         >
-          {i18n.t("pages.complex.teamTitle")}
+          a equipa ehtiq
+          {/* //{i18n.t("pages.complex.teamTitle")} */}
         </Typography>
         <div
           style={{
@@ -56,16 +57,18 @@ const Team = () => {
       </div>
       <Typography
         style={{
-          fontSize: mobile ? "8px" : "13px",
-          width: mobile ? "90%" : "60%",
+          fontSize: mobile ? "8px" : "12px",
+          width: mobile ? "90%" : "80%",
           textAlign: "center",
           textTransform: "uppercase",
           letterSpacing: "1px",
           lineHeight: mobile ? "15px" : "25px",
         }}
-      >
-        {i18n.t("pages.complex.teamSubtitle")}
-      </Typography>
+        dangerouslySetInnerHTML={{
+          __html:
+            "Cada rosto da nossa equipa é uma extensão do nosso compromisso em realçar a sua</br> beleza única.",
+        }}
+      />
       <TeamRooster />
     </div>
   );

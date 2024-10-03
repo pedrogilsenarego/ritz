@@ -1,32 +1,36 @@
 import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import { Icons } from "../../../../../../components/Icons";
+import { useRef } from "react";
 
 const TeamRooster = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const [team, setTeam] = useState<number>(0);
   const [member, setMember] = useState<number>(0);
-
   const teamList = [
     {
-      title: "Cirúrgico",
+      title: "Cirúrgica",
       team: [
         {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Cargo Elemento",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
-          name: "hsasasasau",
-          description: "ola",
+          name: "dra. ana luísa",
+          role: "Outro Cargo",
+          description:
+            "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
-            "https://img.freepik.com/free-photo/beautiful-tropical-empty-beach-sea-ocean-with-white-cloud-blue-sky-background_74190-13668.jpg?size=626&ext=jpg&ga=GA1.1.632798143.1705536000&semt=sph",
+            "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Outro Cargo",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
@@ -35,17 +39,27 @@ const TeamRooster = () => {
       ],
     },
     {
-      title: "Team surgical",
+      title: "Dentária",
       team: [
         {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Cargo Elemento",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Outro Cargo",
+          description:
+            "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
+          image:
+            "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
+        },
+        {
+          name: "dra. ana luísa",
+          role: "Outro Cargo",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
@@ -54,24 +68,27 @@ const TeamRooster = () => {
       ],
     },
     {
-      title: "Dentário",
+      title: "Não-Cirúrgica",
       team: [
         {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Cargo Elemento",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Outro Cargo",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Outro Cargo",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
@@ -80,50 +97,27 @@ const TeamRooster = () => {
       ],
     },
     {
-      title: "Não-Cirúrgico",
+      title: "Saúde-Preventiva",
       team: [
         {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Cargo Elemento",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Outro Cargo",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
-          name: "huhiu",
-          description:
-            "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
-          image:
-            "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-        },
-      ],
-    },
-    {
-      title: "Saúde Preventiva",
-      team: [
-        {
-          name: "huhiu",
-          description:
-            "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
-          image:
-            "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-        },
-        {
-          name: "huhiu",
-          description:
-            "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
-          image:
-            "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-        },
-        {
-          name: "huhiu",
+          name: "dra. ana luísa",
+          role: "Outro Cargo",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
@@ -139,8 +133,8 @@ const TeamRooster = () => {
         container
         columnSpacing={"20px"}
         style={{
-          marginTop: "50px",
-          width: "100%",
+          marginTop: "30px",
+          width: "80%",
         }}
       >
         <Grid
@@ -213,10 +207,10 @@ const TeamRooster = () => {
             </Typography>
             <Typography
               style={{
-                textTransform: "uppercase",
+                textTransform: mobile ? "uppercase" : "capitalize",
                 fontSize: mobile ? "8px" : "12px",
                 lineHeight: "21px",
-                fontWeight: 400,
+                fontWeight: 300,
               }}
             >
               {teamList[team].team[member].description}
@@ -238,21 +232,24 @@ const TeamRooster = () => {
                   style={{
                     cursor: "pointer",
 
-                    paddingTop: `${10 + index * 20}px`,
-                    paddingLeft: "0px 6px",
-                    paddingRight: "0px 6px",
-                    backgroundColor: `rgb(0,0,0,${0.6 - index / 10})`,
+                    paddingTop: `${80 - index * 25}px`,
+                    paddingLeft: "6px",
+                    paddingRight: "6px",
+                    backgroundColor: `rgb(217,217,217,${1 - index / 5})`,
                   }}
                 >
                   <Typography
                     style={{
-                      fontWeight: index === member ? "bold" : "normal",
+                      fontSize: "10px",
+                      fontWeight: index === member ? 600 : 500,
                       writingMode: "vertical-rl",
                       textOrientation: "mixed",
                       whiteSpace: "nowrap",
+                      letterSpacing: "1px",
+                      textTransform: "uppercase",
                     }}
                   >
-                    {team.name}
+                    {team.role}
                   </Typography>
                 </div>
               );
@@ -282,7 +279,7 @@ const TeamRooster = () => {
               textDecoration: "underline",
             }}
           >
-            {element.name}
+            {element.role}
           </Typography>
         </div>
         {open && (
@@ -316,10 +313,55 @@ const TeamRooster = () => {
   };
 
   const ImageRoosterMobile = () => {
+    const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+    // Function to scroll left
+    const scrollLeft = () => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollBy({
+          left: -window.innerWidth, // Scroll by one full viewport width
+          behavior: "smooth", // Smooth scrolling
+        });
+      }
+      setTeam((prev) => {
+        if (prev > 0) {
+          return prev - 1; // Subtract 1 if the current team index is greater than 0
+        } else {
+          return teamList.length - 1; // Reset to the last team if the current team index is 0
+        }
+      });
+    };
+
+    // Function to scroll right
+    const scrollRight = () => {
+      if (scrollContainerRef.current) {
+        scrollContainerRef.current.scrollBy({
+          left: window.innerWidth, // Scroll by one full viewport width
+          behavior: "smooth",
+        });
+      }
+      setTeam((prev) => {
+        if (prev < teamList.length - 1) {
+          return prev + 1; // Increment the team index if it's not the last one
+        } else {
+          return 0; // Reset to the first team if the current team index is the last one
+        }
+      });
+    };
+
+    const handleScroll = () => {
+      if (scrollContainerRef.current) {
+        const newScrollPos = scrollContainerRef.current.scrollLeft;
+        const teamIndex = Math.round(newScrollPos / window.innerWidth); // Calculate index based on scroll position
+
+        setTeam(teamIndex); // Update team index based on scroll position
+      }
+    };
+
     return (
       <div
         style={{
-          width: "90%",
+          width: "70%", // Use 100% width for mobile responsiveness
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
@@ -331,37 +373,54 @@ const TeamRooster = () => {
             justifyContent: "space-between",
             alignItems: "center",
             columnGap: "5px",
+            margin: "0px 20px",
           }}
         >
-          <Icons.LeftArrow size={"10px"} />
+          <Icons.LeftArrow size={"10px"} onClick={scrollLeft} />
+
           <div
+            ref={scrollContainerRef}
+            //onScroll={handleScroll}
             style={{
-              columnGap: "20px",
-              paddingTop: "1px",
               display: "flex",
-              overflowX: "auto",
+              paddingTop: "1px",
+              overflowX: "scroll",
               alignItems: "center",
+
+              scrollSnapType: "x mandatory", // Enable horizontal scroll snapping
             }}
           >
             {teamList.map((item, index) => {
               return (
-                <Typography
+                <div
+                  style={{
+                    width: "100%", // Ensure each item takes full viewport width
+                    scrollSnapAlign: "start", // Snap each item to the start
+                    flexShrink: 0, // Prevent the item from shrinking
+                  }}
                   onClick={() => setTeam(index)}
                   key={index}
-                  style={{
-                    fontWeight: item.title === teamList[team].title ? 700 : 500,
-                    fontSize: "6px",
-                    letterSpacing: "1px",
-                    whiteSpace: "nowrap",
-                  }}
                 >
-                  {item.title}
-                </Typography>
+                  <Typography
+                    style={{
+                      fontWeight: 600,
+                      textDecoration: "underline",
+                      fontSize: "10px",
+                      letterSpacing: "1px",
+                      whiteSpace: "nowrap",
+                      textAlign: "center", // Center align text
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                </div>
               );
             })}
           </div>
-          <Icons.RightArrow size={"10px"} />
+
+          <Icons.RightArrow size={"10px"} onClick={scrollRight} />
         </div>
+
         <img
           alt=""
           style={{
@@ -372,21 +431,14 @@ const TeamRooster = () => {
           }}
           src={teamList[team].team[member].image}
         />
+
         {teamList[team].team.map((element, index) => {
           return <MobileElement key={index} element={element} />;
         })}
+
         <div
           style={{ width: "100%", display: "flex", justifyContent: "center" }}
-        >
-          <div
-            style={{
-              backgroundColor: "black",
-              width: "50%",
-              height: "1px",
-              marginTop: "100px",
-            }}
-          ></div>
-        </div>
+        ></div>
       </div>
     );
   };

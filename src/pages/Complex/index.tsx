@@ -8,6 +8,7 @@ import Legendas from "./Components/Legendas";
 import Eyes from "./Components/Eyes";
 import { i18n } from "../../translations/i18n";
 import { BASE_URL } from "../../services/constants";
+import Team from "./Components/Team";
 
 const Complex = () => {
   const theme = useTheme();
@@ -238,7 +239,7 @@ const Complex = () => {
         >
           <Eyes />
 
-          {/* <Team /> */}
+          <Team />
         </div>
       </Container>
       <div style={{ marginTop: mobile ? "100px" : "200px" }}>
