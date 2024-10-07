@@ -40,6 +40,8 @@ export interface ICarouselProps {
   onChange?: (index: number) => void;
   children: Array<React.ReactNode>;
   initialIndex?: number;
+  navElementRight?: React.ReactNode;
+  navElementLeft?: React.ReactNode;
 }
 
 const Carousel: React.FC<ICarouselProps> = (props) => {
@@ -67,6 +69,8 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     onChange,
     children,
     initialIndex,
+    navElementRight,
+    navElementLeft,
   } = props;
 
   const [current, setCurrent] = useState(
@@ -152,7 +156,9 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
       const currTime = Math.min(slideDuration, Date.now() - startTime);
       leftRef.current = tweenFn(currTime, b, c, slideDuration);
       if (leftRef.current !== b + c) {
-        sliderRef.current!.style[slidePropRef.current] = `${-leftRef.current}%`;
+        sliderRef.current!.style[
+          slidePropRef.current
+        ]! = `${-leftRef.current}%`;
         rafRef.current = requestAnimationFrame(anim);
       } else {
         slidingRef.current = false;
@@ -208,7 +214,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
   const goPrev = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (slidingRef.current) return;
+    if (onChange) if (slidingRef.current) return;
     setCurrent(current - 1);
   };
 
@@ -418,27 +424,33 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
             position: "absolute",
             width: "100%",
             justifyContent: "space-between",
-            bottom: "50%",
+            bottom: "calc(50% - 18px)",
             display: "flex",
           }}
         >
           <div
             style={{ padding: "10px" }}
-            onClick={goPrev}
+            onClick={(e) => {
+              goPrev(e);
+              onChange?.(current - 1);
+            }}
             onMouseUp={(e) => e.stopPropagation()}
             onMouseDown={(e) => e.stopPropagation()}
             onMouseMove={(e) => e.stopPropagation()}
           >
-            <img src={Next} alt="" />
+            {navElementLeft || <img src={Next} alt="" />}
           </div>
           <div
             style={{ padding: "10px" }}
-            onClick={goNext}
+            onClick={(e) => {
+              goNext(e);
+              onChange?.(current + 1);
+            }}
             onMouseUp={(e) => e.stopPropagation()}
             onMouseDown={(e) => e.stopPropagation()}
             onMouseMove={(e) => e.stopPropagation()}
           >
-            <img src={Previous} alt="" />
+            {navElementRight || <img src={Previous} alt="" />}
           </div>
         </div>
       )}

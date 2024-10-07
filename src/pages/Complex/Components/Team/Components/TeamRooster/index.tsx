@@ -2,12 +2,15 @@ import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import { Icons } from "../../../../../../components/Icons";
 import { useRef } from "react";
+import Carousel from "../../../../../../components/Carousel";
 
 const TeamRooster = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const [team, setTeam] = useState<number>(0);
+
   const [member, setMember] = useState<number>(0);
+
   const teamList = [
     {
       title: "Cirúrgica",
@@ -22,7 +25,7 @@ const TeamRooster = () => {
         },
         {
           name: "dra. ana luísa",
-          role: "Outro Cargo",
+          role: "Outro Cargo1",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
@@ -51,15 +54,7 @@ const TeamRooster = () => {
         },
         {
           name: "dra. ana luísa",
-          role: "Outro Cargo",
-          description:
-            "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
-          image:
-            "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
-        },
-        {
-          name: "dra. ana luísa",
-          role: "Outro Cargo",
+          role: "Outro Cargo2",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
@@ -80,7 +75,7 @@ const TeamRooster = () => {
         },
         {
           name: "dra. ana luísa",
-          role: "Outro Cargo",
+          role: "Outro Cargo3",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
@@ -109,7 +104,7 @@ const TeamRooster = () => {
         },
         {
           name: "dra. ana luísa",
-          role: "Outro Cargo",
+          role: "Outro Cargo4",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
           image:
@@ -150,7 +145,10 @@ const TeamRooster = () => {
             return (
               <>
                 <div
-                  onClick={() => setTeam(index)}
+                  onClick={() => {
+                    setTeam(index);
+                    setMember(0);
+                  }}
                   key={index}
                   style={{
                     display: "flex",
@@ -166,7 +164,7 @@ const TeamRooster = () => {
                       cursor: "pointer",
                     }}
                   >
-                    {teamL.title}
+                    {teamL?.title}
                   </Typography>
                 </div>
                 {index !== teamList.length - 1 && (
@@ -203,7 +201,7 @@ const TeamRooster = () => {
                 fontWeight: "bold",
               }}
             >
-              {teamList[team].team[member].name}
+              {teamList[team]?.team[member]?.name}
             </Typography>
             <Typography
               style={{
@@ -213,7 +211,7 @@ const TeamRooster = () => {
                 fontWeight: 300,
               }}
             >
-              {teamList[team].team[member].description}
+              {teamList[team]?.team[member]?.description}
             </Typography>
           </div>
         </Grid>
@@ -222,7 +220,7 @@ const TeamRooster = () => {
             <img
               alt=""
               style={{ height: "350px", width: "100%", objectFit: "cover" }}
-              src={teamList[team].team[member].image}
+              src={teamList[team]?.team[member]?.image}
             />
             {teamList[team]?.team?.map((team, index) => {
               return (
@@ -260,16 +258,16 @@ const TeamRooster = () => {
     );
   };
 
-  const MobileElement = ({ element }: any) => {
+  const MobileElement = ({ element, index }: any) => {
     const [open, setOpen] = useState<boolean>(false);
     return (
       <>
         <div
           onClick={() => setOpen(!open)}
           style={{
-            backgroundColor: "lightgray",
+            backgroundColor: `rgb(217,217,217,${1 - index / 5})`,
             padding: "5px 20px",
-            marginTop: "10px",
+            marginTop: "5px",
           }}
         >
           <Typography
@@ -313,50 +311,7 @@ const TeamRooster = () => {
   };
 
   const ImageRoosterMobile = () => {
-    const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-    // Function to scroll left
-    const scrollLeft = () => {
-      if (scrollContainerRef.current) {
-        scrollContainerRef.current.scrollBy({
-          left: -window.innerWidth, // Scroll by one full viewport width
-          behavior: "smooth", // Smooth scrolling
-        });
-      }
-      setTeam((prev) => {
-        if (prev > 0) {
-          return prev - 1; // Subtract 1 if the current team index is greater than 0
-        } else {
-          return teamList.length - 1; // Reset to the last team if the current team index is 0
-        }
-      });
-    };
-
-    // Function to scroll right
-    const scrollRight = () => {
-      if (scrollContainerRef.current) {
-        scrollContainerRef.current.scrollBy({
-          left: window.innerWidth, // Scroll by one full viewport width
-          behavior: "smooth",
-        });
-      }
-      setTeam((prev) => {
-        if (prev < teamList.length - 1) {
-          return prev + 1; // Increment the team index if it's not the last one
-        } else {
-          return 0; // Reset to the first team if the current team index is the last one
-        }
-      });
-    };
-
-    const handleScroll = () => {
-      if (scrollContainerRef.current) {
-        const newScrollPos = scrollContainerRef.current.scrollLeft;
-        const teamIndex = Math.round(newScrollPos / window.innerWidth); // Calculate index based on scroll position
-
-        setTeam(teamIndex); // Update team index based on scroll position
-      }
-    };
+    const [teamMobile, setTeamMobile] = useState<number>(0);
 
     return (
       <div
@@ -370,35 +325,42 @@ const TeamRooster = () => {
         <div
           style={{
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
-            columnGap: "5px",
-            margin: "0px 20px",
           }}
         >
-          <Icons.LeftArrow size={"10px"} onClick={scrollLeft} />
+          <Carousel
+            navButton={true}
+            navType="admin"
+            navElementRight={<Icons.RightArrow size={"10px"} />}
+            navElementLeft={<Icons.LeftArrow size={"10px"} />}
+            navButtonOrientation="horizontal"
+            width={"100%"}
+            dragThreshold={50}
+            dots={false}
+            height={"auto"}
+            pauseDuration={3000}
+            slideDuration={1000}
+            direction={1}
+            autoPlay={false}
+            tweenAnime="ease"
+            onChange={(index) => {
+              const adjustedIndex = index % 4 === 0 ? 4 : index % 4;
 
-          <div
-            ref={scrollContainerRef}
-            //onScroll={handleScroll}
-            style={{
-              display: "flex",
-              paddingTop: "1px",
-              overflowX: "scroll",
-              alignItems: "center",
-
-              scrollSnapType: "x mandatory", // Enable horizontal scroll snapping
+              setTimeout(() => setTeamMobile(adjustedIndex - 1), 1000);
             }}
           >
             {teamList.map((item, index) => {
               return (
                 <div
                   style={{
-                    width: "100%", // Ensure each item takes full viewport width
-                    scrollSnapAlign: "start", // Snap each item to the start
-                    flexShrink: 0, // Prevent the item from shrinking
+                    width: "100%",
+                    height: "100%", // Ensure each item takes full viewport width
+
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center", // Prevent the item from shrinking
                   }}
-                  onClick={() => setTeam(index)}
                   key={index}
                 >
                   <Typography
@@ -416,15 +378,12 @@ const TeamRooster = () => {
                 </div>
               );
             })}
-          </div>
-
-          <Icons.RightArrow size={"10px"} onClick={scrollRight} />
+          </Carousel>
         </div>
-
         <img
           alt=""
           style={{
-            marginTop: "30px",
+            marginTop: "10px",
             height: "260px",
             width: "100%",
             objectFit: "cover",
@@ -432,8 +391,8 @@ const TeamRooster = () => {
           src={teamList[team].team[member].image}
         />
 
-        {teamList[team].team.map((element, index) => {
-          return <MobileElement key={index} element={element} />;
+        {teamList[teamMobile].team.map((element, index) => {
+          return <MobileElement index={index} key={index} element={element} />;
         })}
 
         <div
