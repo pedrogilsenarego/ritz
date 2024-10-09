@@ -37,11 +37,14 @@ const Team = () => {
         <Typography
           variant="h1"
           style={{
+            marginLeft: "10px",
+            marginRight: "10px",
             fontSize: mobile ? "23px" : "40px",
             fontWeight: 500,
             textTransform: "uppercase",
             width: "100%",
             textAlign: "center",
+            whiteSpace: "nowrap",
           }}
         >
           a equipa ehtiq

@@ -1,7 +1,6 @@
 import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import { Icons } from "../../../../../../components/Icons";
-import { useRef } from "react";
 import Carousel from "../../../../../../components/Carousel";
 
 const TeamRooster = () => {
@@ -219,7 +218,7 @@ const TeamRooster = () => {
           <div style={{ display: "flex", width: "100%" }}>
             <img
               alt=""
-              style={{ height: "350px", width: "100%", objectFit: "cover" }}
+              style={{ height: "369px", width: "320px", objectFit: "cover" }}
               src={teamList[team]?.team[member]?.image}
             />
             {teamList[team]?.team?.map((team, index) => {
@@ -239,7 +238,9 @@ const TeamRooster = () => {
                   <Typography
                     style={{
                       fontSize: "10px",
-                      fontWeight: index === member ? 600 : 500,
+                      textDecoration:
+                        index === member ? "underline" : "undefined",
+                      fontWeight: 500,
                       writingMode: "vertical-rl",
                       textOrientation: "mixed",
                       whiteSpace: "nowrap",
@@ -316,7 +317,7 @@ const TeamRooster = () => {
     return (
       <div
         style={{
-          width: "70%", // Use 100% width for mobile responsiveness
+          width: "70%",
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",
