@@ -2,6 +2,7 @@ import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import { Icons } from "../../../../../../components/Icons";
 import Carousel from "../../../../../../components/Carousel";
+import { motion } from "framer-motion";
 
 const TeamRooster = () => {
   const theme = useTheme();
@@ -15,6 +16,7 @@ const TeamRooster = () => {
       title: "Cirúrgica",
       team: [
         {
+          index: 0,
           name: "dra. ana luísa",
           role: "Cargo Elemento",
           description:
@@ -23,7 +25,8 @@ const TeamRooster = () => {
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
-          name: "dra. ana luísa",
+          index: 1,
+          name: "dra. joao",
           role: "Outro Cargo1",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
@@ -31,7 +34,8 @@ const TeamRooster = () => {
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
-          name: "dra. ana luísa",
+          index: 2,
+          name: "dra. miguel",
           role: "Outro Cargo",
           description:
             "descrição sobre personalidade, experiencia e especialidades. compor texto apelativo e cativante sobre cada elemento.o cliente deve desejar conhecê-lo.",
@@ -44,6 +48,7 @@ const TeamRooster = () => {
       title: "Dentária",
       team: [
         {
+          index: 0,
           name: "dra. ana luísa",
           role: "Cargo Elemento",
           description:
@@ -52,6 +57,7 @@ const TeamRooster = () => {
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
+          index: 1,
           name: "dra. ana luísa",
           role: "Outro Cargo2",
           description:
@@ -65,6 +71,7 @@ const TeamRooster = () => {
       title: "Não-Cirúrgica",
       team: [
         {
+          index: 0,
           name: "dra. ana luísa",
           role: "Cargo Elemento",
           description:
@@ -73,6 +80,7 @@ const TeamRooster = () => {
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
+          index: 1,
           name: "dra. ana luísa",
           role: "Outro Cargo3",
           description:
@@ -81,6 +89,7 @@ const TeamRooster = () => {
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
+          index: 2,
           name: "dra. ana luísa",
           role: "Outro Cargo",
           description:
@@ -94,6 +103,7 @@ const TeamRooster = () => {
       title: "Saúde-Preventiva",
       team: [
         {
+          index: 0,
           name: "dra. ana luísa",
           role: "Cargo Elemento",
           description:
@@ -102,6 +112,7 @@ const TeamRooster = () => {
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
+          index: 1,
           name: "dra. ana luísa",
           role: "Outro Cargo4",
           description:
@@ -110,6 +121,7 @@ const TeamRooster = () => {
             "https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png",
         },
         {
+          index: 2,
           name: "dra. ana luísa",
           role: "Outro Cargo",
           description:
@@ -120,6 +132,31 @@ const TeamRooster = () => {
       ],
     },
   ];
+
+  const rearrangeTeamDoctorsList = (teamDoctors: any) => {
+    if (teamDoctors.length === 0) return [];
+
+    const selectedIndex = member;
+
+    const newList = [];
+
+    // Start with the selected member
+    newList.push(teamDoctors[selectedIndex]);
+
+    // Add members after the selected index
+    for (let i = selectedIndex + 1; i < teamDoctors.length; i++) {
+      newList.push(teamDoctors[i]);
+    }
+
+    // Add members before the selected index
+    for (let i = 0; i < selectedIndex; i++) {
+      newList.push(teamDoctors[i]);
+    }
+
+    return newList;
+  };
+
+  const teamDoctorsList = rearrangeTeamDoctorsList(teamList[team]?.team || []);
 
   const ImageRoosterLaptop = () => {
     return (
@@ -138,6 +175,7 @@ const TeamRooster = () => {
             display: "flex",
             justifyContent: "center",
             marginBottom: "50px",
+            transition: "all 0.5s ease",
           }}
         >
           {teamList.map((teamL, index) => {
@@ -221,10 +259,15 @@ const TeamRooster = () => {
               style={{ height: "369px", width: "320px", objectFit: "cover" }}
               src={teamList[team]?.team[member]?.image}
             />
-            {teamList[team]?.team?.map((team, index) => {
+            {teamDoctorsList.map((team, index) => {
               return (
-                <div
-                  onClick={() => setMember(index)}
+                <motion.div
+                  initial={{ opacity: 0 }} // Starting opacity
+                  animate={{ opacity: 1 }} // Animate to opacity 1
+                  transition={{ duration: 0.5 }} // Duration of the transition
+                  onClick={() => {
+                    setMember(team.index);
+                  }}
                   key={index}
                   style={{
                     cursor: "pointer",
@@ -238,8 +281,7 @@ const TeamRooster = () => {
                   <Typography
                     style={{
                       fontSize: "10px",
-                      textDecoration:
-                        index === member ? "underline" : "undefined",
+                      textDecoration: index === 0 ? "underline" : "undefined",
                       fontWeight: 500,
                       writingMode: "vertical-rl",
                       textOrientation: "mixed",
@@ -250,7 +292,7 @@ const TeamRooster = () => {
                   >
                     {team.role}
                   </Typography>
-                </div>
+                </motion.div>
               );
             })}
           </div>
