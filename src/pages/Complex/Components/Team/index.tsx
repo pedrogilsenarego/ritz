@@ -14,13 +14,14 @@ const Team = () => {
         width: "100%",
         marginTop: mobile ? "100px" : "0px",
         flexDirection: "column",
-        rowGap: "70px",
+        rowGap: mobile ? "40px" : "60px",
       }}
     >
       <div
         style={{
           display: "flex",
-          backgroundColor: "rgba(255, 255, 255, 1)",
+          background:
+            "linear-gradient(90deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.953431) 18.5%, #FFFFFF 79%, rgba(255, 255, 255, 0.05) 100%)",
           width: "100%",
           alignItems: "center",
           padding: mobile ? "10px 20px" : "30px 150px",
@@ -29,16 +30,16 @@ const Team = () => {
       >
         <div
           style={{
-            height: mobile ? "1px" : "2px",
-            width: mobile ? "30%" : "100%",
-            backgroundColor: "grey",
+            height: mobile ? "1px" : "1px",
+            width: mobile ? "30%" : "50%",
+            backgroundColor: "rgba(0, 0, 0, 0.4)",
           }}
         />
         <Typography
           variant="h1"
           style={{
-            marginLeft: "10px",
-            marginRight: "10px",
+            marginLeft: "40px",
+            marginRight: "40px",
             fontSize: mobile ? "23px" : "40px",
             fontWeight: 500,
             textTransform: "uppercase",
@@ -52,16 +53,18 @@ const Team = () => {
         </Typography>
         <div
           style={{
-            height: mobile ? "1px" : "2px",
-            width: mobile ? "30%" : "100%",
-            backgroundColor: "grey",
+            height: mobile ? "1px" : "1px",
+            width: mobile ? "30%" : "50%",
+            backgroundColor: "rgba(0, 0, 0, 0.4)",
           }}
         />
       </div>
       <Typography
         style={{
           fontSize: mobile ? "8px" : "12px",
-          width: mobile ? "90%" : "80%",
+          color: "rgba(0, 0, 0, 0.6)",
+
+          width: mobile ? "80%" : "80%",
           textAlign: "center",
           textTransform: "uppercase",
           letterSpacing: "1px",

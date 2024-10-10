@@ -164,8 +164,8 @@ const TeamRooster = () => {
         container
         columnSpacing={"20px"}
         style={{
-          marginTop: "30px",
-          width: "80%",
+          marginTop: "10px",
+          width: "100%",
         }}
       >
         <Grid
@@ -199,6 +199,7 @@ const TeamRooster = () => {
                       textDecoration: index === team ? "underline" : undefined,
                       fontWeight: index === team ? 700 : 500,
                       cursor: "pointer",
+                      whiteSpace: "nowrap",
                     }}
                   >
                     {teamL?.title}
