@@ -1,4 +1,4 @@
-import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
 import { Icons } from "../../../../../../components/Icons";
 import Carousel from "../../../../../../components/Carousel";
@@ -219,7 +219,7 @@ const TeamRooster = () => {
             );
           })}
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} sx={{ width: "100%" }}>
           <div
             style={{
               display: "flex",
@@ -229,28 +229,33 @@ const TeamRooster = () => {
               paddingBottom: "30px",
               height: "100%",
               width: "90%",
+
+              alignItems: "end",
             }}
           >
-            <Typography
-              style={{
-                textTransform: "uppercase",
-                fontSize: mobile ? "15px" : "20px",
-                letterSpacing: "1px",
-                fontWeight: "bold",
-              }}
-            >
-              {teamList[team]?.team[member]?.name}
-            </Typography>
-            <Typography
-              style={{
-                textTransform: mobile ? "uppercase" : "capitalize",
-                fontSize: mobile ? "8px" : "12px",
-                lineHeight: "21px",
-                fontWeight: 300,
-              }}
-            >
-              {teamList[team]?.team[member]?.description}
-            </Typography>
+            <Box>
+              <Typography
+                style={{
+                  textTransform: "uppercase",
+                  fontSize: mobile ? "15px" : "20px",
+                  letterSpacing: "1px",
+                  fontWeight: "bold",
+                }}
+              >
+                {teamList[team]?.team[member]?.name}
+              </Typography>
+              <Typography
+                style={{
+                  textTransform: mobile ? "uppercase" : "capitalize",
+                  fontSize: mobile ? "8px" : "12px",
+                  lineHeight: "21px",
+                  fontWeight: 300,
+                  maxWidth: mobile ? undefined : "300px",
+                }}
+              >
+                {teamList[team]?.team[member]?.description}
+              </Typography>
+            </Box>
           </div>
         </Grid>
         <Grid item xs={6} style={{ width: "100%" }}>
@@ -303,11 +308,10 @@ const TeamRooster = () => {
   };
 
   const MobileElement = ({ element, index }: any) => {
-    const [open, setOpen] = useState<boolean>(false);
     return (
       <>
         <div
-          onClick={() => setOpen(!open)}
+          onClick={() => setMember(element.index)}
           style={{
             backgroundColor: `rgb(217,217,217,${1 - index / 5})`,
             padding: "5px 20px",
@@ -324,7 +328,7 @@ const TeamRooster = () => {
             {element.role}
           </Typography>
         </div>
-        {open && (
+        {member === element.index && (
           <div style={{ padding: "50px 0px" }}>
             <Typography
               style={{
@@ -435,7 +439,7 @@ const TeamRooster = () => {
           src={teamList[team].team[member].image}
         />
 
-        {teamList[teamMobile].team.map((element, index) => {
+        {teamDoctorsList.map((element: any, index: any) => {
           return <MobileElement index={index} key={index} element={element} />;
         })}
 
@@ -449,7 +453,7 @@ const TeamRooster = () => {
   return (
     <div
       style={{
-        padding: mobile ? "0px" : "0px 200px",
+        padding: mobile ? "0px" : "0px 50px",
         width: "100%",
         display: "flex",
         justifyContent: "center",
