@@ -3,7 +3,7 @@ import generalTypes, { General } from "./types";
 const INITIAL_STATE: General = {
   notificationMessage: "",
   notificationType: null,
-  lang: "EN",
+  lang: "PT",
   cookiePolicy: true,
   positionVertical: false,
   cookieSettings: {
