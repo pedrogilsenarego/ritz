@@ -5,9 +5,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes";
 import { theme } from "./theme/theme";
+import { useDetectLanguage } from "./hooks/useInitialLang";
 
 function App() {
   const queryClient = new QueryClient();
+  useDetectLanguage();
 
   return (
     <BrowserRouter>
