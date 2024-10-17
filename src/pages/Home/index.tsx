@@ -8,6 +8,7 @@ import Treatments from "./Components/Treatments";
 import { State } from "../../redux/types";
 import { useSelector } from "react-redux";
 import { MdVolumeUp, MdVolumeOff } from "react-icons/md";
+import { Featured } from "./Components/Featured";
 
 const Home = () => {
   const theme = useTheme();
@@ -74,8 +75,18 @@ const Home = () => {
       >
         <Treatments />
       </div>
-
-      <div style={{ marginTop: "150px" }}>
+      <div style={{ marginTop: "200px" }}>
+        <Container
+          style={{
+            marginTop: mobile ? "35px" : "130px",
+            maxWidth: MAX_SCREEN,
+            padding: mobile ? "0px" : "0px 150px",
+          }}
+        >
+          <Featured />
+        </Container>
+      </div>
+      <div style={{ marginTop: "50px" }}>
         <Container
           style={{
             marginTop: mobile ? "50px" : "130px",
