@@ -240,7 +240,7 @@ const Complex = () => {
         >
           <Eyes />
 
-          {devMode && <Team />}
+          {/*<Team />*/}
         </div>
       </Container>
       <div style={{ marginTop: mobile ? "100px" : "200px" }}>
