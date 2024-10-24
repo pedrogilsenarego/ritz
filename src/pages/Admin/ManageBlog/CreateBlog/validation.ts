@@ -60,10 +60,6 @@ export const FORM_VALIDATION = Yup.object().shape({
   mainText_es: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-
-  template: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  ),
   tag: Yup.mixed().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),

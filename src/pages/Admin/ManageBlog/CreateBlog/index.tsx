@@ -146,17 +146,6 @@ const CreateBlog = () => {
               <Grid container spacing={"80px"}>
                 <Grid item xs={5}>
                   <Grid container spacing={2}>
-                    <Grid item xs={12} marginTop={"30px"}>
-                      <ControlledSelect
-                        control={control}
-                        name="template"
-                        options={[
-                          { value: "1", label: "1 -  Capa > Corpo" },
-                          { value: "2", label: "2 -  Corpo > Imagem > Corpo" },
-                        ]}
-                        defaultLabel={"Template"}
-                      />
-                    </Grid>
                     <Grid item xs={12} style={{ marginTop: "20px" }}>
                       <ControlledSelect
                         balls
