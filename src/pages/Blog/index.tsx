@@ -1,9 +1,20 @@
 import { Box, Container, Typography } from "@mui/material";
 import { useState } from "react";
+import Facebook from "../../assets/Facebook.svg";
+import X from "../../assets/x.png";
+import Ln from "../../assets/Frame.png";
 
 const Blog = () => {
   const [label, setLabel] = useState<number>(0);
   const data = [
+    {
+      label: "Estética & Cirúrgica",
+      color: "rgba(79, 83, 145, 0.5)",
+      image: "",
+      title: "As 5 MELHORES TERAPÊUTICAS para Olheiras",
+      subtitle:
+        "Frase que pertence ao subtítulo da página de blog. Frase que pertence ao subtítulo...",
+    },
     {
       label: "Estética & Cirúrgica",
       color: "rgba(79, 83, 145, 0.5)",
@@ -194,61 +205,121 @@ const Blog = () => {
           margin: "150px 80px 0px 80px",
           display: "flex",
           columnGap: "35px",
+          flexDirection: "column",
         }}
       >
         {data.map((element) => {
           return (
-            <Box
-              sx={{ display: "flex", columnGap: "20px", alignItems: "center" }}
-            >
-              <div
-                style={{
-                  width: "366px",
-                  height: "409px",
-                  backgroundColor: "rgba(217, 217, 217, 0.5)",
+            <Box>
+              <Box
+                sx={{
+                  display: "flex",
+                  columnGap: "20px",
+                  alignItems: "center",
                 }}
-              />
-              <Box>
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    columnGap: "10px",
+              >
+                <div
+                  style={{
+                    width: "366px",
+                    height: "409px",
+                    backgroundColor: "rgba(217, 217, 217, 0.5)",
                   }}
-                >
-                  <div
-                    style={{
-                      borderRadius: "50%",
-                      width: "8px",
-                      height: "8px",
-                      backgroundColor: element.color,
-                    }}
-                  />
-                  <Typography
+                />
+                <Box>
+                  <Box
                     sx={{
-                      marginTop: "1px",
-                      fontSize: "11px",
-                      textTransform: "uppercase",
-                      fontWeight: 400,
-                      letterSpacing: "1px",
-                      lineHeight: "14px",
+                      display: "flex",
+                      alignItems: "center",
+                      columnGap: "10px",
                     }}
                   >
-                    {element.label}
+                    <div
+                      style={{
+                        borderRadius: "50%",
+                        width: "8px",
+                        height: "8px",
+                        backgroundColor: element.color,
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        marginTop: "1px",
+                        fontSize: "11px",
+                        textTransform: "uppercase",
+                        fontWeight: 400,
+                        letterSpacing: "1px",
+                        lineHeight: "14px",
+                      }}
+                    >
+                      {element.label}
+                    </Typography>
+                  </Box>
+                  <Typography
+                    sx={{
+                      mt: "20px",
+                      fontSize: "25px",
+                      fontWeight: 400,
+                      lineHeight: "35px",
+                      letterSpacing: "1px",
+                      maxWidth: "400px",
+                    }}
+                  >
+                    {element.title}
+                  </Typography>
+                  <Box sx={{ display: "flex", columnGap: "5px", mt: "10px" }}>
+                    <img
+                      src={Facebook}
+                      alt=""
+                      style={{
+                        height: 13,
+                      }}
+                    />
+                    <img
+                      src={X}
+                      alt=""
+                      style={{
+                        height: 13,
+                      }}
+                    />
+                    <img
+                      src={Ln}
+                      alt=""
+                      style={{
+                        height: 13,
+                      }}
+                    />
+                  </Box>
+                  <Typography
+                    variant="h1"
+                    sx={{
+                      mt: "30px",
+                      fontSize: "15px",
+                      fontWeight: 500,
+                      lineHeight: "20px",
+                      letterSpacing: "1px",
+                      maxWidth: "422px",
+                    }}
+                  >
+                    {element.subtitle}
                   </Typography>
                 </Box>
-                <Typography
-                  sx={{
-                    mt: "20px",
-                    fontSize: "25px",
-                    fontWeight: 400,
-                    lineHeight: "35px",
-                    letterSpacing: "1px",
-                    maxWidth: "400px",
+              </Box>
+              <Box
+                sx={{
+                  marginTop: "67px",
+                  display: "flex",
+                  justifyContent: "center",
+                  padding: "0px 100px",
+                }}
+              >
+                <div
+                  style={{
+                    backgroundColor: "rgba(0, 0, 0, 0.3)",
+                    height: "1px",
+                    width: "100%",
+                    marginBottom: "57px",
                   }}
-                >
-                  {element.title}
-                </Typography>
+                />
               </Box>
             </Box>
           );
