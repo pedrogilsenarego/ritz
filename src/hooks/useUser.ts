@@ -10,6 +10,7 @@ export type UserQuery = {
     username: string;
     email: string;
     is_admin: boolean;
+    id: string;
   };
 };
 

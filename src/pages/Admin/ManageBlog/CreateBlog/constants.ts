@@ -5,13 +5,13 @@ export const defaultValues = {
   subtitle_pt: "",
   subtitle_en: "",
   subtitle_es: "",
-  images: [],
-  altImage: "",
-  template: "1",
+  image: [],
+  imageAlt: "",
+
   mainText_pt: "",
   mainText_en: "",
   mainText_es: "",
-  tag: "1",
+  category: "1",
 };
 
 export const defaultValues1 = (createData: any) => {
@@ -21,11 +21,11 @@ export const defaultValues1 = (createData: any) => {
     titleES: createData?.titleEN || "",
     subtitlePT: createData?.subtitlePT || "",
     subtitleEN: createData?.subtitleEN || "",
-    images: createData?.images || [],
-    altImage: createData?.altImage || "",
-    template: createData?.template || "0",
+    image: createData?.image || [],
+    imageAlt: createData?.imageAlt || "",
+
     mainTextPT: createData?.mainTextPT || "",
     mainTextEN: createData?.mainTextEN || "",
-    tag: createData?.tag || "1",
+    category: createData?.category || "1",
   };
 };

@@ -22,6 +22,7 @@ const CreateBlog = () => {
     setValue,
     setError,
     watch,
+    listcategories,
     isSubmitting,
   } = useCreateProduct();
 
@@ -150,17 +151,14 @@ const CreateBlog = () => {
                       <ControlledSelect
                         balls
                         control={control}
-                        name="tag"
-                        options={[
-                          { value: "1", label: "ESTÉTICA" },
-                          { value: "2", label: "CIRÚRGICO" },
-                        ]}
+                        name="category"
+                        options={listcategories}
                         defaultLabel={"Template"}
                       />
                     </Grid>
                     <Grid item xs={4} style={{ marginTop: "40px" }}>
                       <FileUploaderAdmin
-                        name="images"
+                        name="image"
                         hasLabel
                         control={control}
                         setValue={setValue}
@@ -175,7 +173,7 @@ const CreateBlog = () => {
                     >
                       <ControlledFormInput
                         control={control}
-                        name="altImage"
+                        name="imageAlt"
                         inputPlaceholder="Alt text"
                       />
                     </Grid>

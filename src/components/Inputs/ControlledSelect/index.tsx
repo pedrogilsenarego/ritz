@@ -19,7 +19,7 @@ export interface BaseReactHookFormProps {
   control?: Control<any, any>;
   setValue?: UseFormSetValue<any>;
   label?: string;
-  options: { value: string | number; label: string }[];
+  options: { value: string | number; label: string; color?: string }[];
 }
 
 export interface BaseProps extends FormControlProps, BaseReactHookFormProps {}
@@ -127,7 +127,7 @@ const ControlledSelect = ({
                         style={{
                           width: "12px",
                           height: "12px",
-                          backgroundColor: "lightBlue",
+                          backgroundColor: option.color || "lightBlue",
                           borderRadius: "50%",
                         }}
                       />

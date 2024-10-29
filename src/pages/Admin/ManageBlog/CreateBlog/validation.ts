@@ -42,9 +42,7 @@ export const FORM_VALIDATION = Yup.object().shape({
   subtitle_pt: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  altImage: Yup.string().required(
-    `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
-  ),
+
   subtitle_en: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
@@ -60,10 +58,13 @@ export const FORM_VALIDATION = Yup.object().shape({
   mainText_es: Yup.string().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  tag: Yup.mixed().required(
+  category: Yup.mixed().required(
     `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
   ),
-  images: Yup.mixed()
+  imageAlt: Yup.string().required(
+    `${i18n.t("pages.admin.createProducts.form.required", "Required")} PT`
+  ),
+  image: Yup.mixed()
     .required(
       `${i18n.t("pages.admin.createProducts.form.required", "Required")}`
     )
