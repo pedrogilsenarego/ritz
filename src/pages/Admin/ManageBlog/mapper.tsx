@@ -11,6 +11,7 @@ const mapProducts = (product: Blog, index: number): any => {
   return {
     id: index,
     name: product.title_pt,
+    category: product.category_pt,
     createdDate: formatDate(product.created_on),
 
     actions: [

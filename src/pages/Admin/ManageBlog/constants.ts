@@ -9,7 +9,7 @@ export const tableColumns: Column[] = [
     sortable: false,
   },
   {
-    id: "tag",
+    id: "category",
     label: "Etiqueta",
     type: ColumnType.Text,
     sortable: false,
