@@ -11,15 +11,18 @@ import { State } from "../../redux/types";
 import Facebook from "../../assets/Facebook.svg";
 import X from "../../assets/x.png";
 import Ln from "../../assets/Frame.png";
+import ArrowDown from "../../assets/Group 145.png";
 import LeftArrow from "../../assets/Group 141_2.png";
 import { ROUTE_PATHS } from "../../routes/constants";
 import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
 import SpaceWhere from "../Home/Components/SpaceWhere";
+import { useState } from "react";
 
 const BlogDetail = () => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const params = useParams();
+  const [categoriesExpanded, setCategoriesExpanded] = useState(false);
   const lang = useSelector<State, string>((state) => state.general.lang);
   const navigate = useNavigate();
 
@@ -35,6 +38,24 @@ const BlogDetail = () => {
   return (
     <>
       <Box sx={{ marginTop: mobile ? "150px" : "200px" }}>
+        <Typography
+          variant="h1"
+          sx={{
+            fontSize: mobile ? "30px" : "45px",
+            textAlign: "center",
+            fontWeight: 400,
+          }}
+        >
+          EHTIQ <i>Talks</i>
+        </Typography>
+        <div
+          style={{
+            width: "100vw",
+            height: "1px",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            marginTop: "30px",
+          }}
+        />
         <Box
           sx={{
             margin: mobile ? "30px auto" : "30px 110px 0px 110px",
@@ -46,40 +67,55 @@ const BlogDetail = () => {
           }}
         >
           {dataCategories?.results?.map((category: any, index: any) => (
-            <Box
-              key={index}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "10px",
-                cursor: "pointer",
-              }}
-            >
-              <Box
-                sx={{
-                  height: "8px",
-                  width: "8px",
-                  backgroundColor: category?.colour,
-                  borderRadius: "4px",
-                }}
-              />
-              <Typography
-                sx={{
-                  fontWeight: 500,
-                  fontSize: "11px",
-                  letterSpacing: "1px",
-                  lineHeight: "14px",
-                  textTransform: "uppercase",
-                  textDecoration:
-                    blogData?.category?.id === category?.id
-                      ? "underline"
-                      : undefined,
-                }}
-              >
-                {category?.[`category_${lang.toLowerCase()}`]}
-              </Typography>
-            </Box>
+            <>
+              {(!mobile ||
+                (mobile &&
+                  (blogData?.category?.id === category.id ||
+                    categoriesExpanded))) && (
+                <Box
+                  key={index}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    columnGap: "10px",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      height: "8px",
+                      width: "8px",
+                      backgroundColor: category?.colour,
+                      borderRadius: "4px",
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontWeight: 500,
+                      fontSize: "11px",
+                      letterSpacing: "1px",
+                      lineHeight: "14px",
+                      textTransform: "uppercase",
+                      textDecoration:
+                        blogData?.category?.id === category?.id
+                          ? "underline"
+                          : undefined,
+                    }}
+                  >
+                    {category?.[`category_${lang.toLowerCase()}`]}
+                  </Typography>
+                </Box>
+              )}
+            </>
           ))}
+          {mobile && (
+            <img
+              onClick={() => setCategoriesExpanded(!categoriesExpanded)}
+              src={ArrowDown}
+              alt=""
+              style={{ width: "13px", marginTop: "10px" }}
+            />
+          )}
         </Box>
 
         <Box
@@ -171,6 +207,7 @@ const BlogDetail = () => {
               width: "100%",
 
               display: "flex",
+
               justifyContent: "center",
               position: "relative",
             }}
@@ -194,7 +231,7 @@ const BlogDetail = () => {
               style={{
                 marginTop: "64px",
                 objectFit: "cover",
-                width: mobile ? "90%" : "424px",
+                width: mobile ? "calc(100% - 60px)" : "424px",
                 height: mobile ? "361px" : "474px",
               }}
             />
@@ -203,6 +240,8 @@ const BlogDetail = () => {
             sx={{
               width: "100%",
               mt: "82px",
+
+              padding: mobile ? "0px 30px" : undefined,
               maxWidth: "850px",
             }}
           >
@@ -284,10 +323,10 @@ const BlogDetail = () => {
           />
         </Box>
       </Box>
-      <div style={{ marginTop: mobile ? "180px" : "200px" }}>
+      <div style={{ marginTop: mobile ? "50px" : "200px" }}>
         <TreatmentVideo />
       </div>
-      <div style={{ marginTop: mobile ? "200px" : "200px" }}>
+      <div style={{ marginTop: mobile ? "120px" : "200px" }}>
         <SpaceWhere />
       </div>
     </>
