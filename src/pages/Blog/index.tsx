@@ -22,12 +22,15 @@ import ArrowDown from "../../assets/Group 145.png";
 import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
 import SpaceWhere from "../Home/Components/SpaceWhere";
 import ArrowUp from "../../assets/Group 141.png";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../routes/constants";
 
 const Blog = () => {
   const { data: dataCategories } = useQuery<any, any>(
     [queryKeys.blogCategories],
     () => handleFetchBlogCategories()
   );
+  const navigate = useNavigate();
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const [label, setLabel] = useState<number>(1);
@@ -206,11 +209,15 @@ const Blog = () => {
             return (
               <Box key={index} ref={index === 5 ? sixthElementRef : null}>
                 <Box
+                  onClick={() =>
+                    navigate(ROUTE_PATHS.BLOG_DETAIL.replace(":id", element.id))
+                  }
                   sx={{
                     display: "flex",
                     flexDirection: mobile ? "column" : "row",
                     columnGap: "50px",
                     alignItems: "center",
+                    cursor: "pointer",
                   }}
                 >
                   <img

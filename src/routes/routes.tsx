@@ -34,6 +34,14 @@ export const routes: AppRoute[] = [
     ),
   },
   {
+    path: ROUTE_PATHS.BLOG_DETAIL,
+    component: (
+      <MainLayout>
+        <RoutesI.BlogDetail />
+      </MainLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.PRODUCTS,
     component: (
       <MainLayout>

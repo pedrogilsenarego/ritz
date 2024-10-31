@@ -61,6 +61,7 @@ export const RoutesI = {
   Experience: lazyWithRetryAndLoader(() => import("../pages/Experience")),
   Complex: lazyWithRetryAndLoader(() => import("../pages/Complex")),
   Blog: lazyWithRetryAndLoader(() => import("../pages/Blog")),
+  BlogDetail: lazyWithRetryAndLoader(() => import("../pages/BlogDetail")),
   Testemonials: lazyWithRetryAndLoader(() => import("../pages/Testemonials")),
   Treatments: lazyWithRetryAndLoader(() => import("../pages/Treatments")),
   TreatmentID: lazyWithRetryAndLoader(() => import("../pages/TreatmentID")),
