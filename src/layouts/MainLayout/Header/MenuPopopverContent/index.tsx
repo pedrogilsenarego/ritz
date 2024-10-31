@@ -128,33 +128,31 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                 rowGap: "20px",
               }}
             >
-              {devMode && (
-                <Typography
-                  className={"text"}
-                  style={{
-                    cursor: "pointer",
-                    fontSize: "16px",
-                    fontWeight:
-                      location.pathname === ROUTE_PATHS.BLOG_ ? 500 : 400,
-                    textAlign: "center",
-                    letterSpacing: "1px",
-                    textTransform: "uppercase",
-                  }}
-                  onClick={() => {
-                    navigate(ROUTE_PATHS.BLOG_);
-                    handleClose();
-                  }}
-                >
-                  {i18n.t("header.blog")}
-                </Typography>
-              )}
+              <Typography
+                className={"text"}
+                style={{
+                  cursor: "pointer",
+                  fontSize: "16px",
+                  fontWeight:
+                    location.pathname === ROUTE_PATHS.BLOG_ ? 500 : 400,
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textTransform: "uppercase",
+                }}
+                onClick={() => {
+                  navigate(ROUTE_PATHS.BLOG_);
+                  handleClose();
+                }}
+              >
+                EHTIQ Talks
+              </Typography>
 
               <div
                 style={{
                   display: "flex",
                   rowGap: "10px",
                   columnGap: "20px",
-
+                  marginTop: "10px",
                   justifyContent: "space-between",
                 }}
               >
@@ -478,28 +476,24 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                     rowGap: "20px",
                   }}
                 >
-                  {devMode && (
-                    <Typography
-                      className={"text"}
-                      style={{
-                        cursor: "pointer",
-                        fontSize: "15px",
-                        fontWeight:
-                          location.pathname === ROUTE_PATHS.BLOG_
-                            ? "bold"
-                            : 400,
-                        textAlign: "center",
-                        letterSpacing: "1px",
-                        textTransform: "uppercase",
-                      }}
-                      onClick={() => {
-                        navigate(ROUTE_PATHS.BLOG_);
-                        handleClose();
-                      }}
-                    >
-                      {i18n.t("header.blog")}
-                    </Typography>
-                  )}
+                  <Typography
+                    className={"text"}
+                    style={{
+                      cursor: "pointer",
+                      fontSize: "15px",
+                      fontWeight:
+                        location.pathname === ROUTE_PATHS.BLOG_ ? "bold" : 400,
+                      textAlign: "center",
+                      letterSpacing: "1px",
+                      textTransform: "uppercase",
+                    }}
+                    onClick={() => {
+                      navigate(ROUTE_PATHS.BLOG_);
+                      handleClose();
+                    }}
+                  >
+                    Ehtiq Talks
+                  </Typography>
 
                   <div
                     style={{
@@ -508,6 +502,7 @@ const MenuPopopverContent = ({ handleClose }: any) => {
                       columnGap: "20px",
                       marginBottom: "20px",
                       width: "100%",
+                      marginTop: "50px",
                       justifyContent: "space-between",
                     }}
                   >

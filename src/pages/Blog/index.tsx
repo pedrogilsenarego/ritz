@@ -5,7 +5,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Facebook from "../../assets/Facebook.svg";
 import X from "../../assets/x.png";
 import Ln from "../../assets/Frame.png";
@@ -21,6 +21,7 @@ import { queryKeys } from "../../constants/queryKeys";
 import ArrowDown from "../../assets/Group 145.png";
 import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
 import SpaceWhere from "../Home/Components/SpaceWhere";
+import ArrowUp from "../../assets/Group 141.png";
 
 const Blog = () => {
   const { data: dataCategories } = useQuery<any, any>(
@@ -35,7 +36,9 @@ const Blog = () => {
   const [data, setData] = useState<any>([]);
   const lang = useSelector<State, string>((state) => state.general.lang);
   const blogs = useQuery(["blog_entries", label], () => handleFetchBlog(label));
-  console.log(label);
+  const [showArrow, setShowArrow] = useState(false);
+  const sixthElementRef = useRef(null); // Reference to the 6th element
+
   const { mutate: fetchMore, isLoading: isLogin } = useMutation(
     fetchMoreBlogs,
     {
@@ -44,7 +47,6 @@ const Blog = () => {
       },
       onSuccess: (data: any) => {
         setNext(data?.next);
-
         setData((prev: any) => [...prev, ...data?.results]);
       },
       onSettled: () => {},
@@ -63,8 +65,51 @@ const Blog = () => {
     }
   }, [label, blogs.isLoading]);
 
+  useEffect(() => {
+    if (data?.length < 6) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setShowArrow(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sixthElementRef.current) {
+      observer.observe(sixthElementRef.current);
+    }
+
+    return () => {
+      if (sixthElementRef.current) {
+        observer.unobserve(sixthElementRef.current);
+      }
+    };
+  }, [data]);
+
   return (
-    <>
+    <div>
+      {showArrow && (
+        <img
+          onClick={() =>
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })
+          }
+          src={ArrowUp}
+          alt=""
+          style={{
+            zIndex: 1000,
+            position: "fixed",
+            cursor: "pointer",
+            bottom: mobile ? "10px" : "30px",
+            objectFit: "cover",
+            left: mobile ? "6px" : "53px",
+
+            width: mobile ? "15px" : "31px",
+          }}
+        />
+      )}
       <Box sx={{ marginTop: mobile ? "150px" : "200px" }}>
         <Typography
           variant="h1"
@@ -84,10 +129,9 @@ const Blog = () => {
             marginTop: "30px",
           }}
         />
-        <Container
-          maxWidth={"xl"}
+        <Box
           sx={{
-            margin: mobile ? "30px auto" : "30px 50px 0px 50px",
+            margin: mobile ? "30px auto" : "30px 110px 0px 110px",
             display: "flex",
             alignItems: mobile ? "center" : undefined,
             flexDirection: mobile ? "column" : "row",
@@ -126,7 +170,7 @@ const Blog = () => {
                     <Typography
                       sx={{
                         fontWeight: 500,
-                        fontSize: mobile ? "11px" : "14px",
+                        fontSize: mobile ? "11px" : "11px",
                         letterSpacing: "1px",
                         lineHeight: "14px",
                         textTransform: "uppercase",
@@ -149,11 +193,10 @@ const Blog = () => {
               style={{ width: "13px", marginTop: "10px" }}
             />
           )}
-        </Container>
-        <Container
-          maxWidth={"xl"}
-          sx={{
-            margin: mobile ? "20px 0px" : "150px 80px 0px 80px",
+        </Box>
+        <div
+          style={{
+            margin: mobile ? "20px 10px" : "160px 168px 0px 168px",
             display: "flex",
             columnGap: "35px",
             flexDirection: "column",
@@ -161,7 +204,7 @@ const Blog = () => {
         >
           {data?.map((element: any, index: number) => {
             return (
-              <Box key={index}>
+              <Box key={index} ref={index === 5 ? sixthElementRef : null}>
                 <Box
                   sx={{
                     display: "flex",
@@ -303,15 +346,15 @@ const Blog = () => {
               Carregar mais
             </Typography>
           )}
-        </Container>
+        </div>
       </Box>
-      <div style={{ marginTop: mobile ? "50px" : "200px" }}>
+      <div style={{ marginTop: mobile ? "180px" : "200px" }}>
         <TreatmentVideo />
       </div>
-      <div style={{ marginTop: mobile ? "100px" : "200px" }}>
+      <div style={{ marginTop: mobile ? "200px" : "200px" }}>
         <SpaceWhere />
       </div>
-    </>
+    </div>
   );
 };
 

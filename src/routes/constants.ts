@@ -34,7 +34,7 @@ export const ROUTE_PATHS = {
   TERMS_OF_SERVICE: "/terms-of-service",
   REFUND_POLICIE: "/refund-policies",
   MEMBERSHIP: "/membership",
-  BLOG_: "/blog",
+  BLOG_: "/ehtiqtalks",
   TESTEMONIALS: "/testemonials",
   TREATMENTS: "/treatments",
   TREATMENT_ID: "/treatments/:id",
