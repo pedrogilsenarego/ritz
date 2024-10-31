@@ -3,6 +3,7 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 import useScrollToTop from "../../utils/useScrollTop";
+import Chat from "../../presentational/Chat";
 interface HomepageLayoutProps {
   children: React.ReactNode;
   hasHeader?: boolean;

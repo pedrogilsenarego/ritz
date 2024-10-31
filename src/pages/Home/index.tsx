@@ -9,6 +9,7 @@ import { State } from "../../redux/types";
 import { useSelector } from "react-redux";
 import { MdVolumeUp, MdVolumeOff } from "react-icons/md";
 import { Featured } from "./Components/Featured";
+import Chat from "../../presentational/Chat";
 
 const Home = () => {
   const theme = useTheme();
@@ -98,6 +99,7 @@ const Home = () => {
         </Container>
       </div>
       <SpaceWhere />
+      <Chat />
     </>
   );
 };
