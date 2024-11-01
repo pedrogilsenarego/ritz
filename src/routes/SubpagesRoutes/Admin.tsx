@@ -55,6 +55,16 @@ export const adminPages = [
     ),
   },
   {
+    path: ROUTE_PATHS.ADMIN_LIVE_CHAT,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminLiveChat />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
+  {
     path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENT_CREATE_NEW,
     component: (
       <WithAdminAuth>

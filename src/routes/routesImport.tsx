@@ -34,6 +34,9 @@ export const RoutesI = {
   AdminManageContentNewTreatment: lazyWithRetryAndLoader(
     () => import("../pages/Admin/ManagePIT/CreateTreatment")
   ),
+  AdminLiveChat: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/LiveChat")
+  ),
   AdminHome: lazyWithRetryAndLoader(() => import("../pages/Admin/Home")),
   UserHome: lazyWithRetryAndLoader(() => import("../pages/User/Home")),
   UserDocuments: lazyWithRetryAndLoader(

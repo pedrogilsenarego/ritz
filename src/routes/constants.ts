@@ -20,6 +20,7 @@ export const ROUTE_PATHS = {
   ADMIN_MANAGE_CONTENT_TREATMENTS: "/admin/manage-content/treatment",
   ADMIN_MANAGE_CONTENT_TREATMENT_CREATE_NEW:
     "/admin/manage-content/treatment/create-new",
+  ADMIN_LIVE_CHAT: "/admin/live-chat",
   USER_HOME: "/user",
   USER_DOCUMENTS: "/user/documents",
   USER_SCHEDULLE: "/user/schedulle",

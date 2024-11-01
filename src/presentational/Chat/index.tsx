@@ -12,6 +12,9 @@ const Chat = () => {
   const [openChat, setOpenChat] = useState(false);
   const [online, setOnline] = useState(false);
   const [messages, setMessages] = useState([]);
+  const [connecting, setConnecting] = useState(false);
+  const [userName, setUserName] = useState<string | undefined>(undefined);
+  const [endPrompt, setEndPropmpt] = useState(false);
   return (
     <Box
       sx={{
@@ -29,8 +32,96 @@ const Chat = () => {
               boxShadow: "0px 4px 4px 0px rgba(13, 66, 106, 0.14)",
               borderRadius: "50px",
               width: "100%",
+              position: "relative",
+              overflow: "hidden",
             }}
           >
+            {endPrompt && (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  zIndex: 10,
+                  height: "100%",
+                  width: "100%",
+                  position: "absolute",
+                  backgroundColor: "rgba(255, 255, 255, 0.95)",
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontFamily: "Inter",
+                    fontWeight: 400,
+                    fontSize: "13px",
+                    color: "rgba(68, 68, 68, 1)",
+                    maxWidth: "233px",
+                    textAlign: "center",
+                    lineHeight: "16px",
+                  }}
+                >
+                  Are you sure you want to end this chat?
+                </Typography>
+                <Box
+                  onClick={() => {
+                    setOpenChat(false);
+                  }}
+                  sx={{
+                    width: "224px",
+                    backgroundColor: "rgba(215, 211, 203, 1)",
+                    boxShadow: "rgba(13, 66, 106, 0.14)",
+                    borderRadius: "52px",
+                    margin: "30px 0px 0px 0px",
+                    padding: "11px",
+                    display: "flex",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: "white",
+                      fontFamily: "Inter",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                    }}
+                  >
+                    Yes, end chat
+                  </Typography>
+                </Box>
+                <Box
+                  onClick={() => {
+                    setEndPropmpt(false);
+                  }}
+                  sx={{
+                    width: "224px",
+                    backgroundColor: "white",
+
+                    borderRadius: "52px",
+                    margin: "30px 0px 0px 0px",
+                    padding: "11px",
+                    display: "flex",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    boxShadow: "0px 6px 18px 0px rgba(13, 66, 106, 0.14)",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: "rgba(68, 68, 68, 1)",
+                      fontFamily: "Inter",
+                      fontWeight: 400,
+                      fontSize: "14px",
+                      lineHeight: "20px",
+                    }}
+                  >
+                    No, return
+                  </Typography>
+                </Box>
+              </Box>
+            )}
             <Box
               sx={{
                 minWidth: "290px",
@@ -134,44 +225,105 @@ const Chat = () => {
               {online ? (
                 <></>
               ) : (
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    rowGap: "10px",
-                  }}
-                >
-                  <img src={Logo} alt="" style={{ width: "92px" }} />
-                  <Typography
-                    sx={{
-                      fontFamily: "Inter",
-                      fontWeight: 400,
-                      fontSize: "13px",
-                      textAlign: "center",
+                <>
+                  {!connecting ? (
+                    <Box>
+                      <Box
+                        sx={{
+                          height: "44px",
+                          width: "260px",
+                          borderRadius: "10px",
+                          display: "flex",
+                          alignItems: "center",
+                          backgroundColor: "rgba(248, 249, 250, 1)",
+                          position: "relative",
+                          padding: "0 40px 0 20px", // space for the icon on the right and padding on the left
+                          boxShadow: "0px 6px 18px 0px rgba(13, 66, 106, 0.14)",
+                        }}
+                      >
+                        <input
+                          onChange={(e) => setUserName(e.target.value)}
+                          placeholder="Enter name..."
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            border: "none",
+                            outline: "none",
+                            backgroundColor: "transparent",
+                            paddingRight: "40px", // padding to prevent text overlap with icon
+                            fontSize: "13px",
+                          }}
+                        />
+                      </Box>
+                      <Box
+                        onClick={() => {
+                          if (userName) setConnecting(true);
+                        }}
+                        sx={{
+                          backgroundColor: "rgba(215, 211, 203, 1)",
+                          boxShadow: "rgba(13, 66, 106, 0.14)",
+                          borderRadius: "52px",
+                          margin: "30px 18px 0px 18px",
+                          padding: "11px",
+                          display: "flex",
+                          justifyContent: "center",
+                          cursor: "pointer",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            color: "white",
+                            fontFamily: "Inter",
+                            fontWeight: 400,
+                            fontSize: "14px",
+                            lineHeight: "20px",
+                          }}
+                        >
+                          Connect
+                        </Typography>
+                      </Box>
+                    </Box>
+                  ) : (
+                    <Box
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                        flexDirection: "column",
+                        rowGap: "10px",
+                      }}
+                    >
+                      <img src={Logo} alt="" style={{ width: "92px" }} />
+                      <Typography
+                        sx={{
+                          fontFamily: "Inter",
+                          fontWeight: 400,
+                          fontSize: "13px",
+                          textAlign: "center",
 
-                      maxWidth: "233px",
+                          maxWidth: "233px",
 
-                      color: "rgba(68, 68, 68, 1)",
-                    }}
-                  >
-                    Dear Client,
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontFamily: "Inter",
-                      fontWeight: 400,
-                      fontSize: "13px",
-                      textAlign: "center",
+                          color: "rgba(68, 68, 68, 1)",
+                        }}
+                      >
+                        Dear Client,
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontFamily: "Inter",
+                          fontWeight: 400,
+                          fontSize: "13px",
+                          textAlign: "center",
 
-                      maxWidth: "233px",
+                          maxWidth: "233px",
 
-                      color: "rgba(68, 68, 68, 1)",
-                    }}
-                  >
-                    Our team will be with you shortly.
-                  </Typography>
-                </Box>
+                          color: "rgba(68, 68, 68, 1)",
+                        }}
+                      >
+                        Our team will be with you shortly.
+                      </Typography>
+                    </Box>
+                  )}
+                </>
               )}
             </Box>
             <Box
@@ -235,7 +387,11 @@ const Chat = () => {
             }}
           >
             <Box
-              onClick={() => setOpenChat(false)}
+              onClick={() => {
+                if (online || connecting) {
+                  setEndPropmpt(true);
+                } else setOpenChat(false);
+              }}
               sx={{
                 backgroundColor: "rgba(0, 0, 0, 0.7)",
                 boxShadow: "0px 2px 14px 0px rgba(74, 58, 255, 0.17)",

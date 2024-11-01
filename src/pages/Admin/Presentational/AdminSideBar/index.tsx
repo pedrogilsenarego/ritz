@@ -113,7 +113,7 @@ const AdminSideBar = () => {
           <Button
             label={i18n.t("Live-Chat")}
             icon={<img src={Chat} style={{ height: "24px" }} alt="" />}
-            paths={[{ path: ROUTE_PATHS.HOME, label: "Live-chat" }]}
+            paths={[{ path: ROUTE_PATHS.ADMIN_LIVE_CHAT, label: "Live-chat" }]}
           />
         </Box>
         <Box
