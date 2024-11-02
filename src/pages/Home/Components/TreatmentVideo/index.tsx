@@ -5,7 +5,11 @@ import { ExpertAdvice } from "../../../../presentational/ExpertAdvice";
 import "./index.css";
 import { useEffect, useRef } from "react";
 
-export const TreatmentVideo = () => {
+type Props = {
+  padding?: string;
+};
+
+export const TreatmentVideo = (props: Props) => {
   const theme = useTheme();
   const mobile = useMediaQuery(theme.breakpoints.down("md"));
   //const videoRef = useRef<HTMLVideoElement | null>(null);

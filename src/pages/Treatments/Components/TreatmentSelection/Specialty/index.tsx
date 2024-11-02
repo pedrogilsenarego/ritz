@@ -127,13 +127,8 @@ export const Specialty = ({ openIndex }: Props) => {
           return (
             <Grid key={index} item xs={6}>
               <Typography
-                onClick={
-                  devMode
-                    ? () =>
-                        navigate(
-                          ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id)
-                        )
-                    : undefined
+                onClick={() =>
+                  navigate(ROUTE_PATHS.TREATMENT_ID.replace(":id", item.id))
                 }
                 style={{
                   cursor: "pointer",

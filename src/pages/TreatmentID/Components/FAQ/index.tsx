@@ -26,16 +26,20 @@ const FAQ = ({ data }: { data: any }) => {
           }}
         >
           <Typography
-            style={{ fontSize: "17px", fontWeight: 600, letterSpacing: "1px" }}
+            style={{
+              fontSize: mobile ? "10px" : "17px",
+              fontWeight: 600,
+              letterSpacing: "1px",
+            }}
           >
             {each?.[`question_${lang.toLowerCase()}`]}
           </Typography>
-          <p style={{ fontSize: "30px" }}>+</p>
+          <p style={{ fontSize: mobile ? "20px" : "30px" }}>+</p>
         </div>
         {open && (
           <div style={{ width: "80%", padding: "20px 0px 0px 10px" }}>
             <Typography
-              style={{ fontSize: "15px", fontWeight: 400 }}
+              style={{ fontSize: mobile ? "10px" : "15px", fontWeight: 400 }}
               dangerouslySetInnerHTML={{
                 __html: each?.[`answer_${lang.toLowerCase()}`],
               }}
@@ -52,18 +56,31 @@ const FAQ = ({ data }: { data: any }) => {
         display: "flex",
         flexDirection: "column",
         rowGap: "60px",
-        padding: "70px 150px 70px 80px",
+        padding: mobile ? "50px 35px 50px 35px" : "70px 150px 70px 80px",
         background:
           "linear-gradient(119.76deg, #FFFDFA 12.16%, rgba(239, 239, 250, 0.872865) 28.7%, #EAF0F9 66.13%, #FFFBF7 99.2%)",
       }}
     >
-      <div style={{ display: "flex", columnGap: "0px", alignItems: "end" }}>
-        <img src={FAQI} alt="" style={{ height: "69px", width: "69px" }} />
+      <div
+        style={{
+          display: "flex",
+          columnGap: mobile ? "15px" : "0px",
+          alignItems: "end",
+        }}
+      >
+        <img
+          src={FAQI}
+          alt=""
+          style={{
+            height: mobile ? "40px" : "69px",
+            width: mobile ? "40px" : "69px",
+          }}
+        />
         <Typography
           variant="h1"
           style={{
             marginLeft: "-8px",
-            fontSize: mobile ? "15px" : "25px",
+            fontSize: mobile ? "18px" : "25px",
             fontWeight: 500,
             letterSpacing: "2px",
           }}

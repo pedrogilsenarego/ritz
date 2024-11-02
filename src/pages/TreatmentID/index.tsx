@@ -3,7 +3,7 @@ import Description from "./Components/Description";
 
 import FAQ from "./Components/FAQ";
 import { MAX_SCREEN } from "../../constants/screen";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 import { useQuery } from "@tanstack/react-query";
 import { handleFetchTreatment } from "../../actions/tretaments";
@@ -12,10 +12,11 @@ import { queryKeys } from "../../constants/queryKeys";
 import { useSelector } from "react-redux";
 import { State } from "../../redux/types";
 import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
+import { ROUTE_PATHS } from "../../routes/constants";
 
 const TreatmentID = () => {
   const params = useParams();
-
+  const navigate = useNavigate();
   const lang = useSelector<State, string>((state) => state.general.lang);
   const theme = useTheme();
   const previewState = useSelector<State, any>((state) => state.admin.preview);
@@ -34,7 +35,7 @@ const TreatmentID = () => {
         <div
           style={{
             width: "100%",
-            height: "350px",
+            height: mobile ? "215px" : "350px",
             display: "flex",
             alignItems: "end",
             padding: "30px 0px",
@@ -55,16 +56,16 @@ const TreatmentID = () => {
         >
           <Container
             style={{
-              marginTop: mobile ? "100px" : "270px",
+              marginTop: mobile ? "156px" : "270px",
               maxWidth: MAX_SCREEN,
-              padding: mobile ? undefined : "0px 150px",
+              padding: mobile ? "0px 32px" : "0px 150px",
             }}
           >
             <Typography
-              variant="h1"
+              variant={mobile ? undefined : "h1"}
               style={{
                 textTransform: "uppercase",
-                fontSize: "35px",
+                fontSize: mobile ? "18px" : "35px",
                 letterSpacing: "3px",
                 fontWeight: 500,
               }}
@@ -76,26 +77,134 @@ const TreatmentID = () => {
       </div>
       <Container
         style={{
-          marginTop: mobile ? "100px" : "0px",
           maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 150px",
+          padding: mobile ? "0px 32px" : "0px 150px",
         }}
       >
         <div>
           <Description data={data} />
         </div>
-        <div style={{ marginTop: "150px" }}>
+        {!mobile && (
+          <div style={{ marginTop: mobile ? "50px" : "150px" }}>
+            <FAQ data={data} />
+          </div>
+        )}
+      </Container>
+      {mobile && (
+        <div style={{ marginTop: mobile ? "50px" : "150px" }}>
           <FAQ data={data} />
         </div>
+      )}
+      <div
+        style={{
+          marginTop: mobile ? "150px" : "195px",
+          marginBottom: "200px",
+        }}
+      >
+        <TreatmentVideo padding="0px" />
+      </div>
+      <div
+        style={{
+          marginTop: "100px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
         <div
           style={{
-            marginTop: mobile ? "150px" : "195px",
-            marginBottom: "200px",
+            border: "solid 4px rgba(244, 236, 226, 1)",
+            width: mobile ? "calc(100% - 39px)" : "593px",
+            borderRadius: "5px",
+            display: "flex",
+            flexDirection: mobile ? "column" : "row",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: mobile ? "40px 20px" : "20px 0px",
           }}
         >
-          <TreatmentVideo />
+          <Typography
+            sx={{
+              fontSize: mobile ? "14px" : "18px",
+              fontWeight: 500,
+              letterSpacing: "1px",
+            }}
+          >
+            Outros tratamentos
+          </Typography>
+          {mobile && (
+            <>
+              <Typography
+                onClick={() =>
+                  navigate(ROUTE_PATHS.TREATMENTS, {
+                    state: { specializationIndex: 0 },
+                  })
+                }
+                sx={{
+                  marginTop: "40px",
+                  cursor: "pointer",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textDecoration: "underline",
+                }}
+              >
+                Ver tratamentos desta especialidade
+              </Typography>
+              <Typography
+                onClick={() => navigate(ROUTE_PATHS.TREATMENTS)}
+                sx={{
+                  cursor: "pointer",
+                  marginTop: "20px",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textDecoration: "underline",
+                }}
+              >
+                Conhecer Assinaturas
+              </Typography>
+            </>
+          )}
         </div>
-      </Container>
+        {!mobile && (
+          <>
+            <Typography
+              onClick={() =>
+                navigate(ROUTE_PATHS.TREATMENTS, {
+                  state: { specializationIndex: 0 },
+                })
+              }
+              sx={{
+                marginTop: "40px",
+                cursor: "pointer",
+                fontWeight: 400,
+                fontSize: "17px",
+                letterSpacing: "1px",
+                textDecoration: "underline",
+              }}
+            >
+              Ver tratamentos desta especialidade
+            </Typography>
+            <Typography
+              onClick={() => navigate(ROUTE_PATHS.TREATMENTS)}
+              sx={{
+                cursor: "pointer",
+                marginTop: "20px",
+                fontWeight: 400,
+                fontSize: "17px",
+                letterSpacing: "1px",
+                textDecoration: "underline",
+              }}
+            >
+              Conhecer Assinaturas
+            </Typography>
+          </>
+        )}
+      </div>
     </>
   );
 };
