@@ -11,11 +11,18 @@ import TableList from "../../../components/TableList";
 import { tableColumns } from "./constants";
 import { mapProductsData } from "./mapper";
 import { AdminCard } from "../../../components/Atoms/AdminCard";
+import { useQuery } from "@tanstack/react-query";
+import { queryKeys } from "../../../constants/queryKeys";
+import { handleFetchBlogCategories } from "../../../actions/blog";
 
 const ManageContent = () => {
   const { isLoading, data, handleAction } = useManageProducts();
   const navigate = useNavigate();
   const { reset, control, handleSubmit } = useForm<any>({});
+  const { data: dataCategories } = useQuery<any, any>(
+    [queryKeys.blogCategories],
+    () => handleFetchBlogCategories()
+  );
 
   return (
     <GeneralPage
@@ -136,107 +143,43 @@ const ManageContent = () => {
             <div
               style={{
                 display: "flex",
-                alignItems: "center",
-                gap: "30px",
-                marginTop: "20px",
-                marginLeft: "20px",
+                flexDirection: "column",
+                justifyContent: "center",
+                gap: "10px",
               }}
             >
-              <div
-                style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
-                  backgroundColor: "orange",
-                }}
-              />
-              <p style={{ textTransform: "uppercase", fontSize: "10px" }}>
-                Estética
-              </p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "30px",
-                marginTop: "20px",
-                marginLeft: "20px",
-              }}
-            >
-              <div
-                style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
-                  backgroundColor: "orange",
-                }}
-              />
-              <p style={{ textTransform: "uppercase", fontSize: "10px" }}>
-                Estética
-              </p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "30px",
-                marginTop: "20px",
-                marginLeft: "20px",
-              }}
-            >
-              <div
-                style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
-                  backgroundColor: "orange",
-                }}
-              />
-              <p style={{ textTransform: "uppercase", fontSize: "10px" }}>
-                Estética
-              </p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "30px",
-                marginTop: "20px",
-                marginLeft: "20px",
-              }}
-            >
-              <div
-                style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
-                  backgroundColor: "orange",
-                }}
-              />
-              <p style={{ textTransform: "uppercase", fontSize: "10px" }}>
-                Estética
-              </p>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "30px",
-                marginTop: "20px",
-                marginLeft: "20px",
-              }}
-            >
-              <div
-                style={{
-                  width: "12px",
-                  height: "12px",
-                  borderRadius: "50%",
-                  backgroundColor: "orange",
-                }}
-              />
-              <p style={{ textTransform: "uppercase", fontSize: "10px" }}>
-                Estética
-              </p>
+              {dataCategories?.results?.map((category: any, index: number) => {
+                return (
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                      marginTop: "20px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "12px",
+                        height: "12px",
+
+                        borderRadius: "50%",
+                        backgroundColor: category.colour,
+                      }}
+                    />
+                    <p
+                      style={{
+                        textTransform: "uppercase",
+                        fontSize: "10px",
+                        fontFamily: "Inter",
+                        fontWeight: 400,
+                      }}
+                    >
+                      {category.category}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </AdminCard>
         </div>

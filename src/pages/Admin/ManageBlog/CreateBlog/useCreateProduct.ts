@@ -11,18 +11,28 @@ import { useBlogServices } from "../../../../services/useBlogServices";
 import { queryKeys } from "../../../../constants/queryKeys";
 import { handleFetchBlogCategories } from "../../../../actions/blog";
 import useUser from "../../../../hooks/useUser";
+import { useDispatch } from "react-redux";
+import { updatePreviewState } from "../../../../redux/admin/actions";
 
 const useCreateProduct = () => {
   const navigate = useNavigate();
   const user = useUser();
-
+  const dispatch = useDispatch();
   const { createNewBlog } = useBlogServices();
 
-  const { reset, control, handleSubmit, setValue, setError, watch, formState } =
-    useForm({
-      resolver: yupResolver(FORM_VALIDATION),
-      defaultValues: defaultValues,
-    });
+  const {
+    reset,
+    control,
+    handleSubmit,
+    setValue,
+    setError,
+    getValues,
+    watch,
+    formState,
+  } = useForm({
+    resolver: yupResolver(FORM_VALIDATION),
+    defaultValues: defaultValues,
+  });
 
   const isSubmitting = false;
 
@@ -63,6 +73,38 @@ const useCreateProduct = () => {
     return;
   };
 
+  const handlePreview = async (e: any) => {
+    e.preventDefault();
+
+    const updatedFormData = await prepareFormData(getValues()); // Prepare the form data (including converting images)
+
+    dispatch(updatePreviewState(updatedFormData)); // Dispatch the action with updated form data
+
+    const url = ROUTE_PATHS.BLOG_DETAIL.replace(":id", "preview");
+    window.open(url, "_blank", "noreferrer");
+  };
+
+  const prepareFormData = async (formData: any) => {
+    const updatedFormData = { ...formData }; // Clone the form data
+
+    // Convert topImage if it's a FileList to a URL
+    if (updatedFormData.image instanceof FileList) {
+      updatedFormData.image = await convertFileListToUrl(updatedFormData.image);
+    }
+
+    return updatedFormData;
+  };
+
+  const convertFileListToUrl = async (
+    fileList: FileList
+  ): Promise<string | undefined> => {
+    if (fileList.length === 0) return undefined; // Handle empty FileList
+
+    const file = fileList[0]; // Get the first file from the FileList
+    const imageUrl = URL.createObjectURL(file); // Create URL for the file
+    return imageUrl;
+  };
+
   return {
     handleSubmit,
     onSubmit,
@@ -70,6 +112,7 @@ const useCreateProduct = () => {
     setValue,
     isSubmitting,
     setError,
+    handlePreview,
     listcategories,
     watch,
   };

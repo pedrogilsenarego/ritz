@@ -25,15 +25,20 @@ const BlogDetail = () => {
   const [categoriesExpanded, setCategoriesExpanded] = useState(false);
   const lang = useSelector<State, string>((state) => state.general.lang);
   const navigate = useNavigate();
+  const previewState = useSelector<State, any>((state) => state.admin.preview);
 
   const { data: dataCategories } = useQuery<any, any>(
     [queryKeys.blogCategories],
     () => handleFetchBlogCategories()
   );
 
-  const { data: blogData } = useQuery(["blog_entry", params.id], () =>
-    handleFetchBlogDetail(parseInt(params?.id || "0"))
+  const { data: blogDataRaw } = useQuery(
+    ["blog_entry", params.id],
+    () => handleFetchBlogDetail(parseInt(params?.id || "0")),
+    { enabled: params?.id !== "preview" }
   );
+
+  const blogData = params?.id === "preview" ? previewState : blogDataRaw;
 
   return (
     <>

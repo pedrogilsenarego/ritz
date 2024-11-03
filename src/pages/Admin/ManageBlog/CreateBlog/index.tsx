@@ -21,6 +21,7 @@ const CreateBlog = () => {
     control,
     setValue,
     setError,
+    handlePreview,
     watch,
     listcategories,
     isSubmitting,
@@ -130,7 +131,12 @@ const CreateBlog = () => {
         title="Nova Publicação"
         subTitle="Blog EHTIQ"
         topButtons={[
-          { label: "Preview", styles: { backgroundColor: "white" } },
+          {
+            label: "Preview",
+            styles: { backgroundColor: "white" },
+            onClick: (e) => handlePreview(e),
+            type: "button",
+          },
           { label: "Publicar", icon: Internet, type: "submit" },
         ]}
       >
