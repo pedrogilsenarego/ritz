@@ -302,9 +302,13 @@ const BlogDetail = () => {
                   "en-US",
                   {
                     month: "short",
-                    day: "numeric",
                   }
-                )}
+                ) +
+                  " " +
+                  new Date(Date.parse(blogData?.created_on))
+                    .getFullYear()
+                    .toString()
+                    .slice(-2)}
               </Typography>
             </Box>
           </Box>
