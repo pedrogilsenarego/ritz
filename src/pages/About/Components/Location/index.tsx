@@ -1,17 +1,13 @@
 import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { mainColors } from "../../../../theme/theme";
+import { i18n } from "../../../../translations/i18n";
 
 const Location = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const renderLaptop = () => {
     return (
-      <Grid
-        container
-        height="100%"
-        width="100%"
-        style={{ marginTop: mobile ? "200px" : "450px" }}
-      >
+      <Grid container height="100%" width="100%">
         <Grid
           item
           xs={12}
@@ -24,9 +20,13 @@ const Location = () => {
           }}
         >
           <img
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src={
+              "https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-3.webp"
+            }
             alt=""
-            style={{ height: "500px", width: "100%", objectFit: "cover" }}
+            style={{
+              width: "100%",
+            }}
           />
         </Grid>
         <Grid
@@ -44,49 +44,54 @@ const Location = () => {
           <Box
             style={{
               display: "flex",
+
               flexDirection: "column",
               alignItems: mobile ? "center" : "start",
-              justifyContent: "end",
-              paddingBottom: "50px",
+              justifyContent: mobile ? "end" : "center",
+
               height: "500px",
               rowGap: "20px",
-              width: "70%",
+              width: "80%",
             }}
           >
             <Typography
               variant="h1"
               style={{
+                fontFamily: "'Playfair Display', serif",
                 display: "flex",
                 columnGap: "10px",
                 fontSize: mobile ? "16px" : "49px",
                 textTransform: "uppercase",
                 letterSpacing: "4px",
-                fontWeight: 700,
+                fontWeight: 600,
               }}
             >
               Castilho{" "}
               <span
                 style={{
+                  fontFamily: "'Playfair Display', serif",
+                  marginTop: "-8px",
+                  marginLeft: "8px",
                   fontSize: 60,
                   letterSpacing: "5px",
                 }}
               >
+                {" "}
                 77
               </span>
             </Typography>
             <Typography
               style={{
+                marginTop: mobile ? undefined : "20px",
                 textAlign: mobile ? "center" : undefined,
                 fontSize: mobile ? "13px" : "16px",
                 color: mainColors.primary[400],
                 textTransform: "uppercase",
                 letterSpacing: "1px",
                 lineHeight: "30px",
-                width: "70%",
               }}
             >
-              Localizada numa das zonas mais NOBRES da cidade de lisboa, a ehtiq
-              surge como um símbolo de excelência aliada à tradição.
+              {i18n.t("pages.about.box4")}
             </Typography>
             <Typography
               style={{
@@ -97,11 +102,9 @@ const Location = () => {
                 marginLeft: "20px",
                 letterSpacing: "1px",
                 lineHeight: "28px",
-                width: "70%",
               }}
             >
-              Conheça o espaço projetado para superar as suas expectativas,
-              promovendo a mais alta qualidade em cuidados de saúde.
+              {i18n.t("pages.about.box5")}
             </Typography>
           </Box>
         </Grid>
@@ -110,112 +113,112 @@ const Location = () => {
   };
   const renderMobile = () => {
     return (
-      <Grid
-        container
-        height="100%"
-        width="100%"
-        style={{
-          paddingLeft: "20px",
-          paddingRight: "20px",
-        }}
-      >
+      <div>
         <Grid
-          item
-          xs={12}
-          md={6}
+          container
+          height="100%"
+          width="100%"
           style={{
-            height: "100%",
-
-            display: "flex",
-            justifyContent: "start",
-            alignItems: "center",
+            paddingLeft: "40px",
+            paddingRight: "40px",
           }}
         >
-          <Box
+          <Grid
+            item
+            xs={12}
+            md={6}
             style={{
+              height: "100%",
+
               display: "flex",
-              flexDirection: "column",
-              alignItems: mobile ? "center" : "start",
-              justifyContent: "end",
-              paddingBottom: "50px",
-              height: "500px",
-              rowGap: "20px",
-              width: mobile ? "auto" : "70%",
+              justifyContent: "start",
+              alignItems: "center",
             }}
           >
-            <Typography
-              variant="h1"
+            <Box
               style={{
                 display: "flex",
-                columnGap: "10px",
-                fontSize: mobile ? "30px" : "49px",
-                textTransform: "uppercase",
-                letterSpacing: "4px",
-                fontWeight: 700,
+                flexDirection: "column",
+
+                justifyContent: "end",
+                paddingBottom: "50px",
+
+                rowGap: "20px",
+                width: mobile ? "auto" : "70%",
               }}
             >
-              Castilho{" "}
-              <span
+              <Typography
                 style={{
-                  fontSize: mobile ? "40px" : "60px",
-                  letterSpacing: "5px",
+                  fontFamily: "'Playfair Display', serif",
+                  display: "flex",
+                  columnGap: "5px",
+                  fontSize: mobile ? "30px" : "49px",
+                  textTransform: "uppercase",
+                  letterSpacing: "4px",
+                  fontWeight: 600,
                 }}
               >
-                77
-              </span>
-            </Typography>
-            <Typography
-              style={{
-                fontSize: mobile ? "11px" : "16px",
-                color: mainColors.primary[400],
-                textTransform: "uppercase",
-                letterSpacing: "1px",
-                lineHeight: mobile ? "21px" : "30px",
-                width: mobile ? "100%" : "70%",
-              }}
-            >
-              Localizada numa das zonas mais NOBRES da cidade de lisboa, a ehtiq
-              surge como um símbolo de excelência aliada à tradição.
-            </Typography>
-            <Typography
-              style={{
-                marginTop: mobile ? "0px" : "20px",
-
-                fontSize: mobile ? "10px" : "15px",
-                color: "grey",
-                marginLeft: mobile ? "30px" : "20px",
-                letterSpacing: "1px",
-                lineHeight: mobile ? "19px" : "28px",
-                width: mobile ? "100%" : "70%",
-              }}
-            >
-              Conheça o espaço projetado para superar as suas expectativas,
-              promovendo a mais alta qualidade em cuidados de saúde.
-            </Typography>
-          </Box>
+                Castilho{" "}
+                <span
+                  style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: mobile ? "40px" : "60px",
+                    letterSpacing: "5px",
+                    fontWeight: 400,
+                    marginTop: "-11px",
+                  }}
+                >
+                  77
+                </span>
+              </Typography>
+              <Typography
+                style={{
+                  fontSize: mobile ? "11px" : "16px",
+                  color: mainColors.primary[400],
+                  textTransform: "uppercase",
+                  letterSpacing: "1px",
+                  lineHeight: mobile ? "21px" : "30px",
+                  width: mobile ? "100%" : "70%",
+                }}
+              >
+                {i18n.t("pages.about.box4")}
+              </Typography>
+            </Box>
+          </Grid>
         </Grid>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          style={{
-            height: "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <div style={{ zIndex: -10 }}>
           <img
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-3.webp"
             alt=""
             style={{
-              height: mobile ? "200px" : "500px",
+              height: "302px",
               width: "100%",
               objectFit: "cover",
             }}
           />
-        </Grid>
-      </Grid>
+        </div>
+        <div
+          style={{
+            background: "rgba(188, 173, 164, 0.3)",
+            margin: "0px 23px",
+            padding: "28px 31px",
+            transform: "translateY(-20px)",
+            zIndex: 100,
+          }}
+        >
+          <Typography
+            style={{
+              fontSize: mobile ? "10px" : "15px",
+              color: "rgba(55, 55, 55, 1)",
+
+              letterSpacing: "1px",
+              lineHeight: mobile ? "19px" : "28px",
+            }}
+          >
+            {i18n.t("pages.about.box5")}
+          </Typography>
+        </div>
+      </div>
     );
   };
 

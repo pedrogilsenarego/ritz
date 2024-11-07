@@ -17,7 +17,6 @@ export const CheckboxContainer = styled(Checkbox)({
 export const TableContainer = styled(MuiTableContainer)(() => ({
   position: "relative",
   maxHeight: "90%",
-  padding: "10px",
 }));
 
 interface TableRowProps {
@@ -40,12 +39,14 @@ export const TableCell = styled(MuiTableCell, {
   borderBottom: `1px solid #E5E7EB`,
   textTransform: "capitalize",
   fontSize: isFirstRow ? "14px" : "14px",
-  fontWeight: isFirstRow ? "bold" : 500,
+  fontWeight: 500,
+  fontFamily: "Inter",
   paddingLeft: "30px",
   paddingTop: isFirstRow ? "14px" : "14px",
   paddingBottom: isFirstRow ? "14px" : "14px",
   color: isFirstRow ? "rgba(107, 114, 128, 1)" : Colors.black[400],
   cursor: onClick ? "pointer" : "default",
+
   backgroundColor: isFirstRow ? "rgba(243, 244, 246, 1)" : "white",
 }));
 

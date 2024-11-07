@@ -2,39 +2,49 @@ import "./index.css";
 import Close from "../../../../assets/close.svg";
 import { useNavigate } from "react-router-dom";
 import { ROUTE_PATHS } from "../../../../routes/constants";
+import ButtonBlue from "../../../../components/Ui/ButtonBlue";
+import { CSSProperties } from "react";
 
 type Props = {
   children: React.ReactNode;
   title: string;
   subTitle: string;
+  topButtons?: {
+    label: string;
+    onClick?: (e: any) => any;
+    icon?: string | undefined;
+    type?: "button" | "submit" | "reset" | undefined;
+    styles?: CSSProperties;
+  }[];
 };
 
-const GeneralPage = ({ children, title, subTitle }: Props) => {
+const GeneralPage = ({ children, title, subTitle, topButtons }: Props) => {
   const navigate = useNavigate();
   return (
     <div
       style={{
-        backgroundColor: "#EEECEC",
+        backgroundColor: "rgba(255, 255, 255, 0.25)",
         width: "100%",
         height: "100%",
-
-        borderRadius: "30px",
-        boxShadow: "0px 4px 4px 0px #0000001A",
-        padding: "50px 60px 50px 60px",
+        borderRadius: "5px",
+        boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+        position: "relative",
+        padding: "50px 35px 43px 35px",
       }}
     >
-      <div style={{ position: "relative" }}>
-        <img
-          onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}
-          src={Close}
-          alt=""
-          style={{
-            width: "31px",
-            position: "absolute",
-            right: 0,
-            cursor: "pointer",
-          }}
-        />
+      <img
+        onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}
+        src={Close}
+        alt=""
+        style={{
+          width: "31px",
+          position: "absolute",
+          right: 40,
+          top: 30,
+          cursor: "pointer",
+        }}
+      />
+      <div style={{ width: "calc(100% - 30px)" }}>
         <p
           style={{
             fontSize: "16px",
@@ -45,32 +55,57 @@ const GeneralPage = ({ children, title, subTitle }: Props) => {
         >
           {subTitle}
         </p>
-        <p
-          style={{
-            marginTop: "10px",
-            textTransform: "uppercase",
-            fontWeight: 500,
-            fontSize: "32px",
-            color: "black",
-          }}
-        >
-          {title}
-        </p>
         <div
           style={{
-            height: "2px",
-            width: "95%",
-            backgroundColor: "#00000080",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+
             marginTop: "20px",
+          }}
+        >
+          <p
+            style={{
+              fontWeight: 500,
+              fontSize: "32px",
+              lineHeight: "32px",
+              color: "black",
+            }}
+          >
+            {title}
+          </p>
+          {topButtons && (
+            <div style={{ display: "flex", columnGap: "10px" }}>
+              {topButtons.map((button) => {
+                return (
+                  <ButtonBlue
+                    type={button.type}
+                    label={button.label}
+                    onClick={(e: any) => {
+                      if (button.onClick) button.onClick(e);
+                    }}
+                    icon={button.icon}
+                    styles={button.styles}
+                  />
+                );
+              })}
+            </div>
+          )}
+        </div>
+        <div
+          style={{
+            height: "1px",
+
+            backgroundColor: "#00000080",
+            marginTop: "10px",
           }}
         />
       </div>
       <div
         style={{
-          paddingLeft: "60px",
-          paddingRight: "80px",
-          paddingTop: "100px",
-          height: "85%",
+          paddingTop: "43px",
+          height: "calc(100% - 70px)",
+          paddingBottom: "43px",
         }}
         className="custom-scrollbar"
       >

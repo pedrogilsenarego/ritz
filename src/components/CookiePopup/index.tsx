@@ -16,7 +16,7 @@ const CookiePolicy = () => {
   const dispatch = useDispatch();
   const [settingsPopup, setSettingsPopup] = useState(false);
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
 
   return (
     <>

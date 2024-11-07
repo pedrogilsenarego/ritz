@@ -1,6 +1,6 @@
 .text:after {
   transition: all ease-in-out 0.2s;
-  background: none repeat scroll 0 0 #ff5959;
+  background: none repeat scroll 0 0 #201f1f;
   content: "";
   display: block;
   height: 1px;
@@ -8,7 +8,7 @@
 }
 .text-selected:after {
   transition: all ease-in-out 0.2s;
-  background: none repeat scroll 0 0 #ff5959;
+  background: none repeat scroll 0 0 #201f1f;
   content: "";
   display: block;
   height: 1px;

@@ -13,8 +13,10 @@ import Toggle from "../Ui/Toggle";
 type Props = {
   title: string;
   children: React.ReactNode;
+  open?: boolean;
+
   toggle?: {
-    onToggle: () => void;
+    onToggle?: () => void;
     signal: boolean;
   };
 };
@@ -40,10 +42,13 @@ export default function CustomizedAccordions({
   title,
   children,
   toggle,
+  open,
 }: Props) {
-  const [expanded, setExpanded] = React.useState<string | false>(false);
+  const [expanded, setExpanded] = React.useState<string | false>(
+    open ? "panel1" : false
+  );
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
       setExpanded(newExpanded ? panel : false);
@@ -52,7 +57,10 @@ export default function CustomizedAccordions({
   return (
     <div>
       <Accordion
-        sx={{ border: "none", backgroundColor: "transparent" }}
+        sx={{
+          border: "none",
+          backgroundColor: "transparent",
+        }}
         expanded={expanded === "panel1"}
         onChange={handleChange("panel1")}
       >
@@ -61,7 +69,8 @@ export default function CustomizedAccordions({
           id="panel1d-header"
           style={{
             padding: 0,
-            borderBottom: "solid 2px black",
+
+            borderBottom: "solid 1px black",
           }}
         >
           <div
@@ -69,19 +78,21 @@ export default function CustomizedAccordions({
               justifyContent: "space-between",
               display: "flex",
               width: "100%",
+              marginBottom: mobile ? "-10px" : undefined,
               alignItems: "center",
             }}
           >
             <Typography
               style={{
-                fontSize: mobile ? "13px" : "24px",
-                fontWeight: "bold",
+                fontSize: mobile ? "13px" : "17px",
+                fontWeight: 500,
+                letterSpacing: "1px",
                 textTransform: "uppercase",
               }}
             >
               {title}
             </Typography>
-            <Typography style={{ fontSize: "30px", fontWeight: "bold" }}>
+            <Typography style={{ fontSize: "30px", fontWeight: 200 }}>
               {expanded ? "-" : "+"}
             </Typography>
           </div>
@@ -93,9 +104,8 @@ export default function CustomizedAccordions({
         </MuiAccordionSummary>
         <AccordionDetails
           style={{
-            display: "flex",
-            flexDirection: "column",
-            rowGap: "20px",
+            padding: 0,
+            borderTop: "none",
           }}
         >
           {children}

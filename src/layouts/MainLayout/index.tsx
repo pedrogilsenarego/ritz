@@ -1,8 +1,9 @@
-import { Box } from "@mui/material";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Footer from "./Footer";
 import Header from "./Header";
-import { useNavigate } from "react-router-dom";
-import { ROUTE_PATHS } from "../../routes/constants";
+
+import useScrollToTop from "../../utils/useScrollTop";
+import Chat from "../../presentational/Chat";
 interface HomepageLayoutProps {
   children: React.ReactNode;
   hasHeader?: boolean;
@@ -12,25 +13,23 @@ const HomepageLayout = ({
   children,
   hasHeader = true,
 }: HomepageLayoutProps) => {
-  const navigate = useNavigate();
+  const Theme = useTheme();
+  useScrollToTop();
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   return (
     <Box
       style={{
         minHeight: "100vh",
-
+        scrollBehavior: "smooth",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
       }}
     >
-      <div style={{ display: "flex", gap: "20px" }}>
-        <p onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}>Admin</p>
-        <p onClick={() => navigate(ROUTE_PATHS.USER_HOME)}>User</p>
-      </div>
       {hasHeader && <Header />}
 
       <Box
-        mb="200px"
+        mb="55px"
         height="100%"
         width="100%"
         display="flex"

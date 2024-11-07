@@ -1,25 +1,24 @@
-import {
-  Box,
-  Button,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useState } from "react";
-import logo12 from "../../../../assets/EHTIQ BRANDS-12.svg";
-import { mainColors } from "../../../../theme/theme";
+import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
+import plus from "../../../../assets/Group 9.svg";
+import { TreatmentVideo } from "../TreatmentVideo";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../../routes/constants";
 
 const Treatments = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const navigate = useNavigate();
+
   type PropsTile = {
     image: string;
     clinic: string;
     subtitles: string[];
+    clinicIndex: number;
   };
-  const Tile = ({ image, clinic, subtitles }: PropsTile) => {
+  const Tile = ({ image, clinic, subtitles, clinicIndex }: PropsTile) => {
     const [hover, setHover] = useState<boolean>(false);
     return (
       <div
@@ -27,7 +26,7 @@ const Treatments = () => {
           position: "relative",
           cursor: "pointer",
           width: "100%",
-
+          borderRadius: mobile ? "5px" : "0px",
           aspectRatio: 0.72,
         }}
       >
@@ -36,13 +35,14 @@ const Treatments = () => {
           onMouseLeave={() => setHover(false)}
           style={{
             position: "absolute",
+            borderRadius: mobile ? "5px" : "0px",
             top: 0,
             left: 0,
             right: 0,
             bottom: 0,
             backgroundImage: `url(${image})`,
             backgroundPosition: "center",
-            backgroundSize: "cover",
+            backgroundSize: "101%",
             display: "flex",
             justifyContent: "center",
             transition: "transform 0.5s",
@@ -51,7 +51,20 @@ const Treatments = () => {
         >
           <div
             style={{
-              width: "70%",
+              position: "absolute",
+              top: "25%",
+              width: "100%",
+              height: "50%",
+              borderRadius: "0px",
+              transition: "all ease-in-out 0.5s",
+              backgroundColor: !hover
+                ? "rgba(181, 174, 166, 0.4)"
+                : "transparent",
+            }}
+          />
+          <div
+            style={{
+              padding: mobile ? "0px 6px" : "0px 10px",
               display: "flex",
               justifyContent: "center",
               flexDirection: "column",
@@ -60,6 +73,7 @@ const Treatments = () => {
           >
             <div
               style={{
+                zIndex: 10,
                 height: "60px",
                 display: "flex",
                 alignItems: "end",
@@ -68,23 +82,27 @@ const Treatments = () => {
               }}
             >
               <Typography
+                variant="h1"
                 style={{
-                  fontSize: mobile ? "14px" : "18px",
+                  fontSize: mobile ? "14px" : "27px",
                   textTransform: "uppercase",
                   fontWeight: 500,
-                  lineHeight: "27px",
-                  letterSpacing: "2px",
+                  lineHeight: mobile ? "20px" : "34px",
+                  letterSpacing: "3px",
                   textAlign: "center",
+                  color: Colors.white[400],
                 }}
-              >
-                {clinic}
-              </Typography>
+                dangerouslySetInnerHTML={{
+                  __html: clinic,
+                }}
+              />
             </div>
             <div
               style={{
+                zIndex: 10,
                 height: "1px",
-                width: "40%",
-                backgroundColor: "black",
+                width: "50px",
+                backgroundColor: "white",
                 marginTop: "10px",
                 transform: hover ? "translateY(-40px)" : "none",
                 transition: "all ease-in-out 0.5s", // Add transition
@@ -92,7 +110,7 @@ const Treatments = () => {
             />
             <div
               style={{
-                marginTop: "40px",
+                marginTop: mobile ? "10px" : "40px",
                 display: "flex",
                 flexDirection: "column",
 
@@ -103,9 +121,25 @@ const Treatments = () => {
               {subtitles.map((title, index) => {
                 return (
                   <Typography
+                    onClick={
+                      mobile
+                        ? () => {
+                            if (hover)
+                              navigate(ROUTE_PATHS.TREATMENTS, {
+                                state: { specializationIndex: clinicIndex },
+                              });
+                          }
+                        : () =>
+                            navigate(ROUTE_PATHS.TREATMENTS, {
+                              state: { specializationIndex: clinicIndex },
+                            })
+                    }
                     style={{
+                      fontSize: mobile ? "12px" : "12px",
+                      color: "white",
                       position: "absolute",
                       textAlign: "center",
+                      textTransform: "uppercase",
                       textDecoration: "underline",
                       transform: `translateY(${index * 38 - 40}px)`,
                       opacity: hover ? 1 : 0,
@@ -117,16 +151,22 @@ const Treatments = () => {
                   </Typography>
                 );
               })}
-              <Typography
-                style={{
-                  transform: hover
-                    ? `translateY(${subtitles.length * 38 - 30}px)`
-                    : "none",
-                  transition: "all ease-in-out 0.5s",
-                }}
-              >
-                {hover ? "-" : "+"}
-              </Typography>
+              {hover ? (
+                <Typography
+                  style={{
+                    zIndex: 10,
+                    color: "white",
+                    transform: hover
+                      ? `translateY(${subtitles.length * 38 - 30}px)`
+                      : `translateY(-20px)`,
+                    transition: "all ease-in-out 0.5s",
+                  }}
+                >
+                  -
+                </Typography>
+              ) : (
+                <img src={plus} alt="" style={{ width: "17px" }} />
+              )}
             </div>
           </div>
         </div>
@@ -135,211 +175,82 @@ const Treatments = () => {
   };
   return (
     <>
-      <Grid
-        container
-        height="100%"
-        width="100%"
-        rowSpacing={"50px"}
-        style={{
-          marginTop: mobile ? "0px" : "45px",
-          padding: mobile ? undefined : "0px 85px",
-        }}
-      >
-        <Grid
-          item
-          xs={12}
-          md={6}
-          style={{
-            height: "100%",
-            display: "flex",
-            flexDirection: mobile ? "column" : "row",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <div>
-            {mobile && (
-              <Typography
-                variant="h1"
-                style={{
-                  textAlign: "center",
-                  fontSize: "20px",
-                  letterSpacing: "1px",
-                  fontWeight: 500,
-                }}
-              >
-                IN THE PURSUIT OF LONGEVITY
-              </Typography>
-            )}
-            <img
-              src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-              alt=""
-              style={{
-                marginTop: mobile ? "50px" : "0px",
-                height: mobile ? "250px" : "500px",
-                width: mobile ? "100%" : "80%",
-                objectFit: "cover",
-              }}
-            />
-          </div>
-        </Grid>
-        <Grid
-          item
-          xs={12}
-          md={6}
-          style={{
-            height: mobile ? undefined : "100%",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Box
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: mobile ? "center" : "center",
-              justifyContent: "center",
-
-              height: mobile ? undefined : "500px",
-              rowGap: "20px",
-              width: mobile ? "90%" : "70%",
-            }}
-          >
-            <Typography
-              variant="h1"
-              style={{
-                textTransform: "uppercase",
-                textAlign: mobile ? "center" : "center",
-                fontSize: mobile ? "15px" : "25px",
-                fontWeight: 700,
-                letterSpacing: mobile ? "1px" : "2px",
-              }}
-            >
-              {i18n.t("pages.home.beutyAndWellBeing")}
-            </Typography>
-            <Typography
-              style={{
-                textAlign: mobile ? "center" : "center",
-                color: mainColors.primary[400],
-                fontSize: mobile ? "10px" : "16px",
-                letterSpacing: "1px",
-                lineHeight: mobile ? "17px" : undefined,
-              }}
-            >
-              {i18n.t("pages.home.beutyText")}
-            </Typography>
-            <img
-              src={logo12}
-              alt=""
-              style={{ width: mobile ? "60px" : "90px" }}
-            />
-          </Box>
-        </Grid>
-      </Grid>
       <div
         style={{
-          backgroundImage: "linear-gradient(to right, #848387, #314F5F4A)",
-          padding: mobile ? "50px 20px 80px 20px" : "50px 100px 100px 120px",
+          width: "100%",
+          display: "flex",
           justifyContent: "center",
-          marginTop: mobile ? "100px" : "200px",
-          position: "relative",
+          alignItems: "center",
         }}
       >
-        <div
-          style={{ display: "flex", justifyContent: "center", width: "100%" }}
-        >
+        {mobile ? (
           <Typography
             variant="h1"
             style={{
-              textTransform: "uppercase",
-              fontSize: mobile ? "25px" : "30px",
-              fontWeight: 700,
-              letterSpacing: mobile ? "2px" : "3px",
+              fontSize: "40px",
+              letterSpacing: "4px",
+              color: "rgba(202, 202, 202, 1)",
             }}
           >
-            {i18n.t("pages.home.treatments")}
+            EHTIQ BLEND
           </Typography>
-        </div>
-
-        <Grid
-          container
-          spacing={mobile ? "10px" : "40px"}
-          style={{ marginTop: mobile ? "50px" : "75px" }}
-        >
-          <Grid item xs={6} md={3}>
-            <Tile
-              subtitles={["Tratamentos", "Consultoria", "teste", "oleol"]}
-              clinic={i18n.t("pages.home.cirurgy")}
-              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Tile
-              subtitles={["Tratamentos", "Consultoria"]}
-              clinic={i18n.t("pages.home.dental")}
-              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Tile
-              subtitles={["Tratamentos", "Consultoria"]}
-              clinic={i18n.t("pages.home.nonCirurgy")}
-              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-            />
-          </Grid>
-          <Grid item xs={6} md={3}>
-            <Tile
-              subtitles={["Tratamentos", "Consultoria"]}
-              clinic={i18n.t("pages.home.healthPrevention")}
-              image="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-            />
-          </Grid>
-        </Grid>
-        <div
-          style={{
-            position: "absolute",
-            width: "1px",
-            left: "50%",
-            height: mobile ? "60px" : "111px",
-            bottom: mobile ? -50 : -80,
-            backgroundColor: "#8C8787",
-            zIndex: 10,
-          }}
-        ></div>
+        ) : (
+          <Typography
+            variant="h1"
+            style={{
+              fontSize: "60px",
+              letterSpacing: "8px",
+              color: "rgba(202, 202, 202, 1)",
+            }}
+          >
+            EHTIQ <i>blend</i>
+          </Typography>
+        )}
       </div>
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          rowGap: "20px",
-          marginTop: "100px",
+          padding: mobile ? "20px 20px 80px 20px" : "50px 5% 100px 5%",
+          justifyContent: "center",
+          marginTop: mobile ? "20px" : "50px",
+          position: "relative",
         }}
       >
-        <Typography
-          style={{
-            fontSize: mobile ? "9px" : "13px",
-            letterSpacing: "2px",
-            textAlign: mobile ? "center" : "left",
-            maxWidth: "80%",
-          }}
-        >
-          {" "}
-          {i18n.t("pages.home.correctTreatment")}
-        </Typography>
-        <Button>
-          <Typography
-            style={{
-              fontSize: mobile ? "15px" : "14px",
-              color: "#5D5C5C",
-              letterSpacing: "1px",
-            }}
-          >
-            EXPERT ADVICE
-          </Typography>
-        </Button>
+        <Grid container spacing={mobile ? "10px" : "20px"}>
+          <Grid item xs={6} md={3}>
+            <Tile
+              clinicIndex={1}
+              subtitles={[i18n.t("header.treatments")]}
+              clinic={i18n.t("pages.home.box31")}
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.1.webp"
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              clinicIndex={2}
+              subtitles={[i18n.t("header.treatments")]}
+              clinic={i18n.t("pages.home.box32")}
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.2.webp"
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              clinicIndex={3}
+              subtitles={[i18n.t("header.treatments")]}
+              clinic={i18n.t("pages.home.box33")}
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.3.webp"
+            />
+          </Grid>
+          <Grid item xs={6} md={3}>
+            <Tile
+              clinicIndex={4}
+              subtitles={[i18n.t("header.treatments")]}
+              clinic={i18n.t("pages.home.box34")}
+              image="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-3.4.webp"
+            />
+          </Grid>
+        </Grid>
       </div>
+      <TreatmentVideo />
     </>
   );
 };

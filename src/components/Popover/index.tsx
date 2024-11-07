@@ -1,12 +1,14 @@
 import Popover from "@mui/material/Popover";
 import * as React from "react";
 import { CSS, Colors } from "../../theme/theme";
+import { CSSProperties } from "@mui/styles";
 
 interface BasicPopoverProps {
   isOpen: boolean;
   anchorEl: HTMLElement | null;
   onClose: () => void;
   children: any;
+  paperStyles?: CSSProperties;
 }
 
 const BasicPopover: React.FC<BasicPopoverProps> = ({
@@ -14,6 +16,7 @@ const BasicPopover: React.FC<BasicPopoverProps> = ({
   anchorEl,
   onClose,
   children,
+  paperStyles,
 }) => {
   const id = isOpen ? "simple-popover" : undefined;
 
@@ -41,6 +44,7 @@ const BasicPopover: React.FC<BasicPopoverProps> = ({
           sx: {
             borderRadius: "10px",
             backgroundColor: Colors.white[40095],
+            ...paperStyles,
           },
         }}
       >

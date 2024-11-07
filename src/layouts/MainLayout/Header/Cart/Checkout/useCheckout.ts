@@ -10,7 +10,6 @@ import { updateSuccessNotification } from "../../../../../redux/general/actions"
 import { State } from "../../../../../redux/types";
 import { ROUTE_PATHS } from "../../../../../routes/constants";
 
-import { stripeLocal, stripeProduction } from "../../../../../stripe/config";
 import { i18n } from "../../../../../translations/i18n";
 import { Checkout } from "../../../../../types/checkout";
 import { CurrentUser } from "../../../../../types/user";
@@ -36,44 +35,7 @@ const useCheckout = ({ closeCart }: Props) => {
     defaultValues,
   });
 
-  const handleSubmitCard = async (values: CreateUserSchemaType) => {
-    let items: {
-      title: string;
-      amount: number;
-      quantity: number;
-    }[] = [];
-
-    cartProducts.forEach((item: CartProduct) => {
-      const amount = (item.product.price * 100).toFixed(1);
-
-      items.push({
-        title: `${item.product.model}-${item.product.sku}`,
-        amount: parseFloat(amount),
-        quantity: item.value,
-      });
-    });
-
-    await fetch(stripeProduction, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ items, values }),
-    })
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        if (res.url) {
-          dispatch(clearCart());
-          dispatch(updateSuccessNotification(i18n.t("cartDrawer.successBuy")));
-          closeCart(false);
-          window.location.assign(res.url);
-        }
-      });
-  };
-
-  const { mutate: pay, isLoading: isPaying } = useMutation(handleSubmitCard, {
+  const { mutate: pay, isLoading: isPaying } = useMutation(async () => {}, {
     onError: (error: any) => {
       console.log("error", error);
     },
@@ -85,9 +47,7 @@ const useCheckout = ({ closeCart }: Props) => {
 
   const onSubmit: SubmitHandler<CreateUserSchemaType> = async (
     formData: Checkout
-  ) => {
-    pay(formData as CreateUserSchemaType);
-  };
+  ) => {};
   return {
     handleSubmit,
     onSubmit,

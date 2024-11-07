@@ -22,6 +22,7 @@ import {
   BsLightbulbOffFill,
   BsSnow,
 } from "react-icons/bs";
+
 import { CgSwiss } from "react-icons/cg";
 import { FaChevronLeft, FaChevronRight, FaRegUser } from "react-icons/fa";
 import { FiInstagram, FiSettings } from "react-icons/fi";
@@ -35,6 +36,7 @@ import {
 } from "react-icons/lia";
 import { LuBookOpen } from "react-icons/lu";
 import {
+  MdBlock,
   MdOutlineDialpad,
   MdOutlineEdit,
   MdOutlineKeyboardArrowDown,
@@ -49,6 +51,7 @@ import { TfiControlPause, TfiShoppingCartFull } from "react-icons/tfi";
 import { VscMenu, VscSettings } from "react-icons/vsc";
 
 export const Icons = {
+  Block: (props: IconBaseProps) => <MdBlock {...props} />,
   Droplet: (props: IconBaseProps) => <BsDroplet {...props} />,
   Dial: (props: IconBaseProps) => <MdOutlineDialpad {...props} />,
   Delete: (props: IconBaseProps) => <AiFillDelete {...props} />,

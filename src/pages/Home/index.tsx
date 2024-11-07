@@ -1,56 +1,105 @@
-import { Container, useMediaQuery, useTheme } from "@mui/material";
-
+import React, { useState, useRef } from "react";
+import { Container, useMediaQuery, useTheme, IconButton } from "@mui/material";
 import { MAX_SCREEN } from "../../constants/screen";
 import ContainerC from "./Components/Container";
 import Escort from "./Components/Escort";
 import SpaceWhere from "./Components/SpaceWhere";
 import Treatments from "./Components/Treatments";
-import Whats from "./Components/Whats";
+import { State } from "../../redux/types";
+import { useSelector } from "react-redux";
+import { MdVolumeUp, MdVolumeOff } from "react-icons/md";
+import { Featured } from "./Components/Featured";
+import Chat from "../../presentational/Chat";
 
 const Home = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const lang = useSelector<State, string>((state) => state.general.lang);
+  const [muted, setMuted] = useState(true);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !muted;
+      setMuted(!muted);
+    }
+  };
+
   return (
     <>
-      <img
-        src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-        alt=""
+      <div style={{ position: "relative" }}>
+        <video
+          ref={videoRef}
+          style={{
+            height: mobile ? "600px" : "804px",
+            aspectRatio: mobile ? undefined : 3.89,
+            width: "100%",
+            clipPath: "inset(0px)",
+            objectFit: "cover",
+          }}
+          src={
+            mobile
+              ? `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-MOBILE/HOME-1-Legendas-${lang}-Mobile.webm`
+              : `https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/HOME-1-Legendas-${lang}.webm`
+          }
+          autoPlay
+          muted={muted}
+          playsInline
+          loop
+          controls={false}
+        />
+        <IconButton
+          onClick={toggleMute}
+          style={{
+            position: "absolute",
+            bottom: mobile ? "16px" : "36px",
+            left: mobile ? "10px" : "16px",
+            color: "white",
+          }}
+        >
+          {muted ? <MdVolumeOff size={24} /> : <MdVolumeUp size={24} />}
+        </IconButton>
+      </div>
+
+      <div
         style={{
-          height: "85vh",
-          width: "100%",
-          objectFit: "cover",
-        }}
-      />
-      <Container
-        style={{
-          marginTop: mobile ? "50px" : "86px",
-          maxWidth: MAX_SCREEN,
-          padding: "0px 80px",
+          marginTop: mobile ? "80px" : "86px",
         }}
       >
         <ContainerC />
-      </Container>
-      <Container
+      </div>
+      <div
         style={{
           maxWidth: MAX_SCREEN,
+          marginTop: "120px",
         }}
       >
         <Treatments />
-      </Container>
-      <Container
-        style={{
-          maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 414px",
-        }}
-      >
-        <div style={{ marginTop: "200px" }}>
-          <Whats />
-        </div>
-      </Container>
-      <div style={{ marginTop: mobile ? "100px" : "400px" }}>
-        <Escort />
+      </div>
+      <div style={{ marginTop: "200px" }}>
+        <Container
+          style={{
+            marginTop: mobile ? "35px" : "130px",
+            maxWidth: MAX_SCREEN,
+            padding: mobile ? "0px" : "0px 150px",
+          }}
+        >
+          <Featured />
+        </Container>
+      </div>
+      <div style={{ marginTop: "50px" }}>
+        <Container
+          style={{
+            marginTop: mobile ? "50px" : "130px",
+            maxWidth: MAX_SCREEN,
+            padding: mobile ? "0px" : "0px 150px",
+          }}
+        >
+          <Escort />
+        </Container>
       </div>
       <SpaceWhere />
+      <Chat />
     </>
   );
 };

@@ -135,7 +135,8 @@ const ControlledFormInput: FC<BaseProps> = (props) => {
         style={{
           marginBottom: hasError ? "0.2rem" : "0",
           borderRadius: type === "search" ? "15px" : "10px",
-          backgroundColor: type === "search" ? "#CBCBCB" : "white",
+
+          backgroundColor: type === "search" ? "#F8F8F8" : "white",
           width: "100%",
         }}
         {...field}

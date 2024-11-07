@@ -2,12 +2,35 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  ;
 }
+
+
 
 *::-webkit-scrollbar {
   width: none ;
   display: none ;
 }
+
+.scrollbar-track{
+  background-color: transparent !important;
+}
+
+.scrollbar-track-y{
+  width:12px !important;
+}
+
+
+.scrollbar-thumb{
+  width:12px !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+}
+/* 
+html {
+  scroll-behavior: smooth;
+} */
 
 body {
   margin: 0;
@@ -26,6 +49,8 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  background-color: rgba(248, 247, 247, 1);
+ 
 }
 
 code {

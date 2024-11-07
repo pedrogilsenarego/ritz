@@ -1,67 +1,71 @@
 import {
   Box,
+  Button,
   Container,
-  Divider,
   Grid,
   Typography,
   useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import { BsInstagram } from "react-icons/bs";
 import { VscMenu } from "react-icons/vsc";
-import { useSelector } from "react-redux";
+import Mobile from "../../../assets/mobile.png";
 import { useLocation, useNavigate } from "react-router-dom";
-//import logo from "../../../assets/logo.svg";
-import Logo from "../../../assets/EHTIQ_Logo.svg";
+
 import SearchIcon from "../../../assets/Icon_Search.svg";
 import Login from "../../../assets/Log_In.svg";
 import DrawerMine from "../../../components/Drawer";
 import { Icons } from "../../../components/Icons";
-import UncontrolledSelect from "../../../components/Inputs/UncontroledSelect";
+
 import BasicPopover from "../../../components/Popover";
-import Button from "../../../components/Ui/Button";
+
 import { MAX_SCREEN } from "../../../constants/screen";
-import { useSignOut } from "../../../hooks/useLogout";
-import { State } from "../../../redux/types";
+
 import { ROUTE_PATHS } from "../../../routes/constants";
-import { Colors, mainColors } from "../../../theme/theme";
-import { i18n } from "../../../translations/i18n";
-import { CurrentUser } from "../../../types/user";
+import { mainColors } from "../../../theme/theme";
+
 import Cart from "./Cart";
 import LoginPopoverContent from "./LoginPopoverContent";
-import UserPopoverContent from "./UserPopoverContent";
-import { langOptions, options } from "./constants";
+
+import { options } from "./constants";
+
 import "./index.css";
-import useStyles from "./styles";
+
 import useHeader from "./useHeader";
+import MenuPopopverContent from "./MenuPopopverContent";
+
+import useUser from "../../../hooks/useUser";
+import { BASE_URL } from "../../../services/constants";
+import { Lang } from "./Lang";
+import UserPopoverContent from "../../User/UserMenu/UserPopoverContent";
+import { devMode } from "../../../constants/devConfig";
+import { VisitCard } from "../../../presentational/VisitCard";
+import { i18n } from "../../../translations/i18n";
 
 const Header = () => {
-  const classes = useStyles();
   const {
-    totalCartItems,
     cartDrawer,
     setCartDrawer,
-    lang,
-    changeLanguage,
+
     location,
   } = useHeader();
   const navigate = useNavigate();
 
-  const currentUser = useSelector<State, CurrentUser | null>(
-    (state) => state.user.currentUser
-  );
-  const path = location.pathname;
+  const userQuery = useUser();
+
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   const [mobileDrawer, setMobileDrawer] = useState<boolean>(false);
+  const [lapTopDrawer, setLaptopDrawer] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const [anchorElLogin, setAnchorElLogin] = useState<HTMLElement | null>(null);
+
   const [scrollPosition, setScrollPosition] = useState(0);
-  const { onSignOut } = useSignOut();
 
   const handleClickPopover = (event: React.MouseEvent<HTMLElement>) => {
     if (anchorEl) {
+      event.preventDefault();
+      event.stopPropagation();
       setAnchorEl(null);
     } else {
       setAnchorEl(event.currentTarget);
@@ -92,8 +96,8 @@ const Header = () => {
     handleClickPopoverLogin(e);
   };
 
-  const handleUser = (e: any) => {
-    handleClickPopover(e);
+  const handleMenu = (e: any) => {
+    setLaptopDrawer(true);
   };
 
   const handleScroll = () => {
@@ -111,7 +115,7 @@ const Header = () => {
 
   const opacity = Math.min(1, Math.max(0, scrollPosition / 500));
 
-  const backgroundColor = `rgba(207, 181, 59, ${0.1 * opacity})`;
+  const backgroundColor = `rgba(224, 211, 193, ${0.8 - 0.3 * opacity})`;
 
   const viewportHeight =
     window.innerHeight || document.documentElement.clientHeight;
@@ -124,9 +128,9 @@ const Header = () => {
       <Box
         id="first-box"
         style={{
-          padding: "15px 0px 15px 0px",
+          padding: "0px 0px 15px 0px",
           backgroundColor,
-          marginTop: "20px",
+          //marginTop: "20px",
           position: "fixed",
           width: "100%",
           zIndex: 1000,
@@ -155,20 +159,48 @@ const Header = () => {
                 columnGap: "30px",
               }}
             >
-              <Icons.Menu size={"30px"} />
+              <Icons.Menu
+                style={{
+                  cursor: "pointer",
+
+                  transition: "opacity ease-in-out 1s",
+                }}
+                size={"30px"}
+                onClick={(e) => {
+                  handleMenu(e);
+                }}
+              />
+              {devMode && (
+                <div>
+                  <img
+                    src={SearchIcon}
+                    alt="logo"
+                    style={{
+                      width: "21px",
+                      cursor: "pointer",
+                      marginBottom: "-6px",
+                    }}
+                  />
+                </div>
+              )}
             </Grid>
             <Grid
+              onClick={() => navigate(ROUTE_PATHS.HOME)}
               item
               xs={4}
-              style={{ display: "flex", justifyContent: "center" }}
+              style={{
+                display: "flex",
+                zIndex: 1000,
+                justifyContent: "center",
+                cursor: "pointer",
+              }}
             >
               <img
-                onClick={() => navigate(ROUTE_PATHS.HOME)}
-                src={Logo}
+                src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-7.webp`}
                 alt="logo"
                 style={{
+                  objectFit: "contain",
                   width: "155px",
-                  cursor: "pointer",
                 }}
               />
             </Grid>
@@ -182,88 +214,114 @@ const Header = () => {
                 columnGap: "30px",
               }}
             >
-              <div>
-                <img
-                  src={SearchIcon}
-                  alt="logo"
-                  style={{
-                    width: "24px",
-                    cursor: "pointer",
-                  }}
+              {!devMode && (
+                <VisitCard
+                  customButton={
+                    <Button
+                      sx={{
+                        backgroundColor: "rgba(69, 69, 69, 1)",
+                        padding: "8px 20px",
+
+                        borderRadius: "30px",
+                      }}
+                    >
+                      <Typography
+                        style={{
+                          color: "#FEFEFE",
+                          textTransform: "uppercase",
+                          fontSize: "11px",
+                          fontWeight: 500,
+                          letterSpacing: "1px",
+                          lineHeight: "14px",
+                        }}
+                      >
+                        {i18n.t("footer.schedulle")}
+                      </Typography>
+                    </Button>
+                  }
                 />
+              )}
+              <div style={{ zIndex: 1000 }}>
+                <Lang />
               </div>
-              <div>
-                <img
-                  onClick={(e) => {
-                    handleLogin(e);
-                  }}
-                  src={Login}
-                  alt="logo"
-                  style={{
-                    width: "24px",
-                    cursor: "pointer",
-                  }}
-                />
-              </div>
+              {devMode || location.pathname === "/admin" ? (
+                <div>
+                  {userQuery.data && !userQuery.isLoading ? (
+                    <img
+                      onClick={(e) => handleClickPopover(e)}
+                      src={`${BASE_URL}${userQuery?.data?.Data?.imagem}`}
+                      alt="logo"
+                      style={{
+                        width: "19px",
+                        cursor: "pointer",
+                      }}
+                    />
+                  ) : (
+                    <img
+                      onClick={(e) => {
+                        handleLogin(e);
+                      }}
+                      src={Login}
+                      alt="logo"
+                      style={{
+                        width: "19px",
+                        cursor: "pointer",
+                      }}
+                    />
+                  )}
+                </div>
+              ) : (
+                <></>
+              )}
             </Grid>
           </Grid>
 
-          <Box
+          <Container
             style={{
               display: "flex",
-
+              maxWidth: 1200,
               width: "100%",
-              justifyContent: "center",
+              padding: "0px 50px",
+              justifyContent: "space-between",
               alignItems: "center",
               marginBottom: "10px",
               opacity: isScrolled ? 1 : 0,
-              marginTop: isScrolled ? "40px" : "-20px", // Adjust the marginTop based on the scroll position
+              marginTop: isScrolled ? "20px" : "-20px", // Adjust the marginTop based on the scroll position
               transition: "all 0.5s ease-in-out", // Add transition property
             }}
           >
             {options.map((option, index) => {
               return (
-                <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    columnGap: "24px",
-                    margin: "0px 15px",
-                  }}
-                >
-                  <Typography
-                    className={"text"}
+                <div key={index} style={{ flex: 1, textAlign: "center" }}>
+                  <div
                     style={{
-                      cursor: !isScrolled ? undefined : "pointer",
-                      fontSize: "14px",
-                      fontWeight: 500,
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
-                      color:
-                        location.pathname === option.link
-                          ? mainColors.secondary[400]
-                          : "inherit",
+                      display: "flex",
+
+                      justifyContent: "center",
                     }}
-                    key={option.name}
-                    onClick={
-                      !isScrolled ? () => null : () => navigate(option.link)
-                    }
                   >
-                    {option.name}
-                  </Typography>
-                  {index < options.length - 1 && (
-                    <div
+                    <Typography
+                      className={"text"}
                       style={{
-                        width: "2px",
-                        height: "20px",
-                        backgroundColor: "grey",
+                        cursor: !isScrolled ? undefined : "pointer",
+                        fontSize: "14px",
+                        fontWeight:
+                          location.pathname === option.link ? 600 : 500,
+                        letterSpacing: "1px",
+                        textTransform: "uppercase",
                       }}
-                    />
-                  )}
+                      key={option.name}
+                      onClick={
+                        !isScrolled ? () => null : () => navigate(option.link)
+                      }
+                    >
+                      {option.name}
+                    </Typography>
+                  </div>
                 </div>
               );
             })}
-          </Box>
+          </Container>
         </Container>
         <BasicPopover
           isOpen={isOpenLogin}
@@ -273,16 +331,16 @@ const Header = () => {
           <LoginPopoverContent handleClose={handleCloseLogin} />
         </BasicPopover>
         <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>
-          <UserPopoverContent handleClose={handleClose} />
+          <UserPopoverContent home handleClose={handleClose} />
         </BasicPopover>
+
         <DrawerMine
-          minWidth="30vw"
           fullHeight
-          position="right"
-          openDrawer={cartDrawer}
-          setOpenDrawer={setCartDrawer}
+          position="left"
+          openDrawer={lapTopDrawer}
+          setOpenDrawer={setLaptopDrawer}
         >
-          <Cart closeCart={setCartDrawer} />
+          <MenuPopopverContent handleClose={setLaptopDrawer} />
         </DrawerMine>
       </Box>
     );
@@ -292,173 +350,76 @@ const Header = () => {
     return (
       <>
         <Box
-          display="flex"
           alignItems="center"
           style={{
             zIndex: 1000,
             position: "fixed",
             justifyContent: "space-between",
-            padding: "0px 35px",
-            top: "20px",
+            padding: "15px 20px",
+            display: mobileDrawer ? "none" : "flex",
             width: "100%",
+            background:
+              "linear-gradient(90deg, rgba(220, 207, 190, 0.7) 0%, #DCCFBE 39.5%, #DCCFBE 61.5%, rgba(224, 211, 193, 0.7) 100%)",
           }}
         >
-          <VscMenu
-            size="20px"
-            color={mainColors.primary[400]}
-            onClick={() => setMobileDrawer(true)}
-          />
+          <Box width={"15%"}>
+            <VscMenu
+              size="20px"
+              color={mainColors.primary[400]}
+              onClick={() => setMobileDrawer(true)}
+            />
+          </Box>
           <img
             onClick={() => navigate(ROUTE_PATHS.HOME)}
-            src={Logo}
+            src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-7.webp`}
             alt="logo"
             style={{
               width: "123px",
               cursor: "pointer",
             }}
           />
-          <img
-            onClick={(e) => {
-              handleLogin(e);
-            }}
-            src={Login}
-            alt="logo"
-            style={{
-              width: "18px",
-              cursor: "pointer",
-            }}
-          />
+          {devMode ? (
+            <img
+              onClick={(e) => {
+                handleLogin(e);
+              }}
+              src={Login}
+              alt="logo"
+              style={{
+                width: "18px",
+                cursor: "pointer",
+              }}
+            />
+          ) : (
+            <VisitCard
+              customButton={
+                <Button
+                  sx={{
+                    width: "15%",
+                    backgroundColor: "rgba(69, 69, 69, 1)",
+                    padding: "8px 0px",
+                    borderRadius: "30px",
+                  }}
+                >
+                  <img
+                    src={Mobile}
+                    alt=""
+                    style={{ height: "15px", width: "15px" }}
+                  />
+                </Button>
+              }
+            />
+          )}
         </Box>
         <DrawerMine
+          clearBackground
           fullWidth
           fullHeight
           position="left"
           openDrawer={mobileDrawer}
           setOpenDrawer={setMobileDrawer}
         >
-          <Box
-            mt="20px"
-            padding="20px"
-            display="flex"
-            flexDirection="column"
-            rowGap={4}
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Divider style={{ width: "80%" }} />
-            {location.pathname !== ROUTE_PATHS.HOME && (
-              <Typography
-                style={{ textTransform: "uppercase" }}
-                fontWeight={800}
-                onClick={() => {
-                  navigate(ROUTE_PATHS.HOME);
-                  setMobileDrawer(false);
-                }}
-              >
-                {i18n.t("header.home")}
-              </Typography>
-            )}
-            <Typography
-              style={{ textTransform: "uppercase" }}
-              fontWeight={800}
-              onClick={() => {
-                navigate(ROUTE_PATHS.COMPLEX);
-                setMobileDrawer(false);
-              }}
-            >
-              {i18n.t("header.dna")}
-            </Typography>
-            <Typography
-              style={{ textTransform: "uppercase" }}
-              fontWeight={800}
-              onClick={() => {
-                navigate(ROUTE_PATHS.PRODUCTS);
-                setMobileDrawer(false);
-              }}
-            >
-              {i18n.t("header.collections")}
-            </Typography>
-            {currentUser ? (
-              <>
-                <Typography
-                  style={{ textTransform: "uppercase" }}
-                  fontWeight={800}
-                  onClick={() => {
-                    navigate(ROUTE_PATHS.MY_ACCOUNT);
-                    setMobileDrawer(false);
-                  }}
-                >
-                  {i18n.t("header.account")}
-                </Typography>{" "}
-                <Typography
-                  style={{ textTransform: "uppercase" }}
-                  fontWeight={800}
-                  onClick={() => {
-                    onSignOut();
-                    setMobileDrawer(false);
-                  }}
-                >
-                  {i18n.t("header.logout")}
-                </Typography>
-              </>
-            ) : (
-              <Typography
-                style={{ textTransform: "uppercase" }}
-                fontWeight={800}
-                onClick={() => {
-                  navigate(ROUTE_PATHS.LOGIN);
-                  setMobileDrawer(false);
-                }}
-              >
-                {i18n.t("header.login")}
-              </Typography>
-            )}
-
-            <Divider style={{ width: "80%" }} />
-            <div
-              style={{
-                position: "relative",
-                display: "flex",
-                alignItems: "center",
-              }}
-            >
-              {totalCartItems > 0 && (
-                <Box
-                  style={{
-                    position: "absolute",
-                    right: -7,
-                    bottom: -7,
-                  }}
-                >
-                  <Typography
-                    fontWeight={800}
-                    fontSize="12px"
-                    color={mainColors.primary[400]}
-                  >
-                    {totalCartItems}
-                  </Typography>
-                </Box>
-              )}
-              <Icons.Cart
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMobileDrawer(false);
-                  setCartDrawer(true);
-                }}
-                className="icon"
-                size={"23px"}
-                color={mainColors.primary[400]}
-                style={{ marginTop: "-3px", cursor: "pointer" }}
-              />
-            </div>
-            <Divider style={{ width: "80%" }} />
-            <BsInstagram
-              className="icon"
-              size="1.4rem"
-              color={mainColors.primary[400]}
-              style={{ cursor: "pointer" }}
-            />
-          </Box>
+          <MenuPopopverContent handleClose={setMobileDrawer} />
         </DrawerMine>
         <DrawerMine
           fullHeight
@@ -469,6 +430,13 @@ const Header = () => {
         >
           <Cart closeCart={setCartDrawer} />
         </DrawerMine>
+        <BasicPopover
+          isOpen={isOpenLogin}
+          anchorEl={anchorElLogin}
+          onClose={handleCloseLogin}
+        >
+          <LoginPopoverContent handleClose={handleCloseLogin} />
+        </BasicPopover>
       </>
     );
   };

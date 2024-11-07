@@ -4,73 +4,207 @@ import Description from "./Components/Description";
 import FAQ from "./Components/FAQ";
 import { MAX_SCREEN } from "../../constants/screen";
 import { useNavigate, useParams } from "react-router-dom";
-import { Content, listPages } from "./types";
+
+import { useQuery } from "@tanstack/react-query";
+import { handleFetchTreatment } from "../../actions/tretaments";
+import { queryKeys } from "../../constants/queryKeys";
+
+import { useSelector } from "react-redux";
+import { State } from "../../redux/types";
+import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
 import { ROUTE_PATHS } from "../../routes/constants";
-import { useEffect } from "react";
 
 const TreatmentID = () => {
   const params = useParams();
   const navigate = useNavigate();
-  const content = listPages.includes(params?.id || "")
-    ? require(`./${params.id}`)
-    : null;
-
-  useEffect(() => {
-    if (!content) navigate(ROUTE_PATHS.HOME);
-  }, [content]);
-
-  const data = content?.content as Content;
-
+  const lang = useSelector<State, string>((state) => state.general.lang);
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const previewState = useSelector<State, any>((state) => state.admin.preview);
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const { isLoading, data: queryData } = useQuery<any, any>(
+    [queryKeys.treatment, params.id],
+    () => handleFetchTreatment(params?.id || ""),
+    { enabled: params?.id !== "preview" }
+  );
+
+  const data = params?.id === "preview" ? previewState : queryData;
+
   return (
     <>
-      <div
-        style={{
-          width: "100%",
-          height: "350px",
-          display: "flex",
-          alignItems: "end",
-          padding: "30px 0px",
-          backgroundPosition: "center center",
-          backgroundSize: "cover",
-          backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
-        }}
-      >
-        <Container
+      <div style={{ position: "relative" }}>
+        <div
           style={{
-            marginTop: mobile ? "100px" : "200px",
-            maxWidth: MAX_SCREEN,
-            padding: mobile ? undefined : "0px 190px",
+            width: "100%",
+            height: mobile ? "215px" : "350px",
+            display: "flex",
+            alignItems: "end",
+            padding: "30px 0px",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            opacity: 0.5,
+            backgroundImage: `url(${data?.topImage})`,
+          }}
+        ></div>
+        <div
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            height: "100%",
+            width: "100%",
           }}
         >
-          <Typography
-            variant="h1"
+          <Container
             style={{
-              textTransform: "uppercase",
-              fontSize: "35px",
-              letterSpacing: "3px",
-              fontWeight: 500,
+              marginTop: mobile ? "156px" : "270px",
+              maxWidth: MAX_SCREEN,
+              padding: mobile ? "0px 32px" : "0px 150px",
             }}
           >
-            {data?.title}
-          </Typography>
-        </Container>
+            <Typography
+              variant={mobile ? undefined : "h1"}
+              style={{
+                textTransform: "uppercase",
+                fontSize: mobile ? "18px" : "35px",
+                letterSpacing: "3px",
+                fontWeight: 500,
+              }}
+            >
+              {data?.[`title_${lang.toLowerCase()}`]}
+            </Typography>
+          </Container>
+        </div>
       </div>
       <Container
         style={{
-          marginTop: mobile ? "100px" : "0px",
           maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 190px",
+          padding: mobile ? "0px 32px" : "0px 150px",
         }}
       >
         <div>
           <Description data={data} />
         </div>
-        <div style={{ marginTop: "150px" }}>
+        {!mobile && (
+          <div style={{ marginTop: mobile ? "50px" : "150px" }}>
+            <FAQ data={data} />
+          </div>
+        )}
+      </Container>
+      {mobile && (
+        <div style={{ marginTop: mobile ? "50px" : "150px" }}>
           <FAQ data={data} />
         </div>
-      </Container>
+      )}
+      <div
+        style={{
+          marginTop: mobile ? "150px" : "195px",
+          marginBottom: "200px",
+        }}
+      >
+        <TreatmentVideo padding="0px" />
+      </div>
+      <div
+        style={{
+          marginTop: "100px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <div
+          style={{
+            border: "solid 4px rgba(244, 236, 226, 1)",
+            width: mobile ? "calc(100% - 39px)" : "593px",
+            borderRadius: "5px",
+            display: "flex",
+            flexDirection: mobile ? "column" : "row",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: mobile ? "40px 20px" : "20px 0px",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: mobile ? "14px" : "18px",
+              fontWeight: 500,
+              letterSpacing: "1px",
+            }}
+          >
+            Outros tratamentos
+          </Typography>
+          {mobile && (
+            <>
+              <Typography
+                onClick={() =>
+                  navigate(ROUTE_PATHS.TREATMENTS, {
+                    state: { specializationIndex: 0 },
+                  })
+                }
+                sx={{
+                  marginTop: "40px",
+                  cursor: "pointer",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textDecoration: "underline",
+                }}
+              >
+                Ver tratamentos desta especialidade
+              </Typography>
+              <Typography
+                onClick={() => navigate(ROUTE_PATHS.TREATMENTS)}
+                sx={{
+                  cursor: "pointer",
+                  marginTop: "20px",
+                  fontWeight: 400,
+                  fontSize: "12px",
+                  textAlign: "center",
+                  letterSpacing: "1px",
+                  textDecoration: "underline",
+                }}
+              >
+                Conhecer Assinaturas
+              </Typography>
+            </>
+          )}
+        </div>
+        {!mobile && (
+          <>
+            <Typography
+              onClick={() =>
+                navigate(ROUTE_PATHS.TREATMENTS, {
+                  state: { specializationIndex: 0 },
+                })
+              }
+              sx={{
+                marginTop: "40px",
+                cursor: "pointer",
+                fontWeight: 400,
+                fontSize: "17px",
+                letterSpacing: "1px",
+                textDecoration: "underline",
+              }}
+            >
+              Ver tratamentos desta especialidade
+            </Typography>
+            <Typography
+              onClick={() => navigate(ROUTE_PATHS.TREATMENTS)}
+              sx={{
+                cursor: "pointer",
+                marginTop: "20px",
+                fontWeight: 400,
+                fontSize: "17px",
+                letterSpacing: "1px",
+                textDecoration: "underline",
+              }}
+            >
+              Conhecer Assinaturas
+            </Typography>
+          </>
+        )}
+      </div>
     </>
   );
 };

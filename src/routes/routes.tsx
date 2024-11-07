@@ -34,6 +34,14 @@ export const routes: AppRoute[] = [
     ),
   },
   {
+    path: ROUTE_PATHS.BLOG_DETAIL,
+    component: (
+      <MainLayout>
+        <RoutesI.BlogDetail />
+      </MainLayout>
+    ),
+  },
+  {
     path: ROUTE_PATHS.PRODUCTS,
     component: (
       <MainLayout>
@@ -69,7 +77,7 @@ export const routes: AppRoute[] = [
     path: ROUTE_PATHS.YOUR_EXPERIENCE,
     component: (
       <MainLayout>
-        <RoutesI.Treatments />
+        <RoutesI.Experience />
       </MainLayout>
     ),
   },
@@ -154,7 +162,7 @@ export const routes: AppRoute[] = [
     ),
   },
   {
-    path: ROUTE_PATHS.POLICIES,
+    path: ROUTE_PATHS.PRIVACY_POLICY,
     component: (
       <MainLayout>
         <RoutesI.Policies />
@@ -162,18 +170,10 @@ export const routes: AppRoute[] = [
     ),
   },
   {
-    path: ROUTE_PATHS.SHIPPING_POLICIES,
+    path: ROUTE_PATHS.TERMS_OF_SERVICE,
     component: (
       <MainLayout>
-        <RoutesI.ShippingPolicies />
-      </MainLayout>
-    ),
-  },
-  {
-    path: ROUTE_PATHS.REFUND_POLICIE,
-    component: (
-      <MainLayout>
-        <RoutesI.RefundPolicies />
+        <RoutesI.TermsOfService />
       </MainLayout>
     ),
   },

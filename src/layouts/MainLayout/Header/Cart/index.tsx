@@ -5,8 +5,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
+
 import { useState } from "react";
 import { AiFillCloseSquare } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
@@ -16,7 +15,7 @@ import Button from "../../../../components/Ui/Button";
 import { clearCart, updateCart } from "../../../../redux/cart/cart.actions";
 import { CartProduct } from "../../../../redux/cart/cart.types";
 import { State } from "../../../../redux/types";
-import { publishableKey, publishableKeyTest } from "../../../../stripe/config";
+
 import { Colors } from "../../../../theme/theme";
 import { i18n } from "../../../../translations/i18n";
 import Checkout from "./Checkout";
@@ -24,7 +23,6 @@ import { getTotalValue } from "./Utils/totalValue";
 interface Props {
   closeCart: (signal: boolean) => void;
 }
-const stripePromise = loadStripe(publishableKeyTest);
 
 const Cart = ({ closeCart }: Props) => {
   const [checkoutInfo, setCheckoutInfo] = useState<boolean>(false);
@@ -34,7 +32,7 @@ const Cart = ({ closeCart }: Props) => {
   const [submitingOrder, setSubmitingOrder] = useState<boolean>(false);
   const discount = null;
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const dispatch = useDispatch();
   const handleWheel = (event: React.WheelEvent<HTMLDivElement>) => {
     event.stopPropagation();
@@ -134,18 +132,7 @@ const Cart = ({ closeCart }: Props) => {
         }}
       >
         {checkoutInfo ? (
-          <Elements stripe={stripePromise}>
-            {submitingOrder ? (
-              <div style={{ height: "300px" }}>
-                <Loader
-                  customMessage={`${i18n.t("cartDrawer.loader")}`}
-                  size={60}
-                />
-              </div>
-            ) : (
-              <Checkout closeCart={closeCart} />
-            )}
-          </Elements>
+          <></>
         ) : (
           <>
             <Button

@@ -1,28 +1,28 @@
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+
 import { useNavigate } from "react-router";
-import { State } from "../redux/types";
+
 import { ROUTE_PATHS } from "../routes/constants";
-import { CurrentUser } from "../types/user";
-import checkUserIsAdmin from "../utils/checkUserIsAdmin";
+
+import useUser from "./useUser";
 
 const useAdminAuth = (props: any) => {
-  const currentUser =
-    useSelector<State, CurrentUser | null>(
-      (state) => state?.user?.currentUser
-    ) || null;
-
+  const user = useUser();
   const navigate = useNavigate();
-  // useEffect(
-  //   () => {
-  //     if (!currentUser || !checkUserIsAdmin(currentUser)) {
-  //       navigate(ROUTE_PATHS.HOME);
-  //     }
-  //   },
-  //   // eslint-disable-next-line
-  //   [currentUser]
-  // );
-  return currentUser;
+
+  console.log(user, "user");
+  const checkUserIsAdmin = user.data?.Data.is_admin ? true : false;
+  console.log(checkUserIsAdmin, "checkUserIsAdmin");
+  useEffect(
+    () => {
+      if (!checkUserIsAdmin) {
+        navigate(ROUTE_PATHS.HOME);
+      }
+    },
+    // eslint-disable-next-line
+    [user]
+  );
+  return user;
 };
 
 export default useAdminAuth;

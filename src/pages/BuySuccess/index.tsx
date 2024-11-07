@@ -6,7 +6,7 @@ import useCookies from "../../hooks/useCookies";
 
 const BuySuccess = () => {
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   const { setCookie, getCookie } = useCookies();
   const handleLogin = async () => {
     const baseUrl = "https://clinicasritz-be-staging.qloudyx.pt";

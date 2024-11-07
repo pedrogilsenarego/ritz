@@ -24,13 +24,7 @@ export const CreateUserSchema = z
         ),
       }),
     phone: z.string().optional(),
-    birthday: z.date().optional(),
-    fullName: z.string().optional(),
-    address1: z.string().optional(),
-    address2: z.string().optional(),
-    city: z.string().optional(),
-    postalCode: z.string().optional(),
-    country: z.string().optional(),
+    prePhone: z.string().optional(),
 
     password: z
       .string({

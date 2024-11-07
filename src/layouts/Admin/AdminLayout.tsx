@@ -8,8 +8,10 @@ const AdminLayout = (props: any) => {
     <Box
       style={{
         display: "flex",
+
         background:
-          "linear-gradient(180deg, #FFFAF9 0%, #E6DFDD 51%, #E3E8EB 100%)",
+          "linear-gradient(180deg, rgba(220, 209, 200, 0.3) 0%, rgba(104, 60, 29, 0.3) 100%)",
+
         position: "relative",
       }}
     >
@@ -23,28 +25,34 @@ const AdminLayout = (props: any) => {
             height: "100%",
           }}
         >
-          <img
-            src={Logo}
-            alt=""
-            style={{
-              width: "503px",
-              position: "absolute",
-              left: "50%",
-              top: "25%",
-              transform: "translateX(-50%)",
-            }}
-          />
-          <img
-            src={Logo2}
-            alt=""
-            style={{
-              width: "457px",
-              position: "absolute",
-              left: "50%",
-              top: "45.5%",
-              transform: "translateX(-200px)",
-            }}
-          />
+          {props.logo && (
+            <>
+              {" "}
+              <img
+                src={Logo}
+                alt=""
+                style={{
+                  width: "503px",
+                  position: "absolute",
+                  left: "50%",
+                  top: "25%",
+                  transform: "translateX(-50%)",
+                }}
+              />
+              <img
+                src={Logo2}
+                alt=""
+                style={{
+                  width: "457px",
+                  position: "absolute",
+                  left: "50%",
+                  top: "45.5%",
+                  transform: "translateX(-200px)",
+                }}
+              />
+            </>
+          )}
+
           <p
             style={{
               position: "absolute",
@@ -71,7 +79,7 @@ const AdminLayout = (props: any) => {
             height: "100%",
 
             width: "100%",
-            padding: "50px 60px 60px 0px",
+            padding: "27px 60px 60px 0px",
           }}
         >
           {props.children}

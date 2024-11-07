@@ -1,3 +1,4 @@
+import { BorderColor } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
 
 //interface Props extends CSSProperties {}
@@ -13,6 +14,7 @@ const useStyles = ({ type }: any) =>
 
       "& .MuiInputBase-input": {
         borderRadius: type === "search" ? "15px" : "10px",
+
         fontSize: "13px",
         color: "#848484",
         display: "flex",
@@ -21,6 +23,7 @@ const useStyles = ({ type }: any) =>
       },
       "& .MuiOutlinedInput-root": {
         "& fieldset": {
+          borderColor: type === "search" ? "transparent" : undefined,
           borderRadius: type === "search" ? "15px" : "10px",
           fontSize: "13px",
           color: "#848484",
@@ -28,6 +31,7 @@ const useStyles = ({ type }: any) =>
           alignItems: "center",
         },
         "&:hover fieldset": {
+          borderColor: type === "search" ? "transparent" : undefined,
           borderRadius: type === "search" ? "15px" : "10px",
           fontSize: "13px",
           color: "#848484",

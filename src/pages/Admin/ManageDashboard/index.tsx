@@ -7,8 +7,11 @@ import FileImage from "../../../assets/file_flat.svg";
 import Download from "../../../assets/download-04.svg";
 import Chart from "../../../assets/icon_chart_bar.svg";
 import TwoLevelChartPie from "../../../components/Charts/TwoLevelChartPie";
+import { useDashboard } from "./useDasboard";
 
 const ManageDashboard = () => {
+  const { data } = useDashboard();
+
   const Panel = ({
     title,
     subtitle,
@@ -30,7 +33,7 @@ const ManageDashboard = () => {
       <div
         style={{
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "10px",
           padding: "30px 30px 20px 30px",
           display: "flex",
           height: "100%",
@@ -137,7 +140,7 @@ const ManageDashboard = () => {
       </div>
     );
   };
-  const Link = () => {
+  const Link = ({ link }: { link: any }) => {
     return (
       <div style={{ display: "flex", padding: "0px 30px 10px 30px" }}>
         <div style={{ width: "60%" }}>
@@ -149,7 +152,7 @@ const ManageDashboard = () => {
               textDecoration: "underline",
             }}
           >
-            www.ehtiq.com/blog/os-5-beneficios-do-aci ...
+            {link?.url || ""}
           </p>
         </div>
         <div
@@ -166,7 +169,7 @@ const ManageDashboard = () => {
               fontWeight: 400,
             }}
           >
-            341
+            {link?.trafego || 0}
           </p>
         </div>
         <div
@@ -183,7 +186,7 @@ const ManageDashboard = () => {
               fontWeight: 400,
             }}
           >
-            2
+            {link?.keywords || 0}
           </p>
         </div>
       </div>
@@ -202,7 +205,7 @@ const ManageDashboard = () => {
       <div
         style={{
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "10px",
           paddingBottom: "30px",
           display: "flex",
           height: "100%",
@@ -252,10 +255,9 @@ const ManageDashboard = () => {
             marginBottom: "30px",
           }}
         />
-        <Link />
-        <Link />
-        <Link />
-        <Link />
+        {data?.rankingURL?.map((link: any, index: number) => {
+          return <Link link={link} key={index} />;
+        })}
       </div>
     );
   };
@@ -268,16 +270,20 @@ const ManageDashboard = () => {
 
     panelStyles?: CSSProperties;
   }) => {
-    const pdfs = [
-      { month: "Janeiro" },
-      { month: "Fevereiro" },
-      { month: "Março" },
-    ];
+    if (!data?.report) return <></>;
+    const handleOpenReport = (index: number) => {
+      const filePath = data?.report[index]?.file_path;
+      if (filePath) {
+        window.open(filePath, "_blank");
+      } else {
+        console.error("File path is invalid");
+      }
+    };
     return (
       <div
         style={{
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "10px",
           height: "100%",
           flexDirection: "column",
 
@@ -311,7 +317,7 @@ const ManageDashboard = () => {
             autoPlay={false}
             tweenAnime="ease"
           >
-            {pdfs.map((item, index) => (
+            {data?.report?.map((item: any, index: any) => (
               <div
                 draggable={false}
                 key={index}
@@ -336,7 +342,8 @@ const ManageDashboard = () => {
                     columnGap: "4px",
                   }}
                 >
-                  <p style={{ fontSize: "12px" }}>{item.month}</p>
+                  <p style={{ fontSize: "12px" }}>{item?.month}</p>
+                  <p style={{ fontSize: "12px" }}>{item?.year}</p>
                   <div
                     style={{
                       backgroundColor: "rgba(75, 173, 204, 0.32)",
@@ -345,7 +352,11 @@ const ManageDashboard = () => {
                       display: "flex",
                     }}
                   >
-                    <img src={Download} alt="" />
+                    <img
+                      src={Download}
+                      alt=""
+                      onClick={() => handleOpenReport(index)}
+                    />
                   </div>
                 </div>
               </div>
@@ -372,16 +383,28 @@ const ManageDashboard = () => {
     panelStyles?: CSSProperties;
     entries?: { title: string; value: number }[];
   }) => {
-    const data = [
-      { name: "PT", value: 50, color: "rgba(0, 180, 216, 1)" },
-      { name: "UK", value: 25, color: "rgba(0, 119, 182, 1)" },
-      { name: "ES", value: 25, color: "rgba(3, 4, 94, 1)" },
+    const dataa = [
+      {
+        name: "PT",
+        value: data?.trafegoGeoPT || 0,
+        color: "rgba(0, 180, 216, 1)",
+      },
+      {
+        name: "UK",
+        value: data?.trafegoGeoUK || 0,
+        color: "rgba(0, 119, 182, 1)",
+      },
+      {
+        name: "ES",
+        value: data?.trafegoGeoES || 0,
+        color: "rgba(3, 4, 94, 1)",
+      },
     ];
     return (
       <div
         style={{
           backgroundColor: "white",
-          borderRadius: "20px",
+          borderRadius: "10px",
           padding: "30px 30px 20px 30px",
           display: "flex",
           height: "100%",
@@ -414,10 +437,10 @@ const ManageDashboard = () => {
         )}
 
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <TwoLevelChartPie data={data} />
+          <TwoLevelChartPie data={dataa} />
         </div>
         <div style={{ display: "flex", justifyContent: "space-between  " }}>
-          {data.map((item, index) => (
+          {dataa.map((item, index) => (
             <div
               key={index}
               style={{
@@ -445,7 +468,7 @@ const ManageDashboard = () => {
     <GeneralPage title="Dashboard Analítico" subTitle="Performance">
       <Grid
         container
-        columnSpacing={"20px"}
+        columnSpacing={"10px"}
         style={{
           height: "100%",
           overflowY: "scroll",
@@ -457,7 +480,7 @@ const ManageDashboard = () => {
               <Panel
                 title="Tráfego Orgânico"
                 subtitle="Mês Corrente"
-                value={42}
+                value={data?.trafegoOrganico || 0}
                 percentage={10}
               />
             </Grid>
@@ -465,19 +488,22 @@ const ManageDashboard = () => {
               <Panel
                 title="Tráfego Pago"
                 subtitle="Mês Corrente"
-                value={0}
+                value={data?.trafegoPago || 0}
                 percentage={-2}
               />
             </Grid>
             <Grid item xs={4}>
-              <Panel title="Distribuição Orgânica" />
+              <Panel
+                title="Distribuição Orgânica"
+                value={data?.distribuicaoOrganica || 0}
+              />
             </Grid>
           </Grid>
           <Grid
             container
             columnSpacing={"10px"}
             style={{
-              marginTop: "30px",
+              marginTop: "10px",
             }}
           >
             <Grid item xs={4}>
@@ -499,21 +525,21 @@ const ManageDashboard = () => {
             <Panel
               panelStyles={{ padding: "30px 30px 20px 30px" }}
               entries={[
-                { title: "Links Externos", value: 12 },
-                { title: "Links Internos", value: 10 },
+                { title: "Links Externos", value: data?.linksExternos || 0 },
+                { title: "Links Internos", value: data?.linksInternos || 0 },
               ]}
             />
             <Panel
               panelStyles={{ padding: "30px 30px 20px 30px" }}
               entries={[
-                { title: "Total Páginas", value: 24 },
-                { title: "Indexadas", value: 10 },
+                { title: "Total Páginas", value: data?.totalPaginas || 0 },
+                { title: "Indexadas", value: data?.indexadas || 0 },
               ]}
             />
           </div>
           <div>
             <PanelCarousel
-              panelStyles={{ marginTop: "20px" }}
+              panelStyles={{ marginTop: "10px" }}
               title="Report Mensal"
             />
           </div>

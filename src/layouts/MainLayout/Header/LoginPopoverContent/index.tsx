@@ -8,39 +8,48 @@ import { CurrentUser } from "../../../../types/user";
 import Login from "./Auth/Login";
 import RecoverPassword from "./Auth/RecoverPassword";
 import Register from "./Auth/Register";
+import { useMediaQuery, useTheme } from "@mui/material";
 
-const LoginPopoverContent = ({ handleClose }: any) => {
+const LoginPopoverContent = ({ handleClose, visitCard }: any) => {
   const navigate = useNavigate();
   const currentUser = useSelector<State, CurrentUser | null>(
     (state) => state.user.currentUser
   );
   const { onSignOut } = useSignOut();
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const [mode, setMode] = useState<"login" | "register" | "recover">("login");
 
   const render = () => {
     switch (mode) {
       case "login":
-        return <Login setMode={setMode} />;
+        return (
+          <Login
+            visitCard={visitCard}
+            setMode={setMode}
+            handleClose={handleClose}
+          />
+        );
       case "register":
-        return <Register setMode={setMode} />;
+        return (
+          <Register
+            visitCard={visitCard}
+            setMode={setMode}
+            handleClose={handleClose}
+          />
+        );
       case "recover":
         return <RecoverPassword />;
       default:
-        return <Login setMode={setMode} />;
+        return <Login setMode={setMode} handleClose={handleClose} />;
     }
   };
 
   return (
     <div
-      //onMouseLeave={handleClose}
       style={{
-        display: "flex",
-        flexDirection: "column",
-        rowGap: "12px",
-        width: "400px",
-        justifyContent: "end",
-        alignItems: "end",
+        width: mobile ? "auto" : visitCard ? "325px" : "400px",
       }}
     >
       {render()}

@@ -23,10 +23,19 @@ export const RoutesI = {
   ),
 
   AdminManageContent: lazyWithRetryAndLoader(
-    () => import("../pages/Admin/ManageContent")
+    () => import("../pages/Admin/ManageBlog")
+  ),
+  AdminManagePIT: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManagePIT")
   ),
   AdminManageContentCreate: lazyWithRetryAndLoader(
-    () => import("../pages/Admin/ManageContent/CreateBlog")
+    () => import("../pages/Admin/ManageBlog/CreateBlog")
+  ),
+  AdminManageContentNewTreatment: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/ManagePIT/CreateTreatment")
+  ),
+  AdminLiveChat: lazyWithRetryAndLoader(
+    () => import("../pages/Admin/LiveChat")
   ),
   AdminHome: lazyWithRetryAndLoader(() => import("../pages/Admin/Home")),
   UserHome: lazyWithRetryAndLoader(() => import("../pages/User/Home")),
@@ -50,14 +59,12 @@ export const RoutesI = {
     () => import("../pages/Auth/RecoverPassword")
   ),
   Policies: lazyWithRetryAndLoader(() => import("../pages/Policies")),
-  ShippingPolicies: lazyWithRetryAndLoader(
-    () => import("../pages/ShippingPolicies")
-  ),
-  RefundPolicies: lazyWithRetryAndLoader(
-    () => import("../pages/RefundPolicies")
-  ),
+  TermsOfService: lazyWithRetryAndLoader(() => import("../pages/TermsOfUse")),
+
+  Experience: lazyWithRetryAndLoader(() => import("../pages/Experience")),
   Complex: lazyWithRetryAndLoader(() => import("../pages/Complex")),
   Blog: lazyWithRetryAndLoader(() => import("../pages/Blog")),
+  BlogDetail: lazyWithRetryAndLoader(() => import("../pages/BlogDetail")),
   Testemonials: lazyWithRetryAndLoader(() => import("../pages/Testemonials")),
   Treatments: lazyWithRetryAndLoader(() => import("../pages/Treatments")),
   TreatmentID: lazyWithRetryAndLoader(() => import("../pages/TreatmentID")),

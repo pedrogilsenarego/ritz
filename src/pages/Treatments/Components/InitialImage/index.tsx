@@ -1,115 +1,110 @@
-import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
-import Logo from "../../../../assets/EHTIQ BRANDS-12.svg";
-import { MAX_SCREEN } from "../../../../constants/screen";
+import { Typography, useMediaQuery, useTheme } from "@mui/material";
 
-const InitialImage = () => {
-  const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  return (
-    <Container
-      style={{
-        marginTop: mobile ? "100px" : "250px",
-        maxWidth: MAX_SCREEN,
-        padding: mobile ? undefined : "0px 196px",
-      }}
-    >
+import { BASE_URL } from "../../../../services/constants";
+
+const InitialImage = ({ text, logo }: { text: string; logo?: boolean }) => {
+  const Theme = useTheme();
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
+  const renderLaptop = () => {
+    return (
       <div
         style={{
-          height: "100%",
+          height: "530px",
           display: "flex",
-          margin: "0px 20px",
           flexDirection: "column",
-          justifyContent: "center",
-          alignItems: mobile ? "start" : "start",
+          justifyContent: "flex-end",
+          alignItems: "center",
           width: "100%",
-          rowGap: "20px",
+          paddingBottom: "92px",
+          position: "relative",
+          background:
+            "linear-gradient(180deg, rgba(87, 64, 46, 0.5) 0%, rgba(191, 169, 152, 0.5) 100%)",
         }}
       >
-        <Typography
-          variant="h1"
-          style={{
-            textAlign: mobile ? "start" : "center",
-            textTransform: "uppercase",
-            fontSize: mobile ? "24px" : "60px",
-
-            fontWeight: 500,
-          }}
-        >
-          Acompanhamos a sua
-        </Typography>
-        <Typography
-          variant="h1"
-          style={{
-            textTransform: "uppercase",
-            fontSize: mobile ? "24px" : "60px",
-            fontStyle: "italic",
-            fontWeight: 400,
-          }}
-        >
-          Experiência
-        </Typography>
-        {!mobile && (
-          <Typography
+        {logo && (
+          <img
+            src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-1.webp`}
+            alt=""
+            width={"86px"}
             style={{
-              marginTop: "50px",
-              fontSize: mobile ? "11px" : "18px",
-              letterSpacing: "1px",
-              lineHeight: mobile ? "20px" : "31px",
-              width: "70%",
+              opacity: 0.3,
+              position: "absolute",
+              bottom: 0,
+              transform: "translateY(50%)",
+              zIndex: 1000,
             }}
-          >
-            Valorizamos cada momento. O nosso compromisso é o seu conforto,
-            garantindo que cada passo seja uma expressão de cuidado e
-            excelência.
-          </Typography>
+          />
         )}
-        {mobile && (
-          <div style={{ marginRight: "20px" }}>
-            <Typography
-              style={{
-                marginTop: "50px",
-                fontSize: mobile ? "11px" : "18px",
-                letterSpacing: "1px",
-                lineHeight: mobile ? "20px" : "31px",
-                width: "100%",
-              }}
-            >
-              Valorizamos cada momento da sua jornada.
-            </Typography>
-            <Typography
-              style={{
-                marginTop: "10px",
-                fontSize: mobile ? "11px" : "18px",
-                letterSpacing: "1px",
-                lineHeight: mobile ? "20px" : "31px",
-                width: "100%",
-              }}
-            >
-              O nosso compromisso é o seu conforto, onde oferecemos um
-              atendimento adaptado às suas necessidades, garantindo que cada
-              passo seja uma expressão de cuidado e excelência.
-            </Typography>
-          </div>
-        )}
-      </div>
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "40px",
-        }}
-      >
-        <img
-          src={Logo}
-          alt=""
+        <Typography
+          variant="h1"
           style={{
-            height: mobile ? 64 : 110,
+            marginBottom: "0px",
+            fontSize: "60px",
+            textTransform: "uppercase",
+            color: "rgba(95, 95, 95, 1)",
           }}
+        >
+          {text}
+        </Typography>
+        <img
+          src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-3.webp`}
+          alt=""
+          width={"309px"}
         />
       </div>
-    </Container>
-  );
-};
+    );
+  };
 
+  const renderMobile = () => {
+    return (
+      <div
+        style={{
+          height: "600px",
+          display: "flex",
+          position: "relative",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          alignItems: "center",
+          width: "100%",
+          paddingBottom: "92px",
+          background:
+            "linear-gradient(180deg, rgba(87, 64, 46, 0.5) 0%, rgba(191, 169, 152, 0.5) 100%)",
+        }}
+      >
+        {logo && (
+          <img
+            src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-1.webp`}
+            alt=""
+            width={"86px"}
+            style={{
+              opacity: 0.3,
+              position: "absolute",
+              bottom: 0,
+              transform: "translateY(50%)",
+              zIndex: 1000,
+            }}
+          />
+        )}
+        <Typography
+          variant="h1"
+          style={{
+            marginBottom: "5px",
+            fontSize: "35px",
+            textTransform: "uppercase",
+            color: "rgba(95, 95, 95, 1)",
+          }}
+        >
+          {text}
+        </Typography>
+        <img
+          src={`${BASE_URL}/media/FOTOS-EHTIC-DESKTOP/LOGO-3.webp`}
+          alt=""
+          width="251px"
+        />
+      </div>
+    );
+  };
+
+  return mobile ? renderMobile() : renderLaptop();
+};
 export default InitialImage;

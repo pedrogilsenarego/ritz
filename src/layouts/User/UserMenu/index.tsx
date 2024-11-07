@@ -2,10 +2,13 @@ import { Box } from "@mui/material";
 import BasicPopover from "../../../components/Popover";
 import UserPopoverContent from "./UserPopoverContent";
 import { useState } from "react";
+import useUser from "../../../hooks/useUser";
+import { BASE_URL } from "../../../services/constants";
 
 const UserMenu = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
   const isOpen = Boolean(anchorEl);
+  const user = useUser();
 
   const handleClose = () => {
     setAnchorEl(null);
@@ -36,7 +39,7 @@ const UserMenu = () => {
       <p style={{ fontWeight: 500, fontSize: "14px" }}>Josefina Vicente</p>
       <img
         alt=""
-        src="https://letstryai.com/wp-content/uploads/2023/11/stable-diffusion-avatar-prompt-example-6.jpg"
+        src={`${BASE_URL}${user.data?.Data.imagem}`}
         style={{ height: "50px", aspectRatio: 1, borderRadius: "50%" }}
       />
       <BasicPopover isOpen={isOpen} anchorEl={anchorEl} onClose={handleClose}>

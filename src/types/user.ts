@@ -23,12 +23,7 @@ export type CreateUser = {
   confirmPassword: string;
   email: string;
   phone?: string;
-  fullName?: string;
-  address1?: string;
-  address2?: string;
-  city?: string;
-  postalCode?: string;
-  country?: string;
+  prePhone?: string;
 };
 
 export type Login = {

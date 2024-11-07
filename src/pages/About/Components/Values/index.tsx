@@ -1,5 +1,4 @@
 import {
-  Button,
   Container,
   Grid,
   Typography,
@@ -7,294 +6,426 @@ import {
   useTheme,
 } from "@mui/material";
 import { MAX_SCREEN } from "../../../../constants/screen";
+import { i18n } from "../../../../translations/i18n";
 
 const Values = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  return (
-    <div
-      style={{
-        width: "100vw",
-        marginTop: "200px",
-        backgroundImage: `url(https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png)`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: mobile ? "100px 20px" : "132px 22.5% 122px 22.5%",
-      }}
-    >
-      <Container
-        style={{
-          maxWidth: MAX_SCREEN,
-        }}
-      >
-        <div
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const renderLaptop = () => {
+    return (
+      <>
+        <Typography
+          variant="h1"
           style={{
-            backgroundColor: mobile ? undefined : "lightgray",
-            padding: mobile ? "0px" : "150px 116px 68px 90px",
+            textAlign: "center",
+            fontSize: "30px",
+            letterSpacing: "3px",
+            fontWeight: 500,
+            textTransform: "uppercase",
+          }}
+          dangerouslySetInnerHTML={{
+            __html: i18n.t("pages.about.box6"),
+          }}
+        ></Typography>
+        <Grid
+          container
+          columnSpacing={"30px"}
+          style={{
+            backgroundColor: "rgba(57, 57, 57, 1)",
+            padding: "98px 37px",
+            marginTop: "200px",
           }}
         >
-          <Typography
-            variant="h1"
-            style={{
-              textTransform: "uppercase",
-              fontSize: mobile ? "19px" : "27px",
-              letterSpacing: "1px",
-              lineHeight: "27px",
-              textAlign: "center",
-            }}
-          >
-            VALORES QUE REPRESENTAM{" "}
-          </Typography>
-          <Typography
-            variant="h1"
-            style={{
-              marginTop: mobile ? "5px" : "20px",
-              textAlign: "center",
-              textTransform: "uppercase",
-              fontSize: mobile ? "19px" : "27px",
-              fontWeight: 700,
-              letterSpacing: "1px",
-              lineHeight: "27px",
-            }}
-          >
-            EXCELÊNCIA
-          </Typography>
+          <Grid item xs={3}>
+            <img
+              style={{ width: "100%" }}
+              alt=""
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.1.webp"
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <img
+              style={{ width: "100%" }}
+              alt=""
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.2.webp"
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <img
+              style={{ width: "100%" }}
+              alt=""
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.3.webp"
+            />
+          </Grid>
+          <Grid item xs={3}>
+            <img
+              style={{ width: "100%" }}
+              alt=""
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.4.webp"
+            />
+          </Grid>
+        </Grid>
+        <div style={{ position: "relative" }}>
           <div
             style={{
-              marginTop: "106px",
-              display: "flex",
-              flexDirection: "column",
-              rowGap: "30px",
+              position: "absolute",
+              width: "50%",
+              height: "1095px",
+              backgroundColor: "rgba(107, 71, 51, 0.2)",
+              right: 0,
+              top: 0,
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              width: "calc(50% - 500px)",
+              height: "40px",
+              backgroundColor: "rgba(57, 57, 57, 1)",
+              right: 0,
+              top: 0,
+            }}
+          />
+          <Typography
+            variant="h1"
+            style={{
+              textTransform: "uppercase",
+              position: "absolute",
+              color: "rgba(255, 255, 255, 0.8)",
+              fontSize: mobile ? "19px" : "40px",
+              letterSpacing: "4px",
+              lineHeight: "55px",
+              top: "70px",
+              left: 0,
+              right: 0,
+              textAlign: "center",
+            }}
+            dangerouslySetInnerHTML={{
+              __html: i18n.t("pages.about.box7"),
+            }}
+          ></Typography>
+          <Container
+            style={{
+              maxWidth: 1000,
+              // padding: "0px 20%",
+              marginTop: "-40px",
             }}
           >
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
+                padding: mobile ? "0px" : "70px 0px",
+
+                height: "940px",
+                backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.3.webp`,
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
               }}
             >
+              <Typography
+                variant="h1"
+                style={{
+                  textTransform: "uppercase",
+
+                  color: "transparent",
+                  fontSize: mobile ? "19px" : "40px",
+                  letterSpacing: "4px",
+                  lineHeight: "55px",
+
+                  textAlign: "center",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: i18n.t("pages.about.box7"),
+                }}
+              ></Typography>
+
               <div
                 style={{
-                  justifyContent: "center",
-                  alignItems: "center",
+                  margin: mobile ? "0px" : "0px 135px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "end",
+                  rowGap: "30px",
+                  marginTop: mobile ? "20px" : "20px",
+                  backgroundColor: mobile ? undefined : "lightgray",
+                  height: "814px",
+                  padding: "100px 60px",
+                  backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.6.webp`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center center",
                 }}
               >
                 <Typography
                   variant="h1"
                   style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    display: "flex",
-                    width: "50px",
-                    height: "50px",
-                    fontWeight: 600,
-                    justifyContent: "center",
-                    alignItems: "center",
+                    fontSize: "25px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
                   }}
                 >
-                  E
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {i18n.t("pages.about.box8")[0]}
+                  </span>
+                  {i18n.t("pages.about.box8").substring(1)}
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontSize: "25px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box9")[0]}
+                  </span>
+                  {i18n.t("pages.about.box9").substring(1)}
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontSize: "25px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box10")[0]}
+                  </span>
+                  {i18n.t("pages.about.box10").substring(1)}
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontSize: "25px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box11")[0]}
+                  </span>
+                  {i18n.t("pages.about.box11").substring(1)}
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontSize: "25px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box12")[0]}
+                  </span>
+                  {i18n.t("pages.about.box12").substring(1)}
                 </Typography>
               </div>
-              <Typography
-                style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
-                }}
-              >
-                <b style={{ textTransform: "uppercase" }}>Elegância</b> Reflete
-                a abordagem sofisticada e atenta aos detalhes, criando um
-                ambiente esteticamente agradável e acolhedor.
-              </Typography>
             </div>
+          </Container>
+        </div>
+      </>
+    );
+  };
+  const renderMobile = () => {
+    return (
+      <>
+        <Typography
+          variant="h1"
+          style={{
+            padding: "0px 20px",
+            textAlign: "center",
+            fontSize: "20px",
+            letterSpacing: "3px",
+            lineHeight: "30px",
+            fontWeight: 500,
+            textTransform: "uppercase",
+          }}
+          dangerouslySetInnerHTML={{
+            __html: i18n.t("pages.about.box6"),
+          }}
+        ></Typography>
+        <Grid
+          container
+          columnSpacing={"10px"}
+          style={{
+            backgroundColor: "rgba(57, 57, 57, 1)",
+            padding: "20px 10px",
+            marginTop: "150px",
+          }}
+        >
+          <Grid item xs={4}>
+            <img
+              style={{ width: "100%" }}
+              alt=""
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.1.webp"
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <img
+              style={{ width: "100%" }}
+              alt=""
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.2.webp"
+            />
+          </Grid>
+          <Grid item xs={4}>
+            <img
+              style={{ width: "100%" }}
+              alt=""
+              src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.3.webp"
+            />
+          </Grid>
+        </Grid>
+        <div style={{ position: "relative" }}>
+          <div
+            style={{
+              position: "absolute",
+              width: "50%",
+              height: "451px",
+              backgroundColor: "rgba(107, 71, 51, 0.2)",
+              right: 0,
+              top: 0,
+            }}
+          />
+
+          <div
+            style={{
+              padding: "0px 20px",
+              marginTop: "-10px",
+            }}
+          >
             <div
               style={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
+                padding: "30px 30px",
+                height: "375px",
+                backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.3.webp`,
+                backgroundSize: "cover",
+                backgroundPosition: "center center",
               }}
             >
+              <Typography
+                variant="h1"
+                style={{
+                  textTransform: "uppercase",
+                  color: "rgba(255, 255, 255, 0.8)",
+                  fontSize: "18px",
+                  letterSpacing: "1px",
+                  lineHeight: "18px",
+
+                  textAlign: "center",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: i18n.t("pages.about.box7"),
+                }}
+              ></Typography>
+
               <div
                 style={{
-                  justifyContent: "center",
-                  alignItems: "center",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "end",
+                  rowGap: "20px",
+                  marginTop: "10px",
+
+                  height: "343px",
+                  padding: "30px 20px",
+                  backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-4.2.webp`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center center",
                 }}
               >
                 <Typography
                   variant="h1"
                   style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    display: "flex",
-                    width: "50px",
-                    fontWeight: 600,
-                    height: "50px",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
                   }}
                 >
-                  H
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box8")[0]}
+                  </span>
+                  {i18n.t("pages.about.box8")}
                 </Typography>
-              </div>
-              <Typography
-                style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
-                }}
-              >
-                <b style={{ textTransform: "uppercase" }}>Harmonia</b> A
-                constante procura pelo equilíbrio entre tecnologia avançada e
-                atendimento personalizado.
-              </Typography>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
-              }}
-            >
-              <div
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
                 <Typography
                   variant="h1"
                   style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    fontWeight: 600,
-                    display: "flex",
-                    width: "50px",
-                    height: "50px",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
                   }}
                 >
-                  T
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box9")[0]}
+                  </span>
+                  {i18n.t("pages.about.box9").substring(1)}
                 </Typography>
-              </div>
-              <Typography
-                style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
-                }}
-              >
-                <b style={{ textTransform: "uppercase" }}>Tranquilidade</b>{" "}
-                Traduz o compromisso em oferecer um espaço de paz e serenidade,
-                para que se sinta seguro e cuidado.
-              </Typography>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
-              }}
-            >
-              <div
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
                 <Typography
                   variant="h1"
                   style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    display: "flex",
-                    width: "50px",
-                    fontWeight: 600,
-                    height: "50px",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
                   }}
                 >
-                  I
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box10")[0]}
+                  </span>
+                  {i18n.t("pages.about.box10").substring(1)}
                 </Typography>
-              </div>
-              <Typography
-                style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
-                }}
-              >
-                <b style={{ textTransform: "uppercase" }}>Inovação</b> Motivados
-                a superar os limites do possível, trazendo novas soluções para o
-                cuidado e bem-estar dos nossos pacientes.
-              </Typography>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                columnGap: "20px",
-                flexDirection: mobile ? "column" : "row",
-              }}
-            >
-              <div
-                style={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
                 <Typography
                   variant="h1"
                   style={{
-                    fontSize: "40px",
-                    color: "gray",
-                    display: "flex",
-                    width: "50px",
-                    fontWeight: 600,
-                    height: "50px",
-                    justifyContent: "center",
-                    alignItems: "center",
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
                   }}
                 >
-                  Q
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box11")[0]}
+                  </span>
+                  {i18n.t("pages.about.box11").substring(1)}
+                </Typography>
+                <Typography
+                  variant="h1"
+                  style={{
+                    fontSize: "15px",
+                    fontWeight: 500,
+                    letterSpacing: "2px",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  <span style={{ color: "rgba(134, 102, 84, 0.7)" }}>
+                    {" "}
+                    {i18n.t("pages.about.box12")[0]}
+                  </span>
+                  {i18n.t("pages.about.box12").substring(1)}
                 </Typography>
               </div>
-              <Typography
-                style={{
-                  textAlign: "center",
-                  width: mobile ? "90%" : undefined,
-                  fontSize: mobile ? "11px" : "14px",
-                  letterSpacing: "1px",
-                  lineHeight: mobile ? "18px" : "25px",
-                }}
-              >
-                <b style={{ textTransform: "uppercase" }}>Qualidade</b> O pilar
-                sobre o qual todos os nossos serviços são construídos,
-                garantindo excelência em cada interação e tratamento.
-              </Typography>
             </div>
           </div>
         </div>
-      </Container>
-    </div>
-  );
+      </>
+    );
+  };
+
+  return mobile ? renderMobile() : renderLaptop();
 };
 
 export default Values;

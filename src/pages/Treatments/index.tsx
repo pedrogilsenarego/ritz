@@ -1,42 +1,60 @@
-import { Container, useMediaQuery, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 import InitialImage from "./Components/InitialImage";
+import InitialSection from "./Components/InitialSection";
+import SchedulleMembership from "../Complex/Components/SchedulleMembership";
+import { TreatmentSelection } from "./Components/TreatmentSelection";
 
-import { MAX_SCREEN } from "../../constants/screen";
-import Escort from "../Home/Components/Escort";
-import SpaceWhere from "../Home/Components/SpaceWhere";
-import IdentityProtection from "./Components/IdentityProtection";
-import InitialSection2 from "./Components/InitialSection2";
+import { MobileFirst } from "./Components/MobileFirst";
+import { MobileTreatmentSelection } from "./Components/MobileTratmentSelection";
+import { TreatmentVideo } from "../Home/Components/TreatmentVideo";
+import { i18n } from "../../translations/i18n";
 
 const Treatments = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  return (
-    <>
-      <div style={{ marginTop: mobile ? "120px" : "200px" }}>
-        <InitialImage />
-      </div>
-      <Container
-        style={{
-          marginTop: mobile ? "100px" : "200px",
-          maxWidth: MAX_SCREEN,
-          padding: mobile ? undefined : "0px 190px",
-        }}
-      >
-        <InitialSection2 />
-        <div style={{ marginTop: mobile ? "150px" : "200px" }}>
-          <IdentityProtection />
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+
+  const renderLaptop = () => {
+    return (
+      <>
+        <div style={{ marginTop: mobile ? "120px" : "0px" }}>
+          <InitialImage logo text={i18n.t("pages.treatments.box01")} />
         </div>
-        {/* <InitialSection /> */}
-        {/* <SearchSection /> */}
-      </Container>
-      <div style={{ marginTop: mobile ? "250px" : "400px" }}>
-        <Escort />
-      </div>
-      <div style={{ marginTop: mobile ? "100px" : "0px" }}>
-        <SpaceWhere />
-      </div>
-    </>
-  );
+        <div style={{ marginTop: mobile ? "120px" : "0px" }}>
+          <InitialSection />
+        </div>
+        <div style={{ marginTop: mobile ? "120px" : "195px" }}>
+          <TreatmentVideo />
+        </div>
+        <div style={{ marginTop: "300px" }}>
+          <TreatmentSelection />
+        </div>
+        <div style={{ marginTop: "80px" }}>
+          <SchedulleMembership />
+        </div>
+      </>
+    );
+  };
+
+  const renderMobile = () => {
+    return (
+      <>
+        <InitialImage logo text={i18n.t("pages.treatments.box01")} />
+        <div style={{ marginTop: "150px" }}>
+          <MobileFirst />
+        </div>
+        <div style={{ marginTop: "140px" }}>
+          <TreatmentVideo />
+        </div>
+        <div style={{ marginTop: "240px" }}>
+          <MobileTreatmentSelection />
+        </div>
+        <div style={{ marginTop: "80px", marginBottom: "40px" }}>
+          <SchedulleMembership />
+        </div>
+      </>
+    );
+  };
+  return mobile ? renderMobile() : renderLaptop();
 };
 
 export default Treatments;

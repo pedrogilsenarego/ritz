@@ -1,4 +1,6 @@
 export type Content = {
+  topImage: string;
+  mainImage: string;
   title: string;
   subtitle: string;
   mainText: string;
@@ -11,5 +13,3 @@ export type Content = {
     results: string;
   };
 };
-
-export const listPages = ["harmonização-facial"];

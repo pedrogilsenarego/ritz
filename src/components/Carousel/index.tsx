@@ -32,11 +32,16 @@ export interface ICarouselProps {
   dotsColor?: string;
   dotsActivedColor?: string;
   dotsLocation?: "top" | "bottom" | "left" | "right";
+  dotYOffset?: number;
   draggable?: boolean;
   dragThreshold?: number;
   orientation?: "horizontal" | "vertical";
   onItemClick?: (item: ClickedItem) => void;
+  onChange?: (index: number) => void;
   children: Array<React.ReactNode>;
+  initialIndex?: number;
+  navElementRight?: React.ReactNode;
+  navElementLeft?: React.ReactNode;
 }
 
 const Carousel: React.FC<ICarouselProps> = (props) => {
@@ -56,13 +61,24 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     dotsColor = "#ffffff",
     dotsActivedColor = "#1677ff",
     dotsLocation = "bottom",
+    dotYOffset,
     draggable = true,
     dragThreshold = 150,
     orientation = "horizontal",
     onItemClick,
+    onChange,
     children,
+    initialIndex,
+    navElementRight,
+    navElementLeft,
   } = props;
-  const [current, setCurrent] = useState(direction === 1 ? 1 : children.length);
+
+  const [current, setCurrent] = useState(
+    initialIndex || direction === 1 ? 1 : children.length
+  );
+  useEffect(() => {
+    if (initialIndex) setCurrent(initialIndex);
+  }, [initialIndex]);
 
   const [touched, setTouched] = useState(false);
   const absPerWidthRef = useRef(0);
@@ -140,7 +156,9 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
       const currTime = Math.min(slideDuration, Date.now() - startTime);
       leftRef.current = tweenFn(currTime, b, c, slideDuration);
       if (leftRef.current !== b + c) {
-        sliderRef.current!.style[slidePropRef.current] = `${-leftRef.current}%`;
+        sliderRef.current!.style[
+          slidePropRef.current
+        ]! = `${-leftRef.current}%`;
         rafRef.current = requestAnimationFrame(anim);
       } else {
         slidingRef.current = false;
@@ -196,7 +214,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
   const goPrev = (e: MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (slidingRef.current) return;
+    if (onChange) if (slidingRef.current) return;
     setCurrent(current - 1);
   };
 
@@ -278,8 +296,14 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     leftRef.current = leftRef.current - offset;
     if (Math.abs(absOffset) >= dragThreshold) {
       setCurrent(current - Math.abs(offset) / offset);
+      if (onChange) {
+        onChange(current - Math.abs(offset) / offset);
+      }
     } else {
       go(current);
+      if (onChange) {
+        onChange(current);
+      }
     }
     setTouched(false);
     mouseDownClientXRef.current = -1;
@@ -321,10 +345,11 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
     if (!draggable) return;
     if (slidingRef.current) return;
     if (timer.current) clearTimeout(timer.current);
-    //setTouched(true);
+    setTouched(true);
     const touch = e.touches[0];
     mouseDownClientXRef.current =
       orientation === "vertical" ? touch.clientY : touch.clientX;
+    setTouched(true);
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
@@ -352,6 +377,7 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
   };
 
   const handleTouchEnd = (e: any) => {
+    setTouched(false);
     if (!draggable) return;
     if (mouseMoveClientXRef.current === 0) {
       mouseDownClientXRef.current = -1;
@@ -398,27 +424,33 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
             position: "absolute",
             width: "100%",
             justifyContent: "space-between",
-            bottom: "50%",
+            bottom: "calc(50% - 18px)",
             display: "flex",
           }}
         >
           <div
             style={{ padding: "10px" }}
-            onClick={goPrev}
+            onClick={(e) => {
+              goPrev(e);
+              onChange?.(current - 1);
+            }}
             onMouseUp={(e) => e.stopPropagation()}
             onMouseDown={(e) => e.stopPropagation()}
             onMouseMove={(e) => e.stopPropagation()}
           >
-            <img src={Next} alt="" />
+            {navElementLeft || <img src={Next} alt="" />}
           </div>
           <div
             style={{ padding: "10px" }}
-            onClick={goNext}
+            onClick={(e) => {
+              goNext(e);
+              onChange?.(current + 1);
+            }}
             onMouseUp={(e) => e.stopPropagation()}
             onMouseDown={(e) => e.stopPropagation()}
             onMouseMove={(e) => e.stopPropagation()}
           >
-            <img src={Previous} alt="" />
+            {navElementRight || <img src={Previous} alt="" />}
           </div>
         </div>
       )}
@@ -452,6 +484,9 @@ const Carousel: React.FC<ICarouselProps> = (props) => {
               className={isDotActive(index) ? "active" : ""}
               onClick={() => handleDotClick(index)}
               style={{
+                transform: dotYOffset
+                  ? `translateY(${dotYOffset}px)`
+                  : undefined,
                 backgroundColor: isDotActive(index)
                   ? dotsActivedColor
                   : dotsColor,

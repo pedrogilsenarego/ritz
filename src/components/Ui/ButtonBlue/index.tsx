@@ -4,7 +4,7 @@ import { ButtonProps } from "@mui/material";
 interface Props extends ButtonProps {
   icon?: string;
   label: string;
-  onClick?: () => void;
+  onClick?: (e: any) => void;
   styles?: CSSProperties;
   textStyles?: CSSProperties;
 }

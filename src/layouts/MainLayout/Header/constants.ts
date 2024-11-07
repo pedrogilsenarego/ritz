@@ -8,19 +8,19 @@ type Option = {
 
 export const options: Option[] = [
   {
-    name: "A clínica",
+    name: i18n.t("header.clinic", "A Clínica"),
     link: ROUTE_PATHS.COMPLEX,
   },
 
   {
-    name: "Tratamentos",
+    name: i18n.t("header.treatments"),
     link: ROUTE_PATHS.TREATMENTS,
   },
   {
-    name: "A experiência",
+    name: i18n.t("header.experience"),
     link: ROUTE_PATHS.YOUR_EXPERIENCE,
   },
-  { name: "Sobre a Ethiq", link: ROUTE_PATHS.ABOUT },
+  { name: i18n.t("header.about"), link: ROUTE_PATHS.ABOUT },
   {
     name: i18n.t("header.membership", "Membership"),
     link: ROUTE_PATHS.MEMBERSHIP,
@@ -33,8 +33,8 @@ export const langOptions = [
     label: "EN",
   },
   {
-    value: "fr",
-    label: "FR",
+    value: "es",
+    label: "ES",
   },
   {
     value: "pt",

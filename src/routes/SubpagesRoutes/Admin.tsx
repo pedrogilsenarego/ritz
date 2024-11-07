@@ -7,82 +7,132 @@ export const adminPages = [
   {
     path: ROUTE_PATHS.ADMIN_HOME,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminHome />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout logo>
+          <RoutesI.AdminHome />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminManageProducts />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageProducts />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
   {
-    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT,
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENTS,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminManageContent />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManagePIT />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
   {
-    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_CREATE,
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminManageContentCreate />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageContent />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_BLOG_CREATE_NEW,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageContentCreate />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_LIVE_CHAT,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminLiveChat />
+        </AdminLayout>
+      </WithAdminAuth>
+    ),
+  },
+  {
+    path: ROUTE_PATHS.ADMIN_MANAGE_CONTENT_TREATMENT_CREATE_NEW,
+    component: (
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageContentNewTreatment />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_EDIT_PRODUCT,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminCreateProduct edit />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminCreateProduct edit />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_CREATE_PRODUCT,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminCreateProduct />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminCreateProduct />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_MANAGE_DASHBOARD,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminManageDashboard />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageDashboard />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
 
   {
     path: ROUTE_PATHS.ADMIN_MANAGE_USERS,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminManageUsers />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageUsers />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_MANAGE_USERS_CREATE,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminManageUsersCreate />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageUsersCreate />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
   {
     path: ROUTE_PATHS.ADMIN_MANAGE_CLIENTS,
     component: (
-      <AdminLayout>
-        <RoutesI.AdminManageClients />
-      </AdminLayout>
+      <WithAdminAuth>
+        <AdminLayout>
+          <RoutesI.AdminManageClients />
+        </AdminLayout>
+      </WithAdminAuth>
     ),
   },
 ];

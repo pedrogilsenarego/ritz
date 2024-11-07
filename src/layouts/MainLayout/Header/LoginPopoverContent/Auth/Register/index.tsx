@@ -1,4 +1,11 @@
-import { Box, Divider, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import { Icons } from "../../../../../../components/Icons";
 import ControlledFormInput from "../../../../../../components/Inputs/ControlledInputAdmin";
 import Loader from "../../../../../../components/Loader";
@@ -9,22 +16,39 @@ import ButtonBlue from "../../../../../../components/Ui/ButtonBlue";
 
 type Props = {
   setMode: (mode: "login") => void;
+  handleClose: () => void;
+  visitCard?: boolean;
 };
 
-const Register = ({ setMode }: Props) => {
-  const { handleSubmit, onSubmit, control, isRegistering } = useRegister();
+const Register = ({ setMode, handleClose, visitCard }: Props) => {
+  const { handleSubmit, onSubmit, control, isRegistering, error } = useRegister(
+    {
+      handleClose,
+    }
+  );
+  const theme = useTheme();
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <>
       {isRegistering ? (
         <Loader
           customMessage={i18n.t(
-            "pages.auth.register.loaderMessage",
+            "auth.register.loaderMessage",
             "Creating new user"
           )}
         />
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} style={{ marginTop: "10px" }}>
-          <Box style={{ padding: "80px 70px 40px 70px", position: "relative" }}>
+          <Box
+            style={{
+              padding: mobile
+                ? "40px 40px 40px 40px"
+                : visitCard
+                ? "70px 40px 40px 40px"
+                : "80px 40px 40px 40px",
+              position: "relative",
+            }}
+          >
             <div
               onClick={() => setMode("login")}
               style={{
@@ -35,6 +59,7 @@ const Register = ({ setMode }: Props) => {
                 alignItems: "center",
                 justifyContent: "center",
                 columnGap: "10px",
+                cursor: "pointer",
               }}
             >
               <Icons.LeftArrow />
@@ -48,19 +73,20 @@ const Register = ({ setMode }: Props) => {
                   letterSpacing: "1px",
                 }}
               >
-                Iníciar sessão
+                {i18n.t("auth.login.startSession")}
               </p>
             </div>
             <p
               style={{
-                fontSize: "20px",
+                fontSize: visitCard ? "15px" : "20px",
                 fontWeight: 600,
                 textAlign: "center",
                 letterSpacing: "1px",
                 fontFamily: "Inter",
+                textTransform: "capitalize",
               }}
             >
-              Nova Conta
+              {i18n.t("auth.register.newAccount")}
             </p>
 
             <Grid container spacing={2}>
@@ -72,9 +98,10 @@ const Register = ({ setMode }: Props) => {
                     fontWeight: 400,
                     fontFamily: "Inter",
                     textTransform: "uppercase",
+                    textAlign: "center",
                   }}
                 >
-                  Dados obrigtórios
+                  {i18n.t("auth.register.mandatoryData")}
                 </p>
               </Grid>
               <Grid item xs={12}>
@@ -91,10 +118,7 @@ const Register = ({ setMode }: Props) => {
                 <ControlledFormInput
                   control={control}
                   name="email"
-                  inputPlaceholder={i18n.t(
-                    "pages.auth.register.email",
-                    "E-mail"
-                  )}
+                  inputPlaceholder={i18n.t("pages.register.email", "E-mail")}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -103,7 +127,7 @@ const Register = ({ setMode }: Props) => {
                   type="password"
                   name="password"
                   inputPlaceholder={i18n.t(
-                    "pages.auth.register.password",
+                    "pages.register.password",
                     "Password"
                   )}
                 />
@@ -114,7 +138,7 @@ const Register = ({ setMode }: Props) => {
                   type="password"
                   name="confirmPassword"
                   inputPlaceholder={i18n.t(
-                    "pages.auth.register.confirmPassword",
+                    "pages.register.confirmPassword",
                     "Confirm password"
                   )}
                 />
@@ -135,9 +159,10 @@ const Register = ({ setMode }: Props) => {
                     fontWeight: 400,
                     fontFamily: "Inter",
                     textTransform: "uppercase",
+                    textAlign: "center",
                   }}
                 >
-                  Dados facultativos
+                  {i18n.t("auth.register.optionalData")}
                 </p>
               </Grid>
               <Grid
@@ -157,10 +182,10 @@ const Register = ({ setMode }: Props) => {
                     fontFamily: "Inter",
                   }}
                 >
-                  Telefone
+                  {i18n.t("auth.register.phone")}
                 </p>
                 <div style={{ display: "flex", columnGap: "5px" }}>
-                  <div style={{ width: "60px" }}>
+                  <div style={{ width: "100px" }}>
                     <ControlledFormInput
                       control={control}
                       name="prePhone"
@@ -170,10 +195,7 @@ const Register = ({ setMode }: Props) => {
                   <ControlledFormInput
                     control={control}
                     name="phone"
-                    inputPlaceholder={i18n.t(
-                      "pages.auth.register.phone",
-                      "Phone"
-                    )}
+                    inputPlaceholder={i18n.t("pages.register.phone", "Phone")}
                   />
                 </div>
               </Grid>
@@ -193,28 +215,35 @@ const Register = ({ setMode }: Props) => {
                     fontFamily: "Inter",
                   }}
                 >
-                  Fotografia de Perfil
+                  {i18n.t("auth.register.photo")}
                 </p>
                 <ButtonBlue
-                  label="Carregar"
+                  label={i18n.t("auth.register.upload")}
                   textStyles={{ color: "white" }}
                   styles={{ backgroundColor: "rgba(81, 81, 81, 1)" }}
                 />
               </Grid>
             </Grid>
+            {error && (
+              <p
+                style={{ textAlign: "center", marginTop: "20px", color: "red" }}
+              >
+                {error}
+              </p>
+            )}
           </Box>
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              padding: "40px",
+              padding: visitCard ? "20px" : "40px",
               rowGap: "20px",
               alignItems: "center",
               background: "rgba(237, 233, 225, 1)",
             }}
           >
             <ButtonBlue
-              label="Registar-me"
+              label={i18n.t("auth.register.register")}
               textStyles={{
                 textTransform: "uppercase",
                 fontFamily: "Inter",

@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Backdrop, backdropClasses, Box } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import * as React from "react";
 import { useState } from "react";
@@ -44,7 +44,7 @@ const DrawerMine = ({
         minHeight: fullHeight ? "100vh" : "auto",
         height: "auto",
         overflowY: "auto",
-        backgroundColor: Colors.white[400],
+        backgroundColor: "transparent",
       }}
       role="presentation"
     >
@@ -90,9 +90,16 @@ const DrawerMine = ({
         onTouchStart={onTouchStart}
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
-        BackdropProps={{
-          style: {
-            backgroundColor: clearBackground ? "transparent" : "#00000066",
+        PaperProps={{
+          sx: {
+            backgroundColor: clearBackground ? "transparent" : undefined, // Transparent paper background
+          },
+        }}
+        slotProps={{
+          backdrop: {
+            style: {
+              backgroundColor: clearBackground ? "transparent" : "#00000066",
+            },
           },
         }}
         sx={{

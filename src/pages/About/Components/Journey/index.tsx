@@ -1,182 +1,185 @@
-import {
-  Container,
-  Grid,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
-import Button from "../../../../components/Ui/Button";
+import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
+
 import { MAX_SCREEN } from "../../../../constants/screen";
+import { ButtonNinja } from "../../../../components/Ui/ButtonNinja";
+import { i18n } from "../../../../translations/i18n";
+import "./index.css";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../../routes/constants";
 
 const Journey = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  return (
-    <Container
-      style={{
-        padding: mobile ? "0px" : "0px 193px",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        maxWidth: MAX_SCREEN,
-      }}
-    >
-      {!mobile && (
-        <>
-          <Typography
-            style={{
-              fontSize: "18px",
-              textAlign: "center",
-              letterSpacing: "1px",
-              lineHeight: "30px",
-              width: "60%",
-            }}
-          >
-            Estes valores são a essência da nossa marca e guiam cada aspecto da
-            nossa prática.
-          </Typography>
-          <Typography
-            variant="h1"
-            style={{
-              fontSize: "30px",
-              textAlign: "center",
-              letterSpacing: "1px",
-              lineHeight: "30px",
-              textTransform: "uppercase",
-              marginTop: "30px",
-            }}
-          >
-            Elevamos os <b>padrões de qualidade</b> nos cuidados de saúde.
-          </Typography>
-        </>
-      )}
-      <Grid
-        container
-        columnSpacing={mobile ? "20px" : "60px"}
-        mt={mobile ? "0px" : "300px"}
+  const navigate = useNavigate();
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const renderLaptop = () => {
+    return (
+      <Container
+        style={{
+          padding: mobile ? "0px" : "0px 193px",
+          display: "flex",
+
+          maxWidth: MAX_SCREEN,
+
+          height: "659px",
+        }}
       >
-        <Grid item xs={12} md={4}>
-          <div
-            style={{
-              height: "100%",
-              display: "flex",
-              rowGap: "20px",
-              alignItems: "center",
-              justifyContent: "end",
-              flexDirection: "column",
-              paddingBottom: "20px",
-            }}
-          >
-            <Typography
-              variant="h1"
-              style={{
-                fontSize: "30px",
-                letterSpacing: "3px",
-                fontWeight: 700,
-                textAlign: "center",
-                textTransform: "uppercase",
-              }}
-            >
-              A experiência
-            </Typography>
-            {!mobile && (
-              <>
-                {" "}
-                <Typography
-                  style={{
-                    fontSize: "13px",
-                    letterSpacing: "1px",
-                    lineHeight: "22px",
-                    textAlign: "center",
-                    marginTop: "40px",
-                  }}
-                >
-                  Entre num universo cuidadosamente criado para proporcionar uma
-                  experiência única.
-                </Typography>
-                <Typography
-                  style={{
-                    fontSize: "13px",
-                    marginTop: "10px",
-                    letterSpacing: "1px",
-                    lineHeight: "22px",
-                    textAlign: "center",
-                  }}
-                >
-                  Equipas especializadas, abordagem científica e foco na
-                  experiência são os nossos compromissos.
-                </Typography>
-                <div>
-                  <Button style={{ marginTop: "30px" }}>
-                    <Typography>Entrar</Typography>
-                  </Button>
-                </div>
-              </>
-            )}
-          </div>
-        </Grid>
-        <Grid item xs={6} md={4}>
-          {" "}
-          <img
-            alt=""
-            style={{ width: "100%", height: "500px", objectFit: "cover" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-          />
-        </Grid>
-        <Grid item xs={6} md={4}>
-          {" "}
-          <img
-            alt=""
-            style={{ width: "100%", height: "500px", objectFit: "cover" }}
-            src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-          />
-        </Grid>
-      </Grid>
-      {mobile && (
         <div
           style={{
-            display: "flex",
-            flexDirection: "column",
-            marginTop: "100px",
-            padding: "0px 30px",
-            alignItems: "center",
+            width: "50%",
+            height: "100%",
+
+            position: "relative",
           }}
         >
-          {" "}
-          <Typography
+          <div
             style={{
-              fontSize: "12px",
-              letterSpacing: "1px",
-              lineHeight: "20px",
-              textAlign: "center",
+              backgroundColor: "rgba(195, 176, 162, 0.3)",
+              position: "absolute",
+              top: "50%",
+              transform: "translateY(-45%)",
+              left: 0,
+              width: "150%",
+              padding: "120px 50px 60px 50px",
             }}
           >
-            Entre num universo cuidadosamente criado para proporcionar uma
-            experiência única.
-          </Typography>
-          <Typography
-            style={{
-              fontSize: "12px",
-              marginTop: "30px",
-              letterSpacing: "1px",
-              lineHeight: "20px",
-              textAlign: "center",
-            }}
-          >
-            Equipas especializadas, abordagem científica e foco na experiência
-            são os nossos compromissos.
-          </Typography>
-          <div>
-            <Button style={{ marginTop: "30px" }}>
-              <Typography style={{ textTransform: "uppercase" }}>
-                A experiencia
+            <div
+              style={{
+                maxWidth: "60%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                rowGap: "60px",
+              }}
+            >
+              <Typography
+                variant="h1"
+                style={{
+                  fontSize: "35px",
+                  textAlign: "center",
+                  fontWeight: 500,
+                  textTransform: "uppercase",
+                }}
+              >
+                {i18n.t("pages.about.box13")}
               </Typography>
-            </Button>
+              <Typography
+                style={{
+                  fontSize: "13px",
+                  lineHeight: "22px",
+                  letterSpacing: "1px",
+                  textAlign: "center",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: i18n.t("pages.about.box14"),
+                }}
+              ></Typography>
+              <ButtonNinja
+                onClick={() => navigate(ROUTE_PATHS.YOUR_EXPERIENCE)}
+                buttonStyles={{
+                  backgroundColor: "rgba(255, 255, 255, 0.5)",
+                  padding: "10px 50px",
+                }}
+                textStyles={{
+                  color: "black",
+                  fontSize: "13px",
+                  fontWeight: 500,
+                }}
+                label={i18n.t("pages.about.button1")}
+              />
+            </div>
           </div>
         </div>
-      )}
-    </Container>
-  );
+        <div style={{ width: "50%", display: "flex", height: "100%" }}>
+          <img
+            style={{ height: "100%" }}
+            alt=""
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-5.webp"
+          />
+        </div>
+      </Container>
+    );
+  };
+
+  const renderMobile = () => {
+    return (
+      <div>
+        <div
+          style={{
+            paddingLeft: "54px",
+            width: "100%",
+          }}
+        >
+          <img
+            style={{ height: "461px", width: "100%", objectFit: "cover" }}
+            alt=""
+            src="https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-5.webp"
+          />
+        </div>
+        <div
+          style={{
+            paddingRight: "40px",
+
+            transform: "translateY(-150px)",
+          }}
+        >
+          <div
+            style={{
+              backgroundColor: "rgba(195, 176, 162, 0.6)",
+              borderRadius: "5px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                rowGap: "40px",
+                padding: "170px 20px 60px 20px",
+              }}
+            >
+              <Typography
+                variant="h1"
+                style={{
+                  fontSize: "30px",
+                  textAlign: "center",
+                  fontWeight: 400,
+                  textTransform: "uppercase",
+                  letterSpacing: "3px",
+                }}
+              >
+                {i18n.t("pages.about.box13")}
+              </Typography>
+              <Typography
+                style={{
+                  fontSize: "13px",
+                  lineHeight: "22px",
+                  letterSpacing: "1px",
+                  textAlign: "center",
+                }}
+                dangerouslySetInnerHTML={{
+                  __html: i18n.t("pages.about.box14"),
+                }}
+              ></Typography>
+              <ButtonNinja
+                onClick={() => navigate(ROUTE_PATHS.YOUR_EXPERIENCE)}
+                buttonStyles={{
+                  backgroundColor: "rgba(255, 255, 255, 0.5)",
+                  padding: "10px 50px",
+                }}
+                textStyles={{
+                  color: "rgba(0, 0, 0, 0.6)",
+                  fontSize: "13px",
+                  fontWeight: 500,
+                }}
+                label={i18n.t("pages.about.button1")}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  };
+  return mobile ? renderMobile() : renderLaptop();
 };
 
 export default Journey;

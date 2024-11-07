@@ -1,72 +1,107 @@
 import { Container, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { MAX_SCREEN } from "../../../../constants/screen";
+import { i18n } from "../../../../translations/i18n";
 
 const Slogan = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  return (
-    <div
-      style={{
-        width: "100%",
-
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
+  const renderLaptop = () => {
+    return (
       <div
         style={{
+          width: "100%",
+
           display: "flex",
           flexDirection: "column",
-          rowGap: "50px",
-          margin: mobile ? "20px" : "0px",
+          alignItems: "center",
         }}
       >
-        <Typography
-          variant="h1"
+        <Container
           style={{
-            fontSize: mobile ? "24px" : "45px",
-            textTransform: "uppercase",
-            textAlign: "center",
-            fontWeight: 500,
-            maxWidth: "550px",
-            lineHeight: mobile ? "41px" : "61px",
+            maxWidth: MAX_SCREEN,
+            marginTop: mobile ? "100px" : "350px",
+            position: "relative",
+            padding: mobile ? "30px" : "0px 265px",
           }}
         >
-          A nossa promessa é o seu Bem-estar
-        </Typography>
+          <div
+            style={{
+              width: "100%",
+              height: mobile ? "194px" : "580px",
+              display: "flex",
+              alignItems: "end",
+              justifyContent: "end",
+              backgroundPosition: "center center",
+              backgroundSize: "cover",
+              backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
+            }}
+          >
+            <Typography
+              variant="h1"
+              style={{
+                fontSize: "45px",
+                color: "rgba(255, 255, 255, 0.7)",
+                textTransform: "uppercase",
+                textAlign: "right",
+                lineHeight: "55px",
+                padding: "40px 35px",
+              }}
+              dangerouslySetInnerHTML={{
+                __html: i18n.t("pages.about.box1"),
+              }}
+            />
+          </div>
+        </Container>
       </div>
-      <Container
+    );
+  };
+
+  const renderMobile = () => {
+    return (
+      <div
         style={{
-          maxWidth: MAX_SCREEN,
-          marginTop: mobile ? "100px" : "350px",
-          position: "relative",
-          padding: mobile ? "30px" : "0px 265px",
+          width: "100%",
+
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "0px 20px",
         }}
       >
         <div
           style={{
-            width: "1px",
-            height: mobile ? "100px" : "216px",
-            position: "absolute",
-            backgroundColor: "black",
-            left: "50%",
-            top: mobile ? "-58px" : "-150px",
-          }}
-        />
-        <img
-          alt=""
-          style={{
+            zIndex: 10,
             width: "100%",
-            height: mobile ? "194px" : "580px",
-            objectFit: "cover",
+            height: "294px",
+            display: "flex",
+            alignItems: "end",
+            justifyContent: "end",
+            backgroundPosition: "center center",
+            backgroundSize: "cover",
+            backgroundImage: `url(https://clinicasritz-be-staging.qloudyx.pt/media/FOTOS-EHTIC-DESKTOP/SOBRE-A-EHTIQ-1.webp)`,
           }}
-          src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
-        />
-      </Container>
-    </div>
-  );
+        >
+          <Typography
+            variant="h1"
+            style={{
+              fontSize: "20px",
+              color: "rgba(255, 255, 255, 0.7)",
+              textTransform: "uppercase",
+              textAlign: "right",
+              lineHeight: "23px",
+              padding: "20px 20px",
+            }}
+            dangerouslySetInnerHTML={{
+              __html: i18n.t("pages.about.box1"),
+            }}
+          />
+        </div>
+      </div>
+    );
+  };
+
+  return mobile ? renderMobile() : renderLaptop();
 };
 
 export default Slogan;

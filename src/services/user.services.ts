@@ -56,6 +56,7 @@ export const userServices = {
       throw error;
     }
   },
+
   editUser: async (payload: {
     documentID: string;
     values: Partial<CreateUser>;

@@ -1,98 +1,66 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  Divider,
-  Grid,
-  Typography,
-} from "@mui/material";
-
-import { Colors } from "../../theme/theme";
-import Button from "./ButtonPopup";
-import { Actions } from "./types";
+import { Dialog, DialogContent } from "@mui/material";
+import { CSSProperties } from "@mui/styles";
+import { Actions, NeedConfirmation } from "./types";
 
 interface Props {
   children: JSX.Element;
   title?: string;
+  closeButton?: boolean;
   openPopup: boolean;
   setOpenPopup?: (openPopup: boolean) => void;
-
+  divider?: boolean;
   actions?: Actions[];
+  needConfirmation?: NeedConfirmation;
   onClose?: () => void;
+  paperStyles?: CSSProperties;
+  contentStyles?: CSSProperties;
+  titleProps?: CSSProperties;
 }
 
 const Popup = ({
   title,
   children,
+  closeButton,
   openPopup,
   setOpenPopup,
+  paperStyles,
+  divider,
   actions,
+  needConfirmation,
+  contentStyles,
   onClose,
+  titleProps,
 }: Props) => {
   return (
     <Dialog
+      fullWidth
+      maxWidth="lg"
+      open={openPopup}
+      fullScreen
       PaperProps={{
         style: {
-          borderRadius: "0px",
-          maxHeight: "65%",
+          padding: 0,
+          borderRadius: "6px",
+          height: "auto",
+          width: "auto",
+
+          ...paperStyles,
         },
       }}
-      hideBackdrop
-      open={openPopup}
       onClose={onClose}
     >
-      {title && (
-        <DialogTitle>
-          <div style={{ textAlign: "center" }}>
-            <Typography
-              component="div"
-              style={{
-                fontSize: "28px",
-                color: Colors.blackish[400],
-                fontWeight: 700,
-                letterSpacing: "3px",
-              }}
-            >
-              {title}
-            </Typography>
-          </div>
-        </DialogTitle>
-      )}
       <DialogContent
-        dividers
+        dividers={divider}
         style={{
-          color: "white",
-          display: "flex",
+          padding: 0,
+          height: "auto",
+          overflow: "scroll",
+          msOverflowStyle: "none",
+          scrollbarWidth: "none",
+          ...contentStyles,
         }}
       >
         {children}
-        {actions && (
-          <>
-            <Divider
-              style={{
-                width: "100%",
-                background: "#ffffff66",
-                marginTop: "10px",
-              }}
-            />
-            <Grid
-              container
-              justifyContent="flex-end"
-              style={{ marginTop: "10px" }}
-            >
-              {actions?.map((item, pos) => {
-                return (
-                  <Button
-                    disabled={item.disabled}
-                    title={item.title}
-                    key={pos}
-                    onClick={item.onClick}
-                  />
-                );
-              })}
-            </Grid>
-          </>
-        )}
       </DialogContent>
     </Dialog>
   );

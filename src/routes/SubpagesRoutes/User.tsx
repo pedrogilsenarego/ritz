@@ -1,4 +1,4 @@
-import WithAdminAuth from "../../hoc/withAdminAuth";
+import WithUserAuth from "../../hoc/withUserAuth";
 import UserLayout from "../../layouts/User";
 
 import { ROUTE_PATHS } from "../constants";
@@ -8,9 +8,11 @@ export const userPages = [
   {
     path: ROUTE_PATHS.USER_HOME,
     component: (
-      <UserLayout>
-        <RoutesI.UserHome />
-      </UserLayout>
+      <WithUserAuth>
+        <UserLayout>
+          <RoutesI.UserHome />
+        </UserLayout>
+      </WithUserAuth>
     ),
   },
   {

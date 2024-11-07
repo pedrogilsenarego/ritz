@@ -6,7 +6,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 
 const Schedulle = () => {
   const Theme = useTheme();
-  const mobile = useMediaQuery(Theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(Theme.breakpoints.down("md"));
   const mokData1 = [
     {
       unity: "Unídade dentária",

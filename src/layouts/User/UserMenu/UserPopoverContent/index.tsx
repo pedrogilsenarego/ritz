@@ -2,17 +2,40 @@ import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Close from "../../../../assets/close.svg";
 import Settings from "../../../../assets/setting-01.svg";
 import { useState } from "react";
-import Button from "../../../../components/Ui/Button";
+
 import ButtonBlue from "../../../../components/Ui/ButtonBlue";
 import ControlledFormInput from "../../../../components/Inputs/ControlledInputAdmin";
 import { useForm } from "react-hook-form";
 import Check from "../../../../assets/tick-02-white.svg";
+import { useNavigate } from "react-router-dom";
+import { ROUTE_PATHS } from "../../../../routes/constants";
+import useCookies from "../../../../hooks/useCookies";
+import useUser from "../../../../hooks/useUser";
+import { BASE_URL } from "../../../../services/constants";
+import { i18n } from "../../../../translations/i18n";
 
-const UserPopoverContent = ({ handleClose }: any) => {
+type Props = {
+  home?: boolean;
+  handleClose: () => void;
+};
+
+const UserPopoverContent = ({ handleClose, home }: Props) => {
   const [mode, setMode] = useState<"normal" | "edit">("normal");
+  const navigate = useNavigate();
+  const user = useUser();
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const { reset, control, handleSubmit } = useForm<any>({});
+  const { removeCookie } = useCookies();
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
+  const { control } = useForm<any>({});
+
+  const handleLogout = () => {
+    navigate(ROUTE_PATHS.HOME);
+    removeCookie("email");
+    removeCookie("access");
+    removeCookie("refresh");
+    user.remove();
+    user.refetch();
+  };
   const Normal = () => {
     return (
       <div
@@ -32,27 +55,32 @@ const UserPopoverContent = ({ handleClose }: any) => {
         <p style={{ fontSize: "12px", textTransform: "uppercase" }}>
           Área reservada
         </p>
-        <p style={{ fontSize: "18px", fontWeight: 600 }}>Josefina Vicente</p>
+        <p style={{ fontSize: "18px", fontWeight: 600 }}>
+          {user.data?.Data.username}
+        </p>
         <img
           alt=""
-          src="https://letstryai.com/wp-content/uploads/2023/11/stable-diffusion-avatar-prompt-example-6.jpg"
+          src={`${BASE_URL}${user.data?.Data.imagem}`}
           style={{ height: "75px", aspectRatio: 1, borderRadius: "50%" }}
         />
-        <p style={{ fontSize: "13px" }}>jvicente@gmail.com</p>
-        <div
-          onClick={(e) => {
-            e.stopPropagation();
-            setMode("edit");
-          }}
-          style={{ display: "flex", columnGap: "5px", alignItems: "center" }}
-        >
-          <img alt="" src={Settings} style={{ height: "13px" }} />
-          <p style={{ fontSize: "11px" }}>Editar conta</p>
-        </div>
+        <p style={{ fontSize: "13px" }}> {user.data?.Data.email}</p>
+        {!home && (
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              setMode("edit");
+            }}
+            style={{ display: "flex", columnGap: "5px", alignItems: "center" }}
+          >
+            <img alt="" src={Settings} style={{ height: "13px" }} />
+            <p style={{ fontSize: "11px" }}>Editar conta</p>
+          </div>
+        )}
         <Box
           style={{
             display: "flex",
             flexDirection: "column",
+            rowGap: 2,
             alignItems: "center",
             borderTop: "2px solid lightGray",
             borderBottom: "1px solid lightGray",
@@ -60,9 +88,29 @@ const UserPopoverContent = ({ handleClose }: any) => {
             marginTop: "20px",
           }}
         >
-          <p style={{ fontWeight: 600, fontSize: "14px" }}>Website EHTIQ</p>
+          <p
+            onClick={
+              home
+                ? () => navigate(ROUTE_PATHS.USER_HOME)
+                : () => navigate(ROUTE_PATHS.HOME)
+            }
+            style={{ fontWeight: 600, fontSize: "14px" }}
+          >
+            {home ? i18n.t("privateArea.clientArea") : "Website EHTIQ"}
+          </p>
+          {user.data?.Data.is_admin && (
+            <p
+              onClick={() => navigate(ROUTE_PATHS.ADMIN_HOME)}
+              style={{ fontWeight: 600, fontSize: "14px" }}
+            >
+              Admin
+            </p>
+          )}
         </Box>
-        <p style={{ fontSize: "10px", textTransform: "uppercase" }}>
+        <p
+          onClick={handleLogout}
+          style={{ fontSize: "10px", textTransform: "uppercase" }}
+        >
           Encerrar sessão
         </p>
       </div>

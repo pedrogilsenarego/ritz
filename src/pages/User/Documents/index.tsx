@@ -3,7 +3,7 @@ import Subpage from "../../../layouts/User/Subpage";
 
 const UserDocuments = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   const mokData1 = [
     "Consentimento_informado_TB_21/06.pdf",
     "Consentimento_informado_TB_21/06.pdf",

@@ -1,8 +1,9 @@
 import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import { i18n } from "../../../../translations/i18n";
 
 const Whats = () => {
   const theme = useTheme();
-  const mobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const mobile = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div
       style={{
@@ -19,11 +20,11 @@ const Whats = () => {
 
           fontSize: mobile ? "27px" : "50px",
           letterSpacing: "1px",
-          textTransform: "capitalize",
+
           fontWeight: 400,
         }}
       >
-        Em destaque...
+        {i18n.t("pages.home.inFocus")}
       </Typography>
       <Grid
         container
@@ -34,7 +35,7 @@ const Whats = () => {
         <Grid item xs={12} md={4}>
           <div>
             <img
-              style={{ width: "100%", height: "400px", objectFit: "cover" }}
+              style={{ width: "100%", aspectRatio: 0.8, objectFit: "cover" }}
               alt=""
               src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
             />
@@ -48,7 +49,7 @@ const Whats = () => {
           <div>
             <img
               alt=""
-              style={{ width: "100%", height: "400px", objectFit: "cover" }}
+              style={{ width: "100%", aspectRatio: 0.8, objectFit: "cover" }}
               src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
             />
             <div>
@@ -60,7 +61,7 @@ const Whats = () => {
         <Grid item xs={12} md={4}>
           <div>
             <img
-              style={{ width: "100%", height: "400px", objectFit: "cover" }}
+              style={{ width: "100%", aspectRatio: 0.8, objectFit: "cover" }}
               alt=""
               src="https://ef-medispa.imgix.net/storage/uploads/homepage/efmedispa-homepage-header-image_vgtvo.jpg?w=1300&q=95&auto=format&fit=crop&crop=edges,focalpoint&fm=png"
             />
